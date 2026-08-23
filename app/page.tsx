@@ -3,6 +3,8 @@ import Image from "next/image";
 const appStoreUrl = "https://apps.apple.com/app/id6761914163";
 const privacyUrl = "https://weizhichao1027-collab.github.io/GuitarTool-Privacy/";
 const githubUrl = "https://github.com/weizhichao1027-collab/guitartool-website";
+const basePath = process.env.GITHUB_PAGES === "true" ? "/guitartool-website" : "";
+const assetPath = (path: string) => `${basePath}${path}`;
 
 const features = [
   {
@@ -49,7 +51,7 @@ export default function Home() {
     <main>
       <nav className="nav shell" aria-label="主导航">
         <a className="brand" href="#top" aria-label="GuitarTool 首页">
-          <Image src="/app-icon.png" alt="" width={42} height={42} priority />
+          <Image src={assetPath("/app-icon.png")} alt="" width={42} height={42} priority />
           <span>GuitarTool</span>
         </a>
         <div className="navLinks">
@@ -85,7 +87,7 @@ export default function Home() {
             <div className="visualTopline"><span>20–500 BPM</span><span>13 种语言</span></div>
             <Image
               className="heroShot"
-              src="/hero-metronome.png"
+              src={assetPath("/hero-metronome.png")}
               alt="GuitarTool 节拍器，支持预设、计时、Swing 与渐进加速"
               width={833}
               height={1800}
@@ -136,7 +138,7 @@ export default function Home() {
               </div>
               <div className={`featureMedia ${index === 1 ? "tiltLeft" : ""}`}>
                 <span className="mediaLabel">真实 App 界面</span>
-                <Image src={feature.image} alt={feature.alt} width={833} height={1800} sizes="(max-width: 800px) 80vw, 420px" />
+                <Image src={assetPath(feature.image)} alt={feature.alt} width={833} height={1800} sizes="(max-width: 800px) 80vw, 420px" />
               </div>
             </article>
           ))}
@@ -168,7 +170,7 @@ export default function Home() {
                 <b>MORE SOON</b>
               </div>
             </div>
-            <Image src="/themes.png" alt="GuitarTool 晴空、星夜、松林和石墨四种主题" width={833} height={1800} sizes="(max-width: 700px) 86vw, 460px" />
+            <Image src={assetPath("/themes.png")} alt="GuitarTool 晴空、星夜、松林和石墨四种主题" width={833} height={1800} sizes="(max-width: 700px) 86vw, 460px" />
           </article>
           <article className="extraCard widgetCard">
             <div className="extraText">
@@ -176,7 +178,7 @@ export default function Home() {
               <h3>不用打开 App，<br />节拍就在主屏幕。</h3>
               <p>小、中、大三种尺寸。调速、拍号、播放暂停与 TAP 定速，抬手即可练。</p>
             </div>
-            <Image src="/widgets.png" alt="GuitarTool 三种尺寸的主屏幕节拍器小组件" width={833} height={1800} sizes="(max-width: 700px) 86vw, 460px" />
+            <Image src={assetPath("/widgets.png")} alt="GuitarTool 三种尺寸的主屏幕节拍器小组件" width={833} height={1800} sizes="(max-width: 700px) 86vw, 460px" />
           </article>
         </div>
         <div className="updatePromise">
@@ -195,7 +197,7 @@ export default function Home() {
             <div className="devicePills"><span>iPhone</span><span>iPad</span><span>Apple Watch</span></div>
           </div>
           <div className="devicesMedia">
-            <Image src="/devices.png" alt="GuitarTool 在 iPhone、iPad 与 Apple Watch 上运行" width={833} height={1800} sizes="(max-width: 850px) 90vw, 520px" />
+            <Image src={assetPath("/devices.png")} alt="GuitarTool 在 iPhone、iPad 与 Apple Watch 上运行" width={833} height={1800} sizes="(max-width: 850px) 90vw, 520px" />
           </div>
         </div>
       </section>
@@ -251,7 +253,7 @@ export default function Home() {
 
       <section className="finalCta shell">
         <div className="ctaGlow" />
-        <Image className="ctaIcon" src="/app-icon.png" alt="GuitarTool App 图标" width={112} height={112} />
+        <Image className="ctaIcon" src={assetPath("/app-icon.png")} alt="GuitarTool App 图标" width={112} height={112} />
         <p>GuitarTool for iPhone · iPad · Apple Watch</p>
         <h2>下一次练习，<br />从更好的工具开始。</h2>
         <a className="primaryButton coral" href={appStoreUrl}>在 App Store 下载 <span>↗</span></a>
@@ -260,7 +262,7 @@ export default function Home() {
 
       <footer className="footer shell">
         <a className="brand" href="#top">
-          <Image src="/app-icon.png" alt="" width={36} height={36} />
+          <Image src={assetPath("/app-icon.png")} alt="" width={36} height={36} />
           <span>GuitarTool</span>
         </a>
         <p>© 2026 Zhichao Wei. 用心练习，安静进步。</p>
