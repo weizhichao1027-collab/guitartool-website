@@ -36,7 +36,7 @@ const features = [
     title: "More than a click.\nA rhythm trainer that grows with you.",
     copy: "Set 20–500 BPM, time signatures, note values, accents and subdivisions. Combine timers, swing and progressive tempo training into a routine that is truly yours.",
     points: ["Tap tempo and practice presets", "Four subdivisions and eighth-note swing", "Custom accents and progressive tempo"],
-    image: "/hero-metronome.png",
+    image: "/en-metronome.png",
     alt: "GuitarTool metronome with presets, timer, swing and progressive tempo",
     tone: "aqua",
   },
@@ -46,7 +46,7 @@ const features = [
     title: "See every cent of pitch.\nHear the progress it creates.",
     copy: "Seven instrument families and a wide range of alternate tunings, with cents, signal strength and stability feedback. Audio is processed live on your device—never saved or uploaded.",
     points: ["Standard, Drop D, DADGAD and open tunings", "Calibrate A4 from 430–446 Hz", "Reference tones and stability feedback"],
-    image: "/tuner.png",
+    image: "/en-tuner.png",
     alt: "GuitarTool precision tuner interface",
     tone: "sky",
   },
@@ -56,7 +56,7 @@ const features = [
     title: "One chord can have\nmore than one answer.",
     copy: "Explore 855 chord names for both guitar and ukulele, with 19,244 fingerings in total. Move between voicings, edit a shape, identify it and hear it instantly.",
     points: ["Sharps, flats and familiar chord symbols", "Five-fret viewport across all 20 frets", "Interactive editing and realistic playback"],
-    image: "/chords.png",
+    image: "/en-chords.png",
     alt: "GuitarTool guitar and ukulele chord library",
     tone: "blush",
   },
@@ -102,7 +102,7 @@ export default function EnglishHome() {
           <div className="orb orbOne" /><div className="orb orbTwo" />
           <div className="visualCard">
             <div className="visualTopline"><span>20–500 BPM</span><span>13 LANGUAGES</span></div>
-            <Image className="heroShot" src={assetPath("/hero-metronome.png")} alt="GuitarTool metronome" width={833} height={1800} priority />
+            <Image className="heroShot" src={assetPath("/en-metronome.png")} alt="GuitarTool metronome in English" width={833} height={1800} priority />
           </div>
           <div className="floatingNote noteOne"><b>01</b><span>Precise rhythm<br /><small>Steady from the first beat</small></span></div>
           <div className="floatingNote noteTwo"><b>♪</b><span>Your sound<br /><small>Stays on your device</small></span></div>
@@ -146,11 +146,11 @@ export default function EnglishHome() {
         <div className="extraGrid">
           <article className="extraCard themeCard">
             <div className="extraText"><p className="cardLabel">Themes & decoration</p><h3>Choose a favourite now.<br />There is more to come.</h3><p>Sky, Night, Forest and Graphite are only the beginning. More themes, decoration and personal details will arrive in future updates.</p><div className="swatches" aria-label="Sky, Night, Forest and Graphite themes"><span className="day" /><span className="night" /><span className="pine" /><span className="graphite" /><b>MORE SOON</b></div></div>
-            <Image src={assetPath("/themes.png")} alt="Four GuitarTool themes" width={833} height={1800} sizes="(max-width: 700px) 86vw, 460px" />
+            <Image src={assetPath("/en-themes.png")} alt="Four GuitarTool themes in English" width={833} height={1800} sizes="(max-width: 700px) 86vw, 460px" />
           </article>
           <article className="extraCard widgetCard">
             <div className="extraText"><p className="cardLabel">Home Screen widgets</p><h3>Keep the beat<br />without opening the app.</h3><p>Small, medium and large. Change tempo and time signature, play, pause or tap in a tempo—right from your Home Screen.</p></div>
-            <Image src={assetPath("/widgets.png")} alt="Three GuitarTool metronome widget sizes" width={833} height={1800} sizes="(max-width: 700px) 86vw, 460px" />
+            <Image src={assetPath("/en-widgets.png")} alt="Three GuitarTool metronome widget sizes in English" width={833} height={1800} sizes="(max-width: 700px) 86vw, 460px" />
           </article>
         </div>
         <div className="updatePromise"><span>ONGOING UPDATES</span><p><strong>Useful is the starting point; fresh over time is where we are headed.</strong> More themes, decoration and practice experiences will keep arriving.</p><b aria-hidden="true">↗</b></div>
@@ -159,7 +159,7 @@ export default function EnglishHome() {
       <section className="devices sectionPad" id="devices">
         <div className="shell devicesGrid">
           <div className="devicesCopy"><div className="sectionIndex light">04 / EVERYWHERE</div><h2>Your practice<br />travels with you.</h2><p>Reach for iPhone, see more on iPad, or raise your wrist to keep time on Apple Watch. Every screen gets an experience shaped for it.</p><div className="devicePills"><span>iPhone</span><span>iPad</span><span>Apple Watch</span></div></div>
-          <div className="devicesMedia"><Image src={assetPath("/devices.png")} alt="GuitarTool on iPhone, iPad and Apple Watch" width={833} height={1800} sizes="(max-width: 850px) 90vw, 520px" /></div>
+          <div className="devicesMedia"><Image src={assetPath("/en-devices.png")} alt="GuitarTool on iPhone, iPad and Apple Watch in English" width={833} height={1800} sizes="(max-width: 850px) 90vw, 520px" /></div>
         </div>
       </section>
 
