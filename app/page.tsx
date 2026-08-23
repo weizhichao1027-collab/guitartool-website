@@ -58,6 +58,7 @@ export default function Home() {
           <a href="#features">功能</a>
           <a href="#devices">设备</a>
           <a href="#privacy">隐私</a>
+          <a className="languageSwitch" href={`${basePath}/en/`} aria-label="Switch to English">EN</a>
           <a className="navCta" href={appStoreUrl}>App Store 下载</a>
         </div>
       </nav>
