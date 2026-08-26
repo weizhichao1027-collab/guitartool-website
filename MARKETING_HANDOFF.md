@@ -114,7 +114,7 @@ OpenAI Sites 项目 ID：`appgprj_6a8a503888348191be812170e152a86c`。项目配�
 - `/sitemap.xml` 已于 2026-08-26 提交；2026-08-27 的 Search Console 实况仍为“无法抓取”，已发现网页 0、视频 0。
 - 同一公开 sitemap 已从终端实测为 HTTP 200、`application/xml` 且 XML 校验通过，当前更像新资源的处理延迟，而不是公开文件不可用。新版本部署后只重新提交一次，然后等待 Google 重试；不要反复删除或重建资源。
 - 首页已通过“网址检查”提交“请求编入索引”。Google 是否收录和排名由其系统决定。
-- GitHub Pages 每次成功部署后都会运行 `notify-search-engines`；新版本部署后应以 GitHub Actions 记录确认 163 个 URL 的 IndexNow 提交结果。
+- GitHub Pages 每次成功部署后都会运行 `notify-search-engines`；新版本部署后应以 GitHub Actions 记录确认当前 sitemap 的 167 个 URL 已进入 IndexNow 通知流程。
 
 建议在部署后 24–72 小时检查：
 
