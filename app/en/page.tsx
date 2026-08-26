@@ -58,8 +58,8 @@ const features = [
     number: "03",
     kicker: "Chord Library",
     title: "One chord can have\nmore than one answer.",
-    copy: "Explore 855 chord names for both guitar and ukulele, with 19,244 fingerings in total. Move between voicings, edit a shape, identify it and hear it instantly.",
-    points: ["Sharps, flats and familiar chord symbols", "Five-fret viewport across all 20 frets", "Interactive editing and realistic playback"],
+    copy: "Explore 855 chord names for both guitar and ukulele, with 19,244 fingerings in total. Move, edit, identify and hear a voicing, then save or share the exact shape as a clear chord card.",
+    points: ["Five-fret viewport across all 20 frets", "Interactive editing, recognition and playback", "Preview, save and system-share chord cards"],
     image: "/en-chords.webp",
     alt: "GuitarTool guitar and ukulele chord library",
     tone: "blush",
@@ -69,15 +69,16 @@ const features = [
 const faqs = [
   ["Do I need an internet connection or account?", "No. GuitarTool’s core features work entirely offline, with no registration, sign-in or cloud profile."],
   ["Does the tuner save my audio?", "Never. Microphone audio is used only for live, on-device pitch detection. It is not saved as a file or uploaded to a server."],
-  ["Which devices are supported?", "GuitarTool adapts to iPhone and iPad, and includes an Apple Watch metronome plus three sizes of interactive Home Screen widgets."],
+  ["Which devices are supported?", "GuitarTool adapts to iPhone and iPad, and includes an Apple Watch metronome plus three sizes of interactive Home Screen widgets. Watch audio can continue when the wrist lowers or the display dims."],
   ["Does it support ukulele?", "Yes. The tuner includes GCEA modes, and the chord library includes a complete set of ukulele chord names and multiple fingerings."],
+  ["Can I send a chord shape to a teacher or friend?", "Yes. Preview the current chord card, then save it to Photos or send it with the system share sheet. The image does not force an App Store link."],
 ] as const;
 
 export default function EnglishHome() {
   return (
     <main lang="en">
       <JsonLd data={[
-        { "@context": "https://schema.org", "@type": "SoftwareApplication", name: "GuitarTool", description: "An offline tuner, metronome and interactive chord library for guitar and ukulele.", url: absoluteUrl("/en/"), downloadUrl: appStoreUrl, applicationCategory: "MusicApplication", operatingSystem: "iOS, iPadOS, watchOS", inLanguage: supportedLanguageCodes, offers: { "@type": "Offer", price: "0", priceCurrency: "USD" }, featureList: ["Real-time string instrument tuner", "20–500 BPM metronome", "19,244 guitar and ukulele fingerings", "Apple Watch metronome", "Interactive Home Screen widgets"] },
+        { "@context": "https://schema.org", "@type": "SoftwareApplication", name: "GuitarTool", description: "An offline tuner, metronome and interactive chord library with saveable, shareable guitar and ukulele diagrams.", url: absoluteUrl("/en/"), downloadUrl: appStoreUrl, applicationCategory: "MusicApplication", operatingSystem: "iOS, iPadOS, watchOS", inLanguage: supportedLanguageCodes, offers: { "@type": "Offer", price: "0", priceCurrency: "USD" }, featureList: ["Real-time string instrument tuner", "20–500 BPM metronome", "19,244 guitar and ukulele fingerings", "Preview, save and share chord cards", "Apple Watch metronome with background audio", "Interactive Home Screen widgets"] },
         { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqs.map(([question, answer]) => ({ "@type": "Question", name: question, acceptedAnswer: { "@type": "Answer", text: answer } })) },
       ]} />
       <nav className="nav shell" aria-label="Main navigation">
@@ -155,7 +156,7 @@ export default function EnglishHome() {
         <div className="sectionHeading compact"><p className="eyebrow"><span /> More than three tools · always evolving</p><h2>Practice should fit you,<br />not the other way around.</h2></div>
         <div className="extraGrid">
           <article className="extraCard themeCard">
-            <div className="extraText"><p className="cardLabel">Themes & decoration</p><h3>Choose a favourite now.<br />There is more to come.</h3><p>Sky, Night, Forest and Graphite are only the beginning. More themes, decoration and personal details will arrive in future updates.</p><div className="swatches" aria-label="Sky, Night, Forest and Graphite themes"><span className="day" /><span className="night" /><span className="pine" /><span className="graphite" /><b>MORE SOON</b></div></div>
+            <div className="extraText"><p className="cardLabel">Themes & appearance</p><h3>Four free looks.<br />Choose your practice atmosphere.</h3><p>Sky, Night, Forest and Graphite are included with the app. Your choice stays on the device and needs no account or cloud profile.</p><div className="swatches" aria-label="Sky, Night, Forest and Graphite themes"><span className="day" /><span className="night" /><span className="pine" /><span className="graphite" /><b>4 INCLUDED</b></div></div>
             <Image src={assetPath("/en-themes.webp")} alt="Four GuitarTool themes in English" width={833} height={1800} sizes="(max-width: 700px) 86vw, 460px" />
           </article>
           <article className="extraCard widgetCard">
@@ -163,12 +164,12 @@ export default function EnglishHome() {
             <Image src={assetPath("/en-widgets.webp")} alt="Three GuitarTool metronome widget sizes in English" width={833} height={1800} sizes="(max-width: 700px) 86vw, 460px" />
           </article>
         </div>
-        <div className="updatePromise"><span>ONGOING UPDATES</span><p><strong>Useful is the starting point; fresh over time is where we are headed.</strong> More themes, decoration and practice experiences will keep arriving.</p><b aria-hidden="true">↗</b></div>
+        <div className="updatePromise"><span>VERSION 1.0.7</span><p><strong>Take a useful voicing beyond the app.</strong> Chord-card previews, Photos saves and system sharing join stronger Apple Watch playback when the wrist lowers.</p><b aria-hidden="true">↗</b></div>
       </section>
 
       <section className="devices sectionPad" id="devices">
         <div className="shell devicesGrid">
-          <div className="devicesCopy"><div className="sectionIndex light">04 / EVERYWHERE</div><h2>Your practice<br />travels with you.</h2><p>Reach for iPhone, see more on iPad, or raise your wrist to keep time on Apple Watch. Every screen gets an experience shaped for it.</p><div className="devicePills"><span>iPhone</span><span>iPad</span><span>Apple Watch</span></div></div>
+          <div className="devicesCopy"><div className="sectionIndex light">04 / EVERYWHERE</div><h2>Your practice<br />travels with you.</h2><p>Reach for iPhone, see more on iPad, or start the beat from Apple Watch. Audio can keep going when the wrist lowers or the display dims, so your hands return to the instrument.</p><div className="devicePills"><span>iPhone</span><span>iPad</span><span>Apple Watch</span></div></div>
           <div className="devicesMedia"><Image src={assetPath("/en-devices.webp")} alt="GuitarTool on iPhone, iPad and Apple Watch in English" width={833} height={1800} sizes="(max-width: 850px) 90vw, 520px" /></div>
         </div>
       </section>
@@ -194,6 +195,8 @@ export default function EnglishHome() {
           <Link href="/en/guides/guitar-tuner/"><span>03</span><h3>Offline guitar tuner</h3><p>Explore standard, Drop D, DADGAD and open tunings with private on-device audio.</p><b>Read the guide →</b></Link>
           <Link href="/chords/guitar/"><span>04</span><h3>Popular guitar chords</h3><p>Begin with 50 essential chords, each with several clear positions.</p><b>Browse chords →</b></Link>
           <Link href="/chords/ukulele/"><span>05</span><h3>Popular ukulele chords</h3><p>Learn 50 common shapes in standard high-G GCEA tuning.</p><b>Browse chords →</b></Link>
+          <Link href="/en/guides/share-chord-diagrams/"><span>06</span><h3>Save and share chord diagrams</h3><p>Turn the current guitar or ukulele voicing into a card you can preview, save or send.</p><b>Explore chord cards →</b></Link>
+          <Link href="/en/guides/apple-watch-metronome/"><span>07</span><h3>Apple Watch metronome</h3><p>Control tempo and meter from your wrist while audio continues when the display dims.</p><b>Explore the watch metronome →</b></Link>
         </div>
       </section>
 

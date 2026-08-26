@@ -1,5 +1,6 @@
 import { enTuningPages, zhTuningPages } from "@/app/lib/tuning-pages";
 import { enPracticePages, zhPracticePages } from "@/app/lib/practice-pages";
+import { enFeaturePages, zhFeaturePages } from "@/app/lib/feature-pages";
 
 export type LandingLanguage = "zh" | "en";
 
@@ -83,8 +84,8 @@ const en: LandingPage[] = [
       },
       {
         title: "When basic timekeeping is not enough",
-        body: "GuitarTool expands the metronome with subdivisions, eighth-note swing, per-beat accents, custom practice presets, countdown timers and progressive tempo training. Home Screen widgets and an Apple Watch companion keep the beat close without burying practice under menus.",
-        points: ["Quarter, eighth, triplet and sixteenth subdivisions", "Custom accents and ten sound profiles", "Interactive widgets and Apple Watch metronome"],
+        body: "GuitarTool expands the metronome with subdivisions, eighth-note swing, per-beat accents, custom practice presets, countdown timers and progressive tempo training. Home Screen widgets and an Apple Watch companion keep the beat close; watch audio can continue when the wrist lowers or the display dims.",
+        points: ["Quarter, eighth, triplet and sixteenth subdivisions", "Custom accents and ten sound profiles", "Interactive widgets and Apple Watch background audio"],
       },
     ],
     faq: [
@@ -110,13 +111,14 @@ const en: LandingPage[] = [
       {
         title: "Turn a diagram into a working fretboard",
         body: "Tap a fret to change a note, mute or restore individual strings and listen to the resulting voicing. If the edited notes match a known chord, GuitarTool identifies it. This makes the library useful for checking a remembered shape as well as discovering a new one.",
-        points: ["Interactive fret and string editing", "Automatic chord-shape recognition", "Playback follows the exact visible voicing"],
+        points: ["Interactive editing and recognition", "Playback follows the exact visible voicing", "Preview, save and share a chord-card image"],
       },
     ],
     faq: [
       ["How many guitar chords are included?", "The library contains 855 chord names and 12,415 deduplicated guitar fingerings."],
       ["Can I view chords above the fifth fret?", "Yes. A readable five-fret window scrolls across the complete 20-fret board."],
       ["Can GuitarTool identify a shape I enter?", "Yes. It first checks exact fingerings and then compares the sounding pitch classes."],
+      ["Can I save or share a guitar chord diagram?", "Yes. Preview the current chord card, then save it to Photos or send the image through the system share sheet."],
     ],
     related: ["ukulele-chords", "guitar-tuner", "offline-guitar-tools"],
   },
@@ -136,13 +138,14 @@ const en: LandingPage[] = [
       {
         title: "Explore what changes when one finger moves",
         body: "Edit any string and fret directly. GuitarTool recalculates the sounding notes and looks for a matching chord name, making it useful for learning the relationship between a familiar shape and nearby variations such as sevenths, suspended chords and added notes.",
-        points: ["Direct four-string editing", "Automatic name recognition", "High-G GCEA playback order"],
+        points: ["Direct four-string editing", "Automatic name recognition and playback", "Save or share the current chord card"],
       },
     ],
     faq: [
       ["Which ukulele tuning does the chord library use?", "The chord library uses standard high-G GCEA re-entrant tuning."],
       ["How many fingerings are included?", "There are 6,829 deduplicated ukulele fingerings across 855 chord names."],
       ["Does the app also include a ukulele tuner?", "Yes. The tuner supports both high-G and Low-G GCEA."],
+      ["Can I send a ukulele chord shape to a student or friend?", "Yes. The app can turn the current voicing into an image you can preview, save or share."],
     ],
     related: ["ukulele-tuner", "guitar-chords", "offline-guitar-tools"],
   },
@@ -161,14 +164,14 @@ const en: LandingPage[] = [
       },
       {
         title: "Designed to stay out of the way",
-        body: "There is no feed, login wall, advertising layer or analytics SDK. Tuner audio is processed on the device and is not stored. Interactive Home Screen widgets and an Apple Watch companion reduce the number of steps between picking up an instrument and starting a focused session.",
-        points: ["iPhone and iPad layouts", "Three interactive widget sizes", "Apple Watch metronome companion"],
+        body: "There is no feed, login wall, advertising layer or analytics SDK. Tuner audio is processed on the device and is not stored. Chord cards can be saved or shared without an account, while Home Screen widgets and Apple Watch background audio reduce the steps between picking up an instrument and starting a focused session.",
+        points: ["iPhone and iPad layouts", "Three interactive widget sizes", "Shareable chord cards and Apple Watch metronome"],
       },
     ],
     faq: [
       ["Is GuitarTool really usable offline?", "Yes. The tuner, metronome, chord libraries and saved settings work without an internet connection."],
       ["Does the app contain advertising?", "No. GuitarTool has no ads and no third-party tracking SDK."],
-      ["Which devices are supported?", "The app supports iPhone and iPad, with an Apple Watch metronome and Home Screen widgets."],
+      ["Which devices are supported?", "The app supports iPhone and iPad, with Home Screen widgets and an Apple Watch metronome whose audio can continue when the display dims."],
     ],
     related: ["guitar-tuner", "online-metronome", "guitar-chords"],
   },
@@ -220,7 +223,7 @@ const zh: LandingPage[] = [
     proof: ["20–500 BPM", "TAP 测速", "无需登录"],
     sections: [
       { title: "几秒内开始跟拍", body: "设置速度与每小节拍数，第一拍会使用更清楚的重音。只知道音乐感觉、不知道具体数字时，可以连续点击 TAP 计算速度。在线工具在浏览器本地运行，无需创建账户。", points: ["适合键盘和触屏", "当前拍视觉提示", "每小节 1–12 拍"] },
-      { title: "从跟拍进入系统训练", body: "GuitarTool APP 在基础节拍之外提供四种细分、八分 Swing、逐拍重音、练习预设、倒计时和渐进加速。主屏幕小组件与 Apple Watch 伴随节拍器还能减少打开 APP 和寻找设置的步骤。", points: ["四分、八分、三连音与十六分", "自定义重音和十套声音", "交互式小组件与 Apple Watch"] },
+      { title: "从跟拍进入系统训练", body: "GuitarTool APP 在基础节拍之外提供四种细分、八分 Swing、逐拍重音、练习预设、倒计时和渐进加速。主屏幕小组件与 Apple Watch 伴随节拍器还能减少打开 APP 和寻找设置的步骤；手表落腕或屏幕变暗后，声音仍可继续。", points: ["四分、八分、三连音与十六分", "自定义重音和十套声音", "交互式小组件与 Apple Watch 后台音频"] },
     ],
     faq: [["在线节拍器免费吗？", "免费，浏览器工具和 GuitarTool 核心功能均可免费使用。"], ["支持多大的速度范围？", "在线版和 APP 均支持 20–500 BPM。"], ["APP 可以自动加速吗？", "可以，可按指定小节数和增量逐步提高 BPM。"]],
     related: ["offline-guitar-tools", "guitar-tuner", "guitar-chords"],
@@ -234,9 +237,9 @@ const zh: LandingPage[] = [
     proof: ["855 个和弦名称", "12,415 个吉他指法", "完整 20 品浏览"],
     sections: [
       { title: "不止停留在第一个开放按法", body: "可以按名称、调性或列表查找和弦，并快速切换同名和弦的其他把位。固定五品高的窗口保持易读，同时能够滚动访问 1–20 品，让开放 C 与高把位 C 自然地出现在同一条学习路径中。", points: ["支持升降号和常见和弦符号", "同名和弦多种把位", "吉他与尤克里里独立曲库"] },
-      { title: "把静态图变成真正可操作的指板", body: "点击任意品位改变音符，也可以逐弦静音或恢复发声。GuitarTool 会根据当前声音尝试识别和弦名称，试听则严格按照画面上的点位与静音状态播放。", points: ["自由编辑品位与琴弦", "自动识别当前组合", "试听与当前指法完全一致"] },
+      { title: "把静态图变成真正可操作的指板", body: "点击任意品位改变音符，也可以逐弦静音或恢复发声。GuitarTool 会根据当前声音尝试识别和弦名称，试听严格按照画面上的点位与静音状态播放；当前按法还可生成卡片，预览后保存或分享。", points: ["自由编辑与自动识别", "试听与当前指法完全一致", "和弦卡片预览、保存与分享"] },
     ],
-    faq: [["一共有多少吉他和弦？", "包含 855 个名称和 12,415 个去重后的吉他指法。"], ["可以查看五品以上吗？", "可以，五品高窗口能够滚动浏览完整 20 品。"], ["能识别我输入的指法吗？", "可以，系统会先匹配完整指法，再按实际发声音级进行判断。"]],
+    faq: [["一共有多少吉他和弦？", "包含 855 个名称和 12,415 个去重后的吉他指法。"], ["可以查看五品以上吗？", "可以，五品高窗口能够滚动浏览完整 20 品。"], ["能识别我输入的指法吗？", "可以，系统会先匹配完整指法，再按实际发声音级进行判断。"], ["可以保存或分享吉他和弦图吗？", "可以。先预览当前和弦卡片，再保存到相册或通过系统分享发送图片。"]],
     related: ["ukulele-chords", "guitar-tuner", "offline-guitar-tools"],
   },
   {
@@ -248,9 +251,9 @@ const zh: LandingPage[] = [
     proof: ["855 个和弦名称", "6,829 个尤克里里指法", "交互式 GCEA 指板"],
     sections: [
       { title: "找到真正适合当前歌曲的把位", body: "搜索常见符号、升号或降号后，可以切换同一和弦的多种指法。高把位仍采用易读的五品窗口呈现，同时保留完整 20 品范围，既适合初学开放按法，也方便寻找更顺手的连接。", points: ["常用开放按法优先", "每个和弦提供多个把位", "当前按法可直接试听"] },
-      { title: "移动一根手指，理解和弦如何变化", body: "直接修改任意琴弦与品位，系统会重新计算实际发声音，并寻找可能的和弦名称。这样可以从熟悉的形状出发，观察七和弦、挂留和弦与附加音之间的关系。", points: ["四根弦独立编辑", "当前组合自动识别", "按 High-G GCEA 顺序试听"] },
+      { title: "移动一根手指，理解和弦如何变化", body: "直接修改任意琴弦与品位，系统会重新计算实际发声音，并寻找可能的和弦名称。这样可以从熟悉的形状出发观察和弦变化，也可以把当前按法生成卡片保存或发送。", points: ["四根弦独立编辑", "自动识别并按 High-G GCEA 试听", "保存或分享当前和弦卡片"] },
     ],
-    faq: [["和弦库使用什么调弦？", "使用标准高 G 的 GCEA re-entrant 调弦。"], ["包含多少个指法？", "855 个名称下共有 6,829 个去重指法。"], ["也有尤克里里调音器吗？", "有，调音器支持 High-G 与 Low-G GCEA。"]],
+    faq: [["和弦库使用什么调弦？", "使用标准高 G 的 GCEA re-entrant 调弦。"], ["包含多少个指法？", "855 个名称下共有 6,829 个去重指法。"], ["也有尤克里里调音器吗？", "有，调音器支持 High-G 与 Low-G GCEA。"], ["可以把尤克里里按法发给学生或朋友吗？", "可以。APP 会把当前按法生成图片，预览后可保存或分享。"]],
     related: ["ukulele-tuner", "guitar-chords", "offline-guitar-tools"],
   },
   {
@@ -262,16 +265,16 @@ const zh: LandingPage[] = [
     proof: ["无广告", "无需账户", "无第三方追踪 SDK"],
     sections: [
       { title: "三个高频工具，一条练习流程", body: "GuitarTool 将实时调音器、20–500 BPM 节拍器，以及吉他与尤克里里和弦库放在一起。所有核心功能均可离线运行，即使排练室网络不稳定，也不会中断眼前的任务。", points: ["七类乐器调音模式", "练习预设与渐进加速", "吉他和尤克里里共 19,244 个指法"] },
-      { title: "工具应该退到练习之后", body: "这里没有信息流、登录墙、广告层或统计 SDK。调音声音只在设备端处理，不会保存。三种尺寸的交互式主屏幕小组件与 Apple Watch 节拍器，也让拿起乐器到开始练习之间少几步。", points: ["iPhone 与 iPad 自适应界面", "三种交互式小组件", "Apple Watch 伴随节拍器"] },
+      { title: "工具应该退到练习之后", body: "这里没有信息流、登录墙、广告层或统计 SDK。调音声音只在设备端处理，不会保存；和弦卡片无需账户即可保存或分享。三种尺寸的主屏幕小组件与 Apple Watch 后台节拍，也让拿起乐器到开始练习之间少几步。", points: ["iPhone 与 iPad 自适应界面", "三种交互式小组件", "和弦卡片与 Apple Watch 节拍器"] },
     ],
-    faq: [["真的可以完全离线使用吗？", "可以，调音器、节拍器、和弦库和本地设置均不依赖网络。"], ["APP 中有广告吗？", "没有广告，也没有第三方追踪 SDK。"], ["支持哪些设备？", "支持 iPhone、iPad，并包含 Apple Watch 节拍器和主屏幕小组件。"]],
+    faq: [["真的可以完全离线使用吗？", "可以，调音器、节拍器、和弦库和本地设置均不依赖网络。"], ["APP 中有广告吗？", "没有广告，也没有第三方追踪 SDK。"], ["支持哪些设备？", "支持 iPhone、iPad、主屏幕小组件，以及落腕或屏幕变暗后仍可继续声音的 Apple Watch 节拍器。"]],
     related: ["guitar-tuner", "online-metronome", "guitar-chords"],
   },
 ];
 
 export const landingPages = {
-  en: [...en, ...enTuningPages, ...(enPracticePages as LandingPage[])],
-  zh: [...zh, ...zhTuningPages, ...(zhPracticePages as LandingPage[])],
+  en: [...en, ...enFeaturePages, ...enTuningPages, ...(enPracticePages as LandingPage[])],
+  zh: [...zh, ...zhFeaturePages, ...zhTuningPages, ...(zhPracticePages as LandingPage[])],
 } as const;
 
 export function getLandingPage(language: LandingLanguage, slug: string) {

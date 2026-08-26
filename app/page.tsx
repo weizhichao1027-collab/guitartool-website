@@ -34,8 +34,8 @@ const features = [
     number: "03",
     kicker: "Chord Library",
     title: "一个和弦，不止一种答案。",
-    copy: "吉他与尤克里里各 855 个和弦名称，共收录 19,244 个指法。快速切换不同把位，还能编辑、识别与试听。",
-    points: ["支持升降号与常用和弦符号", "固定五品视窗，纵览完整 20 品", "交互编辑与真实和弦试听"],
+    copy: "吉他与尤克里里各 855 个和弦名称，共收录 19,244 个指法。切换、编辑、识别和试听后，还能把当前按法保存或分享成清晰卡片。",
+    points: ["固定五品视窗，纵览完整 20 品", "交互编辑、识别与真实试听", "和弦卡片预览、保存与系统分享"],
     image: "/chords.webp",
     alt: "GuitarTool 吉他与尤克里里和弦库展示",
     tone: "blush",
@@ -45,15 +45,16 @@ const features = [
 const faqs = [
   ["需要联网或注册账号吗？", "不需要。GuitarTool 的核心功能完全离线运行，无需注册、登录或云端同步。"],
   ["调音器会保存我的声音吗？", "不会。麦克风音频只用于设备端实时音高检测，不会保存为文件，也不会上传到任何服务器。"],
-  ["支持哪些设备？", "支持 iPhone 与 iPad 自适应界面，附带 Apple Watch 节拍器和三种尺寸的主屏幕交互式小组件。"],
+  ["支持哪些设备？", "支持 iPhone 与 iPad 自适应界面，附带 Apple Watch 节拍器和三种尺寸的主屏幕交互式小组件；Watch 落腕或屏幕变暗后声音节拍仍可继续。"],
   ["支持尤克里里吗？", "支持。调音器提供 GCEA 模式，和弦库也包含完整的尤克里里和弦名称与多种指法。"],
+  ["可以把和弦指法发给老师或朋友吗？", "可以。先预览当前指法卡片，再保存到相册或通过系统分享发送；图片不会强制附带下载链接。"],
 ] as const;
 
 export default function Home() {
   return (
     <main lang="zh-CN">
       <JsonLd data={[
-        { "@context": "https://schema.org", "@type": "SoftwareApplication", name: "GuitarTool", description: "面向吉他与尤克里里演奏者的离线调音器、节拍器与交互式和弦库。", url: absoluteUrl("/"), downloadUrl: appStoreUrl, applicationCategory: "MusicApplication", operatingSystem: "iOS, iPadOS, watchOS", inLanguage: supportedLanguageCodes, offers: { "@type": "Offer", price: "0", priceCurrency: "CNY" }, featureList: ["实时弦乐调音器", "20–500 BPM 节拍器", "19,244 个吉他与尤克里里指法", "Apple Watch 节拍器", "主屏幕交互式小组件"] },
+        { "@context": "https://schema.org", "@type": "SoftwareApplication", name: "GuitarTool", description: "面向吉他与尤克里里演奏者的离线调音器、节拍器与可保存分享的交互式和弦库。", url: absoluteUrl("/"), downloadUrl: appStoreUrl, applicationCategory: "MusicApplication", operatingSystem: "iOS, iPadOS, watchOS", inLanguage: supportedLanguageCodes, offers: { "@type": "Offer", price: "0", priceCurrency: "CNY" }, featureList: ["实时弦乐调音器", "20–500 BPM 节拍器", "19,244 个吉他与尤克里里指法", "和弦卡片预览、保存与分享", "支持后台音频的 Apple Watch 节拍器", "主屏幕交互式小组件"] },
         { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqs.map(([question, answer]) => ({ "@type": "Question", name: question, acceptedAnswer: { "@type": "Answer", text: answer } })) },
       ]} />
       <nav className="nav shell" aria-label="主导航">
@@ -173,11 +174,11 @@ export default function Home() {
           <article className="extraCard themeCard">
             <div className="extraText">
               <p className="cardLabel">主题与装饰</p>
-              <h3>现在选一种喜欢，<br />以后还有更多。</h3>
-              <p>晴空、星夜、松林与石墨只是开始。更多主题、装饰与个性化细节，会在后续更新中陆续到来。</p>
+              <h3>四种免费外观，<br />选择你的练习氛围。</h3>
+              <p>晴空、星夜、松林与石墨均随 APP 提供。外观选择只保存在设备上，不需要账户或云端个人资料。</p>
               <div className="swatches" aria-label="晴空、星夜、松林、石墨四种主题">
                 <span className="day" /><span className="night" /><span className="pine" /><span className="graphite" />
-                <b>MORE SOON</b>
+                <b>4 INCLUDED</b>
               </div>
             </div>
             <Image src={assetPath("/themes.webp")} alt="GuitarTool 晴空、星夜、松林和石墨四种主题" width={833} height={1800} sizes="(max-width: 700px) 86vw, 460px" />
@@ -192,8 +193,8 @@ export default function Home() {
           </article>
         </div>
         <div className="updatePromise">
-          <span>ONGOING UPDATES</span>
-          <p><strong>好用，是起点；常用常新，是接下来的方向。</strong> 更多主题装饰与练习体验，将在未来版本持续上新。</p>
+          <span>VERSION 1.0.7</span>
+          <p><strong>把好用的指法带出 APP。</strong> 新增和弦卡片预览、相册保存与系统分享，并加强 Apple Watch 落腕后的持续节拍。</p>
           <b aria-hidden="true">↗</b>
         </div>
       </section>
@@ -203,7 +204,7 @@ export default function Home() {
           <div className="devicesCopy">
             <div className="sectionIndex light">04 / EVERYWHERE</div>
             <h2>你的练习，<br />跟着你走。</h2>
-            <p>在 iPhone 上随手练，在 iPad 上看得更清楚，在 Apple Watch 上抬腕跟拍。每块屏幕都有恰到好处的体验。</p>
+            <p>在 iPhone 上随手练，在 iPad 上看得更清楚，在 Apple Watch 上从手腕启动节拍。落腕或屏幕变暗后，声音仍可继续，让双手回到乐器上。</p>
             <div className="devicePills"><span>iPhone</span><span>iPad</span><span>Apple Watch</span></div>
           </div>
           <div className="devicesMedia">
@@ -254,6 +255,8 @@ export default function Home() {
           <Link href="/guides/guitar-tuner/"><span>03</span><h3>离线吉他调音</h3><p>了解标准、Drop D、DADGAD 与开放调弦的完整使用方式。</p><b>阅读指南 →</b></Link>
           <Link href="/chords/guitar/"><span>04</span><h3>热门吉他和弦</h3><p>从 50 个高频和弦开始，查看多个把位与清楚指法图。</p><b>浏览和弦 →</b></Link>
           <Link href="/chords/ukulele/"><span>05</span><h3>热门尤克里里和弦</h3><p>按标准 High-G GCEA 查看 50 个常用和弦和多种按法。</p><b>浏览和弦 →</b></Link>
+          <Link href="/guides/share-chord-diagrams/"><span>06</span><h3>保存与分享和弦图</h3><p>把当前吉他或尤克里里按法生成卡片，预览后保存或发送。</p><b>了解和弦卡片 →</b></Link>
+          <Link href="/guides/apple-watch-metronome/"><span>07</span><h3>Apple Watch 节拍器</h3><p>从手腕控制速度与拍号，落腕或屏幕变暗后声音仍可继续。</p><b>了解手表节拍器 →</b></Link>
         </div>
       </section>
 

@@ -7,7 +7,7 @@ import { tunerLocales, tunerPath } from "@/app/lib/tuner-locales";
 
 export const dynamic = "force-static";
 
-const lastModified = new Date("2026-08-26T00:00:00Z");
+const lastModified = new Date("2026-08-27T00:00:00Z");
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const core = [

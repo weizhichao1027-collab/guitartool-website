@@ -6,7 +6,7 @@ import { APP_STORE_LINKS, APP_STORE_URL, GITHUB_URL, PRIVACY_URL, absoluteUrl, a
 
 export const metadata: Metadata = {
   title: "GuitarTool Press Kit | Product Facts, Images & Contact",
-  description: "Official GuitarTool press kit with product facts, downloadable app icon, screenshots, privacy details and developer contact information.",
+  description: "Official GuitarTool press kit with version 1.0.7 highlights, verified product facts, downloadable visuals, privacy details and developer contact information.",
   alternates: { canonical: absoluteUrl("/press/") },
   openGraph: { title: "GuitarTool Official Press Kit", description: "Product facts, downloadable visuals and official contact information for GuitarTool.", url: absoluteUrl("/press/"), type: "website" },
 };
@@ -23,7 +23,7 @@ const assets = [
 export default function PressKitPage() {
   return (
     <main className="acqPage pressPage" lang="en">
-      <JsonLd data={{ "@context": "https://schema.org", "@type": "SoftwareApplication", name: "GuitarTool", description: "An offline tuner, metronome and chord library for guitar and ukulele.", url: absoluteUrl("/"), downloadUrl: APP_STORE_URL, applicationCategory: "MusicApplication", operatingSystem: "iOS, iPadOS, watchOS", author: { "@type": "Person", name: "Zhichao Wei" }, offers: { "@type": "Offer", price: "0", priceCurrency: "USD" } }} />
+      <JsonLd data={{ "@context": "https://schema.org", "@type": "SoftwareApplication", name: "GuitarTool", softwareVersion: "1.0.7", description: "An offline tuner, metronome and interactive chord library for guitar and ukulele, with shareable chord cards, Apple Watch and Home Screen widgets.", url: absoluteUrl("/"), downloadUrl: APP_STORE_URL, applicationCategory: "MusicApplication", operatingSystem: "iOS, iPadOS, watchOS", featureList: ["Real-time tuner for seven instrument families", "20–500 BPM practice metronome", "19,244 guitar and ukulele fingerings", "Chord-card preview, Photos save and system sharing", "Apple Watch metronome with background audio", "Three interactive Home Screen widget sizes", "13 interface languages"], author: { "@type": "Person", name: "Zhichao Wei" }, offers: { "@type": "Offer", price: "0", priceCurrency: "USD" } }} />
       <AcquisitionHeader language="en" />
       <section className="pressHero shell">
         <p className="acqEyebrow">OFFICIAL PRESS KIT · UPDATED AUGUST 2026</p>
@@ -33,7 +33,7 @@ export default function PressKitPage() {
       </section>
 
       <section className="pressFacts shell">
-        <div><p className="acqEyebrow">ONE-SENTENCE DESCRIPTION</p><h2>GuitarTool is a free, ad-free iPhone and iPad practice toolkit combining a real-time tuner, advanced metronome and interactive guitar and ukulele chord libraries, with Apple Watch and Home Screen companions.</h2></div>
+        <div><p className="acqEyebrow">ONE-SENTENCE DESCRIPTION</p><h2>GuitarTool is a free, ad-free iPhone and iPad practice toolkit combining a real-time tuner, advanced metronome and 19,244 interactive guitar and ukulele fingerings, with shareable chord cards, Apple Watch and Home Screen companions.</h2></div>
         <dl>
           <div><dt>Platforms</dt><dd>iPhone, iPad, Apple Watch</dd></div>
           <div><dt>Price</dt><dd>Free</dd></div>
@@ -49,8 +49,13 @@ export default function PressKitPage() {
       </section>
 
       <section className="pressStory shell">
+        <div><p className="acqEyebrow">VERSION 1.0.7 HIGHLIGHTS</p><h2>Useful chord shapes can now leave the screen without turning into an ad.</h2></div>
+        <div><p>Any visible guitar or ukulele voicing can be previewed as a localized image card, saved to Photos or sent through the system share sheet. The card follows the exact five-fret window, muted strings and higher-position starting fret shown in the app. It contains no forced App Store link, so a student, teacher or bandmate can use it immediately.</p><p>The Apple Watch companion now keeps metronome audio running when the wrist lowers or the display dims. Its timing is driven by the audio sample clock, while screen and haptic refresh work can pause independently. Version 1.0.7 also continues the app’s fully offline, account-free and ad-free approach.</p></div>
+      </section>
+
+      <section className="pressStory shell">
         <div><p className="acqEyebrow">PRODUCT STORY</p><h2>Less setup. More time with the instrument.</h2></div>
-        <div><p>GuitarTool was created around a simple observation: the tools used before and during practice should not become another source of interruption. Tuning, timekeeping and chord lookup belong in one dependable flow, without advertising, feeds or a login wall.</p><p>The app works offline and contains no third-party SDKs. Microphone audio is used only for live pitch analysis on the device; it is not saved or uploaded. The same focus extends across iPhone, iPad, three interactive Home Screen widget sizes and an Apple Watch metronome.</p></div>
+        <div><p>GuitarTool was created around a simple observation: the tools used before and during practice should not become another source of interruption. Tuning, timekeeping and chord lookup belong in one dependable flow, without advertising, feeds or a login wall.</p><p>The app works offline and contains no third-party SDKs. Microphone audio is used only for live pitch analysis on the device; it is not saved or uploaded. The same focus extends across iPhone, iPad, three interactive Home Screen widget sizes, shareable chord cards and an Apple Watch metronome with background audio.</p></div>
       </section>
 
       <section className="assetSection shell">
