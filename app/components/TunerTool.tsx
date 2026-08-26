@@ -96,17 +96,21 @@ export function TunerTool({ copy }: { copy: TunerLocale }) {
     }
     setError(false);
     try {
+      // Resume while the click is still the active user gesture. Mobile Safari
+      // can otherwise leave a context created after the permission prompt in a
+      // suspended state, which produces an apparently silent tuner.
+      const context = new AudioContext();
+      contextRef.current = context;
+      await context.resume();
       const stream = await navigator.mediaDevices.getUserMedia({
         audio: { echoCancellation: false, autoGainControl: false, noiseSuppression: false },
       });
-      const context = new AudioContext();
       const analyser = context.createAnalyser();
       analyser.fftSize = 4096;
       analyser.smoothingTimeConstant = 0;
       context.createMediaStreamSource(stream).connect(analyser);
       const samples = new Float32Array(analyser.fftSize);
       streamRef.current = stream;
-      contextRef.current = context;
       setRunning(true);
 
       const sample = (time: number) => {
@@ -153,7 +157,7 @@ export function TunerTool({ copy }: { copy: TunerLocale }) {
         <strong>{reading ? `${reading.frequency.toFixed(1)} Hz` : "— Hz"}</strong>
         <div className="centsScale" aria-label={`${reading?.cents.toFixed(1) ?? 0} cents`}>
           <span className="scaleLeft">−50</span><span className="scaleCenter">0</span><span className="scaleRight">+50</span>
-          <i style={{ transform: `translateX(calc(${cents}% - 1px)) rotate(${cents * 0.18}deg)` }} />
+          <i style={{ left: `${50 + cents}%`, transform: `translateX(-50%) rotate(${cents * 0.18}deg)` }} />
         </div>
         <b>{tuningLabel}{reading ? ` · ${reading.cents > 0 ? "+" : ""}${reading.cents.toFixed(1)} ¢` : ""}</b>
       </div>
