@@ -144,7 +144,9 @@ git push github main
 - 第二轮自然获客与 Campaign 分流提交：`b03358c Expand organic acquisition and campaign tracking`。
 - 在线调音器移动端启动与指针修正：`423f162 Harden online tuner startup`。
 - 和弦目录扩容后的 metadata 数字校正：`1245450 Align chord hub metadata with expanded catalog`。
-- OpenAI Sites Version 9 已从 `1245450` 部署成功，访问策略仍为 owner-only；2026-08-27 的内容版本完成后应以新的已推送提交保存并部署下一版。
+- 1.0.7 推广与 SEO 更新提交：`6c82b99 Refresh 1.0.7 marketing and SEO content`，已推送到 GitHub `main` 和 Sites 源仓库。
+- GitHub Actions 工作流 `32998815386` 的 build、deploy、notify-search-engines 三个 Job 全部成功；公开主站、新功能页、Press Kit 与 sitemap 均抽样返回 HTTP 200，167 个 URL 已进入 IndexNow 通知流程。
+- OpenAI Sites Version 10 已从 `6c82b99` 部署成功，访问策略仍为 owner-only。
 - `423f162` 已推送到 GitHub `main`。部署时曾遇到 GitHub 官方 Actions 重大中断与 Pages 性能下降，服务恢复后工作流 `32984543950` 的 build、deploy、notify-search-engines 三个 Job 全部成功；公开主站已更新，163 个 sitemap URL 已提交 IndexNow。
 
 ## 6. 内容与 SEO 维护规则
