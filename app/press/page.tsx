@@ -14,10 +14,10 @@ export const metadata: Metadata = {
 const assets = [
   { title: "App icon", file: "/app-icon.png", preview: "/app-icon.png", detail: "PNG · square icon", width: 1024, height: 1024 },
   { title: "Social preview", file: "/og.png", preview: "/og.png", detail: "PNG · 1200 × 630", width: 1200, height: 630 },
-  { title: "Metronome interface", file: "/en-metronome.png", preview: "/en-metronome.png", detail: "PNG · English UI", width: 833, height: 1800 },
-  { title: "Tuner interface", file: "/en-tuner.png", preview: "/en-tuner.png", detail: "PNG · English UI", width: 833, height: 1800 },
-  { title: "Chord library", file: "/en-chords.png", preview: "/en-chords.png", detail: "PNG · English UI", width: 833, height: 1800 },
-  { title: "Devices", file: "/en-devices.png", preview: "/en-devices.png", detail: "PNG · iPhone, iPad & Watch", width: 833, height: 1800 },
+  { title: "Metronome interface", file: "/en-metronome.webp", preview: "/en-metronome.webp", detail: "WebP · English UI", width: 833, height: 1800 },
+  { title: "Tuner interface", file: "/en-tuner.webp", preview: "/en-tuner.webp", detail: "WebP · English UI", width: 833, height: 1800 },
+  { title: "Chord library", file: "/en-chords.webp", preview: "/en-chords.webp", detail: "WebP · English UI", width: 833, height: 1800 },
+  { title: "Devices", file: "/en-devices.webp", preview: "/en-devices.webp", detail: "WebP · iPhone, iPad & Watch", width: 833, height: 1800 },
 ] as const;
 
 export default function PressKitPage() {

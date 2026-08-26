@@ -35,7 +35,7 @@ export default async function LocalizedHome({ params }: { params: Promise<{ loca
           <a className="primaryButton" href={APP_STORE_URL}>{page.download}<span>↗</span></a>
           <div className="localeTrust">{page.trust.map((item) => <span key={item}>{item}</span>)}</div>
         </div>
-        <div className="localeVisual"><Image src={assetPath("/en-devices.png")} alt="GuitarTool on iPhone, iPad and Apple Watch" width={833} height={1800} priority /></div>
+        <div className="localeVisual"><Image src={assetPath("/en-devices.webp")} alt="GuitarTool on iPhone, iPad and Apple Watch" width={833} height={1800} priority /></div>
       </section>
       <section className="localeFeatures shell">{page.features.map((feature, index) => <article key={feature.title}><span>{String(index + 1).padStart(2, "0")}</span><h2>{feature.title}</h2><p>{feature.body}</p></article>)}</section>
       <section className="localeClosing shell"><Image src={assetPath("/app-icon.png")} alt="GuitarTool" width={92} height={92} /><h2>{page.closing}</h2><a className="primaryButton coral" href={APP_STORE_URL}>{page.download}<span>↗</span></a></section>

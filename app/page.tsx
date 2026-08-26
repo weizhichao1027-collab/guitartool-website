@@ -16,7 +16,7 @@ const features = [
     title: "不是只会响的节拍器，\n而是能陪你进步的训练器。",
     copy: "从 20 到 500 BPM，自定义拍号、拍值、强弱拍与细分。把计时、Swing 和渐进加速组合成属于你的练习方式。",
     points: ["TAP 测速与练习预设", "四种细分与八分 Swing", "自定义强弱拍与渐进加速"],
-    image: "/hero-metronome.png",
+    image: "/hero-metronome.webp",
     alt: "GuitarTool 节拍器功能展示",
     tone: "aqua",
   },
@@ -26,7 +26,7 @@ const features = [
     title: "看清每一分音准，\n也听见自己的进步。",
     copy: "七类乐器与多种特殊调弦，配合音分、信号强度和稳定度反馈。音频只在设备上实时计算，不保存，也不上传。",
     points: ["标准、Drop D、DADGAD 与开放调弦", "A4 基准音 430–446 Hz", "参考音与稳定度反馈"],
-    image: "/tuner.png",
+    image: "/tuner.webp",
     alt: "GuitarTool 精准调音器功能展示",
     tone: "sky",
   },
@@ -36,7 +36,7 @@ const features = [
     title: "一个和弦，不止一种答案。",
     copy: "吉他与尤克里里各 855 个和弦名称，共收录 19,244 个指法。快速切换不同把位，还能编辑、识别与试听。",
     points: ["支持升降号与常用和弦符号", "固定五品视窗，纵览完整 20 品", "交互编辑与真实和弦试听"],
-    image: "/chords.png",
+    image: "/chords.webp",
     alt: "GuitarTool 吉他与尤克里里和弦库展示",
     tone: "blush",
   },
@@ -96,7 +96,7 @@ export default function Home() {
             <div className="visualTopline"><span>20–500 BPM</span><span>13 种语言</span></div>
             <Image
               className="heroShot"
-              src={assetPath("/hero-metronome.png")}
+              src={assetPath("/hero-metronome.webp")}
               alt="GuitarTool 节拍器，支持预设、计时、Swing 与渐进加速"
               width={833}
               height={1800}
@@ -179,7 +179,7 @@ export default function Home() {
                 <b>MORE SOON</b>
               </div>
             </div>
-            <Image src={assetPath("/themes.png")} alt="GuitarTool 晴空、星夜、松林和石墨四种主题" width={833} height={1800} sizes="(max-width: 700px) 86vw, 460px" />
+            <Image src={assetPath("/themes.webp")} alt="GuitarTool 晴空、星夜、松林和石墨四种主题" width={833} height={1800} sizes="(max-width: 700px) 86vw, 460px" />
           </article>
           <article className="extraCard widgetCard">
             <div className="extraText">
@@ -187,7 +187,7 @@ export default function Home() {
               <h3>不用打开 App，<br />节拍就在主屏幕。</h3>
               <p>小、中、大三种尺寸。调速、拍号、播放暂停与 TAP 定速，抬手即可练。</p>
             </div>
-            <Image src={assetPath("/widgets.png")} alt="GuitarTool 三种尺寸的主屏幕节拍器小组件" width={833} height={1800} sizes="(max-width: 700px) 86vw, 460px" />
+            <Image src={assetPath("/widgets.webp")} alt="GuitarTool 三种尺寸的主屏幕节拍器小组件" width={833} height={1800} sizes="(max-width: 700px) 86vw, 460px" />
           </article>
         </div>
         <div className="updatePromise">
@@ -206,7 +206,7 @@ export default function Home() {
             <div className="devicePills"><span>iPhone</span><span>iPad</span><span>Apple Watch</span></div>
           </div>
           <div className="devicesMedia">
-            <Image src={assetPath("/devices.png")} alt="GuitarTool 在 iPhone、iPad 与 Apple Watch 上运行" width={833} height={1800} sizes="(max-width: 850px) 90vw, 520px" />
+            <Image src={assetPath("/devices.webp")} alt="GuitarTool 在 iPhone、iPad 与 Apple Watch 上运行" width={833} height={1800} sizes="(max-width: 850px) 90vw, 520px" />
           </div>
         </div>
       </section>
