@@ -16,6 +16,7 @@ export const metadata: Metadata = {
   appleWebApp: { capable: true, title: "GuitarTool", statusBarStyle: "default" },
   appLinks: { ios: { url: APP_STORE_URL, app_store_id: "6761914163", app_name: "GuitarTool" } },
   other: { "apple-itunes-app": "app-id=6761914163" },
+  verification: { google: "8ZJPCPf4ZDXOyR88ShC7PA1WEXwOOsnh5gwaEaTg8Bg" },
   icons: { icon: `${basePath}/app-icon.png`, apple: `${basePath}/app-icon.png` },
   openGraph: {
     title: "GuitarTool｜练琴时，只留下专注。",
