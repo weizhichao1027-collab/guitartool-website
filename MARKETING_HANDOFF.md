@@ -1,0 +1,140 @@
+# GuitarTool 市场推广与网站交接
+
+最后更新：2026-08-26
+
+本文件是 `marketing-site` 独立仓库的运营与技术交接入口。App 工程发布、Watch、Widget 和主题架构的完整记录见上级目录 `APP交接文档.md`；本文件只维护营销页面、免费推广和搜索收录事实。
+
+## 1. 平台与职责
+
+| 平台 | 职责 | 地址或标识 | 访问状态 |
+| --- | --- | --- | --- |
+| GitHub Pages | 面向普通访客与搜索引擎的公开主站、canonical 来源 | https://weizhichao1027-collab.github.io/guitartool-website/ | 公开 |
+| GitHub | 源码、版本历史、Pages 自动部署 | https://github.com/weizhichao1027-collab/guitartool-website | 仓库权限控制 |
+| OpenAI Sites | 第二套生产部署、托管备份/预览 | https://guitartool-studio.weizhichao1027.chatgpt.site | 当前仅站点所有者可访问 |
+| App Store Connect | App 产品页、三个自定产品页、精选提名 | App ID `6761914163` | Apple 账号权限控制 |
+| Google Search Console | Google 所有权、sitemap、索引请求 | GitHub Pages URL-prefix 资源 | Google 账号权限控制 |
+| IndexNow | 主动通知支持该协议的搜索引擎 | GitHub Actions 自动调用 | 自动 |
+
+没有使用 Vercel、Netlify 或 Cloudflare Pages。对外分享、SEO canonical 和 App Store 营销网址均应使用 GitHub Pages，不使用 owner-only 的 Sites 地址。
+
+OpenAI Sites 项目 ID：`appgprj_6a8a503888348191be812170e152a86c`。项目配置位于 `.openai/hosting.json`。
+
+## 2. 当前内容库存
+
+- 中文产品首页与英文产品首页。
+- 11 个其他语言入口；与中英文合计 13 种语言。
+- 在线节拍器：中文与英文各一页。
+- 高意图练习指南：24 页，即 12 个主题的中英文版本。
+- 热门和弦目录与详情：吉他 25 页、尤克里里 25 页，共 50 个详情页，另有两个目录页。
+- Press Kit / 媒体资料中心。
+- `robots.txt`、`sitemap.xml`、Web App manifest、Open Graph 图片、IndexNow 验证文件。
+- 线上 sitemap 当前包含 92 个 URL。
+
+2026-08-26 新增的 6 个双语主题：
+
+1. Drop D tuning
+2. DADGAD tuning
+3. Open G tuning
+4. Half-step down / 吉他降半音
+5. Chromatic tuner / 十二平均律调音器
+6. Ukulele High-G 与 Low-G GCEA
+
+主要文件：
+
+- `app/lib/landing-pages.ts`：原有高意图页面数据与聚合入口。
+- `app/lib/tuning-pages.ts`：本轮新增的 12 个双语调弦页面。
+- `app/components/LandingPageView.tsx`：指南页面、FAQ 和结构化数据。
+- `app/sitemap.ts`、`app/robots.ts`：搜索引擎入口。
+- `app/layout.tsx`：全局 metadata、App Links、Open Graph 与 Google 所有权验证。
+- `scripts/submit-indexnow.mjs`：读取线上 sitemap 并提交全部 URL。
+- `.github/workflows/pages.yml`：Pages 构建、部署和 IndexNow 通知。
+
+## 3. App Store 免费推广状态
+
+### 主 ASO
+
+- 13 种商店语言的名称、副标题、关键词、描述、推广文本、更新说明和 URL 已完成。
+- 关键词已覆盖调音器、节拍器、节奏、练习、吉他、尤克里里与和弦。
+- 主截图顺序保持：节拍器、调音器、和弦库、主题、Widget、多设备。
+- 1.0.7 当前正在等待审核。
+
+### 精选提名
+
+- 已提交，Nomination ID：`bbacdffa-7dd1-4efd-9ecc-b7d7a2f73ecd`。
+- 标题：`GuitarTool 1.0.7｜离线练习工具全面升级`。
+- 类型：App 增强；建议日期：2026-09-01 GMT+8。
+- 覆盖 iPhone、iPad、watchOS、全部地区和 13 种语言。
+- 补充资料：https://weizhichao1027-collab.github.io/guitartool-website/press/
+
+### 自定产品页
+
+| 页面 | ID | 深度链接 | 简体中文关键词 | 状态 |
+| --- | --- | --- | --- | --- |
+| Tuner Search Page | `cf763d83-4b2f-4897-86b1-42d9175c24dc` | `guitartool://tuner` | 调音器、音高 | 等待审核 |
+| Metronome Search Page | `ad230a27-b902-4645-b00d-3f2a5c3e3558` | `guitartool://metronome` | 节拍器、练习、节奏 | 等待审核 |
+| Chord Library Search Page | `67d874cf-ac10-412d-929b-b883f2039444` | `guitartool://chords` | 吉他、和弦、尤克里里 | 等待审核 |
+
+三个页面均有 13 种语言推广文本，并分别把对应功能截图放到第一位。它们已合并到同一提交并正式提交，主产品页截图没有变化。
+
+非主要语言的自定产品页关键词在操作时被 App Store Connect 禁用。1.0.7 批准后需要再次检查是否解锁，并按相应语言主 ASO 词组补选；这是 Apple 的版本依赖限制，不是推广文本缺失。
+
+## 4. 搜索引擎状态
+
+- Google Search Console 的 URL-prefix 资源已完成 HTML meta 所有权验证。
+- 验证 meta 在 `app/layout.tsx`，保持验证状态必须保留。
+- `sitemap.xml` 已提交；界面已经给出“已成功提交站点地图”确认。
+- 新资源首次处理时仍显示“无法抓取/正在处理”，但公开 sitemap 实测为 HTTP 200、`application/xml`、92 个 URL 且 XML 校验通过。等待 Google 重试后再判断，不要先删除资源。
+- 首页已通过“网址检查”提交“请求编入索引”。Google 是否收录和排名由其系统决定。
+- GitHub Pages 每次成功部署后都会运行 `notify-search-engines`；最新 92 个 URL 已成功提交 IndexNow。
+
+建议在部署后 24–72 小时检查：
+
+1. sitemap 状态是否成功；
+2. 已发现网页数量是否开始增加；
+3. 首页、在线节拍器、调音器指南和和弦目录是否进入索引；
+4. 是否出现 canonical、移动可用性或结构化数据错误。
+
+## 5. 构建与发布
+
+```bash
+npm install
+npm run lint
+npm run build:pages
+npm run build
+git push github main
+```
+
+- `build:pages` 生成 GitHub Pages 的静态 `out/`。
+- `build` 验证 Vinext/OpenAI Sites 生产构建。
+- 推送 `main` 后，GitHub Actions 自动执行 build、deploy、notify-search-engines。
+- OpenAI Sites 是独立部署目标；修改可部署站点时仍需保存并部署新的 Sites version。
+- Google 验证功能提交：`7022c8a Add Google Search Console verification`。
+- SEO 内容功能提交：`88db729 Expand tuning guides for organic search`。
+
+## 6. 内容与 SEO 维护规则
+
+1. 新增搜索主题时必须提供真正独立、有用的正文，不批量制造只替换关键词的薄页面。
+2. 新的指南至少提供中文与英文版本，并保持相同 slug。
+3. 同时维护 title、description、canonical、hreflang、FAQ、BreadcrumbList、相关页面链接和 sitemap。
+4. 产品数字必须来自当前 App 事实：吉他 855 个和弦名称/12,415 个指法，尤克里里 855 个名称/6,829 个指法，合计 19,244；节拍器 20–500 BPM；A4 430–446 Hz。
+5. 不声明尚未上线的主题购买、订阅、云同步或社区功能。
+6. 不移除 Google verification meta、IndexNow key 文件或 sitemap/robots 路由。
+7. 不改变公开 canonical 域名，除非同时迁移 App Store 营销 URL、Search Console、sitemap、robots、hreflang 和全部绝对链接。
+
+## 7. 明确不做与当前边界
+
+- 暂不做付费广告或付费媒体投放。
+- 暂不做完成操作后的自动评分邀请；该交互被认为会干扰练习体验。
+- 当前没有社交媒体、论坛、社区或邮件的持续人工运营流程。
+- App Store 精选提名已提交，但 Apple 是否推荐不可控。
+- Google sitemap 和索引请求已提交，但不保证即时收录和排名。
+- `guitartool-social-preview.png` 是仓库中已有的未跟踪用户文件；在确认用途前不得删除、覆盖或随意提交。
+
+## 8. 下一位维护者检查清单
+
+1. 先读本文件和上级 `APP交接文档.md` 第 23 节。
+2. 使用 `git status --short`，保留未跟踪的 `guitartool-social-preview.png`。
+3. 检查 App Store 1.0.7、三个自定产品页和精选提名状态。
+4. 1.0.7 批准后复查非主要语言的自定产品页关键词。
+5. 检查 Search Console sitemap 与索引报告；Google 仍在初次处理时先等待，不反复重建资源。
+6. 修改站点后运行三项门禁并验证线上 URL，再更新本文件的日期、内容库存、sitemap URL 数和最新提交。

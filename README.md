@@ -33,3 +33,4 @@ The site is built with Next.js-compatible Vinext and deployed with OpenAI Sites.
 
 - [Download GuitarTool on the App Store](https://apps.apple.com/app/id6761914163)
 - [Privacy policy](https://weizhichao1027-collab.github.io/GuitarTool-Privacy/)
+- [Marketing and deployment handoff](./MARKETING_HANDOFF.md)
