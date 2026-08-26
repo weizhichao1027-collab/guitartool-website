@@ -1,4 +1,7 @@
 import Image from "next/image";
+import Link from "next/link";
+import { JsonLd } from "@/app/components/JsonLd";
+import { absoluteUrl, supportedLanguageCodes } from "@/app/lib/site";
 
 const appStoreUrl = "https://apps.apple.com/app/id6761914163";
 const privacyUrl = "https://weizhichao1027-collab.github.io/GuitarTool-Privacy/";
@@ -48,7 +51,11 @@ const faqs = [
 
 export default function Home() {
   return (
-    <main>
+    <main lang="zh-CN">
+      <JsonLd data={[
+        { "@context": "https://schema.org", "@type": "SoftwareApplication", name: "GuitarTool", description: "面向吉他与尤克里里演奏者的离线调音器、节拍器与交互式和弦库。", url: absoluteUrl("/"), downloadUrl: appStoreUrl, applicationCategory: "MusicApplication", operatingSystem: "iOS, iPadOS, watchOS", inLanguage: supportedLanguageCodes, offers: { "@type": "Offer", price: "0", priceCurrency: "CNY" }, featureList: ["实时弦乐调音器", "20–500 BPM 节拍器", "19,244 个吉他与尤克里里指法", "Apple Watch 节拍器", "主屏幕交互式小组件"] },
+        { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqs.map(([question, answer]) => ({ "@type": "Question", name: question, acceptedAnswer: { "@type": "Answer", text: answer } })) },
+      ]} />
       <nav className="nav shell" aria-label="主导航">
         <a className="brand" href="#top" aria-label="GuitarTool 首页">
           <Image src={assetPath("/app-icon.png")} alt="" width={42} height={42} priority />
@@ -56,8 +63,9 @@ export default function Home() {
         </a>
         <div className="navLinks">
           <a href="#features">功能</a>
-          <a href="#devices">设备</a>
-          <a href="#privacy">隐私</a>
+          <Link href="/online-metronome/">在线节拍器</Link>
+          <Link href="/chords/guitar/">热门和弦</Link>
+          <Link href="/press/">媒体资料</Link>
           <a className="languageSwitch" href={`${basePath}/en/`} aria-label="Switch to English">EN</a>
           <a className="navCta" href={appStoreUrl}>App Store 下载</a>
         </div>
@@ -232,8 +240,18 @@ export default function Home() {
         </div>
         <div className="languageCloud shell" aria-label="支持的十三种语言">
           {[
-            "简体中文", "English", "繁體中文", "日本語", "한국어", "Deutsch", "Français", "Italiano", "Español", "Português", "Русский", "Türkçe", "العربية"
-          ].map((language, index) => <span className={index % 4 === 0 ? "accent" : ""} key={language}>{language}</span>)}
+            ["简体中文", "/"], ["English", "/en/"], ["繁體中文", "/zh-hant/"], ["日本語", "/ja/"], ["한국어", "/ko/"], ["Deutsch", "/de/"], ["Français", "/fr/"], ["Italiano", "/it/"], ["Español", "/es/"], ["Português", "/pt-br/"], ["Русский", "/ru/"], ["Türkçe", "/tr/"], ["العربية", "/ar/"]
+          ].map(([language, href], index) => <Link href={href} className={index % 4 === 0 ? "accent" : ""} key={language}>{language}</Link>)}
+        </div>
+      </section>
+
+      <section className="discoverySection shell sectionPad">
+        <div><p className="eyebrow"><span /> 免费练习资源</p><h2>先解决眼前这一拍、这一弦、这一个和弦。</h2></div>
+        <div className="discoveryGrid">
+          <Link href="/online-metronome/"><span>01</span><h3>在线节拍器</h3><p>20–500 BPM、TAP 测速与 1–12 拍，浏览器里直接开始。</p><b>打开工具 →</b></Link>
+          <Link href="/guides/guitar-tuner/"><span>02</span><h3>离线吉他调音</h3><p>了解标准、Drop D、DADGAD 与开放调弦的完整使用方式。</p><b>阅读指南 →</b></Link>
+          <Link href="/chords/guitar/"><span>03</span><h3>热门吉他和弦</h3><p>从 25 个高频和弦开始，查看多个把位与清楚指法图。</p><b>浏览和弦 →</b></Link>
+          <Link href="/chords/ukulele/"><span>04</span><h3>热门尤克里里和弦</h3><p>按标准 High-G GCEA 查看 25 个常用和弦和多种按法。</p><b>浏览和弦 →</b></Link>
         </div>
       </section>
 

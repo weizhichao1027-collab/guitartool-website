@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
+import { JsonLd } from "@/app/components/JsonLd";
+import { absoluteUrl, localeAlternates, supportedLanguageCodes } from "@/app/lib/site";
 
 const appStoreUrl = "https://apps.apple.com/app/id6761914163";
 const privacyUrl = "https://weizhichao1027-collab.github.io/GuitarTool-Privacy/";
@@ -10,12 +13,13 @@ const assetPath = (path: string) => `${basePath}${path}`;
 export const metadata: Metadata = {
   title: "GuitarTool | Tuner, Metronome & Chords",
   description: "A focused, offline practice toolkit for guitar and ukulele: precise tuning, flexible rhythm training, and a deep chord library.",
+  alternates: { canonical: absoluteUrl("/en/"), languages: localeAlternates },
   openGraph: {
     title: "GuitarTool | Leave room for practice.",
     description: "Tuner, metronome and chords in one private, offline practice toolkit.",
     type: "website",
     images: [{
-      url: "https://raw.githubusercontent.com/weizhichao1027-collab/guitartool-website/main/public/og.png",
+      url: absoluteUrl("/og.png"),
       width: 1200,
       height: 630,
       alt: "GuitarTool — Leave room for practice.",
@@ -25,7 +29,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "GuitarTool | Leave room for practice.",
     description: "Tuner, metronome and chords in one private, offline practice toolkit.",
-    images: ["https://raw.githubusercontent.com/weizhichao1027-collab/guitartool-website/main/public/og.png"],
+    images: [absoluteUrl("/og.png")],
   },
 };
 
@@ -72,6 +76,10 @@ const faqs = [
 export default function EnglishHome() {
   return (
     <main lang="en">
+      <JsonLd data={[
+        { "@context": "https://schema.org", "@type": "SoftwareApplication", name: "GuitarTool", description: "An offline tuner, metronome and interactive chord library for guitar and ukulele.", url: absoluteUrl("/en/"), downloadUrl: appStoreUrl, applicationCategory: "MusicApplication", operatingSystem: "iOS, iPadOS, watchOS", inLanguage: supportedLanguageCodes, offers: { "@type": "Offer", price: "0", priceCurrency: "USD" }, featureList: ["Real-time string instrument tuner", "20–500 BPM metronome", "19,244 guitar and ukulele fingerings", "Apple Watch metronome", "Interactive Home Screen widgets"] },
+        { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqs.map(([question, answer]) => ({ "@type": "Question", name: question, acceptedAnswer: { "@type": "Answer", text: answer } })) },
+      ]} />
       <nav className="nav shell" aria-label="Main navigation">
         <a className="brand" href="#top" aria-label="GuitarTool home">
           <Image src={assetPath("/app-icon.png")} alt="" width={42} height={42} priority />
@@ -79,8 +87,9 @@ export default function EnglishHome() {
         </a>
         <div className="navLinks">
           <a href="#features">Features</a>
-          <a href="#devices">Devices</a>
-          <a href="#privacy">Privacy</a>
+          <Link href="/en/online-metronome/">Online metronome</Link>
+          <Link href="/chords/guitar/">Popular chords</Link>
+          <Link href="/press/">Press kit</Link>
           <a className="languageSwitch" href={`${basePath}/`} aria-label="切换到中文">中文</a>
           <a className="navCta" href={appStoreUrl}>Download</a>
         </div>
@@ -173,7 +182,17 @@ export default function EnglishHome() {
 
       <section className="languages sectionPad">
         <div className="shell languagesIntro"><div className="sectionIndex">05 / LANGUAGES</div><div><h2>Use familiar words.<br />Focus on the music.</h2><p>Follow your system language or choose anytime in the app.</p></div></div>
-        <div className="languageCloud shell" aria-label="Thirteen supported languages">{["简体中文","English","繁體中文","日本語","한국어","Deutsch","Français","Italiano","Español","Português","Русский","Türkçe","العربية"].map((language, index) => <span className={index % 4 === 0 ? "accent" : ""} key={language}>{language}</span>)}</div>
+        <div className="languageCloud shell" aria-label="Thirteen supported languages">{[["简体中文","/"],["English","/en/"],["繁體中文","/zh-hant/"],["日本語","/ja/"],["한국어","/ko/"],["Deutsch","/de/"],["Français","/fr/"],["Italiano","/it/"],["Español","/es/"],["Português","/pt-br/"],["Русский","/ru/"],["Türkçe","/tr/"],["العربية","/ar/"]].map(([language, href], index) => <Link href={href} className={index % 4 === 0 ? "accent" : ""} key={language}>{language}</Link>)}</div>
+      </section>
+
+      <section className="discoverySection shell sectionPad">
+        <div><p className="eyebrow"><span /> Free practice resources</p><h2>Solve the next beat, string or chord first.</h2></div>
+        <div className="discoveryGrid">
+          <Link href="/en/online-metronome/"><span>01</span><h3>Online metronome</h3><p>Start with 20–500 BPM, tap tempo and one to twelve beats per bar.</p><b>Open the tool →</b></Link>
+          <Link href="/en/guides/guitar-tuner/"><span>02</span><h3>Offline guitar tuner</h3><p>Explore standard, Drop D, DADGAD and open tunings with private on-device audio.</p><b>Read the guide →</b></Link>
+          <Link href="/chords/guitar/"><span>03</span><h3>Popular guitar chords</h3><p>Begin with 25 essential chords, each with several clear positions.</p><b>Browse chords →</b></Link>
+          <Link href="/chords/ukulele/"><span>04</span><h3>Popular ukulele chords</h3><p>Learn 25 common shapes in standard high-G GCEA tuning.</p><b>Browse chords →</b></Link>
+        </div>
       </section>
 
       <section className="faq shell sectionPad">

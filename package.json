@@ -9,6 +9,8 @@
     "dev": "vinext dev",
     "build": "vinext build",
     "build:pages": "GITHUB_PAGES=true next build",
+    "generate:chords": "node scripts/generate-chord-pages.mjs",
+    "notify:indexnow": "node scripts/submit-indexnow.mjs",
     "start": "vinext start",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next"
   },

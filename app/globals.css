@@ -243,8 +243,19 @@ h1 em { font-family: Georgia, "Times New Roman", serif; font-weight: 500; color:
 .languagesIntro > div:last-child { display: flex; align-items: end; justify-content: space-between; gap: 30px; }
 .languagesIntro p { margin: 0 0 8px; color: #7b888a; font-size: 14px; }
 .languageCloud { display: flex; flex-wrap: wrap; gap: 11px; margin-top: 70px; }
-.languageCloud span { padding: 16px 22px; border: 1px solid #e3e7e5; border-radius: 999px; background: #fafbf9; color: #44585b; font-size: clamp(14px, 1.5vw, 19px); }
-.languageCloud span.accent { color: #087d7f; border-color: #bfe8e3; background: #eaf8f6; }
+.languageCloud :is(span, a) { padding: 16px 22px; border: 1px solid #e3e7e5; border-radius: 999px; background: #fafbf9; color: #44585b; font-size: clamp(14px, 1.5vw, 19px); }
+.languageCloud :is(span, a).accent { color: #087d7f; border-color: #bfe8e3; background: #eaf8f6; }
+.languageCloud a:hover { color: #fff; border-color: var(--teal-deep); background: var(--teal-deep); }
+
+.discoverySection { display: grid; grid-template-columns: .78fr 1.22fr; gap: 80px; }
+.discoverySection h2 { margin: 0; font-size: clamp(44px, 5.5vw, 72px); line-height: 1.08; letter-spacing: -.06em; }
+.discoveryGrid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+.discoveryGrid a { min-height: 260px; display: flex; flex-direction: column; padding: 27px; border: 1px solid var(--line); border-radius: 23px; background: rgba(255,255,255,.5); transition: transform .2s ease, border-color .2s ease; }
+.discoveryGrid a:hover { transform: translateY(-3px); border-color: rgba(8,125,127,.3); }
+.discoveryGrid span { color: var(--teal-deep); font-family: Georgia, serif; font-size: 13px; }
+.discoveryGrid h3 { margin: 34px 0 12px; font-size: 27px; letter-spacing: -.04em; }
+.discoveryGrid p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.75; }
+.discoveryGrid b { margin-top: auto; padding-top: 22px; color: var(--teal-deep); font-size: 11px; }
 
 .faq { display: grid; grid-template-columns: .8fr 1.2fr; gap: 100px; }
 .faqIntro .eyebrow { margin-bottom: 24px; }
@@ -293,7 +304,7 @@ h1 em { font-family: Georgia, "Times New Roman", serif; font-weight: 500; color:
 @media (max-width: 760px) {
   .sectionPad { padding-block: 100px; }
   .navLinks > a:not(.navCta):not(.languageSwitch) { display: none; }
-  .manifesto, .languagesIntro, .faq { grid-template-columns: 1fr; gap: 30px; }
+  .manifesto, .languagesIntro, .faq, .discoverySection { grid-template-columns: 1fr; gap: 30px; }
   .sectionIndex { padding-top: 0; }
   .manifestoGrid { grid-template-columns: 1fr; gap: 40px; margin-top: 50px; }
   .sectionHeading, .sectionHeading.compact { display: block; }
@@ -354,7 +365,8 @@ h1 em { font-family: Georgia, "Times New Roman", serif; font-weight: 500; color:
   .devicesMedia { height: 500px; }
   .devicesMedia img { width: 335px; }
   .languageCloud { gap: 8px; margin-top: 45px; }
-  .languageCloud span { padding: 12px 16px; }
+  .languageCloud :is(span, a) { padding: 12px 16px; }
+  .discoveryGrid { grid-template-columns: 1fr; }
   .faqList summary { grid-template-columns: 34px 1fr 24px; font-size: 16px; }
   .faqList details p { margin-left: 48px; }
   .finalCta { width: calc(100% - 20px); min-height: 570px; }
