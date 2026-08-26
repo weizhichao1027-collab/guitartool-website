@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { JsonLd } from "@/app/components/JsonLd";
-import { absoluteUrl, localeAlternates, supportedLanguageCodes } from "@/app/lib/site";
+import { APP_STORE_LINKS, absoluteUrl, localeAlternates, supportedLanguageCodes } from "@/app/lib/site";
 
-const appStoreUrl = "https://apps.apple.com/app/id6761914163";
+const appStoreUrl = APP_STORE_LINKS.home;
 const privacyUrl = "https://weizhichao1027-collab.github.io/GuitarTool-Privacy/";
 const githubUrl = "https://github.com/weizhichao1027-collab/guitartool-website";
 const basePath = process.env.GITHUB_PAGES === "true" ? "/guitartool-website" : "";
@@ -87,6 +87,7 @@ export default function EnglishHome() {
         </a>
         <div className="navLinks">
           <a href="#features">Features</a>
+          <Link href="/en/online-tuner/">Online tuner</Link>
           <Link href="/en/online-metronome/">Online metronome</Link>
           <Link href="/chords/guitar/">Popular chords</Link>
           <Link href="/press/">Press kit</Link>
@@ -188,10 +189,11 @@ export default function EnglishHome() {
       <section className="discoverySection shell sectionPad">
         <div><p className="eyebrow"><span /> Free practice resources</p><h2>Solve the next beat, string or chord first.</h2></div>
         <div className="discoveryGrid">
-          <Link href="/en/online-metronome/"><span>01</span><h3>Online metronome</h3><p>Start with 20–500 BPM, tap tempo and one to twelve beats per bar.</p><b>Open the tool →</b></Link>
-          <Link href="/en/guides/guitar-tuner/"><span>02</span><h3>Offline guitar tuner</h3><p>Explore standard, Drop D, DADGAD and open tunings with private on-device audio.</p><b>Read the guide →</b></Link>
-          <Link href="/chords/guitar/"><span>03</span><h3>Popular guitar chords</h3><p>Begin with 25 essential chords, each with several clear positions.</p><b>Browse chords →</b></Link>
-          <Link href="/chords/ukulele/"><span>04</span><h3>Popular ukulele chords</h3><p>Learn 25 common shapes in standard high-G GCEA tuning.</p><b>Browse chords →</b></Link>
+          <Link href="/en/online-tuner/"><span>01</span><h3>Online tuner</h3><p>Use your microphone for private, real-time note, frequency and cents feedback.</p><b>Open the tool →</b></Link>
+          <Link href="/en/online-metronome/"><span>02</span><h3>Online metronome</h3><p>Start with 20–500 BPM, tap tempo and one to twelve beats per bar.</p><b>Open the tool →</b></Link>
+          <Link href="/en/guides/guitar-tuner/"><span>03</span><h3>Offline guitar tuner</h3><p>Explore standard, Drop D, DADGAD and open tunings with private on-device audio.</p><b>Read the guide →</b></Link>
+          <Link href="/chords/guitar/"><span>04</span><h3>Popular guitar chords</h3><p>Begin with 50 essential chords, each with several clear positions.</p><b>Browse chords →</b></Link>
+          <Link href="/chords/ukulele/"><span>05</span><h3>Popular ukulele chords</h3><p>Learn 50 common shapes in standard high-G GCEA tuning.</p><b>Browse chords →</b></Link>
         </div>
       </section>
 

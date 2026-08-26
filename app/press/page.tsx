@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { AcquisitionFooter, AcquisitionHeader } from "@/app/components/AcquisitionChrome";
 import { JsonLd } from "@/app/components/JsonLd";
-import { APP_STORE_URL, GITHUB_URL, PRIVACY_URL, absoluteUrl, assetPath } from "@/app/lib/site";
+import { APP_STORE_LINKS, APP_STORE_URL, GITHUB_URL, PRIVACY_URL, absoluteUrl, assetPath } from "@/app/lib/site";
 
 export const metadata: Metadata = {
   title: "GuitarTool Press Kit | Product Facts, Images & Contact",
@@ -29,7 +29,7 @@ export default function PressKitPage() {
         <p className="acqEyebrow">OFFICIAL PRESS KIT · UPDATED AUGUST 2026</p>
         <h1>GuitarTool keeps practice tools <em>focused, private and offline.</em></h1>
         <p>Verified product facts, downloadable visual assets and direct links for journalists, educators, reviewers and creators.</p>
-        <div><a className="primaryButton" href={APP_STORE_URL}>View on the App Store <span>↗</span></a><a className="textCta" href="mailto:weizhichao1027@gmail.com">Contact the developer <span>→</span></a></div>
+        <div><a className="primaryButton" href={APP_STORE_LINKS.press}>View on the App Store <span>↗</span></a><a className="textCta" href="mailto:weizhichao1027@gmail.com">Contact the developer <span>→</span></a></div>
       </section>
 
       <section className="pressFacts shell">
@@ -60,7 +60,7 @@ export default function PressKitPage() {
 
       <section className="pressLinks shell">
         <h2>Official links</h2>
-        <div><a href={APP_STORE_URL}><span>App Store</span><b>Download page ↗</b></a><a href={PRIVACY_URL}><span>Privacy</span><b>Privacy policy ↗</b></a><a href={GITHUB_URL}><span>Website source</span><b>GitHub ↗</b></a><a href="mailto:weizhichao1027@gmail.com"><span>Press contact</span><b>weizhichao1027@gmail.com ↗</b></a></div>
+        <div><a href={APP_STORE_LINKS.press}><span>App Store</span><b>Download page ↗</b></a><a href={PRIVACY_URL}><span>Privacy</span><b>Privacy policy ↗</b></a><a href={GITHUB_URL}><span>Website source</span><b>GitHub ↗</b></a><a href="mailto:weizhichao1027@gmail.com"><span>Press contact</span><b>weizhichao1027@gmail.com ↗</b></a></div>
       </section>
       <AcquisitionFooter language="en" />
     </main>

@@ -1,6 +1,6 @@
 # GuitarTool Marketing Site
 
-GuitarTool 官方营销与自然搜索获客网站。除中英文产品首页外，还包括在线节拍器、24 个高意图指南、50 个热门和弦页面、13 种语言入口和媒体资料中心。
+GuitarTool 官方营销与自然搜索获客网站。除中英文产品首页外，还包括 13 种语言在线调音器、在线节拍器、32 个高意图指南、100 个热门和弦页面、13 种语言入口和媒体资料中心。
 
 线上地址：https://weizhichao1027-collab.github.io/guitartool-website/
 
@@ -20,7 +20,7 @@ npm run build
 ## Content utilities
 
 ```bash
-# 从主 App 的离线和弦数据重新生成 50 个热门和弦页面数据
+# 从主 App 的离线和弦数据重新生成 100 个热门和弦页面数据
 npm run generate:chords
 
 # GitHub Pages 发布完成后向 IndexNow 通知 sitemap 中的全部 URL

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import "./acquisition.css";
-import { APP_STORE_URL, SITE_URL, absoluteUrl, localeAlternates } from "@/app/lib/site";
+import { APP_STORE_LINKS, APP_STORE_URL, SITE_URL, absoluteUrl, localeAlternates } from "@/app/lib/site";
 
 const basePath = process.env.GITHUB_PAGES === "true" ? "/guitartool-website" : "";
 
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   alternates: { canonical: absoluteUrl("/"), languages: localeAlternates },
   appleWebApp: { capable: true, title: "GuitarTool", statusBarStyle: "default" },
   appLinks: { ios: { url: APP_STORE_URL, app_store_id: "6761914163", app_name: "GuitarTool" } },
-  other: { "apple-itunes-app": "app-id=6761914163" },
+  other: { "apple-itunes-app": `app-id=6761914163, app-argument=${APP_STORE_LINKS.smartBanner}` },
   verification: { google: "8ZJPCPf4ZDXOyR88ShC7PA1WEXwOOsnh5gwaEaTg8Bg" },
   icons: { icon: `${basePath}/app-icon.png`, apple: `${basePath}/app-icon.png` },
   openGraph: {

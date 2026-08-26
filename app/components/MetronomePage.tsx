@@ -1,7 +1,7 @@
 import { AcquisitionFooter, AcquisitionHeader } from "@/app/components/AcquisitionChrome";
 import { JsonLd } from "@/app/components/JsonLd";
 import { MetronomeTool } from "@/app/components/MetronomeTool";
-import { APP_STORE_URL, absoluteUrl } from "@/app/lib/site";
+import { APP_STORE_LINKS, absoluteUrl } from "@/app/lib/site";
 
 export function MetronomePage({ language }: { language: "zh" | "en" }) {
   const isZh = language === "zh";
@@ -43,7 +43,7 @@ export function MetronomePage({ language }: { language: "zh" | "en" }) {
         <div><p className="acqEyebrow">{isZh ? "更完整的练习" : "GO FURTHER IN THE APP"}</p><h2>{isZh ? "节拍，不只是滴答声。" : "A metronome can be more than a click."}</h2></div>
         <div>
           <p>{isZh ? "GuitarTool APP 增加四种细分、八分 Swing、逐拍重音、十套声音、自定义预设、倒计时与渐进加速，并可在主屏幕小组件和 Apple Watch 上直接控制。" : "The GuitarTool app adds four subdivisions, eighth-note swing, per-beat accents, ten sounds, custom presets, timers and progressive tempo training—with direct control from Home Screen widgets and Apple Watch."}</p>
-          <a className="primaryButton coral" href={APP_STORE_URL}>{isZh ? "免费下载完整 APP" : "Download the full app free"}<span>↗</span></a>
+          <a className="primaryButton coral" href={APP_STORE_LINKS.metronome}>{isZh ? "免费下载完整 APP" : "Download the full app free"}<span>↗</span></a>
         </div>
       </section>
       <section className="acqFaq shell">

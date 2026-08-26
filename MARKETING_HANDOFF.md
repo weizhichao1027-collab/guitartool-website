@@ -23,12 +23,13 @@ OpenAI Sites 项目 ID：`appgprj_6a8a503888348191be812170e152a86c`。项目配�
 
 - 中文产品首页与英文产品首页。
 - 11 个其他语言入口；与中英文合计 13 种语言。
+- 在线调音器：13 种语言各一页；音频只在浏览器本地分析，支持十二平均律、吉他 EADGBE 与尤克里里 GCEA 参考模式。
 - 在线节拍器：中文与英文各一页。
-- 高意图练习指南：24 页，即 12 个主题的中英文版本。
-- 热门和弦目录与详情：吉他 25 页、尤克里里 25 页，共 50 个详情页，另有两个目录页。
+- 高意图练习指南：32 页，即 16 个主题的中英文版本。
+- 热门和弦目录与详情：吉他 50 页、尤克里里 50 页，共 100 个详情页，另有两个目录页。
 - Press Kit / 媒体资料中心。
 - `robots.txt`、`sitemap.xml`、Web App manifest、Open Graph 图片、IndexNow 验证文件。
-- 线上 sitemap 当前包含 92 个 URL。
+- 本轮构建生成 168 个静态页面/路由；sitemap 包含 163 个公开 URL。
 
 2026-08-26 新增的 6 个双语主题：
 
@@ -39,10 +40,21 @@ OpenAI Sites 项目 ID：`appgprj_6a8a503888348191be812170e152a86c`。项目配�
 5. Chromatic tuner / 十二平均律调音器
 6. Ukulele High-G 与 Low-G GCEA
 
+2026-08-26 第二轮新增的 4 个双语主题：
+
+1. 吉他六根弦标准、Drop D 与降半音频率表
+2. 变调夹移调表与和弦换算
+3. 节拍器渐进提速与节奏训练方法
+4. 4/4、3/4、6/8 等拍号与数拍方法
+
 主要文件：
 
 - `app/lib/landing-pages.ts`：原有高意图页面数据与聚合入口。
 - `app/lib/tuning-pages.ts`：本轮新增的 12 个双语调弦页面。
+- `app/lib/practice-pages.ts`：频率、变调夹、节奏训练和拍号的 8 个双语页面。
+- `app/lib/tuner-locales.ts`：13 种语言在线调音器文案与 metadata。
+- `app/components/TunerTool.tsx`：浏览器本地音高检测、模式切换和麦克风生命周期。
+- `app/lib/site.ts`：App Store Campaign 与三个自定产品页的下载链接分流。
 - `app/components/LandingPageView.tsx`：指南页面、FAQ 和结构化数据。
 - `app/sitemap.ts`、`app/robots.ts`：搜索引擎入口。
 - `app/layout.tsx`：全局 metadata、App Links、Open Graph 与 Google 所有权验证。
@@ -70,22 +82,30 @@ OpenAI Sites 项目 ID：`appgprj_6a8a503888348191be812170e152a86c`。项目配�
 
 | 页面 | ID | 深度链接 | 简体中文关键词 | 状态 |
 | --- | --- | --- | --- | --- |
-| Tuner Search Page | `cf763d83-4b2f-4897-86b1-42d9175c24dc` | `guitartool://tuner` | 调音器、音高 | 等待审核 |
-| Metronome Search Page | `ad230a27-b902-4645-b00d-3f2a5c3e3558` | `guitartool://metronome` | 节拍器、练习、节奏 | 等待审核 |
-| Chord Library Search Page | `67d874cf-ac10-412d-929b-b883f2039444` | `guitartool://chords` | 吉他、和弦、尤克里里 | 等待审核 |
+| Tuner Search Page | `cf763d83-4b2f-4897-86b1-42d9175c24dc` | `guitartool://tuner` | 调音器、音高 | 正在审核 |
+| Metronome Search Page | `ad230a27-b902-4645-b00d-3f2a5c3e3558` | `guitartool://metronome` | 节拍器、练习、节奏 | 正在审核 |
+| Chord Library Search Page | `67d874cf-ac10-412d-929b-b883f2039444` | `guitartool://chords` | 吉他、和弦、尤克里里 | 正在审核 |
 
 三个页面均有 13 种语言推广文本，并分别把对应功能截图放到第一位。它们已合并到同一提交并正式提交，主产品页截图没有变化。
 
 非主要语言的自定产品页关键词在操作时被 App Store Connect 禁用。1.0.7 批准后需要再次检查是否解锁，并按相应语言主 ASO 词组补选；这是 Apple 的版本依赖限制，不是推广文本缺失。
+
+### 下载归因与页面分流
+
+- 已在 App Store Connect Analytics 创建 Campaign Link，Provider Token 为 `128747267`。
+- 网站首页、导航、Smart App Banner、Press Kit、调音器、节拍器和和弦页面分别使用 `site_home`、`site_nav`、`site_smart_banner`、`site_press`、`site_tuner`、`site_metronome`、`site_chords`。
+- 调音器、节拍器和和弦入口同时携带对应自定产品页 `ppid`。Apple 批准前会安全回退到默认产品页，批准后同一链接自动展示相应页面。
+- App 内和弦卡片分享使用 `app_chord_share`，并进入和弦自定产品页；此功能已完成源码和测试，将随后续 App 构建上线，不属于当前正在审核的 1.0.7。
+- 2026-08-26 核对 Analytics 概览时显示 65 次首次下载、795 次展示、81 次产品页浏览、12.6% 转化率。该数值是当时界面所选 90 天范围的快照，不应当作永久累计值。
 
 ## 4. 搜索引擎状态
 
 - Google Search Console 的 URL-prefix 资源已完成 HTML meta 所有权验证。
 - 验证 meta 在 `app/layout.tsx`，保持验证状态必须保留。
 - `sitemap.xml` 已提交；界面已经给出“已成功提交站点地图”确认。
-- 新资源首次处理时仍显示“无法抓取/正在处理”，但公开 sitemap 实测为 HTTP 200、`application/xml`、92 个 URL 且 XML 校验通过。等待 Google 重试后再判断，不要先删除资源。
+- 新资源首次处理时仍显示“无法抓取/正在处理”，但公开 sitemap 实测为 HTTP 200、`application/xml` 且 XML 校验通过。等待 Google 重试后再判断，不要先删除资源。
 - 首页已通过“网址检查”提交“请求编入索引”。Google 是否收录和排名由其系统决定。
-- GitHub Pages 每次成功部署后都会运行 `notify-search-engines`；最新 92 个 URL 已成功提交 IndexNow。
+- GitHub Pages 每次成功部署后都会运行 `notify-search-engines`；新版本部署后应以 GitHub Actions 记录确认 163 个 URL 的 IndexNow 提交结果。
 
 建议在部署后 24–72 小时检查：
 
@@ -125,10 +145,21 @@ git push github main
 
 - 暂不做付费广告或付费媒体投放。
 - 暂不做完成操作后的自动评分邀请；该交互被认为会干扰练习体验。
+- 暂不做 App Store A/B 测试。
 - 当前没有社交媒体、论坛、社区或邮件的持续人工运营流程。
+- 个性化页面原有“分享 APP”入口继续保留，没有重复增加。和弦库新增的是用户主动点击后分享当前指法卡片，不自动弹出、不打断练习。
 - App Store 精选提名已提交，但 Apple 是否推荐不可控。
 - Google sitemap 和索引请求已提交，但不保证即时收录和排名。
 - `guitartool-social-preview.png` 是仓库中已有的未跟踪用户文件；在确认用途前不得删除、覆盖或随意提交。
+
+### 免费目录与媒体渠道结论
+
+- Product Hunt 需要个人账号、完成账号 onboarding，并要求发布后参与首条评论与社区互动；它不符合“完全不需要账号持有人参与运营”的约束，本轮未代建账号或发布。
+- AlternativeTo 要求注册并验证邮箱后才能提交；本轮未使用开发者个人邮箱创建第三方账号。
+- AppleVis 适合突出 VoiceOver、Large Text 等辅助功能，但提交目录内容同样需要网站账号；在没有现成登录态时不代建账号。
+- BetaList 已取消免费提交，且不接受免费托管子域作为产品主域，因此按“暂不付费”要求排除。
+- AppAdvice 等聚合站通过 App Store 数据接口自动生成页面，不需要也没有必要重复人工提交。
+- Press Kit、公开营销站、结构化数据、sitemap、IndexNow 和 13 种语言在线工具已经覆盖无需账号、无需持续人工运营且能长期积累的站外获客路径。
 
 ## 8. 下一位维护者检查清单
 
@@ -138,3 +169,4 @@ git push github main
 4. 1.0.7 批准后复查非主要语言的自定产品页关键词。
 5. 检查 Search Console sitemap 与索引报告；Google 仍在初次处理时先等待，不反复重建资源。
 6. 修改站点后运行三项门禁并验证线上 URL，再更新本文件的日期、内容库存、sitemap URL 数和最新提交。
+7. 在 App Store Analytics 按 `site_*` 与 `app_chord_share` Campaign 比较点击后的下载表现；没有足够样本前不要频繁改链接或页面。

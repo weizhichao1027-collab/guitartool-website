@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { JsonLd } from "@/app/components/JsonLd";
-import { absoluteUrl, supportedLanguageCodes } from "@/app/lib/site";
+import { APP_STORE_LINKS, absoluteUrl, supportedLanguageCodes } from "@/app/lib/site";
 
-const appStoreUrl = "https://apps.apple.com/app/id6761914163";
+const appStoreUrl = APP_STORE_LINKS.home;
 const privacyUrl = "https://weizhichao1027-collab.github.io/GuitarTool-Privacy/";
 const githubUrl = "https://github.com/weizhichao1027-collab/guitartool-website";
 const basePath = process.env.GITHUB_PAGES === "true" ? "/guitartool-website" : "";
@@ -63,6 +63,7 @@ export default function Home() {
         </a>
         <div className="navLinks">
           <a href="#features">功能</a>
+          <Link href="/online-tuner/">在线调音器</Link>
           <Link href="/online-metronome/">在线节拍器</Link>
           <Link href="/chords/guitar/">热门和弦</Link>
           <Link href="/press/">媒体资料</Link>
@@ -248,10 +249,11 @@ export default function Home() {
       <section className="discoverySection shell sectionPad">
         <div><p className="eyebrow"><span /> 免费练习资源</p><h2>先解决眼前这一拍、这一弦、这一个和弦。</h2></div>
         <div className="discoveryGrid">
-          <Link href="/online-metronome/"><span>01</span><h3>在线节拍器</h3><p>20–500 BPM、TAP 测速与 1–12 拍，浏览器里直接开始。</p><b>打开工具 →</b></Link>
-          <Link href="/guides/guitar-tuner/"><span>02</span><h3>离线吉他调音</h3><p>了解标准、Drop D、DADGAD 与开放调弦的完整使用方式。</p><b>阅读指南 →</b></Link>
-          <Link href="/chords/guitar/"><span>03</span><h3>热门吉他和弦</h3><p>从 25 个高频和弦开始，查看多个把位与清楚指法图。</p><b>浏览和弦 →</b></Link>
-          <Link href="/chords/ukulele/"><span>04</span><h3>热门尤克里里和弦</h3><p>按标准 High-G GCEA 查看 25 个常用和弦和多种按法。</p><b>浏览和弦 →</b></Link>
+          <Link href="/online-tuner/"><span>01</span><h3>在线调音器</h3><p>麦克风声音只在浏览器本地处理，实时查看音名、频率与音分。</p><b>打开工具 →</b></Link>
+          <Link href="/online-metronome/"><span>02</span><h3>在线节拍器</h3><p>20–500 BPM、TAP 测速与 1–12 拍，浏览器里直接开始。</p><b>打开工具 →</b></Link>
+          <Link href="/guides/guitar-tuner/"><span>03</span><h3>离线吉他调音</h3><p>了解标准、Drop D、DADGAD 与开放调弦的完整使用方式。</p><b>阅读指南 →</b></Link>
+          <Link href="/chords/guitar/"><span>04</span><h3>热门吉他和弦</h3><p>从 50 个高频和弦开始，查看多个把位与清楚指法图。</p><b>浏览和弦 →</b></Link>
+          <Link href="/chords/ukulele/"><span>05</span><h3>热门尤克里里和弦</h3><p>按标准 High-G GCEA 查看 50 个常用和弦和多种按法。</p><b>浏览和弦 →</b></Link>
         </div>
       </section>
 

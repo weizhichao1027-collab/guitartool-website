@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { APP_STORE_URL, GITHUB_URL, PRIVACY_URL, assetPath } from "@/app/lib/site";
+import { APP_STORE_LINKS, GITHUB_URL, PRIVACY_URL, assetPath } from "@/app/lib/site";
 
 type Language = "zh" | "en" | "other";
 
@@ -20,7 +20,7 @@ export function AcquisitionHeader({ language = "en" }: { language?: Language }) 
         <Link href={language === "zh" ? "/guides/guitar-tuner/" : "/en/guides/guitar-tuner/"}>{labels.tools}</Link>
         <Link href="/chords/guitar/">{labels.chords}</Link>
         <Link href="/press/">{labels.press}</Link>
-        <a className="acqDownload" href={APP_STORE_URL}>{labels.download}</a>
+        <a className="acqDownload" href={APP_STORE_LINKS.navigation}>{labels.download}</a>
       </nav>
     </header>
   );

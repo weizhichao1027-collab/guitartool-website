@@ -5,7 +5,8 @@ import { notFound } from "next/navigation";
 import { AcquisitionFooter, AcquisitionHeader } from "@/app/components/AcquisitionChrome";
 import { JsonLd } from "@/app/components/JsonLd";
 import { getLocalePage, localePages } from "@/app/lib/locales";
-import { APP_STORE_URL, absoluteUrl, assetPath, localeAlternates } from "@/app/lib/site";
+import { APP_STORE_LINKS, APP_STORE_URL, absoluteUrl, assetPath, localeAlternates } from "@/app/lib/site";
+import { getTunerLocale } from "@/app/lib/tuner-locales";
 
 export const dynamicParams = false;
 export function generateStaticParams() { return localePages.map(({ slug }) => ({ locale: slug })); }
@@ -22,6 +23,7 @@ export default async function LocalizedHome({ params }: { params: Promise<{ loca
   const { locale } = await params;
   const page = getLocalePage(locale);
   if (!page) notFound();
+  const tunerCopy = getTunerLocale(locale)!;
   const canonical = absoluteUrl(`/${locale}/`);
   return (
     <main className="acqPage localePage" lang={page.htmlLang} dir={page.dir}>
@@ -32,13 +34,19 @@ export default async function LocalizedHome({ params }: { params: Promise<{ loca
           <p className="acqEyebrow">{page.eyebrow}</p>
           <h1>{page.headline}</h1>
           <p>{page.lead}</p>
-          <a className="primaryButton" href={APP_STORE_URL}>{page.download}<span>↗</span></a>
+          <a className="primaryButton" href={APP_STORE_LINKS.home}>{page.download}<span>↗</span></a>
           <div className="localeTrust">{page.trust.map((item) => <span key={item}>{item}</span>)}</div>
         </div>
         <div className="localeVisual"><Image src={assetPath("/en-devices.webp")} alt="GuitarTool on iPhone, iPad and Apple Watch" width={833} height={1800} priority /></div>
       </section>
+      <section className="localizedToolCta shell">
+        <p className="acqEyebrow">{tunerCopy.eyebrow}</p>
+        <h2>{tunerCopy.title.split("|")[0].split("｜")[0]}</h2>
+        <p>{tunerCopy.lead}</p>
+        <Link className="primaryButton" href={`/${locale}/online-tuner/`}>{tunerCopy.start}<span>→</span></Link>
+      </section>
       <section className="localeFeatures shell">{page.features.map((feature, index) => <article key={feature.title}><span>{String(index + 1).padStart(2, "0")}</span><h2>{feature.title}</h2><p>{feature.body}</p></article>)}</section>
-      <section className="localeClosing shell"><Image src={assetPath("/app-icon.png")} alt="GuitarTool" width={92} height={92} /><h2>{page.closing}</h2><a className="primaryButton coral" href={APP_STORE_URL}>{page.download}<span>↗</span></a></section>
+      <section className="localeClosing shell"><Image src={assetPath("/app-icon.png")} alt="GuitarTool" width={92} height={92} /><h2>{page.closing}</h2><a className="primaryButton coral" href={APP_STORE_LINKS.home}>{page.download}<span>↗</span></a></section>
       <nav className="languageDirectory shell" aria-label="Languages"><Link href="/">简体中文</Link><Link href="/en/">English</Link>{localePages.map((item) => <Link className={item.slug === locale ? "active" : ""} href={`/${item.slug}/`} key={item.slug}>{item.htmlLang}</Link>)}</nav>
       <AcquisitionFooter language="en" />
     </main>

@@ -2,7 +2,7 @@ import Link from "next/link";
 import { AcquisitionFooter, AcquisitionHeader } from "@/app/components/AcquisitionChrome";
 import { ChordDiagram } from "@/app/components/ChordDiagram";
 import { JsonLd } from "@/app/components/JsonLd";
-import { APP_STORE_URL, absoluteUrl } from "@/app/lib/site";
+import { APP_STORE_LINKS, absoluteUrl } from "@/app/lib/site";
 import { Instrument, PopularChord, chordQuality, popularChords, routeForChord } from "@/app/lib/chords";
 
 export function ChordPageView({ instrument, chord }: { instrument: Instrument; chord: PopularChord }) {
@@ -33,7 +33,7 @@ export function ChordPageView({ instrument, chord }: { instrument: Instrument; c
             <h1>{chord.name} <span>{instrumentName} chord</span></h1>
             <p>Learn three playable {chord.name} positions below, then explore all {chord.voicingCount} voicings on an interactive 20-fret board in GuitarTool.</p>
             <p className="chordChinese">{chord.name} {instrumentZh}和弦：下方展示三种可用按法，APP 内可查看全部 {chord.voicingCount} 种指法、自由编辑并试听。</p>
-            <a className="primaryButton" href={APP_STORE_URL}>Open every voicing in GuitarTool <span>↗</span></a>
+            <a className="primaryButton" href={APP_STORE_LINKS.chords}>Open every voicing in GuitarTool <span>↗</span></a>
           </div>
           <ChordDiagram instrument={instrument} voicing={chord.voicings[0]} label={`${chord.name} ${instrumentName} chord · position 1`} />
         </header>
@@ -56,7 +56,7 @@ export function ChordPageView({ instrument, chord }: { instrument: Instrument; c
 
         <section className="appChordCta">
           <div><p>855 chord names · 19,244 guitar and ukulele fingerings</p><h2>Turn the diagram into an instrument.</h2><span>Edit any fret, mute a string, identify the result and hear the exact visible voicing—all offline.</span></div>
-          <a className="primaryButton coral" href={APP_STORE_URL}>Download GuitarTool free <span>↗</span></a>
+          <a className="primaryButton coral" href={APP_STORE_LINKS.chords}>Download GuitarTool free <span>↗</span></a>
         </section>
 
         <section className="moreChords">

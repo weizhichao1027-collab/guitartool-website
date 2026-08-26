@@ -85,6 +85,39 @@
 .toolDetails h2 { margin: 0; font-size: clamp(44px, 5.8vw, 75px); line-height: 1.05; letter-spacing: -.065em; }
 .toolDetails > div:last-child > p { margin: 0 0 35px; color: var(--muted); font-size: 17px; line-height: 1.9; }
 
+.tunerHero { min-height: 780px; display: grid; grid-template-columns: .86fr 1.14fr; align-items: center; gap: 70px; padding-block: 80px 120px; }
+.tunerTool { padding: clamp(28px, 4vw, 48px); border: 1px solid rgba(255,255,255,.8); border-radius: 38px; background: linear-gradient(145deg, rgba(255,255,255,.84), rgba(216,245,241,.74)); box-shadow: 0 38px 90px rgba(23,88,87,.15); }
+.tunerPresets { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.tunerPresets button { min-height: 44px; padding: 8px 10px; border: 1px solid rgba(20,35,39,.1); border-radius: 12px; color: #587173; background: rgba(255,255,255,.55); font: inherit; font-size: 11px; font-weight: 750; cursor: pointer; }
+.tunerPresets button.active { border-color: var(--teal-deep); color: #fff; background: var(--teal-deep); }
+.tunerDisplay { min-height: 370px; display: flex; flex-direction: column; align-items: center; justify-content: center; margin-top: 15px; text-align: center; }
+.tunerDisplay > p { margin: 0; color: #6f8385; font-size: 11px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+.detectedNote { min-height: 145px; margin-top: 10px; color: var(--ink); font-family: Georgia, serif; font-size: clamp(105px, 14vw, 160px); line-height: .92; letter-spacing: -.06em; }
+.detectedNote sup { margin-left: 4px; color: #6b8586; font-family: "Avenir Next", sans-serif; font-size: 23px; vertical-align: super; }
+.tunerDisplay > strong { color: var(--teal-deep); font-size: 14px; letter-spacing: .08em; }
+.centsScale { width: min(430px, 94%); height: 68px; margin-top: 28px; position: relative; border-top: 1px solid rgba(42,93,92,.24); color: #829294; font-size: 9px; }
+.centsScale::before { content: ""; position: absolute; left: 50%; top: -8px; width: 1px; height: 16px; background: var(--teal-deep); }
+.centsScale span { position: absolute; top: 9px; }
+.scaleLeft { left: 0; }.scaleCenter { left: 50%; transform: translateX(-50%); }.scaleRight { right: 0; }
+.centsScale i { width: 3px; height: 55px; display: block; position: absolute; left: 50%; bottom: 8px; border-radius: 3px; transform-origin: bottom center; background: #ef4d90; box-shadow: 0 0 18px rgba(239,77,144,.34); transition: transform .09s linear; }
+.tunerDisplay.tuned .centsScale i { background: var(--teal); box-shadow: 0 0 20px rgba(12,174,174,.45); }
+.tunerDisplay > b { color: #466164; font-size: 13px; }
+.tunerReference { min-height: 35px; display: grid; place-items: center; padding: 8px 12px; border-radius: 10px; color: #507071; background: rgba(255,255,255,.55); font-size: 11px; font-weight: 750; letter-spacing: .04em; }
+.tunerStart { width: 100%; min-height: 58px; margin-top: 14px; border: 0; border-radius: 15px; color: #fff; background: var(--ink); font: inherit; font-weight: 800; cursor: pointer; }
+.tunerError { margin: 13px 0 0; color: #b42e62; font-size: 12px; line-height: 1.6; text-align: center; }
+.tunerPrivacy { margin: 15px 0 0; color: #76898b; font-size: 10px; line-height: 1.6; text-align: center; }
+.tunerGuide { display: grid; grid-template-columns: .9fr 1.1fr; gap: 90px; padding-block: 120px; border-block: 1px solid var(--line); }
+.tunerGuide h2, .localizedToolCta h2 { margin: 0; font-size: clamp(42px, 5.5vw, 72px); line-height: 1.08; letter-spacing: -.06em; }
+.tunerGuide ol { display: grid; gap: 0; margin: 0; padding: 0; border-top: 1px solid var(--line); list-style: none; }
+.tunerGuide li { display: grid; grid-template-columns: 48px 1fr; gap: 18px; padding: 25px 0; border-bottom: 1px solid var(--line); }
+.tunerGuide li span { color: var(--teal-deep); font-family: Georgia, serif; }
+.tunerGuide li p { margin: 0; color: var(--muted); line-height: 1.8; }
+.tunerDownload { margin-block: 110px; }
+.localizedToolCta { margin-block: 30px 100px; padding: clamp(45px, 6vw, 75px); border-radius: 32px; color: #fff; background: radial-gradient(circle at 80% 20%, rgba(22,185,176,.4), transparent 37%), #19373a; }
+.localizedToolCta .acqEyebrow { color: #8ee2da; }
+.localizedToolCta > p:not(.acqEyebrow) { max-width: 760px; color: #b6c8c6; font-size: 17px; line-height: 1.8; }
+.localizedToolCta .primaryButton { margin-top: 15px; background: #f04e8f; }
+
 .chordArticle { padding-block: 60px 120px; }
 .chordHero { display: grid; grid-template-columns: 1fr 390px; align-items: center; gap: 80px; min-height: 680px; padding-block: 60px 100px; }
 .chordHero h1 { margin: 0; font-size: clamp(80px, 10vw, 145px); line-height: .85; letter-spacing: -.08em; }
@@ -198,7 +231,7 @@
 .pressLinks b { color: var(--teal-deep); font-size: 11px; }
 
 @media (max-width: 900px) {
-  .contentBlock > div, .toolHero, .toolDetails, .chordHero, .diagramIntro, .chordAdvice, .localeHero, .pressFacts, .pressStory, .assetHeading { grid-template-columns: 1fr; }
+  .contentBlock > div, .toolHero, .toolDetails, .tunerHero, .tunerGuide, .chordHero, .diagramIntro, .chordAdvice, .localeHero, .pressFacts, .pressStory, .assetHeading { grid-template-columns: 1fr; }
   .contentBlock ul, .relatedResources > div, .diagramGrid, .localeFeatures, .assetGrid { grid-template-columns: repeat(2, 1fr); }
   .toolHero { gap: 45px; }
   .chordHero { justify-items: center; }
@@ -226,6 +259,10 @@
   .resourceCta { padding: 45px 28px; border-radius: 26px; }
   .acqFaq { grid-template-columns: 1fr; gap: 45px; padding-block: 90px; }
   .metronomeTool { padding: 27px 18px; border-radius: 28px; }
+  .tunerTool { padding: 24px 17px; border-radius: 28px; }
+  .tunerPresets { grid-template-columns: 1fr; }
+  .tunerDisplay { min-height: 330px; }
+  .tunerGuide { gap: 45px; padding-block: 85px; }
   .tempoReadout { grid-template-columns: 45px 1fr 45px; gap: 8px; }
   .tempoReadout > button { width: 45px; height: 45px; }
   .metronomeControls { grid-template-columns: 1fr 1fr; }

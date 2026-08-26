@@ -2,12 +2,13 @@ import Link from "next/link";
 import { AcquisitionFooter, AcquisitionHeader } from "@/app/components/AcquisitionChrome";
 import { JsonLd } from "@/app/components/JsonLd";
 import { LandingLanguage, LandingPage, getLandingPage } from "@/app/lib/landing-pages";
-import { APP_STORE_URL, APP_NAME, absoluteUrl } from "@/app/lib/site";
+import { APP_STORE_URL, APP_NAME, absoluteUrl, appStoreLinkForGuide } from "@/app/lib/site";
 
 export function LandingPageView({ page, language }: { page: LandingPage; language: LandingLanguage }) {
   const isZh = language === "zh";
   const prefix = isZh ? "/guides" : "/en/guides";
   const canonical = absoluteUrl(`${prefix}/${page.slug}/`);
+  const downloadUrl = appStoreLinkForGuide(page.slug);
 
   const structuredData = [
     {
@@ -59,7 +60,7 @@ export function LandingPageView({ page, language }: { page: LandingPage; languag
                 {isZh ? "打开在线节拍器" : "Open the online metronome"}<span>→</span>
               </Link>
             ) : null}
-            <a className={page.slug === "online-metronome" ? "textCta" : "primaryButton"} href={APP_STORE_URL}>
+            <a className={page.slug === "online-metronome" ? "textCta" : "primaryButton"} href={downloadUrl}>
               {isZh ? "在 App Store 免费下载" : "Download free on the App Store"}<span>↗</span>
             </a>
           </div>
@@ -83,7 +84,7 @@ export function LandingPageView({ page, language }: { page: LandingPage; languag
           <section className="resourceCta">
             <p>{isZh ? "一个 APP，覆盖整段练习流程" : "One app for the full practice flow"}</p>
             <h2>{isZh ? "先调准，再跟拍，然后找到下一个和弦。" : "Tune first. Keep time. Find the next chord."}</h2>
-            <a className="primaryButton coral" href={APP_STORE_URL}>{isZh ? "免费下载 GuitarTool" : "Download GuitarTool free"}<span>↗</span></a>
+            <a className="primaryButton coral" href={downloadUrl}>{isZh ? "免费下载 GuitarTool" : "Download GuitarTool free"}<span>↗</span></a>
           </section>
 
           <section className="acqFaq">
