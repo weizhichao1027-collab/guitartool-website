@@ -10,7 +10,7 @@
 | --- | --- | --- | --- |
 | GitHub Pages | 面向普通访客与搜索引擎的公开主站、canonical 来源 | https://weizhichao1027-collab.github.io/guitartool-website/ | 公开 |
 | GitHub | 源码、版本历史、Pages 自动部署 | https://github.com/weizhichao1027-collab/guitartool-website | 仓库权限控制 |
-| OpenAI Sites | 第二套生产部署、托管备份/预览 | https://guitartool-studio.weizhichao1027.chatgpt.site | 当前仅站点所有者可访问 |
+| OpenAI Sites | 第二套生产部署、托管备份/预览 | https://guitartool-studio.weizhichao1027.chatgpt.site | Version 8 已部署；仅站点所有者可访问 |
 | App Store Connect | App 产品页、三个自定产品页、精选提名 | App ID `6761914163` | Apple 账号权限控制 |
 | Google Search Console | Google 所有权、sitemap、索引请求 | GitHub Pages URL-prefix 资源 | Google 账号权限控制 |
 | IndexNow | 主动通知支持该协议的搜索引擎 | GitHub Actions 自动调用 | 自动 |
@@ -130,6 +130,10 @@ git push github main
 - OpenAI Sites 是独立部署目标；修改可部署站点时仍需保存并部署新的 Sites version。
 - Google 验证功能提交：`7022c8a Add Google Search Console verification`。
 - SEO 内容功能提交：`88db729 Expand tuning guides for organic search`。
+- 第二轮自然获客与 Campaign 分流提交：`b03358c Expand organic acquisition and campaign tracking`。
+- 在线调音器移动端启动与指针修正：`423f162 Harden online tuner startup`。
+- OpenAI Sites Version 8 已从 `423f162` 部署成功，访问策略仍为 owner-only。
+- `423f162` 已推送到 GitHub `main`。2026-08-26 23:11 起 GitHub 官方 Actions 发生重大中断、Pages 性能下降，最新 Pages 工作流处于排队状态；源码与本地构建均正常，不要为此回滚提交，等待官方恢复后由现有工作流自动完成部署与 IndexNow。
 
 ## 6. 内容与 SEO 维护规则
 
