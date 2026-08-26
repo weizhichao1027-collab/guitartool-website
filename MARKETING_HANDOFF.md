@@ -133,7 +133,7 @@ git push github main
 - 第二轮自然获客与 Campaign 分流提交：`b03358c Expand organic acquisition and campaign tracking`。
 - 在线调音器移动端启动与指针修正：`423f162 Harden online tuner startup`。
 - OpenAI Sites Version 8 已从 `423f162` 部署成功，访问策略仍为 owner-only。
-- `423f162` 已推送到 GitHub `main`。2026-08-26 23:11 起 GitHub 官方 Actions 发生重大中断、Pages 性能下降，最新 Pages 工作流处于排队状态；源码与本地构建均正常，不要为此回滚提交，等待官方恢复后由现有工作流自动完成部署与 IndexNow。
+- `423f162` 已推送到 GitHub `main`。部署时曾遇到 GitHub 官方 Actions 重大中断与 Pages 性能下降，服务恢复后工作流 `32984543950` 的 build、deploy、notify-search-engines 三个 Job 全部成功；公开主站已更新，163 个 sitemap URL 已提交 IndexNow。
 
 ## 6. 内容与 SEO 维护规则
 
