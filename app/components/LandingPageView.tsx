@@ -29,6 +29,14 @@ export function LandingPageView({ page, language }: { page: LandingPage; languag
         acceptedAnswer: { "@type": "Answer", text: answer },
       })),
     },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: isZh ? "GuitarTool 首页" : "GuitarTool home", item: absoluteUrl(isZh ? "/" : "/en/") },
+        { "@type": "ListItem", position: 2, name: page.title, item: canonical },
+      ],
+    },
   ];
 
   return (

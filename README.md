@@ -1,6 +1,6 @@
 # GuitarTool Marketing Site
 
-GuitarTool 官方营销与自然搜索获客网站。除中英文产品首页外，还包括在线节拍器、12 个高意图指南、50 个热门和弦页面、13 种语言入口和媒体资料中心。
+GuitarTool 官方营销与自然搜索获客网站。除中英文产品首页外，还包括在线节拍器、24 个高意图指南、50 个热门和弦页面、13 种语言入口和媒体资料中心。
 
 线上地址：https://weizhichao1027-collab.github.io/guitartool-website/
 

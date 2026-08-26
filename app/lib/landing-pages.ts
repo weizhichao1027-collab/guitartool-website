@@ -1,3 +1,5 @@
+import { enTuningPages, zhTuningPages } from "@/app/lib/tuning-pages";
+
 export type LandingLanguage = "zh" | "en";
 
 export type LandingPage = {
@@ -37,7 +39,7 @@ const en: LandingPage[] = [
       ["Does GuitarTool record my guitar?", "No. Microphone audio is analyzed in real time on the device and is not stored or transmitted."],
       ["Can I tune to something other than A4 = 440 Hz?", "Yes. The calibration range is 430–446 Hz."],
     ],
-    related: ["ukulele-tuner", "offline-guitar-tools", "online-metronome"],
+    related: ["drop-d-tuning", "dadgad-tuning", "open-g-tuning", "half-step-down-tuning", "chromatic-tuner", "ukulele-gcea-tuning"],
   },
   {
     slug: "ukulele-tuner",
@@ -192,7 +194,7 @@ const zh: LandingPage[] = [
       },
     ],
     faq: [["调音器需要联网吗？", "不需要。音高检测和全部核心练习工具都可离线运行。"], ["会保存我的琴声吗？", "不会。麦克风音频只在设备端实时分析，不保存、不传输。"], ["可以使用 440 Hz 以外的基准音吗？", "可以，A4 可在 430–446 Hz 之间校准。"]],
-    related: ["ukulele-tuner", "offline-guitar-tools", "online-metronome"],
+    related: ["drop-d-tuning", "dadgad-tuning", "open-g-tuning", "half-step-down-tuning", "chromatic-tuner", "ukulele-gcea-tuning"],
   },
   {
     slug: "ukulele-tuner",
@@ -266,7 +268,7 @@ const zh: LandingPage[] = [
   },
 ];
 
-export const landingPages = { en, zh } as const;
+export const landingPages = { en: [...en, ...enTuningPages], zh: [...zh, ...zhTuningPages] } as const;
 
 export function getLandingPage(language: LandingLanguage, slug: string) {
   return landingPages[language].find((page) => page.slug === slug);
