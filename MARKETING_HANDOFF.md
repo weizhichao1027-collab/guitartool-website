@@ -10,7 +10,7 @@
 | --- | --- | --- | --- |
 | GitHub Pages | 面向普通访客与搜索引擎的公开主站、canonical 来源 | https://weizhichao1027-collab.github.io/guitartool-website/ | 公开 |
 | GitHub | 源码、版本历史、Pages 自动部署 | https://github.com/weizhichao1027-collab/guitartool-website | 仓库权限控制 |
-| OpenAI Sites | 第二套生产部署、托管备份/预览 | https://guitartool-studio.weizhichao1027.chatgpt.site | Version 10 已部署；仅站点所有者可访问 |
+| OpenAI Sites | 第二套生产部署、托管备份/预览 | https://guitartool-studio.weizhichao1027.chatgpt.site | Version 11 已部署；仅站点所有者可访问 |
 | App Store Connect | App 产品页、三个自定产品页、精选提名 | App ID `6761914163` | Apple 账号权限控制 |
 | Google Search Console | Google 所有权、sitemap、索引请求 | GitHub Pages URL-prefix 资源 | Google 账号权限控制 |
 | IndexNow | 主动通知支持该协议的搜索引擎 | GitHub Actions 自动调用 | 自动 |
@@ -147,6 +147,9 @@ git push github main
 - 在线调音器移动端启动与指针修正：`423f162 Harden online tuner startup`。
 - 和弦目录扩容后的 metadata 数字校正：`1245450 Align chord hub metadata with expanded catalog`。
 - 1.0.7 推广与 SEO 更新提交：`6c82b99 Refresh 1.0.7 marketing and SEO content`，已推送到 GitHub `main` 和 Sites 源仓库。
+- 本地化和弦卡片预览提交：`6a6dfb6 Show localized chord card previews across marketing pages`，已推送到 GitHub `main` 和 Sites 源仓库。
+- GitHub Actions 工作流 `33026951090` 的 build、deploy、notify-search-engines 三个 Job 全部成功；公开中英文首页、繁中/阿拉伯语入口、双语和弦分享专题、Press Kit、WebP 图片与 sitemap 均抽样返回 HTTP 200。
+- OpenAI Sites Version 11 已从 `6a6dfb6` 部署成功，访问策略复核为仅一个 owner、无群组、无外部访客。
 - GitHub Actions 工作流 `32998815386` 的 build、deploy、notify-search-engines 三个 Job 全部成功；公开主站、新功能页、Press Kit 与 sitemap 均抽样返回 HTTP 200，167 个 URL 已进入 IndexNow 通知流程。
 - OpenAI Sites Version 10 已从 `6c82b99` 部署成功，访问策略仍为 owner-only。
 - `423f162` 已推送到 GitHub `main`。部署时曾遇到 GitHub 官方 Actions 重大中断与 Pages 性能下降，服务恢复后工作流 `32984543950` 的 build、deploy、notify-search-engines 三个 Job 全部成功；公开主站已更新，163 个 sitemap URL 已提交 IndexNow。
