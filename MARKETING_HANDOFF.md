@@ -10,7 +10,7 @@
 | --- | --- | --- | --- |
 | GitHub Pages | 面向普通访客与搜索引擎的公开主站、canonical 来源 | https://weizhichao1027-collab.github.io/guitartool-website/ | 公开 |
 | GitHub | 源码、版本历史、Pages 自动部署 | https://github.com/weizhichao1027-collab/guitartool-website | 仓库权限控制 |
-| OpenAI Sites | 第二套生产部署、托管备份/预览 | https://guitartool-studio.weizhichao1027.chatgpt.site | Version 13 已部署；仅站点所有者可访问 |
+| OpenAI Sites | 第二套生产部署、托管备份/预览 | https://guitartool-studio.weizhichao1027.chatgpt.site | Version 14 已部署；仅站点所有者可访问 |
 | App Store Connect | App 产品页、三个自定产品页、精选提名 | App ID `6761914163` | Apple 账号权限控制 |
 | Google Search Console | Google 所有权、sitemap、索引请求 | GitHub Pages URL-prefix 资源 | Google 账号权限控制 |
 | IndexNow | 主动通知支持该协议的搜索引擎 | GitHub Actions 自动调用 | 自动 |
@@ -149,14 +149,19 @@ OpenAI Sites 项目 ID：`appgprj_6a8a503888348191be812170e152a86c`。项目配�
 npm install
 npm run lint
 npm run build:pages
+npm run audit:pages
 npm run build
 git push github main
 ```
 
 - `build:pages` 生成 GitHub Pages 的静态 `out/`。
+- `audit:pages` 检查静态导出的全部 HTML 页面及其本地链接、图片、脚本和媒体目标。
 - `build` 验证 Vinext/OpenAI Sites 生产构建。
 - 推送 `main` 后，GitHub Actions 自动执行 build、deploy、notify-search-engines。
 - OpenAI Sites 是独立部署目标；修改可部署站点时仍需保存并部署新的 Sites version。
+- 托管站全站导航修正：GitHub 提交 `ad547b7 Fix hosted site navigation`；Sites 源提交 `ea2d58b`。内部导航改用带部署路径适配的原生链接，避开 Vinext 的 RSC 预取异常；首页资源卡片、导航、语言入口、面包屑、相关内容、和弦页链接均已覆盖。
+- GitHub Actions 工作流 `33031442573` 的 build、deploy、notify-search-engines 三个 Job 全部成功。静态门禁覆盖 174 个 HTML 页面和 218 个本地目标；公开 GitHub Pages sitemap 的 171 个 URL 与 OpenAI Sites 对应的 171 个路由均全量返回成功，8 个外部目标及两套部署各 9 个 Press Kit 媒体链接无失败。
+- OpenAI Sites Version 14 已部署成功，访问策略仍为 custom、仅一个 owner、无群组、无外部访客。生产验收已确认资源卡片跳转、调音模式切换、麦克风拒绝提示、节拍器速度/拍号/启动/停止和 FAQ 展开均正常，浏览器控制台无错误。
 - Google 验证功能提交：`7022c8a Add Google Search Console verification`。
 - SEO 内容功能提交：`88db729 Expand tuning guides for organic search`。
 - 第二轮自然获客与 Campaign 分流提交：`b03358c Expand organic acquisition and campaign tracking`。
