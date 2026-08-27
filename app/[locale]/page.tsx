@@ -8,6 +8,20 @@ import { getLocalePage, localePages } from "@/app/lib/locales";
 import { APP_STORE_LINKS, APP_STORE_URL, absoluteUrl, assetPath, localeAlternates } from "@/app/lib/site";
 import { getTunerLocale } from "@/app/lib/tuner-locales";
 
+const chordCardPreviewByLocale: Record<string, string> = {
+  "zh-hant": "/zh-hant-chord-card-share.webp",
+  es: "/es-chord-card-share.webp",
+  "pt-br": "/pt-br-chord-card-share.webp",
+  fr: "/fr-chord-card-share.webp",
+  de: "/de-chord-card-share.webp",
+  it: "/it-chord-card-share.webp",
+  ja: "/ja-chord-card-share.webp",
+  ko: "/ko-chord-card-share.webp",
+  ru: "/ru-chord-card-share.webp",
+  tr: "/tr-chord-card-share.webp",
+  ar: "/ar-chord-card-share.webp",
+};
+
 export const dynamicParams = false;
 export function generateStaticParams() { return localePages.map(({ slug }) => ({ locale: slug })); }
 
@@ -16,7 +30,15 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const page = getLocalePage(locale);
   if (!page) return {};
   const canonical = absoluteUrl(`/${locale}/`);
-  return { title: page.title, description: page.description, alternates: { canonical, languages: localeAlternates }, openGraph: { title: page.title, description: page.description, url: canonical, type: "website" } };
+  const previewImage = chordCardPreviewByLocale[locale] ?? "/en-chord-card-share.webp";
+  const previewAlt = `${page.features.at(-1)?.title ?? "GuitarTool"} · GuitarTool 1.0.7`;
+  return {
+    title: page.title,
+    description: page.description,
+    alternates: { canonical, languages: localeAlternates },
+    openGraph: { title: page.title, description: page.description, url: canonical, type: "website", images: [{ url: absoluteUrl(previewImage), width: 833, height: 1800, alt: previewAlt }] },
+    twitter: { card: "summary_large_image", title: page.title, description: page.description, images: [absoluteUrl(previewImage)] },
+  };
 }
 
 export default async function LocalizedHome({ params }: { params: Promise<{ locale: string }> }) {
@@ -25,6 +47,7 @@ export default async function LocalizedHome({ params }: { params: Promise<{ loca
   if (!page) notFound();
   const tunerCopy = getTunerLocale(locale)!;
   const canonical = absoluteUrl(`/${locale}/`);
+  const previewImage = chordCardPreviewByLocale[locale] ?? "/en-chord-card-share.webp";
   return (
     <main className="acqPage localePage" lang={page.htmlLang} dir={page.dir}>
       <JsonLd data={{ "@context": "https://schema.org", "@type": "SoftwareApplication", name: "GuitarTool", description: page.description, url: canonical, downloadUrl: APP_STORE_URL, applicationCategory: "MusicApplication", operatingSystem: "iOS, iPadOS, watchOS", inLanguage: page.htmlLang, offers: { "@type": "Offer", price: "0", priceCurrency: "USD" } }} />
@@ -37,7 +60,7 @@ export default async function LocalizedHome({ params }: { params: Promise<{ loca
           <a className="primaryButton" href={APP_STORE_LINKS.home}>{page.download}<span>↗</span></a>
           <div className="localeTrust">{page.trust.map((item) => <span key={item}>{item}</span>)}</div>
         </div>
-        <div className="localeVisual"><Image src={assetPath("/en-devices.webp")} alt="GuitarTool on iPhone, iPad and Apple Watch" width={833} height={1800} priority /></div>
+        <div className="localeVisual"><Image src={assetPath(previewImage)} alt={`${page.features.at(-1)?.title ?? "GuitarTool"} · GuitarTool 1.0.7`} width={833} height={1800} priority /></div>
       </section>
       <section className="localizedToolCta shell">
         <p className="acqEyebrow">{tunerCopy.eyebrow}</p>

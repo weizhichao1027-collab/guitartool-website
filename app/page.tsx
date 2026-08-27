@@ -40,6 +40,16 @@ const features = [
     alt: "GuitarTool 吉他与尤克里里和弦库展示",
     tone: "blush",
   },
+  {
+    number: "04",
+    kicker: "Chord Cards",
+    title: "先看到最终卡片，\n再保存或发给需要的人。",
+    copy: "真实预览会保留当前和弦、静音弦、按弦点与高把位起始品位。确认无误后保存到相册，或通过系统分享发送图片。",
+    points: ["吉他与尤克里里分别排版", "覆盖开放把位与高把位", "分享纯图片，不强制附下载链接"],
+    image: "/chord-card-share.webp",
+    alt: "GuitarTool 和弦卡片预览、保存和分享界面",
+    tone: "aqua",
+  },
 ] as const;
 
 const faqs = [
@@ -133,7 +143,7 @@ export default function Home() {
 
       <section className="features sectionPad" id="features">
         <div className="shell sectionHeading">
-          <p className="eyebrow"><span /> 三件工具，一套练习节奏</p>
+          <p className="eyebrow"><span /> 三个核心工具，一套完整练习</p>
           <h2>从第一根弦，<br />到最后一拍。</h2>
         </div>
         <div className="featureStack shell">
@@ -167,7 +177,7 @@ export default function Home() {
 
       <section className="extras shell sectionPad">
         <div className="sectionHeading compact">
-          <p className="eyebrow"><span /> 不只三件工具 · 持续进化</p>
+          <p className="eyebrow"><span /> 多端体验 · 外观与小组件</p>
           <h2>让练习适应你，<br />不是反过来。</h2>
         </div>
         <div className="extraGrid">

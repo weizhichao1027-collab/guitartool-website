@@ -22,7 +22,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       canonical,
       languages: { "zh-CN": canonical, en: absoluteUrl(`/en/guides/${slug}/`), "x-default": absoluteUrl(`/en/guides/${slug}/`) },
     },
-    openGraph: { title: page.title, description: page.description, url: canonical, type: "website" },
+    openGraph: { title: page.title, description: page.description, url: canonical, type: "website", images: page.showcase ? [{ url: absoluteUrl(page.showcase.image), width: 833, height: 1800, alt: page.showcase.alt }] : [] },
+    twitter: { card: page.showcase ? "summary_large_image" : "summary", title: page.title, description: page.description, images: page.showcase ? [absoluteUrl(page.showcase.image)] : [] },
   };
 }
 

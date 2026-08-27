@@ -11,6 +11,7 @@ export type LandingPage = {
   eyebrow: string;
   lead: string;
   proof: string[];
+  showcase?: { image: string; alt: string; caption: string };
   sections: Array<{ title: string; body: string; points: string[] }>;
   faq: Array<[string, string]>;
   related: string[];

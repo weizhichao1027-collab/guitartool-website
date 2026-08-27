@@ -64,6 +64,16 @@ const features = [
     alt: "GuitarTool guitar and ukulele chord library",
     tone: "blush",
   },
+  {
+    number: "04",
+    kicker: "Chord Cards",
+    title: "See the final card first.\nThen save it or send it.",
+    copy: "The real preview keeps the visible chord, muted strings, fretted notes and higher-position starting fret. Once it looks right, save to Photos or share the image.",
+    points: ["Layouts for guitar and ukulele", "Open and higher-position voicings", "A clean image with no forced download link"],
+    image: "/en-chord-card-share.webp",
+    alt: "GuitarTool chord card preview with save and share actions",
+    tone: "aqua",
+  },
 ] as const;
 
 const faqs = [
@@ -134,7 +144,7 @@ export default function EnglishHome() {
       </section>
 
       <section className="features sectionPad" id="features">
-        <div className="shell sectionHeading"><p className="eyebrow"><span /> Three tools, one practice flow</p><h2>From the first string<br />to the final beat.</h2></div>
+        <div className="shell sectionHeading"><p className="eyebrow"><span /> Three core tools, one complete flow</p><h2>From the first string<br />to the final beat.</h2></div>
         <div className="featureStack shell">
           {features.map((feature, index) => (
             <article className={`featureCard ${feature.tone}`} key={feature.number}>
@@ -153,7 +163,7 @@ export default function EnglishHome() {
       <section className="numbers"><div className="shell numbersGrid"><div><strong>20–500</strong><span>precise BPM range</span></div><div><strong>430–446</strong><span>Hz calibration</span></div><div><strong>19,244</strong><span>guitar & ukulele fingerings</span></div><div><strong>1–12</strong><span>beats per bar</span></div></div></section>
 
       <section className="extras shell sectionPad">
-        <div className="sectionHeading compact"><p className="eyebrow"><span /> More than three tools · always evolving</p><h2>Practice should fit you,<br />not the other way around.</h2></div>
+        <div className="sectionHeading compact"><p className="eyebrow"><span /> Across your devices · themes & widgets</p><h2>Practice should fit you,<br />not the other way around.</h2></div>
         <div className="extraGrid">
           <article className="extraCard themeCard">
             <div className="extraText"><p className="cardLabel">Themes & appearance</p><h3>Four free looks.<br />Choose your practice atmosphere.</h3><p>Sky, Night, Forest and Graphite are included with the app. Your choice stays on the device and needs no account or cloud profile.</p><div className="swatches" aria-label="Sky, Night, Forest and Graphite themes"><span className="day" /><span className="night" /><span className="pine" /><span className="graphite" /><b>4 INCLUDED</b></div></div>

@@ -8,7 +8,8 @@ export const metadata: Metadata = {
   title: "GuitarTool Press Kit | Product Facts, Images & Contact",
   description: "Official GuitarTool press kit with version 1.0.7 highlights, verified product facts, downloadable visuals, privacy details and developer contact information.",
   alternates: { canonical: absoluteUrl("/press/") },
-  openGraph: { title: "GuitarTool Official Press Kit", description: "Product facts, downloadable visuals and official contact information for GuitarTool.", url: absoluteUrl("/press/"), type: "website" },
+  openGraph: { title: "GuitarTool Official Press Kit", description: "Product facts, downloadable visuals and official contact information for GuitarTool.", url: absoluteUrl("/press/"), type: "website", images: [{ url: absoluteUrl("/en-chord-card-share.webp"), width: 833, height: 1800, alt: "GuitarTool 1.0.7 chord card preview" }] },
+  twitter: { card: "summary_large_image", title: "GuitarTool Official Press Kit", description: "Verified version 1.0.7 facts and downloadable product images.", images: [absoluteUrl("/en-chord-card-share.webp")] },
 };
 
 const assets = [
@@ -17,6 +18,7 @@ const assets = [
   { title: "Metronome interface", file: "/en-metronome.webp", preview: "/en-metronome.webp", detail: "WebP · English UI", width: 833, height: 1800 },
   { title: "Tuner interface", file: "/en-tuner.webp", preview: "/en-tuner.webp", detail: "WebP · English UI", width: 833, height: 1800 },
   { title: "Chord library", file: "/en-chords.webp", preview: "/en-chords.webp", detail: "WebP · English UI", width: 833, height: 1800 },
+  { title: "Chord card preview", file: "/en-chord-card-share.webp", preview: "/en-chord-card-share.webp", detail: "WebP · English 1.0.7 UI", width: 833, height: 1800 },
   { title: "Devices", file: "/en-devices.webp", preview: "/en-devices.webp", detail: "WebP · iPhone, iPad & Watch", width: 833, height: 1800 },
 ] as const;
 
@@ -52,6 +54,11 @@ export default function PressKitPage() {
         <div><p className="acqEyebrow">VERSION 1.0.7 HIGHLIGHTS</p><h2>Useful chord shapes can now leave the screen without turning into an ad.</h2></div>
         <div><p>Any visible guitar or ukulele voicing can be previewed as a localized image card, saved to Photos or sent through the system share sheet. The card follows the exact five-fret window, muted strings and higher-position starting fret shown in the app. It contains no forced App Store link, so a student, teacher or bandmate can use it immediately.</p><p>The Apple Watch companion now keeps metronome audio running when the wrist lowers or the display dims. Its timing is driven by the audio sample clock, while screen and haptic refresh work can pause independently. Version 1.0.7 also continues the app’s fully offline, account-free and ad-free approach.</p></div>
       </section>
+
+      <figure className="pressFeatureImage shell">
+        <Image src={assetPath("/en-chord-card-share.webp")} alt="GuitarTool 1.0.7 chord card preview, Save to Photos and Share Image interface" width={833} height={1800} sizes="(max-width: 700px) 88vw, 620px" />
+        <figcaption>Official version 1.0.7 product image · English interface · available for editorial coverage.</figcaption>
+      </figure>
 
       <section className="pressStory shell">
         <div><p className="acqEyebrow">PRODUCT STORY</p><h2>Less setup. More time with the instrument.</h2></div>

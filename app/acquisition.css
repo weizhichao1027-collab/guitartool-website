@@ -38,6 +38,9 @@
 .proofStrip li { min-width: 230px; padding: 23px 34px; border-right: 1px solid var(--line); color: #52676a; font-size: 12px; font-weight: 700; }
 .proofStrip li:last-child { border-right: 0; }
 .acqBody { padding-bottom: 120px; }
+.guideShowcase, .pressFeatureImage { display: grid; justify-items: center; gap: 18px; padding-block: 30px 100px; }
+.guideShowcase img, .pressFeatureImage img { width: min(100%, 620px); height: auto; border: 1px solid rgba(20,35,39,.08); border-radius: 34px; box-shadow: 0 38px 90px rgba(24,82,84,.16); }
+.guideShowcase figcaption, .pressFeatureImage figcaption { max-width: 680px; color: #718184; font-size: 12px; line-height: 1.7; text-align: center; }
 .contentBlock { display: grid; grid-template-columns: 110px 1fr; gap: 40px; padding-block: 100px; border-bottom: 1px solid var(--line); }
 .contentIndex { padding-top: 10px; color: #8c999b; font-family: Georgia, serif; font-size: 14px; }
 .contentBlock > div { display: grid; grid-template-columns: 1fr .85fr; gap: 45px 80px; }
@@ -282,6 +285,8 @@
   .pressHero { padding-block: 75px; }
   .pressHero > div { align-items: flex-start; flex-direction: column; }
   .pressFacts, .pressStory, .assetSection { padding-block: 80px; }
+  .guideShowcase, .pressFeatureImage { padding-block: 10px 75px; }
+  .guideShowcase img, .pressFeatureImage img { border-radius: 24px; }
   .pressNumbers { grid-template-columns: 1fr; }
   .pressNumbers div { border-right: 0; border-bottom: 1px solid var(--line); }
   .pressNumbers div:last-child { border-bottom: 0; }

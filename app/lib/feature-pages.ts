@@ -8,6 +8,11 @@ export const enFeaturePages: LandingPage[] = [
     eyebrow: "CHORD CARDS · GUITAR & UKULELE",
     lead: "A useful voicing should be easy to keep, teach and send. GuitarTool turns the exact chord on screen into a clean image card without adding an account or upload step.",
     proof: ["Preview before sharing", "Save to Photos", "No account or upload"],
+    showcase: {
+      image: "/en-chord-card-share.webp",
+      alt: "GuitarTool chord card preview with Save to Photos and Share Image actions",
+      caption: "The real version 1.0.7 interface: create the current voicing, inspect the final card, then save or share it.",
+    },
     sections: [
       {
         title: "Share the voicing you are actually using",
@@ -63,6 +68,11 @@ export const zhFeaturePages: LandingPage[] = [
     eyebrow: "和弦卡片 · 吉他与尤克里里",
     lead: "一个真正顺手的指法，应该容易保存、讲解和转发。GuitarTool 会把屏幕上的当前和弦生成清晰图片，不需要账户，也不需要上传。",
     proof: ["分享前先预览", "一键保存到相册", "无需账户或上传"],
+    showcase: {
+      image: "/chord-card-share.webp",
+      alt: "GuitarTool 和弦卡片预览、保存到相册与分享图片界面",
+      caption: "1.0.7 真实界面：生成当前按法，先查看最终卡片，再保存到相册或分享图片。",
+    },
     sections: [
       {
         title: "分享你正在使用的那个按法",

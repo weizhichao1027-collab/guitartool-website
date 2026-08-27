@@ -10,7 +10,7 @@
 | --- | --- | --- | --- |
 | GitHub Pages | 面向普通访客与搜索引擎的公开主站、canonical 来源 | https://weizhichao1027-collab.github.io/guitartool-website/ | 公开 |
 | GitHub | 源码、版本历史、Pages 自动部署 | https://github.com/weizhichao1027-collab/guitartool-website | 仓库权限控制 |
-| OpenAI Sites | 第二套生产部署、托管备份/预览 | https://guitartool-studio.weizhichao1027.chatgpt.site | Version 9 已部署；仅站点所有者可访问 |
+| OpenAI Sites | 第二套生产部署、托管备份/预览 | https://guitartool-studio.weizhichao1027.chatgpt.site | Version 10 已部署；仅站点所有者可访问 |
 | App Store Connect | App 产品页、三个自定产品页、精选提名 | App ID `6761914163` | Apple 账号权限控制 |
 | Google Search Console | Google 所有权、sitemap、索引请求 | GitHub Pages URL-prefix 资源 | Google 账号权限控制 |
 | IndexNow | 主动通知支持该协议的搜索引擎 | GitHub Actions 自动调用 | 自动 |
@@ -28,6 +28,7 @@ OpenAI Sites 项目 ID：`appgprj_6a8a503888348191be812170e152a86c`。项目配�
 - 高意图练习与版本功能页：36 页，即 18 个主题的中英文版本。
 - 热门和弦目录与详情：吉他 50 页、尤克里里 50 页，共 100 个详情页，另有两个目录页。
 - Press Kit / 媒体资料中心。
+- 13 张本地化“和弦卡片－保存与分享”真实 App Store 预览图；中英文首页、其余 11 个语言首页、双语和弦分享指南与 Press Kit 均使用对应素材。
 - `robots.txt`、`sitemap.xml`、Web App manifest、Open Graph 图片、IndexNow 验证文件。
 - 本轮构建生成 172 个静态页面/路由；sitemap 包含 167 个公开 URL。
 
@@ -58,6 +59,7 @@ OpenAI Sites 项目 ID：`appgprj_6a8a503888348191be812170e152a86c`。项目配�
 - `app/lib/tuning-pages.ts`：本轮新增的 12 个双语调弦页面。
 - `app/lib/practice-pages.ts`：频率、变调夹、节奏训练和拍号的 8 个双语页面。
 - `app/lib/feature-pages.ts`：1.0.7 和弦卡片分享与 Watch 后台声音的 4 个双语页面。
+- `public/*-chord-card-share.webp` 与 `public/chord-card-share.webp`：从 13 种语言真实上传截图生成的站点优化版素材；不要用单一语言图片覆盖其他语言。
 - `app/lib/tuner-locales.ts`：13 种语言在线调音器文案与 metadata。
 - `app/components/TunerTool.tsx`：浏览器本地音高检测、模式切换和麦克风生命周期。
 - `app/lib/site.ts`：App Store Campaign 与三个自定产品页的下载链接分流。
@@ -76,7 +78,7 @@ OpenAI Sites 项目 ID：`appgprj_6a8a503888348191be812170e152a86c`。项目配�
 - 1.0.7 Build 7 当前正在等待审核。
 - 主产品页当前使用 7 张截图，顺序为：节拍器、调音器、和弦库、和弦分享、四套主题、Widget、多设备。
 - 1.0.7 推广文本、完整描述和更新说明均已加入和弦卡片预览/保存/分享；网站、Press Kit 与归档文案使用同一事实口径。
-- App 审核备注中仍有一处旧说明，错误写成 Watch 离开前台会停止；需要在用户确认后改为“仅暂停界面与触觉刷新，声音继续播放”。
+- 2026-08-27 已在 App Store Connect 修正并保存审核备注：Watch 落腕、屏幕变暗或进入非活跃状态后仅暂停界面与触觉刷新，声音继续播放；中英文说明均已写入。
 
 ### 精选提名
 
@@ -104,15 +106,15 @@ OpenAI Sites 项目 ID：`appgprj_6a8a503888348191be812170e152a86c`。项目配�
 - 已在 App Store Connect Analytics 创建 Campaign Link，Provider Token 为 `128747267`。
 - 网站首页、导航、Smart App Banner、Press Kit、调音器、节拍器和和弦页面分别使用 `site_home`、`site_nav`、`site_smart_banner`、`site_press`、`site_tuner`、`site_metronome`、`site_chords`。
 - 调音器、节拍器和和弦入口同时携带对应自定产品页 `ppid`。Apple 批准前会安全回退到默认产品页，批准后同一链接自动展示相应页面。
-- App 内和弦卡片采用“预览 → 保存到相册 / 分享图片”的流程，系统分享只发送图片，不附带 App Store 链接，因此不使用 `app_chord_share` Campaign。卡片的品牌名、创建署名、乐器、功能标签与高把位起始品位覆盖全部 13 种语言；中文品牌名为“吉他工具”，左上角乐器标题为“吉他和弦指法”或“尤克里里和弦指法”，和弦名称居中放在和弦图正上方，高把位示例为中文“5 品”、英文“5fr”。此功能已经包含在当前等待审核的 1.0.7 Build 7 中。
+- App 内和弦卡片采用“预览 → 保存到相册 / 分享图片”的流程，系统分享只发送图片，不附带 App Store 链接，因此不使用 `app_chord_share` Campaign。卡片的品牌名、乐器、功能标签与高把位起始品位覆盖全部 13 种语言；中文品牌名为“吉他工具”，乐器标题为“吉他和弦指法”或“尤克里里和弦指法”，和弦名称居中放在和弦图正上方，高把位示例为中文“5 品”、英文“5fr”。此功能已经包含在当前等待审核的 1.0.7 Build 7 中。
 - 2026-08-26 核对 Analytics 概览时显示 65 次首次下载、795 次展示、81 次产品页浏览、12.6% 转化率。该数值是当时界面所选 90 天范围的快照，不应当作永久累计值。
 
 ## 4. 搜索引擎状态
 
 - Google Search Console 的 URL-prefix 资源已完成 HTML meta 所有权验证。
 - 验证 meta 在 `app/layout.tsx`，保持验证状态必须保留。
-- `/sitemap.xml` 已于 2026-08-26 提交；2026-08-27 的 Search Console 实况仍为“无法抓取”，已发现网页 0、视频 0。
-- 同一公开 sitemap 已从终端实测为 HTTP 200、`application/xml` 且 XML 校验通过，当前更像新资源的处理延迟，而不是公开文件不可用。新版本部署后只重新提交一次，然后等待 Google 重试；不要反复删除或重建资源。
+- `/sitemap.xml` 已于 2026-08-27 在 Search Console 重新提交一次，界面明确显示“已成功提交站点地图”；提交后即时状态仍为“无法抓取”，已发现网页 0、视频 0，属于等待 Google 异步处理的观察期。
+- 同一公开 sitemap 已从终端实测为 HTTP 200、`application/xml` 且 XML 校验通过。未来 24–72 小时只复查状态，不再次提交、删除或重建资源；只有 Google 返回稳定且可复现的具体错误时才排查站点实现。
 - 首页已通过“网址检查”提交“请求编入索引”。Google 是否收录和排名由其系统决定。
 - GitHub Pages 每次成功部署后都会运行 `notify-search-engines`；新版本部署后应以 GitHub Actions 记录确认当前 sitemap 的 167 个 URL 已进入 IndexNow 通知流程。
 
@@ -123,7 +125,7 @@ OpenAI Sites 项目 ID：`appgprj_6a8a503888348191be812170e152a86c`。项目配�
 3. 首页、在线节拍器、调音器指南和和弦目录是否进入索引；
 4. 是否出现 canonical、移动可用性或结构化数据错误。
 
-新版本部署后，重新提交 `/sitemap.xml` 属于对外提交操作，需要账号持有人明确确认；提交后记录实际时间与结果。
+本轮重新提交已经完成，不要再次操作；后续只记录 Google 的抓取结果和已发现网页数量。
 
 ## 5. 构建与发布
 

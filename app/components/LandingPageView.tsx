@@ -1,8 +1,9 @@
+import Image from "next/image";
 import Link from "next/link";
 import { AcquisitionFooter, AcquisitionHeader } from "@/app/components/AcquisitionChrome";
 import { JsonLd } from "@/app/components/JsonLd";
 import { LandingLanguage, LandingPage, getLandingPage } from "@/app/lib/landing-pages";
-import { APP_STORE_URL, APP_NAME, absoluteUrl, appStoreLinkForGuide } from "@/app/lib/site";
+import { APP_STORE_URL, APP_NAME, absoluteUrl, appStoreLinkForGuide, assetPath } from "@/app/lib/site";
 
 export function LandingPageView({ page, language }: { page: LandingPage; language: LandingLanguage }) {
   const isZh = language === "zh";
@@ -68,6 +69,13 @@ export function LandingPageView({ page, language }: { page: LandingPage; languag
             {page.proof.map((item) => <li key={item}>{item}</li>)}
           </ul>
         </header>
+
+        {page.showcase ? (
+          <figure className="guideShowcase shell">
+            <Image src={assetPath(page.showcase.image)} alt={page.showcase.alt} width={833} height={1800} sizes="(max-width: 700px) 88vw, 620px" />
+            <figcaption>{page.showcase.caption}</figcaption>
+          </figure>
+        ) : null}
 
         <div className="acqBody shell">
           {page.sections.map((section, index) => (
