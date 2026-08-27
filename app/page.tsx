@@ -69,7 +69,7 @@ export default function Home() {
       ]} />
       <nav className="nav shell" aria-label="主导航">
         <a className="brand" href="#top" aria-label="GuitarTool 首页">
-          <Image src={assetPath("/app-icon.png")} alt="" width={42} height={42} priority />
+          <Image src={assetPath("/app-icon-224.png")} alt="" width={42} height={42} priority />
           <span>GuitarTool</span>
         </a>
         <div className="navLinks">
@@ -129,7 +129,7 @@ export default function Home() {
       <section className="manifesto shell sectionPad">
         <div className="sectionIndex">00 / WHY</div>
         <div className="manifestoBody">
-          <p className="manifestoTitle">工具应该帮你进入状态，<br />而不是成为新的干扰。</p>
+          <h2 className="manifestoTitle">工具应该帮你进入状态，<br />而不是成为新的干扰。</h2>
           <div className="manifestoGrid">
             <p>所以我们把调音、节拍和和弦放进同一套清晰的练习流程里。没有广告，没有动态，没有登录墙——打开，就开始练。</p>
             <div className="miniStats">
@@ -253,7 +253,7 @@ export default function Home() {
         <div className="languageCloud shell" aria-label="支持的十三种语言">
           {[
             ["简体中文", "/"], ["English", "/en/"], ["繁體中文", "/zh-hant/"], ["日本語", "/ja/"], ["한국어", "/ko/"], ["Deutsch", "/de/"], ["Français", "/fr/"], ["Italiano", "/it/"], ["Español", "/es/"], ["Português", "/pt-br/"], ["Русский", "/ru/"], ["Türkçe", "/tr/"], ["العربية", "/ar/"]
-          ].map(([language, href], index) => <Link href={href} className={index % 4 === 0 ? "accent" : ""} key={language}>{language}</Link>)}
+          ].map(([language, href], index) => <Link href={href} className={index === 0 ? "accent" : ""} aria-current={index === 0 ? "page" : undefined} key={language}>{language}</Link>)}
         </div>
       </section>
 
@@ -289,7 +289,7 @@ export default function Home() {
 
       <section className="finalCta shell">
         <div className="ctaGlow" />
-        <Image className="ctaIcon" src={assetPath("/app-icon.png")} alt="GuitarTool App 图标" width={112} height={112} />
+        <Image className="ctaIcon" src={assetPath("/app-icon-224.png")} alt="GuitarTool App 图标" width={112} height={112} />
         <p>GuitarTool for iPhone · iPad · Apple Watch</p>
         <h2>下一次练习，<br />从更好的工具开始。</h2>
         <a className="primaryButton coral" href={appStoreUrl}>在 App Store 下载 <span>↗</span></a>
@@ -298,7 +298,7 @@ export default function Home() {
 
       <footer className="footer shell">
         <a className="brand" href="#top">
-          <Image src={assetPath("/app-icon.png")} alt="" width={36} height={36} />
+          <Image src={assetPath("/app-icon-224.png")} alt="" width={36} height={36} />
           <span>GuitarTool</span>
         </a>
         <p>© 2026 Zhichao Wei. 用心练习，安静进步。</p>

@@ -17,7 +17,8 @@ export const metadata: Metadata = {
   appLinks: { ios: { url: APP_STORE_URL, app_store_id: "6761914163", app_name: "GuitarTool" } },
   other: { "apple-itunes-app": `app-id=6761914163, app-argument=${APP_STORE_LINKS.smartBanner}` },
   verification: { google: "8ZJPCPf4ZDXOyR88ShC7PA1WEXwOOsnh5gwaEaTg8Bg" },
-  icons: { icon: `${basePath}/app-icon.png`, apple: `${basePath}/app-icon.png` },
+  icons: { icon: `${basePath}/app-icon-224.png`, apple: `${basePath}/app-icon-224.png` },
+  referrer: "strict-origin-when-cross-origin",
   openGraph: {
     title: "GuitarTool｜练琴时，只留下专注。",
     description: "调音、节拍、和弦，一款完全离线的吉他与尤克里里练习工具。",
@@ -39,8 +40,15 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang="zh-CN">
+      <head>
+        <meta httpEquiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; connect-src 'self'; font-src 'self' data:; form-action 'none'; img-src 'self' data: https:; media-src 'self'; object-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; upgrade-insecure-requests" />
+      </head>
+      <body>
+        <a className="skipLink" href="#main-content">跳到正文 / Skip to content</a>
+        <div id="main-content" tabIndex={-1}>{children}</div>
+        <script dangerouslySetInnerHTML={{ __html: "(()=>{const main=document.querySelector('main[lang]');if(!main)return;document.documentElement.lang=main.lang||'zh-CN';document.documentElement.dir=main.dir||'ltr';})();" }} />
+      </body>
     </html>
   );
 }

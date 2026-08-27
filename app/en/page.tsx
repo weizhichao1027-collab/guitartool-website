@@ -93,7 +93,7 @@ export default function EnglishHome() {
       ]} />
       <nav className="nav shell" aria-label="Main navigation">
         <a className="brand" href="#top" aria-label="GuitarTool home">
-          <Image src={assetPath("/app-icon.png")} alt="" width={42} height={42} priority />
+          <Image src={assetPath("/app-icon-224.png")} alt="" width={42} height={42} priority />
           <span>GuitarTool</span>
         </a>
         <div className="navLinks">
@@ -135,7 +135,7 @@ export default function EnglishHome() {
       <section className="manifesto shell sectionPad">
         <div className="sectionIndex">00 / WHY</div>
         <div className="manifestoBody">
-          <p className="manifestoTitle">A tool should help you find your flow,<br />not become another distraction.</p>
+          <h2 className="manifestoTitle">A tool should help you find your flow,<br />not become another distraction.</h2>
           <div className="manifestoGrid">
             <p>That is why tuning, rhythm and chords live in one clear practice flow. No ads, no feeds, no login wall—open the app and start playing.</p>
             <div className="miniStats"><div><strong>3</strong><span>essential tools</span></div><div><strong>13</strong><span>interface languages</span></div><div><strong>0</strong><span>ads or trackers</span></div></div>
@@ -194,7 +194,7 @@ export default function EnglishHome() {
 
       <section className="languages sectionPad">
         <div className="shell languagesIntro"><div className="sectionIndex">05 / LANGUAGES</div><div><h2>Use familiar words.<br />Focus on the music.</h2><p>Follow your system language or choose anytime in the app.</p></div></div>
-        <div className="languageCloud shell" aria-label="Thirteen supported languages">{[["简体中文","/"],["English","/en/"],["繁體中文","/zh-hant/"],["日本語","/ja/"],["한국어","/ko/"],["Deutsch","/de/"],["Français","/fr/"],["Italiano","/it/"],["Español","/es/"],["Português","/pt-br/"],["Русский","/ru/"],["Türkçe","/tr/"],["العربية","/ar/"]].map(([language, href], index) => <Link href={href} className={index % 4 === 0 ? "accent" : ""} key={language}>{language}</Link>)}</div>
+        <div className="languageCloud shell" aria-label="Thirteen supported languages">{[["简体中文","/"],["English","/en/"],["繁體中文","/zh-hant/"],["日本語","/ja/"],["한국어","/ko/"],["Deutsch","/de/"],["Français","/fr/"],["Italiano","/it/"],["Español","/es/"],["Português","/pt-br/"],["Русский","/ru/"],["Türkçe","/tr/"],["العربية","/ar/"]].map(([language, href], index) => <Link href={href} className={index === 1 ? "accent" : ""} aria-current={index === 1 ? "page" : undefined} key={language}>{language}</Link>)}</div>
       </section>
 
       <section className="discoverySection shell sectionPad">
@@ -218,10 +218,10 @@ export default function EnglishHome() {
       </section>
 
       <section className="finalCta shell">
-        <div className="ctaGlow" /><Image className="ctaIcon" src={assetPath("/app-icon.png")} alt="GuitarTool app icon" width={112} height={112} /><p>GuitarTool for iPhone · iPad · Apple Watch</p><h2>Make your next practice<br />a more focused one.</h2><a className="primaryButton coral" href={appStoreUrl}>Download on the App Store <span>↗</span></a><small>Fully offline · No ads · No account</small>
+        <div className="ctaGlow" /><Image className="ctaIcon" src={assetPath("/app-icon-224.png")} alt="GuitarTool app icon" width={112} height={112} /><p>GuitarTool for iPhone · iPad · Apple Watch</p><h2>Make your next practice<br />a more focused one.</h2><a className="primaryButton coral" href={appStoreUrl}>Download on the App Store <span>↗</span></a><small>Fully offline · No ads · No account</small>
       </section>
 
-      <footer className="footer shell"><a className="brand" href="#top"><Image src={assetPath("/app-icon.png")} alt="" width={36} height={36} /><span>GuitarTool</span></a><p>© 2026 Zhichao Wei. Practise with care. Progress quietly.</p><div><a href={privacyUrl}>Privacy</a><a href="mailto:weizhichao1027@gmail.com">Contact</a><a href={githubUrl}>GitHub</a></div></footer>
+      <footer className="footer shell"><a className="brand" href="#top"><Image src={assetPath("/app-icon-224.png")} alt="" width={36} height={36} /><span>GuitarTool</span></a><p>© 2026 Zhichao Wei. Practise with care. Progress quietly.</p><div><a href={privacyUrl}>Privacy</a><a href="mailto:weizhichao1027@gmail.com">Contact</a><a href={githubUrl}>GitHub</a></div></footer>
     </main>
   );
 }

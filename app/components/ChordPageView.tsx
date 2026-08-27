@@ -32,7 +32,7 @@ export function ChordPageView({ instrument, chord }: { instrument: Instrument; c
             <p className="acqEyebrow">{instrumentName.toUpperCase()} CHORD · {chord.voicingCount} POSITIONS IN THE APP</p>
             <h1>{chord.name} <span>{instrumentName} chord</span></h1>
             <p>Learn three playable {chord.name} positions below, then explore all {chord.voicingCount} voicings on an interactive 20-fret board in GuitarTool.</p>
-            <p className="chordChinese">{chord.name} {instrumentZh}和弦：下方展示三种可用按法，APP 内可查看全部 {chord.voicingCount} 种指法、自由编辑并试听。</p>
+            <p className="chordChinese" lang="zh-CN">{chord.name} {instrumentZh}和弦：下方展示三种可用按法，APP 内可查看全部 {chord.voicingCount} 种指法、自由编辑并试听。</p>
             <a className="primaryButton" href={APP_STORE_LINKS.chords}>Open every voicing in GuitarTool <span>↗</span></a>
           </div>
           <ChordDiagram instrument={instrument} voicing={chord.voicings[0]} label={`${chord.name} ${instrumentName} chord · position 1`} />

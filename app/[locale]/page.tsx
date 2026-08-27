@@ -51,7 +51,7 @@ export default async function LocalizedHome({ params }: { params: Promise<{ loca
   return (
     <main className="acqPage localePage" lang={page.htmlLang} dir={page.dir}>
       <JsonLd data={{ "@context": "https://schema.org", "@type": "SoftwareApplication", name: "GuitarTool", description: page.description, url: canonical, downloadUrl: APP_STORE_URL, applicationCategory: "MusicApplication", operatingSystem: "iOS, iPadOS, watchOS", inLanguage: page.htmlLang, offers: { "@type": "Offer", price: "0", priceCurrency: "USD" } }} />
-      <AcquisitionHeader language="other" />
+      <AcquisitionHeader locale={locale} />
       <section className="localeHero shell">
         <div>
           <p className="acqEyebrow">{page.eyebrow}</p>
@@ -69,9 +69,9 @@ export default async function LocalizedHome({ params }: { params: Promise<{ loca
         <Link className="primaryButton" href={`/${locale}/online-tuner/`}>{tunerCopy.start}<span>→</span></Link>
       </section>
       <section className="localeFeatures shell">{page.features.map((feature, index) => <article key={feature.title}><span>{String(index + 1).padStart(2, "0")}</span><h2>{feature.title}</h2><p>{feature.body}</p></article>)}</section>
-      <section className="localeClosing shell"><Image src={assetPath("/app-icon.png")} alt="GuitarTool" width={92} height={92} /><h2>{page.closing}</h2><a className="primaryButton coral" href={APP_STORE_LINKS.home}>{page.download}<span>↗</span></a></section>
-      <nav className="languageDirectory shell" aria-label="Languages"><Link href="/">简体中文</Link><Link href="/en/">English</Link>{localePages.map((item) => <Link className={item.slug === locale ? "active" : ""} href={`/${item.slug}/`} key={item.slug}>{item.htmlLang}</Link>)}</nav>
-      <AcquisitionFooter language="en" />
+      <section className="localeClosing shell"><Image src={assetPath("/app-icon-224.png")} alt="GuitarTool" width={92} height={92} /><h2>{page.closing}</h2><a className="primaryButton coral" href={APP_STORE_LINKS.home}>{page.download}<span>↗</span></a></section>
+      <nav className="languageDirectory shell" aria-label="Languages"><Link href="/">简体中文</Link><Link href="/en/">English</Link>{localePages.map((item) => <Link className={item.slug === locale ? "active" : ""} aria-current={item.slug === locale ? "page" : undefined} href={`/${item.slug}/`} key={item.slug}>{item.htmlLang}</Link>)}</nav>
+      <AcquisitionFooter locale={locale} />
     </main>
   );
 }

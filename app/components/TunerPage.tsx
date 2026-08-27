@@ -7,7 +7,6 @@ import { TunerLocale, tunerPath } from "@/app/lib/tuner-locales";
 
 export function TunerPage({ copy }: { copy: TunerLocale }) {
   const canonical = absoluteUrl(tunerPath(copy.slug));
-  const headerLanguage = copy.slug === "zh" ? "zh" : copy.slug === "en" ? "en" : "other";
   const home = copy.slug === "zh" ? "/" : copy.slug === "en" ? "/en/" : `/${copy.slug}/`;
   return (
     <main className="acqPage tunerPage" lang={copy.htmlLang} dir={copy.dir}>
@@ -18,7 +17,7 @@ export function TunerPage({ copy }: { copy: TunerLocale }) {
           { "@type": "ListItem", position: 2, name: copy.title, item: canonical },
         ] },
       ]} />
-      <AcquisitionHeader language={headerLanguage} />
+      <AcquisitionHeader locale={copy.slug} />
       <section className="tunerHero shell">
         <div className="toolIntro">
           <nav className="breadcrumb" aria-label="Breadcrumb"><Link href={home}>GuitarTool</Link><span>/</span><span>{copy.eyebrow}</span></nav>
@@ -38,7 +37,7 @@ export function TunerPage({ copy }: { copy: TunerLocale }) {
         <h2>{copy.download}</h2>
         <a className="primaryButton coral" href={APP_STORE_LINKS.tuner}>{copy.download}<span>↗</span></a>
       </section>
-      <AcquisitionFooter language={headerLanguage} />
+      <AcquisitionFooter locale={copy.slug} />
     </main>
   );
 }

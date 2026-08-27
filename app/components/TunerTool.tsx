@@ -14,13 +14,19 @@ type Reading = {
 const NOTE_NAMES = ["C", "C♯", "D", "E♭", "E", "F", "F♯", "G", "A♭", "A", "B♭", "B"];
 
 function detectPitch(samples: Float32Array, sampleRate: number) {
+  const stride = 2;
+  const sampleCount = Math.floor(samples.length / stride);
+  const effectiveSampleRate = sampleRate / stride;
   let energy = 0;
-  for (const sample of samples) energy += sample * sample;
-  const rms = Math.sqrt(energy / samples.length);
+  for (let index = 0; index < sampleCount; index += 1) {
+    const sample = samples[index * stride];
+    energy += sample * sample;
+  }
+  const rms = Math.sqrt(energy / sampleCount);
   if (rms < 0.012) return null;
 
-  const minimumLag = Math.floor(sampleRate / 1200);
-  const maximumLag = Math.min(Math.floor(sampleRate / 45), samples.length - 2);
+  const minimumLag = Math.floor(effectiveSampleRate / 1200);
+  const maximumLag = Math.min(Math.floor(effectiveSampleRate / 45), sampleCount - 2);
   let bestLag = -1;
   let bestCorrelation = 0;
 
@@ -28,10 +34,10 @@ function detectPitch(samples: Float32Array, sampleRate: number) {
     let correlation = 0;
     let leftEnergy = 0;
     let rightEnergy = 0;
-    const count = samples.length - lag;
+    const count = Math.min(sampleCount - lag, 720);
     for (let index = 0; index < count; index += 1) {
-      const left = samples[index];
-      const right = samples[index + lag];
+      const left = samples[index * stride];
+      const right = samples[(index + lag) * stride];
       correlation += left * right;
       leftEnergy += left * left;
       rightEnergy += right * right;
@@ -44,7 +50,7 @@ function detectPitch(samples: Float32Array, sampleRate: number) {
   }
 
   if (bestLag < 0 || bestCorrelation < 0.72) return null;
-  return sampleRate / bestLag;
+  return effectiveSampleRate / bestLag;
 }
 
 function readingFor(frequency: number, recentCents: number[]): Reading {
@@ -106,7 +112,7 @@ export function TunerTool({ copy }: { copy: TunerLocale }) {
         audio: { echoCancellation: false, autoGainControl: false, noiseSuppression: false },
       });
       const analyser = context.createAnalyser();
-      analyser.fftSize = 4096;
+      analyser.fftSize = 2048;
       analyser.smoothingTimeConstant = 0;
       context.createMediaStreamSource(stream).connect(analyser);
       const samples = new Float32Array(analyser.fftSize);
@@ -114,7 +120,7 @@ export function TunerTool({ copy }: { copy: TunerLocale }) {
       setRunning(true);
 
       const sample = (time: number) => {
-        if (time - lastSampleRef.current >= 80) {
+        if (time - lastSampleRef.current >= 120) {
           lastSampleRef.current = time;
           analyser.getFloatTimeDomainData(samples);
           const detected = detectPitch(samples, context.sampleRate);
@@ -144,9 +150,9 @@ export function TunerTool({ copy }: { copy: TunerLocale }) {
 
   return (
     <div className="tunerTool">
-      <div className="tunerPresets" aria-label="Tuning mode">
+      <div className="tunerPresets" role="group" aria-label={copy.eyebrow}>
         {(["chromatic", "guitar", "ukulele"] as const).map((item) => (
-          <button className={preset === item ? "active" : ""} type="button" onClick={() => setPreset(item)} key={item}>
+          <button className={preset === item ? "active" : ""} type="button" aria-pressed={preset === item} onClick={() => setPreset(item)} key={item}>
             {copy[item]}
           </button>
         ))}

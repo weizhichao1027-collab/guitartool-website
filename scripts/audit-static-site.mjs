@@ -60,6 +60,17 @@ const attributePattern = /\b(?:href|src|poster)=(?:"([^"]+)"|'([^']+)')/gi;
 for (const htmlFile of htmlFiles) {
   const html = await readFile(htmlFile, "utf8");
   const sourceRoute = routeForHtml(htmlFile);
+  const mainLanguage = html.match(/<main\b[^>]*\blang="([^"]+)"/i)?.[1];
+  const documentLanguage = html.match(/<html\b[^>]*\blang="([^"]+)"/i)?.[1];
+
+  if (mainLanguage) {
+    if (documentLanguage !== mainLanguage) failures.push(`${sourceRoute} -> document language ${documentLanguage ?? "missing"}, expected ${mainLanguage}`);
+    if (!/<a\b[^>]*class="[^"]*skipLink[^"]*"[^>]*href="#main-content"/i.test(html)) failures.push(`${sourceRoute} -> missing skip-to-content link`);
+    if (!/<link\b[^>]*rel="canonical"/i.test(html)) failures.push(`${sourceRoute} -> missing canonical link`);
+    if (!/\/online-(?:tuner|metronome)\//.test(sourceRoute) && /<script\b[^>]*\bsrc="[^"]*\/_next\/static\/chunks\//i.test(html)) {
+      failures.push(`${sourceRoute} -> unnecessary client runtime on a static page`);
+    }
+  }
 
   for (const match of html.matchAll(attributePattern)) {
     const rawTarget = decodeAttribute(match[1] ?? match[2]);

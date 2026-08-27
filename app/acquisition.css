@@ -20,7 +20,7 @@
 }
 .acqHeader nav { display: flex; align-items: center; gap: 28px; color: #5c6d70; font-size: 13px; font-weight: 650; }
 .acqHeader nav a:hover { color: var(--teal-deep); }
-.acqHeader .acqDownload { padding: 11px 17px; border-radius: 999px; color: #fff; background: var(--ink); }
+.acqHeader .acqDownload { min-height: 44px; display: inline-flex; align-items: center; padding: 11px 17px; border-radius: 999px; color: #fff; background: var(--ink); }
 .acqFooter { min-height: 140px; display: flex; align-items: center; justify-content: space-between; gap: 30px; border-top: 1px solid var(--line); color: #738184; font-size: 11px; }
 .acqFooter div { display: flex; gap: 22px; }
 .acqFooter a:hover { color: var(--teal-deep); }
@@ -75,7 +75,7 @@
 .tempoReadout > button { width: 54px; height: 54px; border: 1px solid rgba(20,35,39,.11); border-radius: 17px; color: var(--teal-deep); background: rgba(255,255,255,.62); font-size: 26px; cursor: pointer; }
 .tempoReadout label { display: flex; flex-direction: column; align-items: center; }
 .tempoReadout label > span { color: #77888a; font-size: 10px; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
-.tempoReadout input { width: 100%; border: 0; outline: 0; color: var(--ink); background: transparent; font-family: Georgia, serif; font-size: clamp(75px, 9vw, 112px); line-height: 1; text-align: center; -moz-appearance: textfield; }
+.tempoReadout input { width: 100%; border: 0; color: var(--ink); background: transparent; font-family: Georgia, serif; font-size: clamp(75px, 9vw, 112px); line-height: 1; text-align: center; -moz-appearance: textfield; }
 .tempoReadout input::-webkit-inner-spin-button { display: none; }
 .tempoReadout small { color: var(--teal-deep); font-size: 12px; font-weight: 800; letter-spacing: .15em; }
 .tempoRange { width: 100%; margin: 36px 0 28px; accent-color: var(--teal); }
@@ -83,7 +83,8 @@
 .metronomeControls label, .metronomeControls button { min-height: 58px; display: flex; align-items: center; justify-content: center; gap: 10px; border: 1px solid rgba(20,35,39,.1); border-radius: 15px; color: #345356; background: rgba(255,255,255,.65); font-weight: 700; cursor: pointer; }
 .metronomeControls select { border: 0; color: var(--teal-deep); background: transparent; font: inherit; }
 .metronomeControls .playButton { border-color: var(--ink); color: #fff; background: var(--ink); }
-.metronomeTool > p { margin: 20px 0 0; color: #77898b; font-size: 11px; line-height: 1.6; text-align: center; }
+.metronomeTool > p { margin: 20px 0 0; color: #52686b; font-size: 11px; line-height: 1.6; text-align: center; }
+.metronomeTool > .metronomeError { color: #9c2451; font-size: 12px; font-weight: 700; }
 .toolDetails { display: grid; grid-template-columns: 1fr 1fr; gap: 90px; padding-block: 120px; border-block: 1px solid var(--line); }
 .toolDetails h2 { margin: 0; font-size: clamp(44px, 5.8vw, 75px); line-height: 1.05; letter-spacing: -.065em; }
 .toolDetails > div:last-child > p { margin: 0 0 35px; color: var(--muted); font-size: 17px; line-height: 1.9; }
@@ -108,7 +109,7 @@
 .tunerReference { min-height: 35px; display: grid; place-items: center; padding: 8px 12px; border-radius: 10px; color: #507071; background: rgba(255,255,255,.55); font-size: 11px; font-weight: 750; letter-spacing: .04em; }
 .tunerStart { width: 100%; min-height: 58px; margin-top: 14px; border: 0; border-radius: 15px; color: #fff; background: var(--ink); font: inherit; font-weight: 800; cursor: pointer; }
 .tunerError { margin: 13px 0 0; color: #b42e62; font-size: 12px; line-height: 1.6; text-align: center; }
-.tunerPrivacy { margin: 15px 0 0; color: #76898b; font-size: 10px; line-height: 1.6; text-align: center; }
+.tunerPrivacy { margin: 15px 0 0; color: #50686b; font-size: 10px; line-height: 1.6; text-align: center; }
 .tunerGuide { display: grid; grid-template-columns: .9fr 1.1fr; gap: 90px; padding-block: 120px; border-block: 1px solid var(--line); }
 .tunerGuide h2, .localizedToolCta h2 { margin: 0; font-size: clamp(42px, 5.5vw, 72px); line-height: 1.08; letter-spacing: -.06em; }
 .tunerGuide ol { display: grid; gap: 0; margin: 0; padding: 0; border-top: 1px solid var(--line); list-style: none; }
@@ -168,7 +169,7 @@
 .chordDirectory { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; padding-bottom: 30px; }
 .chordDirectory a { min-height: 95px; display: grid; grid-template-columns: 45px 90px 1fr 25px; align-items: center; gap: 15px; padding: 18px 24px; border: 1px solid var(--line); border-radius: 18px; background: rgba(255,255,255,.48); transition: transform .2s ease, border-color .2s ease; }
 .chordDirectory a:hover { transform: translateY(-2px); border-color: rgba(8,125,127,.3); }
-.chordDirectory a > span { color: #94a0a2; font-family: Georgia, serif; font-size: 12px; }
+.chordDirectory a > span { color: #566b6e; font-family: Georgia, serif; font-size: 12px; }
 .chordDirectory strong { font-size: 25px; }
 .chordDirectory small { color: #738184; }
 .chordDirectory b { color: var(--teal-deep); }

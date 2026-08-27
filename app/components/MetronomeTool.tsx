@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 
 type MetronomeCopy = {
+  label: string;
   start: string;
   stop: string;
   tempo: string;
@@ -11,13 +12,16 @@ type MetronomeCopy = {
   slower: string;
   faster: string;
   hint: string;
+  error: string;
 };
 
 export function MetronomeTool({ copy }: { copy: MetronomeCopy }) {
   const [bpm, setBpm] = useState(80);
+  const [bpmInput, setBpmInput] = useState("80");
   const [beatsPerBar, setBeatsPerBar] = useState(4);
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentBeat, setCurrentBeat] = useState(0);
+  const [error, setError] = useState<string | null>(null);
   const audioContextRef = useRef<AudioContext | null>(null);
   const timerRef = useRef<number | null>(null);
   const nextNoteTimeRef = useRef(0);
@@ -57,14 +61,25 @@ export function MetronomeTool({ copy }: { copy: MetronomeCopy }) {
   }
 
   async function start() {
-    const context = audioContextRef.current ?? new AudioContext();
-    audioContextRef.current = context;
-    await context.resume();
-    beatRef.current = 0;
-    nextNoteTimeRef.current = context.currentTime + 0.05;
-    scheduler();
-    timerRef.current = window.setInterval(scheduler, 25);
-    setIsPlaying(true);
+    setError(null);
+    try {
+      const context = audioContextRef.current ?? new AudioContext();
+      audioContextRef.current = context;
+      await context.resume();
+      if (context.state !== "running") throw new Error("Audio context did not start");
+      beatRef.current = 0;
+      nextNoteTimeRef.current = context.currentTime + 0.05;
+      scheduler();
+      timerRef.current = window.setInterval(scheduler, 25);
+      setIsPlaying(true);
+    } catch {
+      if (timerRef.current !== null) window.clearInterval(timerRef.current);
+      timerRef.current = null;
+      void audioContextRef.current?.close();
+      audioContextRef.current = null;
+      setIsPlaying(false);
+      setError(copy.error);
+    }
   }
 
   function stop() {
@@ -78,6 +93,16 @@ export function MetronomeTool({ copy }: { copy: MetronomeCopy }) {
     const nextBpm = Math.min(500, Math.max(20, value));
     bpmRef.current = nextBpm;
     setBpm(nextBpm);
+    setBpmInput(String(nextBpm));
+  }
+
+  function editBpm(rawValue: string) {
+    setBpmInput(rawValue);
+    const value = Number(rawValue);
+    if (rawValue !== "" && Number.isFinite(value) && value >= 20 && value <= 500) {
+      bpmRef.current = value;
+      setBpm(value);
+    }
   }
 
   function changeBeatsPerBar(value: number) {
@@ -99,8 +124,8 @@ export function MetronomeTool({ copy }: { copy: MetronomeCopy }) {
   }
 
   return (
-    <section className="metronomeTool" aria-label="Online metronome">
-      <div className="beatLights" aria-label={`${currentBeat + 1} / ${beatsPerBar}`}>
+    <section className="metronomeTool" aria-label={copy.label}>
+      <div className="beatLights" aria-live="polite" aria-label={`${currentBeat + 1} / ${beatsPerBar}`}>
         {Array.from({ length: beatsPerBar }, (_, beat) => (
           <span className={isPlaying && currentBeat === beat ? "active" : ""} key={beat} aria-hidden="true" />
         ))}
@@ -109,17 +134,18 @@ export function MetronomeTool({ copy }: { copy: MetronomeCopy }) {
         <button type="button" onClick={() => changeBpm(bpm - 1)} aria-label={copy.slower}>−</button>
         <label>
           <span>{copy.tempo}</span>
-          <input type="number" min="20" max="500" inputMode="numeric" value={bpm} onChange={(event) => changeBpm(Number(event.target.value))} />
+          <input type="number" name="tempo" min="20" max="500" inputMode="numeric" autoComplete="off" value={bpmInput} onChange={(event) => editBpm(event.target.value)} onBlur={() => changeBpm(Number(bpmInput) || bpm)} onKeyDown={(event) => { if (event.key === "Enter") event.currentTarget.blur(); }} />
           <small>BPM</small>
         </label>
         <button type="button" onClick={() => changeBpm(bpm + 1)} aria-label={copy.faster}>＋</button>
       </div>
-      <input className="tempoRange" type="range" min="20" max="500" value={bpm} onChange={(event) => changeBpm(Number(event.target.value))} aria-label={copy.tempo} />
+      <input className="tempoRange" type="range" name="tempo-slider" min="20" max="500" value={bpm} onChange={(event) => changeBpm(Number(event.target.value))} aria-label={copy.tempo} />
       <div className="metronomeControls">
-        <label>{copy.beats}<select value={beatsPerBar} onChange={(event) => changeBeatsPerBar(Number(event.target.value))}>{Array.from({ length: 12 }, (_, index) => <option value={index + 1} key={index + 1}>{index + 1}</option>)}</select></label>
+        <label>{copy.beats}<select name="beats-per-bar" value={beatsPerBar} onChange={(event) => changeBeatsPerBar(Number(event.target.value))}>{Array.from({ length: 12 }, (_, index) => <option value={index + 1} key={index + 1}>{index + 1}</option>)}</select></label>
         <button className="tapButton" type="button" onClick={tapTempo}>{copy.tap}</button>
         <button className="playButton" type="button" onClick={isPlaying ? stop : start}>{isPlaying ? copy.stop : copy.start}</button>
       </div>
+      {error ? <p className="metronomeError" role="alert">{error}</p> : null}
       <p>{copy.hint}</p>
     </section>
   );

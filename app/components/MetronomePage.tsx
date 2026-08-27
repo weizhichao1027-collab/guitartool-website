@@ -7,11 +7,15 @@ export function MetronomePage({ language }: { language: "zh" | "en" }) {
   const isZh = language === "zh";
   const canonical = absoluteUrl(isZh ? "/online-metronome/" : "/en/online-metronome/");
   const copy = isZh ? {
+    label: "在线节拍器",
     start: "开始", stop: "停止", tempo: "速度", beats: "每小节拍数", tap: "TAP 测速", slower: "降低速度", faster: "提高速度",
     hint: "第一次点击开始时，浏览器会启用本地音频。离开页面后声音会自动停止。",
+    error: "浏览器未能启动音频。请确认页面声音未被静音，然后再次点击开始。",
   } : {
+    label: "Online metronome",
     start: "Start", stop: "Stop", tempo: "Tempo", beats: "Beats per bar", tap: "Tap tempo", slower: "Decrease tempo", faster: "Increase tempo",
     hint: "Your browser enables local audio when you press Start. Playback stops automatically when you leave the page.",
+    error: "Audio could not start. Make sure this page is not muted, then press Start again.",
   };
   const faq = isZh ? [
     ["支持多大的速度范围？", "20–500 BPM，覆盖慢速基本功、常规歌曲和高速训练。"],
