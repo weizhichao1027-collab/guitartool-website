@@ -19,15 +19,17 @@
   gap: 30px;
 }
 .acqHeader nav { display: flex; align-items: center; gap: 28px; color: #5c6d70; font-size: 13px; font-weight: 650; }
+.acqHeader nav a { display: inline-flex; align-items: center; min-height: 44px; }
 .acqHeader nav a:hover { color: var(--teal-deep); }
 .acqHeader .acqDownload { min-height: 44px; display: inline-flex; align-items: center; padding: 11px 17px; border-radius: 999px; color: #fff; background: var(--ink); }
 .acqFooter { min-height: 140px; display: flex; align-items: center; justify-content: space-between; gap: 30px; border-top: 1px solid var(--line); color: #738184; font-size: 11px; }
 .acqFooter div { display: flex; gap: 22px; }
+.acqFooter div a { display: inline-flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; }
 .acqFooter a:hover { color: var(--teal-deep); }
 .breadcrumb { display: flex; flex-wrap: wrap; gap: 9px; color: #7f8c8e; font-size: 12px; }
 .breadcrumb a:hover { color: var(--teal-deep); }
 .acqEyebrow { margin: 0 0 25px; color: var(--teal-deep); font-size: 11px; font-weight: 800; letter-spacing: .15em; }
-.textCta { display: inline-flex; gap: 16px; align-items: center; color: var(--teal-deep); font-weight: 750; }
+.textCta { display: inline-flex; gap: 16px; align-items: center; min-height: 44px; color: var(--teal-deep); font-weight: 750; }
 
 .acqHero { padding-block: clamp(80px, 10vw, 145px) 80px; text-align: center; }
 .acqHero .breadcrumb { justify-content: center; margin-bottom: 70px; }
