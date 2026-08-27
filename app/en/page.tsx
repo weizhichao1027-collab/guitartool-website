@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
+import { SiteLink as Link } from "@/app/components/SiteLink";
 import { JsonLd } from "@/app/components/JsonLd";
 import { APP_STORE_LINKS, absoluteUrl, localeAlternates, supportedLanguageCodes } from "@/app/lib/site";
 

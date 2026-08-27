@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { SiteLink as Link } from "@/app/components/SiteLink";
 import { AcquisitionFooter, AcquisitionHeader } from "@/app/components/AcquisitionChrome";
 import { ChordDiagram } from "@/app/components/ChordDiagram";
 import { JsonLd } from "@/app/components/JsonLd";

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+import { SiteLink as Link } from "@/app/components/SiteLink";
 import { APP_STORE_LINKS, GITHUB_URL, PRIVACY_URL, assetPath } from "@/app/lib/site";
 
 type Language = "zh" | "en" | "other";
