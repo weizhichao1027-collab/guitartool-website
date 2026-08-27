@@ -188,7 +188,7 @@ git push github main
 
 ## 8. 下一位维护者检查清单
 
-1. 先读本文件和上级 `APP交接文档.md` 第 23 节。
+1. 先读本文件和上级 `APP交接文档.md` 第 26 节；第 21–25 节仅作为历史操作记录。
 2. 使用 `git status --short`，保留未跟踪的 `guitartool-social-preview.png`。
 3. 检查 App Store 1.0.7、三个自定产品页和精选提名状态。
 4. 1.0.7 批准后复查非主要语言的自定产品页关键词。
