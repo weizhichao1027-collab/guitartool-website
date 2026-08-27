@@ -10,7 +10,7 @@
 | --- | --- | --- | --- |
 | GitHub Pages | 面向普通访客与搜索引擎的公开主站、canonical 来源 | https://weizhichao1027-collab.github.io/guitartool-website/ | 公开 |
 | GitHub | 源码、版本历史、Pages 自动部署 | https://github.com/weizhichao1027-collab/guitartool-website | 仓库权限控制 |
-| OpenAI Sites | 第二套生产部署、托管备份/预览 | https://guitartool-studio.weizhichao1027.chatgpt.site | Version 12 已部署；仅站点所有者可访问 |
+| OpenAI Sites | 第二套生产部署、托管备份/预览 | https://guitartool-studio.weizhichao1027.chatgpt.site | Version 13 已部署；仅站点所有者可访问 |
 | App Store Connect | App 产品页、三个自定产品页、精选提名 | App ID `6761914163` | Apple 账号权限控制 |
 | Google Search Console | Google 所有权、sitemap、索引请求 | GitHub Pages URL-prefix 资源 | Google 账号权限控制 |
 | IndexNow | 主动通知支持该协议的搜索引擎 | GitHub Actions 自动调用 | 自动 |
@@ -166,7 +166,7 @@ git push github main
 - 本地化和弦卡片预览提交：`6a6dfb6 Show localized chord card previews across marketing pages`，已推送到 GitHub `main` 和 Sites 源仓库。
 - 媒体包与图片 SEO 提交：`5debd82 Expand media kit and image SEO`；完整素材包优化提交 `9e4ed6b`；网站视频优化提交 `5a646f1`，均已推送 GitHub `main`。
 - GitHub Actions 工作流 `33029409289`、`33029963848`、`33030157035` 的 build、deploy、notify-search-engines 三个 Job 均成功。公开 Press Kit、四个新双语专题 URL、图片 sitemap、ZIP 与 MP4 抽样均返回 HTTP 200。
-- OpenAI Sites Version 12 已从分批同步但与 `5a646f1` 内容等价的提交 `dc198b2` 保存并部署成功；受保护验收下 Press Kit、专题、图片 sitemap、ZIP 和视频均可访问。访问策略复核为 custom、仅一个 owner、无群组、无外部访客。
+- OpenAI Sites Version 13 已从与 GitHub 公共站内容等价的分批源码保存并部署成功；受保护验收下 Press Kit、专题、图片 sitemap、ZIP 和带 AAC 音频的视频均可访问。访问策略复核为 custom、仅一个 owner、无群组、无外部访客。
 - GitHub Actions 工作流 `33026951090` 的 build、deploy、notify-search-engines 三个 Job 全部成功；公开中英文首页、繁中/阿拉伯语入口、双语和弦分享专题、Press Kit、WebP 图片与 sitemap 均抽样返回 HTTP 200。
 - OpenAI Sites Version 11 已从 `6a6dfb6` 部署成功，访问策略复核为仅一个 owner、无群组、无外部访客。
 - GitHub Actions 工作流 `32998815386` 的 build、deploy、notify-search-engines 三个 Job 全部成功；公开主站、新功能页、Press Kit 与 sitemap 均抽样返回 HTTP 200，167 个 URL 已进入 IndexNow 通知流程。
