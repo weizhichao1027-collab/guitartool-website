@@ -11,7 +11,7 @@ export function LandingPageView({ page, language }: { page: LandingPage; languag
   const canonical = absoluteUrl(`${prefix}/${page.slug}/`);
   const downloadUrl = appStoreLinkForGuide(page.slug);
 
-  const structuredData = [
+  const structuredData: Array<Record<string, unknown>> = [
     {
       "@context": "https://schema.org",
       "@type": "WebPage",
@@ -40,6 +40,22 @@ export function LandingPageView({ page, language }: { page: LandingPage; languag
       ],
     },
   ];
+
+  if (page.showcase) {
+    structuredData.push({
+      "@context": "https://schema.org",
+      "@type": "ImageObject",
+      name: page.showcase.alt,
+      caption: page.showcase.caption,
+      contentUrl: absoluteUrl(page.showcase.image),
+      width: page.showcase.width ?? 833,
+      height: page.showcase.height ?? 1800,
+      representativeOfPage: true,
+      creator: { "@type": "Organization", name: APP_NAME },
+      creditText: APP_NAME,
+      acquireLicensePage: absoluteUrl("/press/"),
+    });
+  }
 
   return (
     <main className="acqPage" lang={isZh ? "zh-CN" : "en"}>
@@ -72,7 +88,7 @@ export function LandingPageView({ page, language }: { page: LandingPage; languag
 
         {page.showcase ? (
           <figure className="guideShowcase shell">
-            <Image src={assetPath(page.showcase.image)} alt={page.showcase.alt} width={833} height={1800} sizes="(max-width: 700px) 88vw, 620px" />
+            <Image src={assetPath(page.showcase.image)} alt={page.showcase.alt} width={page.showcase.width ?? 833} height={page.showcase.height ?? 1800} sizes="(max-width: 700px) 88vw, 620px" />
             <figcaption>{page.showcase.caption}</figcaption>
           </figure>
         ) : null}

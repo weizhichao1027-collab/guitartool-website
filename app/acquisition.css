@@ -223,9 +223,28 @@
 .assetGrid article > div { height: 250px; overflow: hidden; display: grid; place-items: center; border-radius: 16px; background: #e8f1ef; }
 .assetGrid img { width: auto; height: 220px; border-radius: 13px; }
 .assetGrid article:nth-child(2) img { width: 100%; height: auto; border-radius: 0; }
+.assetGrid article.isLandscape img { width: 100%; height: auto; border-radius: 10px; }
 .assetGrid h3 { margin: 20px 0 6px; }
 .assetGrid p { margin: 0 0 18px; color: #7a898b; font-size: 11px; }
 .assetGrid a { display: flex; justify-content: space-between; padding-top: 16px; border-top: 1px solid var(--line); color: var(--teal-deep); font-size: 12px; font-weight: 750; }
+.mediaPackCallout { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 45px; margin-top: 24px; padding: 36px; border-radius: 28px; color: #fff; background: radial-gradient(circle at 80% 10%, rgba(17,194,185,.35), transparent 32%), #19363a; }
+.mediaPackCallout h3 { max-width: 760px; margin: 8px 0 12px; font-size: clamp(28px, 3.5vw, 44px); letter-spacing: -.05em; }
+.mediaPackCallout p:not(.acqEyebrow) { max-width: 740px; margin: 0; color: rgba(255,255,255,.7); line-height: 1.75; }
+.mediaPackCallout .primaryButton { flex-shrink: 0; }
+.pressVideoSection { padding-block: 110px; border-top: 1px solid var(--line); }
+.pressVideoGrid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+.pressVideoGrid article { display: grid; grid-template-columns: 210px 1fr; gap: 26px; align-items: center; padding: 22px; border: 1px solid var(--line); border-radius: 28px; background: rgba(255,255,255,.55); }
+.pressVideoGrid video { width: 210px; aspect-ratio: 9 / 16; border-radius: 20px; background: #dcebea; box-shadow: 0 20px 50px rgba(16,47,53,.16); }
+.pressVideoGrid h3 { margin: 0 0 10px; font-size: 28px; letter-spacing: -.04em; }
+.pressVideoGrid p { color: var(--muted); font-size: 12px; line-height: 1.7; }
+.pressVideoGrid a { display: block; margin-top: 12px; color: var(--teal-deep); font-size: 12px; font-weight: 750; }
+.pressResourceSection { padding-block: 105px; border-top: 1px solid var(--line); }
+.pressResourceSection > h2 { max-width: 880px; margin: 0 0 45px; font-size: clamp(44px, 5.5vw, 72px); letter-spacing: -.06em; }
+.pressResourceGrid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+.pressResourceGrid a { min-height: 260px; display: flex; flex-direction: column; padding: 34px; border: 1px solid var(--line); border-radius: 26px; background: rgba(255,255,255,.55); }
+.pressResourceGrid span { color: var(--teal-deep); font-size: 10px; font-weight: 800; letter-spacing: .14em; }
+.pressResourceGrid strong { max-width: 530px; margin: 42px 0 20px; font-size: 29px; line-height: 1.25; letter-spacing: -.035em; }
+.pressResourceGrid b { margin-top: auto; color: var(--teal-deep); font-size: 12px; }
 .pressLinks { padding-block: 90px 120px; }
 .pressLinks h2 { font-size: 45px; letter-spacing: -.05em; }
 .pressLinks > div { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
@@ -234,7 +253,7 @@
 .pressLinks b { color: var(--teal-deep); font-size: 11px; }
 
 @media (max-width: 900px) {
-  .contentBlock > div, .toolHero, .toolDetails, .tunerHero, .tunerGuide, .chordHero, .diagramIntro, .chordAdvice, .localeHero, .pressFacts, .pressStory, .assetHeading { grid-template-columns: 1fr; }
+  .contentBlock > div, .toolHero, .toolDetails, .tunerHero, .tunerGuide, .chordHero, .diagramIntro, .chordAdvice, .localeHero, .pressFacts, .pressStory, .assetHeading, .mediaPackCallout, .pressVideoGrid { grid-template-columns: 1fr; }
   .contentBlock ul, .relatedResources > div, .diagramGrid, .localeFeatures, .assetGrid { grid-template-columns: repeat(2, 1fr); }
   .toolHero { gap: 45px; }
   .chordHero { justify-items: center; }
@@ -245,6 +264,7 @@
   .pressNumbers { grid-template-columns: repeat(2, 1fr); }
   .pressNumbers div:nth-child(2) { border-right: 0; }
   .pressNumbers div:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+  .mediaPackCallout { justify-items: start; }
 }
 
 @media (max-width: 700px) {
@@ -258,7 +278,7 @@
   .proofStrip li { border-right: 0; border-bottom: 1px solid var(--line); }
   .proofStrip li:last-child { border-bottom: 0; }
   .contentBlock { grid-template-columns: 1fr; gap: 20px; padding-block: 75px; }
-  .contentBlock ul, .relatedResources > div, .diagramGrid, .localeFeatures, .assetGrid { grid-template-columns: 1fr; }
+  .contentBlock ul, .relatedResources > div, .diagramGrid, .localeFeatures, .assetGrid, .pressResourceGrid { grid-template-columns: 1fr; }
   .resourceCta { padding: 45px 28px; border-radius: 26px; }
   .acqFaq { grid-template-columns: 1fr; gap: 45px; padding-block: 90px; }
   .metronomeTool { padding: 27px 18px; border-radius: 28px; }

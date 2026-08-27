@@ -20,12 +20,18 @@ const assets = [
   { title: "Chord library", file: "/en-chords.webp", preview: "/en-chords.webp", detail: "WebP · English UI", width: 833, height: 1800 },
   { title: "Chord card preview", file: "/en-chord-card-share.webp", preview: "/en-chord-card-share.webp", detail: "WebP · English 1.0.7 UI", width: 833, height: 1800 },
   { title: "Devices", file: "/en-devices.webp", preview: "/en-devices.webp", detail: "WebP · iPhone, iPad & Watch", width: 833, height: 1800 },
+  { title: "Chord cards · English social", file: "/media-kit/social/guitartool-chord-cards-en-1200x630.png", preview: "/media-kit/social/guitartool-chord-cards-en-1200x630.png", detail: "PNG · 1200 × 630 · English", width: 1200, height: 630 },
+  { title: "Chord cards · Chinese social", file: "/media-kit/social/guitartool-chord-cards-zh-Hans-1200x630.png", preview: "/media-kit/social/guitartool-chord-cards-zh-Hans-1200x630.png", detail: "PNG · 1200 × 630 · 简体中文", width: 1200, height: 630 },
 ] as const;
 
 export default function PressKitPage() {
   return (
     <main className="acqPage pressPage" lang="en">
       <JsonLd data={{ "@context": "https://schema.org", "@type": "SoftwareApplication", name: "GuitarTool", softwareVersion: "1.0.7", description: "An offline tuner, metronome and interactive chord library for guitar and ukulele, with shareable chord cards, Apple Watch and Home Screen widgets.", url: absoluteUrl("/"), downloadUrl: APP_STORE_URL, applicationCategory: "MusicApplication", operatingSystem: "iOS, iPadOS, watchOS", featureList: ["Real-time tuner for seven instrument families", "20–500 BPM practice metronome", "19,244 guitar and ukulele fingerings", "Chord-card preview, Photos save and system sharing", "Apple Watch metronome with background audio", "Three interactive Home Screen widget sizes", "13 interface languages"], author: { "@type": "Person", name: "Zhichao Wei" }, offers: { "@type": "Offer", price: "0", priceCurrency: "USD" } }} />
+      <JsonLd data={[
+        { "@context": "https://schema.org", "@type": "VideoObject", name: "GuitarTool 1.0.7 product preview", description: "A 24-second preview of GuitarTool's offline metronome, tuner, chord library and shareable chord cards.", thumbnailUrl: absoluteUrl("/media-kit/social/guitartool-chord-cards-en-1200x630.png"), uploadDate: "2026-08-27", duration: "PT24S", contentUrl: absoluteUrl("/media-kit/video/GuitarTool-Social-Preview-en-1080x1920.mp4") },
+        { "@context": "https://schema.org", "@type": "ImageObject", name: "GuitarTool chord-card social preview", contentUrl: absoluteUrl("/media-kit/social/guitartool-chord-cards-en-1200x630.png"), width: 1200, height: 630, caption: "GuitarTool 1.0.7 chord-card preview, Photos save and image sharing.", creator: { "@type": "Person", name: "Zhichao Wei" }, creditText: "GuitarTool official media kit", acquireLicensePage: absoluteUrl("/press/") },
+      ]} />
       <AcquisitionHeader language="en" />
       <section className="pressHero shell">
         <p className="acqEyebrow">OFFICIAL PRESS KIT · UPDATED AUGUST 2026</p>
@@ -67,7 +73,21 @@ export default function PressKitPage() {
 
       <section className="assetSection shell">
         <div className="assetHeading"><p className="acqEyebrow">DOWNLOADABLE ASSETS</p><h2>Ready-to-use product visuals.</h2><p>Assets may be used in editorial coverage of GuitarTool. Please do not alter the app icon or imply an endorsement.</p></div>
-        <div className="assetGrid">{assets.map((asset) => <article key={asset.title}><div><Image src={assetPath(asset.preview)} alt={asset.title} width={asset.width} height={asset.height} /></div><h3>{asset.title}</h3><p>{asset.detail}</p><a href={assetPath(asset.file)} download>Download original <span>↓</span></a></article>)}</div>
+        <div className="assetGrid">{assets.map((asset) => <article className={asset.width > asset.height ? "isLandscape" : undefined} key={asset.title}><div><Image src={assetPath(asset.preview)} alt={asset.title} width={asset.width} height={asset.height} /></div><h3>{asset.title}</h3><p>{asset.detail}</p><a href={assetPath(asset.file)} download>Download original <span>↓</span></a></article>)}</div>
+        <div className="mediaPackCallout"><div><p className="acqEyebrow">COMPLETE SOCIAL KIT</p><h3>52 images, 13 languages, four platform-ready sizes.</h3><p>The ZIP includes landscape, portrait-feed, story and video-thumbnail formats, plus a CSV manifest with localized captions and landing pages.</p></div><a className="primaryButton" href={assetPath("/media-kit/GuitarTool-1.0.7-social-kit-13-locales.zip")} download>Download the 13-language kit <span>↓</span></a></div>
+      </section>
+
+      <section className="pressVideoSection shell">
+        <div className="assetHeading"><p className="acqEyebrow">24-SECOND VIDEO PREVIEWS</p><h2>Real product screens, ready for editorial and social use.</h2><p>English and Simplified Chinese versions use official localized screenshots. App Store-sized candidates are also available for final metadata review after version 1.0.7 clears review.</p></div>
+        <div className="pressVideoGrid">
+          <article><video controls playsInline preload="metadata" poster={assetPath("/media-kit/social/guitartool-chord-cards-en-1080x1350.png")}><source src={assetPath("/media-kit/video/GuitarTool-Social-Preview-en-1080x1920.mp4")} type="video/mp4" /></video><div><h3>English social preview</h3><p>MP4 · H.264 · 1080 × 1920 · 24 seconds</p><a href={assetPath("/media-kit/video/GuitarTool-Social-Preview-en-1080x1920.mp4")} download>Download social video ↓</a><a href={assetPath("/media-kit/video/GuitarTool-App-Preview-en-886x1920.mp4")} download>Download App Preview candidate ↓</a></div></article>
+          <article><video controls playsInline preload="metadata" poster={assetPath("/media-kit/social/guitartool-chord-cards-zh-Hans-1080x1350.png")}><source src={assetPath("/media-kit/video/GuitarTool-Social-Preview-zh-Hans-1080x1920.mp4")} type="video/mp4" /></video><div><h3>Simplified Chinese social preview</h3><p>MP4 · H.264 · 1080 × 1920 · 24 seconds</p><a href={assetPath("/media-kit/video/GuitarTool-Social-Preview-zh-Hans-1080x1920.mp4")} download>Download social video ↓</a><a href={assetPath("/media-kit/video/GuitarTool-App-Preview-zh-Hans-886x1920.mp4")} download>Download App Preview candidate ↓</a></div></article>
+        </div>
+      </section>
+
+      <section className="pressResourceSection shell">
+        <p className="acqEyebrow">EDITORIAL RESOURCES</p><h2>Two deeper stories for educators and product teams.</h2>
+        <div className="pressResourceGrid"><a href={assetPath("/en/guides/chord-diagrams-for-students/")}><span>TEACHER WORKFLOW</span><strong>How to send students clear, reusable chord diagrams.</strong><b>Read the guide →</b></a><a href={assetPath("/en/guides/apple-watch-metronome-audio-design/")}><span>ENGINEERING STORY</span><strong>How GuitarTool separates audio timing from Watch UI refresh.</strong><b>Read the article →</b></a></div>
       </section>
 
       <section className="pressLinks shell">

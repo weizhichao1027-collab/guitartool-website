@@ -207,6 +207,8 @@ export default function EnglishHome() {
           <Link href="/chords/ukulele/"><span>05</span><h3>Popular ukulele chords</h3><p>Learn 50 common shapes in standard high-G GCEA tuning.</p><b>Browse chords →</b></Link>
           <Link href="/en/guides/share-chord-diagrams/"><span>06</span><h3>Save and share chord diagrams</h3><p>Turn the current guitar or ukulele voicing into a card you can preview, save or send.</p><b>Explore chord cards →</b></Link>
           <Link href="/en/guides/apple-watch-metronome/"><span>07</span><h3>Apple Watch metronome</h3><p>Control tempo and meter from your wrist while audio continues when the display dims.</p><b>Explore the watch metronome →</b></Link>
+          <Link href="/en/guides/chord-diagrams-for-students/"><span>08</span><h3>Chord cards for students</h3><p>A teacher-ready workflow for choosing, checking and sending one exact voicing.</p><b>Read the teaching guide →</b></Link>
+          <Link href="/en/guides/apple-watch-metronome-audio-design/"><span>09</span><h3>Watch audio case study</h3><p>How sample-clock timing, display lifecycle and route recovery work together.</p><b>Read the engineering story →</b></Link>
         </div>
       </section>
 

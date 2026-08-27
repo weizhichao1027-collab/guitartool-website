@@ -267,6 +267,8 @@ export default function Home() {
           <Link href="/chords/ukulele/"><span>05</span><h3>热门尤克里里和弦</h3><p>按标准 High-G GCEA 查看 50 个常用和弦和多种按法。</p><b>浏览和弦 →</b></Link>
           <Link href="/guides/share-chord-diagrams/"><span>06</span><h3>保存与分享和弦图</h3><p>把当前吉他或尤克里里按法生成卡片，预览后保存或发送。</p><b>了解和弦卡片 →</b></Link>
           <Link href="/guides/apple-watch-metronome/"><span>07</span><h3>Apple Watch 节拍器</h3><p>从手腕控制速度与拍号，落腕或屏幕变暗后声音仍可继续。</p><b>了解手表节拍器 →</b></Link>
+          <Link href="/guides/chord-diagrams-for-students/"><span>08</span><h3>把指法图发给学生</h3><p>从选择准确把位、检查高把位，到安排课后练习的一套教师流程。</p><b>阅读教学指南 →</b></Link>
+          <Link href="/guides/apple-watch-metronome-audio-design/"><span>09</span><h3>Watch 音频工程复盘</h3><p>声音采样时钟、暗屏生命周期和音频路线恢复如何协同。</p><b>阅读工程复盘 →</b></Link>
         </div>
       </section>
 
