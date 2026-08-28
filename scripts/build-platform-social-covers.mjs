@@ -12,11 +12,11 @@ const appIconBuffer = await sharp(appIcon).resize(96, 96).png().toBuffer();
 
 const covers = [
   {
-    file: "01-闪光灯节拍-1080x1920.png",
+    file: "01-节拍训练-1080x1920.png",
     screenshot: path.resolve("public/hero-metronome.webp"),
-    eyebrow: "FLASH BEAT · GUITARTOOL 1.0.8",
-    title: ["节拍不只听见", "也能看见"],
-    body: "兼容 iPhone · 全部主拍 / 仅重音 · 三档强度",
+    eyebrow: "FLEXIBLE METRONOME · 20–500 BPM",
+    title: ["从稳定跟拍", "到渐进提速"],
+    body: "四种细分 · Swing · 计时器 · 练习预设",
     accent: "#00AFA6",
     glow: "#b6fff3",
   },

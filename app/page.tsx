@@ -14,8 +14,8 @@ const features = [
     number: "01",
     kicker: "Flexible Metronome",
     title: "不是只会响的节拍器，\n而是能陪你进步的训练器。",
-    copy: "从 20 到 500 BPM，自定义拍号、拍值、强弱拍与细分。把计时、Swing、渐进加速和后置闪光灯节拍组合成属于你的练习方式。",
-    points: ["TAP 测速与练习预设", "四种细分与八分 Swing", "闪光灯跟随全部主拍或仅重音，三档强度"],
+    copy: "从 20 到 500 BPM，自定义拍号、拍值、强弱拍与细分。把计时、Swing、渐进加速和练习预设组合成属于你的练习方式。",
+    points: ["TAP 测速与练习预设", "四种细分与八分 Swing", "计时与渐进加速训练"],
     image: "/hero-metronome.webp",
     alt: "GuitarTool 节拍器功能展示",
     tone: "aqua",
@@ -58,14 +58,13 @@ const faqs = [
   ["支持哪些设备？", "支持 iPhone 与 iPad 自适应界面，附带 Apple Watch 节拍器和三种尺寸的主屏幕交互式小组件；Watch 落腕或屏幕变暗后声音节拍仍可继续。"],
   ["支持尤克里里吗？", "支持。调音器提供 GCEA 模式，和弦库也包含完整的尤克里里和弦名称与多种指法。"],
   ["可以把和弦指法发给老师或朋友吗？", "可以。先预览当前指法卡片，再保存到相册或通过系统分享发送；图片不会强制附带下载链接。"],
-  ["后置闪光灯节拍会拍照吗？", "不会。它只在兼容 iPhone 上用后置闪光灯提示全部主拍或仅重音，不采集画面；停止、离开页面或进入后台时会自动关闭。"],
 ] as const;
 
 export default function Home() {
   return (
     <main lang="zh-CN">
       <JsonLd data={[
-        { "@context": "https://schema.org", "@type": "SoftwareApplication", name: "GuitarTool", softwareVersion: "1.0.8", description: "面向吉他与尤克里里演奏者的离线调音器、节拍器与可保存分享的交互式和弦库。", url: absoluteUrl("/"), downloadUrl: appStoreUrl, applicationCategory: "MusicApplication", operatingSystem: "iOS, iPadOS, watchOS", inLanguage: supportedLanguageCodes, offers: { "@type": "Offer", price: "0", priceCurrency: "CNY" }, featureList: ["实时弦乐调音器", "20–500 BPM 节拍器", "后置闪光灯节拍：全部主拍或仅重音、三档强度", "19,244 个吉他与尤克里里指法", "和弦卡片预览、保存与分享", "支持后台音频的 Apple Watch 节拍器", "主屏幕交互式小组件"] },
+        { "@context": "https://schema.org", "@type": "SoftwareApplication", name: "GuitarTool", description: "面向吉他与尤克里里演奏者的离线调音器、节拍器与可保存分享的交互式和弦库。", url: absoluteUrl("/"), downloadUrl: appStoreUrl, applicationCategory: "MusicApplication", operatingSystem: "iOS, iPadOS, watchOS", inLanguage: supportedLanguageCodes, offers: { "@type": "Offer", price: "0", priceCurrency: "CNY" }, featureList: ["实时弦乐调音器", "20–500 BPM 节拍器", "19,244 个吉他与尤克里里指法", "和弦卡片预览、保存与分享", "支持后台音频的 Apple Watch 节拍器", "主屏幕交互式小组件"] },
         { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqs.map(([question, answer]) => ({ "@type": "Question", name: question, acceptedAnswer: { "@type": "Answer", text: answer } })) },
         { "@context": "https://schema.org", "@type": "VideoObject", name: "GuitarTool 中文完整介绍（横屏）", description: "36 秒介绍 GuitarTool 调音器、节拍器、和弦卡片、小组件与多设备体验。", thumbnailUrl: absoluteUrl("/og.png"), uploadDate: "2026-08-28", duration: "PT36S", contentUrl: absoluteUrl("/media-kit/video/GuitarTool-Full-Intro-zh-Hans-854x480.mp4") },
         { "@context": "https://schema.org", "@type": "VideoObject", name: "GuitarTool 中文完整介绍（竖屏）", description: "为移动端优化的 36 秒 GuitarTool 中文完整介绍。", thumbnailUrl: absoluteUrl("/media-kit/social/guitartool-chord-cards-zh-Hans-1080x1350.png"), uploadDate: "2026-08-28", duration: "PT36S", contentUrl: absoluteUrl("/media-kit/video/GuitarTool-Full-Intro-zh-Hans-480x854.mp4") },
@@ -183,7 +182,7 @@ export default function Home() {
         <div className="introVideoCopy">
           <p className="eyebrow"><span /> 36 秒完整介绍</p>
           <h2>先看它如何融入练习，<br />再决定从哪里开始。</h2>
-          <p>横屏版适合桌面与大屏观看，移动端会自动使用中文竖屏版。视频展示调音、节拍、和弦卡片、Widget 与多设备体验；1.0.8 新增的后置闪光灯节拍详见下方版本说明。</p>
+          <p>横屏版适合桌面与大屏观看，移动端会自动使用中文竖屏版。视频展示调音、节拍、和弦卡片、Widget 与多设备体验。</p>
         </div>
         <div className="introVideoFrame">
           <video controls playsInline preload="metadata" aria-label="GuitarTool 中文完整介绍视频">
@@ -221,8 +220,8 @@ export default function Home() {
           </article>
         </div>
         <div className="updatePromise">
-          <span>1.0.8 已上线 · BUILD 8</span>
-          <p><strong>让节拍不仅能听见，也能看见。</strong> 兼容 iPhone 可用后置闪光灯提示全部主拍或仅重音，并提供三档强度；设置与预设结构也更清晰，调音、Watch、Widget 与多设备同步更可靠。</p>
+          <span>一套工具 · 一次专注练习</span>
+          <p><strong>调音、跟拍、查和弦，不必来回切换。</strong> GuitarTool 将实时调音、灵活节拍、和弦卡片、Apple Watch 与主屏幕小组件放进同一套完全离线的练习流程。</p>
           <b aria-hidden="true">↗</b>
         </div>
       </section>

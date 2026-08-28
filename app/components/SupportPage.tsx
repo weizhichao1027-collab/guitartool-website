@@ -9,11 +9,11 @@ const content = {
     lang: "zh-CN",
     eyebrow: "GUITARTOOL 技术支持",
     title: "先解决练习中的问题，\n再回到音乐里。",
-    lead: "这里汇总 GuitarTool 1.0.8（Build 8）及更早版本的设备要求、常见问题与联系入口。核心功能无需账户，并可离线使用。",
+    lead: "这里汇总 GuitarTool 当前 App Store 版本的设备要求、常见问题与联系入口。核心功能无需账户，并可离线使用。",
     contact: "联系技术支持",
     appStore: "前往 App Store",
     status: [
-      ["文档版本", "1.0.8 · Build 8"],
+      ["文档范围", "App Store 当前可用版本"],
       ["支持设备", "iPhone · iPad · Apple Watch"],
       ["系统要求", "iOS / iPadOS 17 或更高版本"],
       ["数据方式", "无需账户 · 核心功能离线运行"],
@@ -28,13 +28,12 @@ const content = {
     sections: [
       { title: "调音器没有声音输入", body: "首次使用时允许麦克风权限，并确认没有其他 App 独占音频输入。调音器只在设备上实时分析音高，不保存或上传声音。若电平没有变化，请检查系统麦克风权限并重新进入调音器。" },
       { title: "节拍器没有声音或节拍中断", body: "检查设备音量、静音状态和当前蓝牙／AirPlay 音频路线。停止后重新开始一次；若切换过输出设备，请重新打开节拍器，让音频会话恢复到当前路线。" },
-      { title: "后置闪光灯节拍没有出现", body: "闪光灯节拍只会在具备后置闪光灯的兼容 iPhone 上显示。首次开启前请阅读频闪、耗电与发热提示。它可跟随全部主拍或仅重音，提供三档强度，不跟随细分音符；停止、离开页面或进入后台会自动关闭，也不会拍照或采集画面。" },
       { title: "Widget 没有同步最新速度", body: "先在 iPhone 上打开 GuitarTool 一次，确认主 App 和 Widget 已同步；随后返回主屏幕再操作。必要时移除并重新添加 Widget。小、中、大三种尺寸都支持速度、拍号、播放和 TAP 操作。" },
       { title: "Apple Watch 没有声音或状态不同步", body: "确认 Watch App 已安装，并先在 iPhone 上打开 GuitarTool。Watch 落腕或屏幕变暗后，声音节拍可以继续，但界面与触觉刷新会暂停。实际声音输出取决于手表型号和当前音频路线，部分设备需要蓝牙耳机或扬声器。" },
       { title: "和弦卡片无法保存到照片", body: "在系统设置中允许 GuitarTool 添加照片。保存前会显示最终卡片预览；系统分享只发送图片，不强制附带下载链接，也不会把图片上传到 GuitarTool 服务器。" },
     ],
     privacyTitle: "关于隐私与权限",
-    privacyBody: "GuitarTool 不要求注册，不包含广告或第三方统计 SDK。麦克风只用于本机实时调音；照片权限只在你主动保存和弦卡片时使用；后置闪光灯节拍不调用相机拍摄。",
+    privacyBody: "GuitarTool 不要求注册，不包含广告或第三方统计 SDK。麦克风只用于本机实时调音；照片权限只在你主动保存和弦卡片时使用。",
     privacyLink: "阅读完整隐私政策",
     emailTitle: "需要进一步帮助？",
     emailBody: "邮件中请附上设备型号、系统版本、GuitarTool 版本以及清晰的复现步骤。这样最容易定位问题。",
@@ -44,11 +43,11 @@ const content = {
     lang: "en",
     eyebrow: "GUITARTOOL SUPPORT",
     title: "Solve the interruption.\nGet back to the music.",
-    lead: "Device requirements, troubleshooting and direct support for GuitarTool 1.0.8 (Build 8) and earlier releases. Core features need no account and work offline.",
+    lead: "Device requirements, troubleshooting and direct support for the version of GuitarTool currently available on the App Store. Core features need no account and work offline.",
     contact: "Contact support",
     appStore: "View on the App Store",
     status: [
-      ["Documentation", "1.0.8 · Build 8"],
+      ["Documentation", "Current App Store release"],
       ["Devices", "iPhone · iPad · Apple Watch"],
       ["System requirement", "iOS / iPadOS 17 or later"],
       ["Data model", "No account · Core features work offline"],
@@ -63,13 +62,12 @@ const content = {
     sections: [
       { title: "The tuner shows no input", body: "Allow microphone access when asked and make sure another app is not holding the audio input. Pitch is analysed live on the device and is never saved or uploaded. If the input meter does not move, check the system microphone permission and reopen the tuner." },
       { title: "The metronome is silent or stops", body: "Check device volume, silent mode and the active Bluetooth or AirPlay route. Stop and start the metronome once. If the output device changed, reopen the tool so its audio session can follow the current route." },
-      { title: "Flash Beat is not available", body: "Flash Beat appears only on compatible iPhones with a rear flash. Read the strobe, battery and heat notice before first use. It can follow all main beats or accents only, offers three intensity levels, and does not follow subdivisions. It turns off automatically when playback stops, you leave the screen or the app enters the background. It never captures images." },
       { title: "A widget shows an older tempo", body: "Open GuitarTool on iPhone once so the app and widget can refresh shared state, then return to the Home Screen. If needed, remove and add the widget again. Small, medium and large widgets support tempo, meter, play/pause and tap tempo." },
       { title: "Apple Watch audio or state is different", body: "Confirm that the Watch app is installed, then open GuitarTool on iPhone once. Metronome audio can continue when the wrist lowers or the display dims, while visual and haptic refresh pauses. The actual output depends on the Watch model and active audio route; some devices need Bluetooth headphones or a speaker." },
       { title: "A chord card will not save to Photos", body: "Allow GuitarTool to add photos in system settings. The final card is shown before saving. System sharing sends only the image, with no forced download link, and GuitarTool does not upload the card to a server." },
     ],
     privacyTitle: "Privacy and permissions",
-    privacyBody: "GuitarTool needs no registration and contains no ads or third-party analytics SDKs. The microphone is used only for live on-device tuning; Photos access is used only when you choose to save a chord card; Flash Beat does not use the camera to capture images.",
+    privacyBody: "GuitarTool needs no registration and contains no ads or third-party analytics SDKs. The microphone is used only for live on-device tuning; Photos access is used only when you choose to save a chord card.",
     privacyLink: "Read the full privacy policy",
     emailTitle: "Still need help?",
     emailBody: "Include the device model, OS version, GuitarTool version and clear reproduction steps. Those details make an issue much easier to diagnose.",
@@ -89,7 +87,7 @@ export function SupportPage({ language }: { language: keyof typeof content }) {
   return (
     <main className="acqPage supportPage" lang={copy.lang}>
       <JsonLd data={[
-        { "@context": "https://schema.org", "@type": "ContactPage", name: language === "zh" ? "GuitarTool 技术支持" : "GuitarTool Support", url: absoluteUrl(path), inLanguage: copy.lang, mainEntity: { "@type": "SoftwareApplication", name: "GuitarTool", softwareVersion: "1.0.8", downloadUrl: APP_STORE_URL, operatingSystem: "iOS, iPadOS, watchOS" } },
+        { "@context": "https://schema.org", "@type": "ContactPage", name: language === "zh" ? "GuitarTool 技术支持" : "GuitarTool Support", url: absoluteUrl(path), inLanguage: copy.lang, mainEntity: { "@type": "SoftwareApplication", name: "GuitarTool", downloadUrl: APP_STORE_URL, operatingSystem: "iOS, iPadOS, watchOS" } },
         { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faq },
       ]} />
       <AcquisitionHeader language={language} />
@@ -114,7 +112,7 @@ export function SupportPage({ language }: { language: keyof typeof content }) {
       </section>
 
       <section className="supportTopics shell">
-        <div className="assetHeading"><p className="acqEyebrow">02 / TROUBLESHOOTING</p><h2>{language === "zh" ? "按功能排查常见问题。" : "Troubleshoot by feature."}</h2><p>{language === "zh" ? "说明以 1.0.8 Build 8 为基线，并覆盖仍在使用的更早版本。" : "Answers use 1.0.8 Build 8 as the baseline and also cover earlier releases still in use."}</p></div>
+        <div className="assetHeading"><p className="acqEyebrow">02 / TROUBLESHOOTING</p><h2>{language === "zh" ? "按功能排查常见问题。" : "Troubleshoot by feature."}</h2><p>{language === "zh" ? "说明以你所在地区 App Store 当前可下载的版本为准。" : "Answers follow the release currently available in your App Store region."}</p></div>
         <div className="supportGrid">{copy.sections.map((item, index) => <article key={item.title}><span>{String(index + 1).padStart(2, "0")}</span><h3>{item.title}</h3><p>{item.body}</p></article>)}</div>
       </section>
 
