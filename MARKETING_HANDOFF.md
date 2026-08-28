@@ -194,11 +194,12 @@ git push github main
 - 四支网页视频另备份在公开 GitHub Release [`media-kit-1.0.8`](https://github.com/weizhichao1027-collab/guitartool-website/releases/tag/media-kit-1.0.8)。网页主播放源使用同源 Pages MP4，以确保 MIME 类型和嵌入播放稳定。
 - OpenAI Sites 是独立部署目标。当前线上为 Version 17，访问策略实测为公开；Sites 源仓库已同步至提交 `7485f170b40e68884fd119951f6b612e0d22b106`，但本轮没有保存或部署新版本。约 24 MB 的源码归档上传连续两次因网络失败，且公开生产部署必须取得明确授权；不要把“源码已同步”写成“新版已上线”。
 
-### 2026-08-28 本地营销收尾（待独立提交与部署）
+### 2026-08-28 高意图获客与转化增量发布
 
-- 本地新增 5 个双语高意图主题、逐页 Campaign 分流、功能页转化说明与移动端固定下载入口，并把首页和 Press Kit 统一为“1.0.8 已上线 / available now”。
-- 本地门禁全部通过：191 个静态页面/路由、188 个 HTML、238 个本地目标、199 个外部目标；主 sitemap 185 个 URL，图片 sitemap 22 个图片条目；`lint`、`build:pages`、`audit:pages`、`build` 与 `git diff --check` 均无错误。
-- 这一节只描述当前工作区已验证状态，不表示 GitHub Pages 或 OpenAI Sites 已部署这批增量。发布前应单独检查差异、创建可追溯提交，再确认是否推送与部署。
+- 新增 5 个双语高意图主题、逐页 Campaign 分流、功能页转化说明与移动端固定下载入口，并把首页和 Press Kit 统一为“1.0.8 已上线 / available now”。
+- 内容提交 `5de8d988a85be1c83a284fcd9f3f5189c8c591c1` 已推送至 `main`；GitHub Actions 工作流 `33175093150` 的 build、deploy、notify-search-engines 三个 Job 全部成功，GitHub Pages 与 IndexNow 通知均已完成。
+- 发布门禁全部通过：191 个静态页面/路由、188 个 HTML、238 个本地目标、199 个外部目标；主 sitemap 185 个 URL，图片 sitemap 22 个图片条目；`lint`、`build:pages`、`audit:pages`、`build` 与 `git diff --check` 均无错误。
+- 发布后逐一回读 10 个新增中英文页面，并抽查首页、英文首页和 sitemap，全部返回 HTTP 200；线上 HTML 已确认独立 Campaign、目标产品页 ID 与移动端固定下载栏生效。OpenAI Sites 不在本次发布范围内。
 
 ### 历史发布记录
 
