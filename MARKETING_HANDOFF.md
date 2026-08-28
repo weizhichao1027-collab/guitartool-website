@@ -181,6 +181,7 @@ git push github main
 
 - 1.0.8 网站内容发布基线为 Git 提交 `cd16815a7430c63f6acbaada372bc5412e6789ec`；交接文档后续提交只改变事实记录，不改变这条内容基线。
 - GitHub Actions 工作流 `33151577312` 的 build、deploy、notify-search-engines 三个 Job 全部成功。
+- 当前 Pages 工作流会对部分固定版本的 `actions/checkout`、`actions/setup-node`、`actions/configure-pages`、`actions/upload-artifact` 与 `actions/deploy-pages` 给出 Node.js 20 已弃用、由运行器强制使用 Node.js 24 的 annotation；这次不影响三个 Job 成功，但后续应在单独维护提交中升级到官方支持 Node.js 24 的 Action 版本并复跑完整门禁。
 - 最终本地门禁全部通过：179 个静态路由、176 个 HTML、224 个本地目标、182 个外部目标；主 sitemap 173 个 URL，图片 sitemap 22 个图片条目；`lint`、`build:pages`、`audit:pages`、`build` 与 `git diff --check` 均无错误。
 - 中文首页、英文首页、Press Kit、中英文支持页以及四个网页视频均在线返回 HTTP 200；视频响应类型为 `video/mp4`，浏览器直接打开识别为媒体文档。
 - 四支 36 秒网页视频为 H.264/AAC，分别是 854 × 480 与 480 × 854。向 GitHub 直接推送 1080p 大文件曾连续遭遇网络失败，因此 Pages 只保留小于约 0.7 MB 的网页分发版；不得把 1080p 原片加入 Pages 历史，也不得用网页版覆盖资料归档原片。
