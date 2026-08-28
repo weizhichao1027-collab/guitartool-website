@@ -10,12 +10,12 @@
 | --- | --- | --- | --- |
 | GitHub Pages | 面向普通访客与搜索引擎的公开主站、canonical 来源 | https://weizhichao1027-collab.github.io/guitartool-website/ | 公开 |
 | GitHub | 源码、版本历史、Pages 自动部署 | https://github.com/weizhichao1027-collab/guitartool-website | 仓库权限控制 |
-| OpenAI Sites | 第二套生产部署、托管备份/预览 | https://guitartool-studio.weizhichao1027.chatgpt.site | Version 14 已部署；仅站点所有者可访问 |
+| OpenAI Sites | 第二套生产部署、托管备份/预览 | https://guitartool-studio.weizhichao1027.chatgpt.site | 既有 Version 17 在线；当前访问策略为公开，本轮未部署新版 |
 | App Store Connect | App 产品页、三个自定产品页、精选提名 | App ID `6761914163` | Apple 账号权限控制 |
 | Google Search Console | Google 所有权、sitemap、索引请求 | GitHub Pages URL-prefix 资源 | Google 账号权限控制 |
 | IndexNow | 主动通知支持该协议的搜索引擎 | GitHub Actions 自动调用 | 自动 |
 
-没有使用 Vercel、Netlify 或 Cloudflare Pages。对外分享、SEO canonical 和 App Store 营销网址均应使用 GitHub Pages，不使用 owner-only 的 Sites 地址。
+没有使用 Vercel、Netlify 或 Cloudflare Pages。对外分享、SEO canonical、App Store 营销网址和技术支持网址均应使用 GitHub Pages。OpenAI Sites 当前虽为公开访问，但不是 canonical，也不作为本轮 App Store URL；以后部署新 Sites 版本前必须重新确认公开发布授权。
 
 OpenAI Sites 项目 ID：`appgprj_6a8a503888348191be812170e152a86c`。项目配置位于 `.openai/hosting.json`。
 
@@ -31,7 +31,7 @@ OpenAI Sites 项目 ID：`appgprj_6a8a503888348191be812170e152a86c`。项目配�
 - 中英文技术支持页：`/support/` 与 `/en/support/`，覆盖 1.0.8 版本、权限、调音器、节拍器、后置闪光灯节拍、Widget、Apple Watch 和和弦卡片排障。
 - 13 张本地化“和弦卡片－保存与分享”真实 App Store 预览图；中英文首页、其余 11 个语言首页、双语和弦分享指南与 Press Kit 均使用对应素材。
 - 52 张本地化社交推广图：13 种语言 × 横版、信息流竖版、Story/Reels、视频缩略图四种规格；完整 ZIP 与 CSV/JSON manifest 已进入 Press Kit。
-- 4 支 36 秒完整介绍：GitHub Pages 网页分发版为中英文各一支 854 × 480 横屏与 480 × 854 竖屏，均含音频；中英文首页按屏幕方向自动选择，Press Kit 提供四支在线播放与下载，公开 Media Kit Release 另作下载备份。1080p 原片保留在项目资料归档中。
+- 4 支 36 秒完整介绍：GitHub Pages 网页分发版为中英文各一支 854 × 480 横屏与 480 × 854 竖屏，均含音频；中英文首页按屏幕方向自动选择，Press Kit 提供四支在线播放与下载，公开 Media Kit Release `media-kit-1.0.8` 另作下载备份。1080p 原片保留在项目资料归档中，网页压缩版不得覆盖原片。
 - 4 支 24 秒短版：中英文各一支 886 × 1920 App Preview 候选与 1080 × 1920 社交版；App Preview 仅作为候选，上传前必须按当期规格复核。
 - `robots.txt`、`sitemap.xml`、`image-sitemap.xml`、Web App manifest、Open Graph 图片、IndexNow 验证文件。
 - 当前构建生成 179 个静态页面/路由与 176 个 HTML 页面；主 sitemap 包含 173 个公开 URL，图片 sitemap 包含 22 个图片条目。
@@ -42,6 +42,8 @@ OpenAI Sites 项目 ID：`appgprj_6a8a503888348191be812170e152a86c`。项目配�
 2. 中英文首页、11 个其他语言首页与 Press Kit 统一为 1.0.8；13 种语言均有当前版本更新说明。
 3. 中英文独立技术支持页面与 `site_support` App Store Campaign。
 4. 中英文横屏/竖屏 36 秒完整介绍接入首页和 Press Kit；截图与原有 24 秒短版保持不动。
+5. 13 个 App Store 本地化的支持网址已经逐语言保存并回读：简体中文、繁体中文使用 `/support/`，其余 11 个语言使用 `/en/support/`。
+6. 30 天推广看板、1.0.8 渠道总表、B 站发布文案与 13 语言常青社交文案已经同步当前审核和上线状态。
 
 2026-08-27 本轮再新增的两个双语内容主题：
 
@@ -78,6 +80,8 @@ OpenAI Sites 项目 ID：`appgprj_6a8a503888348191be812170e152a86c`。项目配�
 - `app/components/SupportPage.tsx`、`app/support/page.tsx`、`app/en/support/page.tsx`：双语技术支持与结构化 FAQ。
 - `app/image-sitemap.xml/route.ts`：13 张本地化和弦分享图与 9 个编辑素材的图片 sitemap。
 - `public/media-kit/`：公开媒体包、精选社交预览与网站轻量视频；高码率视频原片在上级目录 `资料归档/03-市场研究/03-推广素材/视频/`。
+- `public/media-kit/video/GuitarTool-Full-Intro-{zh-Hans,en}-{854x480,480x854}.mp4`：四支 GitHub Pages 网页分发版；横屏/竖屏、语言和分辨率都写入文件名。对应 1080p 原片只在上级资料归档维护。
+- `public/media-kit/GuitarTool-1.0.7-social-kit-13-locales.zip`：历史文件名保留以避免破坏既有链接；包内标题、清单和文案已改为不绑定 1.0.7 的常青口径。
 - `public/*-chord-card-share.webp` 与 `public/chord-card-share.webp`：从 13 种语言真实上传截图生成的站点优化版素材；不要用单一语言图片覆盖其他语言。
 - `app/lib/tuner-locales.ts`：13 种语言在线调音器文案与 metadata。
 - `app/components/TunerTool.tsx`：浏览器本地音高检测、模式切换和麦克风生命周期。
@@ -98,7 +102,9 @@ OpenAI Sites 项目 ID：`appgprj_6a8a503888348191be812170e152a86c`。项目配�
 - 主产品页当前使用 7 张截图，顺序为：节拍器、调音器、和弦库、和弦分享、四套主题、Widget、多设备。
 - 1.0.8 推广文本、完整描述和更新说明均按当前完整改动更新；网站、Press Kit、支持页与归档推广文案统一使用后置闪光灯节拍及可靠性改进的事实口径。
 - 1.0.8 继续复用 1.0.7 的 7 张截图，本轮不替换、不移动截图。
-- 2026-08-27 已在 App Store Connect 修正并保存审核备注：Watch 落腕、屏幕变暗或进入非活跃状态后仅暂停界面与触觉刷新，声音继续播放；中英文说明均已写入。
+- App Preview 当前为 0；四支 36 秒完整介绍没有上传到 App Store。
+- 2026-08-28 已保存并回读审核备注：除 Watch 后台声音说明外，中英文备注还包含 Flash Beat 的真机路径、后置闪光灯硬件条件、全部主拍/仅重音、三档强度、预设保留、停止/离页/后台自动关闭以及不拍照的安全边界。
+- 简体中文与繁体中文的技术支持网址为 `https://weizhichao1027-collab.github.io/guitartool-website/support/`；英语、阿拉伯语、德语、俄语、法语、韩语、葡萄牙语（巴西）、日语、土耳其语、西班牙语（西班牙）和意大利语均为 `https://weizhichao1027-collab.github.io/guitartool-website/en/support/`。13 个语言已逐项回读，保存按钮最终为禁用态。
 
 ### 精选提名
 
@@ -133,7 +139,7 @@ OpenAI Sites 项目 ID：`appgprj_6a8a503888348191be812170e152a86c`。项目配�
 - 网站首页、导航、Smart App Banner、Press Kit、调音器、节拍器和和弦页面分别使用 `site_home`、`site_nav`、`site_smart_banner`、`site_press`、`site_tuner`、`site_metronome`、`site_chords`。
 - 调音器、节拍器和和弦入口同时携带对应自定产品页 `ppid`。Apple 批准前会安全回退到默认产品页，批准后同一链接自动展示相应页面。
 - App 内和弦卡片采用“预览 → 保存到相册 / 分享图片”的流程，系统分享只发送图片，不附带 App Store 链接，因此不使用 `app_chord_share` Campaign。卡片的品牌名、乐器、功能标签与高把位起始品位覆盖全部 13 种语言；中文品牌名为“吉他工具”，乐器标题为“吉他和弦指法”或“尤克里里和弦指法”，和弦名称居中放在和弦图正上方，高把位示例为中文“5 品”、英文“5fr”。此功能最初在 1.0.7 公开，并继续包含在 1.0.8 中。
-- 新增网站 `site_support` Campaign；公开支持页部署后，App Store Connect 支持网址应改为 `https://weizhichao1027-collab.github.io/guitartool-website/support/`，隐私政策继续使用独立隐私页。
+- 网站 `site_support` Campaign 已用于双语支持页；App Store Connect 的 13 个支持网址已按上方语言映射更新并回读，隐私政策继续使用独立隐私页 `https://weizhichao1027-collab.github.io/GuitarTool-Privacy/`。
 - 2026-08-26 核对 Analytics 概览时显示 65 次首次下载、795 次展示、81 次产品页浏览、12.6% 转化率。该数值是当时界面所选 90 天范围的快照，不应当作永久累计值。
 
 ## 4. 搜索引擎状态
@@ -144,7 +150,7 @@ OpenAI Sites 项目 ID：`appgprj_6a8a503888348191be812170e152a86c`。项目配�
 - 新增 `/image-sitemap.xml`，已由 `robots.txt` 宣告并在线返回 HTTP 200；它不需要在同一天反复手动提交，先让 Google 随 robots 与主 sitemap 发现。
 - 同一公开 sitemap 已从终端实测为 HTTP 200、`application/xml` 且 XML 校验通过。未来 24–72 小时只复查状态，不再次提交、删除或重建资源；只有 Google 返回稳定且可复现的具体错误时才排查站点实现。
 - 首页已通过“网址检查”提交“请求编入索引”。Google 是否收录和排名由其系统决定。
-- GitHub Pages 每次成功部署后都会运行 `notify-search-engines`；本轮工作流已确认当前主 sitemap 的 171 个 URL 进入 IndexNow 通知流程。
+- GitHub Pages 每次成功部署后都会运行 `notify-search-engines`；本轮最终工作流的 `notify-search-engines` Job 已成功。当前主 sitemap 包含 173 个公开 URL。
 
 建议在部署后 24–72 小时检查：
 
@@ -170,25 +176,24 @@ git push github main
 - `audit:pages` 检查静态导出的全部 HTML 页面及其本地链接、图片、脚本和媒体目标。
 - `build` 验证 Vinext/OpenAI Sites 生产构建。
 - 推送 `main` 后，GitHub Actions 自动执行 build、deploy、notify-search-engines。
-- OpenAI Sites 是独立部署目标；修改可部署站点时仍需保存并部署新的 Sites version。
-- 托管站全站导航修正：GitHub 提交 `ad547b7 Fix hosted site navigation`；Sites 源提交 `ea2d58b`。内部导航改用带部署路径适配的原生链接，避开 Vinext 的 RSC 预取异常；首页资源卡片、导航、语言入口、面包屑、相关内容、和弦页链接均已覆盖。
-- GitHub Actions 工作流 `33031442573` 的 build、deploy、notify-search-engines 三个 Job 全部成功。静态门禁覆盖 174 个 HTML 页面和 218 个本地目标；公开 GitHub Pages sitemap 的 171 个 URL 与 OpenAI Sites 对应的 171 个路由均全量返回成功，8 个外部目标及两套部署各 9 个 Press Kit 媒体链接无失败。
-- OpenAI Sites Version 14 已部署成功，访问策略仍为 custom、仅一个 owner、无群组、无外部访客。生产验收已确认资源卡片跳转、调音模式切换、麦克风拒绝提示、节拍器速度/拍号/启动/停止和 FAQ 展开均正常，浏览器控制台无错误。
-- Google 验证功能提交：`7022c8a Add Google Search Console verification`。
-- SEO 内容功能提交：`88db729 Expand tuning guides for organic search`。
-- 第二轮自然获客与 Campaign 分流提交：`b03358c Expand organic acquisition and campaign tracking`。
-- 在线调音器移动端启动与指针修正：`423f162 Harden online tuner startup`。
-- 和弦目录扩容后的 metadata 数字校正：`1245450 Align chord hub metadata with expanded catalog`。
-- 1.0.7 推广与 SEO 更新提交：`6c82b99 Refresh 1.0.7 marketing and SEO content`，已推送到 GitHub `main` 和 Sites 源仓库。
-- 本地化和弦卡片预览提交：`6a6dfb6 Show localized chord card previews across marketing pages`，已推送到 GitHub `main` 和 Sites 源仓库。
-- 媒体包与图片 SEO 提交：`5debd82 Expand media kit and image SEO`；完整素材包优化提交 `9e4ed6b`；网站视频优化提交 `5a646f1`，均已推送 GitHub `main`。
-- GitHub Actions 工作流 `33029409289`、`33029963848`、`33030157035` 的 build、deploy、notify-search-engines 三个 Job 均成功。公开 Press Kit、四个新双语专题 URL、图片 sitemap、ZIP 与 MP4 抽样均返回 HTTP 200。
-- OpenAI Sites Version 13 已从与 GitHub 公共站内容等价的分批源码保存并部署成功；受保护验收下 Press Kit、专题、图片 sitemap、ZIP 和带 AAC 音频的视频均可访问。访问策略复核为 custom、仅一个 owner、无群组、无外部访客。
-- GitHub Actions 工作流 `33026951090` 的 build、deploy、notify-search-engines 三个 Job 全部成功；公开中英文首页、繁中/阿拉伯语入口、双语和弦分享专题、Press Kit、WebP 图片与 sitemap 均抽样返回 HTTP 200。
-- OpenAI Sites Version 11 已从 `6a6dfb6` 部署成功，访问策略复核为仅一个 owner、无群组、无外部访客。
-- GitHub Actions 工作流 `32998815386` 的 build、deploy、notify-search-engines 三个 Job 全部成功；公开主站、新功能页、Press Kit 与 sitemap 均抽样返回 HTTP 200，167 个 URL 已进入 IndexNow 通知流程。
-- OpenAI Sites Version 10 已从 `6c82b99` 部署成功，访问策略仍为 owner-only。
-- `423f162` 已推送到 GitHub `main`。部署时曾遇到 GitHub 官方 Actions 重大中断与 Pages 性能下降，服务恢复后工作流 `32984543950` 的 build、deploy、notify-search-engines 三个 Job 全部成功；公开主站已更新，163 个 sitemap URL 已提交 IndexNow。
+
+### 2026-08-28 当前发布基线
+
+- 1.0.8 网站内容发布基线为 Git 提交 `cd16815a7430c63f6acbaada372bc5412e6789ec`；交接文档后续提交只改变事实记录，不改变这条内容基线。
+- GitHub Actions 工作流 `33151577312` 的 build、deploy、notify-search-engines 三个 Job 全部成功。
+- 最终本地门禁全部通过：179 个静态路由、176 个 HTML、224 个本地目标、182 个外部目标；主 sitemap 173 个 URL，图片 sitemap 22 个图片条目；`lint`、`build:pages`、`audit:pages`、`build` 与 `git diff --check` 均无错误。
+- 中文首页、英文首页、Press Kit、中英文支持页以及四个网页视频均在线返回 HTTP 200；视频响应类型为 `video/mp4`，浏览器直接打开识别为媒体文档。
+- 四支 36 秒网页视频为 H.264/AAC，分别是 854 × 480 与 480 × 854。向 GitHub 直接推送 1080p 大文件曾连续遭遇网络失败，因此 Pages 只保留小于约 0.7 MB 的网页分发版；不得把 1080p 原片加入 Pages 历史，也不得用网页版覆盖资料归档原片。
+- 四支网页视频另备份在公开 GitHub Release [`media-kit-1.0.8`](https://github.com/weizhichao1027-collab/guitartool-website/releases/tag/media-kit-1.0.8)。网页主播放源使用同源 Pages MP4，以确保 MIME 类型和嵌入播放稳定。
+- OpenAI Sites 是独立部署目标。当前线上为 Version 17，访问策略实测为公开；Sites 源仓库已同步至提交 `7485f170b40e68884fd119951f6b612e0d22b106`，但本轮没有保存或部署新版本。约 24 MB 的源码归档上传连续两次因网络失败，且公开生产部署必须取得明确授权；不要把“源码已同步”写成“新版已上线”。
+
+### 历史发布记录
+
+- 托管站全站导航修正：GitHub 提交 `ad547b7 Fix hosted site navigation`；Sites 源提交 `ea2d58b`。内部导航改用带部署路径适配的原生链接，避开 Vinext 的 RSC 预取异常。
+- Google 验证、SEO 内容、自然获客与 Campaign 分流、在线调音器修正、和弦目录 metadata 校正对应提交依次为 `7022c8a`、`88db729`、`b03358c`、`423f162`、`1245450`。
+- 1.0.7 推广与 SEO、本地化和弦卡片、媒体包与图片 SEO、完整素材包和网站视频优化对应提交依次为 `6c82b99`、`6a6dfb6`、`5debd82`、`9e4ed6b`、`5a646f1`。
+- 工作流 `32984543950`、`32998815386`、`33026951090`、`33029409289`、`33029963848`、`33030157035`、`33031442573` 均曾完整通过。其路由与 sitemap 数量是当时快照，以“当前发布基线”的数字为准。
+- OpenAI Sites Version 10、11、13、14 是历史部署记录；当时的 owner-only/custom 权限快照已经被当前 Version 17 的公开访问状态覆盖，不能据此判断现状。
 
 ## 6. 内容与 SEO 维护规则
 
@@ -201,6 +206,8 @@ git push github main
 7. Release 中隐藏、仅供开发预览的 Morning Mist/完整主题画廊不得出现在商店、网站或渠道文案中。
 8. 不移除 Google verification meta、IndexNow key 文件或 sitemap/robots 路由。
 9. 不改变公开 canonical 域名，除非同时迁移 App Store 营销 URL、Search Console、sitemap、robots、hreflang 和全部绝对链接。
+10. 1080p 视频只在上级资料归档保存；Pages 只使用文件名含语言与分辨率的四个网页版，并在每次发布后确认 HTTP 200、`video/mp4` 和浏览器可播放。公开 Release 是下载备份，不替代同源网页播放地址。
+11. 每次公开发布后，在本文件同步日期、内容提交、交接提交、Actions 工作流、页面/链接/sitemap 数量、线上抽样结果与 OpenAI Sites 的真实版本及权限；不要沿用历史快照。
 
 ## 7. 明确不做与当前边界
 
@@ -212,6 +219,8 @@ git push github main
 - 个性化页面原有“分享 APP”入口继续保留，没有重复增加。和弦库新增的是用户主动点击后分享当前指法卡片，不自动弹出、不打断练习。
 - App Store 精选提名已提交，但 Apple 是否推荐不可控。
 - Google sitemap 和索引请求已提交，但不保证即时收录和排名。
+- OpenAI Sites 当前 Version 17 已公开，但本轮 1.0.8 新内容没有部署到 Sites。以后保存或公开部署新版本前必须重新取得明确确认；源码同步、版本保存和生产部署是三个不同状态。
+- 四支 36 秒视频只用于官网、Press Kit、媒体嵌入和社交，不是 App Preview；App Store 当前 App Preview 为 0，只有 24 秒 886 × 1920 文件可作为规格复核后的候选。
 - 社交预览图以已跟踪的 `public/og.png` 为唯一来源；曾存在的根目录同内容副本已在项目归档整理时移除。
 
 ### 免费目录与媒体渠道结论
@@ -225,12 +234,13 @@ git push github main
 
 ## 8. 下一位维护者检查清单
 
-1. 先读本文件和上级 `APP交接文档.md` 第 27 节；第 21–26 节保留为历史与阶段记录。
+1. 先读本文件和上级 `APP交接文档.md` 第 33 节；较早章节保留为历史与阶段记录，状态冲突时以第 33 节和本文件“当前发布基线”为准。
 2. 使用 `git status --short`，确认没有重复的根目录社交预览图或构建产物混入提交。
-3. 跟踪 App Store 1.0.8 的审核状态；13 种语言、Build 8、审核联系人、版本说明与 7 张复用截图已回读通过，不为小幅文案调整撤回审核。
+3. 跟踪 App Store 1.0.8 的审核状态；13 种语言、Build 8、审核联系人、版本说明、13 个支持网址与 7 张复用截图已回读通过，App Preview 为 0，不为小幅文案调整撤回审核。
 4. 复查非主要语言的自定产品页关键词是否已随 1.0.7 上线而解锁，并在 Metronome 页补充后置闪光灯节拍。
 5. 检查 Search Console sitemap 与索引报告；Google 仍在初次处理时先等待，不反复重建资源。
-6. 修改站点后运行三项门禁并验证线上 URL，再更新本文件的日期、内容库存、主/图片 sitemap 数、Git 提交和 Sites 版本。
+6. 修改站点后依次运行 `npm run lint`、`npm run build:pages`、`npm run audit:pages`、`npm run build` 与 `git diff --check`；推送后确认 Actions 三个 Job、核心页面和四个视频，再更新日期、库存、两类 sitemap 数、提交、工作流以及 Sites 的真实状态。
 7. 在 App Store Analytics 按各 `site_*` Campaign 比较点击后的下载表现；图片分享不附带商店链接，不能用 Campaign 直接归因，不要为了归因重新强制添加下载链接。
 8. 审核完成后更新 Chord 与 Metronome 自定产品页文案；提交完成后不得创建重复精选提名。
 9. 对外联系时从 `联络包/20个定向推广对象.csv` 逐条选择，不把 20 份个性化稿合并成群发；Product Hunt、AlternativeTo 和社区发布必须由真实个人账号参与。
+10. 核对上级目录的 30 天推广看板、1.0.8 渠道总表、B 站文案与 13 语言社交文案；审核或上线状态变化时四处同步，避免渠道继续使用旧口径。
