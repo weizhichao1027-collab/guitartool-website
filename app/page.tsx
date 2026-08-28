@@ -67,8 +67,8 @@ export default function Home() {
       <JsonLd data={[
         { "@context": "https://schema.org", "@type": "SoftwareApplication", name: "GuitarTool", softwareVersion: "1.0.8", description: "面向吉他与尤克里里演奏者的离线调音器、节拍器与可保存分享的交互式和弦库。", url: absoluteUrl("/"), downloadUrl: appStoreUrl, applicationCategory: "MusicApplication", operatingSystem: "iOS, iPadOS, watchOS", inLanguage: supportedLanguageCodes, offers: { "@type": "Offer", price: "0", priceCurrency: "CNY" }, featureList: ["实时弦乐调音器", "20–500 BPM 节拍器", "后置闪光灯节拍：全部主拍或仅重音、三档强度", "19,244 个吉他与尤克里里指法", "和弦卡片预览、保存与分享", "支持后台音频的 Apple Watch 节拍器", "主屏幕交互式小组件"] },
         { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqs.map(([question, answer]) => ({ "@type": "Question", name: question, acceptedAnswer: { "@type": "Answer", text: answer } })) },
-        { "@context": "https://schema.org", "@type": "VideoObject", name: "GuitarTool 中文完整介绍（横屏）", description: "36 秒介绍 GuitarTool 调音器、节拍器、和弦卡片、小组件与多设备体验。", thumbnailUrl: absoluteUrl("/og.png"), uploadDate: "2026-08-28", duration: "PT36S", contentUrl: absoluteUrl("/media-kit/video/GuitarTool-Full-Intro-zh-Hans-1920x1080.mp4") },
-        { "@context": "https://schema.org", "@type": "VideoObject", name: "GuitarTool 中文完整介绍（竖屏）", description: "为移动端优化的 36 秒 GuitarTool 中文完整介绍。", thumbnailUrl: absoluteUrl("/media-kit/social/guitartool-chord-cards-zh-Hans-1080x1350.png"), uploadDate: "2026-08-28", duration: "PT36S", contentUrl: absoluteUrl("/media-kit/video/GuitarTool-Full-Intro-zh-Hans-1080x1920.mp4") },
+        { "@context": "https://schema.org", "@type": "VideoObject", name: "GuitarTool 中文完整介绍（横屏）", description: "36 秒介绍 GuitarTool 调音器、节拍器、和弦卡片、小组件与多设备体验。", thumbnailUrl: absoluteUrl("/og.png"), uploadDate: "2026-08-28", duration: "PT36S", contentUrl: absoluteUrl("/media-kit/video/GuitarTool-Full-Intro-zh-Hans-1280x720.mp4") },
+        { "@context": "https://schema.org", "@type": "VideoObject", name: "GuitarTool 中文完整介绍（竖屏）", description: "为移动端优化的 36 秒 GuitarTool 中文完整介绍。", thumbnailUrl: absoluteUrl("/media-kit/social/guitartool-chord-cards-zh-Hans-1080x1350.png"), uploadDate: "2026-08-28", duration: "PT36S", contentUrl: absoluteUrl("/media-kit/video/GuitarTool-Full-Intro-zh-Hans-720x1280.mp4") },
       ]} />
       <nav className="nav shell" aria-label="主导航">
         <a className="brand" href="#top" aria-label="GuitarTool 首页">
@@ -187,8 +187,8 @@ export default function Home() {
         </div>
         <div className="introVideoFrame">
           <video controls playsInline preload="metadata" aria-label="GuitarTool 中文完整介绍视频">
-            <source src={assetPath("/media-kit/video/GuitarTool-Full-Intro-zh-Hans-1080x1920.mp4")} media="(max-width: 700px)" type="video/mp4" />
-            <source src={assetPath("/media-kit/video/GuitarTool-Full-Intro-zh-Hans-1920x1080.mp4")} type="video/mp4" />
+            <source src={assetPath("/media-kit/video/GuitarTool-Full-Intro-zh-Hans-720x1280.mp4")} media="(max-width: 700px)" type="video/mp4" />
+            <source src={assetPath("/media-kit/video/GuitarTool-Full-Intro-zh-Hans-1280x720.mp4")} type="video/mp4" />
           </video>
         </div>
       </section>

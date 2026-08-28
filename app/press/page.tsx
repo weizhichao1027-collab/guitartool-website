@@ -25,10 +25,10 @@ const assets = [
 ] as const;
 
 const fullVideos = [
-  { title: "English full introduction · landscape", file: "/media-kit/video/GuitarTool-Full-Intro-en-1920x1080.mp4", detail: "MP4 · H.264 · 1920 × 1080 · 36 seconds", orientation: "landscape" },
-  { title: "English full introduction · portrait", file: "/media-kit/video/GuitarTool-Full-Intro-en-1080x1920.mp4", detail: "MP4 · H.264 · 1080 × 1920 · 36 seconds", orientation: "portrait" },
-  { title: "Simplified Chinese full introduction · landscape", file: "/media-kit/video/GuitarTool-Full-Intro-zh-Hans-1920x1080.mp4", detail: "MP4 · H.264 · 1920 × 1080 · 36 seconds", orientation: "landscape" },
-  { title: "Simplified Chinese full introduction · portrait", file: "/media-kit/video/GuitarTool-Full-Intro-zh-Hans-1080x1920.mp4", detail: "MP4 · H.264 · 1080 × 1920 · 36 seconds", orientation: "portrait" },
+  { title: "English full introduction · landscape", file: "/media-kit/video/GuitarTool-Full-Intro-en-1280x720.mp4", detail: "MP4 · H.264 · 1280 × 720 · 36 seconds", orientation: "landscape" },
+  { title: "English full introduction · portrait", file: "/media-kit/video/GuitarTool-Full-Intro-en-720x1280.mp4", detail: "MP4 · H.264 · 720 × 1280 · 36 seconds", orientation: "portrait" },
+  { title: "Simplified Chinese full introduction · landscape", file: "/media-kit/video/GuitarTool-Full-Intro-zh-Hans-1280x720.mp4", detail: "MP4 · H.264 · 1280 × 720 · 36 seconds", orientation: "landscape" },
+  { title: "Simplified Chinese full introduction · portrait", file: "/media-kit/video/GuitarTool-Full-Intro-zh-Hans-720x1280.mp4", detail: "MP4 · H.264 · 720 × 1280 · 36 seconds", orientation: "portrait" },
 ] as const;
 
 export default function PressKitPage() {
