@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { AcquisitionFooter, AcquisitionHeader } from "@/app/components/AcquisitionChrome";
 import { JsonLd } from "@/app/components/JsonLd";
-import { APP_STORE_LINKS, APP_STORE_URL, GITHUB_URL, PRIVACY_URL, absoluteUrl, assetPath } from "@/app/lib/site";
+import { APP_STORE_LINKS, APP_STORE_URL, GITHUB_URL, MEDIA_RELEASE_URL, PRIVACY_URL, absoluteUrl, assetPath } from "@/app/lib/site";
 
 export const metadata: Metadata = {
   title: "GuitarTool Press Kit | Product Facts, Images & Contact",
@@ -25,10 +25,10 @@ const assets = [
 ] as const;
 
 const fullVideos = [
-  { title: "English full introduction · landscape", file: "/media-kit/video/GuitarTool-Full-Intro-en-1280x720.mp4", detail: "MP4 · H.264 · 1280 × 720 · 36 seconds", orientation: "landscape" },
-  { title: "English full introduction · portrait", file: "/media-kit/video/GuitarTool-Full-Intro-en-720x1280.mp4", detail: "MP4 · H.264 · 720 × 1280 · 36 seconds", orientation: "portrait" },
-  { title: "Simplified Chinese full introduction · landscape", file: "/media-kit/video/GuitarTool-Full-Intro-zh-Hans-1280x720.mp4", detail: "MP4 · H.264 · 1280 × 720 · 36 seconds", orientation: "landscape" },
-  { title: "Simplified Chinese full introduction · portrait", file: "/media-kit/video/GuitarTool-Full-Intro-zh-Hans-720x1280.mp4", detail: "MP4 · H.264 · 720 × 1280 · 36 seconds", orientation: "portrait" },
+  { title: "English full introduction · landscape", file: `${MEDIA_RELEASE_URL}/GuitarTool-Full-Intro-en-854x480.mp4`, detail: "MP4 · H.264 · 854 × 480 · 36 seconds · web edition", orientation: "landscape" },
+  { title: "English full introduction · portrait", file: `${MEDIA_RELEASE_URL}/GuitarTool-Full-Intro-en-480x854.mp4`, detail: "MP4 · H.264 · 480 × 854 · 36 seconds · web edition", orientation: "portrait" },
+  { title: "Simplified Chinese full introduction · landscape", file: `${MEDIA_RELEASE_URL}/GuitarTool-Full-Intro-zh-Hans-854x480.mp4`, detail: "MP4 · H.264 · 854 × 480 · 36 seconds · web edition", orientation: "landscape" },
+  { title: "Simplified Chinese full introduction · portrait", file: `${MEDIA_RELEASE_URL}/GuitarTool-Full-Intro-zh-Hans-480x854.mp4`, detail: "MP4 · H.264 · 480 × 854 · 36 seconds · web edition", orientation: "portrait" },
 ] as const;
 
 export default function PressKitPage() {
@@ -36,7 +36,7 @@ export default function PressKitPage() {
     <main className="acqPage pressPage" lang="en">
       <JsonLd data={{ "@context": "https://schema.org", "@type": "SoftwareApplication", name: "GuitarTool", softwareVersion: "1.0.8", description: "An offline tuner, metronome and interactive chord library for guitar and ukulele, with rear-flash beat cues, shareable chord cards, Apple Watch and Home Screen widgets.", url: absoluteUrl("/"), downloadUrl: APP_STORE_URL, applicationCategory: "MusicApplication", operatingSystem: "iOS, iPadOS, watchOS", featureList: ["Real-time tuner for seven instrument families", "20–500 BPM practice metronome", "Rear-flash beat cues for all main beats or accents only, with three intensities", "19,244 guitar and ukulele fingerings", "Chord-card preview, Photos save and system sharing", "Apple Watch metronome with background audio", "Three interactive Home Screen widget sizes", "13 interface languages"], author: { "@type": "Person", name: "Zhichao Wei" }, offers: { "@type": "Offer", price: "0", priceCurrency: "USD" } }} />
       <JsonLd data={[
-        ...fullVideos.map((video) => ({ "@context": "https://schema.org", "@type": "VideoObject", name: video.title, description: "A 36-second full introduction to GuitarTool's tuner, metronome, chord cards, widgets and multi-device experience.", thumbnailUrl: absoluteUrl("/media-kit/social/guitartool-chord-cards-en-1200x630.png"), uploadDate: "2026-08-28", duration: "PT36S", contentUrl: absoluteUrl(video.file) })),
+        ...fullVideos.map((video) => ({ "@context": "https://schema.org", "@type": "VideoObject", name: video.title, description: "A 36-second full introduction to GuitarTool's tuner, metronome, chord cards, widgets and multi-device experience.", thumbnailUrl: absoluteUrl("/media-kit/social/guitartool-chord-cards-en-1200x630.png"), uploadDate: "2026-08-28", duration: "PT36S", contentUrl: video.file })),
         { "@context": "https://schema.org", "@type": "VideoObject", name: "GuitarTool 24-second social preview", description: "A concise vertical preview of GuitarTool's offline metronome, tuner, chord library and shareable chord cards.", thumbnailUrl: absoluteUrl("/media-kit/social/guitartool-chord-cards-en-1200x630.png"), uploadDate: "2026-08-27", duration: "PT24S", contentUrl: absoluteUrl("/media-kit/video/GuitarTool-Social-Preview-en-1080x1920.mp4") },
         { "@context": "https://schema.org", "@type": "ImageObject", name: "GuitarTool chord-card social preview", contentUrl: absoluteUrl("/media-kit/social/guitartool-chord-cards-en-1200x630.png"), width: 1200, height: 630, caption: "GuitarTool chord-card preview, Photos save and image sharing.", creator: { "@type": "Person", name: "Zhichao Wei" }, creditText: "GuitarTool official media kit", acquireLicensePage: absoluteUrl("/press/") },
       ]} />
@@ -87,7 +87,7 @@ export default function PressKitPage() {
 
       <section className="pressVideoSection shell">
         <div className="assetHeading"><p className="acqEyebrow">FULL INTRODUCTION VIDEOS</p><h2>Four edits for websites, editorial embeds and social publishing.</h2><p>Use landscape for articles, desktop landing pages and presentations; use portrait for Shorts, Reels, Stories and mobile-first embeds. Both English and Simplified Chinese editions include audio and real product screens.</p></div>
-        <div className="pressFullVideoGrid">{fullVideos.map((video) => <article className={video.orientation} key={video.file}><video controls playsInline preload="metadata"><source src={assetPath(video.file)} type="video/mp4" /></video><div><h3>{video.title}</h3><p>{video.detail}</p><a href={assetPath(video.file)} download>Download full video ↓</a></div></article>)}</div>
+        <div className="pressFullVideoGrid">{fullVideos.map((video) => <article className={video.orientation} key={video.file}><video controls playsInline preload="metadata"><source src={video.file} type="video/mp4" /></video><div><h3>{video.title}</h3><p>{video.detail}</p><a href={video.file}>Download full video ↓</a></div></article>)}</div>
       </section>
 
       <section className="pressVideoSection shell">
