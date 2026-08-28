@@ -7,7 +7,7 @@ import { tunerLocales, tunerPath } from "@/app/lib/tuner-locales";
 
 export const dynamic = "force-static";
 
-const lastModified = new Date("2026-08-27T00:00:00Z");
+const lastModified = new Date("2026-08-28T00:00:00Z");
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const core = [
@@ -15,6 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ["/online-metronome/", 0.9, "weekly"], ["/en/online-metronome/", 0.9, "weekly"],
     ["/chords/guitar/", 0.9, "weekly"], ["/chords/ukulele/", 0.9, "weekly"],
     ["/press/", 0.6, "monthly"],
+    ["/support/", 0.7, "monthly"], ["/en/support/", 0.7, "monthly"],
   ] as const;
   const entries: MetadataRoute.Sitemap = core.map(([path, priority, changeFrequency]) => ({ url: absoluteUrl(path), lastModified, changeFrequency, priority }));
 

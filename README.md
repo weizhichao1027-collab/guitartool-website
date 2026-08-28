@@ -1,6 +1,6 @@
 # GuitarTool Marketing Site
 
-GuitarTool 官方营销与自然搜索获客网站。除中英文产品首页外，还包括 13 种语言在线调音器、在线节拍器、32 个高意图指南、100 个热门和弦页面、13 种语言入口和媒体资料中心。
+GuitarTool 官方营销、技术支持与自然搜索获客网站。除中英文产品首页外，还包括双语支持页、13 种语言在线调音器、在线节拍器、32 个高意图指南、100 个热门和弦页面、13 种语言入口，以及提供中英文横竖屏完整介绍的媒体资料中心。
 
 线上地址：https://weizhichao1027-collab.github.io/guitartool-website/
 
@@ -32,5 +32,7 @@ The site is built with Next.js-compatible Vinext and deployed with OpenAI Sites.
 ## Links
 
 - [Download GuitarTool on the App Store](https://apps.apple.com/app/id6761914163)
+- [Chinese support](https://weizhichao1027-collab.github.io/guitartool-website/support/)
+- [English support](https://weizhichao1027-collab.github.io/guitartool-website/en/support/)
 - [Privacy policy](https://weizhichao1027-collab.github.io/GuitarTool-Privacy/)
 - [Marketing and deployment handoff](./MARKETING_HANDOFF.md)

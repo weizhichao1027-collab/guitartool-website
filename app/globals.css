@@ -204,6 +204,12 @@ h1 em { font-family: Georgia, "Times New Roman", serif; font-weight: 500; color:
 .numbersGrid strong { font-family: Georgia, serif; color: #95eee4; font-size: clamp(32px, 3.5vw, 49px); font-weight: 500; letter-spacing: -.04em; }
 .numbersGrid span { color: #aebdbc; font-size: 12px; }
 
+.introVideoSection { display: grid; grid-template-columns: .72fr 1.28fr; gap: clamp(45px, 7vw, 95px); align-items: center; }
+.introVideoCopy h2 { margin: 0; font-size: clamp(44px, 5.4vw, 72px); line-height: 1.07; letter-spacing: -.06em; }
+.introVideoCopy > p:last-child { margin: 30px 0 0; color: var(--muted); font-size: 16px; line-height: 1.85; }
+.introVideoFrame { padding: 13px; border: 1px solid rgba(20,35,39,.08); border-radius: 32px; background: rgba(255,255,255,.66); box-shadow: 0 38px 90px rgba(24,82,84,.14); }
+.introVideoFrame video { width: 100%; display: block; aspect-ratio: 16 / 9; border-radius: 22px; background: #172e32; object-fit: contain; }
+
 .extras { overflow: hidden; }
 .extraGrid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 26px; }
 .extraCard { min-height: 780px; overflow: hidden; display: flex; flex-direction: column; align-items: center; border-radius: 34px; position: relative; }
@@ -316,6 +322,7 @@ h1 em { font-family: Georgia, "Times New Roman", serif; font-weight: 500; color:
   .numbersGrid div:first-child { padding-left: 34px; }
   .privacyGrid { gap: 55px; }
   .faq { gap: 55px; }
+  .introVideoSection { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 760px) {
@@ -376,6 +383,8 @@ h1 em { font-family: Georgia, "Times New Roman", serif; font-weight: 500; color:
   .numbersGrid { grid-template-columns: 1fr; }
   .numbersGrid div { border-right: 0; border-bottom: 1px solid rgba(255,255,255,.12); }
   .numbersGrid div:last-child { border-bottom: 0; }
+  .introVideoFrame { width: min(100%, 380px); justify-self: center; padding: 9px; border-radius: 27px; }
+  .introVideoFrame video { aspect-ratio: 9 / 16; border-radius: 20px; }
   .extraCard { min-height: 680px; border-radius: 25px; }
   .extraText { padding: 42px 30px 10px; }
   .extraCard > img { width: 310px; }

@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   if (!page) return {};
   const canonical = absoluteUrl(`/${locale}/`);
   const previewImage = chordCardPreviewByLocale[locale] ?? "/en-chord-card-share.webp";
-  const previewAlt = `${page.features.at(-1)?.title ?? "GuitarTool"} · GuitarTool 1.0.7`;
+  const previewAlt = `${page.features.at(-1)?.title ?? "GuitarTool"} · GuitarTool`;
   return {
     title: page.title,
     description: page.description,
@@ -50,7 +50,7 @@ export default async function LocalizedHome({ params }: { params: Promise<{ loca
   const previewImage = chordCardPreviewByLocale[locale] ?? "/en-chord-card-share.webp";
   return (
     <main className="acqPage localePage" lang={page.htmlLang} dir={page.dir}>
-      <JsonLd data={{ "@context": "https://schema.org", "@type": "SoftwareApplication", name: "GuitarTool", description: page.description, url: canonical, downloadUrl: APP_STORE_URL, applicationCategory: "MusicApplication", operatingSystem: "iOS, iPadOS, watchOS", inLanguage: page.htmlLang, offers: { "@type": "Offer", price: "0", priceCurrency: "USD" } }} />
+      <JsonLd data={{ "@context": "https://schema.org", "@type": "SoftwareApplication", name: "GuitarTool", softwareVersion: "1.0.8", description: page.description, url: canonical, downloadUrl: APP_STORE_URL, applicationCategory: "MusicApplication", operatingSystem: "iOS, iPadOS, watchOS", inLanguage: page.htmlLang, offers: { "@type": "Offer", price: "0", priceCurrency: "USD" } }} />
       <AcquisitionHeader locale={locale} />
       <section className="localeHero shell">
         <div>
@@ -60,7 +60,7 @@ export default async function LocalizedHome({ params }: { params: Promise<{ loca
           <a className="primaryButton" href={APP_STORE_LINKS.home}>{page.download}<span>↗</span></a>
           <div className="localeTrust">{page.trust.map((item) => <span key={item}>{item}</span>)}</div>
         </div>
-        <div className="localeVisual"><Image src={assetPath(previewImage)} alt={`${page.features.at(-1)?.title ?? "GuitarTool"} · GuitarTool 1.0.7`} width={833} height={1800} priority /></div>
+        <div className="localeVisual"><Image src={assetPath(previewImage)} alt={`${page.features.at(-1)?.title ?? "GuitarTool"} · GuitarTool`} width={833} height={1800} priority /></div>
       </section>
       <section className="localizedToolCta shell">
         <p className="acqEyebrow">{tunerCopy.eyebrow}</p>
@@ -69,6 +69,7 @@ export default async function LocalizedHome({ params }: { params: Promise<{ loca
         <Link className="primaryButton" href={`/${locale}/online-tuner/`}>{tunerCopy.start}<span>→</span></Link>
       </section>
       <section className="localeFeatures shell">{page.features.map((feature, index) => <article key={feature.title}><span>{String(index + 1).padStart(2, "0")}</span><h2>{feature.title}</h2><p>{feature.body}</p></article>)}</section>
+      <section className="localeUpdate shell"><span>{page.versionUpdate.label}</span><div><h2>{page.versionUpdate.title}</h2><p>{page.versionUpdate.body}</p></div></section>
       <section className="localeClosing shell"><Image src={assetPath("/app-icon-224.png")} alt="GuitarTool" width={92} height={92} /><h2>{page.closing}</h2><a className="primaryButton coral" href={APP_STORE_LINKS.home}>{page.download}<span>↗</span></a></section>
       <nav className="languageDirectory shell" aria-label="Languages"><Link href="/">简体中文</Link><Link href="/en/">English</Link>{localePages.map((item) => <Link className={item.slug === locale ? "active" : ""} aria-current={item.slug === locale ? "page" : undefined} href={`/${item.slug}/`} key={item.slug}>{item.htmlLang}</Link>)}</nav>
       <AcquisitionFooter locale={locale} />

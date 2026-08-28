@@ -38,8 +38,8 @@ const features = [
     number: "01",
     kicker: "Flexible Metronome",
     title: "More than a click.\nA rhythm trainer that grows with you.",
-    copy: "Set 20–500 BPM, time signatures, note values, accents and subdivisions. Combine timers, swing and progressive tempo training into a routine that is truly yours.",
-    points: ["Tap tempo and practice presets", "Four subdivisions and eighth-note swing", "Custom accents and progressive tempo"],
+    copy: "Set 20–500 BPM, time signatures, note values, accents and subdivisions. Combine timers, swing, progressive tempo and rear-flash beat cues into a routine that is truly yours.",
+    points: ["Tap tempo and practice presets", "Four subdivisions and eighth-note swing", "Flash all main beats or accents only, with three intensities"],
     image: "/en-metronome.webp",
     alt: "GuitarTool metronome with presets, timer, swing and progressive tempo",
     tone: "aqua",
@@ -82,14 +82,17 @@ const faqs = [
   ["Which devices are supported?", "GuitarTool adapts to iPhone and iPad, and includes an Apple Watch metronome plus three sizes of interactive Home Screen widgets. Watch audio can continue when the wrist lowers or the display dims."],
   ["Does it support ukulele?", "Yes. The tuner includes GCEA modes, and the chord library includes a complete set of ukulele chord names and multiple fingerings."],
   ["Can I send a chord shape to a teacher or friend?", "Yes. Preview the current chord card, then save it to Photos or send it with the system share sheet. The image does not force an App Store link."],
+  ["Does Flash Beat take photos?", "No. On compatible iPhones it uses the rear flash for all main beats or accents only, without capturing images. It turns off when playback stops, you leave the screen or the app enters the background."],
 ] as const;
 
 export default function EnglishHome() {
   return (
     <main lang="en">
       <JsonLd data={[
-        { "@context": "https://schema.org", "@type": "SoftwareApplication", name: "GuitarTool", description: "An offline tuner, metronome and interactive chord library with saveable, shareable guitar and ukulele diagrams.", url: absoluteUrl("/en/"), downloadUrl: appStoreUrl, applicationCategory: "MusicApplication", operatingSystem: "iOS, iPadOS, watchOS", inLanguage: supportedLanguageCodes, offers: { "@type": "Offer", price: "0", priceCurrency: "USD" }, featureList: ["Real-time string instrument tuner", "20–500 BPM metronome", "19,244 guitar and ukulele fingerings", "Preview, save and share chord cards", "Apple Watch metronome with background audio", "Interactive Home Screen widgets"] },
+        { "@context": "https://schema.org", "@type": "SoftwareApplication", name: "GuitarTool", softwareVersion: "1.0.8", description: "An offline tuner, metronome and interactive chord library with saveable, shareable guitar and ukulele diagrams.", url: absoluteUrl("/en/"), downloadUrl: appStoreUrl, applicationCategory: "MusicApplication", operatingSystem: "iOS, iPadOS, watchOS", inLanguage: supportedLanguageCodes, offers: { "@type": "Offer", price: "0", priceCurrency: "USD" }, featureList: ["Real-time string instrument tuner", "20–500 BPM metronome", "Rear-flash beat cues for all main beats or accents only, with three intensities", "19,244 guitar and ukulele fingerings", "Preview, save and share chord cards", "Apple Watch metronome with background audio", "Interactive Home Screen widgets"] },
         { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqs.map(([question, answer]) => ({ "@type": "Question", name: question, acceptedAnswer: { "@type": "Answer", text: answer } })) },
+        { "@context": "https://schema.org", "@type": "VideoObject", name: "GuitarTool full introduction (landscape)", description: "A 36-second introduction to GuitarTool's tuner, metronome, chord cards, widgets and multi-device experience.", thumbnailUrl: absoluteUrl("/og.png"), uploadDate: "2026-08-28", duration: "PT36S", contentUrl: absoluteUrl("/media-kit/video/GuitarTool-Full-Intro-en-1920x1080.mp4") },
+        { "@context": "https://schema.org", "@type": "VideoObject", name: "GuitarTool full introduction (portrait)", description: "A mobile-first 36-second English introduction to GuitarTool.", thumbnailUrl: absoluteUrl("/media-kit/social/guitartool-chord-cards-en-1080x1350.png"), uploadDate: "2026-08-28", duration: "PT36S", contentUrl: absoluteUrl("/media-kit/video/GuitarTool-Full-Intro-en-1080x1920.mp4") },
       ]} />
       <nav className="nav shell" aria-label="Main navigation">
         <a className="brand" href="#top" aria-label="GuitarTool home">
@@ -102,6 +105,7 @@ export default function EnglishHome() {
           <Link href="/en/online-metronome/">Online metronome</Link>
           <Link href="/chords/guitar/">Popular chords</Link>
           <Link href="/press/">Press kit</Link>
+          <Link href="/en/support/">Support</Link>
           <a className="languageSwitch" href={`${basePath}/`} aria-label="切换到中文">中文</a>
           <a className="navCta" href={appStoreUrl}>Download</a>
         </div>
@@ -162,6 +166,11 @@ export default function EnglishHome() {
 
       <section className="numbers"><div className="shell numbersGrid"><div><strong>20–500</strong><span>precise BPM range</span></div><div><strong>430–446</strong><span>Hz calibration</span></div><div><strong>19,244</strong><span>guitar & ukulele fingerings</span></div><div><strong>1–12</strong><span>beats per bar</span></div></div></section>
 
+      <section className="introVideoSection shell sectionPad">
+        <div className="introVideoCopy"><p className="eyebrow"><span /> Full product tour in 36 seconds</p><h2>See how the tools fit into practice before choosing where to begin.</h2><p>The landscape edit is designed for desktop and larger screens; mobile automatically receives the English portrait edit. It covers tuning, rhythm, chord cards, widgets and the multi-device experience. Version 1.0.8&apos;s new Flash Beat is detailed in the update note below.</p></div>
+        <div className="introVideoFrame"><video controls playsInline preload="metadata" aria-label="GuitarTool full English introduction"><source src={assetPath("/media-kit/video/GuitarTool-Full-Intro-en-1080x1920.mp4")} media="(max-width: 700px)" type="video/mp4" /><source src={assetPath("/media-kit/video/GuitarTool-Full-Intro-en-1920x1080.mp4")} type="video/mp4" /></video></div>
+      </section>
+
       <section className="extras shell sectionPad">
         <div className="sectionHeading compact"><p className="eyebrow"><span /> Across your devices · themes & widgets</p><h2>Practice should fit you,<br />not the other way around.</h2></div>
         <div className="extraGrid">
@@ -174,7 +183,7 @@ export default function EnglishHome() {
             <Image src={assetPath("/en-widgets.webp")} alt="Three GuitarTool metronome widget sizes in English" width={833} height={1800} sizes="(max-width: 700px) 86vw, 460px" />
           </article>
         </div>
-        <div className="updatePromise"><span>VERSION 1.0.7</span><p><strong>Take a useful voicing beyond the app.</strong> Chord-card previews, Photos saves and system sharing join stronger Apple Watch playback when the wrist lowers.</p><b aria-hidden="true">↗</b></div>
+        <div className="updatePromise"><span>VERSION 1.0.8 · BUILD 8</span><p><strong>Make the beat visible as well as audible.</strong> Compatible iPhones can cue all main beats or accents only with the rear flash at three intensities. Settings and presets are clearer, while tuner, Watch, widget and cross-device reliability are stronger.</p><b aria-hidden="true">↗</b></div>
       </section>
 
       <section className="devices sectionPad" id="devices">
@@ -221,7 +230,7 @@ export default function EnglishHome() {
         <div className="ctaGlow" /><Image className="ctaIcon" src={assetPath("/app-icon-224.png")} alt="GuitarTool app icon" width={112} height={112} /><p>GuitarTool for iPhone · iPad · Apple Watch</p><h2>Make your next practice<br />a more focused one.</h2><a className="primaryButton coral" href={appStoreUrl}>Download on the App Store <span>↗</span></a><small>Fully offline · No ads · No account</small>
       </section>
 
-      <footer className="footer shell"><a className="brand" href="#top"><Image src={assetPath("/app-icon-224.png")} alt="" width={36} height={36} /><span>GuitarTool</span></a><p>© 2026 Zhichao Wei. Practise with care. Progress quietly.</p><div><a href={privacyUrl}>Privacy</a><a href="mailto:weizhichao1027@gmail.com">Contact</a><a href={githubUrl}>GitHub</a></div></footer>
+      <footer className="footer shell"><a className="brand" href="#top"><Image src={assetPath("/app-icon-224.png")} alt="" width={36} height={36} /><span>GuitarTool</span></a><p>© 2026 Zhichao Wei. Practise with care. Progress quietly.</p><div><Link href="/en/support/">Support</Link><a href={privacyUrl}>Privacy</a><a href="mailto:weizhichao1027@gmail.com">Contact</a><a href={githubUrl}>GitHub</a></div></footer>
     </main>
   );
 }

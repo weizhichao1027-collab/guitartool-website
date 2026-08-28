@@ -26,15 +26,15 @@ const localizedChordCards: ImageEntry[] = [
 ];
 
 const editorialImages: ImageEntry[] = [
-  { page: "/guides/share-chord-diagrams/", image: "/chord-card-share.webp", title: "保存与分享和弦图", caption: "GuitarTool 1.0.7 真实和弦卡片分享流程。" },
-  { page: "/en/guides/share-chord-diagrams/", image: "/en-chord-card-share.webp", title: "Save and share chord diagrams", caption: "The real GuitarTool 1.0.7 chord-card sharing flow." },
+  { page: "/guides/share-chord-diagrams/", image: "/chord-card-share.webp", title: "保存与分享和弦图", caption: "GuitarTool 真实和弦卡片分享流程。" },
+  { page: "/en/guides/share-chord-diagrams/", image: "/en-chord-card-share.webp", title: "Save and share chord diagrams", caption: "The real GuitarTool chord-card sharing flow." },
   { page: "/guides/chord-diagrams-for-students/", image: "/chord-card-share.webp", title: "把和弦指法图发给学生", caption: "选择准确把位、检查卡片并把图片交给学生。" },
   { page: "/en/guides/chord-diagrams-for-students/", image: "/en-chord-card-share.webp", title: "Share chord diagrams with students", caption: "Choose an exact voicing, check the card and send a useful image to a student." },
   { page: "/guides/apple-watch-metronome/", image: "/devices.webp", title: "Apple Watch 节拍器", caption: "GuitarTool 的 iPhone、iPad 与 Apple Watch 多设备体验。" },
   { page: "/en/guides/apple-watch-metronome/", image: "/en-devices.webp", title: "Apple Watch metronome", caption: "GuitarTool across iPhone, iPad and Apple Watch." },
   { page: "/guides/apple-watch-metronome-audio-design/", image: "/devices.webp", title: "Apple Watch 节拍器音频设计", caption: "声音计时与界面生命周期分离的多设备体验。" },
   { page: "/en/guides/apple-watch-metronome-audio-design/", image: "/en-devices.webp", title: "Apple Watch metronome audio design", caption: "A multi-device experience built around independent audio timing." },
-  { page: "/press/", image: "/en-chord-card-share.webp", title: "GuitarTool 1.0.7 press image", caption: "Official English chord-card product image for editorial coverage." },
+  { page: "/press/", image: "/en-chord-card-share.webp", title: "GuitarTool press image", caption: "Official English chord-card product image for editorial coverage." },
 ];
 
 const escapeXml = (value: string) => value

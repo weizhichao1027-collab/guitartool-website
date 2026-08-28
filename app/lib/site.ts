@@ -8,7 +8,7 @@ const CUSTOM_PRODUCT_PAGE_IDS = {
   chords: "67d874cf-ac10-412d-929b-b883f2039444",
 } as const;
 
-type AppStoreDestination = keyof typeof CUSTOM_PRODUCT_PAGE_IDS | "home" | "press" | "navigation" | "smartBanner";
+type AppStoreDestination = keyof typeof CUSTOM_PRODUCT_PAGE_IDS | "home" | "press" | "support" | "navigation" | "smartBanner";
 
 /**
  * Campaign links are generated from the provider token returned by App Store
@@ -21,6 +21,7 @@ export function appStoreLink(destination: AppStoreDestination) {
   const campaign = {
     home: "site_home",
     press: "site_press",
+    support: "site_support",
     navigation: "site_nav",
     smartBanner: "site_smart_banner",
     tuner: "site_tuner",
@@ -41,6 +42,7 @@ export function appStoreLink(destination: AppStoreDestination) {
 export const APP_STORE_LINKS = {
   home: appStoreLink("home"),
   press: appStoreLink("press"),
+  support: appStoreLink("support"),
   navigation: appStoreLink("navigation"),
   smartBanner: appStoreLink("smartBanner"),
   tuner: appStoreLink("tuner"),
@@ -62,6 +64,7 @@ export const RUNTIME_BASE_PATH = process.env.GITHUB_PAGES === "true" ? SITE_BASE
 
 export const assetPath = (path: string) => `${RUNTIME_BASE_PATH}${path.startsWith("/") ? path : `/${path}`}`;
 export const absoluteUrl = (path = "/") => `${SITE_URL}${path.startsWith("/") ? path : `/${path}`}`;
+export const SUPPORT_URL = absoluteUrl("/support/");
 
 export const localeAlternates = {
   "zh-CN": absoluteUrl("/"),

@@ -11,7 +11,7 @@ export const enFeaturePages: LandingPage[] = [
     showcase: {
       image: "/en-chord-card-share.webp",
       alt: "GuitarTool chord card preview with Save to Photos and Share Image actions",
-      caption: "The real version 1.0.7 interface: create the current voicing, inspect the final card, then save or share it.",
+      caption: "The real GuitarTool interface: create the current voicing, inspect the final card, then save or share it.",
     },
     sections: [
       {
@@ -104,7 +104,7 @@ export const enFeaturePages: LandingPage[] = [
     title: "Designing an Apple Watch Metronome That Keeps Audio Running",
     description: "A first-hand engineering case study on separating Apple Watch metronome audio timing from screen and haptic refresh, with route and interruption recovery.",
     eyebrow: "ENGINEERING CASE STUDY · WATCH AUDIO",
-    lead: "A musician lowers their wrist precisely when the metronome needs to become less visible and remain audible. GuitarTool 1.0.7 treats audio timing, interface refresh and haptics as separate responsibilities so the beat can continue through the real practice lifecycle.",
+    lead: "A musician lowers their wrist precisely when the metronome needs to become less visible and remain audible. GuitarTool treats audio timing, interface refresh and haptics as separate responsibilities so the beat can continue through the real practice lifecycle.",
     proof: ["Audio sample-clock timing", "UI and haptics can pause", "Route and interruption recovery"],
     showcase: {
       image: "/en-devices.webp",
@@ -155,7 +155,7 @@ export const zhFeaturePages: LandingPage[] = [
     showcase: {
       image: "/chord-card-share.webp",
       alt: "GuitarTool 和弦卡片预览、保存到相册与分享图片界面",
-      caption: "1.0.7 真实界面：生成当前按法，先查看最终卡片，再保存到相册或分享图片。",
+      caption: "GuitarTool 真实界面：生成当前按法，先查看最终卡片，再保存到相册或分享图片。",
     },
     sections: [
       {
@@ -246,9 +246,9 @@ export const zhFeaturePages: LandingPage[] = [
   {
     slug: "apple-watch-metronome-audio-design",
     title: "Apple Watch 节拍器落腕后继续发声的设计",
-    description: "GuitarTool 1.0.7 工程复盘：把 Watch 节拍器的声音时钟、界面与触觉刷新分开，并处理音频路线和中断恢复。",
+    description: "GuitarTool 工程复盘：把 Watch 节拍器的声音时钟、界面与触觉刷新分开，并处理音频路线和中断恢复。",
     eyebrow: "工程复盘 · WATCH 音频",
-    lead: "演奏者放下手腕，正是节拍器应该减少视觉存在、继续稳定发声的时刻。GuitarTool 1.0.7 将声音时钟、界面刷新和触觉反馈拆成不同职责，让节拍跟随真实练习生命周期。",
+    lead: "演奏者放下手腕，正是节拍器应该减少视觉存在、继续稳定发声的时刻。GuitarTool 将声音时钟、界面刷新和触觉反馈拆成不同职责，让节拍跟随真实练习生命周期。",
     proof: ["采样时钟驱动", "界面与触觉可暂停", "音频路线与中断恢复"],
     showcase: {
       image: "/devices.webp",
