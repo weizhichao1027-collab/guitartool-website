@@ -57,7 +57,6 @@ export function appStoreLinkForGuide(slug: string) {
 }
 export const PRIVACY_URL = "https://weizhichao1027-collab.github.io/GuitarTool-Privacy/";
 export const GITHUB_URL = "https://github.com/weizhichao1027-collab/guitartool-website";
-export const MEDIA_RELEASE_URL = `${GITHUB_URL}/releases/download/media-kit-1.0.8`;
 export const SITE_ORIGIN = "https://weizhichao1027-collab.github.io";
 export const SITE_BASE_PATH = "/guitartool-website";
 export const SITE_URL = `${SITE_ORIGIN}${SITE_BASE_PATH}`;
