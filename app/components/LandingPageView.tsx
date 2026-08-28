@@ -3,13 +3,28 @@ import { SiteLink as Link } from "@/app/components/SiteLink";
 import { AcquisitionFooter, AcquisitionHeader } from "@/app/components/AcquisitionChrome";
 import { JsonLd } from "@/app/components/JsonLd";
 import { LandingLanguage, LandingPage, getLandingPage } from "@/app/lib/landing-pages";
-import { APP_STORE_URL, APP_NAME, absoluteUrl, appStoreLinkForGuide, assetPath } from "@/app/lib/site";
+import {
+  APP_STORE_URL,
+  APP_NAME,
+  absoluteUrl,
+  appStoreCampaignForGuide,
+  appStoreDestinationForGuide,
+  appStoreLinkForGuide,
+  assetPath,
+} from "@/app/lib/site";
 
 export function LandingPageView({ page, language }: { page: LandingPage; language: LandingLanguage }) {
   const isZh = language === "zh";
   const prefix = isZh ? "/guides" : "/en/guides";
   const canonical = absoluteUrl(`${prefix}/${page.slug}/`);
   const downloadUrl = appStoreLinkForGuide(page.slug);
+  const downloadCampaign = appStoreCampaignForGuide(page.slug);
+  const downloadDestination = appStoreDestinationForGuide(page.slug);
+  const destinationLabel = {
+    tuner: isZh ? "调音器功能页" : "tuner product page",
+    metronome: isZh ? "节拍器功能页" : "metronome product page",
+    chords: isZh ? "和弦功能页" : "chord product page",
+  }[downloadDestination];
 
   const structuredData: Array<Record<string, unknown>> = [
     {
@@ -77,10 +92,13 @@ export function LandingPageView({ page, language }: { page: LandingPage; languag
                 {isZh ? "打开在线节拍器" : "Open the online metronome"}<span>→</span>
               </Link>
             ) : null}
-            <a className={page.slug === "online-metronome" ? "textCta" : "primaryButton"} href={downloadUrl}>
+            <a className={page.slug === "online-metronome" ? "textCta" : "primaryButton"} href={downloadUrl} data-campaign={downloadCampaign}>
               {isZh ? "在 App Store 免费下载" : "Download free on the App Store"}<span>↗</span>
             </a>
           </div>
+          <p className="conversionNote">
+            {isZh ? `免费 · 完全离线 · 无广告 · 前往${destinationLabel}` : `Free · fully offline · no ads · opens the ${destinationLabel}`}
+          </p>
           <ul className="proofStrip">
             {page.proof.map((item) => <li key={item}>{item}</li>)}
           </ul>
@@ -108,7 +126,7 @@ export function LandingPageView({ page, language }: { page: LandingPage; languag
           <section className="resourceCta">
             <p>{isZh ? "一个 APP，覆盖整段练习流程" : "One app for the full practice flow"}</p>
             <h2>{isZh ? "先调准，再跟拍，然后找到下一个和弦。" : "Tune first. Keep time. Find the next chord."}</h2>
-            <a className="primaryButton coral" href={downloadUrl}>{isZh ? "免费下载 GuitarTool" : "Download GuitarTool free"}<span>↗</span></a>
+            <a className="primaryButton coral" href={downloadUrl} data-campaign={downloadCampaign}>{isZh ? "免费下载 GuitarTool" : "Download GuitarTool free"}<span>↗</span></a>
           </section>
 
           <section className="acqFaq">
@@ -135,6 +153,13 @@ export function LandingPageView({ page, language }: { page: LandingPage; languag
         </div>
       </article>
       <AcquisitionFooter language={language} />
+      <aside className="mobileDownloadBar" aria-label={isZh ? "下载 GuitarTool" : "Download GuitarTool"}>
+        <div>
+          <strong>GuitarTool</strong>
+          <small>{isZh ? `免费 · 离线 · ${destinationLabel}` : `Free · offline · ${destinationLabel}`}</small>
+        </div>
+        <a href={downloadUrl} data-campaign={downloadCampaign}>{isZh ? "获取" : "Get"}<span>↗</span></a>
+      </aside>
     </main>
   );
 }

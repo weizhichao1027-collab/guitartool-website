@@ -65,7 +65,7 @@ export default function PressKitPage() {
       </section>
 
       <section className="pressStory shell">
-        <div><p className="acqEyebrow">VERSION 1.0.8 · BUILD 8</p><h2>A beat you can hear, see and shape around the way you practise.</h2></div>
+        <div><p className="acqEyebrow">VERSION 1.0.8 · AVAILABLE NOW</p><h2>A beat you can hear, see and shape around the way you practise.</h2></div>
         <div><p>On compatible iPhones, Flash Beat can cue every main beat or accents only with the rear flash at three intensity levels. It follows main beats rather than subdivisions, carries into custom practice presets, and turns off automatically when playback stops, the screen is left or the app enters the background. It never captures images. A first-use notice explains strobe sensitivity, battery use and heat.</p><p>Version 1.0.8 also reorganises metronome settings and presets, strengthens tuner feedback and confirmation-tone reliability, improves app/widget/Watch synchronisation and background audio, refines Apple Watch layouts, and applies safer full-screen backgrounds plus accessibility and localisation fixes. Shareable chord cards remain part of the current product.</p></div>
       </section>
 

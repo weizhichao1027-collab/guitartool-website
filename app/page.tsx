@@ -95,7 +95,7 @@ export default function Home() {
             调音、跟拍、查和弦，一款就够。GuitarTool 把专业练习工具收进安静、顺手的界面里。
           </p>
           <div className="heroActions">
-            <a className="primaryButton" href={appStoreUrl}>在 App Store 下载 <span>↗</span></a>
+            <a className="primaryButton" href={appStoreUrl}>App Store 免费下载 <span>↗</span></a>
             <a className="textButton" href="#features">探索功能 <span>↓</span></a>
           </div>
           <div className="heroProof" aria-label="产品特性">
@@ -221,7 +221,7 @@ export default function Home() {
           </article>
         </div>
         <div className="updatePromise">
-          <span>VERSION 1.0.8 · BUILD 8</span>
+          <span>1.0.8 已上线 · BUILD 8</span>
           <p><strong>让节拍不仅能听见，也能看见。</strong> 兼容 iPhone 可用后置闪光灯提示全部主拍或仅重音，并提供三档强度；设置与预设结构也更清晰，调音、Watch、Widget 与多设备同步更可靠。</p>
           <b aria-hidden="true">↗</b>
         </div>
@@ -287,6 +287,11 @@ export default function Home() {
           <Link href="/guides/apple-watch-metronome/"><span>07</span><h3>Apple Watch 节拍器</h3><p>从手腕控制速度与拍号，落腕或屏幕变暗后声音仍可继续。</p><b>了解手表节拍器 →</b></Link>
           <Link href="/guides/chord-diagrams-for-students/"><span>08</span><h3>把指法图发给学生</h3><p>从选择准确把位、检查高把位，到安排课后练习的一套教师流程。</p><b>阅读教学指南 →</b></Link>
           <Link href="/guides/apple-watch-metronome-audio-design/"><span>09</span><h3>Watch 音频工程复盘</h3><p>声音采样时钟、暗屏生命周期和音频路线恢复如何协同。</p><b>阅读工程复盘 →</b></Link>
+          <Link href="/guides/tap-tempo-bpm/"><span>10</span><h3>Tap Tempo 测 BPM</h3><p>跟着音乐点击主拍，排除误触，并判断半速或倍速结果。</p><b>阅读指南 →</b></Link>
+          <Link href="/guides/swing-metronome/"><span>11</span><h3>Swing 节拍器练习</h3><p>从直八分过渡到 Swing 与 Shuffle，逐步减少点击提示。</p><b>阅读指南 →</b></Link>
+          <Link href="/guides/progressive-tempo-training/"><span>12</span><h3>渐进加速训练</h3><p>用小幅 BPM 增量、成功次数和退档规则稳定提高速度。</p><b>阅读指南 →</b></Link>
+          <Link href="/guides/how-to-tune-a-guitar/"><span>13</span><h3>吉他六根弦调音指南</h3><p>按 EADGBE 完成标准调音，并正确理解音分与稳定延音。</p><b>阅读指南 →</b></Link>
+          <Link href="/guides/guitar-chord-fingering-finder/"><span>14</span><h3>吉他和弦指法查询</h3><p>比较开放与高把位，编辑、识别并试听真正需要的按法。</p><b>查询方法 →</b></Link>
         </div>
       </section>
 
@@ -310,7 +315,7 @@ export default function Home() {
         <Image className="ctaIcon" src={assetPath("/app-icon-224.png")} alt="GuitarTool App 图标" width={112} height={112} />
         <p>GuitarTool for iPhone · iPad · Apple Watch</p>
         <h2>下一次练习，<br />从更好的工具开始。</h2>
-        <a className="primaryButton coral" href={appStoreUrl}>在 App Store 下载 <span>↗</span></a>
+        <a className="primaryButton coral" href={appStoreUrl}>App Store 免费下载 <span>↗</span></a>
         <small>完全离线 · 无广告 · 无需账户</small>
       </section>
 

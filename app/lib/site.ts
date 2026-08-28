@@ -17,8 +17,8 @@ type AppStoreDestination = keyof typeof CUSTOM_PRODUCT_PAGE_IDS | "home" | "pres
  * to the default product page; the same URL starts showing the tailored page
  * automatically after approval.
  */
-export function appStoreLink(destination: AppStoreDestination) {
-  const campaign = {
+export function appStoreLink(destination: AppStoreDestination, campaignOverride?: string) {
+  const defaultCampaign = {
     home: "site_home",
     press: "site_press",
     support: "site_support",
@@ -28,6 +28,10 @@ export function appStoreLink(destination: AppStoreDestination) {
     metronome: "site_metronome",
     chords: "site_chords",
   }[destination];
+  const campaign = campaignOverride ?? defaultCampaign;
+  if (new TextEncoder().encode(campaign).length > 40) {
+    throw new Error(`App Store campaign token exceeds 40 bytes: ${campaign}`);
+  }
   const params = new URLSearchParams({
     pt: APP_STORE_PROVIDER_TOKEN,
     ct: campaign,
@@ -50,10 +54,34 @@ export const APP_STORE_LINKS = {
   chords: appStoreLink("chords"),
 } as const;
 
+const GUIDE_CAMPAIGNS: Record<string, string> = {
+  "tap-tempo-bpm": "seo_tap_tempo",
+  "swing-metronome": "seo_swing",
+  "progressive-tempo-training": "seo_tempo_training",
+  "how-to-tune-a-guitar": "seo_guitar_tuning",
+  "guitar-chord-fingering-finder": "seo_chord_finder",
+};
+
+export function appStoreDestinationForGuide(slug: string): "tuner" | "metronome" | "chords" {
+  if (slug.includes("chord") || slug.includes("capo")) return "chords";
+  if (
+    slug.includes("metronome") ||
+    slug.includes("rhythm") ||
+    slug.includes("time-signature") ||
+    slug.includes("tempo-training") ||
+    slug === "tap-tempo-bpm"
+  ) return "metronome";
+  return "tuner";
+}
+
+export function appStoreCampaignForGuide(slug: string) {
+  const destination = appStoreDestinationForGuide(slug);
+  return GUIDE_CAMPAIGNS[slug] ?? `site_${destination}`;
+}
+
 export function appStoreLinkForGuide(slug: string) {
-  if (slug.includes("chord") || slug.includes("capo")) return APP_STORE_LINKS.chords;
-  if (slug.includes("metronome") || slug.includes("rhythm") || slug.includes("time-signature")) return APP_STORE_LINKS.metronome;
-  return APP_STORE_LINKS.tuner;
+  const destination = appStoreDestinationForGuide(slug);
+  return appStoreLink(destination, appStoreCampaignForGuide(slug));
 }
 export const PRIVACY_URL = "https://weizhichao1027-collab.github.io/GuitarTool-Privacy/";
 export const GITHUB_URL = "https://github.com/weizhichao1027-collab/guitartool-website";

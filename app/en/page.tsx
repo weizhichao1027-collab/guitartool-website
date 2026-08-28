@@ -117,7 +117,7 @@ export default function EnglishHome() {
           <h1>When you practise,<br /><em>leave room for focus.</em></h1>
           <p className="heroLead">Tune, keep time and find chords in one place. GuitarTool brings professional practice essentials into a calm, intuitive interface.</p>
           <div className="heroActions">
-            <a className="primaryButton" href={appStoreUrl}>Download on the App Store <span>↗</span></a>
+            <a className="primaryButton" href={appStoreUrl}>Download free on the App Store <span>↗</span></a>
             <a className="textButton" href="#features">Explore the tools <span>↓</span></a>
           </div>
           <div className="heroProof" aria-label="Product qualities"><span>Fully offline</span><i /><span>No ads</span><i /><span>No account</span></div>
@@ -183,7 +183,7 @@ export default function EnglishHome() {
             <Image src={assetPath("/en-widgets.webp")} alt="Three GuitarTool metronome widget sizes in English" width={833} height={1800} sizes="(max-width: 700px) 86vw, 460px" />
           </article>
         </div>
-        <div className="updatePromise"><span>VERSION 1.0.8 · BUILD 8</span><p><strong>Make the beat visible as well as audible.</strong> Compatible iPhones can cue all main beats or accents only with the rear flash at three intensities. Settings and presets are clearer, while tuner, Watch, widget and cross-device reliability are stronger.</p><b aria-hidden="true">↗</b></div>
+        <div className="updatePromise"><span>VERSION 1.0.8 · AVAILABLE NOW</span><p><strong>Make the beat visible as well as audible.</strong> Compatible iPhones can cue all main beats or accents only with the rear flash at three intensities. Settings and presets are clearer, while tuner, Watch, widget and cross-device reliability are stronger.</p><b aria-hidden="true">↗</b></div>
       </section>
 
       <section className="devices sectionPad" id="devices">
@@ -218,6 +218,11 @@ export default function EnglishHome() {
           <Link href="/en/guides/apple-watch-metronome/"><span>07</span><h3>Apple Watch metronome</h3><p>Control tempo and meter from your wrist while audio continues when the display dims.</p><b>Explore the watch metronome →</b></Link>
           <Link href="/en/guides/chord-diagrams-for-students/"><span>08</span><h3>Chord cards for students</h3><p>A teacher-ready workflow for choosing, checking and sending one exact voicing.</p><b>Read the teaching guide →</b></Link>
           <Link href="/en/guides/apple-watch-metronome-audio-design/"><span>09</span><h3>Watch audio case study</h3><p>How sample-clock timing, display lifecycle and route recovery work together.</p><b>Read the engineering story →</b></Link>
+          <Link href="/en/guides/tap-tempo-bpm/"><span>10</span><h3>Tap tempo BPM finder</h3><p>Tap the main pulse, reject uneven input and check half-time or double-time results.</p><b>Read the guide →</b></Link>
+          <Link href="/en/guides/swing-metronome/"><span>11</span><h3>Swing metronome practice</h3><p>Move from straight eighths to swing and shuffle while gradually removing click support.</p><b>Read the guide →</b></Link>
+          <Link href="/en/guides/progressive-tempo-training/"><span>12</span><h3>Progressive tempo training</h3><p>Increase speed with small BPM steps, clean repetitions and a clear fallback rule.</p><b>Read the guide →</b></Link>
+          <Link href="/en/guides/how-to-tune-a-guitar/"><span>13</span><h3>How to tune a guitar</h3><p>Tune all six EADGBE strings and make sense of cents, attack and stable sustain.</p><b>Read the guide →</b></Link>
+          <Link href="/en/guides/guitar-chord-fingering-finder/"><span>14</span><h3>Chord fingering finder</h3><p>Compare open and higher voicings, then edit, identify and hear the exact shape.</p><b>Find a fingering →</b></Link>
         </div>
       </section>
 
@@ -227,7 +232,7 @@ export default function EnglishHome() {
       </section>
 
       <section className="finalCta shell">
-        <div className="ctaGlow" /><Image className="ctaIcon" src={assetPath("/app-icon-224.png")} alt="GuitarTool app icon" width={112} height={112} /><p>GuitarTool for iPhone · iPad · Apple Watch</p><h2>Make your next practice<br />a more focused one.</h2><a className="primaryButton coral" href={appStoreUrl}>Download on the App Store <span>↗</span></a><small>Fully offline · No ads · No account</small>
+        <div className="ctaGlow" /><Image className="ctaIcon" src={assetPath("/app-icon-224.png")} alt="GuitarTool app icon" width={112} height={112} /><p>GuitarTool for iPhone · iPad · Apple Watch</p><h2>Make your next practice<br />a more focused one.</h2><a className="primaryButton coral" href={appStoreUrl}>Download free on the App Store <span>↗</span></a><small>Fully offline · No ads · No account</small>
       </section>
 
       <footer className="footer shell"><a className="brand" href="#top"><Image src={assetPath("/app-icon-224.png")} alt="" width={36} height={36} /><span>GuitarTool</span></a><p>© 2026 Zhichao Wei. Practise with care. Progress quietly.</p><div><Link href="/en/support/">Support</Link><a href={privacyUrl}>Privacy</a><a href="mailto:weizhichao1027@gmail.com">Contact</a><a href={githubUrl}>GitHub</a></div></footer>

@@ -37,6 +37,7 @@
 .acqHero h1 { max-width: 1000px; margin: 0 auto; font-size: clamp(54px, 7vw, 94px); line-height: 1.02; letter-spacing: -.07em; }
 .acqLead { max-width: 800px; margin: 32px auto 0; color: var(--muted); font-size: clamp(17px, 2vw, 21px); line-height: 1.85; }
 .acqActions { display: flex; justify-content: center; align-items: center; gap: 28px; margin-top: 40px; }
+.conversionNote { margin: 18px auto 0; color: #6b7d7f; font-size: 11px; font-weight: 700; letter-spacing: .035em; }
 .proofStrip { display: flex; justify-content: center; flex-wrap: wrap; gap: 0; margin: 70px auto 0; padding: 0; border-block: 1px solid var(--line); list-style: none; }
 .proofStrip li { min-width: 230px; padding: 23px 34px; border-right: 1px solid var(--line); color: #52676a; font-size: 12px; font-weight: 700; }
 .proofStrip li:last-child { border-right: 0; }
@@ -64,6 +65,7 @@
 .relatedResources a > span { align-self: flex-end; color: var(--teal-deep); }
 .relatedResources strong { margin-top: 18px; font-size: 22px; line-height: 1.25; }
 .relatedResources small { margin-top: 13px; color: #738184; line-height: 1.6; }
+.mobileDownloadBar { display: none; }
 
 .toolHero { min-height: 760px; display: grid; grid-template-columns: .88fr 1.12fr; align-items: center; gap: 70px; padding-block: 80px 120px; }
 .toolIntro h1 { margin: 0; font-size: clamp(65px, 8vw, 116px); line-height: .92; letter-spacing: -.075em; }
@@ -318,6 +320,7 @@
 }
 
 @media (max-width: 700px) {
+  .acqPage { padding-bottom: calc(78px + env(safe-area-inset-bottom)); }
   .acqHeader { min-height: 76px; }
   .acqHeader nav > a:not(.acqDownload) { display: none; }
   .acqFooter { flex-direction: column; align-items: flex-start; justify-content: center; }
@@ -366,4 +369,26 @@
   .supportStatus div:last-child { border-bottom: 0; }
   .supportQuick, .supportTopics, .supportPrivacy { padding-block: 80px; }
   .supportContact { margin-block: 80px; padding: 52px 26px; border-radius: 28px; }
+  .mobileDownloadBar {
+    position: fixed;
+    z-index: 50;
+    right: 10px;
+    bottom: max(10px, env(safe-area-inset-bottom));
+    left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 11px 12px 11px 17px;
+    border: 1px solid rgba(255,255,255,.72);
+    border-radius: 19px;
+    color: #fff;
+    background: rgba(20, 40, 44, .94);
+    box-shadow: 0 18px 50px rgba(13,43,47,.3);
+    backdrop-filter: blur(18px);
+  }
+  .mobileDownloadBar > div { min-width: 0; display: flex; flex-direction: column; }
+  .mobileDownloadBar strong { font-size: 14px; }
+  .mobileDownloadBar small { overflow: hidden; color: #bdd0ce; font-size: 10px; text-overflow: ellipsis; white-space: nowrap; }
+  .mobileDownloadBar a { flex: 0 0 auto; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 9px 13px; border-radius: 12px; color: #17383a; background: #95e5dc; font-size: 13px; font-weight: 800; }
 }
