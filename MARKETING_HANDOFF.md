@@ -25,7 +25,7 @@ OpenAI Sites 项目 ID：`appgprj_6a8a503888348191be812170e152a86c`。项目配�
 - 11 个其他语言入口；与中英文合计 13 种语言。
 - 在线调音器：13 种语言各一页；音频只在浏览器本地分析，支持十二平均律、吉他 EADGBE 与尤克里里 GCEA 参考模式。
 - 在线节拍器：中文与英文各一页。
-- 高意图练习、教学与工程内容页：40 页，即 20 个主题的中英文版本。
+- 高意图练习、教学与工程内容页：42 页，即 21 个主题的中英文版本。
 - 热门和弦目录与详情：吉他 50 页、尤克里里 50 页，共 100 个详情页，另有两个目录页。
 - Press Kit / 媒体资料中心，内含单图下载、13 语言完整素材包、视频预览与深度内容入口。
 - 中英文技术支持页：`/support/` 与 `/en/support/`，覆盖 1.0.8 版本、权限、调音器、节拍器、后置闪光灯节拍、Widget、Apple Watch 和和弦卡片排障。
@@ -34,7 +34,7 @@ OpenAI Sites 项目 ID：`appgprj_6a8a503888348191be812170e152a86c`。项目配�
 - 4 支 36 秒完整介绍：GitHub Pages 网页分发版为中英文各一支 854 × 480 横屏与 480 × 854 竖屏，均含音频；中英文首页按屏幕方向自动选择，Press Kit 提供四支在线播放与下载，公开 Media Kit Release `media-kit-1.0.8` 另作下载备份。1080p 原片保留在项目资料归档中，网页压缩版不得覆盖原片。
 - 4 支 24 秒短版：中英文各一支 886 × 1920 App Preview 候选与 1080 × 1920 社交版；App Preview 仅作为候选，上传前必须按当期规格复核。
 - `robots.txt`、`sitemap.xml`、`image-sitemap.xml`、Web App manifest、Open Graph 图片、IndexNow 验证文件。
-- 当前构建生成 179 个静态页面/路由与 176 个 HTML 页面；主 sitemap 包含 173 个公开 URL，图片 sitemap 包含 22 个图片条目。
+- 当前构建生成 181 个静态页面/路由与 178 个 HTML 页面；主 sitemap 包含 175 个公开 URL，图片 sitemap 包含 22 个图片条目。
 
 2026-08-28 为 1.0.8 新增或更新：
 
@@ -44,6 +44,7 @@ OpenAI Sites 项目 ID：`appgprj_6a8a503888348191be812170e152a86c`。项目配�
 4. 中英文横屏/竖屏 36 秒完整介绍接入首页和 Press Kit；截图与原有 24 秒短版保持不动。
 5. 13 个 App Store 本地化的支持网址已经逐语言保存并回读：简体中文、繁体中文使用 `/support/`，其余 11 个语言使用 `/en/support/`。
 6. 30 天推广看板、1.0.8 渠道总表、B 站发布文案与 13 语言常青社交文案已经同步当前审核和上线状态。
+7. 新增“视觉节拍器 / Visual Metronome”中英文常青页面，覆盖全部主拍/仅重音、三档强度、主拍与细分边界、自动关闭、不拍照与频闪安全说明，并导向 Metronome 自定产品页。
 
 2026-08-27 本轮再新增的两个双语内容主题：
 
@@ -76,7 +77,7 @@ OpenAI Sites 项目 ID：`appgprj_6a8a503888348191be812170e152a86c`。项目配�
 - `app/lib/landing-pages.ts`：原有高意图页面数据与聚合入口。
 - `app/lib/tuning-pages.ts`：本轮新增的 12 个双语调弦页面。
 - `app/lib/practice-pages.ts`：频率、变调夹、节奏训练和拍号的 8 个双语页面。
-- `app/lib/feature-pages.ts`：和弦卡片、Watch 后台声音、教学流程与工程复盘共 8 个中英文常青页面；最初随 1.0.7 建立，当前不再在页面正文硬编码旧版本号。
+- `app/lib/feature-pages.ts`：和弦卡片、Watch 后台声音、教学流程、工程复盘与视觉节拍器共 10 个中英文常青页面；页面正文使用当前事实口径，不硬编码已经过时的发布状态。
 - `app/components/SupportPage.tsx`、`app/support/page.tsx`、`app/en/support/page.tsx`：双语技术支持与结构化 FAQ。
 - `app/image-sitemap.xml/route.ts`：13 张本地化和弦分享图与 9 个编辑素材的图片 sitemap。
 - `public/media-kit/`：公开媒体包、精选社交预览与网站轻量视频；高码率视频原片在上级目录 `资料归档/03-市场研究/03-推广素材/视频/`。
@@ -119,28 +120,28 @@ OpenAI Sites 项目 ID：`appgprj_6a8a503888348191be812170e152a86c`。项目配�
 
 | 页面 | ID | 深度链接 | 简体中文关键词 | 状态 |
 | --- | --- | --- | --- | --- |
-| Tuner Search Page | `cf763d83-4b2f-4897-86b1-42d9175c24dc` | `guitartool://tuner` | 调音器、音高 | 最后已知正在审核；需登录复核 |
-| Metronome Search Page | `ad230a27-b902-4645-b00d-3f2a5c3e3558` | `guitartool://metronome` | 节拍器、练习、节奏 | 最后已知正在审核；需登录复核 |
-| Chord Library Search Page | `67d874cf-ac10-412d-929b-b883f2039444` | `guitartool://chords` | 吉他、和弦、尤克里里 | 最后已知正在审核；需登录复核 |
+| Tuner Search Page | `cf763d83-4b2f-4897-86b1-42d9175c24dc` | `guitartool://tuner` | 调音器、音高 | 已批准 |
+| Metronome Search Page | `ad230a27-b902-4645-b00d-3f2a5c3e3558` | `guitartool://metronome` | 节拍器、练习、节奏 | 已批准 |
+| Chord Library Search Page | `67d874cf-ac10-412d-929b-b883f2039444` | `guitartool://chords` | 吉他、和弦、尤克里里 | 已批准 |
 
-三个页面均有 13 种语言推广文本，并分别把对应功能截图放到第一位。它们已合并到同一提交并正式提交；未登录确认当前状态前不要重复创建。Chord 页面最后已知未提及卡片分享，Metronome 页面最后已知未提及 Watch 持续音频；登录复核可编辑状态后补充。
+2026-08-28 已登录 App Store Connect 回读，三个页面全部进入“已批准”分组。它们均有 13 种语言推广文本，并分别把对应功能截图放到第一位；网站的 `ppid` 深链现已直接展示对应页面。获批版本的 Chord 文案尚未提及卡片分享，Metronome 文案尚未提及后置闪光灯节拍与 Watch 持续音频；更新需要创建新版本、修改并再次发布，不要直接停用现有链接或重复创建页面。
 
-非主要语言的自定产品页关键词在操作时曾被 App Store Connect 禁用。1.0.7 已上线，现在需要登录检查是否解锁，并按相应语言主 ASO 词组补选；这是 Apple 的版本依赖限制，不是推广文本缺失。Metronome 自定产品页可编辑时优先补入后置闪光灯节拍事实。
+简体中文的关键词选择已在获批页面解锁；当前获批页面未勾选任何可选关键词。更新版本时先按页面意图选择少量相关词，再逐语言复核是否同样可用。Metronome 新版本优先补入后置闪光灯节拍，Chord 新版本优先补入和弦卡片；Tuner 保持调弦、稳定度与本机处理主线。
 
 ### 产品页面优化与 App Preview
 
 - 产品页面优化当前只有“创建测试”入口，没有正在运行或历史测试。
-- 1.0.8 正在等待审核，三个自定产品页仍需登录复核，且当前下载样本不足以支撑稳定显著性，因此本轮不创建 A/B 测试、不撤回版本。
+- 1.0.8 正在等待审核；三个自定产品页均已批准，但当前下载样本仍不足以支撑稳定显著性，因此本轮不创建 A/B 测试、不撤回版本。
 - 中英文 24 秒 App Preview 候选与四支 36 秒完整介绍均已归档。36 秒横竖屏完整介绍用于官网、Press Kit、媒体嵌入和社交；App Store 只评估 24 秒 886 × 1920 候选，并在上传前按当期规范复核。
 
 ### 下载归因与页面分流
 
 - 已在 App Store Connect Analytics 创建 Campaign Link，Provider Token 为 `128747267`。
 - 网站首页、导航、Smart App Banner、Press Kit、调音器、节拍器和和弦页面分别使用 `site_home`、`site_nav`、`site_smart_banner`、`site_press`、`site_tuner`、`site_metronome`、`site_chords`。
-- 调音器、节拍器和和弦入口同时携带对应自定产品页 `ppid`。Apple 批准前会安全回退到默认产品页，批准后同一链接自动展示相应页面。
+- 调音器、节拍器和和弦入口同时携带对应自定产品页 `ppid`；三个页面已经批准，因此同一链接现在直接展示相应产品页。
 - App 内和弦卡片采用“预览 → 保存到相册 / 分享图片”的流程，系统分享只发送图片，不附带 App Store 链接，因此不使用 `app_chord_share` Campaign。卡片的品牌名、乐器、功能标签与高把位起始品位覆盖全部 13 种语言；中文品牌名为“吉他工具”，乐器标题为“吉他和弦指法”或“尤克里里和弦指法”，和弦名称居中放在和弦图正上方，高把位示例为中文“5 品”、英文“5fr”。此功能最初在 1.0.7 公开，并继续包含在 1.0.8 中。
 - 网站 `site_support` Campaign 已用于双语支持页；App Store Connect 的 13 个支持网址已按上方语言映射更新并回读，隐私政策继续使用独立隐私页 `https://weizhichao1027-collab.github.io/GuitarTool-Privacy/`。
-- 2026-08-26 核对 Analytics 概览时显示 65 次首次下载、795 次展示、81 次产品页浏览、12.6% 转化率。该数值是当时界面所选 90 天范围的快照，不应当作永久累计值。
+- 2026-08-28 核对 Analytics 概览时，界面所选 90 天范围（数据更新至 8 月 26 日）显示 68 次首次下载、1,070 次展示、98 次产品页浏览和 9.3% 日均转化率；营销活动维度仍为“数据不足”。这些数值是时间范围快照，不应当作永久累计值。
 
 ## 4. 搜索引擎状态
 
@@ -150,7 +151,7 @@ OpenAI Sites 项目 ID：`appgprj_6a8a503888348191be812170e152a86c`。项目配�
 - 新增 `/image-sitemap.xml`，已由 `robots.txt` 宣告并在线返回 HTTP 200；它不需要在同一天反复手动提交，先让 Google 随 robots 与主 sitemap 发现。
 - 同一公开 sitemap 已从终端实测为 HTTP 200、`application/xml` 且 XML 校验通过。未来 24–72 小时只复查状态，不再次提交、删除或重建资源；只有 Google 返回稳定且可复现的具体错误时才排查站点实现。
 - 首页已通过“网址检查”提交“请求编入索引”。Google 是否收录和排名由其系统决定。
-- GitHub Pages 每次成功部署后都会运行 `notify-search-engines`；本轮最终工作流的 `notify-search-engines` Job 已成功。当前主 sitemap 包含 173 个公开 URL。
+- GitHub Pages 每次成功部署后都会运行 `notify-search-engines`；上次工作流的 `notify-search-engines` Job 已成功。本次新增双语页面后，主 sitemap 包含 175 个公开 URL。
 
 建议在部署后 24–72 小时检查：
 
@@ -179,10 +180,11 @@ git push github main
 
 ### 2026-08-28 当前发布基线
 
-- 1.0.8 网站内容发布基线为 Git 提交 `cd16815a7430c63f6acbaada372bc5412e6789ec`；交接文档后续提交只改变事实记录，不改变这条内容基线。
-- GitHub Actions 工作流 `33151577312` 的 build、deploy、notify-search-engines 三个 Job 全部成功。
+- 当前网站内容发布基线为 Git 提交 `340a79f3624cdca841ee5a25a0000a2db468500f`，包含“视觉节拍器 / Visual Metronome”中英文自然获客页与在线节拍器反向内链；交接文档后续提交只改变事实记录，不改变这条内容基线。
+- GitHub Actions 工作流 `33155440462` 的 build、deploy、notify-search-engines 三个 Job 全部成功。
 - 当前 Pages 工作流会对部分固定版本的 `actions/checkout`、`actions/setup-node`、`actions/configure-pages`、`actions/upload-artifact` 与 `actions/deploy-pages` 给出 Node.js 20 已弃用、由运行器强制使用 Node.js 24 的 annotation；这次不影响三个 Job 成功，但后续应在单独维护提交中升级到官方支持 Node.js 24 的 Action 版本并复跑完整门禁。
-- 最终本地门禁全部通过：179 个静态路由、176 个 HTML、224 个本地目标、182 个外部目标；主 sitemap 173 个 URL，图片 sitemap 22 个图片条目；`lint`、`build:pages`、`audit:pages`、`build` 与 `git diff --check` 均无错误。
+- 本次视觉节拍器双语页面的本地门禁全部通过：181 个静态路由、178 个 HTML、226 个本地目标、184 个外部目标；主 sitemap 175 个 URL，图片 sitemap 22 个图片条目；`lint`、`build:pages`、`audit:pages`、`build` 与 `git diff --check` 均无错误。
+- 中英文视觉节拍器页面、主 sitemap 与带 `site_metronome` Campaign/Metronome `ppid` 的下载链接均已在线回读：两个页面返回 HTTP 200 `text/html`，sitemap 返回 HTTP 200 `application/xml` 并包含两个新增 URL。
 - 中文首页、英文首页、Press Kit、中英文支持页以及四个网页视频均在线返回 HTTP 200；视频响应类型为 `video/mp4`，浏览器直接打开识别为媒体文档。
 - 四支 36 秒网页视频为 H.264/AAC，分别是 854 × 480 与 480 × 854。向 GitHub 直接推送 1080p 大文件曾连续遭遇网络失败，因此 Pages 只保留小于约 0.7 MB 的网页分发版；不得把 1080p 原片加入 Pages 历史，也不得用网页版覆盖资料归档原片。
 - 四支网页视频另备份在公开 GitHub Release [`media-kit-1.0.8`](https://github.com/weizhichao1027-collab/guitartool-website/releases/tag/media-kit-1.0.8)。网页主播放源使用同源 Pages MP4，以确保 MIME 类型和嵌入播放稳定。
@@ -214,7 +216,7 @@ git push github main
 
 - 暂不做付费广告或付费媒体投放。
 - 暂不做完成操作后的自动评分邀请；该交互被认为会干扰练习体验。
-- 暂不做 App Store A/B 测试；原因是当前没有足够样本，且自定产品页仍需登录确认可编辑状态，不是素材缺失。
+- 暂不做 App Store A/B 测试；三个自定产品页虽已批准，但当前仍没有足够样本支撑稳定显著性，不是素材缺失。
 - 已完成 20 个教师、媒体、创作者、社区与目录的定向对象清单和逐对象联系稿；在上级目录 `资料归档/03-市场研究/03-推广素材/联络包/`。没有冒充账号持有人群发、建号或绕过社区规则。
 - 社交与视频素材已经齐备，但持续发布、评论回复、邮箱/私信发送与个人账号型目录提交仍需要账号持有人本人执行。中文/英文模板、归因命名与 30 天节奏维护在上级目录的 `GuitarTool-1.0.8推广内容与渠道总表.md`。
 - 个性化页面原有“分享 APP”入口继续保留，没有重复增加。和弦库新增的是用户主动点击后分享当前指法卡片，不自动弹出、不打断练习。
@@ -238,10 +240,10 @@ git push github main
 1. 先读本文件和上级 `APP交接文档.md` 第 33 节；较早章节保留为历史与阶段记录，状态冲突时以第 33 节和本文件“当前发布基线”为准。
 2. 使用 `git status --short`，确认没有重复的根目录社交预览图或构建产物混入提交。
 3. 跟踪 App Store 1.0.8 的审核状态；13 种语言、Build 8、审核联系人、版本说明、13 个支持网址与 7 张复用截图已回读通过，App Preview 为 0，不为小幅文案调整撤回审核。
-4. 复查非主要语言的自定产品页关键词是否已随 1.0.7 上线而解锁，并在 Metronome 页补充后置闪光灯节拍。
+4. 为已批准的 Chord 与 Metronome 自定产品页创建新版本前，先准备 13 语言完整改稿和关键词映射；发布会产生新的审核流程，不停用现有链接。
 5. 检查 Search Console sitemap 与索引报告；Google 仍在初次处理时先等待，不反复重建资源。
 6. 修改站点后依次运行 `npm run lint`、`npm run build:pages`、`npm run audit:pages`、`npm run build` 与 `git diff --check`；推送后确认 Actions 三个 Job、核心页面和四个视频，再更新日期、库存、两类 sitemap 数、提交、工作流以及 Sites 的真实状态。
 7. 在 App Store Analytics 按各 `site_*` Campaign 比较点击后的下载表现；图片分享不附带商店链接，不能用 Campaign 直接归因，不要为了归因重新强制添加下载链接。
-8. 审核完成后更新 Chord 与 Metronome 自定产品页文案；提交完成后不得创建重复精选提名。
+8. 获得明确发布确认后，再创建并发布 Chord 与 Metronome 自定产品页新版本；提交完成后不得创建重复精选提名。
 9. 对外联系时从 `联络包/20个定向推广对象.csv` 逐条选择，不把 20 份个性化稿合并成群发；Product Hunt、AlternativeTo 和社区发布必须由真实个人账号参与。
 10. 核对上级目录的 30 天推广看板、1.0.8 渠道总表、B 站文案与 13 语言社交文案；审核或上线状态变化时四处同步，避免渠道继续使用旧口径。
