@@ -2,6 +2,51 @@ import type { LandingPage } from "@/app/lib/landing-pages";
 
 export const enFeaturePages: LandingPage[] = [
   {
+    slug: "visual-metronome",
+    title: "Visual Metronome with iPhone Rear-Flash Beat Cues",
+    description: "See the beat with optional iPhone rear-flash cues for all main beats or accents only, with three intensity levels, automatic shutoff and no image capture.",
+    eyebrow: "VISUAL METRONOME · REAR-FLASH BEAT",
+    lead: "When an audible click competes with your instrument, a visible pulse can keep the tempo clear. GuitarTool can mark the main beat with the rear flash on compatible iPhones while the full metronome continues to handle accents, subdivisions and practice presets.",
+    proof: ["All main beats or accents only", "Three intensity levels", "No camera capture"],
+    showcase: {
+      image: "/en-metronome.webp",
+      alt: "GuitarTool metronome with practice presets, accents and visual beat controls on iPhone",
+      caption: "The full GuitarTool metronome combines 20–500 BPM timing, editable accents and optional rear-flash beat cues on compatible iPhones.",
+      width: 832,
+      height: 1800,
+    },
+    sections: [
+      {
+        title: "Use a visual pulse when the click is not the best cue",
+        body: "A rear-flash beat can help when the instrument masks the click, when a teacher wants a room-visible count-in, or when you want to reduce audible clutter during a quiet exercise. Choose all main beats for a steady visible pulse, or accents only to make the start and shape of the bar easier to read.",
+        points: ["Useful beside louder acoustic practice", "All main beats for a steady pulse", "Accents only for clearer bar structure"],
+      },
+      {
+        title: "Keep the flash tied to the musical structure",
+        body: "Flash Beat follows the main beats rather than every subdivision. Eighth notes, triplets, sixteenths and Swing remain available in the audio engine, while the rear light stays focused on the larger pulse. The mode and intensity can be retained in a custom practice preset so the same setup is ready next time.",
+        points: ["20–500 BPM and 1–12 beats per bar", "Audio subdivisions remain independent", "Mode and intensity save with custom presets"],
+      },
+      {
+        title: "Treat a bright repeated light as an optional practice aid",
+        body: "The first-use notice explains strobe sensitivity, battery use and heat. Use the lowest comfortable intensity, point the rear of the phone away from faces, and stop if the light causes discomfort. GuitarTool turns the flash off when playback stops, you leave the metronome or the app enters the background.",
+        points: ["Three intensity levels", "First-use safety notice", "Automatic shutoff on stop, navigation or background"],
+      },
+      {
+        title: "The light is a beat cue, not a camera workflow",
+        body: "Flash Beat does not take photos, record video or analyze the scene. GuitarTool remains an offline practice toolkit with no account, ads, analytics SDK or audio upload. Rear-flash availability depends on compatible iPhone hardware; iPad and Apple Watch continue to provide their own metronome experiences without this camera-light control.",
+        points: ["No image capture", "No account, ads or tracking SDK", "Available only on compatible iPhones"],
+      },
+    ],
+    faq: [
+      ["Does Flash Beat use the camera?", "No. GuitarTool controls the rear light as a timing cue and does not capture, store or upload photos or video."],
+      ["Can the flash mark only accented beats?", "Yes. Choose All Main Beats for every beat in the bar or Accents Only for the beats you have marked as accents."],
+      ["Does the flash follow eighth notes or triplets?", "No. It follows main beats only; audio subdivisions and Swing remain separate so the visual cue stays readable."],
+      ["Will the light stay on after I stop?", "No. It turns off automatically when playback stops, you leave the metronome or the app enters the background."],
+      ["Is rear-flash timing available on iPad or Apple Watch?", "No. Flash Beat requires compatible iPhone rear-flash hardware. iPad and Apple Watch still support their own metronome controls and feedback."],
+    ],
+    related: ["online-metronome", "rhythm-practice", "time-signatures", "apple-watch-metronome"],
+  },
+  {
     slug: "share-chord-diagrams",
     title: "Save and Share Guitar or Ukulele Chord Diagrams",
     description: "Turn any GuitarTool guitar or ukulele voicing into a clear chord card, preview it, save it to Photos or share the image from iPhone or iPad.",
@@ -145,6 +190,51 @@ export const enFeaturePages: LandingPage[] = [
 ];
 
 export const zhFeaturePages: LandingPage[] = [
+  {
+    slug: "visual-metronome",
+    title: "用 iPhone 后置闪光灯看见节拍",
+    description: "兼容 iPhone 可用后置闪光灯提示全部主拍或仅重音，提供三档强度、自动关闭且不拍摄画面，让节拍除了能听见，也能看见。",
+    eyebrow: "视觉节拍器 · 后置闪光灯节拍",
+    lead: "当乐器声音盖过点击声，清楚的视觉拍点可以继续守住速度。GuitarTool 能在兼容 iPhone 上用后置闪光灯标记主拍，同时保留重音、细分、Swing 与练习预设等完整节拍器能力。",
+    proof: ["全部主拍或仅重音", "三档强度", "不拍摄任何画面"],
+    showcase: {
+      image: "/hero-metronome.webp",
+      alt: "GuitarTool iPhone 节拍器，包含练习预设、逐拍重音与视觉节拍设置",
+      caption: "GuitarTool 完整节拍器支持 20–500 BPM、逐拍重音，并在兼容 iPhone 上提供可选的后置闪光灯节拍。",
+      width: 832,
+      height: 1800,
+    },
+    sections: [
+      {
+        title: "当点击声不是最合适的提示，就把拍点变成光",
+        body: "原声乐器盖过点击声、老师需要全屋可见的预备拍，或安静练习时想减少声音干扰，都可以使用后置闪光灯节拍。选择“全部主拍”会持续给出稳定脉冲；选择“仅重音”则更容易看清每小节的起点与强弱结构。",
+        points: ["适合声音较大的原声练习", "全部主拍保持稳定脉冲", "仅重音突出小节结构"],
+      },
+      {
+        title: "让闪光跟随主拍，而不是追逐每个细分",
+        body: "闪光灯只跟随主拍，不会为八分、三连音、十六分或 Swing 的每个细分闪烁。细分仍由声音引擎正常播放，后置灯则始终呈现更大的节奏骨架。模式与强度可以随自定义练习预设保存，下次打开即可复用。",
+        points: ["20–500 BPM、每小节 1–12 拍", "声音细分与视觉主拍彼此独立", "模式和强度可随自定义预设保存"],
+      },
+      {
+        title: "把高亮度重复闪光当成一项可选练习辅助",
+        body: "首次开启时会显示频闪敏感、耗电与发热提示。请选择让自己舒适的最低强度，避免把手机背面对准他人面部；如有不适应立即停止。停止播放、离开节拍器页面或 App 进入后台时，GuitarTool 会自动关闭闪光灯。",
+        points: ["三档强度", "首次开启安全提示", "停止、切页或后台时自动关闭"],
+      },
+      {
+        title: "这里使用的是灯光提示，不是相机流程",
+        body: "闪光灯节拍不会拍照、录像或分析画面。GuitarTool 仍是一款完全离线的练习工具，无需账户、没有广告与统计 SDK，也不会上传音频。后置闪光灯功能取决于兼容 iPhone 硬件；iPad 与 Apple Watch 继续使用各自的节拍器体验。",
+        points: ["不拍摄任何画面", "无账户、广告或追踪 SDK", "仅限兼容 iPhone 后置闪光灯"],
+      },
+    ],
+    faq: [
+      ["闪光灯节拍会使用相机拍摄吗？", "不会。GuitarTool 只把后置灯作为节拍提示，不会拍摄、保存或上传照片与视频。"],
+      ["可以只让重音拍闪烁吗？", "可以。可选择“全部主拍”或“仅重音”；后者只提示已经设置为重音的拍点。"],
+      ["闪光灯会跟随八分音符或三连音吗？", "不会。它只跟随主拍；声音细分与 Swing 独立播放，让视觉提示保持清楚。"],
+      ["停止节拍器后灯还会继续亮吗？", "不会。停止播放、离开节拍器或 App 进入后台时都会自动关闭。"],
+      ["iPad 或 Apple Watch 也能使用后置闪光灯节拍吗？", "不能。该功能需要兼容 iPhone 的后置闪光灯硬件；iPad 与 Apple Watch 仍可使用各自的节拍器控制与反馈。"],
+    ],
+    related: ["online-metronome", "rhythm-practice", "time-signatures", "apple-watch-metronome"],
+  },
   {
     slug: "share-chord-diagrams",
     title: "保存与分享吉他、尤克里里和弦图",

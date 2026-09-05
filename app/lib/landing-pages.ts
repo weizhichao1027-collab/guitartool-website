@@ -95,7 +95,7 @@ const en: LandingPage[] = [
       ["What tempo range is supported?", "The online tool and the app support 20–500 BPM."],
       ["Can the app increase tempo automatically?", "Yes. Progressive tempo training can raise BPM by a chosen amount after a chosen number of bars."],
     ],
-    related: ["rhythm-practice", "time-signatures", "offline-guitar-tools", "guitar-tuner"],
+    related: ["visual-metronome", "rhythm-practice", "offline-guitar-tools", "guitar-tuner"],
   },
   {
     slug: "guitar-chords",
@@ -228,7 +228,7 @@ const zh: LandingPage[] = [
       { title: "从跟拍进入系统训练", body: "GuitarTool APP 在基础节拍之外提供四种细分、八分 Swing、逐拍重音、练习预设、倒计时和渐进加速。主屏幕小组件与 Apple Watch 伴随节拍器还能减少打开 APP 和寻找设置的步骤；手表落腕或屏幕变暗后，声音仍可继续。", points: ["四分、八分、三连音与十六分", "自定义重音和十套声音", "交互式小组件与 Apple Watch 后台音频"] },
     ],
     faq: [["在线节拍器免费吗？", "免费，浏览器工具和 GuitarTool 核心功能均可免费使用。"], ["支持多大的速度范围？", "在线版和 APP 均支持 20–500 BPM。"], ["APP 可以自动加速吗？", "可以，可按指定小节数和增量逐步提高 BPM。"]],
-    related: ["rhythm-practice", "time-signatures", "offline-guitar-tools", "guitar-tuner"],
+    related: ["visual-metronome", "rhythm-practice", "offline-guitar-tools", "guitar-tuner"],
   },
   {
     slug: "guitar-chords",
