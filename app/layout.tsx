@@ -47,6 +47,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <body>
         <a className="skipLink" href="#main-content">跳到正文 / Skip to content</a>
         <div id="main-content" tabIndex={-1}>{children}</div>
+        <script src={`${basePath}/campaign-links.js`} defer />
         <script dangerouslySetInnerHTML={{ __html: "(()=>{const main=document.querySelector('main[lang]');if(!main)return;document.documentElement.lang=main.lang||'zh-CN';document.documentElement.dir=main.dir||'ltr';})();" }} />
       </body>
     </html>

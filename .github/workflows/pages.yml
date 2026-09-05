@@ -36,6 +36,9 @@ jobs:
       - name: Lint source
         run: npm run lint
 
+      - name: Verify channel download links
+        run: node --test scripts/campaign-links.test.mjs
+
       - name: Build static site
         run: npm run build:pages
 

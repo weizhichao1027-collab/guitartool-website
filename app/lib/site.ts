@@ -29,8 +29,8 @@ export function appStoreLink(destination: AppStoreDestination, campaignOverride?
     chords: "site_chords",
   }[destination];
   const campaign = campaignOverride ?? defaultCampaign;
-  if (new TextEncoder().encode(campaign).length > 40) {
-    throw new Error(`App Store campaign token exceeds 40 bytes: ${campaign}`);
+  if ([...campaign].length > 30) {
+    throw new Error(`App Store campaign token exceeds 30 characters: ${campaign}`);
   }
   const params = new URLSearchParams({
     pt: APP_STORE_PROVIDER_TOKEN,

@@ -6,6 +6,16 @@
 
 > 2026-09-05：用户确认 1.0.8 已发布，审核期间隐藏的 1.0.8 功能介绍现已恢复到中文/英文首页、其余 11 个语言首页、Press Kit、双语支持页、视觉节拍器专题页、结构化数据与平台素材脚本。未随 1.0.8 发布的 Morning Mist/完整主题画廊仍保持隐藏。
 
+### 2026-09-05 推广执行补充
+
+- Apple US Lookup 当日回读：1.0.8，免费，公开发布日期 `2026-09-05T01:57:53Z`。AppAgg 实际详情仍停在 1.0.7；搜索摘要还可能显示 1.0.6，不将聚合目录的缓存当作当前商店状态。
+- Google Search Console 当日概览：3 个网页已编入索引、0 次搜索点击；主 sitemap 仍显示无法读取，上次读取为 8 月 27 日。已核对它指向正确的 `/guitartool-website/sitemap.xml`，公开请求为 HTTP 200、XML 合法；不能据此宣称 Google 已成功抓取全部页面。
+- B 站视频 `BV1bY4d6GEkw` 操作前公开快照：170 播放、5 赞、2 收藏、1 分享、1 评论。这是视频数据，不能当作网站访问或 App 下载。本轮以现有登录的“吉他手卫老师”账号补上 App Store 下载链接、官网入口、1.0.8 说明并修正“搜素”错字，创作中心返回“稿件投递成功”；公开生效以审核后的页面为准。
+- `public/campaign-links.js` 将已知 `utm_source` 映射为固定的 `organic_*` App Store Campaign，例如 B 站 `organic_bilibili`、X `organic_x`、GitHub `organic_github`。普通网页内链保留来源，下载链接保留对应功能的 `ppid`。未知来源、任意 `utm_campaign` 内容、其他应用、媒体与外站不转发；不使用 cookie、浏览器存储、网络采集或第三方统计 SDK。无来源/无 JavaScript 的访问继续使用原 `site_*` / `seo_*` 链接；Safari 原生 Smart App Banner 不计入这段网页链接转换。
+- 按 [Apple 当前官方说明](https://developer.apple.com/help/app-store-connect-analytics/acquisition/campaign-links/)，复用已经从 App Store Connect 获取的 Provider Token `128747267`，以不同 `ct` 区分活动；无需每个渠道重建 Provider Token。Campaign 名称限制按 30 字符校验。数据有隐私门槛与延迟，未显示不能填成 0 下载。
+- GitHub README 更新为双语产品介绍，提供下载、免费网页工具、真实演示和教师/媒体入口。恢复的发布页面在 sitemap 中使用实际 9 月 5 日更新日期，未改动的指南与和弦内容保留原日期。
+- 验证：渠道归因 4 项行为测试、lint、两套生产构建和静态链接检查通过；188 个 HTML、239 个本地目标、199 个外部目标。渠道测试加入 Pages 发布门禁。
+
 ## 1. 平台与职责
 
 | 平台 | 职责 | 地址或标识 | 访问状态 |
