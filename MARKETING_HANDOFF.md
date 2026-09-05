@@ -9,12 +9,14 @@
 ### 2026-09-05 推广执行补充
 
 - Apple US Lookup 当日回读：1.0.8，免费，公开发布日期 `2026-09-05T01:57:53Z`。AppAgg 实际详情仍停在 1.0.7；搜索摘要还可能显示 1.0.6，不将聚合目录的缓存当作当前商店状态。
-- Google Search Console 当日概览：3 个网页已编入索引、0 次搜索点击；主 sitemap 仍显示无法读取，上次读取为 8 月 27 日。已核对它指向正确的 `/guitartool-website/sitemap.xml`，公开请求为 HTTP 200、XML 合法；不能据此宣称 Google 已成功抓取全部页面。
-- B 站视频 `BV1bY4d6GEkw` 操作前公开快照：170 播放、5 赞、2 收藏、1 分享、1 评论。这是视频数据，不能当作网站访问或 App 下载。本轮以现有登录的“吉他手卫老师”账号补上 App Store 下载链接、官网入口、1.0.8 说明并修正“搜素”错字，创作中心返回“稿件投递成功”；公开生效以审核后的页面为准。
+- Google Search Console 当日概览：3 个网页已编入索引、0 次搜索点击；主 sitemap 最初显示无法读取，上次读取为 8 月 27 日。已核对它指向正确的 `/guitartool-website/sitemap.xml`，公开请求为 HTTP 200、XML 合法。本轮分别提交主 sitemap 与 image sitemap，界面均提示成功，但列表仍显示“无法抓取”，尚未确认解决。中文 `/guides/visual-metronome/` 的实时检查完成，界面确认“已请求编入索引”“已将网址添加到优先抓取队列中”；请求成功不等于已收录，不重复提交。
+- B 站视频 `BV1bY4d6GEkw` 操作前公开快照：170 播放、5 赞、2 收藏、1 分享、1 评论。这是视频数据，不能当作网站访问或 App 下载。本轮以现有登录的“吉他手卫老师”账号补上 App Store 下载链接、官网入口、1.0.8 说明并修正“搜素”错字；创作中心返回“稿件投递成功”，随后公开视频接口已回读到完整新简介和 `organic_bilibili` 下载链接，确认生效。
+- 同账号另有 1.0.8 更新动态草稿，标题“免费练琴工具，1.0.8 更新了”。中文内容已核对；发送前弹出《动态使用规范》及“确认并发送”，因需要用户确认接受规范，尚未完成发布，不计作已触达或已发布内容。
 - `public/campaign-links.js` 将已知 `utm_source` 映射为固定的 `organic_*` App Store Campaign，例如 B 站 `organic_bilibili`、X `organic_x`、GitHub `organic_github`。普通网页内链保留来源，下载链接保留对应功能的 `ppid`。未知来源、任意 `utm_campaign` 内容、其他应用、媒体与外站不转发；不使用 cookie、浏览器存储、网络采集或第三方统计 SDK。无来源/无 JavaScript 的访问继续使用原 `site_*` / `seo_*` 链接；Safari 原生 Smart App Banner 不计入这段网页链接转换。
 - 按 [Apple 当前官方说明](https://developer.apple.com/help/app-store-connect-analytics/acquisition/campaign-links/)，复用已经从 App Store Connect 获取的 Provider Token `128747267`，以不同 `ct` 区分活动；无需每个渠道重建 Provider Token。Campaign 名称限制按 30 字符校验。数据有隐私门槛与延迟，未显示不能填成 0 下载。
 - GitHub README 更新为双语产品介绍，提供下载、免费网页工具、真实演示和教师/媒体入口。恢复的发布页面在 sitemap 中使用实际 9 月 5 日更新日期，未改动的指南与和弦内容保留原日期。
 - 验证：渠道归因 4 项行为测试、lint、两套生产构建和静态链接检查通过；188 个 HTML、239 个本地目标、199 个外部目标。渠道测试加入 Pages 发布门禁。
+- 发布：GitHub `57911cea64e024324dbac3928b1ce1594a3051f8` 的 [Actions 33958807896](https://github.com/weizhichao1027-collab/guitartool-website/actions/runs/33958807896) 构建、部署、搜索通知全部成功；日志确认向 IndexNow 提交 185 个 URL，HTTP 200。线上首页、英文视觉节拍器指南、渠道脚本和 sitemap 均回读 HTTP 200 及新内容。Sites 同源版本 19 的部署状态为 `SUCCEEDED`；未把无登录请求的 403 当成上线页面内容验证。
 
 ## 1. 平台与职责
 
