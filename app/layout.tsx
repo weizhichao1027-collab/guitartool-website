@@ -8,7 +8,7 @@ const basePath = process.env.GITHUB_PAGES === "true" ? "/guitartool-website" : "
 export const metadata: Metadata = {
   metadataBase: new URL(`${SITE_URL}/`),
   title: "GuitarTool｜调音、节拍与和弦练习",
-  description: "全部练习功能免费且核心工具离线可用；1.0.12 即将带来可预览、单套一次购买永久解锁的可选付费主题。",
+  description: "全部练习功能免费且核心工具离线可用；1.1.0 即将带来可预览、单套一次购买永久解锁的可选付费主题。",
   applicationName: "GuitarTool",
   category: "music",
   keywords: ["吉他调音器", "尤克里里调音器", "节拍器", "吉他和弦", "ukulele chords", "guitar tuner"],
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   referrer: "strict-origin-when-cross-origin",
   openGraph: {
     title: "GuitarTool｜练琴时，只留下专注。",
-    description: "全部练习功能免费，调音、节拍与和弦核心工具离线可用；1.0.12 即将带来五套可选付费主题。",
+    description: "全部练习功能免费，调音、节拍与和弦核心工具离线可用；1.1.0 即将带来五套可选付费主题。",
     type: "website",
     images: [{
       url: absoluteUrl("/og.png"),
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "GuitarTool｜练琴时，只留下专注。",
-    description: "全部练习功能免费，调音、节拍与和弦核心工具离线可用；1.0.12 即将带来五套可选付费主题。",
+    description: "全部练习功能免费，调音、节拍与和弦核心工具离线可用；1.1.0 即将带来五套可选付费主题。",
     images: [absoluteUrl("/og.png")],
   },
 };

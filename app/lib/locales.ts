@@ -14,7 +14,9 @@ export type LocalePage = {
   closing: string;
 };
 
-export const localePages: LocalePage[] = [
+const releaseVersion = "1.1.0";
+
+const localePageTemplates: LocalePage[] = [
   {
     slug: "zh-hant", htmlLang: "zh-Hant", title: "GuitarTool｜調音器、節拍器與和弦庫", description: "全部練習功能均免費，核心工具可離線使用；僅可選完整視覺主題付費，單套一次購買永久解鎖。", eyebrow: "專注練習所需的一切", headline: "核心調音、跟拍與和弦工具，離線也能使用。", lead: "GuitarTool 把即時調音器、彈性節拍器與吉他／烏克麗麗和弦庫放在同一個安靜、清楚的練習流程中。", download: "在 App Store 免費下載", trust: ["核心工具離線", "無廣告", "無需帳戶"], versionUpdate: { label: "1.0.12 版本更新", title: "五套完整主題，讓整套練習介面換一種性格。", body: "App 的全部練習功能均免費；僅可選完整視覺主題為付費內容。主題展廳新增五套付費完整主題，可在購買前逐頁預覽；每套為獨立的一次性 App Store 內購，永久解鎖、無訂閱，下載後可離線使用，後續將持續推出新主題。" }, closing: "拿起樂器就能開始，不讓工具打斷練習。",
     features: [{ title: "即時調音器", body: "支援多種吉他調弦、High-G／Low-G GCEA 與半音階模式，顯示音分、頻率、輸入強度及穩定度。" }, { title: "彈性節拍器", body: "20–500 BPM、1–12 拍、TAP 測速、細分、Swing、計時器及漸進加速，並支援後置閃光燈節拍（全部主拍／僅重音、三檔強度）。" }, { title: "雙樂器和弦庫", body: "吉他與烏克麗麗各有 855 個名稱，共 19,244 個指法；可切換、編輯、辨識及試聽，並把目前指法卡片儲存或分享。" }],
@@ -60,5 +62,13 @@ export const localePages: LocalePage[] = [
     features: [{ title: "موالف فوري", body: "يدعم الضبط القياسي وDrop D وDADGAD والضبط المفتوح وGCEA والوضع الكروماتي مع عرض السنت والتردد والثبات." }, { title: "ميترونوم مرن", body: "من 20 إلى 500 BPM، ومن 1 إلى 12 نبضة، وTap Tempo، وتقسيمات، وSwing، ومؤقتات وزيادة تدريجية للسرعة. ويمكن للفلاش الخلفي إظهار جميع النبضات الرئيسية أو النبرات فقط بثلاث درجات." }, { title: "أوتار تفاعلية", body: "855 اسماً لكل آلة و19,244 وضعية إجمالاً؛ بدّل وحرّر وتعرّف واستمع، ثم احفظ بطاقة الوضعية الحالية أو شاركها." }],
   },
 ];
+
+export const localePages: LocalePage[] = localePageTemplates.map((page) => ({
+  ...page,
+  versionUpdate: {
+    ...page.versionUpdate,
+    label: page.versionUpdate.label.replace(/\d+\.\d+\.\d+/, releaseVersion),
+  },
+}));
 
 export function getLocalePage(slug: string) { return localePages.find((page) => page.slug === slug); }

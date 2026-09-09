@@ -6,10 +6,10 @@ import { APP_STORE_LINKS, APP_STORE_URL, GITHUB_URL, PRIVACY_URL, absoluteUrl, a
 
 export const metadata: Metadata = {
   title: "GuitarTool Press Kit | Product Facts, Images & Contact",
-  description: "Official GuitarTool press kit with a version 1.0.12 Theme Gallery preview, verified product facts, downloadable visuals and developer contact information.",
+  description: "Official GuitarTool press kit with a version 1.1.0 Theme Gallery preview, verified product facts, downloadable visuals and developer contact information.",
   alternates: { canonical: absoluteUrl("/press/") },
-  openGraph: { title: "GuitarTool Official Press Kit", description: "Version 1.0.12 Theme Gallery preview, downloadable visuals and official contact information.", url: absoluteUrl("/press/"), type: "website", images: [{ url: absoluteUrl("/en-chord-card-share.webp"), width: 833, height: 1800, alt: "GuitarTool chord card preview" }] },
-  twitter: { card: "summary_large_image", title: "GuitarTool Official Press Kit", description: "Version 1.0.12 Theme Gallery preview, verified product facts and downloadable media.", images: [absoluteUrl("/en-chord-card-share.webp")] },
+  openGraph: { title: "GuitarTool Official Press Kit", description: "Version 1.1.0 Theme Gallery preview, downloadable visuals and official contact information.", url: absoluteUrl("/press/"), type: "website", images: [{ url: absoluteUrl("/en-chord-card-share.webp"), width: 833, height: 1800, alt: "GuitarTool chord card preview" }] },
+  twitter: { card: "summary_large_image", title: "GuitarTool Official Press Kit", description: "Version 1.1.0 Theme Gallery preview, verified product facts and downloadable media.", images: [absoluteUrl("/en-chord-card-share.webp")] },
 };
 
 const assets = [
@@ -65,7 +65,7 @@ export default function PressKitPage() {
       </section>
 
       <section className="pressStory shell">
-        <div><p className="acqEyebrow">COMING IN VERSION 1.0.12 · BUILD 12</p><h2>Five complete themes turn the whole practice flow into a visual instrument.</h2></div>
+        <div><p className="acqEyebrow">COMING IN VERSION 1.1.0 · BUILD 13</p><h2>Five complete themes turn the whole practice flow into a visual instrument.</h2></div>
         <div><p>All practice features are free; only optional complete visual themes are paid. The Theme Gallery introduces Morning Mist Studio, Lunar Radio, Paper Ensemble, Pocket Synth and Vinyl Afterhours. Each complete design reaches across the tuner, metronome, chord library and share cards, and every supported page can be previewed before purchase.</p><p>Each of the five themes is a separate non-consumable, one-time App Store purchase with permanent unlock and no subscription. Downloaded themes work offline, and more themes will be added over time. The four original basic looks remain included with the app.</p></div>
       </section>
 
@@ -96,7 +96,7 @@ export default function PressKitPage() {
       </section>
 
       <section className="pressVideoSection shell">
-        <div className="assetHeading"><p className="acqEyebrow">24-SECOND VERTICAL CUTDOWNS</p><h2>Shorter edits for fast social and App Preview evaluation.</h2><p>English and Simplified Chinese versions use official localized product screens from the core-product tour. The 886 × 1920 files remain historical candidates only and do not show version 1.0.12&apos;s Theme Gallery.</p></div>
+        <div className="assetHeading"><p className="acqEyebrow">24-SECOND VERTICAL CUTDOWNS</p><h2>Shorter edits for fast social and App Preview evaluation.</h2><p>English and Simplified Chinese versions use official localized product screens from the core-product tour. The 886 × 1920 files remain historical candidates only and do not show version 1.1.0&apos;s Theme Gallery.</p></div>
         <div className="pressVideoGrid">
           <article><video controls playsInline preload="metadata" poster={assetPath("/media-kit/social/guitartool-chord-cards-en-1080x1350.png")}><source src={assetPath("/media-kit/video/GuitarTool-Social-Preview-en-1080x1920.mp4")} type="video/mp4" /></video><div><h3>English social preview</h3><p>MP4 · H.264 · 1080 × 1920 · 24 seconds</p><a href={assetPath("/media-kit/video/GuitarTool-Social-Preview-en-1080x1920.mp4")} download>Download social video ↓</a><a href={assetPath("/media-kit/video/GuitarTool-App-Preview-en-886x1920.mp4")} download>Download App Preview candidate ↓</a></div></article>
           <article><video controls playsInline preload="metadata" poster={assetPath("/media-kit/social/guitartool-chord-cards-zh-Hans-1080x1350.png")}><source src={assetPath("/media-kit/video/GuitarTool-Social-Preview-zh-Hans-1080x1920.mp4")} type="video/mp4" /></video><div><h3>Simplified Chinese social preview</h3><p>MP4 · H.264 · 1080 × 1920 · 24 seconds</p><a href={assetPath("/media-kit/video/GuitarTool-Social-Preview-zh-Hans-1080x1920.mp4")} download>Download social video ↓</a><a href={assetPath("/media-kit/video/GuitarTool-App-Preview-zh-Hans-886x1920.mp4")} download>Download App Preview candidate ↓</a></div></article>

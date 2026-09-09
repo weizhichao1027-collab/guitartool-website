@@ -184,7 +184,7 @@ export default function Home() {
         <div className="introVideoCopy">
           <p className="eyebrow"><span /> 36 秒完整介绍</p>
           <h2>先看它如何融入练习，<br />再决定从哪里开始。</h2>
-          <p>横屏版适合桌面与大屏观看，移动端会自动使用中文竖屏版。视频展示调音、节拍、和弦卡片、Widget 与多设备核心体验；1.0.12 的主题展厅亮点详见下方版本说明。</p>
+          <p>横屏版适合桌面与大屏观看，移动端会自动使用中文竖屏版。视频展示调音、节拍、和弦卡片、Widget 与多设备核心体验；1.1.0 的主题展厅亮点详见下方版本说明。</p>
         </div>
         <div className="introVideoFrame">
           <video controls playsInline preload="metadata" aria-label="GuitarTool 中文完整介绍视频">
@@ -202,15 +202,15 @@ export default function Home() {
         <div className="extraGrid">
           <article className="extraCard themeCard">
             <div className="extraText">
-              <p className="cardLabel">主题展厅 · 1.0.12 即将推出</p>
+              <p className="cardLabel">主题展厅 · 1.1.0 即将推出</p>
               <h3>五套完整付费主题，<br />让整套练习界面换一种性格。</h3>
-              <p>App 的全部练习功能均免费；仅可选完整视觉主题为付费内容。1.0.12 将带来晨雾琴房、月面电台、纸上乐队、口袋合成器与黑胶夜场。每套都可在购买前逐页预览，分别通过 App Store 一次购买后永久解锁，无订阅；下载后可离线使用，后续还会持续推出新主题。原有四种基础外观继续免费随 App 提供。</p>
+              <p>App 的全部练习功能均免费；仅可选完整视觉主题为付费内容。1.1.0 将带来晨雾琴房、月面电台、纸上乐队、口袋合成器与黑胶夜场。每套都可在购买前逐页预览，分别通过 App Store 一次购买后永久解锁，无订阅；下载后可离线使用，后续还会持续推出新主题。原有四种基础外观继续免费随 App 提供。</p>
               <div className="swatches" aria-label="原有四种免费基础外观；主题展厅另有五套付费完整主题">
                 <span className="day" /><span className="night" /><span className="pine" /><span className="graphite" />
                 <b>5 PREMIUM THEMES</b>
               </div>
             </div>
-            <Image src={assetPath("/themes.webp")} alt="GuitarTool 原有四种免费基础外观；1.0.12 另提供五套付费完整主题" width={833} height={1800} sizes="(max-width: 700px) 86vw, 460px" />
+            <Image src={assetPath("/themes.webp")} alt="GuitarTool 原有四种免费基础外观；1.1.0 另提供五套付费完整主题" width={833} height={1800} sizes="(max-width: 700px) 86vw, 460px" />
           </article>
           <article className="extraCard widgetCard">
             <div className="extraText">
@@ -222,7 +222,7 @@ export default function Home() {
           </article>
         </div>
         <div className="updatePromise">
-          <span>即将推出 · 1.0.12 · BUILD 12</span>
+          <span>即将推出 · 1.1.0 · BUILD 13</span>
           <p><strong>App 的全部练习功能均免费；仅可选完整视觉主题为付费内容。</strong> 主题展厅将成为练习体验的新核心：五套付费完整主题会联动改变调音器、节拍器、和弦库与分享卡；购买前可逐页预览，每套一次购买永久解锁、无订阅，下载后可离线使用。未来还会持续上新主题；调音器与多设备稳定性也同步提升。</p>
           <b aria-hidden="true">↗</b>
         </div>

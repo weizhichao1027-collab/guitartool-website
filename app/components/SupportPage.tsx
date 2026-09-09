@@ -9,11 +9,11 @@ const content = {
     lang: "zh-CN",
     eyebrow: "GUITARTOOL 技术支持",
     title: "先解决练习中的问题，\n再回到音乐里。",
-    lead: "这里汇总即将推出的 GuitarTool 1.0.12（Build 12）及更早版本的设备要求、常见问题与联系入口。核心功能无需账户，并可离线使用。",
+    lead: "这里汇总即将推出的 GuitarTool 1.1.0（Build 13）及更早版本的设备要求、常见问题与联系入口。核心功能无需账户，并可离线使用。",
     contact: "联系技术支持",
     appStore: "前往 App Store",
     status: [
-      ["文档版本", "1.0.12 · Build 12 发布预览"],
+      ["文档版本", "1.1.0 · Build 13 发布预览"],
       ["支持设备", "iPhone · iPad · Apple Watch"],
       ["系统要求", "iOS / iPadOS 17 或更高版本"],
       ["数据方式", "无需账户 · 核心功能离线运行"],
@@ -45,11 +45,11 @@ const content = {
     lang: "en",
     eyebrow: "GUITARTOOL SUPPORT",
     title: "Solve the interruption.\nGet back to the music.",
-    lead: "Device requirements, troubleshooting and direct support for the upcoming GuitarTool 1.0.12 (Build 12) and earlier releases. Core features need no account and work offline.",
+    lead: "Device requirements, troubleshooting and direct support for the upcoming GuitarTool 1.1.0 (Build 13) and earlier releases. Core features need no account and work offline.",
     contact: "Contact support",
     appStore: "View on the App Store",
     status: [
-      ["Documentation", "1.0.12 · Build 12 release preview"],
+      ["Documentation", "1.1.0 · Build 13 release preview"],
       ["Devices", "iPhone · iPad · Apple Watch"],
       ["System requirement", "iOS / iPadOS 17 or later"],
       ["Data model", "No account · Core features work offline"],
@@ -116,7 +116,7 @@ export function SupportPage({ language }: { language: keyof typeof content }) {
       </section>
 
       <section className="supportTopics shell">
-        <div className="assetHeading"><p className="acqEyebrow">02 / TROUBLESHOOTING</p><h2>{language === "zh" ? "按功能排查常见问题。" : "Troubleshoot by feature."}</h2><p>{language === "zh" ? "说明以 1.0.12 Build 12 为基线，并覆盖仍在使用的更早版本。" : "Answers use 1.0.12 Build 12 as the baseline and also cover earlier releases still in use."}</p></div>
+        <div className="assetHeading"><p className="acqEyebrow">02 / TROUBLESHOOTING</p><h2>{language === "zh" ? "按功能排查常见问题。" : "Troubleshoot by feature."}</h2><p>{language === "zh" ? "说明以 1.1.0 Build 13 为基线，并覆盖仍在使用的更早版本。" : "Answers use 1.1.0 Build 13 as the baseline and also cover earlier releases still in use."}</p></div>
         <div className="supportGrid">{copy.sections.map((item, index) => <article key={item.title}><span>{String(index + 1).padStart(2, "0")}</span><h3>{item.title}</h3><p>{item.body}</p></article>)}</div>
       </section>
 
