@@ -26,7 +26,7 @@ const content = {
       "仍未解决时，来信说明设备型号、系统版本、问题发生在哪个工具，以及复现步骤。请勿发送私人录音。",
     ],
     sections: [
-      { title: "主题如何购买、恢复或重新下载", body: "主题展厅现有五套付费完整主题，每套都是独立的 App Store 非消耗型一次性内购，购买后永久解锁、无订阅；购买前可逐页预览，后续还会持续推出新主题。购买后如未解锁，请确认网络可用并点按“恢复购买”，再重新下载主题材质。已下载主题可离线使用，也可更新或移除；主题价格以 App Store 显示为准。" },
+      { title: "主题如何购买、恢复或重新下载", body: "App 的全部练习功能均免费；仅可选完整视觉主题为付费内容。主题展厅现有五套付费完整主题，每套都是独立的 App Store 非消耗型一次性内购，购买后永久解锁、无订阅；购买前可逐页预览，后续还会持续推出新主题。购买后如未解锁，请确认网络可用并点按“恢复购买”，再重新下载主题材质。已下载主题可离线使用，也可更新或移除；主题价格以 App Store 显示为准。" },
       { title: "调音器没有声音输入", body: "首次使用时允许麦克风权限，并确认没有其他 App 独占音频输入。调音器只在设备上实时分析音高，不保存或上传声音。若电平没有变化，请检查系统麦克风权限并重新进入调音器。" },
       { title: "节拍器没有声音或节拍中断", body: "检查设备音量、静音状态和当前蓝牙／AirPlay 音频路线。停止后重新开始一次；若切换过输出设备，请重新打开节拍器，让音频会话恢复到当前路线。" },
       { title: "后置闪光灯节拍没有出现", body: "闪光灯节拍只会在具备后置闪光灯的兼容 iPhone 上显示。首次开启前请阅读频闪、耗电与发热提示。它可跟随全部主拍或仅重音，提供三档强度，不跟随细分音符；停止、离开页面或进入后台会自动关闭，也不会拍照或采集画面。" },
@@ -62,7 +62,7 @@ const content = {
       "If the issue continues, email the device model, OS version, affected tool and exact steps. Please do not send private recordings.",
     ],
     sections: [
-      { title: "Buy, restore or download a theme", body: "The Theme Gallery currently offers five premium complete themes. Each is a separate non-consumable, one-time App Store purchase with permanent unlock and no subscription. Preview every supported page before buying; more themes will be added over time. If a purchase is not unlocked, connect to the internet, choose Restore Purchases, then download the theme assets again. Downloaded themes work offline and can be updated or removed. The App Store displays the local price." },
+      { title: "Buy, restore or download a theme", body: "All practice features are free; only optional complete visual themes are paid. The Theme Gallery currently offers five premium complete themes. Each is a separate non-consumable, one-time App Store purchase with permanent unlock and no subscription. Preview every supported page before buying; more themes will be added over time. If a purchase is not unlocked, connect to the internet, choose Restore Purchases, then download the theme assets again. Downloaded themes work offline and can be updated or removed. The App Store displays the local price." },
       { title: "The tuner shows no input", body: "Allow microphone access when asked and make sure another app is not holding the audio input. Pitch is analysed live on the device and is never saved or uploaded. If the input meter does not move, check the system microphone permission and reopen the tuner." },
       { title: "The metronome is silent or stops", body: "Check device volume, silent mode and the active Bluetooth or AirPlay route. Stop and start the metronome once. If the output device changed, reopen the tool so its audio session can follow the current route." },
       { title: "Flash Beat is not available", body: "Flash Beat appears only on compatible iPhones with a rear flash. Read the strobe, battery and heat notice before first use. It can follow all main beats or accents only, offers three intensity levels, and does not follow subdivisions. It turns off automatically when playback stops, you leave the screen or the app enters the background. It never captures images." },

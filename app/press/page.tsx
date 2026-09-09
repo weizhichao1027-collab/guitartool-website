@@ -49,7 +49,7 @@ export default function PressKitPage() {
       </section>
 
       <section className="pressFacts shell">
-        <div><p className="acqEyebrow">ONE-SENTENCE DESCRIPTION</p><h2>GuitarTool is a free-to-download, ad-free iPhone and iPad practice toolkit combining offline core tools with optional premium complete themes, shareable chord cards, Apple Watch and Home Screen companions.</h2></div>
+        <div><p className="acqEyebrow">ONE-SENTENCE DESCRIPTION</p><h2>Every GuitarTool practice feature is free. The ad-free iPhone and iPad toolkit combines offline core tools with optional premium complete visual themes, shareable chord cards, Apple Watch and Home Screen companions.</h2></div>
         <dl>
           <div><dt>Platforms</dt><dd>iPhone, iPad, Apple Watch</dd></div>
           <div><dt>Price</dt><dd>Free download · optional one-time theme purchases</dd></div>
@@ -66,7 +66,7 @@ export default function PressKitPage() {
 
       <section className="pressStory shell">
         <div><p className="acqEyebrow">COMING IN VERSION 1.0.12 · BUILD 12</p><h2>Five complete themes turn the whole practice flow into a visual instrument.</h2></div>
-        <div><p>The Theme Gallery introduces Morning Mist Studio, Lunar Radio, Paper Ensemble, Pocket Synth and Vinyl Afterhours. Each complete design reaches across the tuner, metronome, chord library and share cards, and every supported page can be previewed before purchase.</p><p>The five themes are not free: each is a separate non-consumable, one-time App Store purchase with permanent unlock and no subscription. Downloaded themes work offline, and more themes will be added over time. The four original basic looks remain included with the app.</p></div>
+        <div><p>All practice features are free; only optional complete visual themes are paid. The Theme Gallery introduces Morning Mist Studio, Lunar Radio, Paper Ensemble, Pocket Synth and Vinyl Afterhours. Each complete design reaches across the tuner, metronome, chord library and share cards, and every supported page can be previewed before purchase.</p><p>Each of the five themes is a separate non-consumable, one-time App Store purchase with permanent unlock and no subscription. Downloaded themes work offline, and more themes will be added over time. The four original basic looks remain included with the app.</p></div>
       </section>
 
       <section className="pressStory shell">

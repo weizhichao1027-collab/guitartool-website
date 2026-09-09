@@ -4,7 +4,7 @@ import { absoluteUrl } from "@/app/lib/site";
 
 export const metadata: Metadata = {
   title: "GuitarTool Support | Version 1.0.12 Theme Preview",
-  description: "Support preview for the upcoming GuitarTool 1.0.12: premium theme purchases and restores, tuner, metronome, widgets, Apple Watch and chord cards.",
+  description: "All GuitarTool practice features are free. Preview help for version 1.0.12 optional theme purchases and restores, tuner, metronome, widgets, Apple Watch and chord cards.",
   alternates: { canonical: absoluteUrl("/en/support/"), languages: { "zh-CN": absoluteUrl("/support/"), en: absoluteUrl("/en/support/") } },
   openGraph: { title: "GuitarTool Support", description: "Preview theme purchase, restore and troubleshooting help for the upcoming GuitarTool 1.0.12.", url: absoluteUrl("/en/support/"), type: "website" },
 };
