@@ -6,10 +6,10 @@ import { APP_STORE_LINKS, APP_STORE_URL, GITHUB_URL, PRIVACY_URL, absoluteUrl, a
 
 export const metadata: Metadata = {
   title: "GuitarTool Press Kit | Product Facts, Images & Contact",
-  description: "Official GuitarTool press kit with version 1.0.8 highlights, verified product facts, four full introduction videos, downloadable visuals and developer contact information.",
+  description: "Official GuitarTool press kit with a version 1.0.12 Theme Gallery preview, verified product facts, downloadable visuals and developer contact information.",
   alternates: { canonical: absoluteUrl("/press/") },
-  openGraph: { title: "GuitarTool Official Press Kit", description: "Version 1.0.8 facts, downloadable visuals, four full introduction videos and official contact information.", url: absoluteUrl("/press/"), type: "website", images: [{ url: absoluteUrl("/en-chord-card-share.webp"), width: 833, height: 1800, alt: "GuitarTool chord card preview" }] },
-  twitter: { card: "summary_large_image", title: "GuitarTool Official Press Kit", description: "Verified version 1.0.8 facts, downloadable product images and videos.", images: [absoluteUrl("/en-chord-card-share.webp")] },
+  openGraph: { title: "GuitarTool Official Press Kit", description: "Version 1.0.12 Theme Gallery preview, downloadable visuals and official contact information.", url: absoluteUrl("/press/"), type: "website", images: [{ url: absoluteUrl("/en-chord-card-share.webp"), width: 833, height: 1800, alt: "GuitarTool chord card preview" }] },
+  twitter: { card: "summary_large_image", title: "GuitarTool Official Press Kit", description: "Version 1.0.12 Theme Gallery preview, verified product facts and downloadable media.", images: [absoluteUrl("/en-chord-card-share.webp")] },
 };
 
 const assets = [
@@ -34,7 +34,7 @@ const fullVideos = [
 export default function PressKitPage() {
   return (
     <main className="acqPage pressPage" lang="en">
-      <JsonLd data={{ "@context": "https://schema.org", "@type": "SoftwareApplication", name: "GuitarTool", softwareVersion: "1.0.8", description: "An offline tuner, metronome and interactive chord library for guitar and ukulele, with rear-flash beat cues, shareable chord cards, Apple Watch and Home Screen widgets.", url: absoluteUrl("/"), downloadUrl: APP_STORE_URL, applicationCategory: "MusicApplication", operatingSystem: "iOS, iPadOS, watchOS", featureList: ["Real-time tuner for seven instrument families", "20–500 BPM practice metronome", "Rear-flash beat cues for all main beats or accents only, with three intensities", "19,244 guitar and ukulele fingerings", "Chord-card preview, Photos save and system sharing", "Apple Watch metronome with background audio", "Three interactive Home Screen widget sizes", "13 interface languages"], author: { "@type": "Person", name: "Zhichao Wei" }, offers: { "@type": "Offer", price: "0", priceCurrency: "USD" } }} />
+      <JsonLd data={{ "@context": "https://schema.org", "@type": "SoftwareApplication", name: "GuitarTool", softwareVersion: "1.0.8", description: "Offline core practice tools for guitar and ukulele, with rear-flash beat cues, shareable chord cards, Apple Watch and Home Screen widgets.", url: absoluteUrl("/"), downloadUrl: APP_STORE_URL, applicationCategory: "MusicApplication", operatingSystem: "iOS, iPadOS, watchOS", featureList: ["Real-time tuner for seven instrument families", "20–500 BPM practice metronome", "Rear-flash beat cues for all main beats or accents only, with three intensities", "19,244 guitar and ukulele fingerings", "Chord-card preview, Photos save and system sharing", "Apple Watch metronome with background audio", "Three interactive Home Screen widget sizes", "13 interface languages"], author: { "@type": "Person", name: "Zhichao Wei" }, offers: { "@type": "Offer", price: "0", priceCurrency: "USD" } }} />
       <JsonLd data={[
         ...fullVideos.map((video) => ({ "@context": "https://schema.org", "@type": "VideoObject", name: video.title, description: "A 36-second full introduction to GuitarTool's tuner, metronome, chord cards, widgets and multi-device experience.", thumbnailUrl: absoluteUrl("/media-kit/social/guitartool-chord-cards-en-1200x630.png"), uploadDate: "2026-08-28", duration: "PT36S", contentUrl: absoluteUrl(video.file) })),
         { "@context": "https://schema.org", "@type": "VideoObject", name: "GuitarTool 24-second social preview", description: "A concise vertical preview of GuitarTool's offline metronome, tuner, chord library and shareable chord cards.", thumbnailUrl: absoluteUrl("/media-kit/social/guitartool-chord-cards-en-1200x630.png"), uploadDate: "2026-08-27", duration: "PT24S", contentUrl: absoluteUrl("/media-kit/video/GuitarTool-Social-Preview-en-1080x1920.mp4") },
@@ -42,17 +42,17 @@ export default function PressKitPage() {
       ]} />
       <AcquisitionHeader language="en" />
       <section className="pressHero shell">
-        <p className="acqEyebrow">OFFICIAL PRESS KIT · UPDATED AUGUST 2026</p>
-        <h1>GuitarTool keeps practice tools <em>focused, private and offline.</em></h1>
+        <p className="acqEyebrow">OFFICIAL PRESS KIT · UPDATED SEPTEMBER 2026</p>
+        <h1>GuitarTool keeps core practice tools <em>focused, private and offline.</em></h1>
         <p>Verified product facts, downloadable visual assets and direct links for journalists, educators, reviewers and creators.</p>
         <div><a className="primaryButton" href={APP_STORE_LINKS.press}>View on the App Store <span>↗</span></a><a className="textCta" href="mailto:weizhichao1027@gmail.com">Contact the developer <span>→</span></a></div>
       </section>
 
       <section className="pressFacts shell">
-        <div><p className="acqEyebrow">ONE-SENTENCE DESCRIPTION</p><h2>GuitarTool is a free, ad-free iPhone and iPad practice toolkit combining a real-time tuner, advanced metronome and 19,244 interactive guitar and ukulele fingerings, with shareable chord cards, Apple Watch and Home Screen companions.</h2></div>
+        <div><p className="acqEyebrow">ONE-SENTENCE DESCRIPTION</p><h2>GuitarTool is a free-to-download, ad-free iPhone and iPad practice toolkit combining offline core tools with optional premium complete themes, shareable chord cards, Apple Watch and Home Screen companions.</h2></div>
         <dl>
           <div><dt>Platforms</dt><dd>iPhone, iPad, Apple Watch</dd></div>
-          <div><dt>Price</dt><dd>Free</dd></div>
+          <div><dt>Price</dt><dd>Free download · optional one-time theme purchases</dd></div>
           <div><dt>Languages</dt><dd>13 interface languages</dd></div>
           <div><dt>Privacy</dt><dd>No account, ads, analytics or audio uploads</dd></div>
           <div><dt>Developer</dt><dd>Zhichao Wei</dd></div>
@@ -62,6 +62,11 @@ export default function PressKitPage() {
 
       <section className="pressNumbers shell">
         <div><strong>20–500</strong><span>BPM range</span></div><div><strong>19,244</strong><span>guitar & ukulele fingerings</span></div><div><strong>7</strong><span>tuner instrument families</span></div><div><strong>13</strong><span>interface languages</span></div>
+      </section>
+
+      <section className="pressStory shell">
+        <div><p className="acqEyebrow">COMING IN VERSION 1.0.12 · BUILD 12</p><h2>Five complete themes turn the whole practice flow into a visual instrument.</h2></div>
+        <div><p>The Theme Gallery introduces Morning Mist Studio, Lunar Radio, Paper Ensemble, Pocket Synth and Vinyl Afterhours. Each complete design reaches across the tuner, metronome, chord library and share cards, and every supported page can be previewed before purchase.</p><p>The five themes are not free: each is a separate non-consumable, one-time App Store purchase with permanent unlock and no subscription. Downloaded themes work offline, and more themes will be added over time. The four original basic looks remain included with the app.</p></div>
       </section>
 
       <section className="pressStory shell">
@@ -76,7 +81,7 @@ export default function PressKitPage() {
 
       <section className="pressStory shell">
         <div><p className="acqEyebrow">PRODUCT STORY</p><h2>Less setup. More time with the instrument.</h2></div>
-        <div><p>GuitarTool was created around a simple observation: the tools used before and during practice should not become another source of interruption. Tuning, timekeeping and chord lookup belong in one dependable flow, without advertising, feeds or a login wall.</p><p>The app works offline and contains no third-party SDKs. Microphone audio is used only for live pitch analysis on the device; it is not saved or uploaded. The same focus extends across iPhone, iPad, three interactive Home Screen widget sizes, shareable chord cards and an Apple Watch metronome with background audio.</p></div>
+        <div><p>GuitarTool was created around a simple observation: the tools used before and during practice should not become another source of interruption. Tuning, timekeeping and chord lookup belong in one dependable flow, without advertising, feeds or a login wall.</p><p>Core tools work offline and the app contains no third-party analytics SDKs. Microphone audio is used only for live pitch analysis on the device; it is not saved or uploaded. The Theme Gallery connects only while browsing, purchasing or downloading themes, and Apple handles purchases through StoreKit.</p></div>
       </section>
 
       <section className="assetSection shell">
@@ -91,7 +96,7 @@ export default function PressKitPage() {
       </section>
 
       <section className="pressVideoSection shell">
-        <div className="assetHeading"><p className="acqEyebrow">24-SECOND VERTICAL CUTDOWNS</p><h2>Shorter edits for fast social and App Preview evaluation.</h2><p>English and Simplified Chinese versions use official localized product screens. The 886 × 1920 files remain candidates only and should receive a fresh App Store specification and metadata review before any upload for version 1.0.8.</p></div>
+        <div className="assetHeading"><p className="acqEyebrow">24-SECOND VERTICAL CUTDOWNS</p><h2>Shorter edits for fast social and App Preview evaluation.</h2><p>English and Simplified Chinese versions use official localized product screens from the core-product tour. The 886 × 1920 files remain historical candidates only and do not show version 1.0.12&apos;s Theme Gallery.</p></div>
         <div className="pressVideoGrid">
           <article><video controls playsInline preload="metadata" poster={assetPath("/media-kit/social/guitartool-chord-cards-en-1080x1350.png")}><source src={assetPath("/media-kit/video/GuitarTool-Social-Preview-en-1080x1920.mp4")} type="video/mp4" /></video><div><h3>English social preview</h3><p>MP4 · H.264 · 1080 × 1920 · 24 seconds</p><a href={assetPath("/media-kit/video/GuitarTool-Social-Preview-en-1080x1920.mp4")} download>Download social video ↓</a><a href={assetPath("/media-kit/video/GuitarTool-App-Preview-en-886x1920.mp4")} download>Download App Preview candidate ↓</a></div></article>
           <article><video controls playsInline preload="metadata" poster={assetPath("/media-kit/social/guitartool-chord-cards-zh-Hans-1080x1350.png")}><source src={assetPath("/media-kit/video/GuitarTool-Social-Preview-zh-Hans-1080x1920.mp4")} type="video/mp4" /></video><div><h3>Simplified Chinese social preview</h3><p>MP4 · H.264 · 1080 × 1920 · 24 seconds</p><a href={assetPath("/media-kit/video/GuitarTool-Social-Preview-zh-Hans-1080x1920.mp4")} download>Download social video ↓</a><a href={assetPath("/media-kit/video/GuitarTool-App-Preview-zh-Hans-886x1920.mp4")} download>Download App Preview candidate ↓</a></div></article>

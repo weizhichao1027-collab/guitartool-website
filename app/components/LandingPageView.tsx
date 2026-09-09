@@ -97,7 +97,7 @@ export function LandingPageView({ page, language }: { page: LandingPage; languag
             </a>
           </div>
           <p className="conversionNote">
-            {isZh ? `免费 · 完全离线 · 无广告 · 前往${destinationLabel}` : `Free · fully offline · no ads · opens the ${destinationLabel}`}
+            {isZh ? `核心工具免费且离线 · 无广告 · 前往${destinationLabel}` : `Core tools free and offline · no ads · opens the ${destinationLabel}`}
           </p>
           <ul className="proofStrip">
             {page.proof.map((item) => <li key={item}>{item}</li>)}

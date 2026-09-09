@@ -222,7 +222,7 @@ export const zhFeaturePages: LandingPage[] = [
       },
       {
         title: "这里使用的是灯光提示，不是相机流程",
-        body: "闪光灯节拍不会拍照、录像或分析画面。GuitarTool 仍是一款完全离线的练习工具，无需账户、没有广告与统计 SDK，也不会上传音频。后置闪光灯功能取决于兼容 iPhone 硬件；iPad 与 Apple Watch 继续使用各自的节拍器体验。",
+        body: "闪光灯节拍不会拍照、录像或分析画面。GuitarTool 的调音、节拍与和弦等核心练习工具可完全离线使用，无需账户、没有广告与统计 SDK，也不会上传音频；主题展厅仅在使用时联网。后置闪光灯功能取决于兼容 iPhone 硬件；iPad 与 Apple Watch 继续使用各自的节拍器体验。",
         points: ["不拍摄任何画面", "无账户、广告或追踪 SDK", "仅限兼容 iPhone 后置闪光灯"],
       },
     ],

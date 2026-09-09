@@ -9,11 +9,11 @@ const content = {
     lang: "zh-CN",
     eyebrow: "GUITARTOOL 技术支持",
     title: "先解决练习中的问题，\n再回到音乐里。",
-    lead: "这里汇总 GuitarTool 1.0.8（Build 8）及更早版本的设备要求、常见问题与联系入口。核心功能无需账户，并可离线使用。",
+    lead: "这里汇总即将推出的 GuitarTool 1.0.12（Build 12）及更早版本的设备要求、常见问题与联系入口。核心功能无需账户，并可离线使用。",
     contact: "联系技术支持",
     appStore: "前往 App Store",
     status: [
-      ["文档版本", "1.0.8 · Build 8"],
+      ["文档版本", "1.0.12 · Build 12 发布预览"],
       ["支持设备", "iPhone · iPad · Apple Watch"],
       ["系统要求", "iOS / iPadOS 17 或更高版本"],
       ["数据方式", "无需账户 · 核心功能离线运行"],
@@ -26,6 +26,7 @@ const content = {
       "仍未解决时，来信说明设备型号、系统版本、问题发生在哪个工具，以及复现步骤。请勿发送私人录音。",
     ],
     sections: [
+      { title: "主题如何购买、恢复或重新下载", body: "主题展厅现有五套付费完整主题，每套都是独立的 App Store 非消耗型一次性内购，购买后永久解锁、无订阅；购买前可逐页预览，后续还会持续推出新主题。购买后如未解锁，请确认网络可用并点按“恢复购买”，再重新下载主题材质。已下载主题可离线使用，也可更新或移除；主题价格以 App Store 显示为准。" },
       { title: "调音器没有声音输入", body: "首次使用时允许麦克风权限，并确认没有其他 App 独占音频输入。调音器只在设备上实时分析音高，不保存或上传声音。若电平没有变化，请检查系统麦克风权限并重新进入调音器。" },
       { title: "节拍器没有声音或节拍中断", body: "检查设备音量、静音状态和当前蓝牙／AirPlay 音频路线。停止后重新开始一次；若切换过输出设备，请重新打开节拍器，让音频会话恢复到当前路线。" },
       { title: "后置闪光灯节拍没有出现", body: "闪光灯节拍只会在具备后置闪光灯的兼容 iPhone 上显示。首次开启前请阅读频闪、耗电与发热提示。它可跟随全部主拍或仅重音，提供三档强度，不跟随细分音符；停止、离开页面或进入后台会自动关闭，也不会拍照或采集画面。" },
@@ -34,7 +35,7 @@ const content = {
       { title: "和弦卡片无法保存到照片", body: "在系统设置中允许 GuitarTool 添加照片。保存前会显示最终卡片预览；系统分享只发送图片，不强制附带下载链接，也不会把图片上传到 GuitarTool 服务器。" },
     ],
     privacyTitle: "关于隐私与权限",
-    privacyBody: "GuitarTool 不要求注册，不包含广告或第三方统计 SDK。麦克风只用于本机实时调音；照片权限只在你主动保存和弦卡片时使用；后置闪光灯节拍不调用相机拍摄。",
+    privacyBody: "GuitarTool 不要求注册，不包含广告或第三方统计 SDK。麦克风只用于本机实时调音；照片权限只在你主动保存和弦卡片时使用；后置闪光灯节拍不调用相机拍摄。主题展厅仅在使用时连接开发者主题服务获取目录与材质，购买由 Apple App Store 与 StoreKit 处理。",
     privacyLink: "阅读完整隐私政策",
     emailTitle: "需要进一步帮助？",
     emailBody: "邮件中请附上设备型号、系统版本、GuitarTool 版本以及清晰的复现步骤。这样最容易定位问题。",
@@ -44,11 +45,11 @@ const content = {
     lang: "en",
     eyebrow: "GUITARTOOL SUPPORT",
     title: "Solve the interruption.\nGet back to the music.",
-    lead: "Device requirements, troubleshooting and direct support for GuitarTool 1.0.8 (Build 8) and earlier releases. Core features need no account and work offline.",
+    lead: "Device requirements, troubleshooting and direct support for the upcoming GuitarTool 1.0.12 (Build 12) and earlier releases. Core features need no account and work offline.",
     contact: "Contact support",
     appStore: "View on the App Store",
     status: [
-      ["Documentation", "1.0.8 · Build 8"],
+      ["Documentation", "1.0.12 · Build 12 release preview"],
       ["Devices", "iPhone · iPad · Apple Watch"],
       ["System requirement", "iOS / iPadOS 17 or later"],
       ["Data model", "No account · Core features work offline"],
@@ -61,6 +62,7 @@ const content = {
       "If the issue continues, email the device model, OS version, affected tool and exact steps. Please do not send private recordings.",
     ],
     sections: [
+      { title: "Buy, restore or download a theme", body: "The Theme Gallery currently offers five premium complete themes. Each is a separate non-consumable, one-time App Store purchase with permanent unlock and no subscription. Preview every supported page before buying; more themes will be added over time. If a purchase is not unlocked, connect to the internet, choose Restore Purchases, then download the theme assets again. Downloaded themes work offline and can be updated or removed. The App Store displays the local price." },
       { title: "The tuner shows no input", body: "Allow microphone access when asked and make sure another app is not holding the audio input. Pitch is analysed live on the device and is never saved or uploaded. If the input meter does not move, check the system microphone permission and reopen the tuner." },
       { title: "The metronome is silent or stops", body: "Check device volume, silent mode and the active Bluetooth or AirPlay route. Stop and start the metronome once. If the output device changed, reopen the tool so its audio session can follow the current route." },
       { title: "Flash Beat is not available", body: "Flash Beat appears only on compatible iPhones with a rear flash. Read the strobe, battery and heat notice before first use. It can follow all main beats or accents only, offers three intensity levels, and does not follow subdivisions. It turns off automatically when playback stops, you leave the screen or the app enters the background. It never captures images." },
@@ -69,7 +71,7 @@ const content = {
       { title: "A chord card will not save to Photos", body: "Allow GuitarTool to add photos in system settings. The final card is shown before saving. System sharing sends only the image, with no forced download link, and GuitarTool does not upload the card to a server." },
     ],
     privacyTitle: "Privacy and permissions",
-    privacyBody: "GuitarTool needs no registration and contains no ads or third-party analytics SDKs. The microphone is used only for live on-device tuning; Photos access is used only when you choose to save a chord card; Flash Beat does not use the camera to capture images.",
+    privacyBody: "GuitarTool needs no registration and contains no ads or third-party analytics SDKs. The microphone is used only for live on-device tuning; Photos access is used only when you choose to save a chord card; Flash Beat does not use the camera to capture images. The Theme Gallery connects to the developer's theme service only when used, while Apple App Store and StoreKit handle purchases.",
     privacyLink: "Read the full privacy policy",
     emailTitle: "Still need help?",
     emailBody: "Include the device model, OS version, GuitarTool version and clear reproduction steps. Those details make an issue much easier to diagnose.",
@@ -114,7 +116,7 @@ export function SupportPage({ language }: { language: keyof typeof content }) {
       </section>
 
       <section className="supportTopics shell">
-        <div className="assetHeading"><p className="acqEyebrow">02 / TROUBLESHOOTING</p><h2>{language === "zh" ? "按功能排查常见问题。" : "Troubleshoot by feature."}</h2><p>{language === "zh" ? "说明以 1.0.8 Build 8 为基线，并覆盖仍在使用的更早版本。" : "Answers use 1.0.8 Build 8 as the baseline and also cover earlier releases still in use."}</p></div>
+        <div className="assetHeading"><p className="acqEyebrow">02 / TROUBLESHOOTING</p><h2>{language === "zh" ? "按功能排查常见问题。" : "Troubleshoot by feature."}</h2><p>{language === "zh" ? "说明以 1.0.12 Build 12 为基线，并覆盖仍在使用的更早版本。" : "Answers use 1.0.12 Build 12 as the baseline and also cover earlier releases still in use."}</p></div>
         <div className="supportGrid">{copy.sections.map((item, index) => <article key={item.title}><span>{String(index + 1).padStart(2, "0")}</span><h3>{item.title}</h3><p>{item.body}</p></article>)}</div>
       </section>
 

@@ -1,6 +1,6 @@
-# GuitarTool — free offline guitar & ukulele practice
+# GuitarTool — guitar & ukulele practice with offline core tools
 
-Tune your instrument, set a beat, find the exact chord shape, then play. GuitarTool brings a tuner, metronome and chord library together on iPhone and iPad, with an Apple Watch metronome and Home Screen widgets. Free, ad-free, and no account required.
+Tune your instrument, set a beat, find the exact chord shape, then play. GuitarTool brings a tuner, metronome and chord library together on iPhone and iPad, with an Apple Watch metronome and Home Screen widgets. The app is free to download, with no ads or account requirement; its core practice tools work offline.
 
 [Download on the App Store](https://apps.apple.com/app/apple-store/id6761914163?pt=128747267&ct=organic_github&mt=8) · [English website](https://weizhichao1027-collab.github.io/guitartool-website/en/?utm_source=github) · [中文官网](https://weizhichao1027-collab.github.io/guitartool-website/?utm_source=github)
 
@@ -13,7 +13,7 @@ Tune your instrument, set a beat, find the exact chord shape, then play. GuitarT
 - **Share the exact chord:** 19,244 guitar and ukulele fingerings, multiple voicings, audio previews and chord cards that can be saved or sent as ordinary images.
 - **Keep practice close:** adaptive iPhone/iPad layouts, Apple Watch audible beats, interactive widgets and 13 languages.
 
-Version 1.0.8 adds rear-flash beat cues on compatible iPhones: every main beat or accents only, with three intensity levels. Cues do not follow subdivisions, and the light turns off when you stop, leave the page or background the app. It does not take photos. Review the in-app flashing-light, battery and heat notice before use. [Flash Beat guide](https://weizhichao1027-collab.github.io/guitartool-website/en/guides/visual-metronome/?utm_source=github).
+Coming in version 1.0.12, the Theme Gallery adds five complete premium designs: Morning Mist Studio, Lunar Radio, Paper Ensemble, Pocket Synth and Vinyl Afterhours. Preview each theme first; every theme is a separate one-time App Store purchase with permanent unlock and no subscription. Downloaded themes work offline, and more themes will be added over time. Version 1.0.8 introduced rear-flash beat cues on compatible iPhones. [Flash Beat guide](https://weizhichao1027-collab.github.io/guitartool-website/en/guides/visual-metronome/?utm_source=github).
 
 ## Try the free browser tools
 
@@ -23,7 +23,7 @@ Teachers can [send a specific chord shape to a student](https://weizhichao1027-c
 
 ## 中文介绍
 
-GuitarTool（吉他工具）是一款免费、完全离线、无广告、无需账户的吉他与尤克里里练习工具。调音、节拍训练、和弦查找和指法卡片分享集中在一个 App 中，支持 iPhone、iPad、Apple Watch 与主屏幕小组件。1.0.8 的兼容 iPhone 后置闪光灯节拍已开放，可提示全部主拍或仅重音。
+GuitarTool（吉他工具）是一款可免费下载、核心工具离线可用、无广告、无需账户的吉他与尤克里里练习 App。调音、节拍训练、和弦查找和指法卡片分享集中在一起，支持 iPhone、iPad、Apple Watch 与主屏幕小组件。即将推出的 1.0.12 会新增五套付费完整主题：每套可先预览、单独一次购买、永久解锁且无订阅，下载后可离线使用；后续还会持续增加新主题。
 
 [观看 B 站介绍](https://www.bilibili.com/video/BV1bY4d6GEkw/) · [中文支持](https://weizhichao1027-collab.github.io/guitartool-website/support/) · [English support](https://weizhichao1027-collab.github.io/guitartool-website/en/support/) · [Privacy policy](https://weizhichao1027-collab.github.io/GuitarTool-Privacy/)
 

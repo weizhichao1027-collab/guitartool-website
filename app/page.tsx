@@ -53,7 +53,8 @@ const features = [
 ] as const;
 
 const faqs = [
-  ["需要联网或注册账号吗？", "不需要。GuitarTool 的核心功能完全离线运行，无需注册、登录或云端同步。"],
+  ["需要联网或注册账号吗？", "调音、节拍器、和弦库等核心功能无需联网或账号。主题展厅在浏览、购买或下载主题时需要联网；已下载主题可离线使用。"],
+  ["五套完整主题是免费的吗？", "不是。主题展厅中的五套完整主题均为独立的非消耗型一次性内购：购买前可逐页预览，购买后永久解锁、无订阅，下载后可离线使用。后续还会持续推出新的付费主题。"],
   ["调音器会保存我的声音吗？", "不会。麦克风音频只用于设备端实时音高检测，不会保存为文件，也不会上传到任何服务器。"],
   ["支持哪些设备？", "支持 iPhone 与 iPad 自适应界面，附带 Apple Watch 节拍器和三种尺寸的主屏幕交互式小组件；Watch 落腕或屏幕变暗后声音节拍仍可继续。"],
   ["支持尤克里里吗？", "支持。调音器提供 GCEA 模式，和弦库也包含完整的尤克里里和弦名称与多种指法。"],
@@ -65,7 +66,7 @@ export default function Home() {
   return (
     <main lang="zh-CN">
       <JsonLd data={[
-        { "@context": "https://schema.org", "@type": "SoftwareApplication", name: "GuitarTool", softwareVersion: "1.0.8", description: "面向吉他与尤克里里演奏者的离线调音器、节拍器与可保存分享的交互式和弦库。", url: absoluteUrl("/"), downloadUrl: appStoreUrl, applicationCategory: "MusicApplication", operatingSystem: "iOS, iPadOS, watchOS", inLanguage: supportedLanguageCodes, offers: { "@type": "Offer", price: "0", priceCurrency: "CNY" }, featureList: ["实时弦乐调音器", "20–500 BPM 节拍器", "后置闪光灯节拍：全部主拍或仅重音、三档强度", "19,244 个吉他与尤克里里指法", "和弦卡片预览、保存与分享", "支持后台音频的 Apple Watch 节拍器", "主屏幕交互式小组件"] },
+        { "@context": "https://schema.org", "@type": "SoftwareApplication", name: "GuitarTool", softwareVersion: "1.0.8", description: "面向吉他与尤克里里演奏者的练习工具：调音、节拍与和弦功能离线可用，并支持和弦卡片、Apple Watch 与主屏幕小组件。", url: absoluteUrl("/"), downloadUrl: appStoreUrl, applicationCategory: "MusicApplication", operatingSystem: "iOS, iPadOS, watchOS", inLanguage: supportedLanguageCodes, offers: { "@type": "Offer", price: "0", priceCurrency: "CNY" }, featureList: ["实时弦乐调音器", "20–500 BPM 节拍器", "后置闪光灯节拍：全部主拍或仅重音、三档强度", "19,244 个吉他与尤克里里指法", "和弦卡片预览、保存与分享", "支持后台音频的 Apple Watch 节拍器", "主屏幕交互式小组件"] },
         { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqs.map(([question, answer]) => ({ "@type": "Question", name: question, acceptedAnswer: { "@type": "Answer", text: answer } })) },
         { "@context": "https://schema.org", "@type": "VideoObject", name: "GuitarTool 中文完整介绍（横屏）", description: "36 秒介绍 GuitarTool 调音器、节拍器、和弦卡片、小组件与多设备体验。", thumbnailUrl: absoluteUrl("/og.png"), uploadDate: "2026-08-28", duration: "PT36S", contentUrl: absoluteUrl("/media-kit/video/GuitarTool-Full-Intro-zh-Hans-854x480.mp4") },
         { "@context": "https://schema.org", "@type": "VideoObject", name: "GuitarTool 中文完整介绍（竖屏）", description: "为移动端优化的 36 秒 GuitarTool 中文完整介绍。", thumbnailUrl: absoluteUrl("/media-kit/social/guitartool-chord-cards-zh-Hans-1080x1350.png"), uploadDate: "2026-08-28", duration: "PT36S", contentUrl: absoluteUrl("/media-kit/video/GuitarTool-Full-Intro-zh-Hans-480x854.mp4") },
@@ -99,7 +100,7 @@ export default function Home() {
             <a className="textButton" href="#features">探索功能 <span>↓</span></a>
           </div>
           <div className="heroProof" aria-label="产品特性">
-            <span>完全离线</span><i />
+            <span>核心工具离线</span><i />
             <span>无广告</span><i />
             <span>无需账户</span>
           </div>
@@ -126,7 +127,7 @@ export default function Home() {
 
       <section className="ticker" aria-label="主要功能">
         <div>
-          <span>GUITAR</span><i>✦</i><span>UKULELE</span><i>✦</i><span>TUNER</span><i>✦</i><span>METRONOME</span><i>✦</i><span>CHORDS</span><i>✦</i><span>OFFLINE</span>
+          <span>GUITAR</span><i>✦</i><span>UKULELE</span><i>✦</i><span>TUNER</span><i>✦</i><span>METRONOME</span><i>✦</i><span>CHORDS</span><i>✦</i><span>PREMIUM THEMES</span>
         </div>
       </section>
 
@@ -183,7 +184,7 @@ export default function Home() {
         <div className="introVideoCopy">
           <p className="eyebrow"><span /> 36 秒完整介绍</p>
           <h2>先看它如何融入练习，<br />再决定从哪里开始。</h2>
-          <p>横屏版适合桌面与大屏观看，移动端会自动使用中文竖屏版。视频展示调音、节拍、和弦卡片、Widget 与多设备体验；1.0.8 新增的后置闪光灯节拍详见下方版本说明。</p>
+          <p>横屏版适合桌面与大屏观看，移动端会自动使用中文竖屏版。视频展示调音、节拍、和弦卡片、Widget 与多设备核心体验；1.0.12 的主题展厅亮点详见下方版本说明。</p>
         </div>
         <div className="introVideoFrame">
           <video controls playsInline preload="metadata" aria-label="GuitarTool 中文完整介绍视频">
@@ -201,15 +202,15 @@ export default function Home() {
         <div className="extraGrid">
           <article className="extraCard themeCard">
             <div className="extraText">
-              <p className="cardLabel">主题与装饰</p>
-              <h3>四种免费外观，<br />选择你的练习氛围。</h3>
-              <p>晴空、星夜、松林与石墨均随 APP 提供。外观选择只保存在设备上，不需要账户或云端个人资料。</p>
-              <div className="swatches" aria-label="晴空、星夜、松林、石墨四种主题">
+              <p className="cardLabel">主题展厅 · 1.0.12 即将推出</p>
+              <h3>五套完整付费主题，<br />让整套练习界面换一种性格。</h3>
+              <p>1.0.12 将带来晨雾琴房、月面电台、纸上乐队、口袋合成器与黑胶夜场。每套都可在购买前逐页预览，分别通过 App Store 一次购买后永久解锁，无订阅；下载后可离线使用，后续还会持续推出新主题。原有四种基础外观继续免费随 App 提供。</p>
+              <div className="swatches" aria-label="原有四种免费基础外观；主题展厅另有五套付费完整主题">
                 <span className="day" /><span className="night" /><span className="pine" /><span className="graphite" />
-                <b>4 INCLUDED</b>
+                <b>5 PREMIUM THEMES</b>
               </div>
             </div>
-            <Image src={assetPath("/themes.webp")} alt="GuitarTool 晴空、星夜、松林和石墨四种主题" width={833} height={1800} sizes="(max-width: 700px) 86vw, 460px" />
+            <Image src={assetPath("/themes.webp")} alt="GuitarTool 原有四种免费基础外观；1.0.12 另提供五套付费完整主题" width={833} height={1800} sizes="(max-width: 700px) 86vw, 460px" />
           </article>
           <article className="extraCard widgetCard">
             <div className="extraText">
@@ -221,8 +222,8 @@ export default function Home() {
           </article>
         </div>
         <div className="updatePromise">
-          <span>1.0.8 已上线 · BUILD 8</span>
-          <p><strong>让节拍不仅能听见，也能看见。</strong> 兼容 iPhone 可用后置闪光灯提示全部主拍或仅重音，并提供三档强度；设置与预设结构也更清晰，调音、Watch、Widget 与多设备同步更可靠。</p>
+          <span>即将推出 · 1.0.12 · BUILD 12</span>
+          <p><strong>主题展厅成为练习体验的新核心。</strong> 五套付费完整主题会联动改变调音器、节拍器、和弦库与分享卡；购买前可逐页预览，每套一次购买永久解锁、无订阅，下载后可离线使用。未来还会持续上新主题；调音器与多设备稳定性也同步提升。</p>
           <b aria-hidden="true">↗</b>
         </div>
       </section>
@@ -249,7 +250,7 @@ export default function Home() {
             <h2>你的练习声音，<br /><em>只留在你的设备上。</em></h2>
           </div>
           <div className="privacyCopy">
-            <p>GuitarTool 不收集、出售或分享个人信息。调音器的麦克风音频只在设备上实时处理，停止调音后即释放。</p>
+            <p>GuitarTool 不出售个人信息，也不把信息用于广告或追踪。调音器音频只在设备上实时处理；主题展厅仅在你打开时联网获取目录与材质，购买由 Apple App Store 和 StoreKit 处理。</p>
             <ul>
               <li><b>01</b><span><strong>无需账户</strong>没有注册、登录或云端个人资料。</span></li>
               <li><b>02</b><span><strong>音频不上传</strong>不保存录音，不发送到开发者或第三方。</span></li>
@@ -316,7 +317,7 @@ export default function Home() {
         <p>GuitarTool for iPhone · iPad · Apple Watch</p>
         <h2>下一次练习，<br />从更好的工具开始。</h2>
         <a className="primaryButton coral" href={appStoreUrl}>App Store 免费下载 <span>↗</span></a>
-        <small>完全离线 · 无广告 · 无需账户</small>
+        <small>核心工具离线 · 无广告 · 无需账户</small>
       </section>
 
       <footer className="footer shell">
