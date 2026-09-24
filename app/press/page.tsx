@@ -49,10 +49,10 @@ export default function PressKitPage() {
       </section>
 
       <section className="pressFacts shell">
-        <div><p className="acqEyebrow">ONE-SENTENCE DESCRIPTION</p><h2>GuitarTool is a free, ad-free iPhone and iPad practice toolkit with offline core tools, nine included visual themes, shareable chord cards, Apple Watch and Home Screen companions.</h2></div>
+        <div><p className="acqEyebrow">ONE-SENTENCE DESCRIPTION</p><h2>GuitarTool is a free, ad-free iPhone and iPad practice toolkit with offline core tools, four free basic looks and five separately purchasable themes, shareable chord cards, Apple Watch and Home Screen companions.</h2></div>
         <dl>
           <div><dt>Platforms</dt><dd>iPhone, iPad, Apple Watch</dd></div>
-          <div><dt>Price</dt><dd>Free download · all nine themes included</dd></div>
+          <div><dt>Price</dt><dd>Free download · four basic looks free · five themes sold separately</dd></div>
           <div><dt>Languages</dt><dd>13 interface languages</dd></div>
           <div><dt>Privacy</dt><dd>No account, ads, analytics or audio uploads</dd></div>
           <div><dt>Developer</dt><dd>Zhichao Wei</dd></div>
@@ -65,8 +65,8 @@ export default function PressKitPage() {
       </section>
 
       <section className="pressStory shell">
-        <div><p className="acqEyebrow">COMING IN VERSION 1.1.0 · BUILD 14</p><h2>Five complete themes turn the whole practice flow into a visual instrument.</h2></div>
-        <div><p>Version 1.1.0 includes Morning Mist Studio, Lunar Radio, Paper Ensemble, Pocket Synth and Vinyl Afterhours for free in the Theme Gallery. Each complete design reaches across the tuner, metronome, chord library and share cards, and every supported page can be previewed before selection.</p><p>The five complete themes are bundled with the app for offline use, with no purchase or download. The four original basic looks remain visible and free.</p></div>
+        <div><p className="acqEyebrow">COMING IN VERSION 1.1.0</p><h2>Five complete themes turn the whole practice flow into a visual instrument.</h2></div>
+        <div><p>Version 1.1.0 includes Morning Mist Studio, Lunar Radio, Paper Ensemble, Pocket Synth and Vinyl Afterhours as separately purchasable themes in the Theme Gallery. Each complete design reaches across the tuner, metronome, chord library and share cards, and every supported page can be previewed before selection.</p><p>The five complete themes are bundled with the app but still require separate App Store purchases. Purchased themes work offline without an asset download. The four original basic looks remain visible and free.</p></div>
       </section>
 
       <section className="pressStory shell">
@@ -81,7 +81,7 @@ export default function PressKitPage() {
 
       <section className="pressStory shell">
         <div><p className="acqEyebrow">PRODUCT STORY</p><h2>Less setup. More time with the instrument.</h2></div>
-        <div><p>GuitarTool was created around a simple observation: the tools used before and during practice should not become another source of interruption. Tuning, timekeeping and chord lookup belong in one dependable flow, without advertising, feeds or a login wall.</p><p>Core tools work offline and the app contains no third-party analytics SDKs. Microphone audio is used only for live pitch analysis on the device; it is not saved or uploaded. All nine themes are bundled for offline use, and the app does not collect usage analytics.</p></div>
+        <div><p>GuitarTool was created around a simple observation: the tools used before and during practice should not become another source of interruption. Tuning, timekeeping and chord lookup belong in one dependable flow, without advertising, feeds or a login wall.</p><p>Core tools work offline and the app contains no third-party analytics SDKs. Microphone audio is used only for live pitch analysis on the device; it is not saved or uploaded. The four basic looks are free. Artwork for the five paid themes is bundled, so purchased themes work offline. The app does not collect usage analytics.</p></div>
       </section>
 
       <section className="assetSection shell">

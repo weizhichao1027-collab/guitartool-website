@@ -53,8 +53,8 @@ const features = [
 ] as const;
 
 const faqs = [
-  ["需要联网或注册账号吗？", "不需要。调音、节拍器、和弦库和主题展厅中的九套主题都随 App 提供，可离线使用，也无需注册账号。"],
-  ["五套完整主题是免费的吗？", "是的。1.1.0 将五套完整主题内置在 App 中并免费开放；原有四种基础外观也继续免费可见。主题无需购买或下载，离线即可选择。"],
+  ["需要联网或注册账号吗？", "调音、节拍器、和弦库以及四款基础主题可离线使用，无需注册账号。五套完整主题素材也已内置，购买解锁后可离线使用；购买或恢复购买可能需要联网。"],
+  ["五套完整主题如何购买？", "五套完整主题仍分别通过 App Store 应用内购买解锁。1.1.0 已将素材内置，无需连接主题后端或另行下载；原有四款基础主题保持免费可见。"],
   ["调音器会保存我的声音吗？", "不会。麦克风音频只用于设备端实时音高检测，不会保存为文件，也不会上传到任何服务器。"],
   ["支持哪些设备？", "支持 iPhone 与 iPad 自适应界面，附带 Apple Watch 节拍器和三种尺寸的主屏幕交互式小组件；Watch 落腕或屏幕变暗后声音节拍仍可继续。"],
   ["支持尤克里里吗？", "支持。调音器提供 GCEA 模式，和弦库也包含完整的尤克里里和弦名称与多种指法。"],
@@ -127,7 +127,7 @@ export default function Home() {
 
       <section className="ticker" aria-label="主要功能">
         <div>
-          <span>GUITAR</span><i>✦</i><span>UKULELE</span><i>✦</i><span>TUNER</span><i>✦</i><span>METRONOME</span><i>✦</i><span>CHORDS</span><i>✦</i><span>FREE THEMES</span>
+          <span>GUITAR</span><i>✦</i><span>UKULELE</span><i>✦</i><span>TUNER</span><i>✦</i><span>METRONOME</span><i>✦</i><span>CHORDS</span><i>✦</i><span>BASIC THEMES</span>
         </div>
       </section>
 
@@ -203,14 +203,14 @@ export default function Home() {
           <article className="extraCard themeCard">
             <div className="extraText">
               <p className="cardLabel">主题展厅 · 1.1.0 即将推出</p>
-              <h3>五套内置免费主题，<br />让整套练习界面换一种性格。</h3>
-              <p>1.1.0 将晨雾琴房、月面电台、纸上乐队、口袋合成器与黑胶夜场五套完整主题内置于 App，全部免费开放。它们会联动改变调音器、节拍器、和弦库与分享卡，离线即可选用；原有四种基础外观也继续可见。</p>
-              <div className="swatches" aria-label="原有四种免费基础外观；主题展厅另有五套内置免费完整主题">
+              <h3>五套内置付费主题，<br />让整套练习界面换一种性格。</h3>
+              <p>1.1.0 将晨雾琴房、月面电台、纸上乐队、口袋合成器与黑胶夜场五套完整主题素材内置于 App，各套仍需单独购买。它们会联动改变调音器、节拍器、和弦库与分享卡；购买后无需下载素材，可离线使用。原有四款基础主题继续免费可见。</p>
+              <div className="swatches" aria-label="原有四款免费基础主题；主题展厅另有五套内置付费完整主题">
                 <span className="day" /><span className="night" /><span className="pine" /><span className="graphite" />
-                <b>5 FREE THEMES</b>
+                <b>5 PAID THEMES</b>
               </div>
             </div>
-            <Image src={assetPath("/themes.webp")} alt="GuitarTool 原有四种免费基础外观；1.1.0 另提供五套内置免费完整主题" width={833} height={1800} sizes="(max-width: 700px) 86vw, 460px" />
+            <Image src={assetPath("/themes.webp")} alt="GuitarTool 原有四款免费基础主题；1.1.0 另内置五套付费完整主题" width={833} height={1800} sizes="(max-width: 700px) 86vw, 460px" />
           </article>
           <article className="extraCard widgetCard">
             <div className="extraText">
@@ -222,8 +222,8 @@ export default function Home() {
           </article>
         </div>
         <div className="updatePromise">
-          <span>即将推出 · 1.1.0 · BUILD 14</span>
-          <p><strong>原有四种基础外观继续可见，五套完整主题新增为内置免费内容。</strong> 主题展厅的选择入口保持不变，九套主题都可离线使用，无需购买或下载。调音器与多设备稳定性也同步提升。</p>
+          <span>即将推出 · 1.1.0</span>
+          <p><strong>原有四款基础主题继续免费可见，五套完整付费主题的素材改为内置。</strong> 主题展厅的选择入口保持不变；五套完整主题仍单独购买，购买后无需下载素材即可离线使用。调音器与多设备稳定性也同步提升。</p>
           <b aria-hidden="true">↗</b>
         </div>
       </section>
@@ -250,7 +250,7 @@ export default function Home() {
             <h2>你的练习声音，<br /><em>只留在你的设备上。</em></h2>
           </div>
           <div className="privacyCopy">
-            <p>GuitarTool 不出售个人信息，也不把信息用于广告或追踪。调音器音频只在设备上实时处理；九套主题都随 App 提供，离线即可选用；App 不采集功能使用分析数据。</p>
+            <p>GuitarTool 不出售个人信息，也不把信息用于广告或追踪。调音器音频只在设备上实时处理；四款基础主题免费，五套完整主题素材内置且购买后可离线使用；App 不采集功能使用分析数据。</p>
             <ul>
               <li><b>01</b><span><strong>无需账户</strong>没有注册、登录或云端个人资料。</span></li>
               <li><b>02</b><span><strong>音频不上传</strong>不保存录音，不发送到开发者或第三方。</span></li>
