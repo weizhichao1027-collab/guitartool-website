@@ -1,13 +1,12 @@
 import Image from "next/image";
 import { SiteLink as Link } from "@/app/components/SiteLink";
 import { JsonLd } from "@/app/components/JsonLd";
-import { APP_STORE_LINKS, absoluteUrl, supportedLanguageCodes } from "@/app/lib/site";
+import { APP_STORE_LINKS, absoluteUrl, assetPath, supportedLanguageCodes } from "@/app/lib/site";
 
 const appStoreUrl = APP_STORE_LINKS.home;
 const privacyUrl = "https://weizhichao1027-collab.github.io/GuitarTool-Privacy/";
 const githubUrl = "https://github.com/weizhichao1027-collab/guitartool-website";
 const basePath = process.env.GITHUB_PAGES === "true" ? "/guitartool-website" : "";
-const assetPath = (path: string) => `${basePath}${path}`;
 
 const features = [
   {
