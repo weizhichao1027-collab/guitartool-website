@@ -77,8 +77,8 @@ const features = [
 ] as const;
 
 const faqs = [
-  ["Do I need an internet connection or account?", "The tuner, metronome, chord libraries and other core tools need no connection or account. The Theme Gallery connects while you browse, purchase or download; downloaded themes work offline."],
-  ["Are the five complete themes free?", "All practice features are free; only optional complete visual themes are paid. Each Theme Gallery design is a separate non-consumable, one-time App Store purchase. Preview every supported page before buying, unlock that theme permanently with no subscription, then use it offline after download. More paid themes will be added over time."],
+  ["Do I need an internet connection or account?", "No. The tuner, metronome, chord libraries and all nine themes are included in the app and work offline, without an account."],
+  ["Are the five complete themes free?", "Yes. Version 1.1.0 includes all five complete themes in the app for free. The four original basic looks remain visible and free. You can choose any of the nine themes offline, with no purchase or download."],
   ["Does the tuner save my audio?", "Never. Microphone audio is used only for live, on-device pitch detection. It is not saved as a file or uploaded to a server."],
   ["Which devices are supported?", "GuitarTool adapts to iPhone and iPad, and includes an Apple Watch metronome plus three sizes of interactive Home Screen widgets. Watch audio can continue when the wrist lowers or the display dims."],
   ["Does it support ukulele?", "Yes. The tuner includes GCEA modes, and the chord library includes a complete set of ukulele chord names and multiple fingerings."],
@@ -176,15 +176,15 @@ export default function EnglishHome() {
         <div className="sectionHeading compact"><p className="eyebrow"><span /> Across your devices · themes & widgets</p><h2>Practice should fit you,<br />not the other way around.</h2></div>
         <div className="extraGrid">
           <article className="extraCard themeCard">
-            <div className="extraText"><p className="cardLabel">Theme Gallery · Coming in 1.1.0</p><h3>Five complete premium themes.<br />One practice app, five distinct worlds.</h3><p>All practice features are free; only optional complete visual themes are paid. Morning Mist Studio, Lunar Radio, Paper Ensemble, Pocket Synth and Vinyl Afterhours transform the tuner, metronome, chord library and share cards. Preview first; each is a separate one-time App Store purchase with permanent unlock and no subscription. Downloaded themes work offline, and more themes will be added over time. The four original basic looks remain included for free.</p><div className="swatches" aria-label="Four included basic looks; five additional premium complete themes in the Theme Gallery"><span className="day" /><span className="night" /><span className="pine" /><span className="graphite" /><b>5 PREMIUM THEMES</b></div></div>
-            <Image src={assetPath("/en-themes.webp")} alt="GuitarTool's four included basic looks; version 1.1.0 adds five premium complete themes" width={833} height={1800} sizes="(max-width: 700px) 86vw, 460px" />
+            <div className="extraText"><p className="cardLabel">Theme Gallery · Coming in 1.1.0</p><h3>Five complete free themes.<br />One practice app, five distinct worlds.</h3><p>Version 1.1.0 includes Morning Mist Studio, Lunar Radio, Paper Ensemble, Pocket Synth and Vinyl Afterhours for free. Each design transforms the tuner, metronome, chord library and share cards, and works offline without a purchase or download. The four original basic looks remain visible and free.</p><div className="swatches" aria-label="Four included basic looks and five additional free complete themes in the Theme Gallery"><span className="day" /><span className="night" /><span className="pine" /><span className="graphite" /><b>5 FREE THEMES</b></div></div>
+            <Image src={assetPath("/en-themes.webp")} alt="GuitarTool's four included basic looks; version 1.1.0 adds five free complete themes" width={833} height={1800} sizes="(max-width: 700px) 86vw, 460px" />
           </article>
           <article className="extraCard widgetCard">
             <div className="extraText"><p className="cardLabel">Home Screen widgets</p><h3>Keep the beat<br />without opening the app.</h3><p>Small, medium and large. Change tempo and time signature, play, pause or tap in a tempo—right from your Home Screen.</p></div>
             <Image src={assetPath("/en-widgets.webp")} alt="Three GuitarTool metronome widget sizes in English" width={833} height={1800} sizes="(max-width: 700px) 86vw, 460px" />
           </article>
         </div>
-        <div className="updatePromise"><span>COMING SOON · VERSION 1.1.0 · BUILD 13</span><p><strong>All practice features are free; only optional complete visual themes are paid.</strong> The Theme Gallery becomes a defining part of GuitarTool: five premium complete themes transform the tuner, metronome, chord library and share cards. Preview every page before buying; each theme is a separate one-time purchase with permanent unlock and no subscription. Downloaded themes work offline, more are coming, and tuner and multi-device reliability are improved too.</p><b aria-hidden="true">↗</b></div>
+        <div className="updatePromise"><span>COMING SOON · VERSION 1.1.0 · BUILD 14</span><p><strong>The four original looks stay visible, and five complete themes are now included for free.</strong> The Theme Gallery keeps its selection entry, and all nine themes work offline with no purchase or download. Tuner and multi-device reliability are improved too.</p><b aria-hidden="true">↗</b></div>
       </section>
 
       <section className="devices sectionPad" id="devices">
@@ -198,7 +198,7 @@ export default function EnglishHome() {
         <div className="privacyGlow" />
         <div className="shell privacyGrid">
           <div><p className="eyebrow inverted"><span /> Privacy by design</p><h2>Your practice audio<br /><em>stays on your device.</em></h2></div>
-          <div className="privacyCopy"><p>GuitarTool does not sell personal information or use it for advertising or tracking. Tuner audio is processed only on your device. The Theme Gallery connects only when used, and purchases are handled by Apple through StoreKit.</p><ul><li><b>01</b><span><strong>No account</strong>No registration, sign-in or cloud profile.</span></li><li><b>02</b><span><strong>No audio uploads</strong>No recordings saved or sent to us or a third party.</span></li><li><b>03</b><span><strong>No ads or tracking</strong>No advertising, analytics or third-party tracking SDKs.</span></li></ul><a className="lightButton" href={privacyUrl}>Read the full privacy policy <span>↗</span></a></div>
+          <div className="privacyCopy"><p>GuitarTool does not sell personal information or use it for advertising or tracking. Tuner audio is processed only on your device. All nine themes are included for offline use, and the app does not collect usage analytics.</p><ul><li><b>01</b><span><strong>No account</strong>No registration, sign-in or cloud profile.</span></li><li><b>02</b><span><strong>No audio uploads</strong>No recordings saved or sent to us or a third party.</span></li><li><b>03</b><span><strong>No ads or tracking</strong>No advertising, analytics or third-party tracking SDKs.</span></li></ul><a className="lightButton" href={privacyUrl}>Read the full privacy policy <span>↗</span></a></div>
         </div>
       </section>
 
