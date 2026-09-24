@@ -135,7 +135,7 @@ export default function EnglishHome() {
         </div>
       </section>
 
-      <section className="ticker" aria-label="Key features"><div><span>GUITAR</span><i>✦</i><span>UKULELE</span><i>✦</i><span>TUNER</span><i>✦</i><span>METRONOME</span><i>✦</i><span>CHORDS</span><i>✦</i><span>PREMIUM THEMES</span></div></section>
+      <section className="ticker" aria-label="Key features"><div><span>GUITAR</span><i>✦</i><span>UKULELE</span><i>✦</i><span>TUNER</span><i>✦</i><span>METRONOME</span><i>✦</i><span>CHORDS</span><i>✦</i><span>FREE THEMES</span></div></section>
 
       <section className="manifesto shell sectionPad">
         <div className="sectionIndex">00 / WHY</div>

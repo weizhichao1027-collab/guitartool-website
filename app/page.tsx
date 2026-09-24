@@ -127,7 +127,7 @@ export default function Home() {
 
       <section className="ticker" aria-label="主要功能">
         <div>
-          <span>GUITAR</span><i>✦</i><span>UKULELE</span><i>✦</i><span>TUNER</span><i>✦</i><span>METRONOME</span><i>✦</i><span>CHORDS</span><i>✦</i><span>PREMIUM THEMES</span>
+          <span>GUITAR</span><i>✦</i><span>UKULELE</span><i>✦</i><span>TUNER</span><i>✦</i><span>METRONOME</span><i>✦</i><span>CHORDS</span><i>✦</i><span>FREE THEMES</span>
         </div>
       </section>
 
