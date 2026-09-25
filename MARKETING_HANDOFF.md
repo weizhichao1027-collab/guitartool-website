@@ -1,6 +1,18 @@
 # GuitarTool 市场推广与网站交接
 
-最后更新：2026-09-05
+## 2026-09-25：1.1.0 上架后网站更新
+
+- 产品状态：用户确认 1.1.0 已上架；本轮按 1.1.0 / 六套独立非消耗型付费主题更新公开内容。Apple 中国区公开 Lookup 核对 `version=1.1.0`、`currentVersionReleaseDate=2026-09-25T08:25:07Z`（北京时间 16:25:07）。公开搜索摘要仍可能缓存 1.0.8，不能据此回退站点文案。准确商店页面为 [GuitarTool](https://apps.apple.com/app/id6761914163)。
+- 页面：中文与英文首页、其余 11 种语言首页、双语技术支持页、Press Kit、闪光灯节拍专题的隐私摘要、双语 README 已同步。旧 1.0.8 新增功能保留为历史版本说明；1.1.0 的“即将推出 / 五套”预告已撤下。
+- 视觉：从归档的真实本地化 App 截图生成 `public/luthier-atlas.webp` 与 `public/en-luthier-atlas.webp`（833 × 1809），用于中英文首页，英文图也进入 Press Kit 与 image sitemap。旧 36 秒和 24 秒视频没有展示 1.1.0 主题，仍作为核心功能历史素材，并在 Press Kit 明示范围。
+- 技术支持：增加“购买后主题仍未解锁”中英文排障，说明六笔独立购买、使用同一 Apple 账户、联网后从主题展厅“恢复购买”，且不要求用户发送付款资料。
+- SEO/GEO：版本 `SoftwareApplication.softwareVersion` 统一为 1.1.0；网页标题、描述、OG/Twitter、FAQ、图片 alt、图片 sitemap 与主 sitemap 更新日期保持一致。公开主站继续为 canonical；13 语言 `hreflang`、可抓取正文、robots 和现有结构化数据保留。Google 官方说明生成式搜索仍以常规 SEO、可索引的可靠正文和与页面一致的结构化数据为基础，不存在专用 GEO schema。参考 [Google Search Central](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide)。
+- 本地验证：`npm ci --offline`、`npm run lint`、`npx tsc --noEmit`、4 项渠道链接测试、`npm run build:pages`、`npm run audit:pages` 均通过；静态导出 188 个 HTML，239 个本地目标、199 个外部目标通过链接审计。
+- 部署与复核：以本节下方最新部署记录为准；旧的 2026-09-09 与 2026-09-05 记录是历史快照。发布后应核对 GitHub Pages Actions、首页、`/en/`、`/support/`、`/en/support/`、`/press/`、`sitemap.xml` 与 `image-sitemap.xml`，并在 Search Console 观察抓取与索引，不能把 sitemap 提交当成已收录。
+
+> 历史记录（2026-09-09）：独立仓库 HEAD `246424f` 当时将网站内容更新为 1.1.0 预告与五套付费主题；公开 App 当时仍为 1.0.8。此段及下文 9 月 5 日的渠道数字与 Sites 状态仅供追溯，以 2026-09-25 新节为准。
+
+最后更新：2026-09-25
 
 本文件是 `marketing-site` 独立仓库的运营与技术交接入口。App 工程发布、Watch、Widget 和主题架构的完整记录见上级目录 `APP交接文档.md`；本文件只维护营销页面、免费推广和搜索收录事实。
 

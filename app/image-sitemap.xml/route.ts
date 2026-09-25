@@ -26,6 +26,8 @@ const localizedChordCards: ImageEntry[] = [
 ];
 
 const editorialImages: ImageEntry[] = [
+  { page: "/", image: "/luthier-atlas.webp", title: "GuitarTool 琴匠测绘主题", caption: "1.1.0 已上架的琴匠测绘完整主题节拍器界面。" },
+  { page: "/en/", image: "/en-luthier-atlas.webp", title: "GuitarTool Luthier Atlas theme", caption: "Luthier Atlas complete theme metronome interface in version 1.1.0." },
   { page: "/guides/share-chord-diagrams/", image: "/chord-card-share.webp", title: "保存与分享和弦图", caption: "GuitarTool 真实和弦卡片分享流程。" },
   { page: "/en/guides/share-chord-diagrams/", image: "/en-chord-card-share.webp", title: "Save and share chord diagrams", caption: "The real GuitarTool chord-card sharing flow." },
   { page: "/guides/chord-diagrams-for-students/", image: "/chord-card-share.webp", title: "把和弦指法图发给学生", caption: "选择准确把位、检查卡片并把图片交给学生。" },

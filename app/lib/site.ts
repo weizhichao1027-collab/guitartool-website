@@ -1,4 +1,5 @@
 export const APP_NAME = "GuitarTool";
+export const RELEASE_VERSION = "1.1.0";
 export const APP_STORE_URL = "https://apps.apple.com/app/id6761914163";
 const APP_STORE_PROVIDER_TOKEN = "128747267";
 

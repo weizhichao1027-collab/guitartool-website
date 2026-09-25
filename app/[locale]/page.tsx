@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import { AcquisitionFooter, AcquisitionHeader } from "@/app/components/AcquisitionChrome";
 import { JsonLd } from "@/app/components/JsonLd";
 import { getLocalePage, localePages } from "@/app/lib/locales";
-import { APP_STORE_LINKS, APP_STORE_URL, absoluteUrl, assetPath, localeAlternates } from "@/app/lib/site";
+import { APP_STORE_LINKS, APP_STORE_URL, RELEASE_VERSION, absoluteUrl, assetPath, localeAlternates } from "@/app/lib/site";
 import { getTunerLocale } from "@/app/lib/tuner-locales";
 
 const chordCardPreviewByLocale: Record<string, string> = {
@@ -50,7 +50,7 @@ export default async function LocalizedHome({ params }: { params: Promise<{ loca
   const previewImage = chordCardPreviewByLocale[locale] ?? "/en-chord-card-share.webp";
   return (
     <main className="acqPage localePage" lang={page.htmlLang} dir={page.dir}>
-      <JsonLd data={{ "@context": "https://schema.org", "@type": "SoftwareApplication", name: "GuitarTool", softwareVersion: "1.0.8", description: page.description, url: canonical, downloadUrl: APP_STORE_URL, applicationCategory: "MusicApplication", operatingSystem: "iOS, iPadOS, watchOS", inLanguage: page.htmlLang, offers: { "@type": "Offer", price: "0", priceCurrency: "USD" } }} />
+      <JsonLd data={{ "@context": "https://schema.org", "@type": "SoftwareApplication", name: "GuitarTool", softwareVersion: RELEASE_VERSION, description: page.description, url: canonical, downloadUrl: APP_STORE_URL, applicationCategory: "MusicApplication", operatingSystem: "iOS, iPadOS, watchOS", inLanguage: page.htmlLang, offers: { "@type": "Offer", price: "0", priceCurrency: "USD" } }} />
       <AcquisitionHeader locale={locale} />
       <section className="localeHero shell">
         <div>

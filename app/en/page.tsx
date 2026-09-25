@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { SiteLink as Link } from "@/app/components/SiteLink";
 import { JsonLd } from "@/app/components/JsonLd";
-import { APP_STORE_LINKS, absoluteUrl, assetPath, localeAlternates, supportedLanguageCodes } from "@/app/lib/site";
+import { APP_STORE_LINKS, RELEASE_VERSION, absoluteUrl, assetPath, localeAlternates, supportedLanguageCodes } from "@/app/lib/site";
 
 const appStoreUrl = APP_STORE_LINKS.home;
 const privacyUrl = "https://weizhichao1027-collab.github.io/GuitarTool-Privacy/";
@@ -11,11 +11,11 @@ const basePath = process.env.GITHUB_PAGES === "true" ? "/guitartool-website" : "
 
 export const metadata: Metadata = {
   title: "GuitarTool | Tuner, Metronome & Chords",
-  description: "A focused, offline practice toolkit for guitar and ukulele: precise tuning, flexible rhythm training, and a deep chord library.",
+  description: "GuitarTool 1.1.0 is available: free offline tuning, metronome and chord tools for guitar and ukulele, plus six separately purchased complete themes.",
   alternates: { canonical: absoluteUrl("/en/"), languages: localeAlternates },
   openGraph: {
     title: "GuitarTool | Leave room for practice.",
-    description: "Tuner, metronome and chords in one private, offline practice toolkit.",
+    description: "Free offline tuner, metronome and chord tools, with six optional complete themes in GuitarTool 1.1.0.",
     type: "website",
     images: [{
       url: absoluteUrl("/og.png"),
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "GuitarTool | Leave room for practice.",
-    description: "Tuner, metronome and chords in one private, offline practice toolkit.",
+    description: "Free offline tuner, metronome and chord tools, with six optional complete themes in GuitarTool 1.1.0.",
     images: [absoluteUrl("/og.png")],
   },
 };
@@ -76,8 +76,8 @@ const features = [
 ] as const;
 
 const faqs = [
-  ["Do I need an internet connection or account?", "The tuner, metronome, chord libraries and four basic looks work offline without an account. Five complete themes are bundled too and work offline after purchase. Purchasing or restoring may need a connection."],
-  ["How do I unlock the five complete themes?", "Each complete theme remains a separate App Store in-app purchase. Version 1.1.0 bundles their artwork, so purchased themes need no separate asset download or theme backend. The four original basic looks remain free."],
+  ["Do I need an internet connection or account?", "The tuner, metronome, chord libraries and four basic looks work offline without an account. Six complete themes are bundled too and work offline after purchase. Purchasing or restoring may need a connection."],
+  ["How do I unlock the six complete themes?", "Morning Mist Studio, Lunar Radio, Paper Ensemble, Pocket Synth, Vinyl Afterhours and Luthier Atlas are separate App Store in-app purchases. Version 1.1.0 bundles their artwork, so purchased themes need no separate asset download or theme backend. The four original basic looks remain free."],
   ["Does the tuner save my audio?", "Never. Microphone audio is used only for live, on-device pitch detection. It is not saved as a file or uploaded to a server."],
   ["Which devices are supported?", "GuitarTool adapts to iPhone and iPad, and includes an Apple Watch metronome plus three sizes of interactive Home Screen widgets. Watch audio can continue when the wrist lowers or the display dims."],
   ["Does it support ukulele?", "Yes. The tuner includes GCEA modes, and the chord library includes a complete set of ukulele chord names and multiple fingerings."],
@@ -89,7 +89,7 @@ export default function EnglishHome() {
   return (
     <main lang="en">
       <JsonLd data={[
-        { "@context": "https://schema.org", "@type": "SoftwareApplication", name: "GuitarTool", softwareVersion: "1.0.8", description: "Offline core practice tools for guitar and ukulele, with chord cards, Apple Watch and interactive Home Screen widgets.", url: absoluteUrl("/en/"), downloadUrl: appStoreUrl, applicationCategory: "MusicApplication", operatingSystem: "iOS, iPadOS, watchOS", inLanguage: supportedLanguageCodes, offers: { "@type": "Offer", price: "0", priceCurrency: "USD" }, featureList: ["Real-time string instrument tuner", "20–500 BPM metronome", "Rear-flash beat cues for all main beats or accents only, with three intensities", "19,244 guitar and ukulele fingerings", "Preview, save and share chord cards", "Apple Watch metronome with background audio", "Interactive Home Screen widgets"] },
+        { "@context": "https://schema.org", "@type": "SoftwareApplication", name: "GuitarTool", softwareVersion: RELEASE_VERSION, description: "Free offline tuning, metronome and chord tools for guitar and ukulele, with six complete themes sold separately as in-app purchases.", url: absoluteUrl("/en/"), downloadUrl: appStoreUrl, applicationCategory: "MusicApplication", operatingSystem: "iOS, iPadOS, watchOS", inLanguage: supportedLanguageCodes, offers: { "@type": "Offer", price: "0", priceCurrency: "USD" }, featureList: ["Real-time string instrument tuner", "20–500 BPM metronome", "Rear-flash beat cues for all main beats or accents only, with three intensities", "19,244 guitar and ukulele fingerings", "Preview, save and share chord cards", "Apple Watch metronome with background audio", "Interactive Home Screen widgets", "Six separately purchased complete visual themes"] },
         { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqs.map(([question, answer]) => ({ "@type": "Question", name: question, acceptedAnswer: { "@type": "Answer", text: answer } })) },
         { "@context": "https://schema.org", "@type": "VideoObject", name: "GuitarTool full introduction (landscape)", description: "A 36-second introduction to GuitarTool's tuner, metronome, chord cards, widgets and multi-device experience.", thumbnailUrl: absoluteUrl("/og.png"), uploadDate: "2026-08-28", duration: "PT36S", contentUrl: absoluteUrl("/media-kit/video/GuitarTool-Full-Intro-en-854x480.mp4") },
         { "@context": "https://schema.org", "@type": "VideoObject", name: "GuitarTool full introduction (portrait)", description: "A mobile-first 36-second English introduction to GuitarTool.", thumbnailUrl: absoluteUrl("/media-kit/social/guitartool-chord-cards-en-1080x1350.png"), uploadDate: "2026-08-28", duration: "PT36S", contentUrl: absoluteUrl("/media-kit/video/GuitarTool-Full-Intro-en-480x854.mp4") },
@@ -175,15 +175,15 @@ export default function EnglishHome() {
         <div className="sectionHeading compact"><p className="eyebrow"><span /> Across your devices · themes & widgets</p><h2>Practice should fit you,<br />not the other way around.</h2></div>
         <div className="extraGrid">
           <article className="extraCard themeCard">
-            <div className="extraText"><p className="cardLabel">Theme Gallery · Coming in 1.1.0</p><h3>Five complete paid themes.<br />One practice app, five distinct worlds.</h3><p>Version 1.1.0 bundles Morning Mist Studio, Lunar Radio, Paper Ensemble, Pocket Synth and Vinyl Afterhours. Each remains a separate in-app purchase. Purchased themes work offline without an asset download; the four basic looks remain visible and free.</p><div className="swatches" aria-label="Four free basic looks and five paid complete themes in the Theme Gallery"><span className="day" /><span className="night" /><span className="pine" /><span className="graphite" /><b>5 PAID THEMES</b></div></div>
-            <Image src={assetPath("/en-themes.webp")} alt="GuitarTool's four basic looks and five paid complete themes bundled in version 1.1.0" width={833} height={1800} sizes="(max-width: 700px) 86vw, 460px" />
+            <div className="extraText"><p className="cardLabel">Theme Gallery · Available in 1.1.0</p><h3>Six complete paid themes.<br />One practice app, six distinct worlds.</h3><p>Version 1.1.0 includes Morning Mist Studio, Lunar Radio, Paper Ensemble, Pocket Synth, Vinyl Afterhours and Luthier Atlas. Each remains a separate in-app purchase. Purchased themes work offline without an asset download; the four basic looks remain visible and free.</p><div className="swatches" aria-label="Four free basic looks and six paid complete themes in the Theme Gallery"><span className="day" /><span className="night" /><span className="pine" /><span className="graphite" /><b>6 PAID THEMES</b></div></div>
+            <Image src={assetPath("/en-luthier-atlas.webp")} alt="GuitarTool 1.1.0 Luthier Atlas complete theme metronome screen" width={833} height={1809} sizes="(max-width: 700px) 86vw, 460px" />
           </article>
           <article className="extraCard widgetCard">
             <div className="extraText"><p className="cardLabel">Home Screen widgets</p><h3>Keep the beat<br />without opening the app.</h3><p>Small, medium and large. Change tempo and time signature, play, pause or tap in a tempo—right from your Home Screen.</p></div>
             <Image src={assetPath("/en-widgets.webp")} alt="Three GuitarTool metronome widget sizes in English" width={833} height={1800} sizes="(max-width: 700px) 86vw, 460px" />
           </article>
         </div>
-        <div className="updatePromise"><span>COMING SOON · VERSION 1.1.0</span><p><strong>The four basic looks stay free and visible; artwork for five paid complete themes is now bundled.</strong> The Theme Gallery keeps its selection entry. Each complete theme still needs a separate purchase, then works offline without an asset download. Tuner and multi-device reliability are improved too.</p><b aria-hidden="true">↗</b></div>
+        <div className="updatePromise"><span>AVAILABLE NOW · VERSION 1.1.0</span><p><strong>The four basic looks stay free and visible; artwork for six paid complete themes is now bundled.</strong> The Theme Gallery keeps its selection entry. Each complete theme still needs a separate purchase, then works offline without an asset download. Tuner and multi-device reliability are improved too.</p><b aria-hidden="true">↗</b></div>
       </section>
 
       <section className="devices sectionPad" id="devices">
@@ -197,7 +197,7 @@ export default function EnglishHome() {
         <div className="privacyGlow" />
         <div className="shell privacyGrid">
           <div><p className="eyebrow inverted"><span /> Privacy by design</p><h2>Your practice audio<br /><em>stays on your device.</em></h2></div>
-          <div className="privacyCopy"><p>GuitarTool does not sell personal information or use it for advertising or tracking. Tuner audio is processed only on your device. The four basic looks are free, and the five paid complete themes work offline after purchase. The app does not collect usage analytics.</p><ul><li><b>01</b><span><strong>No account</strong>No registration, sign-in or cloud profile.</span></li><li><b>02</b><span><strong>No audio uploads</strong>No recordings saved or sent to us or a third party.</span></li><li><b>03</b><span><strong>No ads or tracking</strong>No advertising, analytics or third-party tracking SDKs.</span></li></ul><a className="lightButton" href={privacyUrl}>Read the full privacy policy <span>↗</span></a></div>
+          <div className="privacyCopy"><p>GuitarTool does not sell personal information or use it for advertising or tracking. Tuner audio is processed only on your device. The four basic looks are free, and the six paid complete themes work offline after purchase. The app does not collect usage analytics.</p><ul><li><b>01</b><span><strong>No account</strong>No registration, sign-in or cloud profile.</span></li><li><b>02</b><span><strong>No audio uploads</strong>No recordings saved or sent to us or a third party.</span></li><li><b>03</b><span><strong>No ads or tracking</strong>No advertising, analytics or third-party tracking SDKs.</span></li></ul><a className="lightButton" href={privacyUrl}>Read the full privacy policy <span>↗</span></a></div>
         </div>
       </section>
 

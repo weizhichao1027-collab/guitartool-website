@@ -13,7 +13,7 @@ Tune your instrument, set a beat, find the exact chord shape, then play. GuitarT
 - **Share the exact chord:** 19,244 guitar and ukulele fingerings, multiple voicings, audio previews and chord cards that can be saved or sent as ordinary images.
 - **Keep practice close:** adaptive iPhone/iPad layouts, Apple Watch audible beats, interactive widgets and 13 languages.
 
-Version 1.1.0 bundles five complete Theme Gallery designs: Morning Mist Studio, Lunar Radio, Paper Ensemble, Pocket Synth and Vinyl Afterhours. Each remains a separate App Store in-app purchase. The four basic looks remain free and visible. Purchased themes work offline without a separate asset download. Version 1.0.8 introduced rear-flash beat cues on compatible iPhones. [Flash Beat guide](https://weizhichao1027-collab.github.io/guitartool-website/en/guides/visual-metronome/?utm_source=github).
+Version 1.1.0 is available and bundles six complete Theme Gallery designs: Morning Mist Studio, Lunar Radio, Paper Ensemble, Pocket Synth, Vinyl Afterhours and Luthier Atlas. Each remains a separate App Store in-app purchase. The four basic looks remain free and visible. Purchased themes work offline without a separate asset download. Version 1.0.8 introduced rear-flash beat cues on compatible iPhones. [Flash Beat guide](https://weizhichao1027-collab.github.io/guitartool-website/en/guides/visual-metronome/?utm_source=github).
 
 ## Try the free browser tools
 
@@ -23,7 +23,7 @@ Teachers can [send a specific chord shape to a student](https://weizhichao1027-c
 
 ## 中文介绍
 
-GuitarTool（吉他工具）的全部练习功能均免费，核心工具离线可用、无广告、无需账户。调音、节拍训练、和弦查找和指法卡片分享集中在一起，支持 iPhone、iPad、Apple Watch 与主屏幕小组件。即将推出的 1.1.0 会内置主题展厅五套完整付费主题的素材，仍通过 App Store 分别购买；原有四款基础主题保持免费可见。已购主题无需另行下载素材，可离线使用。
+GuitarTool（吉他工具）的全部练习功能均免费，核心工具离线可用、无广告、无需账户。调音、节拍训练、和弦查找和指法卡片分享集中在一起，支持 iPhone、iPad、Apple Watch 与主屏幕小组件。现已上架的 1.1.0 内置主题展厅六套完整付费主题的素材，仍通过 App Store 分别购买；原有四款基础主题保持免费可见。已购主题无需另行下载素材，可离线使用。
 
 [观看 B 站介绍](https://www.bilibili.com/video/BV1bY4d6GEkw/) · [中文支持](https://weizhichao1027-collab.github.io/guitartool-website/support/) · [English support](https://weizhichao1027-collab.github.io/guitartool-website/en/support/) · [Privacy policy](https://weizhichao1027-collab.github.io/GuitarTool-Privacy/)
 
