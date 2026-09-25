@@ -8,7 +8,8 @@
 - 技术支持：增加“购买后主题仍未解锁”中英文排障，说明六笔独立购买、使用同一 Apple 账户、联网后从主题展厅“恢复购买”，且不要求用户发送付款资料。
 - SEO/GEO：版本 `SoftwareApplication.softwareVersion` 统一为 1.1.0；网页标题、描述、OG/Twitter、FAQ、图片 alt、图片 sitemap 与主 sitemap 更新日期保持一致。公开主站继续为 canonical；13 语言 `hreflang`、可抓取正文、robots 和现有结构化数据保留。Google 官方说明生成式搜索仍以常规 SEO、可索引的可靠正文和与页面一致的结构化数据为基础，不存在专用 GEO schema。参考 [Google Search Central](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide)。
 - 本地验证：`npm ci --offline`、`npm run lint`、`npx tsc --noEmit`、4 项渠道链接测试、`npm run build:pages`、`npm run audit:pages` 均通过；静态导出 188 个 HTML，239 个本地目标、199 个外部目标通过链接审计。
-- 部署与复核：以本节下方最新部署记录为准；旧的 2026-09-09 与 2026-09-05 记录是历史快照。发布后应核对 GitHub Pages Actions、首页、`/en/`、`/support/`、`/en/support/`、`/press/`、`sitemap.xml` 与 `image-sitemap.xml`，并在 Search Console 观察抓取与索引，不能把 sitemap 提交当成已收录。
+- 部署与复核：GitHub `main` 为 `f68a70a7961c4780ac43bad091973c8700211841`；[Pages Actions 36158174694](https://github.com/weizhichao1027-collab/guitartool-website/actions/runs/36158174694) 的 build、deploy、notify-search-engines 全部成功，IndexNow 提交 185 个 URL 返回 200。公开首页、`/en/`、双语支持、Press Kit、`robots.txt`、两个 sitemap 和两张新截图均回读成功。隐私仓库 `main` 为 `3b633077cdff0b54f9e9d2c6a50e651d28f7f951`，Pages 构建完成，公开页面已核对 1.1.0 与六套主题。
+- OpenAI Sites：原公开第二部署同步为版本 **21**，来源提交 `290136e88f6fdf6507df85f591184764a9636db0`，部署 `appgdep_6ab6a03097a081918304556b5f1b0594` 状态 `succeeded`。公开首页、英文首页、双语支持、Press Kit 和新截图回读 HTTP 200。Sites 源分支在 GitHub 主站内容上保留独立提交；媒体包、社交图和视频改由 canonical GitHub Pages 提供，避免在 Sites 构建包重复托管。版本 20 因远端构建不支持依赖来源而失败，版本 21 改用从该来源提交本地构建的归档成功发布。Search Console 的重新抓取与收录仍需观察，不能把部署或 IndexNow 成功当成已收录。
 
 > 历史记录（2026-09-09）：独立仓库 HEAD `246424f` 当时将网站内容更新为 1.1.0 预告与五套付费主题；公开 App 当时仍为 1.0.8。此段及下文 9 月 5 日的渠道数字与 Sites 状态仅供追溯，以 2026-09-25 新节为准。
 
@@ -36,12 +37,12 @@
 | --- | --- | --- | --- |
 | GitHub Pages | 面向普通访客与搜索引擎的公开主站、canonical 来源 | https://weizhichao1027-collab.github.io/guitartool-website/ | 公开 |
 | GitHub | 源码、版本历史、Pages 自动部署 | https://github.com/weizhichao1027-collab/guitartool-website | 仓库权限控制 |
-| OpenAI Sites | 第二套生产部署、托管备份/预览 | https://guitartool-studio.weizhichao1027.chatgpt.site | 公开；本轮同步发布 1.0.8 营销内容 |
+| OpenAI Sites | 第二套生产部署、托管备份/预览 | https://guitartool-studio.weizhichao1027.chatgpt.site | 公开；版本 21 已同步 1.1.0 内容 |
 | App Store Connect | App 产品页、三个自定产品页、精选提名 | App ID `6761914163` | Apple 账号权限控制 |
 | Google Search Console | Google 所有权、sitemap、索引请求 | GitHub Pages URL-prefix 资源 | Google 账号权限控制 |
 | IndexNow | 主动通知支持该协议的搜索引擎 | GitHub Actions 自动调用 | 自动 |
 
-没有使用 Vercel、Netlify 或 Cloudflare Pages。对外分享、SEO canonical、App Store 营销网址和技术支持网址均应使用 GitHub Pages。OpenAI Sites 当前虽为公开访问，但不是 canonical，也不作为本轮 App Store URL；以后部署新 Sites 版本前必须重新确认公开发布授权。
+没有使用 Vercel、Netlify 或 Cloudflare Pages。对外分享、SEO canonical、App Store 营销网址和技术支持网址均应使用 GitHub Pages。OpenAI Sites 当前为公开的第二部署，但不是 canonical，也不作为 App Store URL；后续更新应保持其既有公开访问设置。
 
 OpenAI Sites 项目 ID：`appgprj_6a8a503888348191be812170e152a86c`。项目配置位于 `.openai/hosting.json`。
 
@@ -54,7 +55,7 @@ OpenAI Sites 项目 ID：`appgprj_6a8a503888348191be812170e152a86c`。项目配�
 - 高意图练习、教学与工程内容页：52 页，即 26 个主题的中英文版本。
 - 热门和弦目录与详情：吉他 50 页、尤克里里 50 页，共 100 个详情页，另有两个目录页。
 - Press Kit / 媒体资料中心，内含单图下载、13 语言完整素材包、视频预览与深度内容入口。
-- 中英文技术支持页：`/support/` 与 `/en/support/`，覆盖 1.0.8 版本、权限、调音器、节拍器、后置闪光灯节拍、Widget、Apple Watch 和和弦卡片排障。
+- 中英文技术支持页：`/support/` 与 `/en/support/`，覆盖当前 1.1.0、主题恢复购买、权限、调音器、节拍器、后置闪光灯节拍、Widget、Apple Watch 和和弦卡片排障。
 - 13 张本地化“和弦卡片－保存与分享”真实 App Store 预览图；中英文首页、其余 11 个语言首页、双语和弦分享指南与 Press Kit 均使用对应素材。
 - 52 张本地化社交推广图：13 种语言 × 横版、信息流竖版、Story/Reels、视频缩略图四种规格；完整 ZIP 与 CSV/JSON manifest 已进入 Press Kit。
 - 4 支 36 秒完整介绍：GitHub Pages 网页分发版为中英文各一支 854 × 480 横屏与 480 × 854 竖屏，均含音频；中英文首页按屏幕方向自动选择，Press Kit 提供四支在线播放与下载，公开 Media Kit Release `media-kit-1.0.8` 另作下载备份。1080p 原片保留在项目资料归档中，网页压缩版不得覆盖原片。
