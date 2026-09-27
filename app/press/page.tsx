@@ -6,10 +6,10 @@ import { APP_STORE_LINKS, APP_STORE_URL, GITHUB_URL, PRIVACY_URL, RELEASE_VERSIO
 
 export const metadata: Metadata = {
   title: "GuitarTool Press Kit | Product Facts, Images & Contact",
-  description: "Official GuitarTool press kit for the released 1.1.0 Theme Gallery, verified product facts, downloadable visuals and developer contact information.",
+  description: "Official GuitarTool 1.1.1 press kit: Apple Watch tuner, improved tuning and widgets, verified product facts, downloadable visuals and developer contact.",
   alternates: { canonical: absoluteUrl("/press/") },
-  openGraph: { title: "GuitarTool Official Press Kit", description: "Version 1.1.0 Theme Gallery, downloadable visuals and official contact information.", url: absoluteUrl("/press/"), type: "website", images: [{ url: absoluteUrl("/en-chord-card-share.webp"), width: 833, height: 1800, alt: "GuitarTool chord card preview" }] },
-  twitter: { card: "summary_large_image", title: "GuitarTool Official Press Kit", description: "Version 1.1.0 Theme Gallery, verified product facts and downloadable media.", images: [absoluteUrl("/en-chord-card-share.webp")] },
+  openGraph: { title: "GuitarTool Official Press Kit", description: "Version 1.1.1 Apple Watch tuner, downloadable visuals and verified product facts.", url: absoluteUrl("/press/"), type: "website", images: [{ url: absoluteUrl("/en-watch-tuner.jpg"), width: 416, height: 496, alt: "GuitarTool Apple Watch tuner preview" }] },
+  twitter: { card: "summary_large_image", title: "GuitarTool Official Press Kit", description: "Version 1.1.1 Apple Watch tuner, verified facts and downloadable media.", images: [absoluteUrl("/en-watch-tuner.jpg")] },
 };
 
 const assets = [
@@ -20,6 +20,8 @@ const assets = [
   { title: "Chord library", file: "/en-chords.webp", preview: "/en-chords.webp", detail: "WebP · English UI", width: 833, height: 1800 },
   { title: "Chord card preview", file: "/en-chord-card-share.webp", preview: "/en-chord-card-share.webp", detail: "WebP · English UI · save & share flow", width: 833, height: 1800 },
   { title: "Devices", file: "/en-devices.webp", preview: "/en-devices.webp", detail: "WebP · iPhone, iPad & Watch", width: 833, height: 1800 },
+  { title: "Apple Watch tuner · English", file: "/en-watch-tuner.jpg", preview: "/en-watch-tuner.jpg", detail: "JPEG · 1.1.1 App Store preview · English", width: 416, height: 496 },
+  { title: "Apple Watch tuner · Chinese", file: "/zh-watch-tuner.jpg", preview: "/zh-watch-tuner.jpg", detail: "JPEG · 1.1.1 App Store preview · 简体中文", width: 416, height: 496 },
   { title: "Luthier Atlas theme", file: "/en-luthier-atlas.webp", preview: "/en-luthier-atlas.webp", detail: "WebP · English UI · version 1.1.0", width: 833, height: 1809 },
   { title: "Chord cards · English social", file: "/media-kit/social/guitartool-chord-cards-en-1200x630.png", preview: "/media-kit/social/guitartool-chord-cards-en-1200x630.png", detail: "PNG · 1200 × 630 · English", width: 1200, height: 630 },
   { title: "Chord cards · Chinese social", file: "/media-kit/social/guitartool-chord-cards-zh-Hans-1200x630.png", preview: "/media-kit/social/guitartool-chord-cards-zh-Hans-1200x630.png", detail: "PNG · 1200 × 630 · 简体中文", width: 1200, height: 630 },
@@ -35,7 +37,7 @@ const fullVideos = [
 export default function PressKitPage() {
   return (
     <main className="acqPage pressPage" lang="en">
-      <JsonLd data={{ "@context": "https://schema.org", "@type": "SoftwareApplication", name: "GuitarTool", softwareVersion: RELEASE_VERSION, description: "Offline core practice tools for guitar and ukulele, with rear-flash beat cues, shareable chord cards, Apple Watch and Home Screen widgets.", url: absoluteUrl("/"), downloadUrl: APP_STORE_URL, applicationCategory: "MusicApplication", operatingSystem: "iOS, iPadOS, watchOS", featureList: ["Real-time tuner for seven instrument families", "20–500 BPM practice metronome", "Rear-flash beat cues for all main beats or accents only, with three intensities", "19,244 guitar and ukulele fingerings", "Chord-card preview, Photos save and system sharing", "Apple Watch metronome with background audio", "Three interactive Home Screen widget sizes", "13 interface languages"], author: { "@type": "Person", name: "Zhichao Wei" }, offers: { "@type": "Offer", price: "0", priceCurrency: "USD" } }} />
+      <JsonLd data={{ "@context": "https://schema.org", "@type": "SoftwareApplication", name: "GuitarTool", softwareVersion: RELEASE_VERSION, description: "Offline core practice tools for guitar and ukulele, with Apple Watch tuning, rear-flash beat cues, shareable chord cards and Home Screen widgets.", url: absoluteUrl("/"), downloadUrl: APP_STORE_URL, applicationCategory: "MusicApplication", operatingSystem: "iOS, iPadOS, watchOS", featureList: ["Real-time tuner for seven instrument families", "Apple Watch guitar, ukulele, bass and chromatic tuner", "20–500 BPM practice metronome", "Rear-flash beat cues for all main beats or accents only, with three intensities", "19,244 guitar and ukulele fingerings", "Chord-card preview, Photos save and system sharing", "Apple Watch metronome with background audio", "Large Home Screen widget subdivisions and Swing", "13 interface languages"], author: { "@type": "Person", name: "Zhichao Wei" }, offers: { "@type": "Offer", price: "0", priceCurrency: "USD" } }} />
       <JsonLd data={[
         ...fullVideos.map((video) => ({ "@context": "https://schema.org", "@type": "VideoObject", name: video.title, description: "A 36-second full introduction to GuitarTool's tuner, metronome, chord cards, widgets and multi-device experience.", thumbnailUrl: absoluteUrl("/media-kit/social/guitartool-chord-cards-en-1200x630.png"), uploadDate: "2026-08-28", duration: "PT36S", contentUrl: absoluteUrl(video.file) })),
         { "@context": "https://schema.org", "@type": "VideoObject", name: "GuitarTool 24-second social preview", description: "A concise vertical preview of GuitarTool's offline metronome, tuner, chord library and shareable chord cards.", thumbnailUrl: absoluteUrl("/media-kit/social/guitartool-chord-cards-en-1200x630.png"), uploadDate: "2026-08-27", duration: "PT24S", contentUrl: absoluteUrl("/media-kit/video/GuitarTool-Social-Preview-en-1080x1920.mp4") },
@@ -63,6 +65,11 @@ export default function PressKitPage() {
 
       <section className="pressNumbers shell">
         <div><strong>20–500</strong><span>BPM range</span></div><div><strong>19,244</strong><span>guitar & ukulele fingerings</span></div><div><strong>7</strong><span>tuner instrument families</span></div><div><strong>13</strong><span>interface languages</span></div>
+      </section>
+
+      <section className="pressStory shell">
+        <div><p className="acqEyebrow">NEW IN VERSION 1.1.1</p><h2>Tune from the wrist, keep the note visible and shape the beat from your Home Screen.</h2></div>
+        <div><p>GuitarTool 1.1.1 adds an Apple Watch tuner with guitar, ukulele, bass and chromatic modes, note and cents feedback, and an in-tune haptic cue. Listening begins only after Start Tuning and ends when stopped, when the page changes or when the app is left; audio stays on the watch. The iPhone and iPad tuner now tracks notes more steadily and holds the last reading for about three seconds after the note ends.</p><p>During active metronome playback or tuning, the phone screen stays awake by default, with a Personalization setting that allows sleep. The large Home Screen widget gains beat, eighth, triplet, sixteenth and Swing choices that sync with the app. This release also addresses silent widget startup and audio-session reliability. <a href={absoluteUrl("/en/guides/apple-watch-tuner/")}>Read the Watch tuner guide</a>.</p></div>
       </section>
 
       <section className="pressStory shell">

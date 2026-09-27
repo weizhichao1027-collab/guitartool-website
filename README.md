@@ -1,6 +1,6 @@
 # GuitarTool — guitar & ukulele practice with offline core tools
 
-Tune your instrument, set a beat, find the exact chord shape, then play. GuitarTool brings a tuner, metronome and chord library together on iPhone and iPad, with an Apple Watch metronome and Home Screen widgets. The app is free to download, with no ads or account requirement; its core practice tools work offline.
+Tune your instrument, set a beat, find the exact chord shape, then play. GuitarTool brings a tuner, metronome and chord library together on iPhone and iPad, with an Apple Watch tuner and metronome plus Home Screen widgets. The app is free to download, with no ads or account requirement; its core practice tools work offline.
 
 [Download on the App Store](https://apps.apple.com/app/apple-store/id6761914163?pt=128747267&ct=organic_github&mt=8) · [English website](https://weizhichao1027-collab.github.io/guitartool-website/en/?utm_source=github) · [中文官网](https://weizhichao1027-collab.github.io/guitartool-website/?utm_source=github)
 
@@ -11,9 +11,9 @@ Tune your instrument, set a beat, find the exact chord shape, then play. GuitarT
 - **Tune privately:** common guitar tunings, GCEA and chromatic mode, reference tones and adjustable A4. Microphone audio is analyzed on-device, never saved or uploaded.
 - **Build steadier rhythm:** 20–500 BPM, tap tempo, accents, subdivisions, swing, presets and progressive tempo training.
 - **Share the exact chord:** 19,244 guitar and ukulele fingerings, multiple voicings, audio previews and chord cards that can be saved or sent as ordinary images.
-- **Keep practice close:** adaptive iPhone/iPad layouts, Apple Watch audible beats, interactive widgets and 13 languages.
+- **Keep practice close:** adaptive iPhone/iPad layouts, Apple Watch tuning and audible beats, interactive widgets and 13 languages.
 
-Version 1.1.0 is available and bundles six complete Theme Gallery designs: Morning Mist Studio, Lunar Radio, Paper Ensemble, Pocket Synth, Vinyl Afterhours and Luthier Atlas. Each remains a separate App Store in-app purchase. The four basic looks remain free and visible. Purchased themes work offline without a separate asset download. Version 1.0.8 introduced rear-flash beat cues on compatible iPhones. [Flash Beat guide](https://weizhichao1027-collab.github.io/guitartool-website/en/guides/visual-metronome/?utm_source=github).
+Version 1.1.1 is available. It adds an [Apple Watch tuner](https://weizhichao1027-collab.github.io/guitartool-website/en/guides/apple-watch-tuner/?utm_source=github) for guitar, ukulele, bass and chromatic tuning; improves pitch stability and holds the last phone reading for about three seconds; keeps the screen awake by default during active practice; and adds subdivisions and Swing to the large Home Screen widget. Audio startup is more reliable. Version 1.1.0 introduced six complete Theme Gallery designs: Morning Mist Studio, Lunar Radio, Paper Ensemble, Pocket Synth, Vinyl Afterhours and Luthier Atlas. Each remains a separate App Store in-app purchase. Four basic looks remain free, and purchased themes work offline without an asset download. Version 1.0.8 introduced rear-flash beat cues on compatible iPhones. [Flash Beat guide](https://weizhichao1027-collab.github.io/guitartool-website/en/guides/visual-metronome/?utm_source=github).
 
 ## Try the free browser tools
 
@@ -23,7 +23,7 @@ Teachers can [send a specific chord shape to a student](https://weizhichao1027-c
 
 ## 中文介绍
 
-GuitarTool（吉他工具）的全部练习功能均免费，核心工具离线可用、无广告、无需账户。调音、节拍训练、和弦查找和指法卡片分享集中在一起，支持 iPhone、iPad、Apple Watch 与主屏幕小组件。现已上架的 1.1.0 内置主题展厅六套完整付费主题的素材，仍通过 App Store 分别购买；原有四款基础主题保持免费可见。已购主题无需另行下载素材，可离线使用。
+GuitarTool（吉他工具）的全部练习功能均免费，核心工具离线可用、无广告、无需账户。调音、节拍训练、和弦查找和指法卡片分享集中在一起，支持 iPhone、iPad、Apple Watch 与主屏幕小组件。已上架的 1.1.1 新增 Apple Watch 吉他、尤克里里、贝斯与半音阶调音器，改善手机调音稳定性和读数保留，并加入练习亮屏及大号小组件细分节奏。1.1.0 起内置的六套完整付费主题仍分别通过 App Store 购买，原有四款基础主题保持免费；已购主题无需另行下载素材，可离线使用。
 
 [观看 B 站介绍](https://www.bilibili.com/video/BV1bY4d6GEkw/) · [中文支持](https://weizhichao1027-collab.github.io/guitartool-website/support/) · [English support](https://weizhichao1027-collab.github.io/guitartool-website/en/support/) · [Privacy policy](https://weizhichao1027-collab.github.io/GuitarTool-Privacy/)
 

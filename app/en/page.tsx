@@ -11,11 +11,11 @@ const basePath = process.env.GITHUB_PAGES === "true" ? "/guitartool-website" : "
 
 export const metadata: Metadata = {
   title: "GuitarTool | Tuner, Metronome & Chords",
-  description: "GuitarTool 1.1.0 is available: free offline tuning, metronome and chord tools for guitar and ukulele, plus six separately purchased complete themes.",
+  description: "GuitarTool 1.1.1 adds an Apple Watch tuner, steadier pitch readings, screen awake during practice and large-widget subdivisions. Core tools work offline.",
   alternates: { canonical: absoluteUrl("/en/"), languages: localeAlternates },
   openGraph: {
     title: "GuitarTool | Leave room for practice.",
-    description: "Free offline tuner, metronome and chord tools, with six optional complete themes in GuitarTool 1.1.0.",
+    description: "GuitarTool 1.1.1 adds an Apple Watch tuner, steadier pitch readings and more flexible metronome widgets. Core practice tools remain free and offline.",
     type: "website",
     images: [{
       url: absoluteUrl("/og.png"),
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "GuitarTool | Leave room for practice.",
-    description: "Free offline tuner, metronome and chord tools, with six optional complete themes in GuitarTool 1.1.0.",
+    description: "GuitarTool 1.1.1 adds an Apple Watch tuner, steadier pitch readings and more flexible metronome widgets. Core practice tools remain free and offline.",
     images: [absoluteUrl("/og.png")],
   },
 };
@@ -79,7 +79,8 @@ const faqs = [
   ["Do I need an internet connection or account?", "The tuner, metronome, chord libraries and four basic looks work offline without an account. Six complete themes are bundled too and work offline after purchase. Purchasing or restoring may need a connection."],
   ["How do I unlock the six complete themes?", "Morning Mist Studio, Lunar Radio, Paper Ensemble, Pocket Synth, Vinyl Afterhours and Luthier Atlas are separate App Store in-app purchases. Version 1.1.0 bundles their artwork, so purchased themes need no separate asset download or theme backend. The four original basic looks remain free."],
   ["Does the tuner save my audio?", "Never. Microphone audio is used only for live, on-device pitch detection. It is not saved as a file or uploaded to a server."],
-  ["Which devices are supported?", "GuitarTool adapts to iPhone and iPad, and includes an Apple Watch metronome plus three sizes of interactive Home Screen widgets. Watch audio can continue when the wrist lowers or the display dims."],
+  ["Can I tune on Apple Watch?", "Yes. Version 1.1.1 adds guitar, ukulele, bass and chromatic tuning on Apple Watch. Microphone capture starts only when you tap Start and ends when you stop, change pages or leave the app. Audio is processed on the watch."],
+  ["Which devices are supported?", "GuitarTool adapts to iPhone and iPad, with an Apple Watch tuner and metronome plus three sizes of interactive Home Screen widgets. Watch metronome audio can continue when the wrist lowers or the display dims."],
   ["Does it support ukulele?", "Yes. The tuner includes GCEA modes, and the chord library includes a complete set of ukulele chord names and multiple fingerings."],
   ["Can I send a chord shape to a teacher or friend?", "Yes. Preview the current chord card, then save it to Photos or send it with the system share sheet. The image does not force an App Store link."],
   ["Does Flash Beat take photos?", "No. On compatible iPhones it uses the rear flash for all main beats or accents only, without capturing images. It turns off when playback stops, you leave the screen or the app enters the background."],
@@ -89,7 +90,7 @@ export default function EnglishHome() {
   return (
     <main lang="en">
       <JsonLd data={[
-        { "@context": "https://schema.org", "@type": "SoftwareApplication", name: "GuitarTool", softwareVersion: RELEASE_VERSION, description: "Free offline tuning, metronome and chord tools for guitar and ukulele, with six complete themes sold separately as in-app purchases.", url: absoluteUrl("/en/"), downloadUrl: appStoreUrl, applicationCategory: "MusicApplication", operatingSystem: "iOS, iPadOS, watchOS", inLanguage: supportedLanguageCodes, offers: { "@type": "Offer", price: "0", priceCurrency: "USD" }, featureList: ["Real-time string instrument tuner", "20–500 BPM metronome", "Rear-flash beat cues for all main beats or accents only, with three intensities", "19,244 guitar and ukulele fingerings", "Preview, save and share chord cards", "Apple Watch metronome with background audio", "Interactive Home Screen widgets", "Six separately purchased complete visual themes"] },
+        { "@context": "https://schema.org", "@type": "SoftwareApplication", name: "GuitarTool", softwareVersion: RELEASE_VERSION, description: "Free offline tuning, metronome and chord tools for guitar and ukulele on iPhone, iPad and Apple Watch, with six complete themes sold separately as in-app purchases.", url: absoluteUrl("/en/"), downloadUrl: appStoreUrl, applicationCategory: "MusicApplication", operatingSystem: "iOS, iPadOS, watchOS", inLanguage: supportedLanguageCodes, offers: { "@type": "Offer", price: "0", priceCurrency: "USD" }, featureList: ["Real-time tuner with three-second pitch hold", "Apple Watch guitar, ukulele, bass and chromatic tuner", "20–500 BPM metronome", "Rear-flash beat cues for all main beats or accents only, with three intensities", "19,244 guitar and ukulele fingerings", "Preview, save and share chord cards", "Apple Watch metronome with background audio", "Large Home Screen widget subdivisions and Swing", "Six separately purchased complete visual themes"] },
         { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqs.map(([question, answer]) => ({ "@type": "Question", name: question, acceptedAnswer: { "@type": "Answer", text: answer } })) },
         { "@context": "https://schema.org", "@type": "VideoObject", name: "GuitarTool full introduction (landscape)", description: "A 36-second introduction to GuitarTool's tuner, metronome, chord cards, widgets and multi-device experience.", thumbnailUrl: absoluteUrl("/og.png"), uploadDate: "2026-08-28", duration: "PT36S", contentUrl: absoluteUrl("/media-kit/video/GuitarTool-Full-Intro-en-854x480.mp4") },
         { "@context": "https://schema.org", "@type": "VideoObject", name: "GuitarTool full introduction (portrait)", description: "A mobile-first 36-second English introduction to GuitarTool.", thumbnailUrl: absoluteUrl("/media-kit/social/guitartool-chord-cards-en-1080x1350.png"), uploadDate: "2026-08-28", duration: "PT36S", contentUrl: absoluteUrl("/media-kit/video/GuitarTool-Full-Intro-en-480x854.mp4") },
@@ -167,7 +168,7 @@ export default function EnglishHome() {
       <section className="numbers"><div className="shell numbersGrid"><div><strong>20–500</strong><span>precise BPM range</span></div><div><strong>430–446</strong><span>Hz calibration</span></div><div><strong>19,244</strong><span>guitar & ukulele fingerings</span></div><div><strong>1–12</strong><span>beats per bar</span></div></div></section>
 
       <section className="introVideoSection shell sectionPad">
-        <div className="introVideoCopy"><p className="eyebrow"><span /> Full product tour in 36 seconds</p><h2>See how the tools fit into practice before choosing where to begin.</h2><p>The landscape edit is designed for desktop and larger screens; mobile automatically receives the English portrait edit. It covers the core tuning, rhythm, chord-card, widget and multi-device experience. Version 1.1.0&apos;s Theme Gallery highlight is detailed below.</p></div>
+        <div className="introVideoCopy"><p className="eyebrow"><span /> Full product tour in 36 seconds</p><h2>See how the tools fit into practice before choosing where to begin.</h2><p>The landscape edit is designed for desktop and larger screens; mobile automatically receives the English portrait edit. It covers the core tuning, rhythm, chord-card, widget and multi-device experience. The new Watch tuner and Theme Gallery introduced in 1.1.0 are detailed below.</p></div>
         <div className="introVideoFrame"><video controls playsInline preload="metadata" aria-label="GuitarTool full English introduction"><source src={assetPath("/media-kit/video/GuitarTool-Full-Intro-en-480x854.mp4")} media="(max-width: 700px)" type="video/mp4" /><source src={assetPath("/media-kit/video/GuitarTool-Full-Intro-en-854x480.mp4")} type="video/mp4" /></video></div>
       </section>
 
@@ -175,20 +176,30 @@ export default function EnglishHome() {
         <div className="sectionHeading compact"><p className="eyebrow"><span /> Across your devices · themes & widgets</p><h2>Practice should fit you,<br />not the other way around.</h2></div>
         <div className="extraGrid">
           <article className="extraCard themeCard">
-            <div className="extraText"><p className="cardLabel">Theme Gallery · Available in 1.1.0</p><h3>Six complete paid themes.<br />One practice app, six distinct worlds.</h3><p>Version 1.1.0 includes Morning Mist Studio, Lunar Radio, Paper Ensemble, Pocket Synth, Vinyl Afterhours and Luthier Atlas. Each remains a separate in-app purchase. Purchased themes work offline without an asset download; the four basic looks remain visible and free.</p><div className="swatches" aria-label="Four free basic looks and six paid complete themes in the Theme Gallery"><span className="day" /><span className="night" /><span className="pine" /><span className="graphite" /><b>6 PAID THEMES</b></div></div>
+            <div className="extraText"><p className="cardLabel">Theme Gallery · Since 1.1.0</p><h3>Six complete paid themes.<br />One practice app, six distinct worlds.</h3><p>Version 1.1.0 introduced Morning Mist Studio, Lunar Radio, Paper Ensemble, Pocket Synth, Vinyl Afterhours and Luthier Atlas. Each remains a separate in-app purchase. Purchased themes work offline without an asset download; the four basic looks remain visible and free.</p><div className="swatches" aria-label="Four free basic looks and six paid complete themes in the Theme Gallery"><span className="day" /><span className="night" /><span className="pine" /><span className="graphite" /><b>6 PAID THEMES</b></div></div>
             <Image src={assetPath("/en-luthier-atlas.webp")} alt="GuitarTool 1.1.0 Luthier Atlas complete theme metronome screen" width={833} height={1809} sizes="(max-width: 700px) 86vw, 460px" />
           </article>
           <article className="extraCard widgetCard">
-            <div className="extraText"><p className="cardLabel">Home Screen widgets</p><h3>Keep the beat<br />without opening the app.</h3><p>Small, medium and large. Change tempo and time signature, play, pause or tap in a tempo—right from your Home Screen.</p></div>
+            <div className="extraText"><p className="cardLabel">Home Screen widgets</p><h3>Keep the beat<br />without opening the app.</h3><p>Small, medium and large widgets control tempo, meter, playback and tap tempo. In 1.1.1, the large widget also switches between beat, eighth, triplet, sixteenth and Swing subdivisions, in sync with the app.</p></div>
             <Image src={assetPath("/en-widgets.webp")} alt="Three GuitarTool metronome widget sizes in English" width={833} height={1800} sizes="(max-width: 700px) 86vw, 460px" />
           </article>
         </div>
-        <div className="updatePromise"><span>AVAILABLE NOW · VERSION 1.1.0</span><p><strong>The four basic looks stay free and visible; artwork for six paid complete themes is now bundled.</strong> The Theme Gallery keeps its selection entry. Each complete theme still needs a separate purchase, then works offline without an asset download. Tuner and multi-device reliability are improved too.</p><b aria-hidden="true">↗</b></div>
+        <div className="updatePromise"><span>AVAILABLE NOW · VERSION 1.1.1</span><p><strong>Apple Watch now has its own tuner.</strong> Phone tuning reads more steadily and holds the last reading for three seconds. The screen stays awake by default during active metronome playback or tuning, with an option to allow sleep. The large widget adds subdivisions and Swing, alongside audio startup fixes.</p><b aria-hidden="true">↗</b></div>
+      </section>
+
+      <section className="releaseWatch shell sectionPad" aria-labelledby="watch-tuner-heading">
+        <div>
+          <p className="eyebrow"><span /> NEW IN 1.1.1 · APPLE WATCH TUNER</p>
+          <h2 id="watch-tuner-heading">Raise your wrist.<br />Start tuning.</h2>
+          <p>Choose guitar, ukulele, bass or chromatic mode on your watch. Tap Start to see note and cents feedback, with a haptic cue in tune. Capture ends when you stop, change pages or leave the app; audio stays on the watch.</p>
+          <Link className="textButton" href="/en/guides/apple-watch-tuner/">Explore the Watch tuner <span>↗</span></Link>
+        </div>
+        <Image src={assetPath("/en-watch-tuner.jpg")} alt="GuitarTool 1.1.1 Apple Watch tuner App Store preview showing the manual Start Tuning control" width={416} height={496} sizes="(max-width: 700px) 85vw, 416px" />
       </section>
 
       <section className="devices sectionPad" id="devices">
         <div className="shell devicesGrid">
-          <div className="devicesCopy"><div className="sectionIndex light">04 / EVERYWHERE</div><h2>Your practice<br />travels with you.</h2><p>Reach for iPhone, see more on iPad, or start the beat from Apple Watch. Audio can keep going when the wrist lowers or the display dims, so your hands return to the instrument.</p><div className="devicePills"><span>iPhone</span><span>iPad</span><span>Apple Watch</span></div></div>
+          <div className="devicesCopy"><div className="sectionIndex light">04 / EVERYWHERE</div><h2>Your practice<br />travels with you.</h2><p>Reach for iPhone, see more on iPad, or start a beat or tune from Apple Watch. The Watch tuner covers guitar, ukulele, bass and chromatic modes; metronome audio can continue when the wrist lowers or the display dims.</p><div className="devicePills"><span>iPhone</span><span>iPad</span><span>Apple Watch</span></div></div>
           <div className="devicesMedia"><Image src={assetPath("/en-devices.webp")} alt="GuitarTool on iPhone, iPad and Apple Watch in English" width={833} height={1800} sizes="(max-width: 850px) 90vw, 520px" /></div>
         </div>
       </section>

@@ -2,6 +2,27 @@ import type { LandingPage } from "@/app/lib/landing-pages";
 
 export const enFeaturePages: LandingPage[] = [
   {
+    slug: "apple-watch-tuner",
+    title: "Apple Watch Guitar, Bass and Ukulele Tuner",
+    description: "GuitarTool 1.1.1 brings an on-device tuner to Apple Watch: guitar, bass, ukulele and chromatic modes, cents feedback and explicit microphone controls.",
+    eyebrow: "APPLE WATCH TUNER · VERSION 1.1.1",
+    lead: "Tune from your wrist without opening the phone. The Watch tuner listens only after you tap Start Tuning, shows the note and cents offset, and gives a haptic cue when the note is in tune.",
+    proof: ["Guitar, ukulele, bass and chromatic", "Tap to start; stop or leave to end", "Audio stays on the watch"],
+    showcase: { image: "/en-watch-tuner.jpg", alt: "GuitarTool Apple Watch tuner with Start Tuning button", caption: "The 1.1.1 App Store preview shows the explicit Start Tuning control on Apple Watch.", width: 416, height: 496 },
+    sections: [
+      { title: "Choose a mode and start listening", body: "Open the GuitarTool Watch app and swipe from the metronome to the tuner. Choose guitar, ukulele, bass or chromatic mode, then tap Start Tuning. Allow the watch microphone when prompted. Pluck one string at a time and read the note and cents offset; a haptic cue confirms an in-tune note.", points: ["Guitar, ukulele, bass and chromatic modes", "Note and cents feedback", "In-tune haptic cue"] },
+      { title: "Keep microphone use under your control", body: "The tuner does not listen just because its page is visible. Tap Stop Tuning to end capture; changing pages or leaving the app also ends it. Pitch is analysed on the watch, and microphone audio is neither recorded to a file nor uploaded.", points: ["Explicit Start and Stop controls", "Capture ends when you change pages or leave", "No recording or audio upload"] },
+      { title: "Get a cleaner reading", body: "Bring the watch close to the instrument, pluck a single string and mute the others. Wait past the initial attack if the reading jumps. The iPhone and iPad tuner in 1.1.1 also improves fundamental-pitch tracking and holds the last reading for about three seconds after a note ends.", points: ["One string at a time", "Reduce room noise and sympathetic vibration", "Check microphone permission if no signal appears"] },
+    ],
+    faq: [
+      ["Does the Apple Watch tuner record my playing?", "No. Audio is processed locally for live pitch detection and is not saved or uploaded."],
+      ["Does opening the tuner start the microphone?", "No. You must tap Start Tuning; Stop Tuning, a page change or leaving the app ends capture."],
+      ["Which instruments can I tune?", "The Watch tuner offers guitar, ukulele, bass and chromatic modes."],
+      ["Why is there no pitch reading?", "Check that microphone permission is allowed on the watch, move it closer to the instrument and pluck one string at a time."],
+    ],
+    related: ["apple-watch-metronome", "guitar-tuner", "ukulele-tuner", "chromatic-tuner"],
+  },
+  {
     slug: "visual-metronome",
     title: "Visual Metronome with iPhone Rear-Flash Beat Cues",
     description: "See the beat with optional iPhone rear-flash cues for all main beats or accents only, with three intensity levels, automatic shutoff and no image capture.",
@@ -190,6 +211,27 @@ export const enFeaturePages: LandingPage[] = [
 ];
 
 export const zhFeaturePages: LandingPage[] = [
+  {
+    slug: "apple-watch-tuner",
+    title: "Apple Watch 吉他、贝斯与尤克里里调音器",
+    description: "GuitarTool 1.1.1 新增 Apple Watch 本机调音：吉他、贝斯、尤克里里与半音阶模式，音名和音分反馈，麦克风由你主动开启。",
+    eyebrow: "APPLE WATCH 调音器 · 1.1.1",
+    lead: "不用拿起手机，抬腕就能检查音准。点按“开始调音”后，手表显示音名与音分偏差；调准时会有触觉提示。",
+    proof: ["吉他、尤克里里、贝斯、半音阶", "主动开始，停止或离开即结束", "音频只在手表本地处理"],
+    showcase: { image: "/zh-watch-tuner.jpg", alt: "GuitarTool Apple Watch 调音器及开始调音按钮", caption: "1.1.1 商店预览展示手表调音器的主动开始收音入口。", width: 416, height: 496 },
+    sections: [
+      { title: "选择模式，再主动开始收音", body: "打开 GuitarTool 手表 App，从节拍器滑到调音页。选择吉他、尤克里里、贝斯或半音阶模式，再点“开始调音”；首次使用请允许手表麦克风权限。一次拨一根弦，观察音名和音分，调准时手表会给出触觉反馈。", points: ["四种调音模式", "音名与音分偏差", "调准触觉提示"] },
+      { title: "麦克风始终由你控制", body: "仅打开调音页不会开始收音。点“停止调音”、切换页面或离开 App，实时采集就会结束。手表在本机分析音高，不把音频录成文件，也不上传声音。", points: ["明确的开始与停止按钮", "切页或离开即结束采集", "不录音、不上传"] },
+      { title: "让读数更稳定", body: "让手表靠近乐器，一次只拨一根弦，并轻触其余琴弦减少共振。起音瞬间读数可能跳动，可稍等再观察。1.1.1 的 iPhone/iPad 调音器也优化了基频跟踪，余音结束后会保留上次读数约三秒。", points: ["单弦拨奏并抑制共振", "减少环境噪声", "无输入时检查手表麦克风权限"] },
+    ],
+    faq: [
+      ["Apple Watch 调音器会录下弹奏吗？", "不会。声音仅在手表本地用于实时音高检测，不保存，也不上传。"],
+      ["打开调音页会立刻收音吗？", "不会。必须点“开始调音”；停止、切页或离开 App 后采集结束。"],
+      ["支持哪些乐器？", "手表调音器提供吉他、尤克里里、贝斯和半音阶模式。"],
+      ["没有读数怎么办？", "检查手表麦克风权限，把手表靠近乐器，并一次只拨一根弦。"],
+    ],
+    related: ["apple-watch-metronome", "guitar-tuner", "ukulele-tuner", "chromatic-tuner"],
+  },
   {
     slug: "visual-metronome",
     title: "用 iPhone 后置闪光灯看见节拍",

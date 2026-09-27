@@ -8,7 +8,7 @@ import { tunerLocales, tunerPath } from "@/app/lib/tuner-locales";
 export const dynamic = "force-static";
 
 const lastModified = new Date("2026-08-28T00:00:00Z");
-const releasePublished = new Date("2026-09-25T16:00:00Z");
+const releasePublished = new Date("2026-09-28T00:00:00+08:00");
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const core = [
@@ -23,8 +23,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   for (const page of localePages) entries.push({ url: absoluteUrl(`/${page.slug}/`), lastModified: releasePublished, changeFrequency: "monthly", priority: 0.8 });
   for (const locale of tunerLocales) entries.push({ url: absoluteUrl(tunerPath(locale.slug)), lastModified, changeFrequency: "monthly", priority: 0.9 });
-  for (const page of landingPages.zh) entries.push({ url: absoluteUrl(`/guides/${page.slug}/`), lastModified: page.slug === "visual-metronome" ? releasePublished : lastModified, changeFrequency: "monthly", priority: 0.85 });
-  for (const page of landingPages.en) entries.push({ url: absoluteUrl(`/en/guides/${page.slug}/`), lastModified: page.slug === "visual-metronome" ? releasePublished : lastModified, changeFrequency: "monthly", priority: 0.85 });
+  for (const page of landingPages.zh) entries.push({ url: absoluteUrl(`/guides/${page.slug}/`), lastModified: ["visual-metronome", "apple-watch-tuner"].includes(page.slug) ? releasePublished : lastModified, changeFrequency: "monthly", priority: 0.85 });
+  for (const page of landingPages.en) entries.push({ url: absoluteUrl(`/en/guides/${page.slug}/`), lastModified: ["visual-metronome", "apple-watch-tuner"].includes(page.slug) ? releasePublished : lastModified, changeFrequency: "monthly", priority: 0.85 });
   for (const instrument of ["guitar", "ukulele"] as const) {
     for (const chord of popularChords[instrument]) entries.push({ url: absoluteUrl(routeForChord(instrument, chord.slug)), lastModified, changeFrequency: "monthly", priority: 0.75 });
   }

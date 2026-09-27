@@ -1,4 +1,5 @@
 import { absoluteUrl } from "@/app/lib/site";
+import { localePages } from "@/app/lib/locales";
 
 export const dynamic = "force-static";
 
@@ -25,7 +26,18 @@ const localizedChordCards: ImageEntry[] = [
   { page: "/ar/", image: "/ar-chord-card-share.webp", title: "معاينة بطاقة الوتر", caption: "واجهة عربية لمعاينة بطاقة الوتر وحفظها في الصور أو مشاركتها." },
 ];
 
+const localizedWatchPreviews: ImageEntry[] = localePages.map((page) => ({
+  page: `/${page.slug}/`,
+  image: `/${page.slug}-watch-tuner.jpg`,
+  title: page.versionUpdate.title,
+  caption: `GuitarTool 1.1.1 Apple Watch tuner preview · ${page.htmlLang}`,
+}));
+
 const editorialImages: ImageEntry[] = [
+  { page: "/", image: "/zh-watch-tuner.jpg", title: "GuitarTool 1.1.1 Apple Watch 调音器", caption: "手表调音器支持吉他、尤克里里、贝斯和半音阶，需主动开始收音。" },
+  { page: "/en/", image: "/en-watch-tuner.jpg", title: "GuitarTool 1.1.1 Apple Watch tuner", caption: "Watch tuning for guitar, ukulele, bass and chromatic mode starts only after a tap." },
+  { page: "/guides/apple-watch-tuner/", image: "/zh-watch-tuner.jpg", title: "Apple Watch 吉他调音指南", caption: "GuitarTool 1.1.1 手表调音器商店预览。" },
+  { page: "/en/guides/apple-watch-tuner/", image: "/en-watch-tuner.jpg", title: "Apple Watch guitar tuner guide", caption: "GuitarTool 1.1.1 Watch tuner App Store preview." },
   { page: "/", image: "/luthier-atlas.webp", title: "GuitarTool 琴匠测绘主题", caption: "1.1.0 已上架的琴匠测绘完整主题节拍器界面。" },
   { page: "/en/", image: "/en-luthier-atlas.webp", title: "GuitarTool Luthier Atlas theme", caption: "Luthier Atlas complete theme metronome interface in version 1.1.0." },
   { page: "/guides/share-chord-diagrams/", image: "/chord-card-share.webp", title: "保存与分享和弦图", caption: "GuitarTool 真实和弦卡片分享流程。" },
@@ -47,7 +59,7 @@ const escapeXml = (value: string) => value
   .replaceAll("'", "&apos;");
 
 export function GET() {
-  const body = [...localizedChordCards, ...editorialImages]
+  const body = [...localizedChordCards, ...localizedWatchPreviews, ...editorialImages]
     .map((entry) => `  <url>\n    <loc>${escapeXml(absoluteUrl(entry.page))}</loc>\n    <image:image>\n      <image:loc>${escapeXml(absoluteUrl(entry.image))}</image:loc>\n      <image:title>${escapeXml(entry.title)}</image:title>\n      <image:caption>${escapeXml(entry.caption)}</image:caption>\n    </image:image>\n  </url>`)
     .join("\n");
 

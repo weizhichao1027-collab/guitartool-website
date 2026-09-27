@@ -14,7 +14,7 @@ export type LocalePage = {
   closing: string;
 };
 
-const releaseVersion = "1.1.0";
+const releaseVersion = "1.1.1";
 
 const localePageTemplates: LocalePage[] = [
   {
@@ -63,11 +63,27 @@ const localePageTemplates: LocalePage[] = [
   },
 ];
 
+const latestUpdate: Record<string, { title: string; body: string }> = {
+  "zh-hant": { title: "Apple Watch 現在也能調音", body: "1.1.1 新增 Watch 吉他、烏克麗麗、貝斯及半音階調音器；點按開始才收音，音訊只在手錶本機處理。手機調音讀數更穩定，練習時預設保持亮屏；大型小工具加入細分節奏與 Swing。四款基礎主題仍免費，六套完整主題分別購買。" },
+  es: { title: "El afinador llega al Apple Watch", body: "La versión 1.1.1 añade afinación de guitarra, ukelele, bajo y cromática en el reloj: el micrófono solo se activa al tocar Iniciar y el audio permanece en el dispositivo. Lecturas más estables, pantalla encendida durante la práctica y subdivisiones y Swing en el widget grande. Los cuatro estilos básicos siguen gratis; los seis temas completos se compran por separado." },
+  "pt-br": { title: "O afinador chega ao Apple Watch", body: "A versão 1.1.1 traz afinação de guitarra, ukulele, baixo e cromática no relógio: o microfone só inicia ao tocar em Começar e o áudio fica no dispositivo. Leituras mais estáveis, tela acesa durante a prática e subdivisões e Swing no widget grande. Os quatro visuais básicos continuam grátis; os seis temas completos são vendidos separadamente." },
+  fr: { title: "L’accordeur arrive sur Apple Watch", body: "La version 1.1.1 ajoute l’accordage guitare, ukulélé, basse et chromatique sur la montre : le micro ne démarre qu’après un appui et l’audio reste sur l’appareil. Mesures plus stables, écran allumé pendant la pratique, subdivisions et Swing dans le grand widget. Les quatre styles de base restent gratuits ; les six thèmes complets s’achètent séparément." },
+  de: { title: "Das Stimmgerät kommt auf die Apple Watch", body: "Version 1.1.1 bringt Gitarren-, Ukulelen-, Bass- und chromatisches Stimmen auf die Uhr. Das Mikrofon startet erst nach Antippen; Audio bleibt auf dem Gerät. Stabilere Anzeige, ein beim Üben aktiver Bildschirm sowie Unterteilungen und Swing im großen Widget. Vier Basisdesigns bleiben gratis; sechs Komplett-Themes werden einzeln verkauft." },
+  it: { title: "L’accordatore arriva su Apple Watch", body: "La versione 1.1.1 porta l’accordatura di chitarra, ukulele, basso e cromatica sull’orologio: il microfono si attiva solo dopo un tocco e l’audio resta sul dispositivo. Letture più stabili, schermo acceso durante la pratica e suddivisioni e Swing nel widget grande. I quattro stili base restano gratuiti; i sei temi completi si acquistano separatamente." },
+  ja: { title: "Apple Watch でもチューニング", body: "1.1.1 では Watch にギター、ウクレレ、ベース、クロマチックのチューナーを追加。開始をタップしたときだけマイクを使い、音声は時計内で処理します。表示の安定性、練習中の画面点灯、大きいウィジェットの細分音符と Swing も改善。4 つの基本テーマは無料、6 つのフルテーマは個別購入です。" },
+  ko: { title: "Apple Watch에서도 튜닝하세요", body: "1.1.1은 Watch에 기타, 우쿨렐레, 베이스, 반음계 튜너를 추가합니다. 시작을 탭할 때만 마이크를 사용하며 오디오는 시계에서 처리됩니다. 더 안정적인 음정 표시, 연습 중 화면 켜짐, 대형 위젯의 세분 박자와 Swing도 제공합니다. 기본 테마 4종은 무료이고 전체 테마 6종은 개별 구매입니다." },
+  ru: { title: "Тюнер теперь на Apple Watch", body: "Версия 1.1.1 добавляет на часы настройку гитары, укулеле, баса и хроматический режим. Микрофон включается только после нажатия «Начать», звук обрабатывается на устройстве. Показания стабильнее, экран не гаснет во время занятий, а большой виджет поддерживает подразделения и Swing. Четыре базовые темы бесплатны, шесть полных покупаются отдельно." },
+  tr: { title: "Akort cihazı artık Apple Watch’ta", body: "1.1.1 sürümü saate gitar, ukulele, bas ve kromatik akort getiriyor. Mikrofon yalnızca Başlat’a dokununca açılır; ses cihazda işlenir. Daha kararlı okumalar, çalışma sırasında açık kalan ekran ve büyük araç takımında alt bölümler ile Swing de eklendi. Dört temel görünüm ücretsizdir; altı tam tema ayrı satılır." },
+  ar: { title: "ضبط الآلات على Apple Watch", body: "يضيف الإصدار 1.1.1 ضبط الغيتار واليوكليلي والباس والوضع اللوني على الساعة. لا يبدأ الميكروفون إلا بعد الضغط على «بدء»، وتُعالج الأصوات على الجهاز. أصبحت القراءات أكثر ثباتاً، وتبقى الشاشة مضاءة أثناء التمرين، وتدعم الأداة الكبيرة التقسيمات وSwing. المظاهر الأساسية الأربعة مجانية، وتُشترى المظاهر الكاملة الستة كلٌّ على حدة." },
+};
+
 export const localePages: LocalePage[] = localePageTemplates.map((page) => ({
   ...page,
+  description: page.description.replace("1.1.0", releaseVersion),
   versionUpdate: {
     ...page.versionUpdate,
     label: page.versionUpdate.label.replace(/\d+\.\d+\.\d+/, releaseVersion),
+    ...latestUpdate[page.slug],
   },
 }));
 

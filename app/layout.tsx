@@ -8,10 +8,10 @@ const basePath = process.env.GITHUB_PAGES === "true" ? "/guitartool-website" : "
 export const metadata: Metadata = {
   metadataBase: new URL(`${SITE_URL}/`),
   title: "GuitarTool｜调音、节拍与和弦练习",
-  description: "GuitarTool 1.1.0 已上架：免费调音器、节拍器与和弦库离线可用；六套完整主题分别购买，素材内置，解锁后可离线使用。",
+  description: "GuitarTool 1.1.1 已上架：Apple Watch 调音器、调音读数优化、练习亮屏与大号小组件细分节奏；核心练习工具免费且离线可用。",
   applicationName: "GuitarTool",
   category: "music",
-  keywords: ["吉他调音器", "尤克里里调音器", "节拍器", "吉他和弦", "ukulele chords", "guitar tuner"],
+  keywords: ["Apple Watch 调音器", "吉他调音器", "尤克里里调音器", "节拍器", "吉他和弦", "ukulele chords", "guitar tuner"],
   alternates: { canonical: absoluteUrl("/"), languages: localeAlternates },
   appleWebApp: { capable: true, title: "GuitarTool", statusBarStyle: "default" },
   appLinks: { ios: { url: APP_STORE_URL, app_store_id: "6761914163", app_name: "GuitarTool" } },
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   referrer: "strict-origin-when-cross-origin",
   openGraph: {
     title: "GuitarTool｜练琴时，只留下专注。",
-    description: "GuitarTool 1.1.0 已上架。调音、节拍与和弦核心工具免费且离线可用；六套完整主题分别购买，素材内置。",
+    description: "GuitarTool 1.1.1 已上架：Apple Watch 调音器、稳定读数、练习亮屏与大号小组件细分节奏。核心工具免费且离线可用。",
     type: "website",
     images: [{
       url: absoluteUrl("/og.png"),
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "GuitarTool｜练琴时，只留下专注。",
-    description: "GuitarTool 1.1.0 已上架。调音、节拍与和弦核心工具免费且离线可用；六套完整主题分别购买，素材内置。",
+    description: "GuitarTool 1.1.1 已上架：Apple Watch 调音器、稳定读数、练习亮屏与大号小组件细分节奏。核心工具免费且离线可用。",
     images: [absoluteUrl("/og.png")],
   },
 };
