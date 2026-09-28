@@ -10,6 +10,7 @@ export const dynamic = "force-static";
 const lastModified = new Date("2026-08-28T00:00:00Z");
 const themeReleasePublished = new Date("2026-09-25T16:00:00Z");
 const releasePublished = new Date("2026-09-27T23:40:00Z");
+const homepageUpdated = new Date("2026-09-28T01:50:00Z");
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const core = [
@@ -20,7 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ["/support/", 0.7, "monthly"], ["/en/support/", 0.7, "monthly"],
   ] as const;
   const releasePages = new Set(["/", "/en/", "/press/", "/support/", "/en/support/"]);
-  const entries: MetadataRoute.Sitemap = core.map(([path, priority, changeFrequency]) => ({ url: absoluteUrl(path), lastModified: releasePages.has(path) ? releasePublished : lastModified, changeFrequency, priority }));
+  const entries: MetadataRoute.Sitemap = core.map(([path, priority, changeFrequency]) => ({ url: absoluteUrl(path), lastModified: path === "/" || path === "/en/" ? homepageUpdated : releasePages.has(path) ? releasePublished : lastModified, changeFrequency, priority }));
 
   for (const page of localePages) entries.push({ url: absoluteUrl(`/${page.slug}/`), lastModified: releasePublished, changeFrequency: "monthly", priority: 0.8 });
   for (const locale of tunerLocales) entries.push({ url: absoluteUrl(tunerPath(locale.slug)), lastModified, changeFrequency: "monthly", priority: 0.9 });

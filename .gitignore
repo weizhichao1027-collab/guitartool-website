@@ -13,8 +13,8 @@
 
 # next.js
 /.next/
-/.vinext/
 /out/
+/.playwright-cli/
 
 # misc
 .DS_Store
@@ -34,6 +34,5 @@ yarn-error.log*
 next-env.d.ts
 *.tsbuildinfo
 /dist/
-/.wrangler/
 /outputs/
 /work/

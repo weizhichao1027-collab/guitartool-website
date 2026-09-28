@@ -15,10 +15,8 @@ function siteHref(href: string) {
 }
 
 /**
- * Internal links deliberately use native document navigation. Vinext's
- * client-side Next Link prefetch currently fails in the hosted Sites runtime,
- * which prevents clicks from navigating. Native anchors also keep the static
- * GitHub Pages base path through RUNTIME_BASE_PATH.
+ * Native anchors keep the static GitHub Pages base path through
+ * RUNTIME_BASE_PATH without relying on client-side routing.
  */
 export function SiteLink({ href, children, ...props }: SiteLinkProps) {
   return <a href={siteHref(href)} {...props}>{children}</a>;

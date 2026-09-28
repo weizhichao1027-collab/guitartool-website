@@ -3,6 +3,7 @@ import Image from "next/image";
 import { SiteLink as Link } from "@/app/components/SiteLink";
 import { JsonLd } from "@/app/components/JsonLd";
 import { APP_STORE_LINKS, RELEASE_VERSION, absoluteUrl, assetPath, localeAlternates, supportedLanguageCodes } from "@/app/lib/site";
+import { paidThemes } from "@/app/lib/theme-gallery";
 
 const appStoreUrl = APP_STORE_LINKS.home;
 const privacyUrl = "https://weizhichao1027-collab.github.io/GuitarTool-Privacy/";
@@ -181,10 +182,26 @@ export default function EnglishHome() {
           </article>
           <article className="extraCard widgetCard">
             <div className="extraText"><p className="cardLabel">Home Screen widgets</p><h3>Keep the beat<br />without opening the app.</h3><p>Small, medium and large widgets control tempo, meter, playback and tap tempo. In 1.1.1, the large widget also switches between beat, eighth, triplet, sixteenth and Swing subdivisions, in sync with the app.</p></div>
-            <Image src={assetPath("/en-widgets.webp")} alt="Three GuitarTool metronome widget sizes in English" width={833} height={1800} sizes="(max-width: 700px) 86vw, 460px" />
+            <Image src={assetPath("/release-1.1.1/en-large-widget.png")} alt="GuitarTool 1.1.1 large metronome widget with beat, eighth, triplet, sixteenth and Swing controls" width={1146} height={1262} sizes="(max-width: 700px) 86vw, 460px" />
           </article>
         </div>
         <div className="updatePromise"><span>AVAILABLE NOW · VERSION 1.1.1</span><p><strong>Apple Watch now has its own tuner.</strong> Phone tuning reads more steadily and holds the last reading for three seconds. The screen stays awake by default during active metronome playback or tuning, with an option to allow sleep. The large widget adds subdivisions and Swing, alongside audio startup fixes.</p><b aria-hidden="true">↗</b></div>
+      </section>
+
+      <section className="themeGallery sectionPad" id="paid-themes" aria-labelledby="paid-themes-heading">
+        <div className="shell themeGalleryIntro">
+          <p className="eyebrow"><span /> Theme Gallery · Six complete interfaces</p>
+          <h2 id="paid-themes-heading">One metronome.<br />Six ways to make it yours.</h2>
+          <p>Explore the real metronome screen for each paid theme. Themes are separate in-app purchases and also style the tuner, chord library and share cards. Four basic looks remain free.</p>
+        </div>
+        <div className="shell themeGalleryGrid">
+          {paidThemes.map((theme, index) => (
+            <figure className={`themeTile themeTile-${theme.slug}`} key={theme.slug}>
+              <div className="themeTileImage"><Image src={assetPath(`/release-1.1.1/themes/en-${theme.slug}.${theme.ext}`)} alt={`Full GuitarTool metronome screen in the ${theme.en} paid theme`} width={1320} height={2868} sizes="(max-width: 600px) 85vw, (max-width: 900px) 45vw, 30vw" loading="lazy" /></div>
+              <figcaption><span>{String(index + 1).padStart(2, "0")}</span><div><h3>{theme.en}</h3><p>{theme.enMood}</p></div><b>Separate purchase</b></figcaption>
+            </figure>
+          ))}
+        </div>
       </section>
 
       <section className="releaseWatch shell sectionPad" aria-labelledby="watch-tuner-heading">

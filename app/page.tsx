@@ -2,6 +2,7 @@ import Image from "next/image";
 import { SiteLink as Link } from "@/app/components/SiteLink";
 import { JsonLd } from "@/app/components/JsonLd";
 import { APP_STORE_LINKS, RELEASE_VERSION, absoluteUrl, assetPath, supportedLanguageCodes } from "@/app/lib/site";
+import { paidThemes } from "@/app/lib/theme-gallery";
 
 const appStoreUrl = APP_STORE_LINKS.home;
 const privacyUrl = "https://weizhichao1027-collab.github.io/GuitarTool-Privacy/";
@@ -218,13 +219,29 @@ export default function Home() {
               <h3>不用打开 App，<br />节拍就在主屏幕。</h3>
               <p>小、中、大三种尺寸可控制速度、拍号、播放暂停与 TAP 定速。1.1.1 的大号小组件还可直接切换单拍、八分、三连、十六分与 Swing，并与 App 同步。</p>
             </div>
-            <Image src={assetPath("/widgets.webp")} alt="GuitarTool 三种尺寸的主屏幕节拍器小组件" width={833} height={1800} sizes="(max-width: 700px) 86vw, 460px" />
+            <Image src={assetPath("/release-1.1.1/zh-large-widget.png")} alt="GuitarTool 1.1.1 大号节拍器小组件，显示单拍、八分、三连、十六分与 Swing 选项" width={1146} height={1262} sizes="(max-width: 700px) 86vw, 460px" />
           </article>
         </div>
         <div className="updatePromise">
           <span>现已上架 · 1.1.1</span>
           <p><strong>Apple Watch 现在也能调音。</strong> 手机调音读数更稳定，余音结束后保留三秒；节拍器播放或调音收音时默认保持屏幕常亮，可在个性化中允许运行时熄屏。大号小组件加入细分节奏与 Swing，并修复音频启动问题。</p>
           <b aria-hidden="true">↗</b>
+        </div>
+      </section>
+
+      <section className="themeGallery sectionPad" id="paid-themes" aria-labelledby="paid-themes-heading">
+        <div className="shell themeGalleryIntro">
+          <p className="eyebrow"><span /> 主题展厅 · 六套完整界面</p>
+          <h2 id="paid-themes-heading">从同一个节拍器，<br />走进六种练习氛围。</h2>
+          <p>下面依次展示六套付费主题的真实节拍器页面。每套主题分别购买，解锁后也会用于调音器、和弦库与分享卡；四款基础主题仍免费。</p>
+        </div>
+        <div className="shell themeGalleryGrid">
+          {paidThemes.map((theme, index) => (
+            <figure className={`themeTile themeTile-${theme.slug}`} key={theme.slug}>
+              <div className="themeTileImage"><Image src={assetPath(`/release-1.1.1/themes/zh-${theme.slug}.${theme.ext}`)} alt={`GuitarTool ${theme.zh}付费主题的完整节拍器页面`} width={1320} height={2868} sizes="(max-width: 600px) 85vw, (max-width: 900px) 45vw, 30vw" loading="lazy" /></div>
+              <figcaption><span>{String(index + 1).padStart(2, "0")}</span><div><h3>{theme.zh}</h3><p>{theme.zhMood}</p></div><b>单独解锁</b></figcaption>
+            </figure>
+          ))}
         </div>
       </section>
 

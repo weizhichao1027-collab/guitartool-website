@@ -29,7 +29,7 @@ GuitarTool（吉他工具）的全部练习功能均免费，核心工具离线�
 
 ## Website development
 
-This repository contains the public marketing website, not the native app source. GitHub Pages is the canonical public site; OpenAI Sites hosts a second deployment. The website includes 13 language homepages, browser tools, bilingual practice guides and chord diagrams.
+This repository contains the public marketing website, not the native app source. GitHub Pages is the sole publishing target. The website includes 13 language homepages, browser tools, bilingual practice guides and chord diagrams.
 
 ```bash
 npm ci
@@ -37,7 +37,6 @@ npm run dev
 npm run lint
 npm run build:pages
 npm run audit:pages
-npm run build
 ```
 
 `npm run generate:chords` refreshes the popular-chord data. Successful Pages deployments notify IndexNow automatically. See [MARKETING_HANDOFF.md](./MARKETING_HANDOFF.md) for verified release, distribution and deployment records.

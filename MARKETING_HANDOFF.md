@@ -1,11 +1,17 @@
 # GuitarTool 市场推广与网站交接
 
+## 2026-09-28：官网视觉修正与托管决定（现行）
+
+- 中英文首页的大号小组件已改用 1.1.1 的真实界面，能看到细分节奏与 Swing；六套付费主题的完整节拍器页面组成响应式展厅；“你的练习，跟着你走”设备图改为随内容自然撑开，手机与桌面均完整显示。新增图片同时进入 image sitemap，中英文首页的 sitemap 修改时间更新。
+- GitHub Pages 是唯一营销站发布目标。原 Sites 第二部署已经限制为仅所有者访问，用户决定此后不再更新。仓库删除 `.openai/hosting.json`、Sites/Vinext 配置及依赖；`npm run dev` 使用 Next，`npm run build` 与 Pages 静态构建一致。旧 Sites 版本和 ID 仅作历史追溯，不参与后续发布。
+- 本轮本地核验：`npm ci --ignore-scripts`、Lint、TypeScript、4 项渠道链接测试、Pages 静态构建及链接审计通过；导出 190 个 HTML，审计 266 个本地目标和 201 个外部目标，image sitemap 共 53 个图片条目（本轮新增 14 个）。390 px 手机宽度的中英文首页均无横向溢出，六套主题素材完整载入，设备图留在所属版块内。上述是发布前结果，部署回读另记。
+
 ## 2026-09-28：1.1.1 上架后网站更新
 
 - Apple 中国区公开 Lookup 已回读 `version=1.1.1`、`currentVersionReleaseDate=2026-09-27T19:11:14Z`（北京时间 9 月 28 日 03:11:14）；1.1.1 / Build 16 的上架由产品所有者确认。现行版本功能以本节为准；下文 1.1.0 是主题展厅引入时的历史版本。
 - 官网中英文首页新增 Watch 调音器实证区与 1.1.1 版本摘要；13 语言首页的最新版本区已更新。新功能为 Watch 吉他、尤克里里、贝斯、半音阶调音、手动开始/停止收音与本地音高分析，手机调音稳定性和三秒读数保留，运行时默认亮屏及可选熄屏，大号小组件细分节奏/Swing 与音频修复。1.1.0 引入的六套分别购买的内置主题仍在售，四款基础主题仍免费。
 - 新增中英文 `/guides/apple-watch-tuner/` 专题，回答模式、权限、启停、本机处理与无读数排障；首页、Press Kit、双语支持页提供入口。13 张本地化 Watch 调音截图直接取自 1.1.1 商店预览成品；中英文首页/专题、13 语言版本区、Press Kit 和图片 sitemap 均已接入。旧介绍视频和社交 ZIP 仍展示当时核心功能，不能宣称其展示 1.1.1 Watch 调音器。
-- SEO/GEO：`SoftwareApplication.softwareVersion` 为 1.1.1；页面标题、描述、可抓取正文、FAQ、ContactPage、canonical/hreflang、主 sitemap 和图片 sitemap 同步。Google 官方并无专用 GEO 标记；用可核验的功能事实回答搜索问题，不虚构评分、价格或收录结果。GitHub Pages 继续是 canonical，Sites 维持非 canonical 第二部署。
+- SEO/GEO：`SoftwareApplication.softwareVersion` 为 1.1.1；页面标题、描述、可抓取正文、FAQ、ContactPage、canonical/hreflang、主 sitemap 和图片 sitemap 同步。Google 官方并无专用 GEO 标记；用可核验的功能事实回答搜索问题，不虚构评分、价格或收录结果。GitHub Pages 继续是 canonical；此段记录的 Sites 第二部署现已按上节停用公开访问。
 - 本地验证：`npm run lint`、`npx tsc --noEmit`、4 项渠道链接测试、`npm run build:pages`、`npm run audit:pages` 通过；导出 190 个 HTML，审计 254 个本地目标及 201 个外部目标。发布回读与 Git 记录见主工程 `docs/release/WEBSITE-RELEASE-2026-09-28.md`。
 - 发布结果：GitHub Pages 主站内容提交 `53a94ec`、sitemap/交接提交 `d4e8702` 的 Actions 均成功，IndexNow 接受 187 个 URL；隐私仓库 `1b22215` 的 Pages 构建为 `built`。Sites 最终版本 **23**，源提交 `e818e0b`，部署 `appgdep_6ab9aea1016c8191a13acf94d17f2f2a` 为 `succeeded`；其版本 22 是同轮中间部署。
 
@@ -46,14 +52,14 @@
 | --- | --- | --- | --- |
 | GitHub Pages | 面向普通访客与搜索引擎的公开主站、canonical 来源 | https://weizhichao1027-collab.github.io/guitartool-website/ | 公开 |
 | GitHub | 源码、版本历史、Pages 自动部署 | https://github.com/weizhichao1027-collab/guitartool-website | 仓库权限控制 |
-| OpenAI Sites | 第二套生产部署、托管备份/预览 | https://guitartool-studio.weizhichao1027.chatgpt.site | 公开；版本 23 已同步 1.1.1 内容 |
+| OpenAI Sites（历史） | 已停用公开访问的旧部署，不再维护 | https://guitartool-studio.weizhichao1027.chatgpt.site | 仅所有者可访问；最后公开版本为 23 |
 | App Store Connect | App 产品页、三个自定产品页、精选提名 | App ID `6761914163` | Apple 账号权限控制 |
 | Google Search Console | Google 所有权、sitemap、索引请求 | GitHub Pages URL-prefix 资源 | Google 账号权限控制 |
 | IndexNow | 主动通知支持该协议的搜索引擎 | GitHub Actions 自动调用 | 自动 |
 
-没有使用 Vercel、Netlify 或 Cloudflare Pages。对外分享、SEO canonical、App Store 营销网址和技术支持网址均应使用 GitHub Pages。OpenAI Sites 当前为公开的第二部署，但不是 canonical，也不作为 App Store URL；后续更新应保持其既有公开访问设置。
+没有使用 Vercel、Netlify 或 Cloudflare Pages。对外分享、SEO canonical、App Store 营销网址和技术支持网址均应使用 GitHub Pages。旧 Sites 地址不再公开，也不参与后续更新。
 
-OpenAI Sites 项目 ID：`appgprj_6a8a503888348191be812170e152a86c`。项目配置位于 `.openai/hosting.json`。
+历史 Sites 项目 ID：`appgprj_6a8a503888348191be812170e152a86c`；仓库中的托管配置已移除。
 
 ## 2. 当前内容库存
 
@@ -261,11 +267,11 @@ git push github main
 4. 产品数字必须来自当前 App 事实：吉他 855 个和弦名称/12,415 个指法，尤克里里 855 个名称/6,829 个指法，合计 19,244；节拍器 20–500 BPM；A4 430–446 Hz。
 5. 不声明尚未上线的主题购买、订阅、云同步或社区功能。
 6. 1.0.8 可以推广后置闪光灯节拍、和弦卡片分享与 Watch 后台声音。闪光灯必须说明仅限兼容 iPhone、全部主拍/仅重音、三档强度、不跟随细分、自动关闭且不拍照；Watch 必须说明仅继续声音，界面和触觉刷新会暂停，部分旧型号可能需要蓝牙音频路线。
-7. Release 中隐藏、仅供开发预览的 Morning Mist/完整主题画廊不得出现在商店、网站或渠道文案中。
+7. 1.1.0 起六套完整主题已上架并可展示真实界面；每套单独购买，四款基础主题仍免费。早期未发布预览的限制仅适用于当时的历史版本。
 8. 不移除 Google verification meta、IndexNow key 文件或 sitemap/robots 路由。
 9. 不改变公开 canonical 域名，除非同时迁移 App Store 营销 URL、Search Console、sitemap、robots、hreflang 和全部绝对链接。
 10. 1080p 视频只在上级资料归档保存；Pages 只使用文件名含语言与分辨率的四个网页版，并在每次发布后确认 HTTP 200、`video/mp4` 和浏览器可播放。公开 Release 是下载备份，不替代同源网页播放地址。
-11. 每次公开发布后，在本文件同步日期、内容提交、交接提交、Actions 工作流、页面/链接/sitemap 数量、线上抽样结果与 OpenAI Sites 的真实版本及权限；不要沿用历史快照。
+11. 每次公开发布后，在本文件同步日期、内容提交、交接提交、Actions 工作流、页面/链接/sitemap 数量与线上抽样结果；不要沿用历史快照。
 
 ## 7. 明确不做与当前边界
 
@@ -294,10 +300,10 @@ git push github main
 
 1. 先读本文件和上级 `APP交接文档.md` 第 33 节；较早章节保留为历史与阶段记录，状态冲突时以第 33 节和本文件“当前发布基线”为准。
 2. 使用 `git status --short`，确认没有重复的根目录社交预览图或构建产物混入提交。
-3. 以已上线的 App Store 1.0.8 为基线；13 种语言、Build 8、版本说明、13 个支持网址与 7 张复用截图保持稳定，App Preview 为 0。
+3. 以已上线的 App Store 1.1.1 / Build 16 为基线；13 种语言、支持网址和当前版本说明保持一致。
 4. 三个已批准自定产品页与公开 `ppid` 链接继续保持启用；历史替代版本提交不再作为对外发布状态。
 5. 检查 Search Console sitemap 与索引报告；Google 仍在初次处理时先等待，不反复重建资源。
-6. 修改站点后依次运行 `npm run lint`、`npm run build:pages`、`npm run audit:pages`、`npm run build` 与 `git diff --check`；推送后确认 Actions 三个 Job、核心页面和四个视频，再更新日期、库存、两类 sitemap 数、提交、工作流以及 Sites 的真实状态。
+6. 修改站点后依次运行 `npm run lint`、`npm run build:pages`、`npm run audit:pages` 与 `git diff --check`；推送后确认 Actions 三个 Job、核心页面和四个视频，再更新日期、库存、两类 sitemap 数、提交与工作流。
 7. 在 App Store Analytics 按各 `site_*` Campaign 比较点击后的下载表现；图片分享不附带商店链接，不能用 Campaign 直接归因，不要为了归因重新强制添加下载链接。
 8. 每周比较 Tuner、Metronome、Chord 三类 `ppid` 页面与 Campaign 的真实下载表现；只有样本足够且差异稳定时才调整页面，不创建重复精选提名。
 9. 对外联系时从 `联络包/20个定向推广对象.csv` 逐条选择，不把 20 份个性化稿合并成群发；Product Hunt、AlternativeTo 和社区发布必须由真实个人账号参与。
