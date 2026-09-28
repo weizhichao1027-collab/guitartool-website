@@ -5,6 +5,7 @@
 - 中英文首页的大号小组件已改用 1.1.1 的真实界面，能看到细分节奏与 Swing；六套付费主题的完整节拍器页面组成响应式展厅；“你的练习，跟着你走”设备图改为随内容自然撑开，手机与桌面均完整显示。新增图片同时进入 image sitemap，中英文首页的 sitemap 修改时间更新。
 - GitHub Pages 是唯一营销站发布目标。原 Sites 第二部署已经限制为仅所有者访问，用户决定此后不再更新。仓库删除 `.openai/hosting.json`、Sites/Vinext 配置及依赖；`npm run dev` 使用 Next，`npm run build` 与 Pages 静态构建一致。旧 Sites 版本和 ID 仅作历史追溯，不参与后续发布。
 - 本轮本地核验：`npm ci --ignore-scripts`、Lint、TypeScript、4 项渠道链接测试、Pages 静态构建及链接审计通过；导出 190 个 HTML，审计 266 个本地目标和 201 个外部目标，image sitemap 共 53 个图片条目（本轮新增 14 个）。390 px 手机宽度的中英文首页均无横向溢出，六套主题素材完整载入，设备图留在所属版块内。上述是发布前结果，部署回读另记。
+- 正式页面提交 `77ebc4bc81e05440c77e10f6025d77fda72ecf59` 已推送；[GitHub Pages Actions 36367995970](https://github.com/weizhichao1027-collab/guitartool-website/actions/runs/36367995970) 的 build、deploy、notify-search-engines 均成功。公开中英文首页、双语支持、新版大号小组件图和琴匠测绘 WebP 均为 HTTP 200；公开 image sitemap 为 53 条图片映射，含本轮新增的 14 张，主 sitemap 中英文首页 `lastmod` 均为 `2026-09-28T01:50:00Z`。旧 Sites 匿名访问为 HTTP 401。
 
 ## 2026-09-28：1.1.1 上架后网站更新
 
