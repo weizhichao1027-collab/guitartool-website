@@ -1,5 +1,13 @@
 # GuitarTool 市场推广与网站交接
 
+## 2026-09-28：1.1.1 上架后网站更新
+
+- Apple 中国区公开 Lookup 已回读 `version=1.1.1`、`currentVersionReleaseDate=2026-09-27T19:11:14Z`（北京时间 9 月 28 日 03:11:14）；1.1.1 / Build 16 的上架由产品所有者确认。现行版本功能以本节为准；下文 1.1.0 是主题展厅引入时的历史版本。
+- 官网中英文首页新增 Watch 调音器实证区与 1.1.1 版本摘要；13 语言首页的最新版本区已更新。新功能为 Watch 吉他、尤克里里、贝斯、半音阶调音、手动开始/停止收音与本地音高分析，手机调音稳定性和三秒读数保留，运行时默认亮屏及可选熄屏，大号小组件细分节奏/Swing 与音频修复。1.1.0 引入的六套分别购买的内置主题仍在售，四款基础主题仍免费。
+- 新增中英文 `/guides/apple-watch-tuner/` 专题，回答模式、权限、启停、本机处理与无读数排障；首页、Press Kit、双语支持页提供入口。13 张本地化 Watch 调音截图直接取自 1.1.1 商店预览成品；中英文首页/专题、13 语言版本区、Press Kit 和图片 sitemap 均已接入。旧介绍视频和社交 ZIP 仍展示当时核心功能，不能宣称其展示 1.1.1 Watch 调音器。
+- SEO/GEO：`SoftwareApplication.softwareVersion` 为 1.1.1；页面标题、描述、可抓取正文、FAQ、ContactPage、canonical/hreflang、主 sitemap 和图片 sitemap 同步。Google 官方并无专用 GEO 标记；用可核验的功能事实回答搜索问题，不虚构评分、价格或收录结果。GitHub Pages 继续是 canonical，Sites 维持非 canonical 第二部署。
+- 本地验证：`npm run lint`、`npx tsc --noEmit`、4 项渠道链接测试、`npm run build:pages`、`npm run audit:pages` 通过；导出 190 个 HTML，审计 254 个本地目标及 201 个外部目标。发布回读与 Git 记录见主工程 `docs/release/WEBSITE-RELEASE-2026-09-28.md`。
+
 ## 2026-09-25：1.1.0 上架后网站更新
 
 - 产品状态：用户确认 1.1.0 已上架；本轮按 1.1.0 / 六套独立非消耗型付费主题更新公开内容。Apple 中国区公开 Lookup 核对 `version=1.1.0`、`currentVersionReleaseDate=2026-09-25T08:25:07Z`（北京时间 16:25:07）。公开搜索摘要仍可能缓存 1.0.8，不能据此回退站点文案。准确商店页面为 [GuitarTool](https://apps.apple.com/app/id6761914163)。
