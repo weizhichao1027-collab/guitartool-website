@@ -81,7 +81,7 @@ export function LandingPageView({ page, language }: { page: LandingPage; languag
           <nav className="breadcrumb" aria-label="Breadcrumb">
             <Link href={isZh ? "/" : "/en/"}>{isZh ? "首页" : "Home"}</Link>
             <span>/</span>
-            <span>{isZh ? "练习指南" : "Practice guides"}</span>
+            <Link href={isZh ? "/guides/" : "/en/guides/"}>{isZh ? "练习指南" : "Practice guides"}</Link>
           </nav>
           <p className="acqEyebrow">{page.eyebrow}</p>
           <h1>{page.title}</h1>

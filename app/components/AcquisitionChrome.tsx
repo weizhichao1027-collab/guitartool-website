@@ -18,8 +18,8 @@ type ChromeCopy = {
 };
 
 const chromeCopy: Record<Locale, ChromeCopy> = {
-  zh: { home: "GuitarTool 首页", navigation: "资源导航", tools: "练习工具", chords: "热门和弦", press: "媒体资料", support: "支持中心", download: "下载", privacy: "隐私政策", contact: "联系", promise: "核心工具离线 · 无广告 · 无需账户" },
-  en: { home: "GuitarTool home", navigation: "Resource navigation", tools: "Practice tools", chords: "Popular chords", press: "Press kit", support: "Support", download: "Download", privacy: "Privacy", contact: "Contact", promise: "Offline core tools · No ads · No account" },
+  zh: { home: "GuitarTool 首页", navigation: "资源导航", tools: "练习指南", chords: "热门和弦", press: "媒体资料", support: "支持中心", download: "下载", privacy: "隐私政策", contact: "联系", promise: "核心工具离线 · 无广告 · 无需账户" },
+  en: { home: "GuitarTool home", navigation: "Resource navigation", tools: "Practice guides", chords: "Popular chords", press: "Press kit", support: "Support", download: "Download", privacy: "Privacy", contact: "Contact", promise: "Offline core tools · No ads · No account" },
   "zh-hant": { home: "GuitarTool 首頁", navigation: "資源導覽", tools: "練習工具", chords: "熱門和弦", press: "媒體資料", support: "支援", download: "下載", privacy: "隱私政策", contact: "聯絡", promise: "核心工具離線 · 無廣告 · 無需帳戶" },
   es: { home: "Inicio de GuitarTool", navigation: "Navegación de recursos", tools: "Herramientas", chords: "Acordes populares", press: "Kit de prensa", support: "Soporte", download: "Descargar", privacy: "Privacidad", contact: "Contacto", promise: "Funciones esenciales sin conexión · Sin anuncios · Sin cuenta" },
   "pt-br": { home: "Início do GuitarTool", navigation: "Navegação de recursos", tools: "Ferramentas", chords: "Acordes populares", press: "Kit de imprensa", support: "Suporte", download: "Baixar", privacy: "Privacidade", contact: "Contato", promise: "Recursos essenciais offline · Sem anúncios · Sem conta" },
@@ -48,7 +48,7 @@ function supportHome(locale: Locale) {
 export function AcquisitionHeader({ language, locale }: { language?: "zh" | "en"; locale?: string }) {
   const resolved = normalizedLocale(locale ?? language);
   const copy = chromeCopy[resolved];
-  const tools = resolved === "zh" ? "/guides/guitar-tuner/" : resolved === "en" ? "/en/guides/guitar-tuner/" : `/${resolved}/online-tuner/`;
+  const tools = resolved === "zh" ? "/guides/" : resolved === "en" ? "/en/guides/" : `/${resolved}/online-tuner/`;
 
   return (
     <header className="acqHeader shell">

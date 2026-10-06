@@ -9,6 +9,7 @@
     ["wechat", "wechat"], ["zhihu", "zhihu"],
     ["reddit", "reddit"], ["producthunt", "producthunt"],
     ["alternativeto", "alternativeto"], ["github", "github"],
+    ["v2ex", "v2ex"], ["jike", "jike"],
   ]);
   const pageUrl = new URL(window.location.href);
   const source = channels.get((pageUrl.searchParams.get("utm_source") || "").toLowerCase());

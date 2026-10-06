@@ -47,6 +47,15 @@ test("organic search and arbitrary source values keep the existing download camp
   }
 });
 
+test("developer community channels survive navigation and reach download attribution", () => {
+  for (const source of ["v2ex", "jike"]) {
+    const [guide] = visit(`https://example.com/guitartool-website/?utm_source=${source}`, ["/guitartool-website/guides/"]);
+    assert.equal(new URL(guide.href).searchParams.get("utm_source"), source);
+    const [download] = visit(guide.href, [store]);
+    assert.equal(new URL(download.href).searchParams.get("ct"), `organic_${source}`);
+  }
+});
+
 test("other apps, unrelated sites, media, downloads and anchors are not rewritten", () => {
   const originals = [
     "https://apps.apple.com/app/id123456",

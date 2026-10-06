@@ -56,6 +56,9 @@ export const APP_STORE_LINKS = {
 } as const;
 
 const GUIDE_CAMPAIGNS: Record<string, string> = {
+  "guitar-tuner-jumping": "seo_tuner_jumping",
+  "metronome-for-beginners": "seo_beginner_metronome",
+  "smooth-chord-changes": "seo_chord_changes",
   "tap-tempo-bpm": "seo_tap_tempo",
   "swing-metronome": "seo_swing",
   "progressive-tempo-training": "seo_tempo_training",

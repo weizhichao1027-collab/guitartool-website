@@ -2,6 +2,7 @@ import { enTuningPages, zhTuningPages } from "@/app/lib/tuning-pages";
 import { enPracticePages, zhPracticePages } from "@/app/lib/practice-pages";
 import { enFeaturePages, zhFeaturePages } from "@/app/lib/feature-pages";
 import { enIntentPages, zhIntentPages } from "@/app/lib/intent-pages";
+import { enTroubleshootingPages, zhTroubleshootingPages } from "@/app/lib/troubleshooting-pages";
 
 export type LandingLanguage = "zh" | "en";
 
@@ -275,8 +276,8 @@ const zh: LandingPage[] = [
 ];
 
 export const landingPages = {
-  en: [...en, ...enFeaturePages, ...enTuningPages, ...(enPracticePages as LandingPage[]), ...enIntentPages],
-  zh: [...zh, ...zhFeaturePages, ...zhTuningPages, ...(zhPracticePages as LandingPage[]), ...zhIntentPages],
+  en: [...en, ...enFeaturePages, ...enTuningPages, ...(enPracticePages as LandingPage[]), ...enIntentPages, ...enTroubleshootingPages],
+  zh: [...zh, ...zhFeaturePages, ...zhTuningPages, ...(zhPracticePages as LandingPage[]), ...zhIntentPages, ...zhTroubleshootingPages],
 } as const;
 
 export function getLandingPage(language: LandingLanguage, slug: string) {
