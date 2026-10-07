@@ -1,5 +1,5 @@
 export const APP_NAME = "GuitarTool";
-export const RELEASE_VERSION = "1.1.1";
+export const RELEASE_VERSION = "1.1.2";
 export const APP_STORE_URL = "https://apps.apple.com/app/id6761914163";
 const APP_STORE_PROVIDER_TOKEN = "128747267";
 
@@ -56,6 +56,8 @@ export const APP_STORE_LINKS = {
 } as const;
 
 const GUIDE_CAMPAIGNS: Record<string, string> = {
+  "silent-bar-metronome": "seo_silent_bars",
+  "staged-tempo-training": "seo_staged_training",
   "guitar-tuner-jumping": "seo_tuner_jumping",
   "metronome-for-beginners": "seo_beginner_metronome",
   "smooth-chord-changes": "seo_chord_changes",
@@ -88,6 +90,7 @@ export function appStoreLinkForGuide(slug: string) {
   return appStoreLink(destination, appStoreCampaignForGuide(slug));
 }
 export const PRIVACY_URL = "https://weizhichao1027-collab.github.io/GuitarTool-Privacy/";
+export const PRIVACY_EN_URL = `${PRIVACY_URL}en/`;
 export const GITHUB_URL = "https://github.com/weizhichao1027-collab/guitartool-website";
 export const SITE_ORIGIN = "https://weizhichao1027-collab.github.io";
 export const SITE_BASE_PATH = "/guitartool-website";

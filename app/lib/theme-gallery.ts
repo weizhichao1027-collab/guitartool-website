@@ -5,4 +5,9 @@ export const paidThemes = [
   { slug: "pocket-synth", zh: "口袋合成器", en: "Pocket Synth", zhMood: "复古旋钮与电子屏", enMood: "Retro knobs and an LCD display", ext: "jpg" },
   { slug: "vinyl-afterhours", zh: "黑胶夜场", en: "Vinyl Afterhours", zhMood: "黑胶唱片与暖金细节", enMood: "A vinyl record with warm brass", ext: "jpg" },
   { slug: "luthier-atlas", zh: "琴匠测绘", en: "Luthier Atlas", zhMood: "制琴图纸与精密刻度", enMood: "Luthier drawings and fine scales", ext: "webp" },
+  { slug: "jade-resonance", zh: "玄玉声场", en: "Jade Resonance", zhMood: "深绿玉石与温润金属", enMood: "Deep jade and brushed metal · Chinese UI shown", ext: "webp" },
 ] as const;
+
+export function themeImage(theme: (typeof paidThemes)[number], language: "zh" | "en") {
+  return theme.slug === "jade-resonance" ? "/release-1.1.2/jade-resonance-zh.webp" : `/release-1.1.1/themes/${language}-${theme.slug}.${theme.ext}`;
+}

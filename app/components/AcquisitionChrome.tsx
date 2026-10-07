@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { SiteLink as Link } from "@/app/components/SiteLink";
-import { APP_STORE_LINKS, GITHUB_URL, PRIVACY_URL, assetPath } from "@/app/lib/site";
+import { APP_STORE_LINKS, GITHUB_URL, PRIVACY_URL, PRIVACY_EN_URL, assetPath } from "@/app/lib/site";
 
 type Locale = "zh" | "en" | "zh-hant" | "es" | "pt-br" | "fr" | "de" | "it" | "ja" | "ko" | "ru" | "tr" | "ar";
 
@@ -74,7 +74,7 @@ export function AcquisitionFooter({ language, locale }: { language?: "zh" | "en"
       <p>© 2026 Zhichao Wei · {copy.promise}</p>
       <div>
         <Link href={supportHome(normalizedLocale(locale ?? language))}>{copy.support}</Link>
-        <a href={PRIVACY_URL}>{copy.privacy}</a>
+        <a href={normalizedLocale(locale ?? language).startsWith("zh") ? PRIVACY_URL : PRIVACY_EN_URL}>{copy.privacy}</a>
         <a href="mailto:weizhichao1027@gmail.com">{copy.contact}</a>
         <a href={GITHUB_URL}>GitHub</a>
       </div>

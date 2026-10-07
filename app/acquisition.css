@@ -393,3 +393,11 @@
   .mobileDownloadBar small { overflow: hidden; color: #bdd0ce; font-size: 10px; text-overflow: ellipsis; white-space: nowrap; }
   .mobileDownloadBar a { flex: 0 0 auto; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 9px 13px; border-radius: 12px; color: #17383a; background: #95e5dc; font-size: 13px; font-weight: 800; }
 }
+
+/* Keep media download labels within narrow press-kit cards. */
+.pressVideoGrid > article, .pressFullVideoGrid > article { min-width: 0; }
+.pressVideoGrid article > div, .pressFullVideoGrid article > div { min-width: 0; overflow-wrap: anywhere; }
+@media (max-width: 700px) {
+  .pressVideoGrid article { grid-template-columns: minmax(0, 1fr); }
+  .pressVideoGrid video { width: min(100%, 210px); justify-self: center; }
+}

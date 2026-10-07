@@ -8,7 +8,7 @@ import { zhTroubleshootingPages } from "@/app/lib/troubleshooting-pages";
 export function GuideIndexView({ language }: { language: LandingLanguage }) {
   const zh = language === "zh";
   const prefix = zh ? "/guides" : "/en/guides";
-  const recent = new Set(zhTroubleshootingPages.map(p => p.slug));
+  const recent = new Set(["silent-bar-metronome", "staged-tempo-training", ...zhTroubleshootingPages.map(p => p.slug)]);
   const pages = landingPages[language];
   const groups = [
     { title: zh ? "先解决眼前的卡点" : "Start with the problem in front of you", pages: pages.filter(p => recent.has(p.slug)) },

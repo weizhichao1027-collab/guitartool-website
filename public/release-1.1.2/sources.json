@@ -1,0 +1,100 @@
+[
+  {
+    "source": "../docs/release/app-store-screenshots-1.1.2/成品预览图/苹果手机/简体中文/04-practice-training.png",
+    "output": "public/release-1.1.2/zh-training.webp",
+    "width": 660,
+    "height": 1434,
+    "sourceSha256": "9bdb453fe93f4290485c56194e94b56e27c081732d71be8d6fad5dee107d0d15"
+  },
+  {
+    "source": "../docs/release/app-store-screenshots-1.1.2/成品预览图/苹果手机/英语/04-practice-training.png",
+    "output": "public/release-1.1.2/en-training.webp",
+    "width": 660,
+    "height": 1434,
+    "sourceSha256": "281f217fcda17f6d7a204d7f3da6222203b72aa4011dd0625dc3e80d53399659"
+  },
+  {
+    "source": "../docs/release/app-store-screenshots-1.1.2/成品预览图/苹果手机/繁体中文/04-practice-training.png",
+    "output": "public/release-1.1.2/zh-hant-training.webp",
+    "width": 660,
+    "height": 1434,
+    "sourceSha256": "a2f8854a127ae909ee9389ef68243aa766ee5b19d358f16129c9e6f1f136dcf9"
+  },
+  {
+    "source": "../docs/release/app-store-screenshots-1.1.2/成品预览图/苹果手机/西班牙语/04-practice-training.png",
+    "output": "public/release-1.1.2/es-training.webp",
+    "width": 660,
+    "height": 1434,
+    "sourceSha256": "e73a3407cfbe525b50438779ddc4761bd49a8bd8ae0d3c18f842e50ef6b59f59"
+  },
+  {
+    "source": "../docs/release/app-store-screenshots-1.1.2/成品预览图/苹果手机/巴西葡萄牙语/04-practice-training.png",
+    "output": "public/release-1.1.2/pt-br-training.webp",
+    "width": 660,
+    "height": 1434,
+    "sourceSha256": "a0b98cabefa933769f4f02d55239f444152007a075e788c7579f563d2948709e"
+  },
+  {
+    "source": "../docs/release/app-store-screenshots-1.1.2/成品预览图/苹果手机/法语/04-practice-training.png",
+    "output": "public/release-1.1.2/fr-training.webp",
+    "width": 660,
+    "height": 1434,
+    "sourceSha256": "b551d02c484e02853b7dad787868d2c599182fb821e8a9b22afa822e575328dc"
+  },
+  {
+    "source": "../docs/release/app-store-screenshots-1.1.2/成品预览图/苹果手机/德语/04-practice-training.png",
+    "output": "public/release-1.1.2/de-training.webp",
+    "width": 660,
+    "height": 1434,
+    "sourceSha256": "4dbb614becc177c40193be0cb5a76a6d22553853c87baae929e9cad6f186cb79"
+  },
+  {
+    "source": "../docs/release/app-store-screenshots-1.1.2/成品预览图/苹果手机/意大利语/04-practice-training.png",
+    "output": "public/release-1.1.2/it-training.webp",
+    "width": 660,
+    "height": 1434,
+    "sourceSha256": "1ea6c529edecfff0a4adfd98827ba13ef2982f782793dec91cb534c3d5727859"
+  },
+  {
+    "source": "../docs/release/app-store-screenshots-1.1.2/成品预览图/苹果手机/日语/04-practice-training.png",
+    "output": "public/release-1.1.2/ja-training.webp",
+    "width": 660,
+    "height": 1434,
+    "sourceSha256": "0b7a80f49226348f1c5e5eb60fcbd4441912df7f241715468cb08b2e0cedfb83"
+  },
+  {
+    "source": "../docs/release/app-store-screenshots-1.1.2/成品预览图/苹果手机/韩语/04-practice-training.png",
+    "output": "public/release-1.1.2/ko-training.webp",
+    "width": 660,
+    "height": 1434,
+    "sourceSha256": "c808b16e10343161b91b120294c173e30cf2c3a10bed47f8b1120e8702f33a66"
+  },
+  {
+    "source": "../docs/release/app-store-screenshots-1.1.2/成品预览图/苹果手机/俄语/04-practice-training.png",
+    "output": "public/release-1.1.2/ru-training.webp",
+    "width": 660,
+    "height": 1434,
+    "sourceSha256": "dc9b5bd6c94ecda2547d8fb8b546f6c68142ebbb4db4da981162313490b6de60"
+  },
+  {
+    "source": "../docs/release/app-store-screenshots-1.1.2/成品预览图/苹果手机/土耳其语/04-practice-training.png",
+    "output": "public/release-1.1.2/tr-training.webp",
+    "width": 660,
+    "height": 1434,
+    "sourceSha256": "edb3f005fb7bdb320396cab668e09c107e9460afdfa645fad16233b68c0db006"
+  },
+  {
+    "source": "../docs/release/app-store-screenshots-1.1.2/成品预览图/苹果手机/阿拉伯语/04-practice-training.png",
+    "output": "public/release-1.1.2/ar-training.webp",
+    "width": 660,
+    "height": 1434,
+    "sourceSha256": "9b814707793f41433059cb04a4dc1af412dab26a89b8fcd50cfff39d431d6406"
+  },
+  {
+    "source": "../docs/design/design-sources/jade-resonance/qa/health-fixes-20261004/metronome.png",
+    "output": "public/release-1.1.2/jade-resonance-zh.webp",
+    "width": 660,
+    "height": 1435,
+    "sourceSha256": "6318a6fe8c6efeea88cdfdb6df192e747e3344c140861a92b8a4d2cad4e64927"
+  }
+]

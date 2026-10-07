@@ -2,17 +2,20 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { AcquisitionFooter, AcquisitionHeader } from "@/app/components/AcquisitionChrome";
 import { JsonLd } from "@/app/components/JsonLd";
-import { APP_STORE_LINKS, APP_STORE_URL, GITHUB_URL, PRIVACY_URL, RELEASE_VERSION, absoluteUrl, assetPath } from "@/app/lib/site";
+import { APP_STORE_LINKS, APP_STORE_URL, GITHUB_URL, PRIVACY_EN_URL, RELEASE_VERSION, absoluteUrl, assetPath } from "@/app/lib/site";
 
 export const metadata: Metadata = {
   title: "GuitarTool Press Kit | Product Facts, Images & Contact",
-  description: "Official GuitarTool 1.1.1 press kit: Apple Watch tuner, improved tuning and widgets, verified product facts, downloadable visuals and developer contact.",
+  description: "Official GuitarTool 1.1.2 press kit: silent bars, staged tempo training, Jade Resonance, product facts, real screenshots and developer contact.",
   alternates: { canonical: absoluteUrl("/press/") },
-  openGraph: { title: "GuitarTool Official Press Kit", description: "Version 1.1.1 Apple Watch tuner, downloadable visuals and verified product facts.", url: absoluteUrl("/press/"), type: "website", images: [{ url: absoluteUrl("/en-watch-tuner.jpg"), width: 416, height: 496, alt: "GuitarTool Apple Watch tuner preview" }] },
-  twitter: { card: "summary_large_image", title: "GuitarTool Official Press Kit", description: "Version 1.1.1 Apple Watch tuner, verified facts and downloadable media.", images: [absoluteUrl("/en-watch-tuner.jpg")] },
+  openGraph: { title: "GuitarTool Official Press Kit", description: "Version 1.1.2 rhythm training and Jade Resonance, downloadable visuals and verified product facts.", url: absoluteUrl("/press/"), type: "website", images: [{ url: absoluteUrl("/en-watch-tuner.jpg"), width: 416, height: 496, alt: "GuitarTool Apple Watch tuner preview" }] },
+  twitter: { card: "summary_large_image", title: "GuitarTool Official Press Kit", description: "Version 1.1.2 rhythm training and Jade Resonance, verified facts and downloadable media.", images: [absoluteUrl("/en-watch-tuner.jpg")] },
 };
 
 const assets = [
+  { title: "1.1.2 rhythm training · English", file: "/release-1.1.2/en-training.webp", preview: "/release-1.1.2/en-training.webp", detail: "WebP · real App Store preview · 1.1.2", width: 660, height: 1434 },
+  { title: "1.1.2 rhythm training · Chinese", file: "/release-1.1.2/zh-training.webp", preview: "/release-1.1.2/zh-training.webp", detail: "WebP · real App Store preview · 1.1.2", width: 660, height: 1434 },
+  { title: "Jade Resonance · Chinese interface", file: "/release-1.1.2/jade-resonance-zh.webp", preview: "/release-1.1.2/jade-resonance-zh.webp", detail: "WebP · real native metronome · introduced in 1.1.2", width: 660, height: 1435 },
   { title: "App icon", file: "/app-icon.png", preview: "/app-icon.png", detail: "PNG · square icon", width: 1024, height: 1024 },
   { title: "Social preview", file: "/og.png", preview: "/og.png", detail: "PNG · 1200 × 630", width: 1200, height: 630 },
   { title: "Metronome interface", file: "/en-metronome.webp", preview: "/en-metronome.webp", detail: "WebP · English UI", width: 833, height: 1800 },
@@ -37,7 +40,7 @@ const fullVideos = [
 export default function PressKitPage() {
   return (
     <main className="acqPage pressPage" lang="en">
-      <JsonLd data={{ "@context": "https://schema.org", "@type": "SoftwareApplication", name: "GuitarTool", softwareVersion: RELEASE_VERSION, description: "Offline core practice tools for guitar and ukulele, with Apple Watch tuning, rear-flash beat cues, shareable chord cards and Home Screen widgets.", url: absoluteUrl("/"), downloadUrl: APP_STORE_URL, applicationCategory: "MusicApplication", operatingSystem: "iOS, iPadOS, watchOS", featureList: ["Real-time tuner for seven instrument families", "Apple Watch guitar, ukulele, bass and chromatic tuner", "20–500 BPM practice metronome", "Rear-flash beat cues for all main beats or accents only, with three intensities", "19,244 guitar and ukulele fingerings", "Chord-card preview, Photos save and system sharing", "Apple Watch metronome with background audio", "Large Home Screen widget subdivisions and Swing", "13 interface languages"], author: { "@type": "Person", name: "Zhichao Wei" }, offers: { "@type": "Offer", price: "0", priceCurrency: "USD" } }} />
+      <JsonLd data={{ "@context": "https://schema.org", "@type": "SoftwareApplication", name: "GuitarTool", softwareVersion: RELEASE_VERSION, description: "Offline core practice tools for guitar and ukulele, with Apple Watch tuning, rear-flash beat cues, shareable chord cards and Home Screen widgets.", url: absoluteUrl("/"), downloadUrl: APP_STORE_URL, applicationCategory: "MusicApplication", operatingSystem: "iOS, iPadOS, watchOS", featureList: ["Real-time tuner for seven instrument families", "Apple Watch guitar, ukulele, bass and chromatic tuner", "20–500 BPM practice metronome", "Silent bars and up to six tempo stages", "Seven separately purchased themes including Jade Resonance", "Rear-flash beat cues for all main beats or accents only, with three intensities", "19,244 guitar and ukulele fingerings", "Chord-card preview, Photos save and system sharing", "Apple Watch metronome with background audio", "Large Home Screen widget subdivisions and Swing", "13 interface languages"], author: { "@type": "Person", name: "Zhichao Wei" }, offers: { "@type": "Offer", price: "0", priceCurrency: "USD" } }} />
       <JsonLd data={[
         ...fullVideos.map((video) => ({ "@context": "https://schema.org", "@type": "VideoObject", name: video.title, description: "A 36-second full introduction to GuitarTool's tuner, metronome, chord cards, widgets and multi-device experience.", thumbnailUrl: absoluteUrl("/media-kit/social/guitartool-chord-cards-en-1200x630.png"), uploadDate: "2026-08-28", duration: "PT36S", contentUrl: absoluteUrl(video.file) })),
         { "@context": "https://schema.org", "@type": "VideoObject", name: "GuitarTool 24-second social preview", description: "A concise vertical preview of GuitarTool's offline metronome, tuner, chord library and shareable chord cards.", thumbnailUrl: absoluteUrl("/media-kit/social/guitartool-chord-cards-en-1200x630.png"), uploadDate: "2026-08-27", duration: "PT24S", contentUrl: absoluteUrl("/media-kit/video/GuitarTool-Social-Preview-en-1080x1920.mp4") },
@@ -45,17 +48,17 @@ export default function PressKitPage() {
       ]} />
       <AcquisitionHeader language="en" />
       <section className="pressHero shell">
-        <p className="acqEyebrow">OFFICIAL PRESS KIT · UPDATED SEPTEMBER 2026</p>
+        <p className="acqEyebrow">OFFICIAL PRESS KIT · UPDATED OCTOBER 2026</p>
         <h1>GuitarTool keeps core practice tools <em>focused, private and offline.</em></h1>
         <p>Verified product facts, downloadable visual assets and direct links for journalists, educators, reviewers and creators.</p>
         <div><a className="primaryButton" href={APP_STORE_LINKS.press}>View on the App Store <span>↗</span></a><a className="textCta" href="mailto:weizhichao1027@gmail.com">Contact the developer <span>→</span></a></div>
       </section>
 
       <section className="pressFacts shell">
-        <div><p className="acqEyebrow">ONE-SENTENCE DESCRIPTION</p><h2>GuitarTool is a free, ad-free iPhone and iPad practice toolkit with offline core tools, four free basic looks and six separately purchasable themes, shareable chord cards, Apple Watch and Home Screen companions.</h2></div>
+        <div><p className="acqEyebrow">ONE-SENTENCE DESCRIPTION</p><h2>GuitarTool is a free, ad-free iPhone and iPad practice toolkit with offline core tools, four free basic looks and seven separately purchasable themes, shareable chord cards, Apple Watch and Home Screen companions.</h2></div>
         <dl>
           <div><dt>Platforms</dt><dd>iPhone, iPad, Apple Watch</dd></div>
-          <div><dt>Price</dt><dd>Free download · four basic looks free · six themes sold separately</dd></div>
+          <div><dt>Price</dt><dd>Free download · four basic looks free · seven themes sold separately</dd></div>
           <div><dt>Languages</dt><dd>13 interface languages</dd></div>
           <div><dt>Privacy</dt><dd>No account, ads, analytics or audio uploads</dd></div>
           <div><dt>Developer</dt><dd>Zhichao Wei</dd></div>
@@ -68,12 +71,17 @@ export default function PressKitPage() {
       </section>
 
       <section className="pressStory shell">
-        <div><p className="acqEyebrow">NEW IN VERSION 1.1.1</p><h2>Tune from the wrist, keep the note visible and shape the beat from your Home Screen.</h2></div>
+        <div><p className="acqEyebrow">AVAILABLE NOW · VERSION 1.1.2</p><h2>Practise through the silence, then move through your tempo stages.</h2></div>
+        <div><p>Released October 7, 2026. On iPhone and iPad, Presets → Rhythm Training alternates audible and silent bars and supports up to six tempo stages: 20–500 BPM and 1–64 bars per stage. Save the configuration as a custom preset. Manual tempo changes or TAP exit staged training; with looping off, the last tempo continues.</p><p>Jade Resonance is the seventh complete theme, available to preview before a separate one-time purchase. Four basic looks and all practice tools remain free. The release improves stopping playback, audio interruptions, device changes, large text and right-to-left layouts. <a href={absoluteUrl("/en/guides/silent-bar-metronome/")}>Silent-bar guide</a> · <a href={absoluteUrl("/en/guides/staged-tempo-training/")}>Tempo-stage guide</a>.</p></div>
+      </section>
+
+      <section className="pressStory shell">
+        <div><p className="acqEyebrow">INTRODUCED IN VERSION 1.1.1</p><h2>Tune from the wrist, keep the note visible and shape the beat from your Home Screen.</h2></div>
         <div><p>GuitarTool 1.1.1 adds an Apple Watch tuner with guitar, ukulele, bass and chromatic modes, note and cents feedback, and an in-tune haptic cue. Listening begins only after Start Tuning and ends when stopped, when the page changes or when the app is left; audio stays on the watch. The iPhone and iPad tuner now tracks notes more steadily and holds the last reading for about three seconds after the note ends.</p><p>During active metronome playback or tuning, the phone screen stays awake by default, with a Personalization setting that allows sleep. The large Home Screen widget gains beat, eighth, triplet, sixteenth and Swing choices that sync with the app. This release also addresses silent widget startup and audio-session reliability. <a href={absoluteUrl("/en/guides/apple-watch-tuner/")}>Read the Watch tuner guide</a>.</p></div>
       </section>
 
       <section className="pressStory shell">
-        <div><p className="acqEyebrow">AVAILABLE IN VERSION 1.1.0</p><h2>Six complete themes turn the whole practice flow into a visual instrument.</h2></div>
+        <div><p className="acqEyebrow">INTRODUCED IN VERSION 1.1.0</p><h2>Six complete themes turn the whole practice flow into a visual instrument.</h2></div>
         <div><p>Version 1.1.0 includes Morning Mist Studio, Lunar Radio, Paper Ensemble, Pocket Synth, Vinyl Afterhours and Luthier Atlas as separately purchasable themes in the Theme Gallery. Each complete design reaches across the tuner, metronome, chord library and share cards, and every supported page can be previewed before selection.</p><p>The six complete themes are bundled with the app but still require separate App Store purchases. Purchased themes work offline without an asset download. The four original basic looks remain visible and free.</p></div>
       </section>
 
@@ -89,7 +97,7 @@ export default function PressKitPage() {
 
       <section className="pressStory shell">
         <div><p className="acqEyebrow">PRODUCT STORY</p><h2>Less setup. More time with the instrument.</h2></div>
-        <div><p>GuitarTool was created around a simple observation: the tools used before and during practice should not become another source of interruption. Tuning, timekeeping and chord lookup belong in one dependable flow, without advertising, feeds or a login wall.</p><p>Core tools work offline and the app contains no third-party analytics SDKs. Microphone audio is used only for live pitch analysis on the device; it is not saved or uploaded. The four basic looks are free. Artwork for the six paid themes is bundled, so purchased themes work offline. The app does not collect usage analytics.</p></div>
+        <div><p>GuitarTool was created around a simple observation: the tools used before and during practice should not become another source of interruption. Tuning, timekeeping and chord lookup belong in one dependable flow, without advertising, feeds or a login wall.</p><p>Core tools work offline and the app contains no third-party analytics SDKs. Microphone audio is used only for live pitch analysis on the device; it is not saved or uploaded. The four basic looks are free. Artwork for the seven paid themes is bundled, so purchased themes work offline. The app does not collect usage analytics.</p></div>
       </section>
 
       <section className="assetSection shell">
@@ -99,7 +107,7 @@ export default function PressKitPage() {
       </section>
 
       <section className="pressVideoSection shell">
-        <div className="assetHeading"><p className="acqEyebrow">FULL INTRODUCTION VIDEOS</p><h2>Four edits for websites, editorial embeds and social publishing.</h2><p>Use landscape for articles, desktop landing pages and presentations; use portrait for Shorts, Reels, Stories and mobile-first embeds. Both English and Simplified Chinese editions include audio and real product screens.</p></div>
+        <div className="assetHeading"><p className="acqEyebrow">FULL INTRODUCTION VIDEOS</p><h2>Four edits for websites, editorial embeds and social publishing.</h2><p>Use landscape for articles, desktop landing pages and presentations; use portrait for Shorts, Reels, Stories and mobile-first embeds. Both editions include audio and real product screens from the earlier core-product tour; they do not demonstrate the 1.1.2 training editor or Jade Resonance.</p></div>
         <div className="pressFullVideoGrid">{fullVideos.map((video) => <article className={video.orientation} key={video.file}><video controls playsInline preload="metadata"><source src={assetPath(video.file)} type="video/mp4" /></video><div><h3>{video.title}</h3><p>{video.detail}</p><a href={assetPath(video.file)} download>Download full video ↓</a></div></article>)}</div>
       </section>
 
@@ -118,7 +126,7 @@ export default function PressKitPage() {
 
       <section className="pressLinks shell">
         <h2>Official links</h2>
-        <div><a href={APP_STORE_LINKS.press}><span>App Store</span><b>Download page ↗</b></a><a href={absoluteUrl("/en/support/")}><span>Support</span><b>Troubleshooting ↗</b></a><a href={PRIVACY_URL}><span>Privacy</span><b>Privacy policy ↗</b></a><a href={GITHUB_URL}><span>Website source</span><b>GitHub ↗</b></a><a href="mailto:weizhichao1027@gmail.com"><span>Press contact</span><b>weizhichao1027@gmail.com ↗</b></a></div>
+        <div><a href={APP_STORE_LINKS.press}><span>App Store</span><b>Download page ↗</b></a><a href={absoluteUrl("/en/support/")}><span>Support</span><b>Troubleshooting ↗</b></a><a href={PRIVACY_EN_URL}><span>Privacy</span><b>Privacy policy ↗</b></a><a href={GITHUB_URL}><span>Website source</span><b>GitHub ↗</b></a><a href="mailto:weizhichao1027@gmail.com"><span>Press contact</span><b>weizhichao1027@gmail.com ↗</b></a></div>
       </section>
       <AcquisitionFooter language="en" />
     </main>

@@ -1,3 +1,4 @@
+import { TRAINING_UPDATED } from "@/app/lib/release-training-pages";
 import Image from "next/image";
 import { SiteLink as Link } from "@/app/components/SiteLink";
 import { AcquisitionFooter, AcquisitionHeader } from "@/app/components/AcquisitionChrome";
@@ -6,6 +7,7 @@ import { LandingLanguage, LandingPage, getLandingPage } from "@/app/lib/landing-
 import {
   APP_STORE_URL,
   APP_NAME,
+  RELEASE_VERSION,
   absoluteUrl,
   appStoreCampaignForGuide,
   appStoreDestinationForGuide,
@@ -30,12 +32,13 @@ export function LandingPageView({ page, language }: { page: LandingPage; languag
     {
       "@context": "https://schema.org",
       "@type": "WebPage",
+      ...(page.slug === "silent-bar-metronome" || page.slug === "staged-tempo-training" ? { dateModified: TRAINING_UPDATED } : {}),
       name: page.title,
       description: page.description,
       url: canonical,
       inLanguage: isZh ? "zh-CN" : "en",
       isPartOf: { "@type": "WebSite", name: APP_NAME, url: absoluteUrl("/") },
-      about: { "@type": "SoftwareApplication", name: APP_NAME, operatingSystem: "iOS, iPadOS, watchOS", url: APP_STORE_URL },
+      about: { "@type": "SoftwareApplication", name: APP_NAME, softwareVersion: RELEASE_VERSION, operatingSystem: "iOS, iPadOS, watchOS", url: APP_STORE_URL },
     },
     {
       "@context": "https://schema.org",

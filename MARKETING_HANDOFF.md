@@ -1,5 +1,17 @@
 # GuitarTool 市场推广与网站交接
 
+## 2026-10-08：1.1.2 上架后全站更新
+
+- Apple 中国区 Lookup 回读 `version=1.1.2`，公开上架时间 `2026-10-07T15:45:52Z`（北京时间 10 月 7 日 23:45:52）。Build 17 来自本地签名包与提审记录，不从公开 Lookup 推断。
+- 13 语言首页、双语支持、Press Kit、README、FAQ 与 SoftwareApplication 统一为 1.1.2。新版提供有声／静音小节、最多六段速度（20–500 BPM、每段 1–64 小节），可保存为自定义预设；循环关闭后保持末段速度，手动调速／TAP 退出分段训练。明确编辑器为 iPhone/iPad 原生功能，网页、Watch、小组件不宣传同等训练编辑能力。
+- 新增中英双语 `silent-bar-metronome` 和 `staged-tempo-training` 指南；首页、支持与指南目录可达，FAQ 对应正文，下载进入节拍器 CPP。此前本地的三组双语排障指南也随本轮一起发布。
+- 七套完整主题分别一次性购买，新增玄玉声场，四款基础外观和练习功能仍免费。展厅、索引、媒体下载使用真实 Jade 原生截图；英文明确说明图中为中文界面。13 张本地化训练图由 1.1.2 商店成品压缩生成，来源与 SHA-256 在 `public/release-1.1.2/sources.json`，生成器为 `scripts/prepare-release-1.1.2-assets.mjs`（在本目录运行，需旁边的 App 交付素材）。旧视频按早期核心功能演示标注。
+- 隐私站仍独立部署，新增静态 `/en/`，中英文 canonical/hreflang 与日期同步；说明训练设置、本机评分资格、Apple 购买和主动支持邮件。所有英文网站入口指向英文隐私页。主工程 `scripts/build_privacy_site.py` 从双语 `privacy-policy.html` 生成两个静态页面与 sitemap。
+- SEO/GEO：可抓取正文、明确功能边界、真实截图、canonical、14 条语言替代链接、FAQ/WebPage/Breadcrumb/SoftwareApplication、主 sitemap 和图片 sitemap 一致。新指南与实际更新页面使用本次修改时间，原有和弦页保留原日期。没有虚构评分或保证 AI 推荐／排名。依据 [Google 官方 AI 搜索指南](https://developers.google.com/search/docs/appearance/ai-features)。
+- 校验：Lint、含 TypeScript 的 Next 16.3.8 构建、5 项渠道测试、静态审计（202 HTML、281 本地目标、219 外部目标）、新版 SEO 审计（199 canonical 页面、13 语言、4 训练指南、72 图片条目）通过。390px 首页、支持、指南、阿拉伯语和 Press，以及 1440px 主题展厅检查；修正 Press 视频下载卡片窄屏溢出。英文隐私在禁用 JavaScript 时正常显示。
+- 依赖：Next / eslint-config-next 16.3.8、sharp 0.35.5，更新兼容的 brace-expansion、source-map-js；生产依赖 audit 为 0。开发期 braces 的唯一未修复 advisory 及精确链暂定例外，2026-11-08 UTC 到期；门禁仍检查全部其他高危／严重问题，见 [DEPENDENCY_NOTES.md](./DEPENDENCY_NOTES.md)。不能宣称整个开发树零漏洞。
+- 本节为内容交付记录；远端提交、Actions、IndexNow 与线上回读结果会在下方补记。GitHub Pages 是唯一现行营销发布目标，旧 Sites 不更新。
+
 ## 2026-10-06：目录与 Git 整理
 
 三组双语排障指南、指南目录、导航、结构化数据和渠道改动已保存到独立本地提交。Lint、Pages 构建、5 项渠道测试和静态审计通过（198 HTML、274 本地目标、212 外部目标），随后清除 node_modules、.next 和 out；用 npm ci 与 npm run build:pages 重建。推广稿和复盘工作簿已移入上级资料归档，本轮没有推送或部署网站。源码恢复包见上级资料归档/04-仓库备份/。

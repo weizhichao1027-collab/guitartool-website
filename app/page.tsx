@@ -2,7 +2,7 @@ import Image from "next/image";
 import { SiteLink as Link } from "@/app/components/SiteLink";
 import { JsonLd } from "@/app/components/JsonLd";
 import { APP_STORE_LINKS, RELEASE_VERSION, absoluteUrl, assetPath, supportedLanguageCodes } from "@/app/lib/site";
-import { paidThemes } from "@/app/lib/theme-gallery";
+import { paidThemes, themeImage } from "@/app/lib/theme-gallery";
 
 const appStoreUrl = APP_STORE_LINKS.home;
 const privacyUrl = "https://weizhichao1027-collab.github.io/GuitarTool-Privacy/";
@@ -14,7 +14,7 @@ const features = [
     number: "01",
     kicker: "Flexible Metronome",
     title: "不是只会响的节拍器，\n而是能陪你进步的训练器。",
-    copy: "从 20 到 500 BPM，自定义拍号、拍值、强弱拍与细分。把计时、Swing、渐进加速和后置闪光灯节拍组合成属于你的练习方式。",
+    copy: "从 20 到 500 BPM，自定义拍号、拍值、强弱拍与细分。把计时、Swing、渐进加速、静音小节、分段速度和后置闪光灯节拍组合成属于你的练习方式。",
     points: ["TAP 测速与练习预设", "四种细分与八分 Swing", "闪光灯跟随全部主拍或仅重音，三档强度"],
     image: "/hero-metronome.webp",
     alt: "GuitarTool 节拍器功能展示",
@@ -53,8 +53,9 @@ const features = [
 ] as const;
 
 const faqs = [
-  ["需要联网或注册账号吗？", "调音、节拍器、和弦库以及四款基础主题可离线使用，无需注册账号。六套完整主题素材已内置，购买解锁后可离线使用；购买或恢复购买可能需要联网。"],
-  ["六套完整主题如何购买？", "晨雾琴房、月面电台、纸上乐队、口袋合成器、黑胶夜场和琴匠测绘分别通过 App Store 应用内购买解锁。素材已内置，无需连接主题后端或另行下载；四款基础主题保持免费。"],
+  ["1.1.2 新增哪些免费练习功能？", "在节拍器的预设 → 节奏训练中，设置有声与静音小节交替，或最多六个速度阶段；每阶段 20–500 BPM、1–64 小节，可保存到自定义预设。手动调速或 TAP 会退出分段训练。"],
+  ["需要联网或注册账号吗？", "调音、节拍器、和弦库以及四款基础主题可离线使用，无需注册账号。七套完整主题素材已内置，购买解锁后可离线使用；购买或恢复购买可能需要联网。"],
+  ["七套完整主题如何购买？", "晨雾琴房、月面电台、纸上乐队、口袋合成器、黑胶夜场、琴匠测绘和玄玉声场分别通过 App Store 应用内购买解锁。素材已内置，无需连接主题后端或另行下载；四款基础主题保持免费。"],
   ["调音器会保存我的声音吗？", "不会。麦克风音频只用于设备端实时音高检测，不会保存为文件，也不会上传到任何服务器。"],
   ["Apple Watch 可以调音吗？", "可以。1.1.1 的 Watch 调音器支持吉他、尤克里里、贝斯和半音阶模式。点按开始才会使用手表麦克风；停止、切页或离开 App 即结束，音频仅在手表本地处理。"],
   ["支持哪些设备？", "支持 iPhone 与 iPad 自适应界面，附带 Apple Watch 调音器与节拍器，以及三种尺寸的主屏幕交互式小组件；Watch 节拍器落腕或屏幕变暗后声音仍可继续。"],
@@ -67,7 +68,7 @@ export default function Home() {
   return (
     <main lang="zh-CN">
       <JsonLd data={[
-        { "@context": "https://schema.org", "@type": "SoftwareApplication", name: "GuitarTool", softwareVersion: RELEASE_VERSION, description: "面向吉他与尤克里里演奏者的练习工具：iPhone、iPad 和 Apple Watch 上调音、跟拍；和弦功能免费且离线可用，六套完整主题分别内购解锁。", url: absoluteUrl("/"), downloadUrl: appStoreUrl, applicationCategory: "MusicApplication", operatingSystem: "iOS, iPadOS, watchOS", inLanguage: supportedLanguageCodes, offers: { "@type": "Offer", price: "0", priceCurrency: "CNY" }, featureList: ["实时弦乐调音器与三秒读数保留", "Apple Watch 吉他、尤克里里、贝斯及半音阶调音器", "20–500 BPM 节拍器", "后置闪光灯节拍：全部主拍或仅重音、三档强度", "19,244 个吉他与尤克里里指法", "和弦卡片预览、保存与分享", "支持后台音频的 Apple Watch 节拍器", "大号主屏幕小组件细分节奏与 Swing", "六套独立付费的完整视觉主题"] },
+        { "@context": "https://schema.org", "@type": "SoftwareApplication", name: "GuitarTool", softwareVersion: RELEASE_VERSION, description: "面向吉他与尤克里里演奏者的练习工具：iPhone、iPad 和 Apple Watch 上调音、跟拍；和弦功能免费且离线可用，七套完整主题分别内购解锁。", url: absoluteUrl("/"), downloadUrl: appStoreUrl, applicationCategory: "MusicApplication", operatingSystem: "iOS, iPadOS, watchOS", inLanguage: supportedLanguageCodes, offers: { "@type": "Offer", price: "0", priceCurrency: "CNY" }, featureList: ["实时弦乐调音器与三秒读数保留", "Apple Watch 吉他、尤克里里、贝斯及半音阶调音器", "20–500 BPM 节拍器", "静音小节与最多六段速度训练，随预设保存", "后置闪光灯节拍：全部主拍或仅重音、三档强度", "19,244 个吉他与尤克里里指法", "和弦卡片预览、保存与分享", "支持后台音频的 Apple Watch 节拍器", "大号主屏幕小组件细分节奏与 Swing", "七套独立付费的完整视觉主题"] },
         { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqs.map(([question, answer]) => ({ "@type": "Question", name: question, acceptedAnswer: { "@type": "Answer", text: answer } })) },
         { "@context": "https://schema.org", "@type": "VideoObject", name: "GuitarTool 中文完整介绍（横屏）", description: "36 秒介绍 GuitarTool 调音器、节拍器、和弦卡片、小组件与多设备体验。", thumbnailUrl: absoluteUrl("/og.png"), uploadDate: "2026-08-28", duration: "PT36S", contentUrl: absoluteUrl("/media-kit/video/GuitarTool-Full-Intro-zh-Hans-854x480.mp4") },
         { "@context": "https://schema.org", "@type": "VideoObject", name: "GuitarTool 中文完整介绍（竖屏）", description: "为移动端优化的 36 秒 GuitarTool 中文完整介绍。", thumbnailUrl: absoluteUrl("/media-kit/social/guitartool-chord-cards-zh-Hans-1080x1350.png"), uploadDate: "2026-08-28", duration: "PT36S", contentUrl: absoluteUrl("/media-kit/video/GuitarTool-Full-Intro-zh-Hans-480x854.mp4") },
@@ -185,7 +186,7 @@ export default function Home() {
         <div className="introVideoCopy">
           <p className="eyebrow"><span /> 36 秒完整介绍</p>
           <h2>先看它如何融入练习，<br />再决定从哪里开始。</h2>
-          <p>横屏版适合桌面与大屏观看，移动端会自动使用中文竖屏版。视频展示调音、节拍、和弦卡片与多设备核心体验；新上线的 Watch 调音器及 1.1.0 引入的主题展厅见下方说明。</p>
+          <p>横屏版适合桌面与大屏观看，移动端会自动使用中文竖屏版。视频展示调音、节拍、和弦卡片与多设备核心体验；视频为早期核心功能演示；1.1.2 的训练功能与玄玉声场见下方新版截图。</p>
         </div>
         <div className="introVideoFrame">
           <video controls playsInline preload="metadata" aria-label="GuitarTool 中文完整介绍视频">
@@ -193,6 +194,18 @@ export default function Home() {
             <source src={assetPath("/media-kit/video/GuitarTool-Full-Intro-zh-Hans-854x480.mp4")} type="video/mp4" />
           </video>
         </div>
+      </section>
+
+      <section className="releaseWatch shell sectionPad" aria-labelledby="training-heading">
+        <div>
+          <p className="eyebrow"><span /> 1.1.2 · 免费节奏训练</p>
+          <h2 id="training-heading">点击声停了，<br />你的节奏继续。</h2>
+          <p>打开节拍器 → 预设 → 节奏训练。让有声与静音小节交替，检查自己能否在声音回来时对齐；或设置最多六个速度阶段，按小节稳步提速。</p>
+          <p>支持 20–500 BPM，每阶段 1–64 小节，配置可保存为自定义预设。训练功能在 iPhone 和 iPad 上免费、离线使用。</p>
+          <Link className="textCta" href="/guides/silent-bar-metronome/">静音小节怎么练 →</Link><br />
+          <Link className="textCta" href="/guides/staged-tempo-training/">设置分段速度训练 →</Link>
+        </div>
+        <Image src={assetPath("/release-1.1.2/zh-training.webp")} alt="GuitarTool 1.1.2 静音小节与分段速度训练真实界面" width={660} height={1434} sizes="(max-width: 700px) 85vw, 416px" />
       </section>
 
       <section className="extras shell sectionPad">
@@ -203,12 +216,12 @@ export default function Home() {
         <div className="extraGrid">
           <article className="extraCard themeCard">
             <div className="extraText">
-              <p className="cardLabel">主题展厅 · 1.1.0 起提供</p>
-              <h3>六套内置付费主题，<br />让整套练习界面换一种性格。</h3>
-              <p>晨雾琴房、月面电台、纸上乐队、口袋合成器、黑胶夜场与琴匠测绘六套完整主题素材已内置于 App，每套分别购买。主题会联动调音器、节拍器、和弦库与分享卡；解锁后无需另行下载素材，可离线使用。四款基础主题继续免费。</p>
-              <div className="swatches" aria-label="四款免费基础主题；主题展厅另有六套内置付费完整主题">
+              <p className="cardLabel">主题展厅 · 1.1.2 新增玄玉声场</p>
+              <h3>七套内置付费主题，<br />让整套练习界面换一种性格。</h3>
+              <p>晨雾琴房、月面电台、纸上乐队、口袋合成器、黑胶夜场、琴匠测绘与玄玉声场七套完整主题素材已内置于 App，每套分别购买。主题会联动调音器、节拍器、和弦库与分享卡；解锁后无需另行下载素材，可离线使用。四款基础主题继续免费。</p>
+              <div className="swatches" aria-label="四款免费基础主题；主题展厅另有七套内置付费完整主题">
                 <span className="day" /><span className="night" /><span className="pine" /><span className="graphite" />
-                <b>6 PAID THEMES</b>
+                <b>7 PAID THEMES</b>
               </div>
             </div>
             <Image src={assetPath("/luthier-atlas.webp")} alt="GuitarTool 1.1.0 琴匠测绘完整主题的节拍器界面" width={833} height={1809} sizes="(max-width: 700px) 86vw, 460px" />
@@ -217,28 +230,28 @@ export default function Home() {
             <div className="extraText">
               <p className="cardLabel">主屏幕小组件</p>
               <h3>不用打开 App，<br />节拍就在主屏幕。</h3>
-              <p>小、中、大三种尺寸可控制速度、拍号、播放暂停与 TAP 定速。1.1.1 的大号小组件还可直接切换单拍、八分、三连、十六分与 Swing，并与 App 同步。</p>
+              <p>三种尺寸均支持调速与播放暂停；中号、大号还支持拍号与 TAP 定速。1.1.1 的大号小组件还可直接切换单拍、八分、三连、十六分与 Swing，并与 App 同步。</p>
             </div>
             <Image src={assetPath("/release-1.1.1/zh-large-widget.png")} alt="GuitarTool 1.1.1 大号节拍器小组件，显示单拍、八分、三连、十六分与 Swing 选项" width={1146} height={1262} sizes="(max-width: 700px) 86vw, 460px" />
           </article>
         </div>
         <div className="updatePromise">
-          <span>现已上架 · 1.1.1</span>
-          <p><strong>Apple Watch 现在也能调音。</strong> 手机调音读数更稳定，余音结束后保留三秒；节拍器播放或调音收音时默认保持屏幕常亮，可在个性化中允许运行时熄屏。大号小组件加入细分节奏与 Swing，并修复音频启动问题。</p>
+          <span>现已上架 · 1.1.2</span>
+          <p><strong>把稳拍与提速，练成自己的节奏。</strong> 在预设里设置有声与静音小节交替，或按小节安排分段速度并保存为自定义方案。新增玄玉声场主题，改善停止播放、音频中断、设备切换、大字号与从右向左界面。</p>
           <b aria-hidden="true">↗</b>
         </div>
       </section>
 
       <section className="themeGallery sectionPad" id="paid-themes" aria-labelledby="paid-themes-heading">
         <div className="shell themeGalleryIntro">
-          <p className="eyebrow"><span /> 主题展厅 · 六套完整界面</p>
-          <h2 id="paid-themes-heading">从同一个节拍器，<br />走进六种练习氛围。</h2>
-          <p>下面依次展示六套付费主题的真实节拍器页面。每套主题分别购买，解锁后也会用于调音器、和弦库与分享卡；四款基础主题仍免费。</p>
+          <p className="eyebrow"><span /> 主题展厅 · 七套完整界面</p>
+          <h2 id="paid-themes-heading">从同一个节拍器，<br />走进七种练习氛围。</h2>
+          <p>下面依次展示七套付费主题的真实节拍器页面。每套主题分别购买，解锁后也会用于调音器、和弦库与分享卡；四款基础主题仍免费。</p>
         </div>
         <div className="shell themeGalleryGrid">
           {paidThemes.map((theme, index) => (
             <figure className={`themeTile themeTile-${theme.slug}`} key={theme.slug}>
-              <div className="themeTileImage"><Image src={assetPath(`/release-1.1.1/themes/zh-${theme.slug}.${theme.ext}`)} alt={`GuitarTool ${theme.zh}付费主题的完整节拍器页面`} width={1320} height={2868} sizes="(max-width: 600px) 85vw, (max-width: 900px) 45vw, 30vw" loading="lazy" /></div>
+              <div className="themeTileImage"><Image src={assetPath(themeImage(theme, "zh"))} alt={`GuitarTool ${theme.zh}付费主题的完整节拍器页面`} width={1320} height={2868} sizes="(max-width: 600px) 85vw, (max-width: 900px) 45vw, 30vw" loading="lazy" /></div>
               <figcaption><span>{String(index + 1).padStart(2, "0")}</span><div><h3>{theme.zh}</h3><p>{theme.zhMood}</p></div><b>单独解锁</b></figcaption>
             </figure>
           ))}
@@ -247,7 +260,7 @@ export default function Home() {
 
       <section className="releaseWatch shell sectionPad" aria-labelledby="watch-tuner-heading">
         <div>
-          <p className="eyebrow"><span /> 1.1.1 新功能 · Apple Watch 调音器</p>
+          <p className="eyebrow"><span /> 1.1.1 起提供 · Apple Watch 调音器</p>
           <h2 id="watch-tuner-heading">抬腕，<br />就能开始调音。</h2>
           <p>在手表上选择吉他、尤克里里、贝斯或半音阶模式，点按“开始调音”后查看音名与音分；调准时有触觉提示。停止、切页或离开 App 即结束收音，声音只在手表本地分析。</p>
           <Link className="textButton" href="/guides/apple-watch-tuner/">查看 Watch 调音器指南 <span>↗</span></Link>
@@ -277,7 +290,7 @@ export default function Home() {
             <h2>你的练习声音，<br /><em>只留在你的设备上。</em></h2>
           </div>
           <div className="privacyCopy">
-            <p>GuitarTool 不出售个人信息，也不把信息用于广告或追踪。调音器音频只在设备上实时处理；四款基础主题免费，六套完整主题素材内置且购买后可离线使用；App 不采集功能使用分析数据。</p>
+            <p>GuitarTool 不出售个人信息，也不把信息用于广告或追踪。调音器音频只在设备上实时处理；四款基础主题免费，七套完整主题素材内置且购买后可离线使用；App 不采集功能使用分析数据。</p>
             <ul>
               <li><b>01</b><span><strong>无需账户</strong>没有注册、登录或云端个人资料。</span></li>
               <li><b>02</b><span><strong>音频不上传</strong>不保存录音，不发送到开发者或第三方。</span></li>

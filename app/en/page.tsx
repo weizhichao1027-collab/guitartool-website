@@ -3,20 +3,20 @@ import Image from "next/image";
 import { SiteLink as Link } from "@/app/components/SiteLink";
 import { JsonLd } from "@/app/components/JsonLd";
 import { APP_STORE_LINKS, RELEASE_VERSION, absoluteUrl, assetPath, localeAlternates, supportedLanguageCodes } from "@/app/lib/site";
-import { paidThemes } from "@/app/lib/theme-gallery";
+import { paidThemes, themeImage } from "@/app/lib/theme-gallery";
 
 const appStoreUrl = APP_STORE_LINKS.home;
-const privacyUrl = "https://weizhichao1027-collab.github.io/GuitarTool-Privacy/";
+const privacyUrl = "https://weizhichao1027-collab.github.io/GuitarTool-Privacy/en/";
 const githubUrl = "https://github.com/weizhichao1027-collab/guitartool-website";
 const basePath = process.env.GITHUB_PAGES === "true" ? "/guitartool-website" : "";
 
 export const metadata: Metadata = {
   title: "GuitarTool | Tuner, Metronome & Chords",
-  description: "GuitarTool 1.1.1 adds an Apple Watch tuner, steadier pitch readings, screen awake during practice and large-widget subdivisions. Core tools work offline.",
+  description: "GuitarTool 1.1.2 adds silent bars, staged tempo training and Jade Resonance. Free offline tuner, metronome and chords for iPhone, iPad and Apple Watch.",
   alternates: { canonical: absoluteUrl("/en/"), languages: localeAlternates },
   openGraph: {
     title: "GuitarTool | Leave room for practice.",
-    description: "GuitarTool 1.1.1 adds an Apple Watch tuner, steadier pitch readings and more flexible metronome widgets. Core practice tools remain free and offline.",
+    description: "GuitarTool 1.1.2: practise with silent bars and tempo stages, save your presets and preview Jade Resonance. Core tools remain free and offline.",
     type: "website",
     images: [{
       url: absoluteUrl("/og.png"),
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "GuitarTool | Leave room for practice.",
-    description: "GuitarTool 1.1.1 adds an Apple Watch tuner, steadier pitch readings and more flexible metronome widgets. Core practice tools remain free and offline.",
+    description: "GuitarTool 1.1.2: practise with silent bars and tempo stages, save your presets and preview Jade Resonance. Core tools remain free and offline.",
     images: [absoluteUrl("/og.png")],
   },
 };
@@ -77,8 +77,9 @@ const features = [
 ] as const;
 
 const faqs = [
-  ["Do I need an internet connection or account?", "The tuner, metronome, chord libraries and four basic looks work offline without an account. Six complete themes are bundled too and work offline after purchase. Purchasing or restoring may need a connection."],
-  ["How do I unlock the six complete themes?", "Morning Mist Studio, Lunar Radio, Paper Ensemble, Pocket Synth, Vinyl Afterhours and Luthier Atlas are separate App Store in-app purchases. Version 1.1.0 bundles their artwork, so purchased themes need no separate asset download or theme backend. The four original basic looks remain free."],
+  ["What free practice features are new in 1.1.2?", "On iPhone and iPad, Presets → Rhythm training offers audible/silent bar alternation and up to six tempo stages. Each stage supports 20–500 BPM and 1–64 bars. Save your setup as a custom preset; manual tempo changes or TAP exit staged practice."],
+  ["Do I need an internet connection or account?", "The tuner, metronome, chord libraries and four basic looks work offline without an account. Seven complete themes are bundled too and work offline after purchase. Purchasing or restoring may need a connection."],
+  ["How do I unlock the seven complete themes?", "Morning Mist Studio, Lunar Radio, Paper Ensemble, Pocket Synth, Vinyl Afterhours, Luthier Atlas and Jade Resonance are separate App Store in-app purchases. Version 1.1.2 bundles their artwork, so purchased themes need no separate asset download or theme backend. The four original basic looks remain free."],
   ["Does the tuner save my audio?", "Never. Microphone audio is used only for live, on-device pitch detection. It is not saved as a file or uploaded to a server."],
   ["Can I tune on Apple Watch?", "Yes. Version 1.1.1 adds guitar, ukulele, bass and chromatic tuning on Apple Watch. Microphone capture starts only when you tap Start and ends when you stop, change pages or leave the app. Audio is processed on the watch."],
   ["Which devices are supported?", "GuitarTool adapts to iPhone and iPad, with an Apple Watch tuner and metronome plus three sizes of interactive Home Screen widgets. Watch metronome audio can continue when the wrist lowers or the display dims."],
@@ -91,7 +92,7 @@ export default function EnglishHome() {
   return (
     <main lang="en">
       <JsonLd data={[
-        { "@context": "https://schema.org", "@type": "SoftwareApplication", name: "GuitarTool", softwareVersion: RELEASE_VERSION, description: "Free offline tuning, metronome and chord tools for guitar and ukulele on iPhone, iPad and Apple Watch, with six complete themes sold separately as in-app purchases.", url: absoluteUrl("/en/"), downloadUrl: appStoreUrl, applicationCategory: "MusicApplication", operatingSystem: "iOS, iPadOS, watchOS", inLanguage: supportedLanguageCodes, offers: { "@type": "Offer", price: "0", priceCurrency: "USD" }, featureList: ["Real-time tuner with three-second pitch hold", "Apple Watch guitar, ukulele, bass and chromatic tuner", "20–500 BPM metronome", "Rear-flash beat cues for all main beats or accents only, with three intensities", "19,244 guitar and ukulele fingerings", "Preview, save and share chord cards", "Apple Watch metronome with background audio", "Large Home Screen widget subdivisions and Swing", "Six separately purchased complete visual themes"] },
+        { "@context": "https://schema.org", "@type": "SoftwareApplication", name: "GuitarTool", softwareVersion: RELEASE_VERSION, description: "Free offline tuning, metronome and chord tools for guitar and ukulele on iPhone, iPad and Apple Watch, with seven complete themes sold separately as in-app purchases.", url: absoluteUrl("/en/"), downloadUrl: appStoreUrl, applicationCategory: "MusicApplication", operatingSystem: "iOS, iPadOS, watchOS", inLanguage: supportedLanguageCodes, offers: { "@type": "Offer", price: "0", priceCurrency: "USD" }, featureList: ["Real-time tuner with three-second pitch hold", "Apple Watch guitar, ukulele, bass and chromatic tuner", "20–500 BPM metronome", "Silent bars and up to six tempo stages saved with presets", "Rear-flash beat cues for all main beats or accents only, with three intensities", "19,244 guitar and ukulele fingerings", "Preview, save and share chord cards", "Apple Watch metronome with background audio", "Large Home Screen widget subdivisions and Swing", "Seven separately purchased complete visual themes"] },
         { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqs.map(([question, answer]) => ({ "@type": "Question", name: question, acceptedAnswer: { "@type": "Answer", text: answer } })) },
         { "@context": "https://schema.org", "@type": "VideoObject", name: "GuitarTool full introduction (landscape)", description: "A 36-second introduction to GuitarTool's tuner, metronome, chord cards, widgets and multi-device experience.", thumbnailUrl: absoluteUrl("/og.png"), uploadDate: "2026-08-28", duration: "PT36S", contentUrl: absoluteUrl("/media-kit/video/GuitarTool-Full-Intro-en-854x480.mp4") },
         { "@context": "https://schema.org", "@type": "VideoObject", name: "GuitarTool full introduction (portrait)", description: "A mobile-first 36-second English introduction to GuitarTool.", thumbnailUrl: absoluteUrl("/media-kit/social/guitartool-chord-cards-en-1080x1350.png"), uploadDate: "2026-08-28", duration: "PT36S", contentUrl: absoluteUrl("/media-kit/video/GuitarTool-Full-Intro-en-480x854.mp4") },
@@ -169,35 +170,47 @@ export default function EnglishHome() {
       <section className="numbers"><div className="shell numbersGrid"><div><strong>20–500</strong><span>precise BPM range</span></div><div><strong>430–446</strong><span>Hz calibration</span></div><div><strong>19,244</strong><span>guitar & ukulele fingerings</span></div><div><strong>1–12</strong><span>beats per bar</span></div></div></section>
 
       <section className="introVideoSection shell sectionPad">
-        <div className="introVideoCopy"><p className="eyebrow"><span /> Full product tour in 36 seconds</p><h2>See how the tools fit into practice before choosing where to begin.</h2><p>The landscape edit is designed for desktop and larger screens; mobile automatically receives the English portrait edit. It covers the core tuning, rhythm, chord-card, widget and multi-device experience. The new Watch tuner and Theme Gallery introduced in 1.1.0 are detailed below.</p></div>
+        <div className="introVideoCopy"><p className="eyebrow"><span /> Full product tour in 36 seconds</p><h2>See how the tools fit into practice before choosing where to begin.</h2><p>The landscape edit is designed for desktop and larger screens; mobile automatically receives the English portrait edit. It covers the core tuning, rhythm, chord-card, widget and multi-device experience. This earlier core-product tour does not show 1.1.2 training or Jade Resonance; see the new screenshots below.</p></div>
         <div className="introVideoFrame"><video controls playsInline preload="metadata" aria-label="GuitarTool full English introduction"><source src={assetPath("/media-kit/video/GuitarTool-Full-Intro-en-480x854.mp4")} media="(max-width: 700px)" type="video/mp4" /><source src={assetPath("/media-kit/video/GuitarTool-Full-Intro-en-854x480.mp4")} type="video/mp4" /></video></div>
+      </section>
+
+      <section className="releaseWatch shell sectionPad" aria-labelledby="training-heading">
+        <div>
+          <p className="eyebrow"><span /> 1.1.2 · FREE RHYTHM TRAINING</p>
+          <h2 id="training-heading">The click stops.<br />Your timing continues.</h2>
+          <p>Open Metronome → Presets → Rhythm Training. Alternate audible and silent bars to check your internal beat, or arrange up to six tempo stages by bar count.</p>
+          <p>Set 20–500 BPM and 1–64 bars per stage, then save the setup as a custom preset. Training is free and works offline on iPhone and iPad.</p>
+          <Link className="textCta" href="/en/guides/silent-bar-metronome/">Practise with silent bars →</Link><br />
+          <Link className="textCta" href="/en/guides/staged-tempo-training/">Set up tempo stages →</Link>
+        </div>
+        <Image src={assetPath("/release-1.1.2/en-training.webp")} alt="GuitarTool 1.1.2 silent bars and staged tempo training, real English interface" width={660} height={1434} sizes="(max-width: 700px) 85vw, 416px" />
       </section>
 
       <section className="extras shell sectionPad">
         <div className="sectionHeading compact"><p className="eyebrow"><span /> Across your devices · themes & widgets</p><h2>Practice should fit you,<br />not the other way around.</h2></div>
         <div className="extraGrid">
           <article className="extraCard themeCard">
-            <div className="extraText"><p className="cardLabel">Theme Gallery · Since 1.1.0</p><h3>Six complete paid themes.<br />One practice app, six distinct worlds.</h3><p>Version 1.1.0 introduced Morning Mist Studio, Lunar Radio, Paper Ensemble, Pocket Synth, Vinyl Afterhours and Luthier Atlas. Each remains a separate in-app purchase. Purchased themes work offline without an asset download; the four basic looks remain visible and free.</p><div className="swatches" aria-label="Four free basic looks and six paid complete themes in the Theme Gallery"><span className="day" /><span className="night" /><span className="pine" /><span className="graphite" /><b>6 PAID THEMES</b></div></div>
+            <div className="extraText"><p className="cardLabel">Theme Gallery · Jade Resonance in 1.1.2</p><h3>Seven complete paid themes.<br />One practice app, seven distinct worlds.</h3><p>Version 1.1.2 adds Jade Resonance alongside Morning Mist Studio, Lunar Radio, Paper Ensemble, Pocket Synth, Vinyl Afterhours and Luthier Atlas. Each remains a separate in-app purchase. Purchased themes work offline without an asset download; the four basic looks remain visible and free.</p><div className="swatches" aria-label="Four free basic looks and seven paid complete themes in the Theme Gallery"><span className="day" /><span className="night" /><span className="pine" /><span className="graphite" /><b>7 PAID THEMES</b></div></div>
             <Image src={assetPath("/en-luthier-atlas.webp")} alt="GuitarTool 1.1.0 Luthier Atlas complete theme metronome screen" width={833} height={1809} sizes="(max-width: 700px) 86vw, 460px" />
           </article>
           <article className="extraCard widgetCard">
-            <div className="extraText"><p className="cardLabel">Home Screen widgets</p><h3>Keep the beat<br />without opening the app.</h3><p>Small, medium and large widgets control tempo, meter, playback and tap tempo. In 1.1.1, the large widget also switches between beat, eighth, triplet, sixteenth and Swing subdivisions, in sync with the app.</p></div>
+            <div className="extraText"><p className="cardLabel">Home Screen widgets</p><h3>Keep the beat<br />without opening the app.</h3><p>All three widget sizes control tempo and playback; medium and large sizes also offer meter and tap tempo. In 1.1.1, the large widget also switches between beat, eighth, triplet, sixteenth and Swing subdivisions, in sync with the app.</p></div>
             <Image src={assetPath("/release-1.1.1/en-large-widget.png")} alt="GuitarTool 1.1.1 large metronome widget with beat, eighth, triplet, sixteenth and Swing controls" width={1146} height={1262} sizes="(max-width: 700px) 86vw, 460px" />
           </article>
         </div>
-        <div className="updatePromise"><span>AVAILABLE NOW · VERSION 1.1.1</span><p><strong>Apple Watch now has its own tuner.</strong> Phone tuning reads more steadily and holds the last reading for three seconds. The screen stays awake by default during active metronome playback or tuning, with an option to allow sleep. The large widget adds subdivisions and Swing, alongside audio startup fixes.</p><b aria-hidden="true">↗</b></div>
+        <div className="updatePromise"><span>AVAILABLE NOW · VERSION 1.1.2</span><p><strong>Build your internal beat, then build your speed.</strong> Alternate audible and silent bars, arrange tempo stages by bar count and save the setup as a custom preset. Jade Resonance joins the Theme Gallery. This release also improves stopping playback, audio interruptions, device changes, large text and right-to-left layouts.</p><b aria-hidden="true">↗</b></div>
       </section>
 
       <section className="themeGallery sectionPad" id="paid-themes" aria-labelledby="paid-themes-heading">
         <div className="shell themeGalleryIntro">
-          <p className="eyebrow"><span /> Theme Gallery · Six complete interfaces</p>
-          <h2 id="paid-themes-heading">One metronome.<br />Six ways to make it yours.</h2>
+          <p className="eyebrow"><span /> Theme Gallery · Seven complete interfaces</p>
+          <h2 id="paid-themes-heading">One metronome.<br />Seven ways to make it yours.</h2>
           <p>Explore the real metronome screen for each paid theme. Themes are separate in-app purchases and also style the tuner, chord library and share cards. Four basic looks remain free.</p>
         </div>
         <div className="shell themeGalleryGrid">
           {paidThemes.map((theme, index) => (
             <figure className={`themeTile themeTile-${theme.slug}`} key={theme.slug}>
-              <div className="themeTileImage"><Image src={assetPath(`/release-1.1.1/themes/en-${theme.slug}.${theme.ext}`)} alt={`Full GuitarTool metronome screen in the ${theme.en} paid theme`} width={1320} height={2868} sizes="(max-width: 600px) 85vw, (max-width: 900px) 45vw, 30vw" loading="lazy" /></div>
+              <div className="themeTileImage"><Image src={assetPath(themeImage(theme, "en"))} alt={`Full GuitarTool metronome screen in the ${theme.en} paid theme`} width={1320} height={2868} sizes="(max-width: 600px) 85vw, (max-width: 900px) 45vw, 30vw" loading="lazy" /></div>
               <figcaption><span>{String(index + 1).padStart(2, "0")}</span><div><h3>{theme.en}</h3><p>{theme.enMood}</p></div><b>Separate purchase</b></figcaption>
             </figure>
           ))}
@@ -206,7 +219,7 @@ export default function EnglishHome() {
 
       <section className="releaseWatch shell sectionPad" aria-labelledby="watch-tuner-heading">
         <div>
-          <p className="eyebrow"><span /> NEW IN 1.1.1 · APPLE WATCH TUNER</p>
+          <p className="eyebrow"><span /> SINCE 1.1.1 · APPLE WATCH TUNER</p>
           <h2 id="watch-tuner-heading">Raise your wrist.<br />Start tuning.</h2>
           <p>Choose guitar, ukulele, bass or chromatic mode on your watch. Tap Start to see note and cents feedback, with a haptic cue in tune. Capture ends when you stop, change pages or leave the app; audio stays on the watch.</p>
           <Link className="textButton" href="/en/guides/apple-watch-tuner/">Explore the Watch tuner <span>↗</span></Link>
@@ -225,7 +238,7 @@ export default function EnglishHome() {
         <div className="privacyGlow" />
         <div className="shell privacyGrid">
           <div><p className="eyebrow inverted"><span /> Privacy by design</p><h2>Your practice audio<br /><em>stays on your device.</em></h2></div>
-          <div className="privacyCopy"><p>GuitarTool does not sell personal information or use it for advertising or tracking. Tuner audio is processed only on your device. The four basic looks are free, and the six paid complete themes work offline after purchase. The app does not collect usage analytics.</p><ul><li><b>01</b><span><strong>No account</strong>No registration, sign-in or cloud profile.</span></li><li><b>02</b><span><strong>No audio uploads</strong>No recordings saved or sent to us or a third party.</span></li><li><b>03</b><span><strong>No ads or tracking</strong>No advertising, analytics or third-party tracking SDKs.</span></li></ul><a className="lightButton" href={privacyUrl}>Read the full privacy policy <span>↗</span></a></div>
+          <div className="privacyCopy"><p>GuitarTool does not sell personal information or use it for advertising or tracking. Tuner audio is processed only on your device. The four basic looks are free, and the seven paid complete themes work offline after purchase. The app does not collect usage analytics.</p><ul><li><b>01</b><span><strong>No account</strong>No registration, sign-in or cloud profile.</span></li><li><b>02</b><span><strong>No audio uploads</strong>No recordings saved or sent to us or a third party.</span></li><li><b>03</b><span><strong>No ads or tracking</strong>No advertising, analytics or third-party tracking SDKs.</span></li></ul><a className="lightButton" href={privacyUrl}>Read the full privacy policy <span>↗</span></a></div>
         </div>
       </section>
 
