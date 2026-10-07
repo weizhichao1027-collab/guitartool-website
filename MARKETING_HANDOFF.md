@@ -10,7 +10,8 @@
 - SEO/GEO：可抓取正文、明确功能边界、真实截图、canonical、14 条语言替代链接、FAQ/WebPage/Breadcrumb/SoftwareApplication、主 sitemap 和图片 sitemap 一致。新指南与实际更新页面使用本次修改时间，原有和弦页保留原日期。没有虚构评分或保证 AI 推荐／排名。依据 [Google 官方 AI 搜索指南](https://developers.google.com/search/docs/appearance/ai-features)。
 - 校验：Lint、含 TypeScript 的 Next 16.3.8 构建、5 项渠道测试、静态审计（202 HTML、281 本地目标、219 外部目标）、新版 SEO 审计（199 canonical 页面、13 语言、4 训练指南、72 图片条目）通过。390px 首页、支持、指南、阿拉伯语和 Press，以及 1440px 主题展厅检查；修正 Press 视频下载卡片窄屏溢出。英文隐私在禁用 JavaScript 时正常显示。
 - 依赖：Next / eslint-config-next 16.3.8、sharp 0.35.5，更新兼容的 brace-expansion、source-map-js；生产依赖 audit 为 0。开发期 braces 的唯一未修复 advisory 及精确链暂定例外，2026-11-08 UTC 到期；门禁仍检查全部其他高危／严重问题，见 [DEPENDENCY_NOTES.md](./DEPENDENCY_NOTES.md)。不能宣称整个开发树零漏洞。
-- 本节为内容交付记录；远端提交、Actions、IndexNow 与线上回读结果会在下方补记。GitHub Pages 是唯一现行营销发布目标，旧 Sites 不更新。
+- 发布完成：内容提交 `15d089396e31158d3267ccabdf3af4485af65d14` 已推送 `main`，[Actions 37657400094](https://github.com/weizhichao1027-collab/guitartool-website/actions/runs/37657400094) 的 build、deploy、notify-search-engines 全部成功；IndexNow 接受 199 URL，HTTP 200。40 项公开回读全部通过，含 13 语言、双语支持、四个指南、两种 sitemap、新图与隐私两页；新图哈希与本地一致。隐私内容提交 `0b27a75` 的 Pages 已 built。GitHub Pages 是唯一现行营销发布目标，旧 Sites 不更新。
+- 抓取边界：主机根 robots.txt 返回 404，未禁止爬取；项目目录中的 robots.txt 不能作为主机根控制文件。Search Console 的实际收录/排名未核验，发布与通知不等于收录。本节最终补记为纯文档提交，不改变已验证的静态页面。
 
 ## 2026-10-06：目录与 Git 整理
 
