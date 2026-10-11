@@ -1,5 +1,23 @@
 # GuitarTool 市场推广与网站交接
 
+## 2026-10-11：1.1.3 已上架，营销、支持与隐私全面更新
+
+本节为当前状态，下方各原日期的版本、部署与依赖结论保留为历史。
+
+- Apple 中国区与美国区 Lookup 均回读 `1.1.3`，发布时间 `2026-10-10T17:56:36Z`，北京时间 2026-10-11 01:56:36。Build 18 依据签名包与 ASC 关联，公开 Lookup 不提供 Build。商店列示销售者为 Shanghai Qishan Cultural Communication Co., Ltd.；支持联系人沿用 Zhichao Wei。
+- 13 语言首页、中英支持、Press、README、FAQ 与软件结构化数据已同步。iPhone/iPad 新增内置离线中文人声数拍，停止播放后在“设置 → 音色 → 人声”按当前 BPM 试听一到四；每小节报主拍，最多十二拍，细分仍用点击。所有界面语言都使用中文语音，Watch 与网页工具没有这款音色，播放不申请麦克风或调用运行期云合成。
+- 补齐 BPM 输入面板的完成、取消、下滑丢弃与 20–500 范围、有效本地化十进制整数字符说明；确认沿用手动调速退出分段训练，取消保留训练，播放中确认保留倒计时期限。支持页同时补预设目标同步、中断后渐进提速恢复、大字号与计时稳定性改进。
+- 新增中英 `voice-counting-metronome` 和 `metronome-bpm-widget` 四页指南，接入首页、支持、指南目录、相关内容、FAQ 与节拍器 CPP 下载。iOS 27+ 超大竖排 Widget 取决于系统、设备和可用空间；旧小、中、大号继续支持，Swing 仅配八分细分。更新静音、分段、渐进提速、原生/网页差异及 Watch 音频排障；Watch 仅在后台音频路由成功启用后继续暗屏播放，前台扬声器回退在非活跃时停止。
+- 四款免费外观、七款独立付费主题保持原商品范围，没有新增权限。网站训练图与商店 273 张图沿用 1.1.2 成品，caption/alt/图片 sitemap 明确来源；不把旧图描述成新的人声或竖排 Widget，旧视频也保留历史演示范围。
+- 隐私站 2026-10-11 中英政策补人声素材、本地设置、主动支持邮件、StoreKit、商店销售者及浏览器工具/托管范围。生成器输出真正单语、静态可读的 `/` 与 `/en/`，没有隐藏的另一语言正文；独立 canonical/hreflang、OG/Twitter、JSON-LD、日期与目录。英文不含可执行 JS，中文仅兼容旧 `?lang=en`；目录链接最小高度 44px。Android 政策逐字节保留，lastmod 2026-10-10，审核示范资料不删改。
+- SEO/GEO：203 canonical URL、13 语言入口、72 图片映射，正文、FAQ、WebPage/Breadcrumb/SoftwareApplication 与下载目标一致。真正更新页面使用 10 月 11 日，旧和弦内容与图片保留历史日期。按 [Google AI 搜索指南](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide)维护具体答案、设备范围、事实来源与内部链接；不编造评分、地域购买价或特殊 AI schema。IndexNow 是通知接收，实际 Search Console 收录/排名/AI 引用未确认为成功；主机根 robots.txt 回读 404，项目目录文件不控制共享主机根。
+- 验证：Next 16.3.8/TypeScript 构建、Lint、18 个浏览器音频/渠道/真实 Next glob 行为测试通过；206 HTML、285 本地目标、227 提取外部目标的静态审计及 203 canonical/13 首页/8 指南/72 图片 release 门禁通过。外部目标计数不表示逐个联网验证。当前生产与开发完整依赖 audit 零已知 advisory；旧工作区的音频生命周期和 scoped tinyglobby 修复先保存为 `2397a6a`，已取代历史 braces 例外，见 `DEPENDENCY_NOTES.md`。Pages Actions 改为完整 `npm test`。
+- 375/768/1440px 浏览器检查与 1024px 首页复验通过，图片正常，无 JS 错误；修复窄屏支持标题、指南 breadcrumb 对齐、平板导航重叠和 hero 装饰横向滚动，保留原有品牌。英文隐私在禁用 JS 的三种宽度仍可阅读和通过键盘跳转；自动设计门禁通过。具体观察与截图路径见 App 交接目录的 `visual-audit.json` 和 `design-gate.json`。
+- 生产内容为 `d4351ccb22b49619d6dee42525e8d295cb56484c`（功能内容 `6ffe2ff`），标签 `release/website-1.1.3`。[Pages Actions 38116658908](https://github.com/weizhichao1027-collab/guitartool-website/actions/runs/38116658908) 的 build、deploy、notify-search-engines 全部成功，IndexNow 接受 203 URL，HTTP 200。隐私最初 `af0a2b7` 保留 `release/privacy-1.1.3`，44px 修复后生产为 `1792e5ae2a1978f4a201820124c85431b4701f5f`，标签 `release/privacy-1.1.3-accessibility`，Pages built，IndexNow 3 URL 返回 200。
+- 全量公开回读 **281/281** 通过：所有 canonical HTML、11 个引用 JS/CSS、58 个唯一索引图片及两个隐私图标、三个营销元数据文件、隐私三页及 sitemap。普通 HTML/资产严格比字节；17 个保留客户端运行时的页面仅允许 Next 随机 build ID 不同，其他字节与 JS/CSS 一致。一张俄语和弦分享图的传输截断单独重试成功，初次错误保留在报告中。本节后续纯文档提交 `[skip ci]` 不改变已验证页面。
+
+主 App 源码发行提交 `a57716a` 与 `release/1.1.3-build18` 中 339 个签名快照文件一致，75 份交付证据与语音工具另存 `fbe4451`。App 没有 remote，Android 既有未提交工作保持原样；网站与隐私各自推送 main。完整机器记录、重建命令、Git 交接标签和三仓库恢复包见上级 `docs/release/website-1.1.3-2026-10-11/README.md`。GitHub Pages 继续为唯一现行营销目标，旧 Sites 不更新。
+
 ## 2026-10-08：1.1.2 上架后全站更新
 
 - Apple 中国区 Lookup 回读 `version=1.1.2`，公开上架时间 `2026-10-07T15:45:52Z`（北京时间 10 月 7 日 23:45:52）。Build 17 来自本地签名包与提审记录，不从公开 Lookup 推断。
@@ -54,7 +72,7 @@
 
 > 历史记录（2026-09-09）：独立仓库 HEAD `246424f` 当时将网站内容更新为 1.1.0 预告与五套付费主题；公开 App 当时仍为 1.0.8。此段及下文 9 月 5 日的渠道数字与 Sites 状态仅供追溯，以 2026-09-28 新节为准。
 
-最后更新：2026-09-28
+最后更新：2026-10-11
 
 本文件是 `marketing-site` 独立仓库的运营与技术交接入口。App 工程发布、Watch、Widget 和主题架构的完整记录见上级目录 `APP交接文档.md`；本文件只维护营销页面、免费推广和搜索收录事实。
 
