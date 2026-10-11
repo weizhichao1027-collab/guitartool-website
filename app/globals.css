@@ -325,6 +325,12 @@ h1 em { font-family: Georgia, "Times New Roman", serif; font-weight: 500; color:
 .footer > div a { display: inline-flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; }
 .footer a:hover { color: var(--teal-deep); }
 
+@media (min-width: 761px) and (max-width: 1200px) {
+  .nav { height: auto; min-height: 92px; padding-block: 12px; gap: 24px; }
+  .nav > .brand { flex-shrink: 0; }
+  .navLinks { min-width: 0; flex-wrap: wrap; justify-content: flex-end; gap: 4px 18px; }
+}
+
 @media (max-width: 1000px) {
   .hero { grid-template-columns: 1fr; padding-top: 70px; text-align: center; }
   .heroCopy { display: flex; flex-direction: column; align-items: center; }

@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { AcquisitionFooter, AcquisitionHeader } from "@/app/components/AcquisitionChrome";
 import { JsonLd } from "@/app/components/JsonLd";
-import { APP_STORE_LINKS, APP_STORE_URL, GITHUB_URL, PRIVACY_EN_URL, RELEASE_VERSION, absoluteUrl, assetPath } from "@/app/lib/site";
+import { APP_STORE_LINKS, APP_STORE_URL, GITHUB_URL, PRIVACY_EN_URL, RELEASE_VERSION, RELEASE_UPDATED, absoluteUrl, assetPath } from "@/app/lib/site";
 
 export const metadata: Metadata = {
   title: "GuitarTool Press Kit | Product Facts, Images & Contact",
-  description: "Official GuitarTool 1.1.2 press kit: silent bars, staged tempo training, Jade Resonance, product facts, real screenshots and developer contact.",
+  description: "Official GuitarTool 1.1.3 press kit: offline Chinese voice counting, BPM controls, iOS 27+ portrait widgets, release facts, real screenshots and contact.",
   alternates: { canonical: absoluteUrl("/press/") },
-  openGraph: { title: "GuitarTool Official Press Kit", description: "Version 1.1.2 rhythm training and Jade Resonance, downloadable visuals and verified product facts.", url: absoluteUrl("/press/"), type: "website", images: [{ url: absoluteUrl("/en-watch-tuner.jpg"), width: 416, height: 496, alt: "GuitarTool Apple Watch tuner preview" }] },
-  twitter: { card: "summary_large_image", title: "GuitarTool Official Press Kit", description: "Version 1.1.2 rhythm training and Jade Resonance, verified facts and downloadable media.", images: [absoluteUrl("/en-watch-tuner.jpg")] },
+  openGraph: { title: "GuitarTool Official Press Kit", description: "Version 1.1.3 voice counting, BPM fixes and iOS 27+ portrait widgets. Verified product facts and downloadable visuals.", url: absoluteUrl("/press/"), type: "website", images: [{ url: absoluteUrl("/en-watch-tuner.jpg"), width: 416, height: 496, alt: "GuitarTool Apple Watch tuner preview" }] },
+  twitter: { card: "summary_large_image", title: "GuitarTool Official Press Kit", description: "Version 1.1.3 offline voice counting, BPM controls and iOS 27+ portrait widgets, with verified facts and media.", images: [absoluteUrl("/en-watch-tuner.jpg")] },
 };
 
 const assets = [
@@ -40,7 +40,7 @@ const fullVideos = [
 export default function PressKitPage() {
   return (
     <main className="acqPage pressPage" lang="en">
-      <JsonLd data={{ "@context": "https://schema.org", "@type": "SoftwareApplication", name: "GuitarTool", softwareVersion: RELEASE_VERSION, description: "Offline core practice tools for guitar and ukulele, with Apple Watch tuning, rear-flash beat cues, shareable chord cards and Home Screen widgets.", url: absoluteUrl("/"), downloadUrl: APP_STORE_URL, applicationCategory: "MusicApplication", operatingSystem: "iOS, iPadOS, watchOS", featureList: ["Real-time tuner for seven instrument families", "Apple Watch guitar, ukulele, bass and chromatic tuner", "20–500 BPM practice metronome", "Silent bars and up to six tempo stages", "Seven separately purchased themes including Jade Resonance", "Rear-flash beat cues for all main beats or accents only, with three intensities", "19,244 guitar and ukulele fingerings", "Chord-card preview, Photos save and system sharing", "Apple Watch metronome with background audio", "Large Home Screen widget subdivisions and Swing", "13 interface languages"], author: { "@type": "Person", name: "Zhichao Wei" }, offers: { "@type": "Offer", price: "0", priceCurrency: "USD" } }} />
+      <JsonLd data={{ "@context": "https://schema.org", "@type": "SoftwareApplication", name: "GuitarTool", softwareVersion: RELEASE_VERSION, dateModified: RELEASE_UPDATED, description: "Offline core practice tools for guitar and ukulele, with Apple Watch tuning, rear-flash beat cues, shareable chord cards and Home Screen widgets.", url: absoluteUrl("/"), downloadUrl: APP_STORE_URL, applicationCategory: "MusicApplication", operatingSystem: "iOS, iPadOS, watchOS", featureList: ["Real-time tuner for seven instrument families", "Apple Watch guitar, ukulele, bass and chromatic tuner", "20–500 BPM practice metronome with offline Chinese voice counting and current-BPM preview", "Extra-large portrait Home Screen widget on iOS 27+ when offered by the system", "Silent bars and up to six tempo stages", "Seven separately purchased themes including Jade Resonance", "Rear-flash beat cues for all main beats or accents only, with three intensities", "19,244 guitar and ukulele fingerings", "Chord-card preview, Photos save and system sharing", "Apple Watch metronome: approved background route continues; foreground fallback stops when inactive", "Large Home Screen widget subdivisions and Swing", "13 interface languages"], author: { "@type": "Person", name: "Zhichao Wei" }, offers: { "@type": "Offer", price: "0", priceCurrency: "USD" } }} />
       <JsonLd data={[
         ...fullVideos.map((video) => ({ "@context": "https://schema.org", "@type": "VideoObject", name: video.title, description: "A 36-second full introduction to GuitarTool's tuner, metronome, chord cards, widgets and multi-device experience.", thumbnailUrl: absoluteUrl("/media-kit/social/guitartool-chord-cards-en-1200x630.png"), uploadDate: "2026-08-28", duration: "PT36S", contentUrl: absoluteUrl(video.file) })),
         { "@context": "https://schema.org", "@type": "VideoObject", name: "GuitarTool 24-second social preview", description: "A concise vertical preview of GuitarTool's offline metronome, tuner, chord library and shareable chord cards.", thumbnailUrl: absoluteUrl("/media-kit/social/guitartool-chord-cards-en-1200x630.png"), uploadDate: "2026-08-27", duration: "PT24S", contentUrl: absoluteUrl("/media-kit/video/GuitarTool-Social-Preview-en-1080x1920.mp4") },
@@ -57,11 +57,15 @@ export default function PressKitPage() {
       <section className="pressFacts shell">
         <div><p className="acqEyebrow">ONE-SENTENCE DESCRIPTION</p><h2>GuitarTool is a free, ad-free iPhone and iPad practice toolkit with offline core tools, four free basic looks and seven separately purchasable themes, shareable chord cards, Apple Watch and Home Screen companions.</h2></div>
         <dl>
-          <div><dt>Platforms</dt><dd>iPhone, iPad, Apple Watch</dd></div>
+          <div><dt>Current release</dt><dd>1.1.3 · October 11, 2026 (China time)</dd></div>
+          <div><dt>Platforms</dt><dd>iPhone and iPad: iOS 17+ · companion Apple Watch app: watchOS 10+</dd></div>
+          <div><dt>Voice counting</dt><dd>Chinese audio on iPhone/iPad in all interface languages · offline · optional</dd></div>
+          <div><dt>Portrait widget</dt><dd>iOS 27+ · availability depends on system, device and space</dd></div>
           <div><dt>Price</dt><dd>Free download · four basic looks free · seven themes sold separately</dd></div>
           <div><dt>Languages</dt><dd>13 interface languages</dd></div>
           <div><dt>Privacy</dt><dd>No account, ads, analytics or audio uploads</dd></div>
-          <div><dt>Developer</dt><dd>Zhichao Wei</dd></div>
+          <div><dt>Developer contact</dt><dd>Zhichao Wei</dd></div>
+          <div><dt>App Store seller</dt><dd>Shanghai Qishan Cultural Communication Co., Ltd.</dd></div>
           <div><dt>App Store ID</dt><dd>6761914163</dd></div>
         </dl>
       </section>
@@ -70,8 +74,13 @@ export default function PressKitPage() {
         <div><strong>20–500</strong><span>BPM range</span></div><div><strong>19,244</strong><span>guitar & ukulele fingerings</span></div><div><strong>7</strong><span>tuner instrument families</span></div><div><strong>13</strong><span>interface languages</span></div>
       </section>
 
+      <section className="pressStory shell" id="release-1-1-3">
+        <div><p className="acqEyebrow">AVAILABLE NOW · VERSION 1.1.3</p><h2>Offline voice counting and more dependable tempo controls.</h2></div>
+        <div><p>Released October 11, 2026 at 01:56:36 China time (October 10 at 17:56:36 UTC), independently verified in <a href="https://itunes.apple.com/lookup?id=6761914163&amp;country=cn">Apple’s China storefront</a> and <a href="https://itunes.apple.com/lookup?id=6761914163&amp;country=us">US storefront</a>. On iPhone and iPad, open Metronome → Settings → Metronome Sound → Voice. Bundled Chinese counting previews at the current BPM and restarts each bar; subdivisions use light clicks. It is Chinese audio in every interface language and needs neither a microphone nor a connection. Watch and browser metronomes do not include this voice option.</p><p>The release fixes BPM confirmation and cancellation, preset target-tempo synchronization and progressive-tempo recovery after audio interruptions. It improves training and subdivision layouts with large text and practice-timer stability. iOS 27+ adds an extra-large portrait metronome widget where the system offers it for the device and available space. The core tools, four free looks and seven existing separately purchased themes remain available. <a href={absoluteUrl("/en/guides/voice-counting-metronome/")}>Voice-counting guide</a> · <a href={absoluteUrl("/en/guides/metronome-bpm-widget/")}>BPM and widget guide</a>.</p><p>The current App Store listing reuses 1.1.2 screenshots. Downloadable images retain their original version labels; they do not illustrate the new voice controls or extra-large portrait widget.</p></div>
+      </section>
+
       <section className="pressStory shell">
-        <div><p className="acqEyebrow">AVAILABLE NOW · VERSION 1.1.2</p><h2>Practise through the silence, then move through your tempo stages.</h2></div>
+        <div><p className="acqEyebrow">INTRODUCED IN VERSION 1.1.2</p><h2>Practise through the silence, then move through your tempo stages.</h2></div>
         <div><p>Released October 7, 2026. On iPhone and iPad, Presets → Rhythm Training alternates audible and silent bars and supports up to six tempo stages: 20–500 BPM and 1–64 bars per stage. Save the configuration as a custom preset. Manual tempo changes or TAP exit staged training; with looping off, the last tempo continues.</p><p>Jade Resonance is the seventh complete theme, available to preview before a separate one-time purchase. Four basic looks and all practice tools remain free. The release improves stopping playback, audio interruptions, device changes, large text and right-to-left layouts. <a href={absoluteUrl("/en/guides/silent-bar-metronome/")}>Silent-bar guide</a> · <a href={absoluteUrl("/en/guides/staged-tempo-training/")}>Tempo-stage guide</a>.</p></div>
       </section>
 
@@ -107,7 +116,7 @@ export default function PressKitPage() {
       </section>
 
       <section className="pressVideoSection shell">
-        <div className="assetHeading"><p className="acqEyebrow">FULL INTRODUCTION VIDEOS</p><h2>Four edits for websites, editorial embeds and social publishing.</h2><p>Use landscape for articles, desktop landing pages and presentations; use portrait for Shorts, Reels, Stories and mobile-first embeds. Both editions include audio and real product screens from the earlier core-product tour; they do not demonstrate the 1.1.2 training editor or Jade Resonance.</p></div>
+        <div className="assetHeading"><p className="acqEyebrow">FULL INTRODUCTION VIDEOS</p><h2>Four edits for websites, editorial embeds and social publishing.</h2><p>Use landscape for articles, desktop landing pages and presentations; use portrait for Shorts, Reels, Stories and mobile-first embeds. Both editions include audio and real product screens from the earlier core-product tour; they do not demonstrate the 1.1.2 training editor, Jade Resonance, or the 1.1.3 voice controls and extra-large portrait widget.</p></div>
         <div className="pressFullVideoGrid">{fullVideos.map((video) => <article className={video.orientation} key={video.file}><video controls playsInline preload="metadata"><source src={assetPath(video.file)} type="video/mp4" /></video><div><h3>{video.title}</h3><p>{video.detail}</p><a href={assetPath(video.file)} download>Download full video ↓</a></div></article>)}</div>
       </section>
 

@@ -1,5 +1,7 @@
 export const APP_NAME = "GuitarTool";
-export const RELEASE_VERSION = "1.1.2";
+export const RELEASE_VERSION = "1.1.3";
+export const RELEASE_UPDATED = "2026-10-11";
+export const RELEASE_PUBLISHED = "2026-10-11T01:56:36+08:00";
 export const APP_STORE_URL = "https://apps.apple.com/app/id6761914163";
 const APP_STORE_PROVIDER_TOKEN = "128747267";
 
@@ -56,6 +58,8 @@ export const APP_STORE_LINKS = {
 } as const;
 
 const GUIDE_CAMPAIGNS: Record<string, string> = {
+  "voice-counting-metronome": "seo_voice_counting",
+  "metronome-bpm-widget": "seo_bpm_widget",
   "silent-bar-metronome": "seo_silent_bars",
   "staged-tempo-training": "seo_staged_training",
   "guitar-tuner-jumping": "seo_tuner_jumping",

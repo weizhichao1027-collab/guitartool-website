@@ -1,7 +1,7 @@
 import { SiteLink as Link } from "@/app/components/SiteLink";
 import { AcquisitionFooter, AcquisitionHeader } from "@/app/components/AcquisitionChrome";
 import { JsonLd } from "@/app/components/JsonLd";
-import { APP_STORE_LINKS, APP_STORE_URL, PRIVACY_URL, PRIVACY_EN_URL, RELEASE_VERSION, absoluteUrl } from "@/app/lib/site";
+import { APP_STORE_LINKS, APP_STORE_URL, PRIVACY_URL, PRIVACY_EN_URL, RELEASE_VERSION, RELEASE_UPDATED, absoluteUrl } from "@/app/lib/site";
 
 const email = "weizhichao1027@gmail.com";
 
@@ -9,12 +9,12 @@ const content = {
   zh: {
     lang: "zh-CN",
     eyebrow: "GUITARTOOL 技术支持",
-    title: "先解决练习中的问题，\n再回到音乐里。",
-    lead: "这里汇总已上架的 GuitarTool 1.1.2 及更早版本的设备要求、Watch 调音、购买恢复、常见问题与联系入口。核心功能无需账户，并可离线使用。",
+    title: "解决练习问题，\n回到音乐里。",
+    lead: "这里汇总已上架的 GuitarTool 1.1.3 人声数拍、BPM 输入、小组件、节奏训练与常见问题，也保留更早版本的 Watch 调音和购买恢复帮助。核心功能无需账户，并可离线使用。",
     contact: "联系技术支持",
     appStore: "前往 App Store",
     status: [
-      ["文档版本", "1.1.2 已上架"],
+      ["文档版本", "1.1.3 已上架 · 2026-10-11 更新"],
       ["支持设备", "iPhone · iPad · Apple Watch"],
       ["系统要求", "iOS / iPadOS 17、watchOS 10 或更高版本"],
       ["数据方式", "无需账户 · 核心功能离线运行"],
@@ -27,8 +27,12 @@ const content = {
       "仍未解决时，来信说明设备型号、系统版本、问题发生在哪个工具，以及复现步骤。请勿发送私人录音。",
     ],
     sections: [
+      { title: "如何开启人声数拍和试听？", body: "在 iPhone、iPad 更新到 1.1.3 或更新版本，停止播放后进入“节拍器 → 设置”，点当前音色行，在“节拍器声音”选择“人声”。会按当前 BPM 试听中文“一、二、三、四”；再点已选音色可重新试听。正常播放按每小节主拍报数，最多一到十二，每小节从一开始；细分位置仍用点击声。声音素材内置、离线播放，不使用麦克风，也不随界面语言改变。Watch 与网页节拍器不提供这款音色。" },
+      { title: "BPM 输入后如何确认或取消？", body: "1.1.3 在各主题中统一使用独立输入面板。点 BPM 数字，替换原数字，再点顶部“完成”保存；点“取消”或下滑关闭会丢弃草稿，保留原速度和训练设置。空值或非数字输入不能确认，有效数字会限制到 20–500 BPM；本地化十进制数字也可输入。播放中确认会继续播放并保留倒计时原期限，同时沿用手动调速规则，退出分段训练。" },
+      { title: "为什么找不到超大竖排小组件？", body: "1.1.3 新增的超大竖排尺寸需要 iOS 27 或更新系统，是否可添加由系统按设备和可用空间决定。该布局提供播放暂停、±5 BPM、TAP、60／80／100／120 快捷速度、拍号、细分与 Swing；Swing 只与八分细分搭配。点 BPM 或背景进入 App 的节拍器，不会直接打开输入面板。较早系统继续支持原有小、中、大号尺寸。" },
       { title: "静音小节怎么设置？", body: "在 iPhone/iPad 的节拍器打开“预设 → 节奏训练”，开启“静音小节”，分别设置 1–64 个有声和静音小节。可从有声 2 小节、静音 2 小节开始；静音阶段内部节拍仍继续。若出现规律性的无声小节，先检查此开关。配置可保存为自定义预设。" },
-      { title: "如何分段提速，为什么训练会退出？", body: "在同一“节奏训练”区域开启“分段训练”，添加最多六个阶段，每阶段设置 20–500 BPM 和 1–64 小节。开启“循环阶段”会重复；关闭后保持最后阶段速度。手动调速或 TAP 会退出分段训练；播放中修改训练参数会从第 1 小节重新开始。训练设置随自定义预设保存，不要求购买主题。" },
+      { title: "如何分段提速，为什么训练会退出？", body: "在同一“节奏训练”区域开启“分段训练”，添加最多六个阶段，每阶段设置 20–500 BPM 和 1–64 小节。开启“循环阶段”会重复；关闭后保持最后阶段速度。手动调速、确认 BPM 输入或 TAP 会退出分段训练；取消 BPM 输入不改变训练。播放中修改训练参数会从第 1 小节重新开始。训练编辑器属于 iPhone、iPad 原生 App，Watch、小组件和网页不提供同样的编辑器。训练设置随自定义预设保存，不要求购买主题。" },
+      { title: "预设目标、渐进加速与大字号有哪些修复？", body: "1.1.3 修复了练习预设目标速度同步，切换或重开预设时，旧输入草稿不再覆盖新目标；渐进加速目标不能低于当前 BPM、最高 500 BPM。音频中断后恢复会保留已完成的小节和渐进加速进度；主动开始新练习仍从零开始。预设、训练参数与细分选项改善了大字号换行布局，倒计时稳定性也已改进。如仍有问题，请来信说明字号、预设设置、音频路线和复现步骤。" },
       { title: "如何找到玄玉声场？", body: "先更新到 1.1.2 或更新版本，再进入“个性化 → 主题展厅”。玄玉声场可以先预览，再单独一次性购买；以前购买的主题不包含此商品。价格以你所在地区 App Store 实时显示为准。" },
       { title: "为什么偶尔出现系统评分提示？", body: "App 仅在练习结束且界面空闲时尝试请求 Apple 系统评分提示，系统决定是否显示。资格计数和提示记录只保存在本机，不上传给开发者，也不记录你给出的星级或评价。可直接关闭提示，不影响功能。" },
       { title: "如何使用基础与付费主题", body: "四款基础主题免费且继续可见。1.1.2 已内置包括玄玉声场在内的七套完整付费主题素材，可在主题展厅预览并分别通过 App Store 购买；购买后无需下载素材即可离线使用。恢复购买可能需要联网。" },
@@ -39,12 +43,12 @@ const content = {
       { title: "节拍器没有声音或节拍中断", body: "检查设备音量、静音状态和当前蓝牙／AirPlay 音频路线。停止后重新开始一次；若切换过输出设备，请重新打开节拍器，让音频会话恢复到当前路线。" },
       { title: "练习时屏幕会保持常亮吗？", body: "1.1.1 中，iPhone 或 iPad 前台播放节拍器或收音调音时默认保持屏幕亮起；停止或离开相应功能后恢复系统熄屏行为。如希望练习中也按系统时间熄屏，在“个性化”中打开“运行时可熄屏”。" },
       { title: "后置闪光灯节拍没有出现", body: "闪光灯节拍只会在具备后置闪光灯的兼容 iPhone 上显示。首次开启前请阅读频闪、耗电与发热提示。它可跟随全部主拍或仅重音，提供三档强度，不跟随细分音符；停止、离开页面或进入后台会自动关闭，也不会拍照或采集画面。" },
-      { title: "Widget 没有同步最新速度或细分", body: "先在 iPhone 上打开 GuitarTool 一次，确认主 App 和 Widget 已同步；随后返回主屏幕再操作。必要时移除并重新添加 Widget。三种尺寸均支持调速和播放暂停，中号和大号还支持拍号与 TAP 操作；1.1.1 的大号 Widget 还可切换单拍、八分、三连、十六分与 Swing，并与 App 双向同步。" },
-      { title: "Apple Watch 没有声音或状态不同步", body: "确认 Watch App 已安装，并先在 iPhone 上打开 GuitarTool。Watch 落腕或屏幕变暗后，声音节拍可以继续，但界面与触觉刷新会暂停。实际声音输出取决于手表型号和当前音频路线，部分设备需要蓝牙耳机或扬声器。" },
+      { title: "Widget 没有同步最新速度或细分", body: "先打开主 App 一次，再返回主屏幕；刷新时机由系统管理，必要时移除并重新添加 Widget。原有小、中、大号均支持调速和播放暂停，中号和大号支持拍号与 TAP，大号支持单拍、八分、三连、十六分与 Swing。1.1.3 的 iOS 27+ 超大竖排布局集中提供这些控制，设置通过本机共享状态与 App 双向同步。" },
+      { title: "Apple Watch 没有声音或状态不同步", body: "确认 Watch App 已安装，并先在 iPhone 上打开 GuitarTool。播放成功开始且已启用支持的后台音频路线后，落腕或屏幕变暗时声音可继续，界面与触觉刷新会暂停。如果系统改用仅限前台的扬声器回退路线，界面非活跃时会停止节拍，需要回到 Watch App 再主动开始。实际输出取决于手表型号、系统和当前路线，部分设备需要蓝牙耳机或扬声器。" },
       { title: "和弦卡片无法保存到照片", body: "在系统设置中允许 GuitarTool 添加照片。保存前会显示最终卡片预览；系统分享只发送图片，不强制附带下载链接，也不会把图片上传到 GuitarTool 服务器。" },
     ],
     privacyTitle: "关于隐私与权限",
-    privacyBody: "GuitarTool 不要求注册，不包含广告或第三方统计 SDK。iPhone、iPad 和 Apple Watch 麦克风只在你主动开始调音时用于设备端实时分析，不保存或上传声音；照片权限只在主动保存和弦卡片时使用。四款基础主题免费，七套付费主题素材内置；App 不采集功能使用分析数据。",
+    privacyBody: "GuitarTool 不要求注册，不包含广告或第三方统计 SDK。1.1.3 中文人声数拍使用内置音频在本机播放，不使用麦克风、语音识别或联网下载。iPhone、iPad 和 Apple Watch 麦克风只在你主动开始调音时用于设备端实时分析，不保存或上传声音；照片权限只在主动保存和弦卡片时使用。四款基础主题免费，七套付费主题素材内置；App 不采集功能使用分析数据。",
     privacyLink: "阅读完整隐私政策",
     emailTitle: "需要进一步帮助？",
     emailBody: "邮件中请附上设备型号、系统版本、GuitarTool 版本以及清晰的复现步骤。这样最容易定位问题。",
@@ -54,11 +58,11 @@ const content = {
     lang: "en",
     eyebrow: "GUITARTOOL SUPPORT",
     title: "Solve the interruption.\nGet back to the music.",
-    lead: "Device requirements, Apple Watch tuning, purchase restores and troubleshooting for GuitarTool 1.1.2 and earlier releases. Core features need no account and work offline.",
+    lead: "Voice counting, BPM input, widgets, rhythm training and troubleshooting for the released GuitarTool 1.1.3 app, with Apple Watch tuning and purchase help for earlier versions too. Core features need no account and work offline.",
     contact: "Contact support",
     appStore: "View on the App Store",
     status: [
-      ["Documentation", "1.1.2 available now"],
+      ["Documentation", "1.1.3 available · Updated 11 October 2026"],
       ["Devices", "iPhone · iPad · Apple Watch"],
       ["System requirement", "iOS / iPadOS 17; watchOS 10 or later"],
       ["Data model", "No account · Core features work offline"],
@@ -71,8 +75,12 @@ const content = {
       "If the issue continues, email the device model, OS version, affected tool and exact steps. Please do not send private recordings.",
     ],
     sections: [
+      { title: "How do I use Voice counting and preview it?", body: "Update the iPhone or iPad app to 1.1.3 or later. Stop playback, open Metronome → Settings, tap the current sound row and choose Voice in Metronome Sound. It previews Chinese one, two, three and four at the current BPM; tap the selected sound to preview again. Playback counts the main beats in each bar, up to twelve, restarting at one each bar; subdivisions use clicks. Bundled audio works offline, needs no microphone and remains Chinese in every interface language. Watch and the browser metronome do not offer this sound." },
+      { title: "How do I confirm or cancel a BPM input?", body: "Version 1.1.3 uses the same separate input panel across themes. Tap the BPM number, replace it and tap Done at the top to save. Cancel or swiping the panel away discards the draft and retains the previous tempo and training settings. Empty or non-digit input cannot be confirmed; valid numeric input is clamped to 20–500 BPM, including localized decimal digits. Confirming during playback keeps it running and preserves the countdown deadline, while applying the manual tempo rule that exits staged training." },
+      { title: "Why is the extra-large portrait widget missing?", body: "The new 1.1.3 portrait size requires iOS 27 or later. The system decides whether it is available for the device and space. It offers play/pause, ±5 BPM, TAP, quick tempos at 60/80/100/120, meter, subdivisions and Swing, which works only with eighth notes. Tap BPM or the background to open the app's metronome, not the input panel directly. Earlier systems retain small, medium and large widgets." },
       { title: "How do I set up silent bars?", body: "On iPhone or iPad, open Metronome → Presets → Rhythm Training and enable Silent Bars. Set 1–64 audible bars and 1–64 silent bars; try two of each first. The internal beat continues during silence. If sound disappears in a regular pattern, check this setting before troubleshooting audio. Save the setup as a custom preset." },
-      { title: "How do tempo stages work, and why did training exit?", body: "Enable Staged practice in the same Rhythm Training section. Add up to six stages, each with 20–500 BPM and 1–64 bars. Loop Stages repeats the sequence; disabling it holds the final tempo. Manual tempo changes or TAP exit staged training. Editing training parameters during playback restarts from bar one. Save the configuration with a custom preset; no theme purchase is needed." },
+      { title: "How do tempo stages work, and why did training exit?", body: "Enable Staged practice in Rhythm Training. Add up to six stages, each with 20–500 BPM and 1–64 bars. Loop Stages repeats the sequence; disabling it holds the final tempo. Manual tempo changes, confirming BPM input or TAP exit staged training; Cancel leaves it unchanged. Editing training parameters during playback restarts from bar one. This editor is in the native iPhone/iPad app; Watch, widgets and the browser do not provide it. Save the configuration with a custom preset; no theme purchase is needed." },
+      { title: "What changed for preset targets, tempo progress and large text?", body: "Version 1.1.3 fixes practice preset target syncing so an older input draft does not overwrite a newly loaded target when you switch or reopen presets. Progressive tempo targets stay between the current BPM and 500. Recovery after an audio interruption retains completed bars and progressive tempo progress; starting a new practice still resets progress. Presets, training parameters and subdivision choices have improved wrapping at larger text sizes, and the countdown is more reliable. If a problem continues, send the text size, preset settings, audio route and reproduction steps." },
       { title: "Where can I find Jade Resonance?", body: "Update to 1.1.2 or later, then open Personalization → Theme Gallery. Preview Jade Resonance before its separate one-time purchase. Earlier theme purchases do not include it. The App Store displays the current price for your region." },
       { title: "Why might I see a system rating prompt?", body: "The app may request an Apple rating prompt after practice ends and the interface is idle. Apple decides whether it appears. Eligibility counters and request records stay on your device, are not uploaded to the developer and do not record your rating or review. Dismissing the prompt does not restrict any feature." },
       { title: "Use basic and paid themes", body: "The four basic looks remain free. Version 1.1.2 bundles artwork for seven complete themes, including Jade Resonance, each sold separately through the App Store. Preview them in the Theme Gallery; once purchased, they work offline without an asset download. Restoring purchases may require a connection." },
@@ -83,12 +91,12 @@ const content = {
       { title: "The metronome is silent or stops", body: "Check device volume, silent mode and the active Bluetooth or AirPlay route. Stop and start the metronome once. If the output device changed, reopen the tool so its audio session can follow the current route." },
       { title: "Will the screen stay awake while I practise?", body: "In 1.1.1, the iPhone or iPad screen stays awake by default while the metronome plays or the tuner listens in the foreground. Normal system sleep returns when you stop or leave the tool. To allow the display to sleep during active practice, enable Allow Sleep During Use in Personalization." },
       { title: "Flash Beat is not available", body: "Flash Beat appears only on compatible iPhones with a rear flash. Read the strobe, battery and heat notice before first use. It can follow all main beats or accents only, offers three intensity levels, and does not follow subdivisions. It turns off automatically when playback stops, you leave the screen or the app enters the background. It never captures images." },
-      { title: "A widget shows an older tempo or subdivision", body: "Open GuitarTool on iPhone once so the app and widget can refresh shared state, then return to the Home Screen. If needed, remove and add the widget again. All three sizes support tempo and play/pause; medium and large widgets also support meter and tap tempo. In 1.1.1, the large widget also offers beat, eighth, triplet, sixteenth and Swing choices that sync both ways with the app." },
-      { title: "Apple Watch audio or state is different", body: "Confirm that the Watch app is installed, then open GuitarTool on iPhone once. Metronome audio can continue when the wrist lowers or the display dims, while visual and haptic refresh pauses. The actual output depends on the Watch model and active audio route; some devices need Bluetooth headphones or a speaker." },
+      { title: "A widget shows an older tempo or subdivision", body: "Open the main app once, then return to the Home Screen; refresh timing is managed by the system. If needed, remove and add the widget again. Small, medium and large all support tempo and play/pause; medium and large add meter and TAP; large adds beat, eighth, triplet, sixteenth and Swing. The 1.1.3 extra-large portrait layout on iOS 27+ groups these controls together. Settings sync both ways with the app through shared local state." },
+      { title: "Apple Watch audio or state is different", body: "Confirm that the Watch app is installed, then open GuitarTool on iPhone once. Once playback has started successfully with an activated background audio route, sound can continue when the wrist lowers or the display dims, while visual and haptic refresh pauses. If the system uses the foreground-only speaker fallback, the metronome stops when the interface becomes inactive; return to the Watch app and start it again. Output depends on the Watch model, system and active route; some devices need Bluetooth headphones or a speaker." },
       { title: "A chord card will not save to Photos", body: "Allow GuitarTool to add photos in system settings. The final card is shown before saving. System sharing sends only the image, with no forced download link, and GuitarTool does not upload the card to a server." },
     ],
     privacyTitle: "Privacy and permissions",
-    privacyBody: "GuitarTool needs no registration and contains no ads or third-party analytics SDKs. The iPhone, iPad and Apple Watch microphones are used only after you start live on-device tuning; audio is never saved or uploaded. Photos access is used only when you save a chord card. Four basic looks are free, seven paid complete themes are bundled, and the app collects no usage analytics.",
+    privacyBody: "GuitarTool needs no registration and contains no ads or third-party analytics SDKs. The 1.1.3 Chinese voice count plays bundled audio locally, with no microphone, speech recognition or online download. The iPhone, iPad and Apple Watch microphones are used only after you start live on-device tuning; audio is never saved or uploaded. Photos access is used only when you save a chord card. Four basic looks are free, seven paid complete themes are bundled, and the app collects no usage analytics.",
     privacyLink: "Read the full privacy policy",
     emailTitle: "Still need help?",
     emailBody: "Include the device model, OS version, GuitarTool version and clear reproduction steps. Those details make an issue much easier to diagnose.",
@@ -108,7 +116,7 @@ export function SupportPage({ language }: { language: keyof typeof content }) {
   return (
     <main className="acqPage supportPage" lang={copy.lang}>
       <JsonLd data={[
-        { "@context": "https://schema.org", "@type": "ContactPage", name: language === "zh" ? "GuitarTool 技术支持" : "GuitarTool Support", url: absoluteUrl(path), inLanguage: copy.lang, mainEntity: { "@type": "SoftwareApplication", name: "GuitarTool", softwareVersion: RELEASE_VERSION, downloadUrl: APP_STORE_URL, operatingSystem: "iOS, iPadOS, watchOS" } },
+        { "@context": "https://schema.org", "@type": "ContactPage", name: language === "zh" ? "GuitarTool 技术支持" : "GuitarTool Support", url: absoluteUrl(path), inLanguage: copy.lang, dateModified: RELEASE_UPDATED, mainEntity: { "@type": "SoftwareApplication", name: "GuitarTool", softwareVersion: RELEASE_VERSION, downloadUrl: APP_STORE_URL, operatingSystem: "iOS, iPadOS, watchOS" } },
         { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faq },
       ]} />
       <AcquisitionHeader language={language} />
@@ -133,7 +141,7 @@ export function SupportPage({ language }: { language: keyof typeof content }) {
       </section>
 
       <section className="supportTopics shell">
-        <div className="assetHeading"><p className="acqEyebrow">02 / TROUBLESHOOTING</p><h2>{language === "zh" ? "按功能排查常见问题。" : "Troubleshoot by feature."}</h2><p>{language === "zh" ? "说明以 1.1.2 为基线，并覆盖仍在使用的更早版本。" : "Answers use 1.1.2 as the baseline and also cover earlier releases still in use."}</p></div>
+        <div className="assetHeading"><p className="acqEyebrow">02 / TROUBLESHOOTING</p><h2>{language === "zh" ? "按功能排查常见问题。" : "Troubleshoot by feature."}</h2><p>{language === "zh" ? "说明以已上架的 1.1.3 为基线，并注明功能所在设备与系统条件。" : "Answers use the released 1.1.3 as the baseline, with device and system requirements stated for each feature."}</p></div>
         <div className="supportGrid">{copy.sections.map((item, index) => <article key={item.title}><span>{String(index + 1).padStart(2, "0")}</span><h3>{item.title}</h3><p>{item.body}</p></article>)}</div>
       </section>
 
@@ -143,6 +151,7 @@ export function SupportPage({ language }: { language: keyof typeof content }) {
       </section>
 
       <section className="supportContact shell">
+        <p><Link href={language === "zh" ? "/guides/voice-counting-metronome/" : "/en/guides/voice-counting-metronome/"}>{language === "zh" ? "人声数拍设置指南" : "Voice counting setup guide"}</Link> · <Link href={language === "zh" ? "/guides/metronome-bpm-widget/" : "/en/guides/metronome-bpm-widget/"}>{language === "zh" ? "BPM 输入与小组件指南" : "BPM input and widget guide"}</Link></p>
         <p><Link href={language === "zh" ? "/guides/silent-bar-metronome/" : "/en/guides/silent-bar-metronome/"}>{language === "zh" ? "静音小节练习指南" : "Silent-bar practice guide"}</Link> · <Link href={language === "zh" ? "/guides/staged-tempo-training/" : "/en/guides/staged-tempo-training/"}>{language === "zh" ? "分段速度训练指南" : "Staged tempo training guide"}</Link></p>
         <p className="acqEyebrow">04 / DIRECT SUPPORT</p>
         <h2>{copy.emailTitle}</h2>

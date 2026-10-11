@@ -56,8 +56,8 @@ export const enIntentPages: LandingPage[] = [
   {
     slug: "progressive-tempo-training",
     title: "Progressive Tempo Training: Increase BPM Without Losing Control",
-    description: "Build a progressive tempo practice routine with repeat counts, small BPM increases and a clear fallback rule when timing, tone or relaxation breaks down.",
-    eyebrow: "PROGRESSIVE TEMPO · SPEED TRAINING",
+    description: "Set progressive tempo targets and saved presets in GuitarTool 1.1.3. Increase BPM by bar count, keep small steps and understand recovery after audio interruptions.",
+    eyebrow: "GUITARTOOL 1.1.3 · PROGRESSIVE TEMPO",
     lead: "Useful speed comes from repeating the same clean, relaxed motion at slightly faster tempos—not from surviving one rushed attempt.",
     proof: ["Automatic BPM increases", "Small, repeatable steps", "A clear rule for backing off"],
     sections: [
@@ -71,13 +71,25 @@ export const enIntentPages: LandingPage[] = [
         body: "Raise the tempo by 2–5 BPM after a successful block. If two attempts fail in a row, return to the last clean tempo or reduce the phrase. GuitarTool can increase BPM after a chosen number of bars, so your hands stay on the instrument and the progression remains consistent.",
         points: ["Add 2–5 BPM at a time", "Back off after two failed attempts", "Stop before fatigue changes the motion"],
       },
+      {
+        title: "Set a target and save the routine in the native app",
+        body: "On iPhone or iPad, open Metronome → Presets and configure progressive tempo with a target BPM, increment and number of bars between increases. The target cannot be below the current tempo or above 500 BPM. Save the settings as a custom preset. Version 1.1.3 keeps the target synchronized when you load or reopen a preset, so an older editing draft does not replace its target. Progressive tempo and staged training are alternative modes; enabling one turns off the other. Watch, widgets and the browser metronome do not provide this training editor.",
+        points: ["Target: current BPM through 500", "Presets retain the configured target", "Use progressive tempo or stages"]
+      },
+      {
+        title: "Distinguish interruption recovery from a new practice",
+        body: "Version 1.1.3 retains completed bars and progressive tempo progress when playback recovers after an audio interruption, such as another audio session taking priority. It continues the remaining progression instead of starting the bar count again. Starting a new practice still resets progress. The release also improves countdown stability and the preset, training and subdivision layouts at larger text sizes. If recovery seems wrong, note the active tempo, target, bar interval and audio route before contacting support.",
+        points: ["Recovery preserves completed bar progress", "A new practice starts from zero", "Record the settings if an issue repeats"]
+      },
     ],
     faq: [
       ["How much should I increase the metronome each time?", "Two to five BPM is a practical range; use smaller steps when the movement is close to its current limit."],
       ["Should I restart if I make one mistake?", "One isolated mistake is information. Repeated loss of time, tone or relaxation means the tempo should come down."],
       ["Can GuitarTool increase tempo automatically?", "Yes. Progressive tempo can raise BPM by a chosen amount after a selected number of bars."],
+      ["Why does my target stay at the current BPM?", "A progressive tempo target cannot be lower than the current tempo. Its upper limit is 500 BPM. Version 1.1.3 also fixes target synchronization when changing or reopening presets."],
+      ["Does an audio interruption restart progressive practice?", "Recovery in 1.1.3 preserves completed bars and the progressive tempo progress. Starting a new practice resets progress instead."],
     ],
-    related: ["rhythm-practice", "online-metronome", "tap-tempo-bpm", "swing-metronome"],
+    related: ["metronome-bpm-widget", "staged-tempo-training", "rhythm-practice", "tap-tempo-bpm"],
   },
   {
     slug: "how-to-tune-a-guitar",
@@ -189,8 +201,8 @@ export const zhIntentPages: LandingPage[] = [
   {
     slug: "progressive-tempo-training",
     title: "渐进加速训练：提高 BPM 但不牺牲控制",
-    description: "用重复次数、小幅 BPM 增量和明确退档规则建立渐进加速练习，在节奏、音色或放松度失控前及时调整。",
-    eyebrow: "渐进加速 · 速度训练",
+    description: "在 GuitarTool 1.1.3 设置渐进加速目标与自定义预设，按小节小幅提高 BPM，了解音频中断后的进度恢复，并保留清晰退档规则。",
+    eyebrow: "GUITARTOOL 1.1.3 · 渐进加速",
     lead: "真正可用的速度，来自稍快一点时仍能复制同一套干净、放松的动作，而不是勉强完成一次。",
     proof: ["自动提高 BPM", "小步幅、可重复", "明确的失败退档规则"],
     sections: [
@@ -204,13 +216,25 @@ export const zhIntentPages: LandingPage[] = [
         body: "成功完成一组后提高 2–5 BPM。连续两次失控时，退回最后一个干净速度，或缩短练习片段。GuitarTool 可以在指定小节数后自动增加 BPM，让双手留在乐器上，也让每一轮增量保持一致。",
         points: ["每次增加 2–5 BPM", "连续失败两次就退档", "疲劳改变动作前结束"],
       },
+      {
+        title: "在原生 App 设置目标并保存方案",
+        body: "在 iPhone、iPad 进入“节拍器 → 预设”，设置渐进加速的目标 BPM、每次增量与间隔小节数。目标不能低于当前速度，最高 500 BPM；可以保存为自定义预设。1.1.3 修复了加载或重开预设时的目标同步，旧输入草稿不会再覆盖新目标。渐进加速与分段训练是两种替代模式，开启其中一种会关闭另一种。Watch、小组件与网页节拍器不提供同样的训练编辑器。",
+        points: ["目标范围为当前 BPM 到 500", "预设保留目标速度", "渐进加速与分段训练择一使用"]
+      },
+      {
+        title: "分清中断恢复和开始新练习",
+        body: "1.1.3 在其他音频任务造成中断、随后恢复播放时，保留已完成的小节和渐进加速进度，继续剩余提速过程；主动开始新练习仍从零开始。本版也改善了倒计时稳定性，以及大字号下的预设、训练和细分选项布局。如恢复进度仍有问题，联系支持前记下当前 BPM、目标、间隔小节数与音频输出路线。",
+        points: ["中断恢复保留已完成小节", "新练习从零开始", "问题重复时记录具体设置"]
+      },
     ],
     faq: [
       ["每次应该增加多少 BPM？", "2–5 BPM 是实用范围；动作接近当前极限时使用更小步幅。"],
       ["错一个音就应该重来吗？", "一次孤立错误是信息；如果节奏、音色或放松度反复失控，就应该降低速度。"],
       ["GuitarTool 可以自动加速吗？", "可以。渐进加速可在选定小节数后，按指定增量自动提高 BPM。"],
+      ["为什么目标速度不会低于当前 BPM？", "渐进加速目标不能低于当前速度，最高为 500 BPM。1.1.3 也修复了切换或重开预设时的目标同步。"],
+      ["音频中断会让渐进加速重新开始吗？", "1.1.3 中断恢复会保留已完成的小节和渐进加速进度；主动开始新练习则会重置进度。"],
     ],
-    related: ["rhythm-practice", "online-metronome", "tap-tempo-bpm", "swing-metronome"],
+    related: ["metronome-bpm-widget", "staged-tempo-training", "rhythm-practice", "tap-tempo-bpm"],
   },
   {
     slug: "how-to-tune-a-guitar",

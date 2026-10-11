@@ -12,7 +12,7 @@ export type LocalePage = {
   download: string;
   trust: string[];
   features: Array<{ title: string; body: string }>;
-  versionUpdate: { label: string; title: string; body: string };
+  versionUpdate: { label: string; title: string; body: string; screenshotCaption: string };
   closing: string;
 };
 
@@ -65,61 +65,72 @@ const localePageTemplates: Array<Omit<LocalePage, "description" | "versionUpdate
   },
 ];
 
-const latestUpdate: Record<string, { title: string; body: string; description: string }> = {
+const latestUpdate: Record<string, { title: string; body: string; description: string; screenshotCaption: string }> = {
   "zh-hant": {
-    "title": "靜音小節、分段提速與玄玉聲場",
-    "body": "1.1.2 新增有聲與靜音小節交替、按小節分段調速，設定可存為自訂方案。改善音訊中斷、裝置切換、大字體與從右至左介面。玄玉聲場加入主題展廳；四款基礎外觀免費，七套完整主題各自一次性購買。",
-    "description": "免費離線調音器、節拍器與和弦庫。1.1.2 加入靜音小節、分段速度訓練及玄玉聲場；七套完整主題可單獨購買。"
+    "title": "離線中文人聲數拍，速度輸入更順手",
+    "body": "1.1.3 新增離線中文人聲數拍，按目前 BPM 試聽；所有介面語言皆使用中文人聲。修正速度輸入的完成與取消、預設目標速度同步及音訊中斷後的漸進提速恢復。iOS 27+ 在系統提供時可用超大直式小工具，並改善大字體訓練及計時穩定性。核心功能及四款基本外觀免費，七套完整主題分別購買。",
+    "description": "GuitarTool 1.1.3：免費離線調音器、節拍器與和弦庫，新增中文人聲數拍、BPM 試聽及 iOS 27+ 超大直式小工具。",
+    "screenshotCaption": "1.1.2 節奏訓練商店預覽，沿用於目前版本；未展示新增人聲或超大直式小工具。"
   },
   "es": {
-    "title": "Compases en silencio, etapas de tempo y Jade Resonance",
-    "body": "La versión 1.1.2 alterna compases con sonido y en silencio, permite programar etapas de tempo por compases y guardar la configuración. Mejora las interrupciones de audio, los cambios de dispositivo, el texto grande y las interfaces de derecha a izquierda. Jade Resonance se une a la galería: cuatro estilos básicos gratis y siete temas completos, cada uno con una compra única.",
-    "description": "Afinador, metrónomo y acordes gratis y sin conexión. La versión 1.1.2 añade compases en silencio, etapas de tempo y Jade Resonance. Siete temas de compra individual."
+    "title": "Cuenta los pulsos con voz china sin conexión",
+    "body": "La versión 1.1.3 añade conteo en chino sin conexión y una prueba al BPM actual, independientemente del idioma de la interfaz. Corrige confirmar y cancelar BPM, sincronizar el tempo objetivo de los ajustes y recuperar el aumento gradual tras interrupciones. En iOS 27+ hay un widget vertical extragrande cuando el sistema lo ofrece. Mejora el texto grande y el temporizador. Herramientas y cuatro estilos básicos gratis; siete temas de compra individual.",
+    "description": "GuitarTool 1.1.3: afinador, metrónomo y acordes gratis sin conexión, conteo en chino, prueba de BPM y widget vertical extragrande en iOS 27+.",
+    "screenshotCaption": "Vista de entrenamiento de la versión 1.1.2 reutilizada en la tienda actual; no muestra la voz ni el nuevo widget."
   },
   "pt-br": {
-    "title": "Compassos silenciosos, etapas de andamento e Jade Resonance",
-    "body": "A versão 1.1.2 alterna compassos sonoros e silenciosos, define etapas de andamento por compassos e salva a configuração. Melhora interrupções de áudio, troca de dispositivos, texto grande e interfaces da direita para a esquerda. Jade Resonance chega à galeria: quatro visuais básicos grátis e sete temas completos, cada um com compra única.",
-    "description": "Afinador, metrônomo e acordes grátis e offline. A versão 1.1.2 traz compassos silenciosos, etapas de andamento e Jade Resonance. Sete temas vendidos separadamente."
+    "title": "Contagem em chinês offline e controle de BPM",
+    "body": "A versão 1.1.3 traz contagem em chinês offline e prévia no BPM atual, em qualquer idioma da interface. Corrige confirmar e cancelar BPM, sincronizar o andamento-alvo dos presets e retomar a aceleração gradual após interrupções. No iOS 27+, o widget vertical extragrande aparece quando oferecido pelo sistema. Melhora texto grande e temporizador. Ferramentas e quatro visuais básicos grátis; sete temas vendidos separadamente.",
+    "description": "GuitarTool 1.1.3: afinador, metrônomo e acordes grátis offline, contagem em chinês, prévia de BPM e widget vertical extragrande no iOS 27+.",
+    "screenshotCaption": "Prévia de treino da versão 1.1.2 reutilizada na loja atual; não mostra a voz ou o novo widget."
   },
   "fr": {
-    "title": "Mesures silencieuses, paliers de tempo et Jade Resonance",
-    "body": "La version 1.1.2 alterne mesures sonores et silencieuses, programme des paliers de tempo par mesure et enregistre vos réglages. Elle améliore les interruptions audio, les changements d’appareil, le texte agrandi et les interfaces de droite à gauche. Jade Resonance rejoint la galerie : quatre styles de base gratuits et sept thèmes complets, chacun en achat unique.",
-    "description": "Accordeur, métronome et accords gratuits hors ligne. La version 1.1.2 ajoute mesures silencieuses, paliers de tempo et Jade Resonance. Sept thèmes vendus séparément."
+    "title": "Comptez les temps en chinois, hors ligne",
+    "body": "La version 1.1.3 ajoute un comptage vocal en chinois hors ligne, avec écoute au BPM actuel, quelle que soit la langue de l’interface. Elle corrige la validation et l’annulation du BPM, la synchronisation du tempo cible des préréglages et la reprise de l’accélération après interruption. Un widget portrait extra-large est disponible sur iOS 27+ lorsque le système le propose. Texte agrandi et minuteur améliorés. Outils et quatre styles gratuits ; sept thèmes vendus séparément.",
+    "description": "GuitarTool 1.1.3 : accordeur, métronome et accords gratuits hors ligne, comptage en chinois, écoute au BPM choisi et widget portrait sur iOS 27+.",
+    "screenshotCaption": "Aperçu d’entraînement 1.1.2 réutilisé dans la fiche actuelle ; il ne montre ni la voix ni le nouveau widget."
   },
   "de": {
-    "title": "Stumme Takte, Tempostufen und Jade Resonance",
-    "body": "Version 1.1.2 wechselt zwischen hörbaren und stummen Takten, plant Tempostufen nach Taktzahl und speichert die Einstellungen. Audio-Unterbrechungen, Gerätewechsel, große Schrift und Rechts-nach-links-Ansichten wurden verbessert. Jade Resonance ergänzt die Galerie: vier kostenlose Basisdesigns und sieben vollständige Themes mit jeweils einmaligem Kauf.",
-    "description": "Kostenloses Offline-Stimmgerät, Metronom und Akkorde. Version 1.1.2 bringt stumme Takte, Tempostufen und Jade Resonance. Sieben Themes sind einzeln erhältlich."
+    "title": "Chinesisches Zählen offline und direkte BPM-Vorschau",
+    "body": "Version 1.1.3 bietet chinesisches Zählen offline mit Vorschau im aktuellen BPM, unabhängig von der Sprache der Oberfläche. Bestätigen und Abbrechen der BPM-Eingabe, Zieltempo der Presets und die Fortsetzung der schrittweisen Beschleunigung nach Unterbrechungen wurden korrigiert. Ab iOS 27 gibt es ein extragroßes Hochformat-Widget, wenn das System es anbietet. Große Schrift und Timer sind verbessert. Tools und vier Basisdesigns kostenlos; sieben Themes einzeln erhältlich.",
+    "description": "GuitarTool 1.1.3: kostenloses Offline-Stimmgerät, Metronom und Akkorde mit chinesischem Zählen, BPM-Vorschau und Hochformat-Widget ab iOS 27.",
+    "screenshotCaption": "Trainingsvorschau aus 1.1.2, im aktuellen Store weiterverwendet; Stimme und neues Widget sind nicht abgebildet."
   },
   "it": {
-    "title": "Battute silenziose, fasi di tempo e Jade Resonance",
-    "body": "La versione 1.1.2 alterna battute sonore e silenziose, imposta fasi di tempo per numero di battute e salva le configurazioni. Migliora interruzioni audio, cambi di dispositivo, testo grande e interfacce da destra a sinistra. Jade Resonance entra nella galleria: quattro stili base gratuiti e sette temi completi, ciascuno con un acquisto unico.",
-    "description": "Accordatore, metronomo e accordi gratuiti offline. La versione 1.1.2 aggiunge battute silenziose, fasi di tempo e Jade Resonance. Sette temi acquistabili separatamente."
+    "title": "Conta i battiti in cinese, anche offline",
+    "body": "La versione 1.1.3 aggiunge il conteggio vocale in cinese offline con anteprima al BPM attuale, in qualsiasi lingua dell’interfaccia. Corregge conferma e annullamento del BPM, sincronizzazione del tempo obiettivo dei preset e ripresa dell’accelerazione dopo interruzioni. Su iOS 27+ è disponibile un widget verticale extra-large quando il sistema lo propone. Migliora testo grande e timer. Strumenti e quattro stili gratuiti; sette temi acquistabili separatamente.",
+    "description": "GuitarTool 1.1.3: accordatore, metronomo e accordi gratis offline, conteggio in cinese, anteprima BPM e widget verticale extra-large su iOS 27+.",
+    "screenshotCaption": "Anteprima di allenamento 1.1.2 riutilizzata nella scheda attuale; non mostra la voce o il nuovo widget."
   },
   "ja": {
-    "title": "無音小節、段階的なテンポ練習、Jade Resonance",
-    "body": "1.1.2 では音のある小節と無音小節を交互に再生し、小節数に応じたテンポの段階を設定してプリセットに保存できます。音声の中断、機器の切り替え、大きな文字、右から左への表示も改善。Jade Resonance が加わり、基本テーマ4種類は無料、フルテーマ7種類はそれぞれ買い切りです。",
-    "description": "無料のオフラインチューナー、メトロノーム、コードライブラリ。1.1.2 は無音小節、段階的テンポ練習、Jade Resonance に対応。7種類のフルテーマは個別購入。"
+    "title": "中国語の音声カウントをオフラインで",
+    "body": "1.1.3 は中国語の音声カウントを追加し、現在の BPM で試聴できます。表示言語に関係なく音声は中国語です。BPM 入力の確定とキャンセル、プリセットの目標テンポ同期、中断後の段階的な加速再開を修正。iOS 27 以降ではシステムが提供する場合に特大の縦型ウィジェットを利用できます。大きな文字とタイマーも改善。基本機能と4つの基本テーマは無料、7つのフルテーマは個別購入です。",
+    "description": "GuitarTool 1.1.3：無料のオフラインチューナー、メトロノーム、コード。中国語の音声カウントと BPM 試聴、iOS 27 以降の特大縦型ウィジェット。",
+    "screenshotCaption": "現在のストアでも使われる 1.1.2 の練習画面です。新しい音声や特大ウィジェットは表示されていません。"
   },
   "ko": {
-    "title": "무음 마디, 단계별 템포와 Jade Resonance",
-    "body": "1.1.2에서는 소리가 나는 마디와 무음 마디를 번갈아 재생하고, 마디 수에 따라 단계별 템포를 설정해 프리셋으로 저장할 수 있습니다. 오디오 중단, 기기 전환, 큰 글씨와 오른쪽에서 왼쪽으로 쓰는 화면도 개선했습니다. Jade Resonance가 추가되어 기본 테마 4종은 무료, 전체 테마 7종은 각각 일회성 구매로 이용합니다.",
-    "description": "무료 오프라인 튜너, 메트로놈과 코드 라이브러리. 1.1.2는 무음 마디, 단계별 템포 연습과 Jade Resonance를 제공합니다. 전체 테마 7종은 개별 구매입니다."
+    "title": "오프라인 중국어 박자 세기와 BPM 미리 듣기",
+    "body": "1.1.3은 현재 BPM으로 미리 들을 수 있는 오프라인 중국어 박자 세기를 추가합니다. 인터페이스 언어와 관계없이 음성은 중국어입니다. BPM 확인·취소, 프리셋 목표 속도 동기화와 오디오 중단 후 점진적 가속 복구를 수정했습니다. iOS 27 이상에서는 시스템이 제공할 때 초대형 세로 위젯을 사용할 수 있습니다. 큰 글씨와 타이머도 개선했습니다. 기본 도구와 4가지 기본 테마는 무료이며 전체 테마 7종은 개별 구매입니다.",
+    "description": "GuitarTool 1.1.3: 무료 오프라인 튜너, 메트로놈, 코드와 중국어 박자 세기, BPM 미리 듣기, iOS 27 이상 초대형 세로 위젯.",
+    "screenshotCaption": "현재 스토어에서도 사용하는 1.1.2 연습 미리보기이며 새 음성이나 초대형 위젯은 표시되지 않습니다."
   },
   "ru": {
-    "title": "Тихие такты, этапы темпа и Jade Resonance",
-    "body": "Версия 1.1.2 чередует звучащие и тихие такты, задаёт этапы темпа по числу тактов и сохраняет настройки. Улучшены прерывания аудио, смена устройств, крупный текст и интерфейс справа налево. В галерее появилась Jade Resonance: четыре базовых оформления бесплатны, семь полных тем приобретаются отдельно разовым платежом.",
-    "description": "Бесплатные офлайн-тюнер, метроном и аккорды. Версия 1.1.2 добавляет тихие такты, этапы темпа и Jade Resonance. Семь полных тем покупаются отдельно."
+    "title": "Счёт на китайском офлайн и прослушивание BPM",
+    "body": "Версия 1.1.3 добавляет голосовой счёт на китайском офлайн и прослушивание в текущем BPM при любом языке интерфейса. Исправлены подтверждение и отмена BPM, синхронизация целевого темпа пресетов и восстановление постепенного ускорения после прерываний. На iOS 27+ доступен сверхбольшой вертикальный виджет, если его предлагает система. Улучшены крупный текст и таймер. Инструменты и четыре базовых оформления бесплатны; семь тем покупаются отдельно.",
+    "description": "GuitarTool 1.1.3: бесплатные офлайн-тюнер, метроном и аккорды, счёт на китайском, прослушивание BPM и вертикальный виджет на iOS 27+.",
+    "screenshotCaption": "Предпросмотр тренировки 1.1.2, используемый и в текущем магазине; новая озвучка и виджет не показаны."
   },
   "tr": {
-    "title": "Sessiz ölçüler, tempo aşamaları ve Jade Resonance",
-    "body": "1.1.2 sürümü sesli ve sessiz ölçüleri dönüşümlü çalar, ölçü sayısına göre tempo aşamaları belirler ve ayarları kaydeder. Ses kesintileri, cihaz değişimi, büyük metin ve sağdan sola arayüzler iyileştirildi. Jade Resonance galeriye katıldı: dört temel görünüm ücretsiz, yedi tam temanın her biri tek seferlik ayrı satın alınır.",
-    "description": "Ücretsiz çevrimdışı akort cihazı, metronom ve akorlar. 1.1.2 sessiz ölçüler, tempo aşamaları ve Jade Resonance ekler. Yedi tam tema ayrı satılır."
+    "title": "Çevrimdışı Çince sayım ve BPM ön dinlemesi",
+    "body": "1.1.3, arayüz dilinden bağımsız olarak mevcut BPM’de ön dinlemeli çevrimdışı Çince vuruş sayımı ekler. BPM onaylama ve iptal, ön ayar hedef temposu eşitleme ve kesinti sonrası kademeli hızlanmaya devam etme düzeltilmiştir. iOS 27+ üzerinde sistem sunduğunda çok büyük dikey widget kullanılabilir. Büyük metin ve zamanlayıcı iyileştirildi. Araçlar ve dört temel görünüm ücretsizdir; yedi tema ayrı satın alınır.",
+    "description": "GuitarTool 1.1.3: ücretsiz çevrimdışı akort, metronom ve akorlar, Çince sayım, BPM ön dinlemesi ve iOS 27+ büyük dikey widget.",
+    "screenshotCaption": "Mevcut mağazada da kullanılan 1.1.2 alıştırma ön izlemesi; yeni ses veya widget gösterilmez."
   },
   "ar": {
-    "title": "موازير صامتة ومراحل سرعة وJade Resonance",
-    "body": "يتيح الإصدار 1.1.2 التناوب بين الموازير المسموعة والصامتة، وتحديد مراحل السرعة بعدد الموازير وحفظ الإعدادات. يحسّن انقطاع الصوت وتبديل الأجهزة والنص الكبير والواجهات من اليمين إلى اليسار. ينضم Jade Resonance إلى المعرض: أربعة مظاهر أساسية مجانية وسبعة مظاهر كاملة، يُشترى كل منها مرة واحدة بشكل مستقل.",
-    "description": "موالف وميترونوم وأوتار مجانية دون اتصال. يضيف الإصدار 1.1.2 موازير صامتة ومراحل سرعة وJade Resonance. سبعة مظاهر كاملة تُباع منفصلة."
+    "title": "عدّ صوتي بالصينية دون اتصال ومعاينة السرعة",
+    "body": "يضيف الإصدار 1.1.3 عدًّا صوتيًا بالصينية دون اتصال ومعاينة بسرعة BPM الحالية مهما كانت لغة الواجهة. يصحّح تأكيد السرعة وإلغاءها ومزامنة سرعة الإعدادات المسبقة واستئناف التسارع التدريجي بعد انقطاع الصوت. في iOS 27+ تتوفر أداة رأسية كبيرة جدًا عندما يتيحها النظام. تحسّنت النصوص الكبيرة والمؤقت. الأدوات وأربعة مظاهر أساسية مجانية؛ سبعة مظاهر كاملة تُشترى منفصلة.",
+    "description": "GuitarTool 1.1.3: موالف وميترونوم وأوتار مجانية دون اتصال، عدّ بالصينية ومعاينة BPM وأداة رأسية كبيرة في iOS 27+.",
+    "screenshotCaption": "معاينة التدريب من 1.1.2 المعاد استخدامها في المتجر الحالي؛ لا تعرض الصوت أو الأداة الجديدة."
   }
 };
 

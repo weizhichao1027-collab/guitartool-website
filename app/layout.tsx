@@ -8,7 +8,7 @@ const basePath = process.env.GITHUB_PAGES === "true" ? "/guitartool-website" : "
 export const metadata: Metadata = {
   metadataBase: new URL(`${SITE_URL}/`),
   title: "GuitarTool｜调音、节拍与和弦练习",
-  description: "GuitarTool 1.1.2：免费离线调音器、节拍器与和弦库，新增静音小节、分段速度训练和玄玉声场付费主题。支持 iPhone、iPad 和 Apple Watch。",
+  description: "GuitarTool 1.1.3：免费离线调音器、节拍器与和弦库。新增中文人声数拍与当前 BPM 试听，修复速度输入；iOS 27+ 可用超大竖排小组件。",
   applicationName: "GuitarTool",
   category: "music",
   keywords: ["Apple Watch 调音器", "吉他调音器", "尤克里里调音器", "节拍器", "吉他和弦", "ukulele chords", "guitar tuner"],
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   referrer: "strict-origin-when-cross-origin",
   openGraph: {
     title: "GuitarTool｜练琴时，只留下专注。",
-    description: "GuitarTool 1.1.2 已上架：用静音小节练稳拍、用分段速度练提速。四款基础外观免费，七套完整主题可分别购买。",
+    description: "GuitarTool 1.1.3 已上架：离线中文人声数拍、BPM 确认与取消、iOS 27+ 超大竖排小组件。核心工具与四款基础外观免费。",
     type: "website",
     images: [{
       url: absoluteUrl("/og.png"),
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "GuitarTool｜练琴时，只留下专注。",
-    description: "GuitarTool 1.1.2 已上架：用静音小节练稳拍、用分段速度练提速。四款基础外观免费，七套完整主题可分别购买。",
+    description: "GuitarTool 1.1.3 已上架：离线中文人声数拍、BPM 确认与取消、iOS 27+ 超大竖排小组件。核心工具与四款基础外观免费。",
     images: [absoluteUrl("/og.png")],
   },
 };

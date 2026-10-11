@@ -101,14 +101,14 @@ export const enFeaturePages: LandingPage[] = [
   {
     slug: "apple-watch-metronome",
     title: "Apple Watch Metronome for Practice Away from Your Phone",
-    description: "Control tempo, time signature and playback from Apple Watch. GuitarTool keeps the audible beat running when the wrist lowers or the display dims.",
+    description: "Control tempo, meter and playback from Apple Watch. Activated background audio routes support wrist-down playback; foreground speaker fallback stops when inactive.",
     eyebrow: "APPLE WATCH METRONOME",
-    lead: "Start a dependable pulse from your wrist, then keep playing. GuitarTool separates the audible beat from the screen refresh so lowering your wrist does not end the practice session.",
-    proof: ["Tempo and meter controls", "Background audio", "No phone screen required"],
+    lead: "Start a pulse from your wrist, then keep playing. Once playback starts successfully with an activated background audio route, the beat can continue as your wrist lowers. A foreground-only speaker fallback stops when the watch interface becomes inactive.",
+    proof: ["Tempo and meter controls", "Background playback on eligible routes", "No phone screen required"],
     sections: [
       {
         title: "Keep the pulse while your hands return to the instrument",
-        body: "Set the BPM, choose a common time signature and start or pause from Apple Watch. When the watch display dims or the wrist moves down, the visual updates can rest while the metronome audio continues through a supported output route.",
+        body: "Set the BPM, choose a common time signature and start or pause from Apple Watch. After playback starts successfully on an activated background audio route, sound can continue when the display dims or the wrist lowers, while visual and haptic updates pause. If only the foreground speaker fallback is available, an inactive interface stops playback. Return to the watch app and start again, or connect a supported background audio route.",
         points: ["BPM, playback and time-signature controls", "Audio-clock-driven timing", "Interruption and route-change recovery"],
       },
       {
@@ -118,7 +118,7 @@ export const enFeaturePages: LandingPage[] = [
       },
     ],
     faq: [
-      ["Does the beat stop when I lower my wrist?", "No. In the updated watch app, lowering the wrist or dimming the display pauses visual refresh work while the audible metronome continues."],
+      ["Does the beat stop when I lower my wrist?", "It depends on the active route. Successfully started playback on an activated background audio route can continue while visual and haptic refresh pauses. The foreground-only speaker fallback stops when the interface becomes inactive; return to the app and start again."],
       ["Can I change the tempo on Apple Watch?", "Yes. You can adjust BPM, start or pause playback and switch among common time signatures from the watch."],
       ["Do all Apple Watch models play through the built-in speaker?", "Audio routing depends on the watch model and connected devices. Supported watches can use the built-in speaker; older models may require Bluetooth audio."],
     ],
@@ -167,10 +167,10 @@ export const enFeaturePages: LandingPage[] = [
   },
   {
     slug: "apple-watch-metronome-audio-design",
-    title: "Designing an Apple Watch Metronome That Keeps Audio Running",
+    title: "Designing Apple Watch Metronome Audio for Wrist-Down Practice",
     description: "A first-hand engineering case study on separating Apple Watch metronome audio timing from screen and haptic refresh, with route and interruption recovery.",
     eyebrow: "ENGINEERING CASE STUDY · WATCH AUDIO",
-    lead: "A musician lowers their wrist precisely when the metronome needs to become less visible and remain audible. GuitarTool treats audio timing, interface refresh and haptics as separate responsibilities so the beat can continue through the real practice lifecycle.",
+    lead: "A musician lowers their wrist precisely when the metronome needs to become less visible. GuitarTool separates audio timing from interface and haptic refresh. Successfully started playback can remain audible on an activated background audio route; the foreground-only speaker fallback stops when the interface becomes inactive.",
     proof: ["Audio sample-clock timing", "UI and haptics can pause", "Route and interruption recovery"],
     showcase: {
       image: "/en-devices.webp",
@@ -182,8 +182,8 @@ export const enFeaturePages: LandingPage[] = [
     sections: [
       {
         title: "Treat wrist-down as a normal state, not an error",
-        body: "A watch interface becomes inactive when the display dims or the wrist lowers. Stopping the entire metronome at that boundary makes the product fail during the exact moment a player returns both hands to the instrument. The updated design pauses view and haptic work while preserving the user’s explicit intent to keep playback running.",
-        points: ["Playback intent survives display dimming", "Visual updates stop when they are not useful", "Haptics do not pretend to be background audio"],
+        body: "A watch interface becomes inactive when the display dims or the wrist lowers. After playback has started successfully with an activated background audio route, GuitarTool pauses view and haptic refresh while keeping sound running. If background activation is unavailable and the system uses the foreground-only speaker fallback, becoming inactive explicitly stops playback. Returning to the app requires a new Start action.",
+        points: ["Activated background routes support wrist-down playback", "Foreground fallback stops when inactive", "Visual and haptic refresh can pause"],
       },
       {
         title: "Schedule beats on the audio sample clock",
@@ -197,13 +197,13 @@ export const enFeaturePages: LandingPage[] = [
       },
       {
         title: "Recover without replaying stale beats",
-        body: "Audio routes and interruptions can move the hardware timestamp forward. On recovery, the renderer skips historical beat positions instead of firing a burst of delayed clicks. The product still states an important boundary: output depends on the watch model and connected route, so older devices may require Bluetooth audio.",
+        body: "Audio routes and interruptions can move the hardware timestamp forward. On recovery, the renderer skips historical beat positions instead of firing a burst of delayed clicks. Output and background activation depend on the watch model, system and connected route; older devices may need Bluetooth audio. A pending or failed activation does not establish background playback, and the foreground-only fallback stops when inactive.",
         points: ["Skip stale beats after route recovery", "React to interruption and route changes", "Describe supported output honestly"],
       },
     ],
     faq: [
       ["Why not use the screen timer to drive audio?", "The display lifecycle is allowed to pause when the wrist lowers. Audio timing must therefore live on an audio clock that can continue independently."],
-      ["Does background audio mean background haptics continue?", "No. GuitarTool promises continuing sound; interface and haptic refresh work can pause when the app is inactive."],
+      ["Does background audio mean background haptics continue?", "No. After playback starts successfully on an activated background audio route, sound can continue while interface and haptic refresh pauses. The foreground-only fallback stops sound when inactive too."],
       ["Will every Apple Watch use its built-in speaker?", "No. The active output route depends on the watch model and connected devices; older models may need Bluetooth audio."],
     ],
     related: ["apple-watch-metronome", "online-metronome", "rhythm-practice", "offline-guitar-tools"],
@@ -310,15 +310,15 @@ export const zhFeaturePages: LandingPage[] = [
   },
   {
     slug: "apple-watch-metronome",
-    title: "不用一直亮屏的 Apple Watch 节拍器",
-    description: "在 Apple Watch 上控制速度、拍号和播放；落腕或屏幕变暗后，GuitarTool 仍可继续输出声音节拍。",
+    title: "Apple Watch 节拍器：播放与落腕行为",
+    description: "在 Apple Watch 控制速度、拍号和播放。后台音频路线成功启用后支持落腕播放；仅限前台的扬声器回退在界面非活跃时停止。",
     eyebrow: "APPLE WATCH 节拍器",
-    lead: "从手腕启动稳定拍点，然后把双手还给乐器。GuitarTool 将声音节拍与屏幕刷新分开处理，落腕不会结束正在进行的练习。",
-    proof: ["速度与拍号控制", "后台音频持续播放", "无需一直查看手机"],
+    lead: "从手腕启动拍点，再把双手还给乐器。播放成功开始且支持的后台音频路线已启用后，落腕时声音可继续；仅限前台的扬声器回退会在手表界面非活跃时停止。",
+    proof: ["速度与拍号控制", "后台播放取决于音频路线", "无需一直查看手机"],
     sections: [
       {
         title: "手回到乐器上，拍点继续",
-        body: "可以在 Apple Watch 上设置 BPM、切换常用拍号并开始或暂停。手表屏幕变暗或落腕后，界面与触觉刷新会休息，节拍声音则通过可用音频路线继续播放。",
+        body: "可以在 Apple Watch 上设置 BPM、切换常用拍号并开始或暂停。播放成功开始且支持的后台音频路线已启用后，屏幕变暗或落腕时声音可继续，界面与触觉刷新会暂停。若只能使用前台扬声器回退路线，界面非活跃时会停止播放；回到手表 App 再主动开始，或连接支持后台播放的音频设备。",
         points: ["BPM、播放与拍号控制", "采样时钟驱动节拍", "支持中断与音频路线恢复"],
       },
       {
@@ -328,7 +328,7 @@ export const zhFeaturePages: LandingPage[] = [
       },
     ],
     faq: [
-      ["落腕后节拍会停止吗？", "不会。新版 Watch APP 在落腕或屏幕变暗时暂停界面刷新，但声音节拍继续。"],
+      ["落腕后节拍会停止吗？", "取决于当前路线。播放成功开始且后台音频路线已启用时，声音可继续，界面与触觉刷新会暂停。仅限前台的扬声器回退会在界面非活跃时停止；需要回到 App 再主动开始。"],
       ["可以直接在手表上调速度吗？", "可以。可在 Apple Watch 上调整 BPM、开始或暂停，并切换常用拍号。"],
       ["所有 Apple Watch 都能用内置扬声器播放吗？", "音频路线取决于手表型号和连接设备。支持的型号可使用内置扬声器，较旧型号可能需要蓝牙音频。"],
     ],
@@ -377,10 +377,10 @@ export const zhFeaturePages: LandingPage[] = [
   },
   {
     slug: "apple-watch-metronome-audio-design",
-    title: "Apple Watch 节拍器落腕后继续发声的设计",
+    title: "Apple Watch 节拍器落腕播放与音频路线的设计",
     description: "GuitarTool 工程复盘：把 Watch 节拍器的声音时钟、界面与触觉刷新分开，并处理音频路线和中断恢复。",
     eyebrow: "工程复盘 · WATCH 音频",
-    lead: "演奏者放下手腕，正是节拍器应该减少视觉存在、继续稳定发声的时刻。GuitarTool 将声音时钟、界面刷新和触觉反馈拆成不同职责，让节拍跟随真实练习生命周期。",
+    lead: "演奏者放下手腕，正是节拍器应该减少视觉存在的时刻。GuitarTool 将声音时钟、界面刷新和触觉反馈拆成不同职责。播放成功开始且后台音频路线已启用后，声音可以继续；仅限前台的扬声器回退会在界面非活跃时停止。",
     proof: ["采样时钟驱动", "界面与触觉可暂停", "音频路线与中断恢复"],
     showcase: {
       image: "/devices.webp",
@@ -392,8 +392,8 @@ export const zhFeaturePages: LandingPage[] = [
     sections: [
       {
         title: "把落腕视为正常状态，而不是异常",
-        body: "手表屏幕变暗或落腕时，界面会进入非活跃状态。如果整个节拍器也在这里停止，产品恰好会在演奏者把双手放回乐器时失效。新版设计保留用户主动开始播放的意图，只暂停暂时没有价值的界面与触觉刷新。",
-        points: ["播放意图不随暗屏消失", "无用的视觉刷新及时停止", "不把触觉伪装成后台音频"],
+        body: "手表屏幕变暗或落腕时，界面会进入非活跃状态。播放成功开始且支持的后台音频路线已启用后，GuitarTool 只暂停界面与触觉刷新，声音继续。如果后台激活不可用、系统改用仅限前台的扬声器回退路线，界面非活跃会明确停止播放；回到 App 后需要重新点开始。",
+        points: ["后台路线成功启用后可落腕播放", "前台回退在非活跃时停止", "界面与触觉刷新可暂停"],
       },
       {
         title: "在声音采样时钟上安排每一拍",
@@ -407,13 +407,13 @@ export const zhFeaturePages: LandingPage[] = [
       },
       {
         title: "恢复时跳过过期拍点，不补打一串旧声音",
-        body: "音频路线切换或系统中断可能让硬件时间戳向前跳。恢复时渲染器会跳过已经过去的拍点，而不是瞬间补打一串延迟点击。产品仍保留真实边界：输出路线取决于手表型号和连接设备，较旧型号可能需要蓝牙音频。",
+        body: "音频路线切换或系统中断可能让硬件时间戳向前跳。恢复时渲染器会跳过已经过去的拍点，而不是瞬间补打一串延迟点击。声音输出和后台激活取决于手表型号、系统及连接路线，较旧设备可能需要蓝牙音频。等待中或失败的激活不代表后台播放已经成立；前台回退在界面非活跃时停止。",
         points: ["路线恢复后跳过过期拍点", "响应系统中断与音频路线变化", "对支持范围保持准确表述"],
       },
     ],
     faq: [
       ["为什么不能用屏幕定时器驱动声音？", "屏幕生命周期在落腕后可以暂停，因此声音必须由能够独立继续的音频时钟负责。"],
-      ["后台发声是否意味着后台触觉也继续？", "不是。GuitarTool 承诺继续的是声音；App 非活跃时界面与触觉刷新可以暂停。"],
+      ["后台发声是否意味着后台触觉也继续？", "不是。播放成功开始且后台音频路线已启用后，声音可以继续，界面与触觉刷新会暂停。仅限前台的回退模式在界面非活跃时也会停止声音。"],
       ["所有 Apple Watch 都会从内置扬声器输出吗？", "不会。实际路线取决于型号和连接设备，较旧型号可能需要蓝牙音频。"],
     ],
     related: ["apple-watch-metronome", "online-metronome", "rhythm-practice", "offline-guitar-tools"],

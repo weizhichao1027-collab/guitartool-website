@@ -35,7 +35,7 @@ const localizedWatchPreviews: ImageEntry[] = localePages.map((page) => ({
 }));
 
 const editorialImages: ImageEntry[] = [
-  ...localePages.map((page) => ({ page: `/${page.slug}/`, image: `/release-1.1.2/${page.slug}-training.webp`, title: page.versionUpdate.title, caption: page.versionUpdate.body })),
+  ...localePages.map((page) => ({ page: `/${page.slug}/`, image: `/release-1.1.2/${page.slug}-training.webp`, title: `GuitarTool 1.1.2 · ${page.htmlLang}`, caption: page.versionUpdate.screenshotCaption })),
   ...(["zh", "en"] as const).flatMap(language => ["", "guides/silent-bar-metronome/", "guides/staged-tempo-training/"].map(route => ({ page: `${language === "zh" ? "/" : "/en/"}${route}`, image: `/release-1.1.2/${language}-training.webp`, title: language === "zh" ? "GuitarTool 1.1.2 节奏训练" : "GuitarTool 1.1.2 rhythm training", caption: language === "zh" ? "真实界面：静音小节与分段速度训练。" : "Real native interface: silent bars and staged tempo practice." }))),
   { page: "/", image: "/release-1.1.1/zh-large-widget.png", title: "GuitarTool 1.1.1 大号节拍器小组件", caption: "可在主屏幕切换单拍、八分、三连、十六分和 Swing。" },
   { page: "/en/", image: "/release-1.1.1/en-large-widget.png", title: "GuitarTool 1.1.1 large metronome widget", caption: "Choose beat, eighth, triplet, sixteenth or Swing from the Home Screen." },

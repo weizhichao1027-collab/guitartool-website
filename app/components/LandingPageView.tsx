@@ -1,4 +1,4 @@
-import { TRAINING_UPDATED } from "@/app/lib/release-training-pages";
+import { RELEASE_1_1_3_GUIDE_SLUGS } from "@/app/lib/release-1.1.3-pages";
 import Image from "next/image";
 import { SiteLink as Link } from "@/app/components/SiteLink";
 import { AcquisitionFooter, AcquisitionHeader } from "@/app/components/AcquisitionChrome";
@@ -8,6 +8,7 @@ import {
   APP_STORE_URL,
   APP_NAME,
   RELEASE_VERSION,
+  RELEASE_UPDATED,
   absoluteUrl,
   appStoreCampaignForGuide,
   appStoreDestinationForGuide,
@@ -32,7 +33,7 @@ export function LandingPageView({ page, language }: { page: LandingPage; languag
     {
       "@context": "https://schema.org",
       "@type": "WebPage",
-      ...(page.slug === "silent-bar-metronome" || page.slug === "staged-tempo-training" ? { dateModified: TRAINING_UPDATED } : {}),
+      ...([...RELEASE_1_1_3_GUIDE_SLUGS, "silent-bar-metronome", "staged-tempo-training", "progressive-tempo-training", "online-metronome", "offline-guitar-tools", "apple-watch-metronome", "apple-watch-metronome-audio-design"].some((slug) => slug === page.slug) ? { dateModified: RELEASE_UPDATED } : {}),
       name: page.title,
       description: page.description,
       url: canonical,

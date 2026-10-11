@@ -1,3 +1,4 @@
+import { enRelease113Pages, zhRelease113Pages } from "@/app/lib/release-1.1.3-pages";
 import { enReleaseTrainingPages, zhReleaseTrainingPages } from "@/app/lib/release-training-pages";
 import { enTuningPages, zhTuningPages } from "@/app/lib/tuning-pages";
 import { enPracticePages, zhPracticePages } from "@/app/lib/practice-pages";
@@ -88,8 +89,8 @@ const en: LandingPage[] = [
       },
       {
         title: "When basic timekeeping is not enough",
-        body: "GuitarTool expands the metronome with subdivisions, eighth-note swing, per-beat accents, custom practice presets, countdown timers and progressive tempo training. Home Screen widgets and an Apple Watch companion keep the beat close; watch audio can continue when the wrist lowers or the display dims.",
-        points: ["Quarter, eighth, triplet and sixteenth subdivisions", "Custom accents and ten sound profiles", "Interactive widgets and Apple Watch background audio"],
+        body: "GuitarTool expands the metronome with subdivisions, eighth-note swing, per-beat accents, offline Chinese voice counting, custom practice presets, countdown timers and progressive tempo training. Home Screen widgets and an Apple Watch companion keep the beat close. Once watch playback starts successfully on an activated background audio route, it can continue as the wrist lowers; the foreground-only speaker fallback stops when inactive.",
+        points: ["Quarter, eighth, triplet and sixteenth subdivisions", "Custom accents and eleven sound profiles", "Interactive widgets and Apple Watch background audio"],
       },
     ],
     faq: [
@@ -169,7 +170,7 @@ const en: LandingPage[] = [
       {
         title: "Designed to stay out of the way",
         body: "There is no feed, login wall, advertising layer or analytics SDK. Tuner audio is processed on the device and is not stored. Chord cards can be saved or shared without an account, while Home Screen widgets and Apple Watch background audio reduce the steps between picking up an instrument and starting a focused session.",
-        points: ["iPhone and iPad layouts", "Three interactive widget sizes", "Shareable chord cards and Apple Watch metronome"],
+        points: ["iPhone and iPad layouts", "Interactive widgets; iOS 27+ portrait size", "Shareable chord cards and Apple Watch metronome"],
       },
     ],
     faq: [
@@ -227,7 +228,7 @@ const zh: LandingPage[] = [
     proof: ["20–500 BPM", "TAP 测速", "无需登录"],
     sections: [
       { title: "几秒内开始跟拍", body: "设置速度与每小节拍数，第一拍会使用更清楚的重音。只知道音乐感觉、不知道具体数字时，可以连续点击 TAP 计算速度。在线工具在浏览器本地运行，无需创建账户。", points: ["适合键盘和触屏", "当前拍视觉提示", "每小节 1–12 拍"] },
-      { title: "从跟拍进入系统训练", body: "GuitarTool APP 在基础节拍之外提供四种细分、八分 Swing、逐拍重音、练习预设、倒计时和渐进加速。主屏幕小组件与 Apple Watch 伴随节拍器还能减少打开 APP 和寻找设置的步骤；手表落腕或屏幕变暗后，声音仍可继续。", points: ["四分、八分、三连音与十六分", "自定义重音和十套声音", "交互式小组件与 Apple Watch 后台音频"] },
+      { title: "从跟拍进入系统训练", body: "GuitarTool APP 在基础节拍之外提供四种细分、八分 Swing、逐拍重音、离线中文人声数拍、练习预设、倒计时和渐进加速。主屏幕小组件与 Apple Watch 伴随节拍器减少寻找设置的步骤。手表播放成功开始且后台音频路线已启用后可落腕继续；仅限前台的扬声器回退在界面非活跃时停止。", points: ["四分、八分、三连音与十六分", "自定义重音和十一套音色", "交互式小组件与 Apple Watch 后台音频"] },
     ],
     faq: [["在线节拍器免费吗？", "免费，浏览器工具和 GuitarTool 核心功能均可免费使用。"], ["支持多大的速度范围？", "在线版和 APP 均支持 20–500 BPM。"], ["APP 可以自动加速吗？", "可以，可按指定小节数和增量逐步提高 BPM。"]],
     related: ["visual-metronome", "rhythm-practice", "offline-guitar-tools", "guitar-tuner"],
@@ -269,7 +270,7 @@ const zh: LandingPage[] = [
     proof: ["无广告", "无需账户", "无第三方追踪 SDK"],
     sections: [
       { title: "三个高频工具，一条练习流程", body: "GuitarTool 将实时调音器、20–500 BPM 节拍器，以及吉他与尤克里里和弦库放在一起。所有核心功能均可离线运行，即使排练室网络不稳定，也不会中断眼前的任务。", points: ["七类乐器调音模式", "练习预设与渐进加速", "吉他和尤克里里共 19,244 个指法"] },
-      { title: "工具应该退到练习之后", body: "这里没有信息流、登录墙、广告层或统计 SDK。调音声音只在设备端处理，不会保存；和弦卡片无需账户即可保存或分享。三种尺寸的主屏幕小组件与 Apple Watch 后台节拍，也让拿起乐器到开始练习之间少几步。", points: ["iPhone 与 iPad 自适应界面", "三种交互式小组件", "和弦卡片与 Apple Watch 节拍器"] },
+      { title: "工具应该退到练习之后", body: "这里没有信息流、登录墙、广告层或统计 SDK。调音声音只在设备端处理，不会保存；和弦卡片无需账户即可保存或分享。多种尺寸的主屏幕小组件与 Apple Watch 后台节拍，也让拿起乐器到开始练习之间少几步。", points: ["iPhone 与 iPad 自适应界面", "交互式小组件，iOS 27+ 新增超大竖排", "和弦卡片与 Apple Watch 节拍器"] },
     ],
     faq: [["真的可以完全离线使用吗？", "可以，调音器、节拍器、和弦库和本地设置均不依赖网络。"], ["APP 中有广告吗？", "没有广告，也没有第三方追踪 SDK。"], ["支持哪些设备？", "支持 iPhone、iPad、主屏幕小组件，以及落腕或屏幕变暗后仍可继续声音的 Apple Watch 节拍器。"]],
     related: ["guitar-tuner", "online-metronome", "guitar-chords"],
@@ -277,8 +278,8 @@ const zh: LandingPage[] = [
 ];
 
 export const landingPages = {
-  en: [...enReleaseTrainingPages, ...en, ...enFeaturePages, ...enTuningPages, ...(enPracticePages as LandingPage[]), ...enIntentPages, ...enTroubleshootingPages],
-  zh: [...zhReleaseTrainingPages, ...zh, ...zhFeaturePages, ...zhTuningPages, ...(zhPracticePages as LandingPage[]), ...zhIntentPages, ...zhTroubleshootingPages],
+  en: [...enRelease113Pages, ...enReleaseTrainingPages, ...en, ...enFeaturePages, ...enTuningPages, ...(enPracticePages as LandingPage[]), ...enIntentPages, ...enTroubleshootingPages],
+  zh: [...zhRelease113Pages, ...zhReleaseTrainingPages, ...zh, ...zhFeaturePages, ...zhTuningPages, ...(zhPracticePages as LandingPage[]), ...zhIntentPages, ...zhTroubleshootingPages],
 } as const;
 
 export function getLandingPage(language: LandingLanguage, slug: string) {

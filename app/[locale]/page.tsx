@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import { AcquisitionFooter, AcquisitionHeader } from "@/app/components/AcquisitionChrome";
 import { JsonLd } from "@/app/components/JsonLd";
 import { getLocalePage, localePages } from "@/app/lib/locales";
-import { APP_STORE_LINKS, APP_STORE_URL, RELEASE_VERSION, absoluteUrl, assetPath, localeAlternates } from "@/app/lib/site";
+import { APP_STORE_LINKS, APP_STORE_URL, RELEASE_VERSION, RELEASE_UPDATED, absoluteUrl, assetPath, localeAlternates } from "@/app/lib/site";
 import { getTunerLocale } from "@/app/lib/tuner-locales";
 
 const chordCardPreviewByLocale: Record<string, string> = {
@@ -50,7 +50,7 @@ export default async function LocalizedHome({ params }: { params: Promise<{ loca
   const previewImage = chordCardPreviewByLocale[locale] ?? "/en-chord-card-share.webp";
   return (
     <main className="acqPage localePage" lang={page.htmlLang} dir={page.dir}>
-      <JsonLd data={{ "@context": "https://schema.org", "@type": "SoftwareApplication", name: "GuitarTool", softwareVersion: RELEASE_VERSION, description: page.description, url: canonical, downloadUrl: APP_STORE_URL, applicationCategory: "MusicApplication", operatingSystem: "iOS, iPadOS, watchOS", inLanguage: page.htmlLang, offers: { "@type": "Offer", price: "0", priceCurrency: "USD" } }} />
+      <JsonLd data={{ "@context": "https://schema.org", "@type": "SoftwareApplication", name: "GuitarTool", softwareVersion: RELEASE_VERSION, dateModified: RELEASE_UPDATED, description: page.description, url: canonical, downloadUrl: APP_STORE_URL, applicationCategory: "MusicApplication", operatingSystem: "iOS, iPadOS, watchOS", inLanguage: page.htmlLang, offers: { "@type": "Offer", price: "0", priceCurrency: "USD" } }} />
       <AcquisitionHeader locale={locale} />
       <section className="localeHero shell">
         <div>
@@ -69,7 +69,7 @@ export default async function LocalizedHome({ params }: { params: Promise<{ loca
         <Link className="primaryButton" href={`/${locale}/online-tuner/`}>{tunerCopy.start}<span>→</span></Link>
       </section>
       <section className="localeFeatures shell">{page.features.map((feature, index) => <article key={feature.title}><span>{String(index + 1).padStart(2, "0")}</span><h2>{feature.title}</h2><p>{feature.body}</p></article>)}</section>
-      <section className="localeUpdate shell"><span>{page.versionUpdate.label}</span><div><h2>{page.versionUpdate.title}</h2><p>{page.versionUpdate.body}</p><Image src={assetPath(`/release-1.1.2/${locale}-training.webp`)} alt={page.versionUpdate.title} width={660} height={1434} sizes="(max-width: 700px) 70vw, 260px" /></div></section>
+      <section className="localeUpdate shell"><span>{page.versionUpdate.label}</span><div><h2>{page.versionUpdate.title}</h2><p>{page.versionUpdate.body}</p><Image src={assetPath(`/release-1.1.2/${locale}-training.webp`)} alt={page.versionUpdate.screenshotCaption} width={660} height={1434} sizes="(max-width: 700px) 70vw, 260px" /><p>{page.versionUpdate.screenshotCaption}</p></div></section>
       <section className="localeClosing shell"><Image src={assetPath("/app-icon-224.png")} alt="GuitarTool" width={92} height={92} /><h2>{page.closing}</h2><a className="primaryButton coral" href={APP_STORE_LINKS.home}>{page.download}<span>↗</span></a></section>
       <nav className="languageDirectory shell" aria-label="Languages"><Link href="/">简体中文</Link><Link href="/en/">English</Link>{localePages.map((item) => <Link className={item.slug === locale ? "active" : ""} aria-current={item.slug === locale ? "page" : undefined} href={`/${item.slug}/`} key={item.slug}>{item.htmlLang}</Link>)}</nav>
       <AcquisitionFooter locale={locale} />

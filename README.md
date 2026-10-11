@@ -13,7 +13,9 @@ Tune your instrument, set a beat, find the exact chord shape, then play. GuitarT
 - **Share the exact chord:** 19,244 guitar and ukulele fingerings, multiple voicings, audio previews and chord cards that can be saved or sent as ordinary images.
 - **Keep practice close:** adaptive iPhone/iPad layouts, Apple Watch tuning and audible beats, interactive widgets and 13 languages.
 
-Version **1.1.2 is available**. Alternate audible and silent bars, create up to six tempo stages (20–500 BPM, 1–64 bars each) and save training settings as a custom preset on iPhone and iPad. This release improves audio interruptions, stopping playback, device changes, large text and right-to-left layouts. Jade Resonance joins the six existing complete themes; all seven are separate one-time purchases, with bundled assets and offline use after purchase. Four basic looks and all practice tools remain free.
+Version **1.1.3 is available**, released October 11, 2026 (China time). On iPhone and iPad, stop playback, open Metronome → Settings → Metronome Sound and choose Voice to preview bundled Chinese counting at the current BPM. The voice stays Chinese in every interface language and works offline without a microphone. This release fixes BPM Done/Cancel, preset target-tempo synchronization and progressive-tempo recovery after interruptions. It improves large-text training layouts and timer stability, and adds an extra-large portrait widget on iOS 27+ where the system offers it. The Watch and browser metronomes do not include the Voice sound. All practice tools and four basic looks remain free; seven complete themes are separate one-time purchases.
+
+[Voice-counting guide](https://weizhichao1027-collab.github.io/guitartool-website/en/guides/voice-counting-metronome/) · [BPM and widget guide](https://weizhichao1027-collab.github.io/guitartool-website/en/guides/metronome-bpm-widget/)
 
 [Silent-bar guide](https://weizhichao1027-collab.github.io/guitartool-website/en/guides/silent-bar-metronome/) · [Tempo-stage guide](https://weizhichao1027-collab.github.io/guitartool-website/en/guides/staged-tempo-training/)
 
@@ -27,7 +29,7 @@ Teachers can [send a specific chord shape to a student](https://weizhichao1027-c
 
 ## 中文介绍
 
-GuitarTool（吉他工具）1.1.2 已上架。新增有声与静音小节交替、按小节设置分段速度并保存为自定义方案，改善音频中断、停止、设备切换、大字号与从右向左界面。玄玉声场加入主题展厅，七套完整主题各自一次性购买，素材内置，已购后可离线使用；四款基础主题与全部练习功能保持免费。支持 iPhone、iPad、Apple Watch 与主屏幕小组件，无广告、无需账户，核心工具离线可用。
+GuitarTool（吉他工具）1.1.3 已上架。新增离线中文人声数拍与当前 BPM 试听，修复速度输入完成/取消、预设目标同步与音频中断后渐进提速恢复，改善大字号训练、细分布局和计时稳定性。iOS 27+ 在系统提供的设备与空间中可用超大竖排小组件。人声在所有界面语言中均为中文，仅 iPhone/iPad 原生 App 提供，播放不需要麦克风或联网。四款基础外观与核心功能免费；七套完整主题各自一次性购买、素材内置。支持 iPhone、iPad、Apple Watch，无广告、无需账户。
 
 [观看 B 站介绍](https://www.bilibili.com/video/BV1bY4d6GEkw/) · [中文支持](https://weizhichao1027-collab.github.io/guitartool-website/support/) · [English support](https://weizhichao1027-collab.github.io/guitartool-website/en/support/) · [Privacy policy](https://weizhichao1027-collab.github.io/GuitarTool-Privacy/)
 

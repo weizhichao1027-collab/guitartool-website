@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { SiteLink as Link } from "@/app/components/SiteLink";
 import { JsonLd } from "@/app/components/JsonLd";
-import { APP_STORE_LINKS, RELEASE_VERSION, absoluteUrl, assetPath, supportedLanguageCodes } from "@/app/lib/site";
+import { APP_STORE_LINKS, RELEASE_VERSION, RELEASE_UPDATED, absoluteUrl, assetPath, supportedLanguageCodes } from "@/app/lib/site";
 import { paidThemes, themeImage } from "@/app/lib/theme-gallery";
 
 const appStoreUrl = APP_STORE_LINKS.home;
@@ -53,12 +53,13 @@ const features = [
 ] as const;
 
 const faqs = [
-  ["1.1.2 新增哪些免费练习功能？", "在节拍器的预设 → 节奏训练中，设置有声与静音小节交替，或最多六个速度阶段；每阶段 20–500 BPM、1–64 小节，可保存到自定义预设。手动调速或 TAP 会退出分段训练。"],
+  ["GuitarTool 1.1.3 更新了什么？", "iPhone、iPad 的“节拍器 → 设置 → 音色 → 人声”新增离线中文数拍，并按当前 BPM 试听。新版修复速度输入的完成/取消、预设目标速度同步和音频中断后的渐进提速恢复；iOS 27+ 新增超大竖排小组件，改善大字号训练布局与练习计时稳定性。"],
+  ["人声数拍需要麦克风或联网吗？", "不需要。人声素材随 App 内置，所有界面语言均播放中文数拍，每小节重新从一开始，细分仍用轻点击。该音色在 iPhone、iPad 原生 App 提供，Watch 与网页节拍器没有人声音色。"],
   ["需要联网或注册账号吗？", "调音、节拍器、和弦库以及四款基础主题可离线使用，无需注册账号。七套完整主题素材已内置，购买解锁后可离线使用；购买或恢复购买可能需要联网。"],
   ["七套完整主题如何购买？", "晨雾琴房、月面电台、纸上乐队、口袋合成器、黑胶夜场、琴匠测绘和玄玉声场分别通过 App Store 应用内购买解锁。素材已内置，无需连接主题后端或另行下载；四款基础主题保持免费。"],
   ["调音器会保存我的声音吗？", "不会。麦克风音频只用于设备端实时音高检测，不会保存为文件，也不会上传到任何服务器。"],
   ["Apple Watch 可以调音吗？", "可以。1.1.1 的 Watch 调音器支持吉他、尤克里里、贝斯和半音阶模式。点按开始才会使用手表麦克风；停止、切页或离开 App 即结束，音频仅在手表本地处理。"],
-  ["支持哪些设备？", "支持 iPhone 与 iPad 自适应界面，附带 Apple Watch 调音器与节拍器，以及三种尺寸的主屏幕交互式小组件；Watch 节拍器落腕或屏幕变暗后声音仍可继续。"],
+  ["支持哪些设备？", "支持 iPhone 与 iPad 自适应界面，附带 Apple Watch 调音器与节拍器，以及小、中、大号主屏幕交互式小组件；iOS 27+ 在系统允许的设备和空间中可添加超大竖排样式。Watch 节拍器使用获准的后台音频路由时可落腕继续播放，前台扬声器回退模式在界面非活跃时停止。"],
   ["支持尤克里里吗？", "支持。调音器提供 GCEA 模式，和弦库也包含完整的尤克里里和弦名称与多种指法。"],
   ["可以把和弦指法发给老师或朋友吗？", "可以。先预览当前指法卡片，再保存到相册或通过系统分享发送；图片不会强制附带下载链接。"],
   ["后置闪光灯节拍会拍照吗？", "不会。它只在兼容 iPhone 上用后置闪光灯提示全部主拍或仅重音，不采集画面；停止、离开页面或进入后台时会自动关闭。"],
@@ -68,7 +69,7 @@ export default function Home() {
   return (
     <main lang="zh-CN">
       <JsonLd data={[
-        { "@context": "https://schema.org", "@type": "SoftwareApplication", name: "GuitarTool", softwareVersion: RELEASE_VERSION, description: "面向吉他与尤克里里演奏者的练习工具：iPhone、iPad 和 Apple Watch 上调音、跟拍；和弦功能免费且离线可用，七套完整主题分别内购解锁。", url: absoluteUrl("/"), downloadUrl: appStoreUrl, applicationCategory: "MusicApplication", operatingSystem: "iOS, iPadOS, watchOS", inLanguage: supportedLanguageCodes, offers: { "@type": "Offer", price: "0", priceCurrency: "CNY" }, featureList: ["实时弦乐调音器与三秒读数保留", "Apple Watch 吉他、尤克里里、贝斯及半音阶调音器", "20–500 BPM 节拍器", "静音小节与最多六段速度训练，随预设保存", "后置闪光灯节拍：全部主拍或仅重音、三档强度", "19,244 个吉他与尤克里里指法", "和弦卡片预览、保存与分享", "支持后台音频的 Apple Watch 节拍器", "大号主屏幕小组件细分节奏与 Swing", "七套独立付费的完整视觉主题"] },
+        { "@context": "https://schema.org", "@type": "SoftwareApplication", name: "GuitarTool", softwareVersion: RELEASE_VERSION, dateModified: RELEASE_UPDATED, description: "面向吉他与尤克里里演奏者的练习工具：iPhone、iPad 和 Apple Watch 上调音、跟拍；和弦功能免费且离线可用，七套完整主题分别内购解锁。", url: absoluteUrl("/"), downloadUrl: appStoreUrl, applicationCategory: "MusicApplication", operatingSystem: "iOS, iPadOS, watchOS", inLanguage: supportedLanguageCodes, offers: { "@type": "Offer", price: "0", priceCurrency: "CNY" }, featureList: ["实时弦乐调音器与三秒读数保留", "Apple Watch 吉他、尤克里里、贝斯及半音阶调音器", "20–500 BPM 节拍器与离线中文人声数拍、当前 BPM 试听", "iOS 27+ 系统支持时可用超大竖排小组件", "静音小节与最多六段速度训练，随预设保存", "后置闪光灯节拍：全部主拍或仅重音、三档强度", "19,244 个吉他与尤克里里指法", "和弦卡片预览、保存与分享", "Apple Watch 节拍器：获准后台音频路由时落腕继续；前台回退非活跃即停止", "大号主屏幕小组件细分节奏与 Swing", "七套独立付费的完整视觉主题"] },
         { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqs.map(([question, answer]) => ({ "@type": "Question", name: question, acceptedAnswer: { "@type": "Answer", text: answer } })) },
         { "@context": "https://schema.org", "@type": "VideoObject", name: "GuitarTool 中文完整介绍（横屏）", description: "36 秒介绍 GuitarTool 调音器、节拍器、和弦卡片、小组件与多设备体验。", thumbnailUrl: absoluteUrl("/og.png"), uploadDate: "2026-08-28", duration: "PT36S", contentUrl: absoluteUrl("/media-kit/video/GuitarTool-Full-Intro-zh-Hans-854x480.mp4") },
         { "@context": "https://schema.org", "@type": "VideoObject", name: "GuitarTool 中文完整介绍（竖屏）", description: "为移动端优化的 36 秒 GuitarTool 中文完整介绍。", thumbnailUrl: absoluteUrl("/media-kit/social/guitartool-chord-cards-zh-Hans-1080x1350.png"), uploadDate: "2026-08-28", duration: "PT36S", contentUrl: absoluteUrl("/media-kit/video/GuitarTool-Full-Intro-zh-Hans-480x854.mp4") },
@@ -186,7 +187,7 @@ export default function Home() {
         <div className="introVideoCopy">
           <p className="eyebrow"><span /> 36 秒完整介绍</p>
           <h2>先看它如何融入练习，<br />再决定从哪里开始。</h2>
-          <p>横屏版适合桌面与大屏观看，移动端会自动使用中文竖屏版。视频展示调音、节拍、和弦卡片与多设备核心体验；视频为早期核心功能演示；1.1.2 的训练功能与玄玉声场见下方新版截图。</p>
+          <p>横屏版适合桌面与大屏观看，移动端会自动使用中文竖屏版。视频展示调音、节拍、和弦卡片与多设备核心体验；视频为早期核心功能演示，未展示 1.1.3 人声或超大竖排组件。下方训练图来自 1.1.2，亦被当前商店页面复用。</p>
         </div>
         <div className="introVideoFrame">
           <video controls playsInline preload="metadata" aria-label="GuitarTool 中文完整介绍视频">
@@ -198,12 +199,14 @@ export default function Home() {
 
       <section className="releaseWatch shell sectionPad" aria-labelledby="training-heading">
         <div>
-          <p className="eyebrow"><span /> 1.1.2 · 免费节奏训练</p>
+          <p className="eyebrow"><span /> 1.1.3 · 免费节奏练习</p>
           <h2 id="training-heading">点击声停了，<br />你的节奏继续。</h2>
+          <p>在“节拍器 → 设置 → 音色”停止播放后选择“人声”，按当前 BPM 听中文数拍，全程离线。<Link href="/guides/voice-counting-metronome/">人声数拍操作指南 →</Link></p>
           <p>打开节拍器 → 预设 → 节奏训练。让有声与静音小节交替，检查自己能否在声音回来时对齐；或设置最多六个速度阶段，按小节稳步提速。</p>
           <p>支持 20–500 BPM，每阶段 1–64 小节，配置可保存为自定义预设。训练功能在 iPhone 和 iPad 上免费、离线使用。</p>
           <Link className="textCta" href="/guides/silent-bar-metronome/">静音小节怎么练 →</Link><br />
           <Link className="textCta" href="/guides/staged-tempo-training/">设置分段速度训练 →</Link>
+          <p>训练图为 1.1.2 商店预览，当前商店沿用；新增人声控件见操作指南。</p>
         </div>
         <Image src={assetPath("/release-1.1.2/zh-training.webp")} alt="GuitarTool 1.1.2 静音小节与分段速度训练真实界面" width={660} height={1434} sizes="(max-width: 700px) 85vw, 416px" />
       </section>
@@ -236,8 +239,8 @@ export default function Home() {
           </article>
         </div>
         <div className="updatePromise">
-          <span>现已上架 · 1.1.2</span>
-          <p><strong>把稳拍与提速，练成自己的节奏。</strong> 在预设里设置有声与静音小节交替，或按小节安排分段速度并保存为自定义方案。新增玄玉声场主题，改善停止播放、音频中断、设备切换、大字号与从右向左界面。</p>
+          <span>现已上架 · 1.1.3</span>
+          <p><strong>跟着人声数拍，把双手留给琴弦。</strong> 离线中文人声按当前 BPM 试听，速度输入可可靠确认或取消，iOS 27+ 支持系统提供的超大竖排小组件。预设目标速度、中断后渐进提速恢复、大字号训练与练习计时更加稳定。<Link href="/guides/metronome-bpm-widget/">速度输入与小组件指南 →</Link></p>
           <b aria-hidden="true">↗</b>
         </div>
       </section>
@@ -273,7 +276,7 @@ export default function Home() {
           <div className="devicesCopy">
             <div className="sectionIndex light">04 / EVERYWHERE</div>
             <h2>你的练习，<br />跟着你走。</h2>
-            <p>在 iPhone 上随手练，在 iPad 上看得更清楚，在 Apple Watch 上启动节拍或按需调音。Watch 调音支持吉他、尤克里里、贝斯和半音阶；手表节拍器落腕或屏幕变暗后可继续发声。</p>
+            <p>在 iPhone 上随手练，在 iPad 上看得更清楚，在 Apple Watch 上启动节拍或按需调音。Watch 调音支持吉他、尤克里里、贝斯和半音阶；手表节拍器使用获准后台音频路由时，落腕或暗屏后可继续发声；前台扬声器回退模式在界面非活跃时停止。</p>
             <div className="devicePills"><span>iPhone</span><span>iPad</span><span>Apple Watch</span></div>
           </div>
           <div className="devicesMedia">
@@ -325,7 +328,7 @@ export default function Home() {
           <Link href="/chords/guitar/"><span>04</span><h3>热门吉他和弦</h3><p>从 50 个高频和弦开始，查看多个把位与清楚指法图。</p><b>浏览和弦 →</b></Link>
           <Link href="/chords/ukulele/"><span>05</span><h3>热门尤克里里和弦</h3><p>按标准 High-G GCEA 查看 50 个常用和弦和多种按法。</p><b>浏览和弦 →</b></Link>
           <Link href="/guides/share-chord-diagrams/"><span>06</span><h3>保存与分享和弦图</h3><p>把当前吉他或尤克里里按法生成卡片，预览后保存或发送。</p><b>了解和弦卡片 →</b></Link>
-          <Link href="/guides/apple-watch-metronome/"><span>07</span><h3>Apple Watch 节拍器</h3><p>从手腕控制速度与拍号，落腕或屏幕变暗后声音仍可继续。</p><b>了解手表节拍器 →</b></Link>
+          <Link href="/guides/apple-watch-metronome/"><span>07</span><h3>Apple Watch 节拍器</h3><p>从手腕控制速度与拍号；后台音频路由获准时，落腕后可继续发声。</p><b>了解手表节拍器 →</b></Link>
           <Link href="/guides/chord-diagrams-for-students/"><span>08</span><h3>把指法图发给学生</h3><p>从选择准确把位、检查高把位，到安排课后练习的一套教师流程。</p><b>阅读教学指南 →</b></Link>
           <Link href="/guides/apple-watch-metronome-audio-design/"><span>09</span><h3>Watch 音频工程复盘</h3><p>声音采样时钟、暗屏生命周期和音频路线恢复如何协同。</p><b>阅读工程复盘 →</b></Link>
           <Link href="/guides/tap-tempo-bpm/"><span>10</span><h3>Tap Tempo 测 BPM</h3><p>跟着音乐点击主拍，排除误触，并判断半速或倍速结果。</p><b>阅读指南 →</b></Link>

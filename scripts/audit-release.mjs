@@ -20,28 +20,35 @@ for (const url of urls) {
   for (const match of schemas) {
     const value = JSON.parse(match[1]);
     for (const item of Array.isArray(value) ? value : [value]) {
-      if (item['@type'] === 'SoftwareApplication' && item.softwareVersion) assert.equal(item.softwareVersion, '1.1.2', url);
+      if (item['@type'] === 'SoftwareApplication' && item.softwareVersion) assert.equal(item.softwareVersion, '1.1.3', url);
     }
   }
 }
 for (const locale of locales) {
   const html = await readFile(path.join(root, locale, 'index.html'), 'utf8');
-  assert.ok(html.includes('1.1.2'), `Missing release: ${locale}`);
+  assert.ok(/<meta name="description" content="[^"]*1\.1\.3/.test(html), `Stale release description: ${locale}`);
+  assert.ok(html.includes('iOS 27'), `Missing widget system limit: ${locale}`);
+  assert.ok(html.includes('1.1.3'), `Missing release: ${locale}`);
   assert.ok(html.includes(`/release-1.1.2/${locale || 'zh'}-training.webp`), `Missing localized screenshot: ${locale}`);
   assert.equal([...html.matchAll(/<link rel="alternate" hrefLang=/g)].length, 14, `Expected 13 languages + x-default: ${locale}`);
 }
 for (const prefix of ['', '/en']) {
-  for (const slug of ['silent-bar-metronome', 'staged-tempo-training']) {
+  for (const slug of ['silent-bar-metronome', 'staged-tempo-training', 'voice-counting-metronome', 'metronome-bpm-widget']) {
     const url = `${base}${prefix}/guides/${slug}/`;
     assert.ok(urls.includes(url), `Missing new guide: ${url}`);
     const html = await readFile(path.join(root, prefix, 'guides', slug, 'index.html'), 'utf8');
+    assert.ok(html.includes('2026-10-11'), `Stale guide modification date: ${url}`);
     assert.ok(html.includes('FAQPage') && html.includes('BreadcrumbList'), `Missing guide schema: ${url}`);
-    assert.ok(html.includes(prefix ? '20–500' : '20–500'), `Missing limits: ${url}`);
+    assert.ok(html.includes('20–500'), `Missing limits: ${url}`);
     assert.ok(html.includes('ppid=ad230a27-b902-4645-b00d-3f2a5c3e3558'), `Wrong download destination: ${url}`);
   }
+}
+for (const prefix of ['', '/en']) {
+  const support = await readFile(path.join(root, prefix, 'support', 'index.html'), 'utf8');
+  assert.ok(support.includes('1.1.3') && support.includes('iOS 27') && support.includes('voice-counting-metronome') && support.includes('metronome-bpm-widget'), `Incomplete support: ${prefix}`);
 }
 const imageMap = await readFile(path.join(root, 'image-sitemap.xml'), 'utf8');
 const images = [...imageMap.matchAll(/<image:loc>([^<]+)<\/image:loc>/g)].map(m => m[1]);
 for (const url of images) await access(path.join(root, url.slice(base.length)));
 assert.ok(images.some(url => url.includes('jade-resonance')), 'Missing Jade image');
-console.log(`Release SEO audit passed: ${urls.length} canonical pages, 13 localized release pages, 4 training guides, ${images.length} image entries.`);
+console.log(`Release SEO audit passed: ${urls.length} canonical pages, 13 localized release pages, 8 release guides, ${images.length} image entries.`);
