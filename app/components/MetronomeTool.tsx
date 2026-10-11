@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { BrowserMetronome } from "@/app/lib/browser-metronome";
 
 type MetronomeCopy = {
   label: string;
@@ -20,78 +21,51 @@ export function MetronomeTool({ copy }: { copy: MetronomeCopy }) {
   const [bpmInput, setBpmInput] = useState("80");
   const [beatsPerBar, setBeatsPerBar] = useState(4);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [starting, setStarting] = useState(false);
   const [currentBeat, setCurrentBeat] = useState(0);
   const [error, setError] = useState<string | null>(null);
-  const audioContextRef = useRef<AudioContext | null>(null);
-  const timerRef = useRef<number | null>(null);
-  const nextNoteTimeRef = useRef(0);
-  const beatRef = useRef(0);
-  const bpmRef = useRef(bpm);
-  const beatsRef = useRef(beatsPerBar);
+  const engineRef = useRef<BrowserMetronome | null>(null);
   const tapTimesRef = useRef<number[]>([]);
 
-  useEffect(() => () => {
-    if (timerRef.current !== null) window.clearInterval(timerRef.current);
-    void audioContextRef.current?.close();
+  const stop = useCallback(() => {
+    engineRef.current?.stop();
+    setIsPlaying(false);
+    setStarting(false);
+    setCurrentBeat(0);
   }, []);
 
-  function scheduleClick(context: AudioContext, time: number, beat: number) {
-    const oscillator = context.createOscillator();
-    const gain = context.createGain();
-    oscillator.frequency.value = beat === 0 ? 1320 : 880;
-    gain.gain.setValueAtTime(0.0001, time);
-    gain.gain.exponentialRampToValueAtTime(beat === 0 ? 0.5 : 0.3, time + 0.002);
-    gain.gain.exponentialRampToValueAtTime(0.0001, time + 0.055);
-    oscillator.connect(gain);
-    gain.connect(context.destination);
-    oscillator.start(time);
-    oscillator.stop(time + 0.06);
-    window.setTimeout(() => setCurrentBeat(beat), Math.max(0, (time - context.currentTime) * 1000));
-  }
-
-  function scheduler() {
-    const context = audioContextRef.current;
-    if (!context) return;
-    while (nextNoteTimeRef.current < context.currentTime + 0.1) {
-      const beat = beatRef.current;
-      scheduleClick(context, nextNoteTimeRef.current, beat);
-      beatRef.current = (beat + 1) % beatsRef.current;
-      nextNoteTimeRef.current += 60 / bpmRef.current;
-    }
-  }
+  useEffect(() => {
+    window.addEventListener("pagehide", stop);
+    return () => {
+      window.removeEventListener("pagehide", stop);
+      stop();
+    };
+  }, [stop]);
 
   async function start() {
+    stop();
     setError(null);
+    setStarting(true);
+    const engine = engineRef.current ??= new BrowserMetronome(setCurrentBeat);
+    engine.setTempo(bpm);
+    engine.setBeats(beatsPerBar);
+    const request = engine.start();
+    const requestID = engine.requestID;
     try {
-      const context = audioContextRef.current ?? new AudioContext();
-      audioContextRef.current = context;
-      await context.resume();
-      if (context.state !== "running") throw new Error("Audio context did not start");
-      beatRef.current = 0;
-      nextNoteTimeRef.current = context.currentTime + 0.05;
-      scheduler();
-      timerRef.current = window.setInterval(scheduler, 25);
+      const context = await request;
+      if (!context || !engine.isCurrent(context)) return;
+      setStarting(false);
       setIsPlaying(true);
     } catch {
-      if (timerRef.current !== null) window.clearInterval(timerRef.current);
-      timerRef.current = null;
-      void audioContextRef.current?.close();
-      audioContextRef.current = null;
-      setIsPlaying(false);
+      if (engine.requestID !== requestID) return;
+      stop();
       setError(copy.error);
     }
   }
 
-  function stop() {
-    if (timerRef.current !== null) window.clearInterval(timerRef.current);
-    timerRef.current = null;
-    setIsPlaying(false);
-    setCurrentBeat(0);
-  }
-
   function changeBpm(value: number) {
-    const nextBpm = Math.min(500, Math.max(20, value));
-    bpmRef.current = nextBpm;
+    const nextBpm = Number.isFinite(value) ? Math.min(500, Math.max(20, value)) : bpm;
+    engineRef.current?.setTempo(nextBpm);
     setBpm(nextBpm);
     setBpmInput(String(nextBpm));
   }
@@ -100,14 +74,13 @@ export function MetronomeTool({ copy }: { copy: MetronomeCopy }) {
     setBpmInput(rawValue);
     const value = Number(rawValue);
     if (rawValue !== "" && Number.isFinite(value) && value >= 20 && value <= 500) {
-      bpmRef.current = value;
+      engineRef.current?.setTempo(value);
       setBpm(value);
     }
   }
 
   function changeBeatsPerBar(value: number) {
-    beatsRef.current = value;
-    beatRef.current = 0;
+    engineRef.current?.setBeats(value);
     setCurrentBeat(0);
     setBeatsPerBar(value);
   }
@@ -143,7 +116,7 @@ export function MetronomeTool({ copy }: { copy: MetronomeCopy }) {
       <div className="metronomeControls">
         <label>{copy.beats}<select name="beats-per-bar" value={beatsPerBar} onChange={(event) => changeBeatsPerBar(Number(event.target.value))}>{Array.from({ length: 12 }, (_, index) => <option value={index + 1} key={index + 1}>{index + 1}</option>)}</select></label>
         <button className="tapButton" type="button" onClick={tapTempo}>{copy.tap}</button>
-        <button className="playButton" type="button" onClick={isPlaying ? stop : start}>{isPlaying ? copy.stop : copy.start}</button>
+        <button className="playButton" type="button" onClick={isPlaying || starting ? stop : start}>{isPlaying || starting ? copy.stop : copy.start}</button>
       </div>
       {error ? <p className="metronomeError" role="alert">{error}</p> : null}
       <p>{copy.hint}</p>

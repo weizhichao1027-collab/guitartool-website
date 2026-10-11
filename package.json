@@ -6,6 +6,7 @@
     "node": ">=22.13.0"
   },
   "scripts": {
+    "test": "node --test scripts/*.test.mjs",
     "dev": "next dev",
     "build": "npm run build:pages",
     "build:pages": "GITHUB_PAGES=true next build && node scripts/finalize-static-html.mjs out",
@@ -33,7 +34,10 @@
   },
   "overrides": {
     "js-yaml": "4.3.2",
-    "sharp": "0.35.5"
+    "sharp": "0.35.5",
+    "@next/eslint-plugin-next": {
+      "fast-glob": "npm:tinyglobby@0.2.17"
+    }
   },
   "type": "module"
 }

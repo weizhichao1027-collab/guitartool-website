@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import type { TunerLocale } from "@/app/lib/tuner-locales";
+import { BrowserAudioSession } from "@/app/lib/browser-audio-session";
 
 type Reading = {
   note: string;
@@ -70,11 +71,11 @@ function readingFor(frequency: number, recentCents: number[]): Reading {
 
 export function TunerTool({ copy }: { copy: TunerLocale }) {
   const [running, setRunning] = useState(false);
+  const [starting, setStarting] = useState(false);
   const [error, setError] = useState(false);
   const [reading, setReading] = useState<Reading | null>(null);
   const [preset, setPreset] = useState<"chromatic" | "guitar" | "ukulele">("chromatic");
-  const contextRef = useRef<AudioContext | null>(null);
-  const streamRef = useRef<MediaStream | null>(null);
+  const sessionRef = useRef<BrowserAudioSession | null>(null);
   const animationRef = useRef<number | null>(null);
   const lastSampleRef = useRef(0);
   const centsHistoryRef = useRef<number[]>([]);
@@ -82,48 +83,57 @@ export function TunerTool({ copy }: { copy: TunerLocale }) {
 
   const stop = useCallback(() => {
     if (animationRef.current !== null) cancelAnimationFrame(animationRef.current);
-    streamRef.current?.getTracks().forEach((track) => track.stop());
-    void contextRef.current?.close();
+    sessionRef.current?.stop();
     animationRef.current = null;
-    streamRef.current = null;
-    contextRef.current = null;
+    lastSampleRef.current = 0;
     frequencyRef.current = null;
     centsHistoryRef.current = [];
     setRunning(false);
+    setStarting(false);
     setReading(null);
   }, []);
 
-  useEffect(() => stop, [stop]);
+  useEffect(() => {
+    const stopWhenHidden = () => { if (document.hidden) stop(); };
+    document.addEventListener("visibilitychange", stopWhenHidden);
+    window.addEventListener("pagehide", stop);
+    return () => {
+      document.removeEventListener("visibilitychange", stopWhenHidden);
+      window.removeEventListener("pagehide", stop);
+      stop();
+    };
+  }, [stop]);
 
   const start = useCallback(async () => {
     if (!navigator.mediaDevices?.getUserMedia) {
       setError(true);
       return;
     }
+    stop();
     setError(false);
+    setStarting(true);
+    const session = sessionRef.current ??= new BrowserAudioSession();
+    const request = session.start(true);
+    const requestID = session.requestID;
+    let context: AudioContext | null = null;
     try {
-      // Resume while the click is still the active user gesture. Mobile Safari
-      // can otherwise leave a context created after the permission prompt in a
-      // suspended state, which produces an apparently silent tuner.
-      const context = new AudioContext();
-      contextRef.current = context;
-      await context.resume();
-      const stream = await navigator.mediaDevices.getUserMedia({
-        audio: { echoCancellation: false, autoGainControl: false, noiseSuppression: false },
-      });
+      context = await request;
+      if (!context || !session.isCurrent(context)) return;
       const analyser = context.createAnalyser();
       analyser.fftSize = 2048;
       analyser.smoothingTimeConstant = 0;
-      context.createMediaStreamSource(stream).connect(analyser);
+      session.connectMicrophone(context, analyser);
       const samples = new Float32Array(analyser.fftSize);
-      streamRef.current = stream;
+      const activeContext = context;
+      setStarting(false);
       setRunning(true);
 
       const sample = (time: number) => {
+        if (!session.isCurrent(activeContext)) return;
         if (time - lastSampleRef.current >= 120) {
           lastSampleRef.current = time;
           analyser.getFloatTimeDomainData(samples);
-          const detected = detectPitch(samples, context.sampleRate);
+          const detected = detectPitch(samples, activeContext.sampleRate);
           if (detected) {
             const smoothed = frequencyRef.current === null ? detected : frequencyRef.current * 0.72 + detected * 0.28;
             frequencyRef.current = smoothed;
@@ -140,6 +150,7 @@ export function TunerTool({ copy }: { copy: TunerLocale }) {
       };
       animationRef.current = requestAnimationFrame(sample);
     } catch {
+      if (session.requestID !== requestID) return;
       stop();
       setError(true);
     }
@@ -170,7 +181,7 @@ export function TunerTool({ copy }: { copy: TunerLocale }) {
       <div className="tunerReference" aria-live="polite">
         {preset === "guitar" ? "E2 · A2 · D3 · G3 · B3 · E4" : preset === "ukulele" ? "G4 · C4 · E4 · A4" : "A4 = 440 Hz"}
       </div>
-      <button className="tunerStart" type="button" onClick={running ? stop : start}>{running ? copy.stop : copy.start}</button>
+      <button className="tunerStart" type="button" onClick={running || starting ? stop : start}>{running || starting ? copy.stop : copy.start}</button>
       {error ? <p className="tunerError" role="alert">{copy.permissionError}</p> : null}
       <p className="tunerPrivacy">⌁ {copy.privacy}</p>
     </div>
