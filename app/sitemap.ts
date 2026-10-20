@@ -3,7 +3,7 @@ import type { MetadataRoute } from "next";
 import { landingPages } from "@/app/lib/landing-pages";
 import { localePages } from "@/app/lib/locales";
 import { popularChords, routeForChord } from "@/app/lib/chords";
-import { absoluteUrl, RELEASE_UPDATED } from "@/app/lib/site";
+import { absoluteUrl, RELEASE_UPDATED, PRIVACY_NOTICE_UPDATED, PRIVACY_NOTICE_GUIDE_SLUGS } from "@/app/lib/site";
 import { tunerLocales, tunerPath } from "@/app/lib/tuner-locales";
 import { TROUBLESHOOTING_UPDATED, zhTroubleshootingPages } from "@/app/lib/troubleshooting-pages";
 
@@ -36,5 +36,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   for (const instrument of ["guitar", "ukulele"] as const) {
     for (const chord of popularChords[instrument]) entries.push({ url: absoluteUrl(routeForChord(instrument, chord.slug)), lastModified, changeFrequency: "monthly", priority: 0.75 });
   }
-  return entries;
+  const privacyNoticePaths = ["/", "/en/", "/press/", "/support/", "/en/support/", ...PRIVACY_NOTICE_GUIDE_SLUGS.flatMap(slug => [`/guides/${slug}/`, `/en/guides/${slug}/`])];
+  return entries.map(entry => privacyNoticePaths.some(path => absoluteUrl(path) === entry.url) ? { ...entry, lastModified: new Date(PRIVACY_NOTICE_UPDATED) } : entry);
 }

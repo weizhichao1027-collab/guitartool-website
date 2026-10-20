@@ -9,6 +9,8 @@ import {
   APP_NAME,
   RELEASE_VERSION,
   RELEASE_UPDATED,
+  PRIVACY_NOTICE_UPDATED,
+  PRIVACY_NOTICE_GUIDE_SLUGS,
   absoluteUrl,
   appStoreCampaignForGuide,
   appStoreDestinationForGuide,
@@ -33,7 +35,7 @@ export function LandingPageView({ page, language }: { page: LandingPage; languag
     {
       "@context": "https://schema.org",
       "@type": "WebPage",
-      ...([...RELEASE_1_1_3_GUIDE_SLUGS, "silent-bar-metronome", "staged-tempo-training", "progressive-tempo-training", "online-metronome", "offline-guitar-tools", "apple-watch-metronome", "apple-watch-metronome-audio-design"].some((slug) => slug === page.slug) ? { dateModified: RELEASE_UPDATED } : {}),
+      ...([...RELEASE_1_1_3_GUIDE_SLUGS, "silent-bar-metronome", "staged-tempo-training", "progressive-tempo-training", "online-metronome", "offline-guitar-tools", "apple-watch-metronome", "apple-watch-metronome-audio-design", "visual-metronome"].some((slug) => slug === page.slug) ? { dateModified: PRIVACY_NOTICE_GUIDE_SLUGS.some((slug) => slug === page.slug) ? PRIVACY_NOTICE_UPDATED : RELEASE_UPDATED } : {}),
       name: page.title,
       description: page.description,
       url: canonical,

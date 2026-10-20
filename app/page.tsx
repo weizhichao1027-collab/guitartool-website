@@ -293,11 +293,12 @@ export default function Home() {
             <h2>你的练习声音，<br /><em>只留在你的设备上。</em></h2>
           </div>
           <div className="privacyCopy">
-            <p>GuitarTool 不出售个人信息，也不把信息用于广告或追踪。调音器音频只在设备上实时处理；四款基础主题免费，七套完整主题素材内置且购买后可离线使用；App 不采集功能使用分析数据。</p>
+            <p>GuitarTool 不出售个人信息，也不把信息用于广告或追踪。调音器音频只在设备上实时处理；四款基础主题免费，已上架 1.1.3 的七套完整主题素材内置且购买后可离线使用；1.1.3 不采集功能使用分析数据。</p>
+            <p>准备中的 1.1.4 提供可选 PostHog 使用分析，默认关闭，明确同意后才在美国处理有限使用与技术信息；可在“个性化 → 帮助改进 GuitarTool”管理。关闭不会自动删除已上传数据，申请删除前请保存分析 ID。详情见隐私政策；1.1.4 尚未发布。</p>
             <ul>
               <li><b>01</b><span><strong>无需账户</strong>没有注册、登录或云端个人资料。</span></li>
               <li><b>02</b><span><strong>音频不上传</strong>不保存录音，不发送到开发者或第三方。</span></li>
-              <li><b>03</b><span><strong>无广告与追踪</strong>不集成广告、分析或第三方追踪 SDK。</span></li>
+              <li><b>03</b><span><strong>无广告与追踪</strong>没有广告或跨 App 追踪；1.1.4 可选分析默认关闭。</span></li>
             </ul>
             <a className="lightButton" href={privacyUrl}>阅读完整隐私政策 <span>↗</span></a>
           </div>

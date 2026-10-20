@@ -1,7 +1,7 @@
 import { SiteLink as Link } from "@/app/components/SiteLink";
 import { AcquisitionFooter, AcquisitionHeader } from "@/app/components/AcquisitionChrome";
 import { JsonLd } from "@/app/components/JsonLd";
-import { APP_STORE_LINKS, APP_STORE_URL, PRIVACY_URL, PRIVACY_EN_URL, RELEASE_VERSION, RELEASE_UPDATED, absoluteUrl } from "@/app/lib/site";
+import { APP_STORE_LINKS, APP_STORE_URL, PRIVACY_URL, PRIVACY_EN_URL, RELEASE_VERSION, PRIVACY_NOTICE_UPDATED, absoluteUrl } from "@/app/lib/site";
 
 const email = "weizhichao1027@gmail.com";
 
@@ -14,7 +14,7 @@ const content = {
     contact: "联系技术支持",
     appStore: "前往 App Store",
     status: [
-      ["文档版本", "1.1.3 已上架 · 2026-10-11 更新"],
+      ["文档版本", "1.1.3 已上架 · 2026-10-20 更新"],
       ["支持设备", "iPhone · iPad · Apple Watch"],
       ["系统要求", "iOS / iPadOS 17、watchOS 10 或更高版本"],
       ["数据方式", "无需账户 · 核心功能离线运行"],
@@ -35,8 +35,8 @@ const content = {
       { title: "预设目标、渐进加速与大字号有哪些修复？", body: "1.1.3 修复了练习预设目标速度同步，切换或重开预设时，旧输入草稿不再覆盖新目标；渐进加速目标不能低于当前 BPM、最高 500 BPM。音频中断后恢复会保留已完成的小节和渐进加速进度；主动开始新练习仍从零开始。预设、训练参数与细分选项改善了大字号换行布局，倒计时稳定性也已改进。如仍有问题，请来信说明字号、预设设置、音频路线和复现步骤。" },
       { title: "如何找到玄玉声场？", body: "先更新到 1.1.2 或更新版本，再进入“个性化 → 主题展厅”。玄玉声场可以先预览，再单独一次性购买；以前购买的主题不包含此商品。价格以你所在地区 App Store 实时显示为准。" },
       { title: "为什么偶尔出现系统评分提示？", body: "App 仅在练习结束且界面空闲时尝试请求 Apple 系统评分提示，系统决定是否显示。资格计数和提示记录只保存在本机，不上传给开发者，也不记录你给出的星级或评价。可直接关闭提示，不影响功能。" },
-      { title: "如何使用基础与付费主题", body: "四款基础主题免费且继续可见。1.1.2 已内置包括玄玉声场在内的七套完整付费主题素材，可在主题展厅预览并分别通过 App Store 购买；购买后无需下载素材即可离线使用。恢复购买可能需要联网。" },
-      { title: "购买后主题仍显示未解锁", body: "先确认使用的是购买时的 Apple 账户，并连接网络。在 App 的主题展厅点按“恢复购买”，等待 App Store 同步权益后重新打开主题。七套完整主题是七笔独立的非消耗型购买；购买一套不会解锁其他主题。如仍失败，请附上主题名称、App 版本和错误提示联系支持，无需发送付款资料。" },
+      { title: "如何使用基础与付费主题", body: "四款基础主题免费且继续可见。1.1.2 已内置包括玄玉声场在内的七套完整付费主题素材，可在主题展厅预览并分别通过 App Store 购买；购买后无需下载素材即可离线使用。恢复购买可能需要联网。正在准备的 1.1.4 将新增“怪兽排练室”和“失重马戏团”两套主题预览，分别内购；目前尚未发布，是否可购买以 App Store 的审核及上架状态为准。" },
+      { title: "购买后主题仍显示未解锁", body: "先确认使用的是购买时的 Apple 账户，并连接网络。在 App 的主题展厅点按“恢复购买”，等待 App Store 同步权益后重新打开主题。1.1.3 的七套完整主题分别为独立的非消耗型购买；购买一套不会解锁其他主题。如仍失败，请附上主题名称、App 版本和错误提示联系支持，无需发送付款资料。" },
       { title: "调音器没有声音输入", body: "首次使用时允许麦克风权限，并确认没有其他 App 独占音频输入。调音器只在设备上实时分析音高，不保存或上传声音。若电平没有变化，请检查系统麦克风权限并重新进入调音器。" },
       { title: "Apple Watch 调音器如何开始或停止？", body: "更新至 1.1.2 或更新版本，在 Watch App 的节拍器旁切到调音页，选择吉他、尤克里里、贝斯或半音阶模式，再点“开始调音”。首次使用需允许手表麦克风权限。调准时会有触觉提示；点“停止调音”、切换页面或离开 App 即结束收音。若没有输入，请在手表系统设置检查 GuitarTool 的麦克风权限，并确认当前没有其他音频任务占用输入。声音只在手表本地分析，不录音或上传。" },
       { title: "调音读数跳动或太快消失", body: "一次只拨一根弦，轻触其他弦抑制共振，并在起音过后查看读数。1.1.1 优化基频与余音跟踪；余音结束后上次读数会保留约 3 秒，再次拨弦会立即更新。距离和环境噪声也会影响读数。" },
@@ -48,7 +48,8 @@ const content = {
       { title: "和弦卡片无法保存到照片", body: "在系统设置中允许 GuitarTool 添加照片。保存前会显示最终卡片预览；系统分享只发送图片，不强制附带下载链接，也不会把图片上传到 GuitarTool 服务器。" },
     ],
     privacyTitle: "关于隐私与权限",
-    privacyBody: "GuitarTool 不要求注册，不包含广告或第三方统计 SDK。1.1.3 中文人声数拍使用内置音频在本机播放，不使用麦克风、语音识别或联网下载。iPhone、iPad 和 Apple Watch 麦克风只在你主动开始调音时用于设备端实时分析，不保存或上传声音；照片权限只在主动保存和弦卡片时使用。四款基础主题免费，七套付费主题素材内置；App 不采集功能使用分析数据。",
+    privacyBody: "已上架的 GuitarTool 1.1.3 不要求注册，不包含广告或第三方统计 SDK。中文人声数拍使用内置音频在本机播放，不使用麦克风、语音识别或联网下载。iPhone、iPad 和 Apple Watch 麦克风只在你主动开始调音时用于设备端实时分析，不保存或上传声音；照片权限只在主动保存和弦卡片时使用。四款基础主题免费，七套付费主题素材内置；1.1.3 不采集功能使用分析数据。",
+    privacyUpcoming: "准备中的 1.1.4 将提供默认关闭的可选 PostHog 使用分析，只有你明确同意后才启用，数据存储于美国。路径：个性化 → 帮助改进 GuitarTool。拒绝不影响核心工具、主题或购买；音频不上传。关闭会清除本机待发送事件和分析 ID，不会自动删除已上传记录。如需申请删除，请先保存分析 ID，再将 ID 和请求发送至 weizhichao1027@gmail.com。此说明自 1.1.4 首次向用户提供时适用。",
     privacyLink: "阅读完整隐私政策",
     emailTitle: "需要进一步帮助？",
     emailBody: "邮件中请附上设备型号、系统版本、GuitarTool 版本以及清晰的复现步骤。这样最容易定位问题。",
@@ -62,7 +63,7 @@ const content = {
     contact: "Contact support",
     appStore: "View on the App Store",
     status: [
-      ["Documentation", "1.1.3 available · Updated 11 October 2026"],
+      ["Documentation", "1.1.3 available · Updated 20 October 2026"],
       ["Devices", "iPhone · iPad · Apple Watch"],
       ["System requirement", "iOS / iPadOS 17; watchOS 10 or later"],
       ["Data model", "No account · Core features work offline"],
@@ -83,8 +84,8 @@ const content = {
       { title: "What changed for preset targets, tempo progress and large text?", body: "Version 1.1.3 fixes practice preset target syncing so an older input draft does not overwrite a newly loaded target when you switch or reopen presets. Progressive tempo targets stay between the current BPM and 500. Recovery after an audio interruption retains completed bars and progressive tempo progress; starting a new practice still resets progress. Presets, training parameters and subdivision choices have improved wrapping at larger text sizes, and the countdown is more reliable. If a problem continues, send the text size, preset settings, audio route and reproduction steps." },
       { title: "Where can I find Jade Resonance?", body: "Update to 1.1.2 or later, then open Personalization → Theme Gallery. Preview Jade Resonance before its separate one-time purchase. Earlier theme purchases do not include it. The App Store displays the current price for your region." },
       { title: "Why might I see a system rating prompt?", body: "The app may request an Apple rating prompt after practice ends and the interface is idle. Apple decides whether it appears. Eligibility counters and request records stay on your device, are not uploaded to the developer and do not record your rating or review. Dismissing the prompt does not restrict any feature." },
-      { title: "Use basic and paid themes", body: "The four basic looks remain free. Version 1.1.2 bundles artwork for seven complete themes, including Jade Resonance, each sold separately through the App Store. Preview them in the Theme Gallery; once purchased, they work offline without an asset download. Restoring purchases may require a connection." },
-      { title: "A purchased theme is still locked", body: "Use the same Apple Account used for the purchase and connect to the internet. In the Theme Gallery, tap Restore Purchases, wait for the App Store to sync the entitlement, then reopen the theme. The seven complete themes are separate non-consumable purchases; buying one does not unlock the others. If it still fails, send support the theme name, app version and error message, but no payment details." },
+      { title: "Use basic and paid themes", body: "The four basic looks remain free. Version 1.1.2 bundles artwork for seven complete themes, including Jade Resonance, each sold separately through the App Store. Preview them in the Theme Gallery; once purchased, they work offline without an asset download. Restoring purchases may require a connection. The upcoming 1.1.4 adds Oddball Rehearsal and Zero Gravity Circus previews as separate purchases. That version is not yet released; purchase availability depends on App Store approval and release." },
+      { title: "A purchased theme is still locked", body: "Use the same Apple Account used for the purchase and connect to the internet. In the Theme Gallery, tap Restore Purchases, wait for the App Store to sync the entitlement, then reopen the theme. The seven complete themes in 1.1.3 are separate non-consumable purchases; buying one does not unlock the others. If it still fails, send support the theme name, app version and error message, but no payment details." },
       { title: "The tuner shows no input", body: "Allow microphone access when asked and make sure another app is not holding the audio input. Pitch is analysed live on the device and is never saved or uploaded. If the input meter does not move, check the system microphone permission and reopen the tuner." },
       { title: "How do I start or stop the Apple Watch tuner?", body: "Update to 1.1.2 or later, swipe from the metronome to the tuner in the Watch app, choose guitar, ukulele, bass or chromatic mode, then tap Start Tuning. Allow microphone access on first use. An in-tune note gives haptic feedback. Tap Stop Tuning, change pages or leave the app to end capture. If input is missing, check GuitarTool's microphone permission in Watch settings and make sure another audio task is not using the input. Audio is analysed only on the watch, never recorded or uploaded." },
       { title: "The pitch reading jumps or disappears too soon", body: "Pluck one string at a time and mute the others. Read after the initial attack. Version 1.1.1 improves fundamental-pitch and note-decay tracking, holds the last reading for about three seconds after a note ends, and updates immediately with a new pluck. Distance and room noise can also affect a reading." },
@@ -96,7 +97,8 @@ const content = {
       { title: "A chord card will not save to Photos", body: "Allow GuitarTool to add photos in system settings. The final card is shown before saving. System sharing sends only the image, with no forced download link, and GuitarTool does not upload the card to a server." },
     ],
     privacyTitle: "Privacy and permissions",
-    privacyBody: "GuitarTool needs no registration and contains no ads or third-party analytics SDKs. The 1.1.3 Chinese voice count plays bundled audio locally, with no microphone, speech recognition or online download. The iPhone, iPad and Apple Watch microphones are used only after you start live on-device tuning; audio is never saved or uploaded. Photos access is used only when you save a chord card. Four basic looks are free, seven paid complete themes are bundled, and the app collects no usage analytics.",
+    privacyBody: "The released GuitarTool 1.1.3 needs no registration and contains no ads or third-party analytics SDKs. Chinese voice count plays bundled audio locally, with no microphone, speech recognition or online download. The iPhone, iPad and Apple Watch microphones are used only after you start live on-device tuning; audio is never saved or uploaded. Photos access is used only when you save a chord card. Four basic looks are free, seven paid complete themes are bundled, and 1.1.3 collects no usage analytics.",
+    privacyUpcoming: "Upcoming version 1.1.4 offers optional PostHog usage analytics, off by default and enabled only with your explicit consent, with US storage. Open Personalize → Help improve GuitarTool. Declining does not restrict core tools, themes or purchases, and audio is not uploaded. Switching it off clears local pending events and the analytics ID but does not automatically delete uploaded data. To request deletion, save the analytics ID before switching off, then email the ID and your request to weizhichao1027@gmail.com. This notice applies when 1.1.4 first becomes available to users.",
     privacyLink: "Read the full privacy policy",
     emailTitle: "Still need help?",
     emailBody: "Include the device model, OS version, GuitarTool version and clear reproduction steps. Those details make an issue much easier to diagnose.",
@@ -116,7 +118,7 @@ export function SupportPage({ language }: { language: keyof typeof content }) {
   return (
     <main className="acqPage supportPage" lang={copy.lang}>
       <JsonLd data={[
-        { "@context": "https://schema.org", "@type": "ContactPage", name: language === "zh" ? "GuitarTool 技术支持" : "GuitarTool Support", url: absoluteUrl(path), inLanguage: copy.lang, dateModified: RELEASE_UPDATED, mainEntity: { "@type": "SoftwareApplication", name: "GuitarTool", softwareVersion: RELEASE_VERSION, downloadUrl: APP_STORE_URL, operatingSystem: "iOS, iPadOS, watchOS" } },
+        { "@context": "https://schema.org", "@type": "ContactPage", name: language === "zh" ? "GuitarTool 技术支持" : "GuitarTool Support", url: absoluteUrl(path), inLanguage: copy.lang, dateModified: PRIVACY_NOTICE_UPDATED, mainEntity: { "@type": "SoftwareApplication", name: "GuitarTool", softwareVersion: RELEASE_VERSION, downloadUrl: APP_STORE_URL, operatingSystem: "iOS, iPadOS, watchOS" } },
         { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faq },
       ]} />
       <AcquisitionHeader language={language} />
@@ -147,7 +149,7 @@ export function SupportPage({ language }: { language: keyof typeof content }) {
 
       <section className="supportPrivacy shell">
         <div><p className="acqEyebrow">03 / PRIVACY</p><h2>{copy.privacyTitle}</h2></div>
-        <div><p>{copy.privacyBody}</p><a className="textCta" href={language === "zh" ? PRIVACY_URL : PRIVACY_EN_URL}>{copy.privacyLink} <span>↗</span></a></div>
+        <div><p>{copy.privacyBody}</p><p>{copy.privacyUpcoming}</p><a className="textCta" href={language === "zh" ? PRIVACY_URL : PRIVACY_EN_URL}>{copy.privacyLink} <span>↗</span></a></div>
       </section>
 
       <section className="supportContact shell">

@@ -46,3 +46,7 @@ npm run audit:pages
 ```
 
 `npm run generate:chords` refreshes the popular-chord data. Successful Pages deployments notify IndexNow automatically. See [MARKETING_HANDOFF.md](./MARKETING_HANDOFF.md) for verified release, distribution and deployment records.
+
+## 1.1.4 隐私说明准备（2026-10-20）
+
+已发布版本与下载资料仍以 1.1.3 为基线。中英支持、首页、Press Kit 及离线工具／闪光灯／Watch 指南已区分 1.1.3 的无分析行为与准备中 1.1.4 默认关闭、明确同意后启用的 PostHog 分析。支持页提供美国存储说明、设置路径、关闭前保存分析 ID 和邮箱删除申请，并将两套新主题描述为尚未发布的预览。此更新不代表 1.1.4 或新内购已获批准，不验证 PostHog 后台保留或删除机制。
