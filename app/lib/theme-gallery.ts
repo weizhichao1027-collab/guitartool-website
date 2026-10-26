@@ -6,8 +6,11 @@ export const paidThemes = [
   { slug: "vinyl-afterhours", zh: "黑胶夜场", en: "Vinyl Afterhours", zhMood: "黑胶唱片与暖金细节", enMood: "A vinyl record with warm brass", ext: "jpg" },
   { slug: "luthier-atlas", zh: "琴匠测绘", en: "Luthier Atlas", zhMood: "制琴图纸与精密刻度", enMood: "Luthier drawings and fine scales", ext: "webp" },
   { slug: "jade-resonance", zh: "玄玉声场", en: "Jade Resonance", zhMood: "深绿玉石与温润金属", enMood: "Deep jade and brushed metal · Chinese UI shown", ext: "webp" },
+  { slug: "oddball-rehearsal", zh: "怪兽排练室", en: "Oddball Rehearsal", zhMood: "黏土角色与活泼节拍", enMood: "Clay characters and playful beats", ext: "webp" },
+  { slug: "zero-gravity-circus", zh: "失重马戏团", en: "Zero Gravity Circus", zhMood: "木偶舞台与空中节奏", enMood: "A puppet stage and airborne rhythm", ext: "webp" },
+  { slug: "plush-practice-room", zh: "布偶练习室", en: "Plush Practice Room", zhMood: "布面刺绣与猫咪陪练", enMood: "Embroidered fabric and a kitten companion", ext: "webp" },
 ] as const;
 
-export function themeImage(theme: (typeof paidThemes)[number], language: "zh" | "en") {
-  return theme.slug === "jade-resonance" ? "/release-1.1.2/jade-resonance-zh.webp" : `/release-1.1.1/themes/${language}-${theme.slug}.${theme.ext}`;
+export function themeImage(theme: (typeof paidThemes)[number]) {
+  return `/release-1.1.4/zh-${theme.slug}.webp`;
 }

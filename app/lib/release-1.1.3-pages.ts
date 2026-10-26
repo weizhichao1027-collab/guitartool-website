@@ -1,8 +1,8 @@
 import type { LandingPage } from "@/app/lib/landing-pages";
-import { RELEASE_PUBLISHED } from "@/app/lib/site";
+
 
 // Source: shipped iOS 1.1.3 controls and bundled audio; images remain labelled by their actual release.
-export const RELEASE_1_1_3_UPDATED = RELEASE_PUBLISHED;
+export const RELEASE_1_1_3_UPDATED = "2026-10-11T01:56:36+08:00";
 export const RELEASE_1_1_3_GUIDE_SLUGS = ["voice-counting-metronome", "metronome-bpm-widget"] as const;
 
 export const enRelease113Pages: LandingPage[] = [

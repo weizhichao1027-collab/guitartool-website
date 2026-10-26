@@ -1,4 +1,10 @@
-# Dependency audit — 2026-10-09
+# Dependency audit — 2026-10-26
+
+The 1.1.4 website release upgrades Next and eslint-config-next from 16.3.8 to **16.4.3**, and refreshes the transitive Zod dependency to **4.6.7**. The previous lockfile failed the current audit for Next advisories GHSA-2464-fhr4-w9xw, GHSA-p3m5-59mp-jv5r, GHSA-673q-mjm6-r5xr and Zod GHSA-mrhx-c7xc-m3w5. The final lockfile passes the full production/development dependency gate with zero known advisories. No advisory exceptions were added. The public site remains a static Pages export; these reports do not establish that a public Next server was exposed.
+
+Validation after the upgrade: installed-plugin root-directory tests, browser audio and attribution tests, lint, TypeScript/static build, local-link and release/SEO audits. Original failure and final logs are retained with the App's website-1.1.4 release evidence.
+
+## Historical decision — 2026-10-09
 
 Next and eslint-config-next remain pinned to 16.3.8; sharp remains 0.35.5. The site exports static HTML and does not run a public Next server.
 

@@ -13,8 +13,11 @@ Tune your instrument, set a beat, find the exact chord shape, then play. GuitarT
 - **Share the exact chord:** 19,244 guitar and ukulele fingerings, multiple voicings, audio previews and chord cards that can be saved or sent as ordinary images.
 - **Keep practice close:** adaptive iPhone/iPad layouts, Apple Watch tuning and audible beats, interactive widgets and 13 languages.
 
-Version **1.1.3 is available**, released October 11, 2026 (China time). On iPhone and iPad, stop playback, open Metronome → Settings → Metronome Sound and choose Voice to preview bundled Chinese counting at the current BPM. The voice stays Chinese in every interface language and works offline without a microphone. This release fixes BPM Done/Cancel, preset target-tempo synchronization and progressive-tempo recovery after interruptions. It improves large-text training layouts and timer stability, and adds an extra-large portrait widget on iOS 27+ where the system offers it. The Watch and browser metronomes do not include the Voice sound. All practice tools and four basic looks remain free; seven complete themes are separate one-time purchases.
+Version **1.1.4 is available**, released October 26, 2026 at 06:14 China time, verified through Apple's public US storefront. It adds Plush Practice Room, Oddball Rehearsal and Zero Gravity Circus as separate one-time theme purchases. Tuning and input recovery, metronome tempo changes and countdowns, chords and sharing, and theme restoration at launch are improved. Core tools and four basic looks stay free; ten complete themes are separate purchases with bundled artwork. Usage analytics is disabled, and microphone audio stays on-device.
 
+[1.1.4 release and device guide](https://weizhichao1027-collab.github.io/guitartool-website/en/guides/guitartool-1-1-4/) · [Theme and purchase help](https://weizhichao1027-collab.github.io/guitartool-website/en/guides/themes-and-purchases/)
+
+Requires iOS/iPadOS 17+; the Watch companion requires watchOS 10+. Chinese voice counting is for iPhone/iPad only. The extra-large portrait widget requires iOS 27+ and system availability. No public Android/Wear OS release has been confirmed.
 [Voice-counting guide](https://weizhichao1027-collab.github.io/guitartool-website/en/guides/voice-counting-metronome/) · [BPM and widget guide](https://weizhichao1027-collab.github.io/guitartool-website/en/guides/metronome-bpm-widget/)
 
 [Silent-bar guide](https://weizhichao1027-collab.github.io/guitartool-website/en/guides/silent-bar-metronome/) · [Tempo-stage guide](https://weizhichao1027-collab.github.io/guitartool-website/en/guides/staged-tempo-training/)
@@ -29,7 +32,7 @@ Teachers can [send a specific chord shape to a student](https://weizhichao1027-c
 
 ## 中文介绍
 
-GuitarTool（吉他工具）1.1.3 已上架。新增离线中文人声数拍与当前 BPM 试听，修复速度输入完成/取消、预设目标同步与音频中断后渐进提速恢复，改善大字号训练、细分布局和计时稳定性。iOS 27+ 在系统提供的设备与空间中可用超大竖排小组件。人声在所有界面语言中均为中文，仅 iPhone/iPad 原生 App 提供，播放不需要麦克风或联网。四款基础外观与核心功能免费；七套完整主题各自一次性购买、素材内置。支持 iPhone、iPad、Apple Watch，无广告、无需账户。
+GuitarTool（吉他工具）1.1.4 已上架。新增布偶练习室、怪兽排练室、失重马戏团，十套完整主题分别一次性购买、素材内置；四款基础主题和调音、节拍、和弦工具免费离线。改善调音稳定性与中断恢复、节拍变速与倒计时、和弦选择试听分享及启动主题恢复。本版停用使用分析，无广告、无需账户、音频不上传。Android/Wear OS 暂无公开上线确认。
 
 [观看 B 站介绍](https://www.bilibili.com/video/BV1bY4d6GEkw/) · [中文支持](https://weizhichao1027-collab.github.io/guitartool-website/support/) · [English support](https://weizhichao1027-collab.github.io/guitartool-website/en/support/) · [Privacy policy](https://weizhichao1027-collab.github.io/GuitarTool-Privacy/)
 
@@ -47,6 +50,8 @@ npm run audit:pages
 
 `npm run generate:chords` refreshes the popular-chord data. Successful Pages deployments notify IndexNow automatically. See [MARKETING_HANDOFF.md](./MARKETING_HANDOFF.md) for verified release, distribution and deployment records.
 
-## 1.1.4 隐私说明准备（2026-10-20）
+## Release maintenance
 
-已发布版本与下载资料仍以 1.1.3 为基线。中英支持、首页、Press Kit 及离线工具／闪光灯／Watch 指南已区分 1.1.3 的无分析行为与准备中 1.1.4 默认关闭、明确同意后启用的 PostHog 分析。支持页提供美国存储说明、设置路径、关闭前保存分析 ID 和邮箱删除申请，并将两套新主题描述为尚未发布的预览。此更新不代表 1.1.4 或新内购已获批准，不验证 PostHog 后台保留或删除机制。
+The public policy now describes released 1.1.4. Earlier analytics opt-in preparation is superseded: this release has no analytics entry, does not initialize PostHog and sends no usage or diagnostic analytics. Historical test data is not automatically deleted. See the policy for requests and website-hosting scope.
+
+Run `npm test`, `npm run lint`, `npm run audit:dependencies`, `npm run build:pages`, `npm run audit:pages` and `npm run audit:release` before publishing. `public/release-1.1.4/sources.json` records source paths and SHA-256 for 35 current web images. Original artwork and capture inputs are retained in the companion App repository. Search notifications and deployment are not evidence of indexing or rankings.

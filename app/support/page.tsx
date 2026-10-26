@@ -3,10 +3,10 @@ import { SupportPage } from "@/app/components/SupportPage";
 import { absoluteUrl } from "@/app/lib/site";
 
 export const metadata: Metadata = {
-  title: "GuitarTool 技术支持｜1.1.3 人声数拍、BPM 与小组件帮助",
-  description: "GuitarTool 1.1.3 技术支持：离线中文人声数拍、BPM 完成与取消、iOS 27+ 超大竖排小组件、练习预设目标恢复、Watch 调音与购买恢复，另说明准备中的 1.1.4 可选分析及删除申请。",
+  title: "GuitarTool 技术支持｜1.1.4 调音、主题与恢复购买",
+  description: "GuitarTool 1.1.4 官方支持：十款主题与恢复购买、调音故障、节拍训练、人声数拍、和弦分享、iPad、Apple Watch 和小组件帮助。本版已停用使用分析。",
   alternates: { canonical: absoluteUrl("/support/"), languages: { "zh-CN": absoluteUrl("/support/"), en: absoluteUrl("/en/support/"), "x-default": absoluteUrl("/en/support/") } },
-  openGraph: { title: "GuitarTool 技术支持", description: "查看 GuitarTool 1.1.3 人声数拍、BPM 输入、小组件、练习预设、Apple Watch 调音与购买帮助，以及准备中的 1.1.4 隐私选择。", url: absoluteUrl("/support/"), type: "website" },
+  openGraph: { title: "GuitarTool 技术支持", description: "GuitarTool 1.1.4 官方支持：十款主题与恢复购买、调音故障、节拍训练、人声数拍、和弦分享、iPad、Apple Watch 和小组件帮助。本版已停用使用分析。", url: absoluteUrl("/support/"), type: "website" },
 };
 
 export default function ChineseSupportPage() { return <SupportPage language="zh" />; }

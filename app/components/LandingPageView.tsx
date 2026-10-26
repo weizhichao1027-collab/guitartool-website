@@ -26,6 +26,7 @@ export function LandingPageView({ page, language }: { page: LandingPage; languag
   const downloadCampaign = appStoreCampaignForGuide(page.slug);
   const downloadDestination = appStoreDestinationForGuide(page.slug);
   const destinationLabel = {
+    home: isZh ? "App Store 产品页" : "App Store product page",
     tuner: isZh ? "调音器功能页" : "tuner product page",
     metronome: isZh ? "节拍器功能页" : "metronome product page",
     chords: isZh ? "和弦功能页" : "chord product page",
@@ -35,7 +36,7 @@ export function LandingPageView({ page, language }: { page: LandingPage; languag
     {
       "@context": "https://schema.org",
       "@type": "WebPage",
-      ...([...RELEASE_1_1_3_GUIDE_SLUGS, "silent-bar-metronome", "staged-tempo-training", "progressive-tempo-training", "online-metronome", "offline-guitar-tools", "apple-watch-metronome", "apple-watch-metronome-audio-design", "visual-metronome"].some((slug) => slug === page.slug) ? { dateModified: PRIVACY_NOTICE_GUIDE_SLUGS.some((slug) => slug === page.slug) ? PRIVACY_NOTICE_UPDATED : RELEASE_UPDATED } : {}),
+      ...(["guitartool-1-1-4", "themes-and-purchases", ...RELEASE_1_1_3_GUIDE_SLUGS, "silent-bar-metronome", "staged-tempo-training", "progressive-tempo-training", "online-metronome", "offline-guitar-tools", "apple-watch-metronome", "apple-watch-metronome-audio-design", "visual-metronome"].some((slug) => slug === page.slug) ? { dateModified: PRIVACY_NOTICE_GUIDE_SLUGS.some((slug) => slug === page.slug) ? PRIVACY_NOTICE_UPDATED : RELEASE_UPDATED } : {}),
       name: page.title,
       description: page.description,
       url: canonical,
@@ -57,7 +58,8 @@ export function LandingPageView({ page, language }: { page: LandingPage; languag
       "@type": "BreadcrumbList",
       itemListElement: [
         { "@type": "ListItem", position: 1, name: isZh ? "GuitarTool 首页" : "GuitarTool home", item: absoluteUrl(isZh ? "/" : "/en/") },
-        { "@type": "ListItem", position: 2, name: page.title, item: canonical },
+        { "@type": "ListItem", position: 2, name: isZh ? "练习指南" : "Practice guides", item: absoluteUrl(`${prefix}/`) },
+        { "@type": "ListItem", position: 3, name: page.title, item: canonical },
       ],
     },
   ];
@@ -105,6 +107,10 @@ export function LandingPageView({ page, language }: { page: LandingPage; languag
           <p className="conversionNote">
             {isZh ? `核心工具免费且离线 · 无广告 · 前往${destinationLabel}` : `Core tools free and offline · no ads · opens the ${destinationLabel}`}
           </p>
+          {["guitartool-1-1-4", "themes-and-purchases"].includes(page.slug) ? <p className="conversionNote">
+            {isZh ? "更新：2026-10-26 · 官方资料：" : "Updated 26 October 2026 · Official sources: "}
+            <a href={APP_STORE_URL}>App Store</a> · <Link href={isZh ? "/support/" : "/en/support/"}>{isZh ? "技术支持" : "Support"}</Link> · <a href={isZh ? "https://weizhichao1027-collab.github.io/GuitarTool-Privacy/" : "https://weizhichao1027-collab.github.io/GuitarTool-Privacy/en/"}>{isZh ? "隐私政策" : "Privacy policy"}</a>
+          </p> : null}
           <ul className="proofStrip">
             {page.proof.map((item) => <li key={item}>{item}</li>)}
           </ul>

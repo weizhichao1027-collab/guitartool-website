@@ -1,8 +1,8 @@
 export const APP_NAME = "GuitarTool";
-export const RELEASE_VERSION = "1.1.3";
-export const RELEASE_UPDATED = "2026-10-11";
-export const RELEASE_PUBLISHED = "2026-10-11T01:56:36+08:00";
-export const PRIVACY_NOTICE_UPDATED = "2026-10-20";
+export const RELEASE_VERSION = "1.1.4";
+export const RELEASE_UPDATED = "2026-10-26";
+export const RELEASE_PUBLISHED = "2026-10-26T06:14:15+08:00";
+export const PRIVACY_NOTICE_UPDATED = "2026-10-26";
 export const PRIVACY_NOTICE_GUIDE_SLUGS = ["offline-guitar-tools", "visual-metronome", "apple-watch-metronome"] as const;
 export const APP_STORE_URL = "https://apps.apple.com/app/id6761914163";
 const APP_STORE_PROVIDER_TOKEN = "128747267";
@@ -74,7 +74,8 @@ const GUIDE_CAMPAIGNS: Record<string, string> = {
   "guitar-chord-fingering-finder": "seo_chord_finder",
 };
 
-export function appStoreDestinationForGuide(slug: string): "tuner" | "metronome" | "chords" {
+export function appStoreDestinationForGuide(slug: string): "tuner" | "metronome" | "chords" | "home" {
+  if (["guitartool-1-1-4", "themes-and-purchases"].includes(slug)) return "home";
   if (slug.includes("chord") || slug.includes("capo")) return "chords";
   if (
     slug.includes("metronome") ||

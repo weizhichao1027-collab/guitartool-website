@@ -35,13 +35,15 @@ const localizedWatchPreviews: ImageEntry[] = localePages.map((page) => ({
 }));
 
 const editorialImages: ImageEntry[] = [
-  ...localePages.map((page) => ({ page: `/${page.slug}/`, image: `/release-1.1.2/${page.slug}-training.webp`, title: `GuitarTool 1.1.2 · ${page.htmlLang}`, caption: page.versionUpdate.screenshotCaption })),
+  ...(["zh", "en"] as const).flatMap(language => ["themes", "hero", "training", "devices", "metronome", "chords", "widgets"].map(name => ({ page: language === "zh" ? "/" : "/en/", image: `/release-1.1.4/${language}-${name}.webp`, title: `GuitarTool 1.1.4 ${name} · ${language}`, caption: "App Store production artwork supplied for 1.1.4; retained native inputs may predate the release." }))),
+  ...(["zh", "en"] as const).map(language => ({ page: `${language === "zh" ? "/" : "/en/"}guides/guitartool-1-1-4/`, image: `/release-1.1.4/${language}-themes.webp`, title: `GuitarTool 1.1.4 themes · ${language}`, caption: "Current theme artwork; complete themes are separate purchases." })),
+  ...localePages.map((page) => ({ page: `/${page.slug}/`, image: `/release-1.1.4/${page.slug}-themes.webp`, title: `GuitarTool 1.1.4 · ${page.htmlLang}`, caption: page.versionUpdate.screenshotCaption })),
   ...(["zh", "en"] as const).flatMap(language => ["", "guides/silent-bar-metronome/", "guides/staged-tempo-training/"].map(route => ({ page: `${language === "zh" ? "/" : "/en/"}${route}`, image: `/release-1.1.2/${language}-training.webp`, title: language === "zh" ? "GuitarTool 1.1.2 节奏训练" : "GuitarTool 1.1.2 rhythm training", caption: language === "zh" ? "真实界面：静音小节与分段速度训练。" : "Real native interface: silent bars and staged tempo practice." }))),
   { page: "/", image: "/release-1.1.1/zh-large-widget.png", title: "GuitarTool 1.1.1 大号节拍器小组件", caption: "可在主屏幕切换单拍、八分、三连、十六分和 Swing。" },
   { page: "/en/", image: "/release-1.1.1/en-large-widget.png", title: "GuitarTool 1.1.1 large metronome widget", caption: "Choose beat, eighth, triplet, sixteenth or Swing from the Home Screen." },
   ...paidThemes.flatMap((theme): ImageEntry[] => [
-    { page: "/", image: themeImage(theme, "zh"), title: `GuitarTool ${theme.zh}节拍器主题`, caption: `${theme.zh}付费主题的完整节拍器页面；每套主题分别购买。` },
-    { page: "/en/", image: themeImage(theme, "en"), title: `GuitarTool ${theme.en} metronome theme`, caption: `Complete metronome screen in the separately purchased ${theme.en} theme.` },
+    { page: "/", image: themeImage(theme), title: `GuitarTool ${theme.zh}节拍器主题`, caption: `${theme.zh}付费主题的完整节拍器页面；每套主题分别购买。` },
+    { page: "/en/", image: themeImage(theme), title: `GuitarTool ${theme.en} metronome theme`, caption: `iOS 1.1.4 metronome, Chinese interface, in the separately purchased ${theme.en} theme.` },
   ]),
   { page: "/", image: "/zh-watch-tuner.jpg", title: "GuitarTool 1.1.1 Apple Watch 调音器", caption: "手表调音器支持吉他、尤克里里、贝斯和半音阶，需主动开始收音。" },
   { page: "/en/", image: "/en-watch-tuner.jpg", title: "GuitarTool 1.1.1 Apple Watch tuner", caption: "Watch tuning for guitar, ukulele, bass and chromatic mode starts only after a tap." },

@@ -36,7 +36,7 @@ const features = [
     title: "一个和弦，不止一种答案。",
     copy: "吉他与尤克里里各 855 个和弦名称，共收录 19,244 个指法。切换、编辑、识别和试听后，还能把当前按法保存或分享成清晰卡片。",
     points: ["固定五品视窗，纵览完整 20 品", "交互编辑、识别与真实试听", "和弦卡片预览、保存与系统分享"],
-    image: "/chords.webp",
+    image: "/release-1.1.4/zh-chords.webp",
     alt: "GuitarTool 吉他与尤克里里和弦库展示",
     tone: "blush",
   },
@@ -53,10 +53,10 @@ const features = [
 ] as const;
 
 const faqs = [
-  ["GuitarTool 1.1.3 更新了什么？", "iPhone、iPad 的“节拍器 → 设置 → 音色 → 人声”新增离线中文数拍，并按当前 BPM 试听。新版修复速度输入的完成/取消、预设目标速度同步和音频中断后的渐进提速恢复；iOS 27+ 新增超大竖排小组件，改善大字号训练布局与练习计时稳定性。"],
+  ["GuitarTool 1.1.4 更新了什么？", "1.1.4 新增布偶练习室、怪兽排练室和失重马戏团三套可预览、单独一次性购买的主题，并改善调音稳定性与输入中断恢复、节拍变速与倒计时、和弦选择试听与分享、启动时主题恢复。核心工具和四款基础外观继续免费；本版停用使用分析。"],
   ["人声数拍需要麦克风或联网吗？", "不需要。人声素材随 App 内置，所有界面语言均播放中文数拍，每小节重新从一开始，细分仍用轻点击。该音色在 iPhone、iPad 原生 App 提供，Watch 与网页节拍器没有人声音色。"],
-  ["需要联网或注册账号吗？", "调音、节拍器、和弦库以及四款基础主题可离线使用，无需注册账号。七套完整主题素材已内置，购买解锁后可离线使用；购买或恢复购买可能需要联网。"],
-  ["七套完整主题如何购买？", "晨雾琴房、月面电台、纸上乐队、口袋合成器、黑胶夜场、琴匠测绘和玄玉声场分别通过 App Store 应用内购买解锁。素材已内置，无需连接主题后端或另行下载；四款基础主题保持免费。"],
+  ["需要联网或注册账号吗？", "调音、节拍器、和弦库以及四款基础主题可离线使用，无需注册账号。十套完整主题素材已内置，购买解锁后可离线使用；购买或恢复购买可能需要联网。"],
+  ["十套完整主题如何购买？", "晨雾琴房、月面电台、纸上乐队、口袋合成器、黑胶夜场、琴匠测绘、玄玉声场、怪兽排练室、失重马戏团和布偶练习室分别通过 App Store 应用内购买解锁。素材已内置，无需连接主题后端或另行下载；四款基础主题保持免费。"],
   ["调音器会保存我的声音吗？", "不会。麦克风音频只用于设备端实时音高检测，不会保存为文件，也不会上传到任何服务器。"],
   ["Apple Watch 可以调音吗？", "可以。1.1.1 的 Watch 调音器支持吉他、尤克里里、贝斯和半音阶模式。点按开始才会使用手表麦克风；停止、切页或离开 App 即结束，音频仅在手表本地处理。"],
   ["支持哪些设备？", "支持 iPhone 与 iPad 自适应界面，附带 Apple Watch 调音器与节拍器，以及小、中、大号主屏幕交互式小组件；iOS 27+ 在系统允许的设备和空间中可添加超大竖排样式。Watch 节拍器使用获准的后台音频路由时可落腕继续播放，前台扬声器回退模式在界面非活跃时停止。"],
@@ -69,7 +69,7 @@ export default function Home() {
   return (
     <main lang="zh-CN">
       <JsonLd data={[
-        { "@context": "https://schema.org", "@type": "SoftwareApplication", name: "GuitarTool", softwareVersion: RELEASE_VERSION, dateModified: RELEASE_UPDATED, description: "面向吉他与尤克里里演奏者的练习工具：iPhone、iPad 和 Apple Watch 上调音、跟拍；和弦功能免费且离线可用，七套完整主题分别内购解锁。", url: absoluteUrl("/"), downloadUrl: appStoreUrl, applicationCategory: "MusicApplication", operatingSystem: "iOS, iPadOS, watchOS", inLanguage: supportedLanguageCodes, offers: { "@type": "Offer", price: "0", priceCurrency: "CNY" }, featureList: ["实时弦乐调音器与三秒读数保留", "Apple Watch 吉他、尤克里里、贝斯及半音阶调音器", "20–500 BPM 节拍器与离线中文人声数拍、当前 BPM 试听", "iOS 27+ 系统支持时可用超大竖排小组件", "静音小节与最多六段速度训练，随预设保存", "后置闪光灯节拍：全部主拍或仅重音、三档强度", "19,244 个吉他与尤克里里指法", "和弦卡片预览、保存与分享", "Apple Watch 节拍器：获准后台音频路由时落腕继续；前台回退非活跃即停止", "大号主屏幕小组件细分节奏与 Swing", "七套独立付费的完整视觉主题"] },
+        { "@context": "https://schema.org", "@type": "SoftwareApplication", name: "GuitarTool", softwareVersion: RELEASE_VERSION, dateModified: RELEASE_UPDATED, description: "面向吉他与尤克里里演奏者的练习工具：iPhone、iPad 和 Apple Watch 上调音、跟拍；和弦功能免费且离线可用，十套完整主题分别内购解锁。", url: absoluteUrl("/"), downloadUrl: appStoreUrl, applicationCategory: "MusicApplication", operatingSystem: "iOS, iPadOS, watchOS", inLanguage: supportedLanguageCodes, offers: { "@type": "Offer", price: "0", priceCurrency: "CNY" }, featureList: ["实时弦乐调音器与三秒读数保留", "Apple Watch 吉他、尤克里里、贝斯及半音阶调音器", "20–500 BPM 节拍器与离线中文人声数拍、当前 BPM 试听", "iOS 27+ 系统支持时可用超大竖排小组件", "静音小节与最多六段速度训练，随预设保存", "后置闪光灯节拍：全部主拍或仅重音、三档强度", "19,244 个吉他与尤克里里指法", "和弦卡片预览、保存与分享", "Apple Watch 节拍器：获准后台音频路由时落腕继续；前台回退非活跃即停止", "大号主屏幕小组件细分节奏与 Swing", "十套独立付费的完整视觉主题"] },
         { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqs.map(([question, answer]) => ({ "@type": "Question", name: question, acceptedAnswer: { "@type": "Answer", text: answer } })) },
         { "@context": "https://schema.org", "@type": "VideoObject", name: "GuitarTool 中文完整介绍（横屏）", description: "36 秒介绍 GuitarTool 调音器、节拍器、和弦卡片、小组件与多设备体验。", thumbnailUrl: absoluteUrl("/og.png"), uploadDate: "2026-08-28", duration: "PT36S", contentUrl: absoluteUrl("/media-kit/video/GuitarTool-Full-Intro-zh-Hans-854x480.mp4") },
         { "@context": "https://schema.org", "@type": "VideoObject", name: "GuitarTool 中文完整介绍（竖屏）", description: "为移动端优化的 36 秒 GuitarTool 中文完整介绍。", thumbnailUrl: absoluteUrl("/media-kit/social/guitartool-chord-cards-zh-Hans-1080x1350.png"), uploadDate: "2026-08-28", duration: "PT36S", contentUrl: absoluteUrl("/media-kit/video/GuitarTool-Full-Intro-zh-Hans-480x854.mp4") },
@@ -128,6 +128,17 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="releaseWatch shell sectionPad" aria-labelledby="release114-heading">
+        <div>
+          <p className="eyebrow"><span /> 1.1.4 现已上架 · 2026 年 10 月 26 日</p>
+          <h2 id="release114-heading">下一首，<br />换个场景练。</h2>
+          <p>布偶练习室、怪兽排练室、失重马戏团，三套新的完整主题加入练习。十款主题可先预览，再分别一次性购买；四款基础外观和核心工具依然免费。</p>
+          <p>调音稳定性、节拍变速与倒计时、和弦分享、启动主题恢复同步改善。本版停用使用分析，练习音频留在本机。</p>
+          <Link className="textCta" href="/guides/guitartool-1-1-4/">查看更新与设备支持 →</Link>
+        </div>
+        <Image src={assetPath("/release-1.1.4/zh-themes.webp")} alt="GuitarTool 1.1.4 中文主题商店预览" width={660} height={1434} sizes="(max-width: 700px) 85vw, 416px" />
+      </section>
+
       <section className="ticker" aria-label="主要功能">
         <div>
           <span>GUITAR</span><i>✦</i><span>UKULELE</span><i>✦</i><span>TUNER</span><i>✦</i><span>METRONOME</span><i>✦</i><span>CHORDS</span><i>✦</i><span>BASIC THEMES</span>
@@ -148,6 +159,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+
 
       <section className="features sectionPad" id="features">
         <div className="shell sectionHeading">
@@ -187,7 +200,7 @@ export default function Home() {
         <div className="introVideoCopy">
           <p className="eyebrow"><span /> 36 秒完整介绍</p>
           <h2>先看它如何融入练习，<br />再决定从哪里开始。</h2>
-          <p>横屏版适合桌面与大屏观看，移动端会自动使用中文竖屏版。视频展示调音、节拍、和弦卡片与多设备核心体验；视频为早期核心功能演示，未展示 1.1.3 人声或超大竖排组件。下方训练图来自 1.1.2，亦被当前商店页面复用。</p>
+          <p>横屏版适合桌面与大屏观看，移动端会自动使用中文竖屏版。视频展示调音、节拍、和弦卡片与多设备核心体验；视频为早期核心功能演示，未展示后来新增的人声、超大竖排小组件或 1.1.4 三款主题。下方图片使用本次版本的商店制作图。</p>
         </div>
         <div className="introVideoFrame">
           <video controls playsInline preload="metadata" aria-label="GuitarTool 中文完整介绍视频">
@@ -199,16 +212,16 @@ export default function Home() {
 
       <section className="releaseWatch shell sectionPad" aria-labelledby="training-heading">
         <div>
-          <p className="eyebrow"><span /> 1.1.3 · 免费节奏练习</p>
+          <p className="eyebrow"><span /> 免费节奏练习 · 人声数拍与节奏训练</p>
           <h2 id="training-heading">点击声停了，<br />你的节奏继续。</h2>
           <p>在“节拍器 → 设置 → 音色”停止播放后选择“人声”，按当前 BPM 听中文数拍，全程离线。<Link href="/guides/voice-counting-metronome/">人声数拍操作指南 →</Link></p>
           <p>打开节拍器 → 预设 → 节奏训练。让有声与静音小节交替，检查自己能否在声音回来时对齐；或设置最多六个速度阶段，按小节稳步提速。</p>
           <p>支持 20–500 BPM，每阶段 1–64 小节，配置可保存为自定义预设。训练功能在 iPhone 和 iPad 上免费、离线使用。</p>
           <Link className="textCta" href="/guides/silent-bar-metronome/">静音小节怎么练 →</Link><br />
           <Link className="textCta" href="/guides/staged-tempo-training/">设置分段速度训练 →</Link>
-          <p>训练图为 1.1.2 商店预览，当前商店沿用；新增人声控件见操作指南。</p>
+          <p>1.1.4 商店训练预览；人声控件的使用步骤见操作指南。</p>
         </div>
-        <Image src={assetPath("/release-1.1.2/zh-training.webp")} alt="GuitarTool 1.1.2 静音小节与分段速度训练真实界面" width={660} height={1434} sizes="(max-width: 700px) 85vw, 416px" />
+        <Image src={assetPath("/release-1.1.4/zh-training.webp")} alt="GuitarTool 1.1.4 商店节奏训练预览" width={660} height={1434} sizes="(max-width: 700px) 85vw, 416px" />
       </section>
 
       <section className="extras shell sectionPad">
@@ -219,12 +232,12 @@ export default function Home() {
         <div className="extraGrid">
           <article className="extraCard themeCard">
             <div className="extraText">
-              <p className="cardLabel">主题展厅 · 1.1.2 新增玄玉声场</p>
-              <h3>七套内置付费主题，<br />让整套练习界面换一种性格。</h3>
-              <p>晨雾琴房、月面电台、纸上乐队、口袋合成器、黑胶夜场、琴匠测绘与玄玉声场七套完整主题素材已内置于 App，每套分别购买。主题会联动调音器、节拍器、和弦库与分享卡；解锁后无需另行下载素材，可离线使用。四款基础主题继续免费。</p>
-              <div className="swatches" aria-label="四款免费基础主题；主题展厅另有七套内置付费完整主题">
+              <p className="cardLabel">主题展厅 · 1.1.4 新增三套主题</p>
+              <h3>十套内置付费主题，<br />让整套练习界面换一种性格。</h3>
+              <p>晨雾琴房、月面电台、纸上乐队、口袋合成器、黑胶夜场、琴匠测绘、玄玉声场、怪兽排练室、失重马戏团与布偶练习室十套完整主题素材已内置于 App，每套分别购买。主题会联动调音器、节拍器、和弦库与分享卡；解锁后无需另行下载素材，可离线使用。四款基础主题继续免费。</p>
+              <div className="swatches" aria-label="四款免费基础主题；主题展厅另有十套内置付费完整主题">
                 <span className="day" /><span className="night" /><span className="pine" /><span className="graphite" />
-                <b>7 PAID THEMES</b>
+                <b>10 PAID THEMES</b>
               </div>
             </div>
             <Image src={assetPath("/luthier-atlas.webp")} alt="GuitarTool 1.1.0 琴匠测绘完整主题的节拍器界面" width={833} height={1809} sizes="(max-width: 700px) 86vw, 460px" />
@@ -239,22 +252,22 @@ export default function Home() {
           </article>
         </div>
         <div className="updatePromise">
-          <span>现已上架 · 1.1.3</span>
-          <p><strong>跟着人声数拍，把双手留给琴弦。</strong> 离线中文人声按当前 BPM 试听，速度输入可可靠确认或取消，iOS 27+ 支持系统提供的超大竖排小组件。预设目标速度、中断后渐进提速恢复、大字号训练与练习计时更加稳定。<Link href="/guides/metronome-bpm-widget/">速度输入与小组件指南 →</Link></p>
+          <span>现已上架 · 1.1.4</span>
+          <p><strong>三种新场景，陪你练下一首。</strong> 布偶练习室、怪兽排练室、失重马戏团加入主题展厅；每套独立一次性购买。调音、中断恢复、节拍变速、和弦分享和启动主题恢复同步改善。<Link href="/guides/guitartool-1-1-4/">查看 1.1.4 更新与设备支持 →</Link></p>
           <b aria-hidden="true">↗</b>
         </div>
       </section>
 
       <section className="themeGallery sectionPad" id="paid-themes" aria-labelledby="paid-themes-heading">
         <div className="shell themeGalleryIntro">
-          <p className="eyebrow"><span /> 主题展厅 · 七套完整界面</p>
-          <h2 id="paid-themes-heading">从同一个节拍器，<br />走进七种练习氛围。</h2>
-          <p>下面依次展示七套付费主题的真实节拍器页面。每套主题分别购买，解锁后也会用于调音器、和弦库与分享卡；四款基础主题仍免费。</p>
+          <p className="eyebrow"><span /> 主题展厅 · 十套完整界面</p>
+          <h2 id="paid-themes-heading">从同一个节拍器，<br />走进十种练习氛围。</h2>
+          <p>下面依次展示十套付费主题的真实节拍器页面。每套主题分别购买，解锁后也会用于调音器、和弦库与分享卡；四款基础主题仍免费。</p>
         </div>
         <div className="shell themeGalleryGrid">
           {paidThemes.map((theme, index) => (
             <figure className={`themeTile themeTile-${theme.slug}`} key={theme.slug}>
-              <div className="themeTileImage"><Image src={assetPath(themeImage(theme, "zh"))} alt={`GuitarTool ${theme.zh}付费主题的完整节拍器页面`} width={1320} height={2868} sizes="(max-width: 600px) 85vw, (max-width: 900px) 45vw, 30vw" loading="lazy" /></div>
+              <div className="themeTileImage"><Image src={assetPath(themeImage(theme))} alt={`GuitarTool ${theme.zh}付费主题的完整节拍器页面`} width={1320} height={2868} sizes="(max-width: 600px) 85vw, (max-width: 900px) 45vw, 30vw" loading="lazy" /></div>
               <figcaption><span>{String(index + 1).padStart(2, "0")}</span><div><h3>{theme.zh}</h3><p>{theme.zhMood}</p></div><b>单独解锁</b></figcaption>
             </figure>
           ))}
@@ -280,7 +293,7 @@ export default function Home() {
             <div className="devicePills"><span>iPhone</span><span>iPad</span><span>Apple Watch</span></div>
           </div>
           <div className="devicesMedia">
-            <Image src={assetPath("/devices.webp")} alt="GuitarTool 在 iPhone、iPad 与 Apple Watch 上运行" width={833} height={1800} sizes="(max-width: 850px) 90vw, 520px" />
+            <Image src={assetPath("/release-1.1.4/zh-devices.webp")} alt="GuitarTool 在 iPhone、iPad 与 Apple Watch 上运行" width={833} height={1800} sizes="(max-width: 850px) 90vw, 520px" />
           </div>
         </div>
       </section>
@@ -293,12 +306,12 @@ export default function Home() {
             <h2>你的练习声音，<br /><em>只留在你的设备上。</em></h2>
           </div>
           <div className="privacyCopy">
-            <p>GuitarTool 不出售个人信息，也不把信息用于广告或追踪。调音器音频只在设备上实时处理；四款基础主题免费，已上架 1.1.3 的七套完整主题素材内置且购买后可离线使用；1.1.3 不采集功能使用分析数据。</p>
-            <p>准备中的 1.1.4 提供可选 PostHog 使用分析，默认关闭，明确同意后才在美国处理有限使用与技术信息；可在“个性化 → 帮助改进 GuitarTool”管理。关闭不会自动删除已上传数据，申请删除前请保存分析 ID。详情见隐私政策；1.1.4 尚未发布。</p>
+            <p>GuitarTool 1.1.4 无需账户、没有广告或跨应用追踪。调音器音频只在设备上实时处理，不保存或上传；四款基础主题免费，十套独立付费主题的素材内置，解锁后可离线使用。</p>
+            <p>1.1.4 已停用使用分析，不提供分析开关，不初始化 PostHog，也不发送使用或诊断分析事件。历史测试版已上传的数据不会自动删除；相关申请方式与网站托管范围见完整隐私政策。</p>
             <ul>
               <li><b>01</b><span><strong>无需账户</strong>没有注册、登录或云端个人资料。</span></li>
               <li><b>02</b><span><strong>音频不上传</strong>不保存录音，不发送到开发者或第三方。</span></li>
-              <li><b>03</b><span><strong>无广告与追踪</strong>没有广告或跨 App 追踪；1.1.4 可选分析默认关闭。</span></li>
+              <li><b>03</b><span><strong>无广告与追踪</strong>没有广告或跨 App 追踪；1.1.4 不采集使用分析。</span></li>
             </ul>
             <a className="lightButton" href={privacyUrl}>阅读完整隐私政策 <span>↗</span></a>
           </div>

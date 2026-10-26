@@ -67,70 +67,70 @@ const localePageTemplates: Array<Omit<LocalePage, "description" | "versionUpdate
 
 const latestUpdate: Record<string, { title: string; body: string; description: string; screenshotCaption: string }> = {
   "zh-hant": {
-    "title": "離線中文人聲數拍，速度輸入更順手",
-    "body": "1.1.3 新增離線中文人聲數拍，按目前 BPM 試聽；所有介面語言皆使用中文人聲。修正速度輸入的完成與取消、預設目標速度同步及音訊中斷後的漸進提速恢復。iOS 27+ 在系統提供時可用超大直式小工具，並改善大字體訓練及計時穩定性。核心功能及四款基本外觀免費，七套完整主題分別購買。",
-    "description": "GuitarTool 1.1.3：免費離線調音器、節拍器與和弦庫，新增中文人聲數拍、BPM 試聽及 iOS 27+ 超大直式小工具。",
-    "screenshotCaption": "1.1.2 節奏訓練商店預覽，沿用於目前版本；未展示新增人聲或超大直式小工具。"
+    "title": "三套新主題，練習更穩定",
+    "body": "1.1.4 已上架：新增布偶練習室、怪獸排練室與失重馬戲團三套獨立一次性付費主題。改善調音與輸入中斷恢復、節拍變速與倒數、和弦選擇試聽分享，以及啟動時的主題恢復。核心工具與四款基本外觀免費；十套完整主題分別購買、素材內建。本版停用使用分析，不上傳音訊。支援 iPhone、iPad 與 Apple Watch；超大直式小工具需 iOS 27+ 且由系統提供。",
+    "description": "GuitarTool 1.1.4：免費離線調音器、節拍器與和弦庫，三套新主題、十套獨立內購，無廣告、不收集使用分析。",
+    "screenshotCaption": "1.1.4 App Store 主題預覽；完整主題分別購買。"
   },
   "es": {
-    "title": "Cuenta los pulsos con voz china sin conexión",
-    "body": "La versión 1.1.3 añade conteo en chino sin conexión y una prueba al BPM actual, independientemente del idioma de la interfaz. Corrige confirmar y cancelar BPM, sincronizar el tempo objetivo de los ajustes y recuperar el aumento gradual tras interrupciones. En iOS 27+ hay un widget vertical extragrande cuando el sistema lo ofrece. Mejora el texto grande y el temporizador. Herramientas y cuatro estilos básicos gratis; siete temas de compra individual.",
-    "description": "GuitarTool 1.1.3: afinador, metrónomo y acordes gratis sin conexión, conteo en chino, prueba de BPM y widget vertical extragrande en iOS 27+.",
-    "screenshotCaption": "Vista de entrenamiento de la versión 1.1.2 reutilizada en la tienda actual; no muestra la voz ni el nuevo widget."
+    "title": "Tres temas nuevos y práctica más fiable",
+    "body": "La versión 1.1.4 ya está disponible. Añade Plush Practice Room, Oddball Rehearsal y Zero Gravity Circus, cada uno como compra única independiente. Mejora la afinación, la recuperación de audio, los cambios de tempo, la cuenta atrás, los acordes y la restauración del tema al iniciar. Herramientas y cuatro estilos básicos gratis; diez temas de compra individual con recursos incluidos. Sin analítica de uso ni envío de audio. iPhone, iPad y Apple Watch; widget vertical extragrande en iOS 27+ cuando el sistema lo ofrece.",
+    "description": "GuitarTool 1.1.4: afinador, metrónomo y acordes gratis sin conexión, tres temas nuevos y diez temas de compra individual. Sin anuncios ni analítica de uso.",
+    "screenshotCaption": "Vista de temas para App Store 1.1.4; los temas completos se compran por separado."
   },
   "pt-br": {
-    "title": "Contagem em chinês offline e controle de BPM",
-    "body": "A versão 1.1.3 traz contagem em chinês offline e prévia no BPM atual, em qualquer idioma da interface. Corrige confirmar e cancelar BPM, sincronizar o andamento-alvo dos presets e retomar a aceleração gradual após interrupções. No iOS 27+, o widget vertical extragrande aparece quando oferecido pelo sistema. Melhora texto grande e temporizador. Ferramentas e quatro visuais básicos grátis; sete temas vendidos separadamente.",
-    "description": "GuitarTool 1.1.3: afinador, metrônomo e acordes grátis offline, contagem em chinês, prévia de BPM e widget vertical extragrande no iOS 27+.",
-    "screenshotCaption": "Prévia de treino da versão 1.1.2 reutilizada na loja atual; não mostra a voz ou o novo widget."
+    "title": "Três novos temas e prática mais estável",
+    "body": "A versão 1.1.4 está disponível. Plush Practice Room, Oddball Rehearsal e Zero Gravity Circus são novas compras únicas separadas. Melhorias na afinação, recuperação de áudio, mudanças de andamento, contagem regressiva, acordes e restauração do tema ao abrir. Ferramentas e quatro visuais básicos grátis; dez temas individuais com recursos incluídos. Sem análise de uso ou envio de áudio. iPhone, iPad e Apple Watch; widget vertical extragrande no iOS 27+ quando oferecido pelo sistema.",
+    "description": "GuitarTool 1.1.4: afinador, metrônomo e acordes grátis offline, três novos temas e dez temas vendidos separadamente. Sem anúncios nem análise de uso.",
+    "screenshotCaption": "Prévia de temas da App Store 1.1.4; temas completos vendidos separadamente."
   },
   "fr": {
-    "title": "Comptez les temps en chinois, hors ligne",
-    "body": "La version 1.1.3 ajoute un comptage vocal en chinois hors ligne, avec écoute au BPM actuel, quelle que soit la langue de l’interface. Elle corrige la validation et l’annulation du BPM, la synchronisation du tempo cible des préréglages et la reprise de l’accélération après interruption. Un widget portrait extra-large est disponible sur iOS 27+ lorsque le système le propose. Texte agrandi et minuteur améliorés. Outils et quatre styles gratuits ; sept thèmes vendus séparément.",
-    "description": "GuitarTool 1.1.3 : accordeur, métronome et accords gratuits hors ligne, comptage en chinois, écoute au BPM choisi et widget portrait sur iOS 27+.",
-    "screenshotCaption": "Aperçu d’entraînement 1.1.2 réutilisé dans la fiche actuelle ; il ne montre ni la voix ni le nouveau widget."
+    "title": "Trois nouveaux thèmes, une pratique plus stable",
+    "body": "La version 1.1.4 est disponible. Plush Practice Room, Oddball Rehearsal et Zero Gravity Circus sont trois nouveaux achats uniques séparés. L’accordage, la reprise audio, les changements de tempo, le compte à rebours, les accords et la restauration du thème au lancement sont améliorés. Outils et quatre styles gratuits ; dix thèmes individuels aux ressources intégrées. Aucune analyse d’utilisation ni transmission audio. iPhone, iPad et Apple Watch ; widget portrait extra-large sur iOS 27+ si le système le propose.",
+    "description": "GuitarTool 1.1.4 : accordeur, métronome et accords gratuits hors ligne, trois nouveaux thèmes et dix thèmes individuels. Sans publicité ni analyse d’utilisation.",
+    "screenshotCaption": "Aperçu des thèmes pour l’App Store 1.1.4 ; thèmes complets vendus séparément."
   },
   "de": {
-    "title": "Chinesisches Zählen offline und direkte BPM-Vorschau",
-    "body": "Version 1.1.3 bietet chinesisches Zählen offline mit Vorschau im aktuellen BPM, unabhängig von der Sprache der Oberfläche. Bestätigen und Abbrechen der BPM-Eingabe, Zieltempo der Presets und die Fortsetzung der schrittweisen Beschleunigung nach Unterbrechungen wurden korrigiert. Ab iOS 27 gibt es ein extragroßes Hochformat-Widget, wenn das System es anbietet. Große Schrift und Timer sind verbessert. Tools und vier Basisdesigns kostenlos; sieben Themes einzeln erhältlich.",
-    "description": "GuitarTool 1.1.3: kostenloses Offline-Stimmgerät, Metronom und Akkorde mit chinesischem Zählen, BPM-Vorschau und Hochformat-Widget ab iOS 27.",
-    "screenshotCaption": "Trainingsvorschau aus 1.1.2, im aktuellen Store weiterverwendet; Stimme und neues Widget sind nicht abgebildet."
+    "title": "Drei neue Themes, zuverlässiger üben",
+    "body": "Version 1.1.4 ist verfügbar. Plush Practice Room, Oddball Rehearsal und Zero Gravity Circus sind neue, separate Einmalkäufe. Verbessert wurden Stimmung, Audio-Wiederaufnahme, Tempowechsel, Countdown, Akkorde und das Wiederherstellen des Themes beim Start. Tools und vier Basisdesigns bleiben kostenlos; zehn Themes sind einzeln erhältlich, alle Grafiken enthalten. Keine Nutzungsanalyse oder Audio-Uploads. iPhone, iPad und Apple Watch; extragroßes Hochformat-Widget ab iOS 27, sofern vom System angeboten.",
+    "description": "GuitarTool 1.1.4: kostenloses Offline-Stimmgerät, Metronom und Akkorde, drei neue Themes, zehn separate Einmalkäufe. Keine Werbung oder Nutzungsanalyse.",
+    "screenshotCaption": "Theme-Vorschau für App Store 1.1.4; vollständige Themes werden separat gekauft."
   },
   "it": {
-    "title": "Conta i battiti in cinese, anche offline",
-    "body": "La versione 1.1.3 aggiunge il conteggio vocale in cinese offline con anteprima al BPM attuale, in qualsiasi lingua dell’interfaccia. Corregge conferma e annullamento del BPM, sincronizzazione del tempo obiettivo dei preset e ripresa dell’accelerazione dopo interruzioni. Su iOS 27+ è disponibile un widget verticale extra-large quando il sistema lo propone. Migliora testo grande e timer. Strumenti e quattro stili gratuiti; sette temi acquistabili separatamente.",
-    "description": "GuitarTool 1.1.3: accordatore, metronomo e accordi gratis offline, conteggio in cinese, anteprima BPM e widget verticale extra-large su iOS 27+.",
-    "screenshotCaption": "Anteprima di allenamento 1.1.2 riutilizzata nella scheda attuale; non mostra la voce o il nuovo widget."
+    "title": "Tre nuovi temi, esercizi più affidabili",
+    "body": "La versione 1.1.4 è disponibile. Plush Practice Room, Oddball Rehearsal e Zero Gravity Circus sono tre acquisti una tantum separati. Migliora accordatura, ripresa audio, cambi di tempo, conto alla rovescia, accordi e ripristino del tema all’avvio. Strumenti e quattro stili gratuiti; dieci temi individuali con risorse incluse. Nessuna analisi di utilizzo o invio di audio. iPhone, iPad e Apple Watch; widget verticale extra-large su iOS 27+ quando offerto dal sistema.",
+    "description": "GuitarTool 1.1.4: accordatore, metronomo e accordi gratis offline, tre nuovi temi e dieci temi acquistabili separatamente. Senza pubblicità né analisi di utilizzo.",
+    "screenshotCaption": "Anteprima dei temi per App Store 1.1.4; temi completi acquistabili separatamente."
   },
   "ja": {
-    "title": "中国語の音声カウントをオフラインで",
-    "body": "1.1.3 は中国語の音声カウントを追加し、現在の BPM で試聴できます。表示言語に関係なく音声は中国語です。BPM 入力の確定とキャンセル、プリセットの目標テンポ同期、中断後の段階的な加速再開を修正。iOS 27 以降ではシステムが提供する場合に特大の縦型ウィジェットを利用できます。大きな文字とタイマーも改善。基本機能と4つの基本テーマは無料、7つのフルテーマは個別購入です。",
-    "description": "GuitarTool 1.1.3：無料のオフラインチューナー、メトロノーム、コード。中国語の音声カウントと BPM 試聴、iOS 27 以降の特大縦型ウィジェット。",
-    "screenshotCaption": "現在のストアでも使われる 1.1.2 の練習画面です。新しい音声や特大ウィジェットは表示されていません。"
+    "title": "3つの新テーマで、もっと安定した練習を",
+    "body": "1.1.4を公開しました。Plush Practice Room、Oddball Rehearsal、Zero Gravity Circusが、それぞれ個別の買い切りテーマとして登場。チューニング、音声入力の中断後の復帰、テンポ変更、カウントダウン、コードの選択・再生・共有、起動時のテーマ復元を改善しました。基本ツールと4つの基本デザインは無料。全10テーマの素材は同梱され、個別購入で使えます。利用状況の分析や音声のアップロードは行いません。iPhone、iPad、Apple Watch対応。特大縦型ウィジェットはiOS 27以降でシステムが提供する場合に利用できます。",
+    "description": "GuitarTool 1.1.4：無料のオフラインチューナー、メトロノーム、コード。3つの新テーマ、全10種の個別購入テーマ。広告・利用状況分析なし。",
+    "screenshotCaption": "1.1.4のApp Store用テーマ紹介画像。完全テーマは個別購入です。"
   },
   "ko": {
-    "title": "오프라인 중국어 박자 세기와 BPM 미리 듣기",
-    "body": "1.1.3은 현재 BPM으로 미리 들을 수 있는 오프라인 중국어 박자 세기를 추가합니다. 인터페이스 언어와 관계없이 음성은 중국어입니다. BPM 확인·취소, 프리셋 목표 속도 동기화와 오디오 중단 후 점진적 가속 복구를 수정했습니다. iOS 27 이상에서는 시스템이 제공할 때 초대형 세로 위젯을 사용할 수 있습니다. 큰 글씨와 타이머도 개선했습니다. 기본 도구와 4가지 기본 테마는 무료이며 전체 테마 7종은 개별 구매입니다.",
-    "description": "GuitarTool 1.1.3: 무료 오프라인 튜너, 메트로놈, 코드와 중국어 박자 세기, BPM 미리 듣기, iOS 27 이상 초대형 세로 위젯.",
-    "screenshotCaption": "현재 스토어에서도 사용하는 1.1.2 연습 미리보기이며 새 음성이나 초대형 위젯은 표시되지 않습니다."
+    "title": "새로운 테마 3종과 더 안정적인 연습",
+    "body": "1.1.4가 출시되었습니다. Plush Practice Room, Oddball Rehearsal, Zero Gravity Circus가 각각 일회성 개별 구매로 추가되었습니다. 튜닝, 오디오 중단 복구, 템포 변경, 카운트다운, 코드 선택·재생·공유와 시작 시 테마 복원을 개선했습니다. 핵심 도구와 기본 외관 4종은 무료이며, 전체 테마 10종은 개별 구매입니다. 테마 리소스는 앱에 포함됩니다. 사용 분석이나 오디오 업로드를 하지 않습니다. iPhone, iPad, Apple Watch 지원. 초대형 세로 위젯은 iOS 27 이상에서 시스템이 제공하는 경우 사용할 수 있습니다.",
+    "description": "GuitarTool 1.1.4: 무료 오프라인 튜너, 메트로놈, 코드. 새 테마 3종과 개별 구매 테마 총 10종. 광고 및 사용 분석 없음.",
+    "screenshotCaption": "1.1.4 App Store 테마 미리보기. 전체 테마는 개별 구매입니다."
   },
   "ru": {
-    "title": "Счёт на китайском офлайн и прослушивание BPM",
-    "body": "Версия 1.1.3 добавляет голосовой счёт на китайском офлайн и прослушивание в текущем BPM при любом языке интерфейса. Исправлены подтверждение и отмена BPM, синхронизация целевого темпа пресетов и восстановление постепенного ускорения после прерываний. На iOS 27+ доступен сверхбольшой вертикальный виджет, если его предлагает система. Улучшены крупный текст и таймер. Инструменты и четыре базовых оформления бесплатны; семь тем покупаются отдельно.",
-    "description": "GuitarTool 1.1.3: бесплатные офлайн-тюнер, метроном и аккорды, счёт на китайском, прослушивание BPM и вертикальный виджет на iOS 27+.",
-    "screenshotCaption": "Предпросмотр тренировки 1.1.2, используемый и в текущем магазине; новая озвучка и виджет не показаны."
+    "title": "Три новые темы и более стабильная практика",
+    "body": "Версия 1.1.4 доступна. Plush Practice Room, Oddball Rehearsal и Zero Gravity Circus приобретаются отдельно одним платежом. Улучшены настройка, восстановление аудио, смена темпа, таймер, выбор, воспроизведение и отправка аккордов, восстановление темы при запуске. Инструменты и четыре базовых оформления бесплатны; десять тем покупаются отдельно, ресурсы уже в приложении. Аналитика использования отключена, звук не отправляется. iPhone, iPad и Apple Watch; большой вертикальный виджет на iOS 27+, если его предлагает система.",
+    "description": "GuitarTool 1.1.4: бесплатные офлайн-тюнер, метроном и аккорды, три новые темы, десять отдельных покупок. Без рекламы и аналитики использования.",
+    "screenshotCaption": "Изображение тем для App Store 1.1.4; полные темы покупаются отдельно."
   },
   "tr": {
-    "title": "Çevrimdışı Çince sayım ve BPM ön dinlemesi",
-    "body": "1.1.3, arayüz dilinden bağımsız olarak mevcut BPM’de ön dinlemeli çevrimdışı Çince vuruş sayımı ekler. BPM onaylama ve iptal, ön ayar hedef temposu eşitleme ve kesinti sonrası kademeli hızlanmaya devam etme düzeltilmiştir. iOS 27+ üzerinde sistem sunduğunda çok büyük dikey widget kullanılabilir. Büyük metin ve zamanlayıcı iyileştirildi. Araçlar ve dört temel görünüm ücretsizdir; yedi tema ayrı satın alınır.",
-    "description": "GuitarTool 1.1.3: ücretsiz çevrimdışı akort, metronom ve akorlar, Çince sayım, BPM ön dinlemesi ve iOS 27+ büyük dikey widget.",
-    "screenshotCaption": "Mevcut mağazada da kullanılan 1.1.2 alıştırma ön izlemesi; yeni ses veya widget gösterilmez."
+    "title": "Üç yeni tema, daha kararlı alıştırma",
+    "body": "1.1.4 yayımlandı. Plush Practice Room, Oddball Rehearsal ve Zero Gravity Circus ayrı tek seferlik satın alımlar olarak eklendi. Akort, ses kesintisinden dönüş, tempo değişimi, geri sayım, akor seçimi, çalma ve paylaşma ile açılışta tema geri yükleme iyileştirildi. Temel araçlar ve dört görünüm ücretsiz; on tema ayrı satılır ve görseller uygulamaya dahildir. Kullanım analizi veya ses yükleme yoktur. iPhone, iPad ve Apple Watch desteklenir; çok büyük dikey widget iOS 27+ üzerinde sistem sunduğunda kullanılabilir.",
+    "description": "GuitarTool 1.1.4: ücretsiz çevrimdışı akort, metronom ve akorlar, üç yeni tema ve ayrı satılan on tema. Reklam ve kullanım analizi yok.",
+    "screenshotCaption": "1.1.4 App Store tema ön izlemesi; tam temalar ayrı satın alınır."
   },
   "ar": {
-    "title": "عدّ صوتي بالصينية دون اتصال ومعاينة السرعة",
-    "body": "يضيف الإصدار 1.1.3 عدًّا صوتيًا بالصينية دون اتصال ومعاينة بسرعة BPM الحالية مهما كانت لغة الواجهة. يصحّح تأكيد السرعة وإلغاءها ومزامنة سرعة الإعدادات المسبقة واستئناف التسارع التدريجي بعد انقطاع الصوت. في iOS 27+ تتوفر أداة رأسية كبيرة جدًا عندما يتيحها النظام. تحسّنت النصوص الكبيرة والمؤقت. الأدوات وأربعة مظاهر أساسية مجانية؛ سبعة مظاهر كاملة تُشترى منفصلة.",
-    "description": "GuitarTool 1.1.3: موالف وميترونوم وأوتار مجانية دون اتصال، عدّ بالصينية ومعاينة BPM وأداة رأسية كبيرة في iOS 27+.",
-    "screenshotCaption": "معاينة التدريب من 1.1.2 المعاد استخدامها في المتجر الحالي؛ لا تعرض الصوت أو الأداة الجديدة."
+    "title": "ثلاثة مظاهر جديدة وتمرين أكثر ثباتًا",
+    "body": "الإصدار 1.1.4 متاح الآن. أُضيفت Plush Practice Room وOddball Rehearsal وZero Gravity Circus كمشتريات منفصلة لمرة واحدة. تحسّن الضبط واستعادة الصوت بعد الانقطاع وتغيير السرعة والعد التنازلي واختيار الأوتار وتشغيلها ومشاركتها واستعادة المظهر عند التشغيل. الأدوات وأربعة مظاهر أساسية مجانية؛ عشرة مظاهر كاملة تُشترى منفصلة ومواردها مضمّنة. لا تحليلات استخدام ولا رفع للصوت. يدعم iPhone وiPad وApple Watch؛ الأداة الرأسية الكبيرة متاحة في iOS 27+ عندما يتيحها النظام.",
+    "description": "GuitarTool 1.1.4: موالف وميترونوم وأوتار مجانية دون اتصال، ثلاثة مظاهر جديدة وعشرة مشتريات منفصلة. بلا إعلانات أو تحليلات استخدام.",
+    "screenshotCaption": "معاينة المظاهر لمتجر App Store للإصدار 1.1.4؛ المظاهر الكاملة تُشترى منفصلة."
   }
 };
 

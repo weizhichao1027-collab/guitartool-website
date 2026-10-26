@@ -1,0 +1,317 @@
+[
+  {
+    "source": "../docs/design/app-store-localized-2026-10-20/phone/exports/zh-Hans/themes.png",
+    "output": "public/release-1.1.4/zh-themes.webp",
+    "width": 660,
+    "height": 1434,
+    "provenance": "1.1.4 localized App Store artwork, refreshed 2026-10-25; native screens with editorial device composition",
+    "sourceSha256": "c5d9d62dac280f088c87c9329a4503856734e860f606d35cf0d1aab387ff5be3",
+    "outputSha256": "1d167c706f8746fcb5ebe97ad5597aafa90a3b573df7cad4550af132aa20a581"
+  },
+  {
+    "source": "../docs/design/app-store-localized-2026-10-20/phone/exports/en-US/themes.png",
+    "output": "public/release-1.1.4/en-themes.webp",
+    "width": 660,
+    "height": 1434,
+    "provenance": "1.1.4 localized App Store artwork, refreshed 2026-10-25; native screens with editorial device composition",
+    "sourceSha256": "3506ff783bea1e9ffa2591d17b48ee49223f4c1761cda8712b702f00d8f9071a",
+    "outputSha256": "c8c71b77e782b019a1d5bba6586b096ffeec34211a1ebab35d257cc229f6742c"
+  },
+  {
+    "source": "../docs/design/app-store-localized-2026-10-20/phone/exports/zh-Hant/themes.png",
+    "output": "public/release-1.1.4/zh-hant-themes.webp",
+    "width": 660,
+    "height": 1434,
+    "provenance": "1.1.4 localized App Store artwork, refreshed 2026-10-25; native screens with editorial device composition",
+    "sourceSha256": "bcb3742f5e55a880bd83a15ca34556b1016c81fd390e33f9a629a64724ad6443",
+    "outputSha256": "94f45691e2b6d8607025c478d99bc77ae6fcb119a5605d6cad1857e76e3f6529"
+  },
+  {
+    "source": "../docs/design/app-store-localized-2026-10-20/phone/exports/es-ES/themes.png",
+    "output": "public/release-1.1.4/es-themes.webp",
+    "width": 660,
+    "height": 1434,
+    "provenance": "1.1.4 localized App Store artwork, refreshed 2026-10-25; native screens with editorial device composition",
+    "sourceSha256": "27fe11749399498b97d5fa208dacb62266936fa73fc18f83f5a241a22a7d2454",
+    "outputSha256": "2e4f1307d7d5a12d19726e0bb7099642d6c52b6eb10ae658bdcca93f14d5d95d"
+  },
+  {
+    "source": "../docs/design/app-store-localized-2026-10-20/phone/exports/pt-BR/themes.png",
+    "output": "public/release-1.1.4/pt-br-themes.webp",
+    "width": 660,
+    "height": 1434,
+    "provenance": "1.1.4 localized App Store artwork, refreshed 2026-10-25; native screens with editorial device composition",
+    "sourceSha256": "694421a82c5a92b8060a9fb3e75a57d03e0d460a740ec1ff4d04d3b55d2d98b3",
+    "outputSha256": "f0026ddcd4ca3f3b2df13653dcc1528675f5ad9a66e4c3eec047a4fb3754331d"
+  },
+  {
+    "source": "../docs/design/app-store-localized-2026-10-20/phone/exports/fr-FR/themes.png",
+    "output": "public/release-1.1.4/fr-themes.webp",
+    "width": 660,
+    "height": 1434,
+    "provenance": "1.1.4 localized App Store artwork, refreshed 2026-10-25; native screens with editorial device composition",
+    "sourceSha256": "8beaf4dc3a295ba9fa9a0f885e1bd4c549481f1fd94efacf2d9a345a4324e694",
+    "outputSha256": "85fafc43be452ccd8d18d5dbae3a032dcde1122d268ecf26f3b54ce12e82b05f"
+  },
+  {
+    "source": "../docs/design/app-store-localized-2026-10-20/phone/exports/de-DE/themes.png",
+    "output": "public/release-1.1.4/de-themes.webp",
+    "width": 660,
+    "height": 1434,
+    "provenance": "1.1.4 localized App Store artwork, refreshed 2026-10-25; native screens with editorial device composition",
+    "sourceSha256": "24873c6a08b1cfeb097f1d4f1e77031be31e717d14cac6a4386082451f28851e",
+    "outputSha256": "5accef05e8d2ac8fe4e8e8964b2da264fd861f030f35e1516b0c6bb9aeffbac0"
+  },
+  {
+    "source": "../docs/design/app-store-localized-2026-10-20/phone/exports/it/themes.png",
+    "output": "public/release-1.1.4/it-themes.webp",
+    "width": 660,
+    "height": 1434,
+    "provenance": "1.1.4 localized App Store artwork, refreshed 2026-10-25; native screens with editorial device composition",
+    "sourceSha256": "7a7bb74dc27fa9feb7c07da9eeff21b359d24e2f22647478ab030fbd38b0fffd",
+    "outputSha256": "5b65c8f3c92aeaf75cf8efe67e619d6605ddadede6e7d019f883288bab05c9d0"
+  },
+  {
+    "source": "../docs/design/app-store-localized-2026-10-20/phone/exports/ja/themes.png",
+    "output": "public/release-1.1.4/ja-themes.webp",
+    "width": 660,
+    "height": 1434,
+    "provenance": "1.1.4 localized App Store artwork, refreshed 2026-10-25; native screens with editorial device composition",
+    "sourceSha256": "a5e0b776e835b22a8b263a22c46da5fe4fd3a9befc89abfef77827104c98c02b",
+    "outputSha256": "1e4e6546b46d62b13ca2eaeb6bfb9f4f4d53e4ef2819adb214e3af85e958e024"
+  },
+  {
+    "source": "../docs/design/app-store-localized-2026-10-20/phone/exports/ko/themes.png",
+    "output": "public/release-1.1.4/ko-themes.webp",
+    "width": 660,
+    "height": 1434,
+    "provenance": "1.1.4 localized App Store artwork, refreshed 2026-10-25; native screens with editorial device composition",
+    "sourceSha256": "1ad897577915bd846ce98da8a8c378c0b37a129fda349065c1a5d3183b3ec93f",
+    "outputSha256": "6884efd059305262dfad74649c813b30b314d7072acabfd75e9ca9ca4368d32a"
+  },
+  {
+    "source": "../docs/design/app-store-localized-2026-10-20/phone/exports/ru/themes.png",
+    "output": "public/release-1.1.4/ru-themes.webp",
+    "width": 660,
+    "height": 1434,
+    "provenance": "1.1.4 localized App Store artwork, refreshed 2026-10-25; native screens with editorial device composition",
+    "sourceSha256": "6adae4f74e40c3cb455821b480b54b8848daf47d405c1c828c98f3ed26a66fef",
+    "outputSha256": "d7d7ca33818a9e6993cbac15ca8ce4235ecc008967eca58fea7f68310c979253"
+  },
+  {
+    "source": "../docs/design/app-store-localized-2026-10-20/phone/exports/tr/themes.png",
+    "output": "public/release-1.1.4/tr-themes.webp",
+    "width": 660,
+    "height": 1434,
+    "provenance": "1.1.4 localized App Store artwork, refreshed 2026-10-25; native screens with editorial device composition",
+    "sourceSha256": "56df29e7bdba6993ea1b93e3dc81ea7207879eb75adcb1b34efd5f1fa05d74bf",
+    "outputSha256": "b2d364917e984d20e0ccf28dae478d82a0fdbca5d8a735d6505c4da7266600a2"
+  },
+  {
+    "source": "../docs/design/app-store-localized-2026-10-20/phone/exports/ar-SA/themes.png",
+    "output": "public/release-1.1.4/ar-themes.webp",
+    "width": 660,
+    "height": 1434,
+    "provenance": "1.1.4 localized App Store artwork, refreshed 2026-10-25; native screens with editorial device composition",
+    "sourceSha256": "1895765e8e5ddff69344a7713971bcf85eb4a06ee15e329087a7cf713b13a68e",
+    "outputSha256": "53379c018d3f730594c4fb6cd20c5e99317c0c8c2034c82dfa78317ca2e655f7"
+  },
+  {
+    "source": "../docs/design/app-store-localized-2026-10-20/phone/exports/zh-Hans/hero.png",
+    "output": "public/release-1.1.4/zh-hero.webp",
+    "width": 660,
+    "height": 1434,
+    "provenance": "Artwork supplied for 1.1.4; retained native inputs may predate this release. See original source-manifest.json",
+    "sourceSha256": "f06e49cf05687a891bb094de9c214fe93cd093ee0c2c18582ff4b5087f27f1c1",
+    "outputSha256": "da4487bf66d3649aaad6a261fe1d52b7904572b4497a38eea4584c2ee33de69f"
+  },
+  {
+    "source": "../docs/design/app-store-localized-2026-10-20/phone/exports/zh-Hans/training.png",
+    "output": "public/release-1.1.4/zh-training.webp",
+    "width": 660,
+    "height": 1434,
+    "provenance": "Artwork supplied for 1.1.4; retained native inputs may predate this release. See original source-manifest.json",
+    "sourceSha256": "cb8f37b70526c0a6e94802eba82034345610b69ada1dc0822b93c1b3c2265abf",
+    "outputSha256": "a35e047d739f9ec518dcb81e5317ed0ba18ec997899dacbae6d2f1f6d2675b9c"
+  },
+  {
+    "source": "../docs/design/app-store-localized-2026-10-20/phone/exports/zh-Hans/devices.png",
+    "output": "public/release-1.1.4/zh-devices.webp",
+    "width": 660,
+    "height": 1434,
+    "provenance": "Artwork supplied for 1.1.4; retained native inputs may predate this release. See original source-manifest.json",
+    "sourceSha256": "1443ed3f19119ddd6ddcfb015457da5e23a32565d0e2da6f96c4b25e5615f484",
+    "outputSha256": "d409cb6191c2661110cce8eb1af83b56eb843c06cebb310401f8092f2f236b2d"
+  },
+  {
+    "source": "../docs/design/app-store-localized-2026-10-20/phone/exports/zh-Hans/metronome.png",
+    "output": "public/release-1.1.4/zh-metronome.webp",
+    "width": 660,
+    "height": 1434,
+    "provenance": "Artwork supplied for 1.1.4; retained native inputs may predate this release. See original source-manifest.json",
+    "sourceSha256": "0b128c3d78d821c3c1429f0894a430557afb8cce04a9b436108cdb699677d3c4",
+    "outputSha256": "d7d3d158512b1f39347ee038373f3aabe1e6c63178ea7ef69f51663dbd1a4bb4"
+  },
+  {
+    "source": "../docs/design/app-store-localized-2026-10-20/phone/exports/zh-Hans/chords.png",
+    "output": "public/release-1.1.4/zh-chords.webp",
+    "width": 660,
+    "height": 1434,
+    "provenance": "Artwork supplied for 1.1.4; retained native inputs may predate this release. See original source-manifest.json",
+    "sourceSha256": "ca1caede1dc2f42f53f447b36bc155ed423354a8bdc6209ff8dffb4f8c473eac",
+    "outputSha256": "abbd6bb0dee3109ec102d5af522a3164385bde4df5f76848179a4978000c46d4"
+  },
+  {
+    "source": "../docs/design/app-store-localized-2026-10-20/phone/exports/zh-Hans/widgets.png",
+    "output": "public/release-1.1.4/zh-widgets.webp",
+    "width": 660,
+    "height": 1434,
+    "provenance": "Artwork supplied for 1.1.4; retained native inputs may predate this release. See original source-manifest.json",
+    "sourceSha256": "64ce2ddd1cd736c85c24b0a896efd2889f116dde83ea34baba005760080b891e",
+    "outputSha256": "93536b1e9646b62b527f70d7c3bee4b90295deea50e463aff0fa792c51d77905"
+  },
+  {
+    "source": "../docs/design/app-store-localized-2026-10-20/phone/exports/en-US/hero.png",
+    "output": "public/release-1.1.4/en-hero.webp",
+    "width": 660,
+    "height": 1434,
+    "provenance": "Artwork supplied for 1.1.4; retained native inputs may predate this release. See original source-manifest.json",
+    "sourceSha256": "1f40e692e40bbd320477eec37b32b79b61ce122ff9d13c526ca7188b453b76d9",
+    "outputSha256": "7a3786c75acbebd832f99840a84dc382937d8b5b6ce023c87ea9cc8a36f36faf"
+  },
+  {
+    "source": "../docs/design/app-store-localized-2026-10-20/phone/exports/en-US/training.png",
+    "output": "public/release-1.1.4/en-training.webp",
+    "width": 660,
+    "height": 1434,
+    "provenance": "Artwork supplied for 1.1.4; retained native inputs may predate this release. See original source-manifest.json",
+    "sourceSha256": "708b98705ac8807643849a57840516b064760631c35539758c9f2b95addbf3e4",
+    "outputSha256": "24c31ef78e3da126eb1bb4ed30e1b97254a7fed89dd6335af1ecbfed2fa31a14"
+  },
+  {
+    "source": "../docs/design/app-store-localized-2026-10-20/phone/exports/en-US/devices.png",
+    "output": "public/release-1.1.4/en-devices.webp",
+    "width": 660,
+    "height": 1434,
+    "provenance": "Artwork supplied for 1.1.4; retained native inputs may predate this release. See original source-manifest.json",
+    "sourceSha256": "764a000bc40ce457ff72d7cfae94ed70d2881a1d90e8ca992de75f7bfbcce268",
+    "outputSha256": "4f1cc50d0ab0119ae2d0dbbc0f69e522819d4fcf32886c74984e4a74fa3732b3"
+  },
+  {
+    "source": "../docs/design/app-store-localized-2026-10-20/phone/exports/en-US/metronome.png",
+    "output": "public/release-1.1.4/en-metronome.webp",
+    "width": 660,
+    "height": 1434,
+    "provenance": "Artwork supplied for 1.1.4; retained native inputs may predate this release. See original source-manifest.json",
+    "sourceSha256": "6f2af14faa99eda6db884023a787bb17050a8ba6a3ee60face4a4d87da771897",
+    "outputSha256": "d5d93e84028506331e5b584d177a7c78beb01693d1513b2f7109a05a79aa51e7"
+  },
+  {
+    "source": "../docs/design/app-store-localized-2026-10-20/phone/exports/en-US/chords.png",
+    "output": "public/release-1.1.4/en-chords.webp",
+    "width": 660,
+    "height": 1434,
+    "provenance": "Artwork supplied for 1.1.4; retained native inputs may predate this release. See original source-manifest.json",
+    "sourceSha256": "d657389d41c5b4806acf0916a3dac8e4f77f18aa65a1ee4c528d735732f698bd",
+    "outputSha256": "3823fb16383c139d2cc70cf8becf9a94c63a2dd4b9f43a72b511842cf0391a7e"
+  },
+  {
+    "source": "../docs/design/app-store-localized-2026-10-20/phone/exports/en-US/widgets.png",
+    "output": "public/release-1.1.4/en-widgets.webp",
+    "width": 660,
+    "height": 1434,
+    "provenance": "Artwork supplied for 1.1.4; retained native inputs may predate this release. See original source-manifest.json",
+    "sourceSha256": "5ad51a56c54b01b2f0cadd0a3560eeb51b5a4a0bed08aa6079093da6efcc3edd",
+    "outputSha256": "61f2a7ba9bb48c0b15b3ddb0419178d4b78db15abbede47ecf3e98d2717db175"
+  },
+  {
+    "source": "../资料归档/08-验证证据/2026-10-26/android-fidelity/ios-current/studio.morning-mist-0.png",
+    "output": "public/release-1.1.4/zh-morning-mist.webp",
+    "width": 660,
+    "height": 1435,
+    "provenance": "Native iOS 1.1.4 current-source simulator metronome capture, 2026-10-26. Chinese interface; no simulated purchase claim.",
+    "sourceSha256": "8c5805ce561bffd1e27ac74855c98d839212a246d3a20f9c6bdf0a5ec9e32e54",
+    "outputSha256": "bb6a693dafb902947effd8f506c1e02719d46688adb79c3b345cf9cea3a27d28"
+  },
+  {
+    "source": "../资料归档/08-验证证据/2026-10-26/android-fidelity/ios-current/studio.lunar-radio-0.png",
+    "output": "public/release-1.1.4/zh-lunar-radio.webp",
+    "width": 660,
+    "height": 1435,
+    "provenance": "Native iOS 1.1.4 current-source simulator metronome capture, 2026-10-26. Chinese interface; no simulated purchase claim.",
+    "sourceSha256": "71e8821cf5922f634487265c66fa4f8c757d4cbbbbe7bb06f586ea218535f123",
+    "outputSha256": "2409930571a5a6bc7128ce61782a49e38b143d0a5e5518b37a39ddfa688746eb"
+  },
+  {
+    "source": "../资料归档/08-验证证据/2026-10-26/android-fidelity/ios-current/studio.paper-ensemble-0.png",
+    "output": "public/release-1.1.4/zh-paper-ensemble.webp",
+    "width": 660,
+    "height": 1435,
+    "provenance": "Native iOS 1.1.4 current-source simulator metronome capture, 2026-10-26. Chinese interface; no simulated purchase claim.",
+    "sourceSha256": "7cf687690925e554cc2ddf92d0c4b2e479d51a3ab1fd4295f568241500351fae",
+    "outputSha256": "7f05dd3c3d640dc39bba8ee91dac1c7a96c57160de9f4ff1eed165b35123913d"
+  },
+  {
+    "source": "../资料归档/08-验证证据/2026-10-26/android-fidelity/ios-current/studio.pocket-synth-0.png",
+    "output": "public/release-1.1.4/zh-pocket-synth.webp",
+    "width": 660,
+    "height": 1435,
+    "provenance": "Native iOS 1.1.4 current-source simulator metronome capture, 2026-10-26. Chinese interface; no simulated purchase claim.",
+    "sourceSha256": "572725a382f19f2910c42718db7abb4cc82d8a8c5189bc13bc9d438498af28b1",
+    "outputSha256": "5cc12cb16f416327767ed10b56a05da0ee402ab510b1f709b6c7fe33e3bc2982"
+  },
+  {
+    "source": "../资料归档/08-验证证据/2026-10-26/android-fidelity/ios-current/studio.vinyl-afterhours-0.png",
+    "output": "public/release-1.1.4/zh-vinyl-afterhours.webp",
+    "width": 660,
+    "height": 1435,
+    "provenance": "Native iOS 1.1.4 current-source simulator metronome capture, 2026-10-26. Chinese interface; no simulated purchase claim.",
+    "sourceSha256": "5af107a98acd5b768aa7a1bd8ce40c2850ee4c2a59d9612a4abbec32cfea7f52",
+    "outputSha256": "07f800ebaa955e6de79153166ebe15b6203b73b42281a1ed5e826d9f923de585"
+  },
+  {
+    "source": "../资料归档/08-验证证据/2026-10-26/android-fidelity/ios-current/studio.luthier-atlas-0.png",
+    "output": "public/release-1.1.4/zh-luthier-atlas.webp",
+    "width": 660,
+    "height": 1435,
+    "provenance": "Native iOS 1.1.4 current-source simulator metronome capture, 2026-10-26. Chinese interface; no simulated purchase claim.",
+    "sourceSha256": "3546f215b1627621ddbf7b788652c5ba3c203f48f6edc6479fcf0405f5275e4f",
+    "outputSha256": "586c0607677037d6b1651ae9a283bbd8e0c9c054daddc5f04d283d21227fd08d"
+  },
+  {
+    "source": "../资料归档/08-验证证据/2026-10-26/android-fidelity/ios-current/studio.jade-resonance-0.png",
+    "output": "public/release-1.1.4/zh-jade-resonance.webp",
+    "width": 660,
+    "height": 1435,
+    "provenance": "Native iOS 1.1.4 current-source simulator metronome capture, 2026-10-26. Chinese interface; no simulated purchase claim.",
+    "sourceSha256": "1bf1a16f45f0a70ae093db443c4d1f8943574bc7cd0583bb8e4c824b47e60a3d",
+    "outputSha256": "0d7fb4b59da8580cabe908b36cb0cd3b55aabac8b874fb7c87909426bb85e222"
+  },
+  {
+    "source": "../资料归档/08-验证证据/2026-10-26/android-fidelity/ios-current/studio.oddball-rehearsal-0.png",
+    "output": "public/release-1.1.4/zh-oddball-rehearsal.webp",
+    "width": 660,
+    "height": 1435,
+    "provenance": "Native iOS 1.1.4 current-source simulator metronome capture, 2026-10-26. Chinese interface; no simulated purchase claim.",
+    "sourceSha256": "f037eacc264adf5a9ace0669fa511dd31141c577519ff95456bf6dabea20a9e6",
+    "outputSha256": "cd184465a66625defbd5fee532cd3a2dff50b1bf92fef45d9f93314c6dee7224"
+  },
+  {
+    "source": "../资料归档/08-验证证据/2026-10-26/android-fidelity/ios-current/studio.zero-gravity-circus-0.png",
+    "output": "public/release-1.1.4/zh-zero-gravity-circus.webp",
+    "width": 660,
+    "height": 1435,
+    "provenance": "Native iOS 1.1.4 current-source simulator metronome capture, 2026-10-26. Chinese interface; no simulated purchase claim.",
+    "sourceSha256": "0f6a9cd7b535a78288d4af9e546d5be484680b1a36f8bdd1d26d1611a4acbd23",
+    "outputSha256": "661866d62aba071dc36f410f5c8ce29b09360c6a5623009fc7bd263c6eb2c71c"
+  },
+  {
+    "source": "../资料归档/08-验证证据/2026-10-26/android-fidelity/ios-current/studio.plush-practice-room-0.png",
+    "output": "public/release-1.1.4/zh-plush-practice-room.webp",
+    "width": 660,
+    "height": 1435,
+    "provenance": "Native iOS 1.1.4 current-source simulator metronome capture, 2026-10-26. Chinese interface; no simulated purchase claim.",
+    "sourceSha256": "4e7e4ae1f5ba377c37235a1f1faf5e93a7c18c43a173bfb486cb65ff51a616e0",
+    "outputSha256": "f06c05f9be80d2fce48a7f355ff3efc6c239187ee2bc008f5a659ab2e6bbe933"
+  }
+]
