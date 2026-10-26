@@ -191,7 +191,7 @@ export const enRelease114Pages: LandingPage[] = [
       },
       {
         "title": "What is free, paid or offline?",
-        "body": "Core tools and Clear Sky, Starry Night, Pine Forest and Graphite are free. Ten complete themes unlock through separate non-consumable App Store purchases, without a theme subscription. Artwork is bundled and works offline after unlock. Buying, restoring and loading product information may require internet access.",
+        "body": "Core tools and Clear Sky, Starlight, Pine and Graphite are free. Ten complete themes unlock through separate non-consumable App Store purchases, without a theme subscription. Artwork is bundled and works offline after unlock. Buying, restoring and loading product information may require internet access.",
         "points": [
           "Current pricing follows your App Store region",
           "One purchase unlocks its own theme",
