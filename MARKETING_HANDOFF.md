@@ -11,7 +11,7 @@
 - 初轮问题：Press Kit 漏导入 Link 导致 Lint/TS 失败，已补齐并最终全套通过；资产脚本首次从错误工作目录执行失败，改在营销仓库运行成功；初次截图未等待懒加载解码出现空图，最终等待实际解码后重新采集。初轮依赖审计失败与最终通过日志均保留。
 - 隐私独立仓库：iOS 中英 2026-10-26，Android 2026-10-21 原字节保持；10 项生成器测试通过。本仓库不包含原生 App/隐私站源，发布相互独立。
 
-当前本地已验收，生产发布回执将在发布后追加。主 App 完整交接与证据位于 `docs/release/website-1.1.4-2026-10-26/`；GitHub Pages 为唯一发布目标，旧 Sites 不更新。部署与 IndexNow 接收不等于搜索收录、排名或 AI 引用。
+生产发布完成：内容 `5b8907788165f2a6607adfccb12364babe3c2b81`、标签 `release/website-1.1.4`；[Pages Actions 40251552551](https://github.com/weizhichao1027-collab/guitartool-website/actions/runs/40251552551) 构建、部署、搜索通知均成功。隐私 `732d7b9` 的 Pages 为 built。线上 **296/296** 项核对通过，279 项字节一致、17 个客户端页面仅 Next 随机 build ID 不同，其余字节一致。营销 207 URL、隐私 3 URL 的 IndexNow 均 HTTP 200。主 App 完整交接与证据位于 `docs/release/website-1.1.4-2026-10-26/`；GitHub Pages 为唯一发布目标，旧 Sites 不更新。部署与 IndexNow 接收不等于搜索收录、排名或 AI 引用。
 
 ---
 
