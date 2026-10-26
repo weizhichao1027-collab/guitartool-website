@@ -107,8 +107,7 @@ export const RUNTIME_BASE_PATH = process.env.GITHUB_PAGES === "true" ? SITE_BASE
 export const assetPath = (path: string) => {
   const normalized = path.startsWith("/") ? path : `/${path}`;
   const refreshed = normalized === "/app-icon.png" || normalized === "/app-icon-224.png"
-    || normalized.startsWith("/media-kit/social/") || normalized.startsWith("/media-kit/video/")
-    || normalized === "/media-kit/GuitarTool-1.0.7-social-kit-13-locales.zip";
+    || normalized.startsWith("/media-kit/social/") || normalized.startsWith("/media-kit/video/");
   return `${RUNTIME_BASE_PATH}${normalized}${refreshed ? "?v=120bpm" : ""}`;
 };
 export const absoluteUrl = (path = "/") => `${SITE_URL}${path.startsWith("/") ? path : `/${path}`}`;

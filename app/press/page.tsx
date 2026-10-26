@@ -119,7 +119,6 @@ export default function PressKitPage() {
       <section className="assetSection shell">
         <div className="assetHeading"><p className="acqEyebrow">DOWNLOADABLE ASSETS</p><h2>Ready-to-use product visuals.</h2><p>Assets may be used in editorial coverage of GuitarTool. Please do not alter the app icon or imply an endorsement.</p></div>
         <div className="assetGrid">{assets.map((asset) => <article className={asset.width > asset.height ? "isLandscape" : undefined} key={asset.title}><div><Image src={assetPath(asset.preview)} alt={asset.title} width={asset.width} height={asset.height} /></div><h3>{asset.title}</h3><p>{asset.detail}</p><a href={assetPath(asset.file)} download>Download original <span>↓</span></a></article>)}</div>
-        <div className="mediaPackCallout"><div><p className="acqEyebrow">EVERGREEN CHORD-CARD SOCIAL KIT</p><h3>52 images, 13 languages, four platform-ready sizes.</h3><p>Created for the chord-card launch and still accurate for the current product. The ZIP includes landscape, portrait-feed, story and video-thumbnail formats, plus localized captions and landing pages.</p></div><a className="primaryButton" href={assetPath("/media-kit/GuitarTool-1.0.7-social-kit-13-locales.zip")} download>Download the 13-language kit <span>↓</span></a></div>
       </section>
 
       <section className="pressVideoSection shell">
