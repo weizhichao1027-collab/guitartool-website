@@ -1,7 +1,7 @@
 import { SiteLink as Link } from "@/app/components/SiteLink";
 import { AcquisitionFooter, AcquisitionHeader } from "@/app/components/AcquisitionChrome";
 import { JsonLd } from "@/app/components/JsonLd";
-import { APP_STORE_LINKS, APP_STORE_URL, PRIVACY_URL, PRIVACY_EN_URL, RELEASE_VERSION, PRIVACY_NOTICE_UPDATED, absoluteUrl } from "@/app/lib/site";
+import { APP_STORE_LINKS, APP_STORE_URL, GOOGLE_PLAY_URL, PLAY_RELEASE_VERIFIED, PRIVACY_URL, PRIVACY_EN_URL, RELEASE_VERSION, absoluteUrl } from "@/app/lib/site";
 
 const email = "weizhichao1027@gmail.com";
 
@@ -30,7 +30,7 @@ const content = {
       { title: "1.1.4 新增了什么？", body: "新增布偶练习室、怪兽排练室和失重马戏团三套独立付费主题。新版改善调音稳定性与音频输入中断恢复、节拍变速与练习倒计时、和弦选择试听分享，以及启动时恢复所选主题。iPhone/iPad 布局与大字号可达性也经过调整。" },
       { title: "新主题找不到或显示等待购买？", body: "确认已安装 1.1.4，打开“个性化 → 主题展厅”。新主题不是以前购买主题的附赠内容。商品加载需要联网，实际可购买性以所在地区 App Store 为准；若正在等待家长批准，请等待 Apple 的购买结果，不要反复购买。若完成后仍未解锁，按下方恢复购买步骤处理。" },
       { title: "iPad 或横屏上为什么需要滚动？", body: "工具会根据实际可用窗口宽度调整布局；分屏、窄窗口或放大字体可能使用纵向滚动。和弦指板保留五品可视窗口，可独立滚动到第 20 品。完整主题用于 iPhone/iPad；Watch 和小组件提供各自的专用布局。遇到遮挡请提供设备、窗口方向、文字大小及截图。" },
-      { title: "Android 或 Wear OS 已经可以下载吗？", body: "截至 2026-10-26，尚未确认 Android 或 Wear OS 的公开上架。本站 App Store 下载适用于 Apple 设备；浏览器调音器和节拍器可以先体验。不要把 iOS 主题购买视为 Google Play 权益。" },
+      { title: "Android 或 Wear OS 已经可以下载吗？", body: "Android 与 Wear OS 1.1.4 已于 2026 年 11 月 8 日在 Google Play 上架。Android 手机提供调音、节拍、和弦库及十套独立付费主题；Wear OS 提供独立节拍器和调音器。可通过本页 Google Play 链接下载，实际可用性以商店地区和设备为准。App Store 与 Google Play 的主题购买权益分别管理。" },
 
       { title: "如何开启人声数拍和试听？", body: "在 iPhone、iPad 更新到 1.1.3 或更新版本，停止播放后进入“节拍器 → 设置”，点当前音色行，在“节拍器声音”选择“人声”。会按当前 BPM 试听中文“一、二、三、四”；再点已选音色可重新试听。正常播放按每小节主拍报数，最多一到十二，每小节从一开始；细分位置仍用点击声。声音素材内置、离线播放，不使用麦克风，也不随界面语言改变。Watch 与网页节拍器不提供这款音色。" },
       { title: "BPM 输入后如何确认或取消？", body: "1.1.3 在各主题中统一使用独立输入面板。点 BPM 数字，替换原数字，再点顶部“完成”保存；点“取消”或下滑关闭会丢弃草稿，保留原速度和训练设置。空值或非数字输入不能确认，有效数字会限制到 20–500 BPM；本地化十进制数字也可输入。播放中确认会继续播放并保留倒计时原期限，同时沿用手动调速规则，退出分段训练。" },
@@ -84,7 +84,7 @@ const content = {
       { title: "What changed in 1.1.4?", body: "Three new separately purchased themes: Plush Practice Room, Oddball Rehearsal and Zero Gravity Circus. The release improves tuning and recovery after input interruptions, tempo changes and countdowns, chord selection, playback and sharing, and restoration of the selected theme at launch. iPhone/iPad layouts and access with large text have also been refined." },
       { title: "A new theme is missing or a purchase is pending", body: "Install 1.1.4 and open Personalization → Theme Gallery. New themes are not included with earlier purchases. Product loading needs a connection and availability follows your App Store region. For Ask to Buy, wait for Apple approval instead of repeatedly purchasing. If a completed purchase remains locked, follow the restore steps below." },
       { title: "Why do iPad or landscape layouts sometimes scroll?", body: "Layout follows the available window width. Split View, narrow windows or larger text can use vertical scrolling. The chord board keeps five frets visible and scrolls separately through all 20 frets. Complete themes apply to iPhone/iPad; Watch and widgets have dedicated layouts. For clipping, include device, orientation, text size and a screenshot." },
-      { title: "Is Android or Wear OS available to download?", body: "As of 26 October 2026, no public Android or Wear OS release has been confirmed. App Store links on this site are for Apple devices. You can try the browser tuner and metronome. An iOS theme purchase is not a Google Play entitlement." },
+      { title: "Is Android or Wear OS available to download?", body: "Android and Wear OS version 1.1.4 was released on Google Play on 8 November 2026. Android phones offer tuning, a metronome, chords and ten separately purchased themes; Wear OS offers a standalone metronome and tuner. Use the Google Play link on this page; availability depends on your store region and device. App Store and Google Play theme purchases are managed separately." },
 
       { title: "How do I use Voice counting and preview it?", body: "Update the iPhone or iPad app to 1.1.3 or later. Stop playback, open Metronome → Settings, tap the current sound row and choose Voice in Metronome Sound. It previews Chinese one, two, three and four at the current BPM; tap the selected sound to preview again. Playback counts the main beats in each bar, up to twelve, restarting at one each bar; subdivisions use clicks. Bundled audio works offline, needs no microphone and remains Chinese in every interface language. Watch and the browser metronome do not offer this sound." },
       { title: "How do I confirm or cancel a BPM input?", body: "Version 1.1.3 uses the same separate input panel across themes. Tap the BPM number, replace it and tap Done at the top to save. Cancel or swiping the panel away discards the draft and retains the previous tempo and training settings. Empty or non-digit input cannot be confirmed; valid numeric input is clamped to 20–500 BPM, including localized decimal digits. Confirming during playback keeps it running and preserves the countdown deadline, while applying the manual tempo rule that exits staged training." },
@@ -128,7 +128,7 @@ export function SupportPage({ language }: { language: keyof typeof content }) {
   return (
     <main className="acqPage supportPage" lang={copy.lang}>
       <JsonLd data={[
-        { "@context": "https://schema.org", "@type": "ContactPage", name: language === "zh" ? "GuitarTool 技术支持" : "GuitarTool Support", url: absoluteUrl(path), inLanguage: copy.lang, dateModified: PRIVACY_NOTICE_UPDATED, mainEntity: { "@type": "SoftwareApplication", name: "GuitarTool", softwareVersion: RELEASE_VERSION, downloadUrl: APP_STORE_URL, operatingSystem: "iOS, iPadOS, watchOS" } },
+        { "@context": "https://schema.org", "@type": "ContactPage", name: language === "zh" ? "GuitarTool 技术支持" : "GuitarTool Support", url: absoluteUrl(path), inLanguage: copy.lang, dateModified: PLAY_RELEASE_VERIFIED, mainEntity: { "@type": "SoftwareApplication", name: "GuitarTool", softwareVersion: RELEASE_VERSION, downloadUrl: APP_STORE_URL, operatingSystem: "iOS, iPadOS, watchOS" } },
         { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faq },
       ]} />
       <AcquisitionHeader language={language} />
@@ -140,6 +140,7 @@ export function SupportPage({ language }: { language: keyof typeof content }) {
         <div>
           <a className="primaryButton" href={`mailto:${email}`}>{copy.contact} <span>→</span></a>
           <a className="textCta" href={APP_STORE_LINKS.support}>{copy.appStore} <span>↗</span></a>
+          <a className="textCta" href={GOOGLE_PLAY_URL}>Google Play · Android / Wear OS <span>↗</span></a>
         </div>
       </section>
 

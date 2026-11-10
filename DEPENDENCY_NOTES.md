@@ -1,4 +1,10 @@
-# Dependency audit — 2026-10-26
+# Dependency audit — 2026-11-10
+
+The website publication gate found [minimatch GHSA-g3hv-75wg-m249](https://github.com/advisories/GHSA-g3hv-75wg-m249), published after the previous release. The vulnerable path is development-only `@typescript-eslint/typescript-estree` → minimatch 10.2.6. A scoped npm override selects the advisory's patched **11.0.1** for that parent only, with its required `@isaacs/nonrecursive-glob-match` dependency. Existing Next, React and typescript-eslint versions remain unchanged. No advisory exception or CI bypass was added.
+
+Ordinary `npm audit fix` updated the typescript-eslint family but still reported the same dependency issue; those broad lockfile changes were reverted before applying the narrow override. The final validation and deployment receipts are recorded in the App handoff and the release record below. Public hosting remains a static GitHub Pages export.
+
+## Historical audit — 2026-10-26
 
 The 1.1.4 website release upgrades Next and eslint-config-next from 16.3.8 to **16.4.3**, and refreshes the transitive Zod dependency to **4.6.7**. The previous lockfile failed the current audit for Next advisories GHSA-2464-fhr4-w9xw, GHSA-p3m5-59mp-jv5r, GHSA-673q-mjm6-r5xr and Zod GHSA-mrhx-c7xc-m3w5. The final lockfile passes the full production/development dependency gate with zero known advisories. No advisory exceptions were added. The public site remains a static Pages export; these reports do not establish that a public Next server was exposed.
 

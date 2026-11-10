@@ -53,7 +53,7 @@ export const zhRelease114Pages: LandingPage[] = [
         "title": "发布与隐私范围",
         "body": "本次上架时间为北京时间 2026 年 10 月 26 日 06:14，依据 Apple 美国区公开商店信息。地区可用性以本地 App Store 为准。1.1.4 不提供使用分析开关，不初始化 PostHog，不发送使用或诊断分析事件；调音声音只在设备上处理。",
         "points": [
-          "Android / Wear OS 尚无公开上架确认",
+          "Android / Wear OS 1.1.4 已于 2026-11-08 在 Google Play 上架；11 月 10 日已核实",
           "网站托管所需网络信息见隐私政策",
           "历史测试版数据不会随更新自动删除，申请方式见隐私政策"
         ]
@@ -202,7 +202,7 @@ export const enRelease114Pages: LandingPage[] = [
         "title": "Release and privacy scope",
         "body": "Apple’s public US storefront reports release at 06:14 on 26 October 2026, China time. Check your local App Store for regional availability. Version 1.1.4 has no usage-analytics switch, does not initialize PostHog and sends no usage or diagnostic analytics events. Tuning audio stays on-device.",
         "points": [
-          "A public Android / Wear OS release has not been confirmed",
+          "Android / Wear OS 1.1.4 was released on Google Play on 8 November 2026, verified on 10 November",
           "Website hosting network information is covered in the privacy policy",
           "Historical test-build data is not automatically deleted by updating; see the policy for requests"
         ]

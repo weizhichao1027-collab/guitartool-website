@@ -5,6 +5,8 @@ export const RELEASE_PUBLISHED = "2026-10-26T06:14:15+08:00";
 export const PRIVACY_NOTICE_UPDATED = "2026-10-26";
 export const PRIVACY_NOTICE_GUIDE_SLUGS = ["offline-guitar-tools", "visual-metronome", "apple-watch-metronome"] as const;
 export const APP_STORE_URL = "https://apps.apple.com/app/id6761914163";
+export const GOOGLE_PLAY_URL = "https://play.google.com/store/apps/details?id=com.guitar123.toolbox";
+export const PLAY_RELEASE_VERIFIED = "2026-11-10";
 const APP_STORE_PROVIDER_TOKEN = "128747267";
 
 const CUSTOM_PRODUCT_PAGE_IDS = {

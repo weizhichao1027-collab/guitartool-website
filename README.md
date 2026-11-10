@@ -17,7 +17,7 @@ Version **1.1.4 is available**, released October 26, 2026 at 06:14 China time, v
 
 [1.1.4 release and device guide](https://weizhichao1027-collab.github.io/guitartool-website/en/guides/guitartool-1-1-4/) · [Theme and purchase help](https://weizhichao1027-collab.github.io/guitartool-website/en/guides/themes-and-purchases/)
 
-Requires iOS/iPadOS 17+; the Watch companion requires watchOS 10+. Chinese voice counting is for iPhone/iPad only. The extra-large portrait widget requires iOS 27+ and system availability. No public Android/Wear OS release has been confirmed.
+Requires iOS/iPadOS 17+; the Watch companion requires watchOS 10+. Chinese voice counting is for iPhone/iPad only. The extra-large portrait widget requires iOS 27+ and system availability. Android and Wear OS 1.1.4 was released on 8 November 2026; the Play Console release status and [public Google Play listing](https://play.google.com/store/apps/details?id=com.guitar123.toolbox) were verified on 10 November. Availability depends on the local store and device. App Store and Google Play theme purchases are separate.
 [Voice-counting guide](https://weizhichao1027-collab.github.io/guitartool-website/en/guides/voice-counting-metronome/) · [BPM and widget guide](https://weizhichao1027-collab.github.io/guitartool-website/en/guides/metronome-bpm-widget/)
 
 [Silent-bar guide](https://weizhichao1027-collab.github.io/guitartool-website/en/guides/silent-bar-metronome/) · [Tempo-stage guide](https://weizhichao1027-collab.github.io/guitartool-website/en/guides/staged-tempo-training/)
