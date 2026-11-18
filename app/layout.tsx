@@ -8,7 +8,7 @@ const basePath = process.env.GITHUB_PAGES === "true" ? "/guitartool-website" : "
 export const metadata: Metadata = {
   metadataBase: new URL(`${SITE_URL}/`),
   title: "GuitarTool｜调音、节拍与和弦练习",
-  description: "GuitarTool 1.1.4 已上架：新增布偶练习室、怪兽排练室和失重马戏团三套独立付费主题，改善调音、节拍、和弦与启动主题恢复。核心工具免费、离线，无广告。",
+  description: "GuitarTool 的 App Store 公开版本是 1.1.5：机械花园与口袋爵士剧场可预览后一次性购买。Google Play 公开版本仍是 Android 与 Wear OS 1.1.4。核心工具免费、离线，无广告、无订阅。",
   applicationName: "GuitarTool",
   category: "music",
   keywords: ["Apple Watch 调音器", "吉他调音器", "尤克里里调音器", "节拍器", "吉他和弦", "ukulele chords", "guitar tuner"],
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   referrer: "strict-origin-when-cross-origin",
   openGraph: {
     title: "GuitarTool｜练琴时，只留下专注。",
-    description: "GuitarTool 1.1.4 已上架：新增布偶练习室、怪兽排练室和失重马戏团三套独立付费主题，改善调音、节拍、和弦与启动主题恢复。核心工具免费、离线，无广告。",
+    description: "GuitarTool 的 App Store 公开版本是 1.1.5：机械花园与口袋爵士剧场可预览后一次性购买。Google Play 公开版本仍是 Android 与 Wear OS 1.1.4。核心工具免费、离线，无广告、无订阅。",
     type: "website",
     images: [{
       url: absoluteUrl("/og.png"),
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "GuitarTool｜练琴时，只留下专注。",
-    description: "GuitarTool 1.1.4 已上架：新增布偶练习室、怪兽排练室和失重马戏团三套独立付费主题，改善调音、节拍、和弦与启动主题恢复。核心工具免费、离线，无广告。",
+    description: "GuitarTool 的 App Store 公开版本是 1.1.5：机械花园与口袋爵士剧场可预览后一次性购买。Google Play 公开版本仍是 Android 与 Wear OS 1.1.4。核心工具免费、离线，无广告、无订阅。",
     images: [absoluteUrl("/og.png")],
   },
 };

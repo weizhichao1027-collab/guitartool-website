@@ -1,3 +1,4 @@
+import { enRelease115Pages, zhRelease115Pages } from "@/app/lib/release-1.1.5-pages";
 import { enRelease114Pages, zhRelease114Pages } from "@/app/lib/release-1.1.4-pages";
 import { enRelease113Pages, zhRelease113Pages } from "@/app/lib/release-1.1.3-pages";
 import { enReleaseTrainingPages, zhReleaseTrainingPages } from "@/app/lib/release-training-pages";
@@ -170,7 +171,7 @@ const en: LandingPage[] = [
       },
       {
         title: "Designed to stay out of the way",
-        body: "There is no feed, login wall or advertising layer. Released version 1.1.4 disables usage analytics: no analytics switch, no PostHog initialization and no usage or diagnostic analytics events. Tuner audio is processed on the device and is not stored. Chord cards can be saved or shared without an account, while Home Screen widgets and Apple Watch background audio reduce the steps between picking up an instrument and starting a focused session.",
+        body: "There is no feed, login wall or advertising layer. The current App Store release, 1.1.5, keeps usage analytics disabled: no analytics switch, no PostHog initialization and no usage or diagnostic analytics events. Tuner audio is processed on the device and is not stored. Chord cards can be saved or shared without an account, while Home Screen widgets and Apple Watch background audio reduce the steps between picking up an instrument and starting a focused session.",
         points: ["iPhone and iPad layouts", "Interactive widgets; iOS 27+ portrait size", "Shareable chord cards and Apple Watch metronome"],
       },
     ],
@@ -271,7 +272,7 @@ const zh: LandingPage[] = [
     proof: ["无广告", "无需账户", "无第三方追踪 SDK"],
     sections: [
       { title: "三个高频工具，一条练习流程", body: "GuitarTool 将实时调音器、20–500 BPM 节拍器，以及吉他与尤克里里和弦库放在一起。所有核心功能均可离线运行，即使排练室网络不稳定，也不会中断眼前的任务。", points: ["七类乐器调音模式", "练习预设与渐进加速", "吉他和尤克里里共 19,244 个指法"] },
-      { title: "工具应该退到练习之后", body: "这里没有信息流、登录墙或广告层。已上架的 1.1.4 停用使用分析，不提供分析入口、不初始化 PostHog、不发送分析事件。调音声音只在设备端处理，不会保存；和弦卡片无需账户即可保存或分享。多种尺寸的主屏幕小组件与 Apple Watch 后台节拍，也让拿起乐器到开始练习之间少几步。", points: ["iPhone 与 iPad 自适应界面", "交互式小组件，iOS 27+ 新增超大竖排", "和弦卡片与 Apple Watch 节拍器"] },
+      { title: "工具应该退到练习之后", body: "这里没有信息流、登录墙或广告层。App Store 当前公开版本 1.1.5 继续停用使用分析，不提供分析入口、不初始化 PostHog、不发送分析事件。调音声音只在设备端处理，不会保存；和弦卡片无需账户即可保存或分享。多种尺寸的主屏幕小组件与 Apple Watch 后台节拍，也让拿起乐器到开始练习之间少几步。", points: ["iPhone 与 iPad 自适应界面", "交互式小组件，iOS 27+ 可有超大竖排；1.1.5 另有 iPad 横向超大号（系统提供时）", "和弦卡片与 Apple Watch 节拍器"] },
     ],
     faq: [["真的可以完全离线使用吗？", "可以，调音器、节拍器、和弦库和本地设置均不依赖网络。"], ["APP 中有广告吗？", "没有广告，也没有第三方追踪 SDK。"], ["支持哪些设备？", "支持 iPhone、iPad、主屏幕小组件，以及落腕或屏幕变暗后仍可继续声音的 Apple Watch 节拍器。"]],
     related: ["guitar-tuner", "online-metronome", "guitar-chords"],
@@ -279,8 +280,8 @@ const zh: LandingPage[] = [
 ];
 
 export const landingPages = {
-  en: [...enRelease114Pages, ...enRelease113Pages, ...enReleaseTrainingPages, ...en, ...enFeaturePages, ...enTuningPages, ...(enPracticePages as LandingPage[]), ...enIntentPages, ...enTroubleshootingPages],
-  zh: [...zhRelease114Pages, ...zhRelease113Pages, ...zhReleaseTrainingPages, ...zh, ...zhFeaturePages, ...zhTuningPages, ...(zhPracticePages as LandingPage[]), ...zhIntentPages, ...zhTroubleshootingPages],
+  en: [...enRelease115Pages, ...enRelease114Pages, ...enRelease113Pages, ...enReleaseTrainingPages, ...en, ...enFeaturePages, ...enTuningPages, ...(enPracticePages as LandingPage[]), ...enIntentPages, ...enTroubleshootingPages],
+  zh: [...zhRelease115Pages, ...zhRelease114Pages, ...zhRelease113Pages, ...zhReleaseTrainingPages, ...zh, ...zhFeaturePages, ...zhTuningPages, ...(zhPracticePages as LandingPage[]), ...zhIntentPages, ...zhTroubleshootingPages],
 } as const;
 
 export function getLandingPage(language: LandingLanguage, slug: string) {

@@ -50,7 +50,7 @@ export default async function LocalizedHome({ params }: { params: Promise<{ loca
   const previewImage = chordCardPreviewByLocale[locale] ?? "/en-chord-card-share.webp";
   return (
     <main className="acqPage localePage" lang={page.htmlLang} dir={page.dir}>
-      <JsonLd data={{ "@context": "https://schema.org", "@type": "SoftwareApplication", name: "GuitarTool", softwareVersion: RELEASE_VERSION, dateModified: RELEASE_UPDATED, description: page.description, url: canonical, downloadUrl: APP_STORE_URL, applicationCategory: "MusicApplication", operatingSystem: "iOS, iPadOS, watchOS", inLanguage: page.htmlLang, offers: { "@type": "Offer", price: "0", priceCurrency: "USD" } }} />
+      <JsonLd data={{ "@context": "https://schema.org", "@type": "SoftwareApplication", name: "GuitarTool", softwareVersion: RELEASE_VERSION, dateModified: RELEASE_UPDATED, description: page.description, url: canonical, downloadUrl: APP_STORE_URL, applicationCategory: "MusicApplication", operatingSystem: "iOS 17+, iPadOS 17+, watchOS 10+, Android, Wear OS", inLanguage: page.htmlLang, offers: { "@type": "Offer", price: "0", priceCurrency: "USD" }, additionalProperty: [{ "@type": "PropertyValue", name: "App Store version", value: "1.1.5" }, { "@type": "PropertyValue", name: "Google Play version", value: "1.1.4" }] }} />
       <AcquisitionHeader locale={locale} />
       <section className="localeHero shell">
         <div>

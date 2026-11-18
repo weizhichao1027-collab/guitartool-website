@@ -13,11 +13,11 @@ Tune your instrument, set a beat, find the exact chord shape, then play. GuitarT
 - **Share the exact chord:** 19,244 guitar and ukulele fingerings, multiple voicings, audio previews and chord cards that can be saved or sent as ordinary images.
 - **Keep practice close:** adaptive iPhone/iPad layouts, Apple Watch tuning and audible beats, interactive widgets and 13 languages.
 
-Version **1.1.4 is available**, released October 26, 2026 at 06:14 China time, verified through Apple's public US storefront. It adds Plush Practice Room, Oddball Rehearsal and Zero Gravity Circus as separate one-time theme purchases. Tuning and input recovery, metronome tempo changes and countdowns, chords and sharing, and theme restoration at launch are improved. Core tools and four basic looks stay free; ten complete themes are separate purchases with bundled artwork. Usage analytics is disabled, and microphone audio stays on-device.
+The public App Store version is **1.1.5**. On 18 November 2026, Apple’s public lookup returned 1.1.5 for the US and China storefronts, with `currentVersionReleaseDate` 16 November 2026 at 05:14:11 UTC. It adds Kinetic Garden and Pocket Jazz Theater as separate one-time theme purchases, improves purchase, restore and cancellation handling, and adds an extra-large landscape iPad widget when the system offers that size. Core tools and four basic looks stay free. There is no subscription. Usage analytics stays disabled.
 
-[1.1.4 release and device guide](https://weizhichao1027-collab.github.io/guitartool-website/en/guides/guitartool-1-1-4/) · [Theme and purchase help](https://weizhichao1027-collab.github.io/guitartool-website/en/guides/themes-and-purchases/)
+[1.1.5 release and download notes](https://weizhichao1027-collab.github.io/guitartool-website/en/guides/guitartool-1-1-5/) · [Theme and purchase help](https://weizhichao1027-collab.github.io/guitartool-website/en/guides/themes-and-purchases/)
 
-Requires iOS/iPadOS 17+; the Watch companion requires watchOS 10+. Chinese voice counting is for iPhone/iPad only. The extra-large portrait widget requires iOS 27+ and system availability. Android and Wear OS 1.1.4 was released on 8 November 2026; the Play Console release status and [public Google Play listing](https://play.google.com/store/apps/details?id=com.guitar123.toolbox) were verified on 10 November. Availability depends on the local store and device. App Store and Google Play theme purchases are separate.
+Requires iOS/iPadOS 17+; the Watch companion requires watchOS 10+. Chinese voice counting is for iPhone/iPad only. The extra-large portrait widget requires iOS 27+ and system availability. The [public Google Play listing](https://play.google.com/store/apps/details?id=com.guitar123.toolbox) still showed Android and Wear OS **1.1.4** on 18 November 2026. Availability depends on the local store and device. App Store and Google Play theme purchases are separate.
 [Voice-counting guide](https://weizhichao1027-collab.github.io/guitartool-website/en/guides/voice-counting-metronome/) · [BPM and widget guide](https://weizhichao1027-collab.github.io/guitartool-website/en/guides/metronome-bpm-widget/)
 
 [Silent-bar guide](https://weizhichao1027-collab.github.io/guitartool-website/en/guides/silent-bar-metronome/) · [Tempo-stage guide](https://weizhichao1027-collab.github.io/guitartool-website/en/guides/staged-tempo-training/)
@@ -32,7 +32,7 @@ Teachers can [send a specific chord shape to a student](https://weizhichao1027-c
 
 ## 中文介绍
 
-GuitarTool（吉他工具）1.1.4 已上架。新增布偶练习室、怪兽排练室、失重马戏团，十套完整主题分别一次性购买、素材内置；四款基础主题和调音、节拍、和弦工具免费离线。改善调音稳定性与中断恢复、节拍变速与倒计时、和弦选择试听分享及启动主题恢复。本版停用使用分析，无广告、无需账户、音频不上传。Android/Wear OS 暂无公开上线确认。
+GuitarTool（吉他工具）的 App Store 公开版本是 1.1.5，新增机械花园和口袋爵士剧场，各自一次性购买，没有订阅。核心调音、节拍和和弦工具免费离线，使用分析保持关闭。Google Play 公开版本仍是 Android 与 Wear OS 1.1.4。
 
 [观看 B 站介绍](https://www.bilibili.com/video/BV1bY4d6GEkw/) · [中文支持](https://weizhichao1027-collab.github.io/guitartool-website/support/) · [English support](https://weizhichao1027-collab.github.io/guitartool-website/en/support/) · [Privacy policy](https://weizhichao1027-collab.github.io/GuitarTool-Privacy/)
 

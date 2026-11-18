@@ -3,14 +3,14 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { AcquisitionFooter, AcquisitionHeader } from "@/app/components/AcquisitionChrome";
 import { JsonLd } from "@/app/components/JsonLd";
-import { APP_STORE_LINKS, APP_STORE_URL, GOOGLE_PLAY_URL, PLAY_RELEASE_VERIFIED, GITHUB_URL, PRIVACY_EN_URL, RELEASE_VERSION, absoluteUrl, assetPath } from "@/app/lib/site";
+import { APP_STORE_LINKS, APP_STORE_URL, GOOGLE_PLAY_URL, GITHUB_URL, PRIVACY_EN_URL, RELEASE_UPDATED, RELEASE_VERSION, absoluteUrl, assetPath } from "@/app/lib/site";
 
 export const metadata: Metadata = {
   title: "GuitarTool Press Kit | Product Facts, Images & Contact",
-  description: "Official GuitarTool 1.1.4 press kit: three new optional themes, improved tuning, metronome and chords, release facts, actual app artwork and support.",
+  description: "Official GuitarTool press kit: App Store 1.1.5 adds Kinetic Garden and Pocket Jazz Theater. Google Play’s public version remains Android and Wear OS 1.1.4. Free offline tools, no subscription.",
   alternates: { canonical: absoluteUrl("/press/") },
-  openGraph: { title: "GuitarTool Official Press Kit", description: "Official GuitarTool 1.1.4 press kit: three new optional themes, improved tuning, metronome and chords, release facts, actual app artwork and support.", url: absoluteUrl("/press/"), type: "website", images: [{ url: absoluteUrl("/en-watch-tuner.jpg"), width: 416, height: 496, alt: "GuitarTool Apple Watch tuner preview" }] },
-  twitter: { card: "summary_large_image", title: "GuitarTool Official Press Kit", description: "Official GuitarTool 1.1.4 press kit: three new optional themes, improved tuning, metronome and chords, release facts, actual app artwork and support.", images: [absoluteUrl("/en-watch-tuner.jpg")] },
+  openGraph: { title: "GuitarTool Official Press Kit", description: "Official GuitarTool press kit: App Store 1.1.5 adds Kinetic Garden and Pocket Jazz Theater. Google Play’s public version remains Android and Wear OS 1.1.4. Free offline tools, no subscription.", url: absoluteUrl("/press/"), type: "website", images: [{ url: absoluteUrl("/en-watch-tuner.jpg"), width: 416, height: 496, alt: "GuitarTool Apple Watch tuner preview" }] },
+  twitter: { card: "summary_large_image", title: "GuitarTool Official Press Kit", description: "Official GuitarTool press kit: App Store 1.1.5 adds Kinetic Garden and Pocket Jazz Theater. Google Play’s public version remains Android and Wear OS 1.1.4. Free offline tools, no subscription.", images: [absoluteUrl("/en-watch-tuner.jpg")] },
 };
 
 const assets = [
@@ -47,7 +47,7 @@ const fullVideos = [
 export default function PressKitPage() {
   return (
     <main className="acqPage pressPage" lang="en">
-      <JsonLd data={{ "@context": "https://schema.org", "@type": "SoftwareApplication", name: "GuitarTool", softwareVersion: RELEASE_VERSION, dateModified: PLAY_RELEASE_VERIFIED, description: "Offline core practice tools for guitar and ukulele, with Apple Watch tuning, rear-flash beat cues, shareable chord cards and Home Screen widgets.", url: absoluteUrl("/"), downloadUrl: APP_STORE_URL, applicationCategory: "MusicApplication", operatingSystem: "iOS, iPadOS, watchOS", featureList: ["Real-time tuner for seven instrument families", "Apple Watch guitar, ukulele, bass and chromatic tuner", "20–500 BPM practice metronome with offline Chinese voice counting and current-BPM preview", "Extra-large portrait Home Screen widget on iOS 27+ when offered by the system", "Silent bars and up to six tempo stages", "Ten separately purchased themes including Plush Practice Room, Oddball Rehearsal and Zero Gravity Circus", "Rear-flash beat cues for all main beats or accents only, with three intensities", "19,244 guitar and ukulele fingerings", "Chord-card preview, Photos save and system sharing", "Apple Watch metronome: approved background route continues; foreground fallback stops when inactive", "Large Home Screen widget subdivisions and Swing", "13 interface languages"], author: { "@type": "Person", name: "Zhichao Wei" }, offers: { "@type": "Offer", price: "0", priceCurrency: "USD" } }} />
+      <JsonLd data={{ "@context": "https://schema.org", "@type": "SoftwareApplication", name: "GuitarTool", softwareVersion: RELEASE_VERSION, dateModified: RELEASE_UPDATED, description: "Offline core practice tools for guitar and ukulele. Public App Store version 1.1.5; public Google Play version Android and Wear OS 1.1.4. No ads, account or subscription.", url: absoluteUrl("/"), downloadUrl: APP_STORE_URL, applicationCategory: "MusicApplication", operatingSystem: "iOS 17+, iPadOS 17+, watchOS 10+, Android, Wear OS", featureList: ["Real-time tuner for seven instrument families", "Apple Watch guitar, ukulele, bass and chromatic tuner", "20–500 BPM practice metronome with offline Chinese voice counting and current-BPM preview", "Extra-large portrait Home Screen widget on iOS 27+ when offered by the system", "Extra-large landscape iPad widget in 1.1.5 when the system and device offer it", "Silent bars and up to six tempo stages", "Twelve one-time themes on the App Store, including Kinetic Garden and Pocket Jazz Theater", "Rear-flash beat cues for all main beats or accents only, with three intensities", "19,244 guitar and ukulele fingerings", "Chord-card preview, Photos save and system sharing", "Apple Watch metronome: approved background route continues; foreground fallback stops when inactive", "Large Home Screen widget subdivisions and Swing", "13 interface languages"], author: { "@type": "Organization", name: "Shanghai Qishan Cultural Communication Co., Ltd." }, offers: { "@type": "Offer", price: "0", priceCurrency: "USD" } }} />
       <JsonLd data={[
         ...fullVideos.map((video) => ({ "@context": "https://schema.org", "@type": "VideoObject", name: video.title, description: "A 36-second full introduction to GuitarTool's tuner, metronome, chord cards, widgets and multi-device experience.", thumbnailUrl: absoluteUrl("/media-kit/social/guitartool-chord-cards-en-1200x630.png"), uploadDate: "2026-08-28", duration: "PT36S", contentUrl: absoluteUrl(video.file) })),
         { "@context": "https://schema.org", "@type": "VideoObject", name: "GuitarTool 24-second social preview", description: "A concise vertical preview of GuitarTool's offline metronome, tuner, chord library and shareable chord cards.", thumbnailUrl: absoluteUrl("/media-kit/social/guitartool-chord-cards-en-1200x630.png"), uploadDate: "2026-08-27", duration: "PT24S", contentUrl: absoluteUrl("/media-kit/video/GuitarTool-Social-Preview-en-1080x1920.mp4") },
@@ -55,20 +55,21 @@ export default function PressKitPage() {
       ]} />
       <AcquisitionHeader language="en" />
       <section className="pressHero shell">
-        <p className="acqEyebrow">OFFICIAL PRESS KIT · UPDATED 10 NOVEMBER 2026</p>
+        <p className="acqEyebrow">OFFICIAL PRESS KIT · UPDATED 18 NOVEMBER 2026</p>
         <h1>GuitarTool keeps core practice tools <em>focused, private and offline.</em></h1>
         <p>Verified product facts, downloadable visual assets and direct links for journalists, educators, reviewers and creators.</p>
         <div><a className="primaryButton" href={APP_STORE_LINKS.press}>View on the App Store <span>↗</span></a><a className="textCta" href={GOOGLE_PLAY_URL}>Get it on Google Play <span>↗</span></a><a className="textCta" href="mailto:weizhichao1027@gmail.com">Contact the developer <span>→</span></a></div>
       </section>
 
       <section className="pressFacts shell">
-        <div><p className="acqEyebrow">ONE-SENTENCE DESCRIPTION</p><h2>GuitarTool is a free, ad-free iPhone and iPad practice toolkit with offline core tools, four free basic looks and ten separately purchasable themes, shareable chord cards, Apple Watch and Home Screen companions.</h2></div>
+        <div><p className="acqEyebrow">ONE-SENTENCE DESCRIPTION</p><h2>GuitarTool is a free, ad-free practice toolkit for guitar and ukulele: offline tuner, metronome and chords, four free looks, and separate one-time themes. App Store 1.1.5 has twelve themes. Google Play’s public release remains Android and Wear OS 1.1.4.</h2></div>
         <dl>
-          <div><dt>Current release</dt><dd>1.1.4 · October 26, 2026 (China time)</dd></div>
-          <div><dt>Platforms</dt><dd>iPhone and iPad: iOS 17+ · companion Apple Watch app: watchOS 10+</dd></div>
+          <div><dt>App Store</dt><dd>1.1.5 · public lookup currentVersionReleaseDate 16 November 2026, 13:14 China time</dd></div>
+          <div><dt>Google Play</dt><dd>Android and Wear OS 1.1.4 · public page still showed 1.1.4 on 18 November 2026</dd></div>
+          <div><dt>Platforms</dt><dd>iPhone and iPad: iOS 17+ · Apple Watch: watchOS 10+ · Android and Wear OS via Google Play</dd></div>
           <div><dt>Voice counting</dt><dd>Chinese audio on iPhone/iPad in all interface languages · offline · optional</dd></div>
-          <div><dt>Portrait widget</dt><dd>iOS 27+ · availability depends on system, device and space</dd></div>
-          <div><dt>Price</dt><dd>Free download · four basic looks free · ten themes sold separately</dd></div>
+          <div><dt>Widgets</dt><dd>Portrait extra-large: iOS 27+ when offered · landscape extra-large iPad: 1.1.5 when the system offers that size</dd></div>
+          <div><dt>Price</dt><dd>Free download · no subscription · four basic looks free · themes sold once each · store shows the price</dd></div>
           <div><dt>Languages</dt><dd>13 interface languages</dd></div>
           <div><dt>Privacy</dt><dd>No account, ads, analytics or audio uploads</dd></div>
           <div><dt>Developer contact</dt><dd>Zhichao Wei</dd></div>
@@ -81,8 +82,13 @@ export default function PressKitPage() {
         <div><strong>20–500</strong><span>BPM range</span></div><div><strong>19,244</strong><span>guitar & ukulele fingerings</span></div><div><strong>7</strong><span>tuner instrument families</span></div><div><strong>13</strong><span>interface languages</span></div>
       </section>
 
+      <section className="pressStory shell" id="release-1-1-5">
+        <div><p className="acqEyebrow">PUBLIC APP STORE VERSION · 1.1.5</p><h2>Kinetic Garden and Pocket Jazz Theater, still without a subscription.</h2></div>
+        <div><p>On 18 November 2026, Apple’s public lookup returned version 1.1.5 for both the US and China storefronts. The recorded <a href="https://itunes.apple.com/lookup?id=6761914163&amp;country=us">currentVersionReleaseDate</a> is 16 November 2026 at 05:14:11 UTC, which is 13:14:11 China time. There is no separate App Store Connect approval email in the project archive for that release.</p><p>The public notes add Kinetic Garden and Pocket Jazz Theater as optional one-time themes, improve purchase, restore and cancellation handling, refine 13 languages and layouts, and add an extra-large landscape iPad Home Screen widget when the system and device offer it. Core tools and four basic looks stay free. Usage analytics stays disabled. <Link href="/en/guides/guitartool-1-1-5/">1.1.5 guide</Link> · <Link href="/en/guides/themes-and-purchases/">Theme and purchase guide</Link>.</p><p>The same day’s public Google Play page for com.guitar123.toolbox still showed version 1.1.4. Do not describe Kinetic Garden or Pocket Jazz Theater as purchasable on that Play listing. App Store seller: Shanghai Qishan Cultural Communication Co., Ltd. Play developer name: Qishan Labs. Support: weizhichao1027@gmail.com.</p></div>
+      </section>
+
       <section className="pressStory shell" id="release-1-1-3">
-        <div><p className="acqEyebrow">AVAILABLE NOW · VERSION 1.1.4</p><h2>Three new scenes. More reliable everyday practice.</h2></div>
+        <div><p className="acqEyebrow">EARLIER RELEASE · VERSION 1.1.4</p><h2>Three scenes from the previous App Store version.</h2></div>
         <div><p>Released October 26, 2026 at 06:14:15 China time (October 25 at 22:14:15 UTC), verified in <a href="https://itunes.apple.com/lookup?id=6761914163&amp;country=us">Apple’s public US storefront</a>. Regional availability follows the local App Store. Plush Practice Room, Oddball Rehearsal and Zero Gravity Circus are three new, separate one-time theme purchases. Four basic looks and all core tools remain free; the collection now has ten paid themes.</p><p>Version 1.1.4 improves tuning stability and recovery after audio-input interruptions, metronome tempo changes and countdowns, chord selection, playback and sharing, and restoration of the selected theme at launch. iPhone/iPad windows and large text have refined layouts. Usage analytics is disabled. <Link href="/en/guides/guitartool-1-1-4/">Release and device guide</Link> · <Link href="/en/guides/themes-and-purchases/">Theme and purchase guide</Link>.</p><p>Current artwork below comes from the 1.1.4 App Store production project, which contains real native screens and editorial device compositions. Older screenshots and videos retain their original labels. Android and Wear OS version 1.1.4 was released on 8 November 2026, verified in the public Google Play listing on 10 November. Availability follows the local Google Play store and supported device. App Store and Google Play purchases are separate.</p></div>
       </section>
 
@@ -113,7 +119,7 @@ export default function PressKitPage() {
 
       <section className="pressStory shell">
         <div><p className="acqEyebrow">PRODUCT STORY</p><h2>Less setup. More time with the instrument.</h2></div>
-        <div><p>GuitarTool was created around a simple observation: the tools used before and during practice should not become another source of interruption. Tuning, timekeeping and chord lookup belong in one dependable flow, without advertising, feeds or a login wall.</p><p>Core tools work offline. Released version 1.1.4 has usage analytics disabled. Microphone audio is used only for live pitch analysis on the device; it is not saved or uploaded. The four basic looks are free. Artwork for all ten paid themes in 1.1.4 is bundled, so purchased themes work offline. Version 1.1.4 does not initialize PostHog or send usage or diagnostic analytics events.</p><p>Historical analytics-enabled test builds are distinct from this public release. Installing 1.1.4 does not automatically delete historical test data. See the <a href={PRIVACY_EN_URL}>privacy policy</a> for data requests, Apple purchases and website hosting.</p></div>
+        <div><p>GuitarTool was created around a simple observation: the tools used before and during practice should not become another source of interruption. Tuning, timekeeping and chord lookup belong in one dependable flow, without advertising, feeds or a login wall.</p><p>Core tools work offline. App Store 1.1.5 keeps usage analytics disabled. Microphone audio is used only for live pitch analysis on the device; it is not saved or uploaded. The four basic looks are free. Paid theme artwork is bundled, so a purchased theme works offline. Version 1.1.5 does not initialize PostHog or send usage or diagnostic analytics events.</p><p>Historical analytics-enabled test builds are distinct from this public release. Installing 1.1.5 does not automatically delete historical test data. See the <a href={PRIVACY_EN_URL}>privacy policy</a>, last updated 18 November 2026, for data requests, Apple and Google purchases, and website hosting.</p></div>
       </section>
 
       <section className="assetSection shell">

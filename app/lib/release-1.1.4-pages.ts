@@ -8,7 +8,7 @@ export const zhRelease114Pages: LandingPage[] = [
     "title": "GuitarTool 1.1.4：新主题、更新内容与设备支持",
     "description": "了解已上架的 GuitarTool 1.1.4：三款新主题、调音与节拍稳定性、和弦分享、iPhone/iPad/Watch 支持，以及免费功能与隐私范围。",
     "eyebrow": "GUITARTOOL 1.1.4 · 2026-10-26",
-    "lead": "GuitarTool 1.1.4 已上架。布偶练习室、怪兽排练室和失重马戏团带来三种新外观；核心调音器、节拍器和和弦库依然免费、离线。十套完整主题分别一次性购买，四款基础主题免费。本版停用使用分析。",
+    "lead": "本页记录 2026 年 10 月 26 日上架的 1.1.4。App Store 当前公开版本是 1.1.5。1.1.4 加入布偶练习室、怪兽排练室和失重马戏团；核心调音器、节拍器和和弦库免费、离线。当时的完整主题为十套一次性购买，四款基础主题免费。该版本停用使用分析。",
     "proof": [
       "iOS / iPadOS 17+",
       "watchOS 10+",
@@ -74,6 +74,7 @@ export const zhRelease114Pages: LandingPage[] = [
       ]
     ],
     "related": [
+      "guitartool-1-1-5",
       "themes-and-purchases",
       "offline-guitar-tools",
       "voice-counting-metronome",
@@ -82,19 +83,19 @@ export const zhRelease114Pages: LandingPage[] = [
   },
   {
     "slug": "themes-and-purchases",
-    "title": "GuitarTool 十款主题：预览、购买与恢复",
-    "description": "GuitarTool 1.1.4 主题说明：四款免费外观、十款独立一次性购买主题，新主题预览、离线使用、恢复购买与等待批准排查。",
+    "title": "GuitarTool 主题：预览、一次性购买与恢复",
+    "description": "GuitarTool 主题购买说明：四款免费外观。App Store 1.1.5 有十二套一次性主题，含机械花园与口袋爵士剧场。Google Play 公开的 1.1.4 仍是十套。无订阅。",
     "eyebrow": "主题展厅 · 购买帮助",
-    "lead": "先在“个性化 → 主题展厅”预览完整界面，再选择需要的主题。四款基础外观永久免费；十款完整主题各自一次性购买。购买一款不会解锁其余主题，也不影响免费的调音、节拍和和弦工具。",
+    "lead": "先在“个性化 → 主题展厅”预览，再选择需要的主题。四款基础外观免费。App Store 1.1.5 有十二套各自一次性购买的完整主题，包括机械花园和口袋爵士剧场。Google Play 当前公开的 1.1.4 仍对应此前的十套，不要把这两套新主题当成已经可以在 Google Play 购买。购买一套不会解锁其余主题，也不影响免费的调音、节拍和和弦工具。没有订阅。",
     "proof": [
       "四款基础主题免费",
-      "十款独立一次性购买",
-      "解锁后离线使用"
+      "App Store 十二套一次性购买",
+      "Google Play 公开版十套"
     ],
     "sections": [
       {
-        "title": "十款完整主题有哪些？",
-        "body": "晨雾琴房、月面电台、纸上乐队、口袋合成器、黑胶夜场、琴匠测绘、玄玉声场、怪兽排练室、失重马戏团和布偶练习室。最后三款在 1.1.4 加入。完整主题用于 iPhone/iPad 的工具界面和和弦卡片；Watch 与小组件有专用布局。",
+        "title": "完整主题有哪些？",
+        "body": "App Store 1.1.5 包含晨雾琴房、月面电台、纸上乐队、口袋合成器、黑胶夜场、琴匠测绘、玄玉声场、怪兽排练室、失重马戏团、布偶练习室、机械花园和口袋爵士剧场。1.1.4 加入后三款之前的三套角色主题；1.1.5 加入机械花园和口袋爵士剧场。完整主题用于 iPhone/iPad 的工具界面和和弦卡片；Watch 与小组件有专用布局。Google Play 公开的 1.1.4 页面仍介绍到布偶练习室、怪兽排练室和失重马戏团这一组。",
         "points": [
           "布偶练习室：布面、刺绣与猫咪",
           "怪兽排练室：黏土角色与节拍舞台",
@@ -103,7 +104,7 @@ export const zhRelease114Pages: LandingPage[] = [
       },
       {
         "title": "预览与购买",
-        "body": "更新到 1.1.4，打开个性化和主题展厅，查看主题预览后选择对应商品。最终价格与币种以 App Store 购买确认界面为准。每套为独立非消耗型商品，无需订阅；以前购买其他主题不会包含新商品。",
+        "body": "在 App Store 更新到 1.1.5 后，打开个性化和主题展厅，查看主题预览再选择对应商品。最终价格与币种以商店购买确认界面为准，本站不列出固定标价。每套为独立非消耗型商品，无需订阅；以前购买其他主题不会包含新商品。Google Play 上的购买使用该商店的账户，不能恢复成 App Store 权益。",
         "points": [
           "确认主题名称后再购买",
           "加载商品及购买时保持联网",
@@ -121,7 +122,7 @@ export const zhRelease114Pages: LandingPage[] = [
       },
       {
         "title": "离线使用与更新后恢复",
-        "body": "十套主题素材均随 App 安装包提供，完成解锁后无需连接主题服务器或另行下载素材。1.1.4 改善启动时恢复所选主题；重装后若未解锁，先联网恢复购买，再离线使用。",
+        "body": "主题素材随对应平台的安装包提供，完成解锁后无需连接主题服务器或另行下载素材。1.1.5 继续改进启动时恢复所选主题，以及购买、恢复和取消的处理。重装后若未解锁，先用原来的商店账户联网恢复购买，再离线使用。",
         "points": [
           "四款基础主题随时可用",
           "核心练习不依赖主题购买",
@@ -132,7 +133,7 @@ export const zhRelease114Pages: LandingPage[] = [
     "faq": [
       [
         "主题是订阅吗？",
-        "不是。每套完整主题为独立一次性非消耗型购买。当前价格以所在地区 App Store 为准。"
+        "不是。每套完整主题为独立一次性非消耗型购买，没有自动续费。当前价格以所在地区的 App Store 或 Google Play 为准。"
       ],
       [
         "为什么购买晨雾琴房后布偶练习室仍锁定？",
@@ -144,6 +145,7 @@ export const zhRelease114Pages: LandingPage[] = [
       ]
     ],
     "related": [
+      "guitartool-1-1-5",
       "guitartool-1-1-4",
       "offline-guitar-tools",
       "share-chord-diagrams"
@@ -157,7 +159,7 @@ export const enRelease114Pages: LandingPage[] = [
     "title": "GuitarTool 1.1.4: new themes, release notes and device support",
     "description": "Explore released GuitarTool 1.1.4: three optional themes, tuning and timing improvements, chord sharing, Apple device support, free tools and privacy.",
     "eyebrow": "GUITARTOOL 1.1.4 · 26 OCTOBER 2026",
-    "lead": "GuitarTool 1.1.4 is available. Plush Practice Room, Oddball Rehearsal and Zero Gravity Circus add three new looks. The tuner, metronome and chord library remain free and offline. Ten complete themes are separate one-time purchases; four basic looks are free. Usage analytics is disabled.",
+    "lead": "This page records version 1.1.4, released on 26 October 2026. The current public App Store version is 1.1.5. Version 1.1.4 added Plush Practice Room, Oddball Rehearsal and Zero Gravity Circus. The tuner, metronome and chord library remained free and offline. That release had ten complete one-time themes and four free basic looks. Usage analytics was disabled.",
     "proof": [
       "iOS / iPadOS 17+",
       "watchOS 10+",
@@ -223,6 +225,7 @@ export const enRelease114Pages: LandingPage[] = [
       ]
     ],
     "related": [
+      "guitartool-1-1-5",
       "themes-and-purchases",
       "offline-guitar-tools",
       "voice-counting-metronome",
@@ -231,19 +234,19 @@ export const enRelease114Pages: LandingPage[] = [
   },
   {
     "slug": "themes-and-purchases",
-    "title": "GuitarTool themes: preview, buy and restore purchases",
-    "description": "GuitarTool 1.1.4 purchase help: four free looks, ten separate one-time themes, new theme previews, offline use, restoration and pending approval.",
+    "title": "GuitarTool themes: preview, one-time purchase and restore",
+    "description": "GuitarTool theme purchases: four free looks. App Store 1.1.5 has twelve one-time themes, including Kinetic Garden and Pocket Jazz Theater. The public Google Play 1.1.4 listing still has ten. No subscription.",
     "eyebrow": "THEME GALLERY · PURCHASE HELP",
-    "lead": "Open Personalization → Theme Gallery to preview the full interface before choosing a theme. Four basic looks stay free. Ten complete themes are separate one-time purchases. Buying one does not unlock the others or restrict the free tuner, metronome and chords.",
+    "lead": "Open Personalization → Theme Gallery and preview a theme before buying it. Four basic looks stay free. App Store 1.1.5 has twelve separate one-time complete themes, including Kinetic Garden and Pocket Jazz Theater. The current public Google Play version, 1.1.4, still corresponds to the earlier ten paid themes; those two new themes are not described as purchasable there. Buying one theme does not unlock the others or restrict the free tuner, metronome and chords. There is no subscription.",
     "proof": [
       "Four free basic looks",
-      "Ten separate one-time purchases",
-      "Offline after unlock"
+      "Twelve one-time themes on the App Store",
+      "Ten on the public Google Play listing"
     ],
     "sections": [
       {
-        "title": "Which ten complete themes are available?",
-        "body": "Morning Mist Studio, Lunar Radio, Paper Ensemble, Pocket Synth, Vinyl Afterhours, Luthier Atlas, Jade Resonance, Oddball Rehearsal, Zero Gravity Circus and Plush Practice Room. The last three arrive in 1.1.4. Complete themes style iPhone/iPad tools and chord cards; Watch and widgets use dedicated layouts.",
+        "title": "Which complete themes are available?",
+        "body": "App Store 1.1.5 includes Morning Mist Studio, Lunar Radio, Paper Ensemble, Pocket Synth, Vinyl Afterhours, Luthier Atlas, Jade Resonance, Oddball Rehearsal, Zero Gravity Circus, Plush Practice Room, Kinetic Garden and Pocket Jazz Theater. Version 1.1.4 added the three character themes before the last two; 1.1.5 adds Kinetic Garden and Pocket Jazz Theater. Complete themes style iPhone/iPad tools and chord cards; Watch and widgets use dedicated layouts. The public Google Play 1.1.4 listing still describes the set through Plush Practice Room, Oddball Rehearsal and Zero Gravity Circus.",
         "points": [
           "Plush Practice Room: fabric, embroidery and a kitten",
           "Oddball Rehearsal: clay characters and a beat stage",
@@ -252,7 +255,7 @@ export const enRelease114Pages: LandingPage[] = [
       },
       {
         "title": "Preview and purchase",
-        "body": "Install 1.1.4, open Personalization and Theme Gallery, preview the theme and choose its product. Final price and currency are shown in the App Store confirmation. Each theme is an independent non-consumable purchase, not a subscription. Earlier purchases do not include new products.",
+        "body": "After updating to App Store 1.1.5, open Personalization and Theme Gallery, preview the theme and choose its product. The final price and currency appear in the store confirmation; this website does not publish a fixed price. Each theme is an independent non-consumable purchase, not a subscription. Earlier purchases do not include new products. A Google Play purchase uses that store account and does not restore an App Store entitlement.",
         "points": [
           "Check the theme name before purchase",
           "Stay online while loading or buying products",
@@ -270,7 +273,7 @@ export const enRelease114Pages: LandingPage[] = [
       },
       {
         "title": "Offline use and restoring after updates",
-        "body": "All ten themes have artwork bundled in the app. Once unlocked they need no theme server or extra asset download. Version 1.1.4 improves restoration of the selected theme at launch. If a reinstall leaves a theme locked, restore online before using it offline.",
+        "body": "Theme artwork is bundled in the install for that platform. Once unlocked, a theme needs no theme server or extra asset download. Version 1.1.5 continues to improve restoration of the selected theme at launch, and purchase, restore and cancellation handling. If a reinstall leaves a theme locked, restore online with the original store account before using it offline.",
         "points": [
           "The four free basic looks remain available",
           "Core practice does not depend on purchases",
@@ -281,7 +284,7 @@ export const enRelease114Pages: LandingPage[] = [
     "faq": [
       [
         "Are themes subscriptions?",
-        "No. Each complete theme is a separate one-time non-consumable purchase. Current pricing is shown by your local App Store."
+        "No. Each complete theme is a separate one-time non-consumable purchase, with no automatic renewal. The current price is shown by the App Store or Google Play for your region."
       ],
       [
         "Why is Plush Practice Room locked after buying Morning Mist Studio?",
@@ -293,6 +296,7 @@ export const enRelease114Pages: LandingPage[] = [
       ]
     ],
     "related": [
+      "guitartool-1-1-5",
       "guitartool-1-1-4",
       "offline-guitar-tools",
       "share-chord-diagrams"

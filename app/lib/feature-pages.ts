@@ -54,7 +54,7 @@ export const enFeaturePages: LandingPage[] = [
       },
       {
         title: "The light is a beat cue, not a camera workflow",
-        body: "Flash Beat does not take photos, record video or analyze the scene. GuitarTool core tools work offline without an account, ads or audio uploads. Released version 1.1.4 disables usage analytics: no analytics switch, no PostHog initialization and no usage or diagnostic analytics events. Rear-flash availability depends on compatible iPhone hardware; iPad and Apple Watch continue to provide their own metronome experiences without this camera-light control.",
+        body: "Flash Beat does not take photos, record video or analyze the scene. GuitarTool core tools work offline without an account, ads or audio uploads. The current App Store release, 1.1.5, keeps usage analytics disabled: no analytics switch, no PostHog initialization and no usage or diagnostic analytics events. Rear-flash availability depends on compatible iPhone hardware; iPad and Apple Watch continue to provide their own metronome experiences without this camera-light control.",
         points: ["No image capture", "No account, ads or tracking SDK", "Available only on compatible iPhones"],
       },
     ],
@@ -113,7 +113,7 @@ export const enFeaturePages: LandingPage[] = [
       },
       {
         title: "Part of the same private practice toolkit",
-        body: "The watch companion follows the language selected on iPhone and sits alongside GuitarTool's iPhone, iPad and Home Screen widget experiences. Apple Watch does not independently initialize an analytics SDK or add an account or cloud profile. Version 1.1.4 disables usage analytics in the iPhone/iPad app as well; it does not initialize PostHog or send analytics events.",
+        body: "The watch companion follows the language selected on iPhone and sits alongside GuitarTool's iPhone, iPad and Home Screen widget experiences. Apple Watch does not independently initialize an analytics SDK or add an account or cloud profile. App Store version 1.1.5 keeps usage analytics disabled in the iPhone/iPad app as well; it does not initialize PostHog or send analytics events.",
         points: ["13 interface languages", "Companion to the iPhone app", "No ads, account or tracking SDK"],
       },
     ],
@@ -264,7 +264,7 @@ export const zhFeaturePages: LandingPage[] = [
       },
       {
         title: "这里使用的是灯光提示，不是相机流程",
-        body: "闪光灯节拍不会拍照、录像或分析画面。GuitarTool 的调音、节拍与和弦等核心练习工具可完全离线使用，无需账户、没有广告，也不会上传音频。已上架的 1.1.4 停用使用分析，不初始化 PostHog 或发送分析事件；四款基础主题免费，十套付费主题素材内置且购买后可离线使用。后置闪光灯功能取决于兼容 iPhone 硬件；iPad 与 Apple Watch 继续使用各自的节拍器体验。",
+        body: "闪光灯节拍不会拍照、录像或分析画面。GuitarTool 的调音、节拍与和弦等核心练习工具可完全离线使用，无需账户、没有广告，也不会上传音频。App Store 当前公开版本 1.1.5 继续停用使用分析，不初始化 PostHog 或发送分析事件；四款基础主题免费。Apple 端十二套付费主题素材内置，购买后可离线使用。Google Play 公开版本仍是 1.1.4。后置闪光灯功能取决于兼容 iPhone 硬件；iPad 与 Apple Watch 继续使用各自的节拍器体验。",
         points: ["不拍摄任何画面", "无账户、广告或追踪 SDK", "仅限兼容 iPhone 后置闪光灯"],
       },
     ],
@@ -323,7 +323,7 @@ export const zhFeaturePages: LandingPage[] = [
       },
       {
         title: "仍然属于同一套私密练习流程",
-        body: "Watch 伴随 APP 会接收 iPhone 端选择的语言，并与 iPhone、iPad 和主屏幕小组件体验保持一致。Apple Watch 不独立初始化分析 SDK，也不增加账户或云端个人资料。已上架的 1.1.4 在 iPhone/iPad 主 App 也停用使用分析，不提供分析入口、不初始化 PostHog、不发送分析事件。",
+        body: "Watch 伴随 APP 会接收 iPhone 端选择的语言，并与 iPhone、iPad 和主屏幕小组件体验保持一致。Apple Watch 不独立初始化分析 SDK，也不增加账户或云端个人资料。App Store 当前公开版本 1.1.5 在 iPhone/iPad 主 App 也停用使用分析，不提供分析入口、不初始化 PostHog、不发送分析事件。",
         points: ["支持 13 种界面语言", "作为 iPhone APP 的伴随工具", "无广告、无账户、无追踪 SDK"],
       },
     ],

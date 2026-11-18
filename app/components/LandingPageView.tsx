@@ -9,6 +9,7 @@ import {
   APP_NAME,
   RELEASE_VERSION,
   RELEASE_UPDATED,
+  PREVIOUS_RELEASE_UPDATED,
   PRIVACY_NOTICE_UPDATED,
   PRIVACY_NOTICE_GUIDE_SLUGS,
   absoluteUrl,
@@ -36,7 +37,7 @@ export function LandingPageView({ page, language }: { page: LandingPage; languag
     {
       "@context": "https://schema.org",
       "@type": "WebPage",
-      ...(["guitartool-1-1-4", "themes-and-purchases", ...RELEASE_1_1_3_GUIDE_SLUGS, "silent-bar-metronome", "staged-tempo-training", "progressive-tempo-training", "online-metronome", "offline-guitar-tools", "apple-watch-metronome", "apple-watch-metronome-audio-design", "visual-metronome"].some((slug) => slug === page.slug) ? { dateModified: PRIVACY_NOTICE_GUIDE_SLUGS.some((slug) => slug === page.slug) ? PRIVACY_NOTICE_UPDATED : RELEASE_UPDATED } : {}),
+      ...(PRIVACY_NOTICE_GUIDE_SLUGS.some((slug) => slug === page.slug) || ["guitartool-1-1-5", "themes-and-purchases", "guitartool-1-1-4", ...RELEASE_1_1_3_GUIDE_SLUGS, "silent-bar-metronome", "staged-tempo-training", "progressive-tempo-training", "online-metronome", "apple-watch-metronome-audio-design"].some((slug) => slug === page.slug) ? { dateModified: PRIVACY_NOTICE_GUIDE_SLUGS.some((slug) => slug === page.slug) ? PRIVACY_NOTICE_UPDATED : page.slug === "guitartool-1-1-5" || page.slug === "themes-and-purchases" ? RELEASE_UPDATED : PREVIOUS_RELEASE_UPDATED } : {}),
       name: page.title,
       description: page.description,
       url: canonical,

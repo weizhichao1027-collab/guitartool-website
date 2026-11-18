@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { SiteLink as Link } from "@/app/components/SiteLink";
 import { JsonLd } from "@/app/components/JsonLd";
-import { APP_STORE_LINKS, RELEASE_VERSION, RELEASE_UPDATED, absoluteUrl, assetPath, localeAlternates, supportedLanguageCodes } from "@/app/lib/site";
+import { APP_STORE_LINKS, GOOGLE_PLAY_URL, RELEASE_VERSION, RELEASE_UPDATED, absoluteUrl, assetPath, localeAlternates, supportedLanguageCodes } from "@/app/lib/site";
 import { paidThemes, themeImage } from "@/app/lib/theme-gallery";
 
 const appStoreUrl = APP_STORE_LINKS.home;
@@ -12,11 +12,11 @@ const basePath = process.env.GITHUB_PAGES === "true" ? "/guitartool-website" : "
 
 export const metadata: Metadata = {
   title: "GuitarTool | Tuner, Metronome & Chords",
-  description: "GuitarTool 1.1.4: free offline tuner, metronome and chords, three new optional themes, and improved tuning, timing and chord reliability. No ads or account.",
+  description: "GuitarTool’s public App Store version is 1.1.5. Kinetic Garden and Pocket Jazz Theater are separate one-time purchases. Google Play still lists Android and Wear OS 1.1.4. Core tools are free and offline, with no ads or subscription.",
   alternates: { canonical: absoluteUrl("/en/"), languages: localeAlternates },
   openGraph: {
     title: "GuitarTool | Leave room for practice.",
-    description: "GuitarTool 1.1.4: free offline tuner, metronome and chords, three new optional themes, and improved tuning, timing and chord reliability. No ads or account.",
+    description: "GuitarTool’s public App Store version is 1.1.5. Kinetic Garden and Pocket Jazz Theater are separate one-time purchases. Google Play still lists Android and Wear OS 1.1.4. Core tools are free and offline, with no ads or subscription.",
     url: absoluteUrl("/en/"),
     locale: "en_US",
     type: "website",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "GuitarTool | Leave room for practice.",
-    description: "GuitarTool 1.1.4: free offline tuner, metronome and chords, three new optional themes, and improved tuning, timing and chord reliability. No ads or account.",
+    description: "GuitarTool’s public App Store version is 1.1.5. Kinetic Garden and Pocket Jazz Theater are separate one-time purchases. Google Play still lists Android and Wear OS 1.1.4. Core tools are free and offline, with no ads or subscription.",
     images: [absoluteUrl("/og.png")],
   },
 };
@@ -79,13 +79,14 @@ const features = [
 ] as const;
 
 const faqs = [
-  ["What is new in GuitarTool 1.1.4?", "Version 1.1.4 adds Plush Practice Room, Oddball Rehearsal and Zero Gravity Circus as separate one-time theme purchases. It improves tuning and audio-input recovery, metronome tempo changes and countdowns, chord selection, playback and sharing, and theme restoration at launch. Core tools and four basic looks remain free. Usage analytics is disabled."],
+  ["Where can I download GuitarTool, and which version is public?", "GuitarTool is a tuner, metronome and chord library for guitar and ukulele practice. Checked on 18 November 2026, the public App Store lookup returns 1.1.5 in the United States and China for iPhone, iPad and Apple Watch. The public Google Play page still shows Android and Wear OS 1.1.4. Core tools are free, work offline and need no ads, account or subscription."],
+  ["What is new in App Store version 1.1.5?", "Version 1.1.5 adds Kinetic Garden and Pocket Jazz Theater. Preview each before a separate one-time purchase. Purchase, restoration and cancellation handling is improved. Text in 13 languages and layouts across screen sizes are refined. An extra-large landscape iPad Home Screen widget is available when the system and device offer that size. Usage analytics stays disabled."],
   ["Does voice counting need a microphone or use my interface language?", "No microphone or connection is needed. The bundled voice counts in Chinese regardless of the interface language, starting again each bar; subdivisions remain light clicks. Voice counting is available in the iPhone/iPad app. Watch and browser metronomes do not include it."],
-  ["Do I need an internet connection or account?", "The tuner, metronome, chord libraries and four basic looks work offline without an account. Ten complete themes are bundled too and work offline after purchase. Purchasing or restoring may need a connection."],
-  ["How do I unlock the ten complete themes?", "Morning Mist Studio, Lunar Radio, Paper Ensemble, Pocket Synth, Vinyl Afterhours, Luthier Atlas, Jade Resonance, Oddball Rehearsal, Zero Gravity Circus and Plush Practice Room are separate App Store in-app purchases. Version 1.1.4 bundles their artwork, so purchased themes need no separate asset download or theme backend. The four original basic looks remain free."],
+  ["Do I need an internet connection, account or subscription?", "The tuner, metronome, chord libraries and four basic looks work offline without an account or subscription. The twelve complete themes in App Store 1.1.5 are bundled and work offline after purchase. Purchasing or restoring may need a connection. The store shows the current price."],
+  ["How do paid themes work, and is Kinetic Garden on Google Play?", "On App Store 1.1.5, twelve complete themes are separate one-time purchases, including Kinetic Garden and Pocket Jazz Theater. Artwork is bundled, with no theme backend. The public Google Play 1.1.4 listing still has the earlier ten paid themes; those two new themes are not described as purchasable there. Store purchases are managed separately. Four basic looks remain free."],
   ["Does the tuner save my audio?", "Never. Microphone audio is used only for live, on-device pitch detection. It is not saved as a file or uploaded to a server."],
   ["Can I tune on Apple Watch?", "Yes. Version 1.1.1 adds guitar, ukulele, bass and chromatic tuning on Apple Watch. Microphone capture starts only when you tap Start and ends when you stop, change pages or leave the app. Audio is processed on the watch."],
-  ["Which devices are supported?", "GuitarTool adapts to iPhone and iPad, with an Apple Watch tuner and metronome plus small, medium and large interactive Home Screen widgets. iOS 27+ adds an extra-large portrait layout when the system offers it for your device and available space. Watch audio can continue on an approved background route; foreground speaker fallback stops when inactive."],
+  ["Which devices are supported?", "The App Store release supports iPhone, iPad and Apple Watch, plus small, medium and large Home Screen widgets. iOS 27+ can add an extra-large portrait widget when the system offers it. Version 1.1.5 also adds an extra-large landscape iPad widget when the system and device offer that size. Google Play publicly offers Android and Wear OS 1.1.4. Watch audio can continue on an approved background route; foreground speaker fallback stops when inactive."],
   ["Does it support ukulele?", "Yes. The tuner includes GCEA modes, and the chord library includes a complete set of ukulele chord names and multiple fingerings."],
   ["Can I send a chord shape to a teacher or friend?", "Yes. Preview the current chord card, then save it to Photos or send it with the system share sheet. The image does not force an App Store link."],
   ["Does Flash Beat take photos?", "No. On compatible iPhones it uses the rear flash for all main beats or accents only, without capturing images. It turns off when playback stops, you leave the screen or the app enters the background."],
@@ -95,7 +96,8 @@ export default function EnglishHome() {
   return (
     <main lang="en">
       <JsonLd data={[
-        { "@context": "https://schema.org", "@type": "SoftwareApplication", name: "GuitarTool", softwareVersion: RELEASE_VERSION, dateModified: RELEASE_UPDATED, description: "Free offline tuning, metronome and chord tools for guitar and ukulele on iPhone, iPad and Apple Watch, with ten complete themes sold separately as in-app purchases.", url: absoluteUrl("/en/"), downloadUrl: appStoreUrl, applicationCategory: "MusicApplication", operatingSystem: "iOS, iPadOS, watchOS", inLanguage: supportedLanguageCodes, offers: { "@type": "Offer", price: "0", priceCurrency: "USD" }, featureList: ["Real-time tuner with three-second pitch hold", "Apple Watch guitar, ukulele, bass and chromatic tuner", "20–500 BPM metronome with offline Chinese voice counting and BPM preview", "Extra-large portrait widget on iOS 27+ when supported by the system", "Silent bars and up to six tempo stages saved with presets", "Rear-flash beat cues for all main beats or accents only, with three intensities", "19,244 guitar and ukulele fingerings", "Preview, save and share chord cards", "Apple Watch metronome: approved background route continues; foreground fallback stops when inactive", "Large Home Screen widget subdivisions and Swing", "Ten separately purchased complete visual themes"] },
+        { "@context": "https://schema.org", "@type": "SoftwareApplication", name: "GuitarTool", softwareVersion: RELEASE_VERSION, dateModified: RELEASE_UPDATED, description: "A tuner, metronome and chord library for guitar and ukulele practice. Public App Store version 1.1.5; public Google Play version Android and Wear OS 1.1.4. Core tools are free and offline, with no ads, account or subscription.", url: absoluteUrl("/en/"), downloadUrl: appStoreUrl, installUrl: [appStoreUrl, GOOGLE_PLAY_URL], applicationCategory: "MusicApplication", operatingSystem: "iOS 17+, iPadOS 17+, watchOS 10+, Android, Wear OS", inLanguage: supportedLanguageCodes, offers: { "@type": "Offer", price: "0", priceCurrency: "USD" }, additionalProperty: [{ "@type": "PropertyValue", name: "App Store version", value: "1.1.5" }, { "@type": "PropertyValue", name: "Google Play version", value: "1.1.4" }], featureList: ["Real-time tuner with three-second pitch hold", "Apple Watch guitar, ukulele, bass and chromatic tuner", "20–500 BPM metronome with offline Chinese voice counting and BPM preview", "Extra-large portrait widget on iOS 27+ when supported by the system", "Extra-large landscape iPad widget in 1.1.5 when the system and device offer it", "Silent bars and up to six tempo stages saved with presets", "Rear-flash beat cues for all main beats or accents only, with three intensities", "19,244 guitar and ukulele fingerings", "Preview, save and share chord cards", "Apple Watch metronome: approved background route continues; foreground fallback stops when inactive", "Large Home Screen widget subdivisions and Swing", "Twelve one-time visual themes on the App Store, including Kinetic Garden and Pocket Jazz Theater"] },
+        { "@context": "https://schema.org", "@type": "WebSite", name: "GuitarTool", url: absoluteUrl("/en/"), inLanguage: "en", description: "Official GuitarTool website: where to download the practice app, what is free, how one-time themes work, and where to read the privacy policy.", publisher: { "@type": "Organization", name: "Shanghai Qishan Cultural Communication Co., Ltd.", email: "weizhichao1027@gmail.com" } },
         { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqs.map(([question, answer]) => ({ "@type": "Question", name: question, acceptedAnswer: { "@type": "Answer", text: answer } })) },
         { "@context": "https://schema.org", "@type": "VideoObject", name: "GuitarTool full introduction (landscape)", description: "A 36-second introduction to GuitarTool's tuner, metronome, chord cards, widgets and multi-device experience.", thumbnailUrl: absoluteUrl("/og.png"), uploadDate: "2026-08-28", duration: "PT36S", contentUrl: absoluteUrl("/media-kit/video/GuitarTool-Full-Intro-en-854x480.mp4") },
         { "@context": "https://schema.org", "@type": "VideoObject", name: "GuitarTool full introduction (portrait)", description: "A mobile-first 36-second English introduction to GuitarTool.", thumbnailUrl: absoluteUrl("/media-kit/social/guitartool-chord-cards-en-1080x1350.png"), uploadDate: "2026-08-28", duration: "PT36S", contentUrl: absoluteUrl("/media-kit/video/GuitarTool-Full-Intro-en-480x854.mp4") },
@@ -121,9 +123,10 @@ export default function EnglishHome() {
         <div className="heroCopy">
           <p className="eyebrow"><span /> Made for every focused practice</p>
           <h1>When you practise,<br /><em>leave room for focus.</em></h1>
-          <p className="heroLead">Tune, keep time and find chords in one place. GuitarTool brings professional practice essentials into a calm, intuitive interface.</p>
+          <p className="heroLead">GuitarTool is a tuner, metronome and chord library for guitar and ukulele practice. The public App Store version is 1.1.5. The public Google Play version remains Android and Wear OS 1.1.4. Core tools are free, work offline and need no ads, account or subscription.</p>
           <div className="heroActions">
             <a className="primaryButton" href={appStoreUrl}>Download free on the App Store <span>↗</span></a>
+            <a className="textButton" href={GOOGLE_PLAY_URL}>Google Play <span>↗</span></a>
             <a className="textButton" href="#features">Explore the tools <span>↓</span></a>
           </div>
           <div className="heroProof" aria-label="Product qualities"><span>Offline core tools</span><i /><span>No ads</span><i /><span>No account</span></div>
@@ -142,11 +145,11 @@ export default function EnglishHome() {
 
       <section className="releaseWatch shell sectionPad" aria-labelledby="release114-heading">
         <div>
-          <p className="eyebrow"><span /> 1.1.4 AVAILABLE · 26 OCTOBER 2026</p>
+          <p className="eyebrow"><span /> APP STORE 1.1.5 · 16 NOVEMBER 2026</p>
           <h2 id="release114-heading">A new scene.<br />Your next song.</h2>
-          <p>Meet Plush Practice Room, Oddball Rehearsal and Zero Gravity Circus. Preview ten complete themes, each a separate one-time purchase. Four basic looks and core tools stay free.</p>
-          <p>Improved tuning, tempo changes and countdowns, chord sharing and theme restoration at launch. Usage analytics is disabled; practice audio stays on-device.</p>
-          <Link className="textCta" href="/en/guides/guitartool-1-1-4/">Explore the release and device guide →</Link>
+          <p>Preview Kinetic Garden and Pocket Jazz Theater, then buy each once if you want it. Four basic looks and the core tools stay free. There is no subscription. The image beside this text is 1.1.4 store artwork and does not show the two new themes.</p>
+          <p>Version 1.1.5 also improves purchase, restore and cancellation handling, and refines text and layouts. Usage analytics stays off, and practice audio stays on the device. Google Play’s public version remains 1.1.4.</p>
+          <Link className="textCta" href="/en/guides/guitartool-1-1-5/">Read the 1.1.5 release and download notes →</Link>
         </div>
         <Image src={assetPath("/release-1.1.4/en-themes.webp")} alt="GuitarTool 1.1.4 English theme App Store artwork" width={660} height={1434} sizes="(max-width: 700px) 85vw, 416px" />
       </section>
@@ -184,7 +187,7 @@ export default function EnglishHome() {
       <section className="numbers"><div className="shell numbersGrid"><div><strong>20–500</strong><span>precise BPM range</span></div><div><strong>430–446</strong><span>Hz calibration</span></div><div><strong>19,244</strong><span>guitar & ukulele fingerings</span></div><div><strong>1–12</strong><span>beats per bar</span></div></div></section>
 
       <section className="introVideoSection shell sectionPad">
-        <div className="introVideoCopy"><p className="eyebrow"><span /> Full product tour in 36 seconds</p><h2>See how the tools fit into practice before choosing where to begin.</h2><p>The landscape edit is designed for desktop and larger screens; mobile automatically receives the English portrait edit. It covers the core tuning, rhythm, chord-card, widget and multi-device experience. This earlier core-product tour does not show the later voice controls, portrait widgets or three new 1.1.4 themes. Images below use the current release artwork.</p></div>
+        <div className="introVideoCopy"><p className="eyebrow"><span /> Full product tour in 36 seconds</p><h2>See how the tools fit into practice before choosing where to begin.</h2><p>The landscape edit is designed for desktop and larger screens; mobile automatically receives the English portrait edit. It covers the core tuning, rhythm, chord-card, widget and multi-device experience. This earlier tour does not show later voice controls, newer widget sizes, or the themes added in 1.1.4 and 1.1.5. The training image below is 1.1.4 store artwork.</p></div>
         <div className="introVideoFrame"><video controls playsInline preload="metadata" aria-label="GuitarTool full English introduction"><source src={assetPath("/media-kit/video/GuitarTool-Full-Intro-en-480x854.mp4")} media="(max-width: 700px)" type="video/mp4" /><source src={assetPath("/media-kit/video/GuitarTool-Full-Intro-en-854x480.mp4")} type="video/mp4" /></video></div>
       </section>
 
@@ -206,22 +209,22 @@ export default function EnglishHome() {
         <div className="sectionHeading compact"><p className="eyebrow"><span /> Across your devices · themes & widgets</p><h2>Practice should fit you,<br />not the other way around.</h2></div>
         <div className="extraGrid">
           <article className="extraCard themeCard">
-            <div className="extraText"><p className="cardLabel">Theme Gallery · Three new themes in 1.1.4</p><h3>Ten complete paid themes.<br />One practice app, ten distinct worlds.</h3><p>Version 1.1.4 adds Plush Practice Room, Oddball Rehearsal and Zero Gravity Circus to the seven existing themes. Each remains a separate in-app purchase. Purchased themes work offline without an asset download; the four basic looks remain visible and free.</p><div className="swatches" aria-label="Four free basic looks and ten paid complete themes in the Theme Gallery"><span className="day" /><span className="night" /><span className="pine" /><span className="graphite" /><b>10 PAID THEMES</b></div></div>
+            <div className="extraText"><p className="cardLabel">Theme Gallery · App Store 1.1.5</p><h3>Twelve one-time themes.<br />The new two are garden and jazz.</h3><p>App Store 1.1.5 adds Kinetic Garden and Pocket Jazz Theater to the earlier ten. Each is a separate purchase and changes appearance only. Purchased themes work offline without an asset download. Four basic looks stay free. The public Google Play 1.1.4 listing still has the earlier ten.</p><div className="swatches" aria-label="Four free basic looks and twelve one-time themes on the App Store"><span className="day" /><span className="night" /><span className="pine" /><span className="graphite" /><b>12 ON APP STORE</b></div></div>
             <Image src={assetPath("/en-luthier-atlas.webp")} alt="GuitarTool 1.1.0 Luthier Atlas complete theme metronome screen" width={833} height={1809} sizes="(max-width: 700px) 86vw, 460px" />
           </article>
           <article className="extraCard widgetCard">
-            <div className="extraText"><p className="cardLabel">Home Screen widgets</p><h3>Keep the beat<br />without opening the app.</h3><p>All three widget sizes control tempo and playback; medium and large sizes also offer meter and tap tempo. In 1.1.1, the large widget also switches between beat, eighth, triplet, sixteenth and Swing subdivisions, in sync with the app.</p></div>
+            <div className="extraText"><p className="cardLabel">Home Screen widgets</p><h3>Keep the beat<br />without opening the app.</h3><p>Small, medium and large widgets control tempo and playback; medium and large also offer meter and tap tempo. The large widget can switch beat, eighth, triplet, sixteenth and Swing. iOS 27+ can add an extra-large portrait widget. Version 1.1.5 adds an extra-large landscape iPad widget when the system and device offer that size.</p></div>
             <Image src={assetPath("/release-1.1.1/en-large-widget.png")} alt="GuitarTool 1.1.1 large metronome widget with beat, eighth, triplet, sixteenth and Swing controls" width={1146} height={1262} sizes="(max-width: 700px) 86vw, 460px" />
           </article>
         </div>
-        <div className="updatePromise"><span>AVAILABLE NOW · VERSION 1.1.4</span><p><strong>Three new scenes for your next song.</strong> Explore Plush Practice Room, Oddball Rehearsal and Zero Gravity Circus, each a separate one-time purchase. Tuning, tempo changes, interruptions, chords and theme restoration at launch are more reliable. <Link href="/en/guides/guitartool-1-1-4/">Release and device guide →</Link></p><b aria-hidden="true">↗</b></div>
+        <div className="updatePromise"><span>AVAILABLE NOW · APP STORE 1.1.5</span><p><strong>Kinetic Garden and Pocket Jazz Theater.</strong> Preview each, then buy it once if you want that look. Purchases, restores and cancellations are more reliable, and iPad can add an extra-large landscape widget when the system offers it. <Link href="/en/guides/guitartool-1-1-5/">1.1.5 release and download notes →</Link></p><b aria-hidden="true">↗</b></div>
       </section>
 
       <section className="themeGallery sectionPad" id="paid-themes" aria-labelledby="paid-themes-heading">
         <div className="shell themeGalleryIntro">
-          <p className="eyebrow"><span /> Theme Gallery · Ten complete interfaces</p>
-          <h2 id="paid-themes-heading">One metronome.<br />Ten ways to make it yours.</h2>
-          <p>Explore the current iOS 1.1.4 metronome screen for each paid theme; the screenshots show the Chinese interface. Themes are separate in-app purchases and also style the tuner, chord library and share cards. Four basic looks remain free.</p>
+          <p className="eyebrow"><span /> Theme Gallery · Ten interfaces with screenshots</p>
+          <h2 id="paid-themes-heading">One metronome.<br />Ten looks already pictured.</h2>
+          <p>These are the ten paid themes that already have interface screenshots. App Store 1.1.5 also adds Kinetic Garden and Pocket Jazz Theater, which are not in this older set of images. Each theme is a separate purchase. Four basic looks remain free.</p>
         </div>
         <div className="shell themeGalleryGrid">
           {paidThemes.map((theme, index) => (
@@ -245,7 +248,7 @@ export default function EnglishHome() {
 
       <section className="devices sectionPad" id="devices">
         <div className="shell devicesGrid">
-          <div className="devicesCopy"><div className="sectionIndex light">04 / EVERYWHERE</div><h2>Your practice<br />travels with you.</h2><p>Reach for iPhone, see more on iPad, or start a beat or tune from Apple Watch. The Watch tuner covers guitar, ukulele, bass and chromatic modes; metronome audio can continue when the wrist lowers on an approved background route. Foreground speaker fallback stops when the interface becomes inactive.</p><div className="devicePills"><span>iPhone</span><span>iPad</span><span>Apple Watch</span></div></div>
+          <div className="devicesCopy"><div className="sectionIndex light">04 / EVERYWHERE</div><h2>Your practice<br />travels with you.</h2><p>Reach for iPhone, see more on iPad, or start a beat or tune from Apple Watch. Android phones and Wear OS use the public Google Play release, version 1.1.4. The Watch tuner covers guitar, ukulele, bass and chromatic modes; metronome audio can continue when the wrist lowers on an approved background route.</p><div className="devicePills"><span>iPhone</span><span>iPad</span><span>Apple Watch</span><span>Android</span><span>Wear OS</span></div></div>
           <div className="devicesMedia"><Image src={assetPath("/release-1.1.4/en-devices.webp")} alt="GuitarTool on iPhone, iPad and Apple Watch in English" width={833} height={1800} sizes="(max-width: 850px) 90vw, 520px" /></div>
         </div>
       </section>
@@ -254,7 +257,7 @@ export default function EnglishHome() {
         <div className="privacyGlow" />
         <div className="shell privacyGrid">
           <div><p className="eyebrow inverted"><span /> Privacy by design</p><h2>Your practice audio<br /><em>stays on your device.</em></h2></div>
-          <div className="privacyCopy"><p>GuitarTool 1.1.4 needs no account and has no ads or cross-app tracking. Tuner audio is processed only on your device, never saved or uploaded. Four basic looks are free; all ten paid themes have bundled artwork and work offline after purchase.</p><p>Usage analytics is disabled in 1.1.4. There is no analytics switch; the app does not initialize PostHog or send usage or diagnostic analytics events. Historical test data is not automatically deleted. The privacy policy explains requests about that data and website hosting.</p><ul><li><b>01</b><span><strong>No account</strong>No registration, sign-in or cloud profile.</span></li><li><b>02</b><span><strong>No audio uploads</strong>No recordings saved or sent to us or a third party.</span></li><li><b>03</b><span><strong>No ads or tracking</strong>No advertising or cross-app tracking. Usage analytics is disabled in 1.1.4.</span></li></ul><a className="lightButton" href={privacyUrl}>Read the full privacy policy <span>↗</span></a></div>
+          <div className="privacyCopy"><p>GuitarTool 1.1.5 needs no account and has no ads, subscription or cross-app tracking. Tuner audio is processed only on your device, never saved or uploaded. Four basic looks are free. The twelve paid themes on the App Store have bundled artwork and work offline after purchase.</p><p>Usage analytics stays disabled in 1.1.5. There is no analytics switch; the app does not initialize PostHog or send usage or diagnostic analytics events. Historical test data is not automatically deleted. The privacy policy was last updated on 18 November 2026 and explains requests about that data and website hosting.</p><ul><li><b>01</b><span><strong>No account</strong>No registration, sign-in or cloud profile.</span></li><li><b>02</b><span><strong>No audio uploads</strong>No recordings saved or sent to us or a third party.</span></li><li><b>03</b><span><strong>No ads or tracking</strong>No advertising or cross-app tracking. Usage analytics stays disabled in 1.1.5.</span></li></ul><a className="lightButton" href={privacyUrl}>Read the full privacy policy <span>↗</span></a></div>
         </div>
       </section>
 
@@ -289,10 +292,10 @@ export default function EnglishHome() {
       </section>
 
       <section className="finalCta shell">
-        <div className="ctaGlow" /><Image className="ctaIcon" src={assetPath("/app-icon-224.png")} alt="GuitarTool app icon" width={112} height={112} /><p>GuitarTool for iPhone · iPad · Apple Watch</p><h2>Make your next practice<br />a more focused one.</h2><a className="primaryButton coral" href={appStoreUrl}>Download free on the App Store <span>↗</span></a><small>Offline core tools · No ads · No account</small>
+        <div className="ctaGlow" /><Image className="ctaIcon" src={assetPath("/app-icon-224.png")} alt="GuitarTool app icon" width={112} height={112} /><p>iPhone · iPad · Apple Watch · Android · Wear OS</p><h2>Make your next practice<br />a more focused one.</h2><a className="primaryButton coral" href={appStoreUrl}>Download free on the App Store <span>↗</span></a><a className="textButton" href={GOOGLE_PLAY_URL}>Google Play 1.1.4 <span>↗</span></a><small>Offline core tools · No ads · No account · No subscription</small>
       </section>
 
-      <footer className="footer shell"><a className="brand" href="#top"><Image src={assetPath("/app-icon-224.png")} alt="" width={36} height={36} /><span>GuitarTool</span></a><p>© 2026 Zhichao Wei. Practise with care. Progress quietly.</p><div><Link href="/en/support/">Support</Link><a href={privacyUrl}>Privacy</a><a href="mailto:weizhichao1027@gmail.com">Contact</a><a href={githubUrl}>GitHub</a></div></footer>
+      <footer className="footer shell"><a className="brand" href="#top"><Image src={assetPath("/app-icon-224.png")} alt="" width={36} height={36} /><span>GuitarTool</span></a><p>© 2026 Zhichao Wei. Practise with care. Progress quietly.</p><div><Link href="/en/support/">Support</Link><a href={privacyUrl}>Privacy</a><a href={GOOGLE_PLAY_URL}>Google Play</a><a href="mailto:weizhichao1027@gmail.com">Contact</a><a href={githubUrl}>GitHub</a></div></footer>
     </main>
   );
 }

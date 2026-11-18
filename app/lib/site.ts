@@ -1,8 +1,12 @@
 export const APP_NAME = "GuitarTool";
-export const RELEASE_VERSION = "1.1.4";
-export const RELEASE_UPDATED = "2026-10-26";
-export const RELEASE_PUBLISHED = "2026-10-26T06:14:15+08:00";
-export const PRIVACY_NOTICE_UPDATED = "2026-10-26";
+/** Current public App Store version. Google Play's public version is ANDROID_PUBLIC_VERSION. */
+export const RELEASE_VERSION = "1.1.5";
+export const RELEASE_UPDATED = "2026-11-18";
+/** Apple public lookup currentVersionReleaseDate 2026-11-16T05:14:11Z. */
+export const RELEASE_PUBLISHED = "2026-11-16T13:14:11+08:00";
+export const PREVIOUS_RELEASE_UPDATED = "2026-10-26";
+export const ANDROID_PUBLIC_VERSION = "1.1.4";
+export const PRIVACY_NOTICE_UPDATED = "2026-11-18";
 export const PRIVACY_NOTICE_GUIDE_SLUGS = ["offline-guitar-tools", "visual-metronome", "apple-watch-metronome"] as const;
 export const APP_STORE_URL = "https://apps.apple.com/app/id6761914163";
 export const GOOGLE_PLAY_URL = "https://play.google.com/store/apps/details?id=com.guitar123.toolbox";
@@ -77,7 +81,7 @@ const GUIDE_CAMPAIGNS: Record<string, string> = {
 };
 
 export function appStoreDestinationForGuide(slug: string): "tuner" | "metronome" | "chords" | "home" {
-  if (["guitartool-1-1-4", "themes-and-purchases"].includes(slug)) return "home";
+  if (["guitartool-1-1-4", "guitartool-1-1-5", "themes-and-purchases"].includes(slug)) return "home";
   if (slug.includes("chord") || slug.includes("capo")) return "chords";
   if (
     slug.includes("metronome") ||

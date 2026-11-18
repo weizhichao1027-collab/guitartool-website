@@ -67,70 +67,70 @@ const localePageTemplates: Array<Omit<LocalePage, "description" | "versionUpdate
 
 const latestUpdate: Record<string, { title: string; body: string; description: string; screenshotCaption: string }> = {
   "zh-hant": {
-    "title": "三套新主題，練習更穩定",
-    "body": "1.1.4 已上架：新增布偶練習室、怪獸排練室與失重馬戲團三套獨立一次性付費主題。改善調音與輸入中斷恢復、節拍變速與倒數、和弦選擇試聽分享，以及啟動時的主題恢復。核心工具與四款基本外觀免費；十套完整主題分別購買、素材內建。本版停用使用分析，不上傳音訊。支援 iPhone、iPad 與 Apple Watch；超大直式小工具需 iOS 27+ 且由系統提供。",
-    "description": "GuitarTool 1.1.4：免費離線調音器、節拍器與和弦庫，三套新主題、十套獨立內購，無廣告、不收集使用分析。",
-    "screenshotCaption": "1.1.4 App Store 主題預覽；完整主題分別購買。"
+    "title": "機械花園與口袋爵士劇場",
+    "body": "App Store 公開版本 1.1.5 已可下載。新增機械花園與口袋爵士劇場，各自可先預覽，再一次性購買，沒有訂閱。購買、恢復與取消的處理已改進；13 種語言與各螢幕布局有調整。iPad 在系統提供該尺寸時可使用橫向超大主畫面小工具。核心工具與四款基本外觀免費；Apple 端現有十二套獨立付費主題，素材內建。使用分析維持關閉，音訊不上傳。Google Play 公開版本仍是 Android／Wear OS 1.1.4，購買與 App Store 分開。直式超大小工具仍需 iOS 27+ 且由系統提供。",
+    "description": "GuitarTool：App Store 1.1.5 已可下載，免費離線調音、節拍與和弦。機械花園與口袋爵士劇場為一次性購買。Google Play 公開版為 Android／Wear OS 1.1.4。無廣告、無使用分析。",
+    "screenshotCaption": "1.1.4 商店主題圖。1.1.5 新增的機械花園與口袋爵士劇場未出現在這張較早的圖中。"
   },
   "es": {
-    "title": "Tres temas nuevos y práctica más fiable",
-    "body": "La versión 1.1.4 ya está disponible. Añade Plush Practice Room, Oddball Rehearsal y Zero Gravity Circus, cada uno como compra única independiente. Mejora la afinación, la recuperación de audio, los cambios de tempo, la cuenta atrás, los acordes y la restauración del tema al iniciar. Herramientas y cuatro estilos básicos gratis; diez temas de compra individual con recursos incluidos. Sin analítica de uso ni envío de audio. iPhone, iPad y Apple Watch; widget vertical extragrande en iOS 27+ cuando el sistema lo ofrece.",
-    "description": "GuitarTool 1.1.4: afinador, metrónomo y acordes gratis sin conexión, tres temas nuevos y diez temas de compra individual. Sin anuncios ni analítica de uso.",
-    "screenshotCaption": "Vista de temas para App Store 1.1.4; los temas completos se compran por separado."
+    "title": "Jardín mecánico y Teatro de jazz de bolsillo",
+    "body": "La versión pública de App Store es la 1.1.5. Añade Jardín mecánico y Teatro de jazz de bolsillo: se pueden previsualizar y comprar por separado, una sola vez, sin suscripción. Mejora compras, restauraciones y cancelaciones, el texto en 13 idiomas y los diseños. El iPad puede mostrar un widget horizontal extragrande cuando el sistema ofrece ese tamaño. Las herramientas y cuatro estilos básicos siguen gratis; en Apple hay doce temas de pago con recursos incluidos. Sin analítica de uso ni envío de audio. Google Play sigue mostrando Android y Wear OS 1.1.4, con compras separadas. El widget vertical extragrande requiere iOS 27+ cuando el sistema lo ofrece.",
+    "description": "GuitarTool: App Store 1.1.5, afinador, metrónomo y acordes gratis sin conexión. Jardín mecánico y Teatro de jazz de bolsillo son compras únicas. Google Play muestra Android y Wear OS 1.1.4. Sin anuncios ni analítica.",
+    "screenshotCaption": "Imagen de temas de la App Store 1.1.4. Jardín mecánico y Teatro de jazz de bolsillo, de la 1.1.5, no aparecen en esta imagen anterior."
   },
   "pt-br": {
-    "title": "Três novos temas e prática mais estável",
-    "body": "A versão 1.1.4 está disponível. Plush Practice Room, Oddball Rehearsal e Zero Gravity Circus são novas compras únicas separadas. Melhorias na afinação, recuperação de áudio, mudanças de andamento, contagem regressiva, acordes e restauração do tema ao abrir. Ferramentas e quatro visuais básicos grátis; dez temas individuais com recursos incluídos. Sem análise de uso ou envio de áudio. iPhone, iPad e Apple Watch; widget vertical extragrande no iOS 27+ quando oferecido pelo sistema.",
-    "description": "GuitarTool 1.1.4: afinador, metrônomo e acordes grátis offline, três novos temas e dez temas vendidos separadamente. Sem anúncios nem análise de uso.",
-    "screenshotCaption": "Prévia de temas da App Store 1.1.4; temas completos vendidos separadamente."
+    "title": "Jardim mecânico e Teatro de jazz de bolso",
+    "body": "A versão pública da App Store é a 1.1.5. Ela adiciona Jardim mecânico e Teatro de jazz de bolso, com prévia e compra única separada, sem assinatura. Melhora compras, restaurações e cancelamentos, o texto em 13 idiomas e os layouts. O iPad pode ter um widget horizontal extragrande quando o sistema oferece esse tamanho. Ferramentas e quatro visuais básicos continuam grátis; na Apple há doze temas pagos com recursos incluídos. Sem análise de uso ou envio de áudio. O Google Play ainda lista Android e Wear OS 1.1.4, com compras separadas. O widget vertical extragrande exige iOS 27+ quando o sistema o oferece.",
+    "description": "GuitarTool: App Store 1.1.5, afinador, metrônomo e acordes grátis offline. Jardim mecânico e Teatro de jazz de bolso são compras únicas. O Google Play lista Android e Wear OS 1.1.4. Sem anúncios nem análise.",
+    "screenshotCaption": "Imagem de temas da App Store 1.1.4. Jardim mecânico e Teatro de jazz de bolso, da 1.1.5, não aparecem nesta imagem anterior."
   },
   "fr": {
-    "title": "Trois nouveaux thèmes, une pratique plus stable",
-    "body": "La version 1.1.4 est disponible. Plush Practice Room, Oddball Rehearsal et Zero Gravity Circus sont trois nouveaux achats uniques séparés. L’accordage, la reprise audio, les changements de tempo, le compte à rebours, les accords et la restauration du thème au lancement sont améliorés. Outils et quatre styles gratuits ; dix thèmes individuels aux ressources intégrées. Aucune analyse d’utilisation ni transmission audio. iPhone, iPad et Apple Watch ; widget portrait extra-large sur iOS 27+ si le système le propose.",
-    "description": "GuitarTool 1.1.4 : accordeur, métronome et accords gratuits hors ligne, trois nouveaux thèmes et dix thèmes individuels. Sans publicité ni analyse d’utilisation.",
-    "screenshotCaption": "Aperçu des thèmes pour l’App Store 1.1.4 ; thèmes complets vendus séparément."
+    "title": "Jardin mécanique et Théâtre de jazz de poche",
+    "body": "La version publique de l’App Store est la 1.1.5. Elle ajoute Jardin mécanique et Théâtre de jazz de poche, à prévisualiser puis acheter séparément, une seule fois, sans abonnement. Les achats, restaurations et annulations, les textes en 13 langues et les mises en page sont affinés. L’iPad peut proposer un widget horizontal extra-large lorsque le système offre cette taille. Les outils et quatre styles de base restent gratuits ; Apple compte douze thèmes payants aux ressources intégrées. Aucune analyse d’utilisation ni envoi audio. Google Play affiche toujours Android et Wear OS 1.1.4, avec des achats séparés. Le widget portrait extra-large demande iOS 27+ si le système le propose.",
+    "description": "GuitarTool : App Store 1.1.5, accordeur, métronome et accords gratuits hors ligne. Jardin mécanique et Théâtre de jazz de poche sont des achats uniques. Google Play affiche Android et Wear OS 1.1.4. Sans publicité ni analyse.",
+    "screenshotCaption": "Image des thèmes App Store 1.1.4. Jardin mécanique et Théâtre de jazz de poche, ajoutés en 1.1.5, n’y figurent pas."
   },
   "de": {
-    "title": "Drei neue Themes, zuverlässiger üben",
-    "body": "Version 1.1.4 ist verfügbar. Plush Practice Room, Oddball Rehearsal und Zero Gravity Circus sind neue, separate Einmalkäufe. Verbessert wurden Stimmung, Audio-Wiederaufnahme, Tempowechsel, Countdown, Akkorde und das Wiederherstellen des Themes beim Start. Tools und vier Basisdesigns bleiben kostenlos; zehn Themes sind einzeln erhältlich, alle Grafiken enthalten. Keine Nutzungsanalyse oder Audio-Uploads. iPhone, iPad und Apple Watch; extragroßes Hochformat-Widget ab iOS 27, sofern vom System angeboten.",
-    "description": "GuitarTool 1.1.4: kostenloses Offline-Stimmgerät, Metronom und Akkorde, drei neue Themes, zehn separate Einmalkäufe. Keine Werbung oder Nutzungsanalyse.",
-    "screenshotCaption": "Theme-Vorschau für App Store 1.1.4; vollständige Themes werden separat gekauft."
+    "title": "Mechanischer Garten und Jazztheater im Taschenformat",
+    "body": "Die öffentliche App-Store-Version ist 1.1.5. Sie ergänzt Mechanischer Garten und Jazztheater im Taschenformat zur Vorschau und als jeweils einmaligen Kauf ohne Abo. Käufe, Wiederherstellungen und Abbrüche, Texte in 13 Sprachen und Layouts wurden verfeinert. Das iPad kann ein extragroßes Querformat-Widget zeigen, wenn das System diese Größe anbietet. Werkzeuge und vier Basisdesigns bleiben kostenlos; bei Apple gibt es zwölf kostenpflichtige Themes mit enthaltenen Grafiken. Keine Nutzungsanalyse und keine Audio-Uploads. Google Play zeigt weiterhin Android und Wear OS 1.1.4 mit getrennten Käufen. Das extragroße Hochformat-Widget braucht iOS 27+, sofern das System es anbietet.",
+    "description": "GuitarTool: App Store 1.1.5, kostenloses Offline-Stimmgerät, Metronom und Akkorde. Mechanischer Garten und Jazztheater im Taschenformat sind Einmalkäufe. Google Play zeigt Android und Wear OS 1.1.4. Keine Werbung oder Nutzungsanalyse.",
+    "screenshotCaption": "Theme-Bild aus dem App Store 1.1.4. Mechanischer Garten und Jazztheater im Taschenformat aus 1.1.5 sind darauf nicht zu sehen."
   },
   "it": {
-    "title": "Tre nuovi temi, esercizi più affidabili",
-    "body": "La versione 1.1.4 è disponibile. Plush Practice Room, Oddball Rehearsal e Zero Gravity Circus sono tre acquisti una tantum separati. Migliora accordatura, ripresa audio, cambi di tempo, conto alla rovescia, accordi e ripristino del tema all’avvio. Strumenti e quattro stili gratuiti; dieci temi individuali con risorse incluse. Nessuna analisi di utilizzo o invio di audio. iPhone, iPad e Apple Watch; widget verticale extra-large su iOS 27+ quando offerto dal sistema.",
-    "description": "GuitarTool 1.1.4: accordatore, metronomo e accordi gratis offline, tre nuovi temi e dieci temi acquistabili separatamente. Senza pubblicità né analisi di utilizzo.",
-    "screenshotCaption": "Anteprima dei temi per App Store 1.1.4; temi completi acquistabili separatamente."
+    "title": "Giardino meccanico e Teatro jazz tascabile",
+    "body": "La versione pubblica dell’App Store è la 1.1.5. Aggiunge Giardino meccanico e Teatro jazz tascabile, con anteprima e acquisto una tantum separato, senza abbonamento. Migliora acquisti, ripristini e annullamenti, i testi in 13 lingue e i layout. L’iPad può mostrare un widget orizzontale extra-large quando il sistema offre quella dimensione. Gli strumenti e quattro stili di base restano gratis; su Apple ci sono dodici temi a pagamento con risorse incluse. Nessuna analisi di utilizzo o invio di audio. Google Play mostra ancora Android e Wear OS 1.1.4, con acquisti separati. Il widget verticale extra-large richiede iOS 27+ quando il sistema lo offre.",
+    "description": "GuitarTool: App Store 1.1.5, accordatore, metronomo e accordi gratis offline. Giardino meccanico e Teatro jazz tascabile sono acquisti una tantum. Google Play mostra Android e Wear OS 1.1.4. Senza pubblicità né analisi.",
+    "screenshotCaption": "Immagine dei temi per l’App Store 1.1.4. Giardino meccanico e Teatro jazz tascabile della 1.1.5 non compaiono in questa immagine precedente."
   },
   "ja": {
-    "title": "3つの新テーマで、もっと安定した練習を",
-    "body": "1.1.4を公開しました。Plush Practice Room、Oddball Rehearsal、Zero Gravity Circusが、それぞれ個別の買い切りテーマとして登場。チューニング、音声入力の中断後の復帰、テンポ変更、カウントダウン、コードの選択・再生・共有、起動時のテーマ復元を改善しました。基本ツールと4つの基本デザインは無料。全10テーマの素材は同梱され、個別購入で使えます。利用状況の分析や音声のアップロードは行いません。iPhone、iPad、Apple Watch対応。特大縦型ウィジェットはiOS 27以降でシステムが提供する場合に利用できます。",
-    "description": "GuitarTool 1.1.4：無料のオフラインチューナー、メトロノーム、コード。3つの新テーマ、全10種の個別購入テーマ。広告・利用状況分析なし。",
-    "screenshotCaption": "1.1.4のApp Store用テーマ紹介画像。完全テーマは個別購入です。"
+    "title": "からくりの庭とポケットジャズ劇場",
+    "body": "App Storeの公開バージョンは1.1.5です。からくりの庭とポケットジャズ劇場を、購入前にプレビューできる個別の買い切りとして追加しました。サブスクリプションはありません。購入、復元、キャンセルの処理、13言語の文言、画面レイアウトを調整しています。iPadでは、システムがそのサイズを提供する場合に横向きの特大ホーム画面ウィジェットを使えます。基本ツールと4つの基本デザインは無料です。Apple版の有料テーマは12種類で、素材はアプリに含まれます。利用状況の分析や音声のアップロードは行いません。Google Playの公開版はAndroid／Wear OS 1.1.4のままで、購入はApp Storeと別です。特大縦型ウィジェットはiOS 27以降でシステムが提供する場合に使えます。",
+    "description": "GuitarTool：App Store 1.1.5。無料のオフラインチューナー、メトロノーム、コード。からくりの庭とポケットジャズ劇場は買い切りです。Google Playの公開版はAndroid／Wear OS 1.1.4。広告と利用状況分析はありません。",
+    "screenshotCaption": "1.1.4のApp Store用テーマ画像です。1.1.5で追加されたからくりの庭とポケットジャズ劇場はこの画像にはありません。"
   },
   "ko": {
-    "title": "새로운 테마 3종과 더 안정적인 연습",
-    "body": "1.1.4가 출시되었습니다. Plush Practice Room, Oddball Rehearsal, Zero Gravity Circus가 각각 일회성 개별 구매로 추가되었습니다. 튜닝, 오디오 중단 복구, 템포 변경, 카운트다운, 코드 선택·재생·공유와 시작 시 테마 복원을 개선했습니다. 핵심 도구와 기본 외관 4종은 무료이며, 전체 테마 10종은 개별 구매입니다. 테마 리소스는 앱에 포함됩니다. 사용 분석이나 오디오 업로드를 하지 않습니다. iPhone, iPad, Apple Watch 지원. 초대형 세로 위젯은 iOS 27 이상에서 시스템이 제공하는 경우 사용할 수 있습니다.",
-    "description": "GuitarTool 1.1.4: 무료 오프라인 튜너, 메트로놈, 코드. 새 테마 3종과 개별 구매 테마 총 10종. 광고 및 사용 분석 없음.",
-    "screenshotCaption": "1.1.4 App Store 테마 미리보기. 전체 테마는 개별 구매입니다."
+    "title": "기계 정원과 포켓 재즈 극장",
+    "body": "App Store 공개 버전은 1.1.5입니다. 기계 정원과 포켓 재즈 극장을 미리 본 뒤 각각 한 번만 구매할 수 있으며, 구독은 없습니다. 구매, 복원, 취소 처리와 13개 언어의 문구, 화면 레이아웃을 다듬었습니다. iPad는 시스템이 해당 크기를 제공할 때 가로 초대형 홈 화면 위젯을 쓸 수 있습니다. 핵심 도구와 기본 외관 4종은 무료이고, Apple에서는 유료 테마 12종이 앱에 포함됩니다. 사용 분석이나 오디오 업로드는 하지 않습니다. Google Play 공개 버전은 Android와 Wear OS 1.1.4이며 구매는 App Store와 별개입니다. 초대형 세로 위젯은 iOS 27 이상에서 시스템이 제공할 때 사용할 수 있습니다.",
+    "description": "GuitarTool: App Store 1.1.5. 무료 오프라인 튜너, 메트로놈, 코드. 기계 정원과 포켓 재즈 극장은 일회 구매입니다. Google Play 공개 버전은 Android와 Wear OS 1.1.4입니다. 광고와 사용 분석은 없습니다.",
+    "screenshotCaption": "1.1.4 App Store 테마 이미지입니다. 1.1.5의 기계 정원과 포켓 재즈 극장은 이 이전 이미지에 없습니다."
   },
   "ru": {
-    "title": "Три новые темы и более стабильная практика",
-    "body": "Версия 1.1.4 доступна. Plush Practice Room, Oddball Rehearsal и Zero Gravity Circus приобретаются отдельно одним платежом. Улучшены настройка, восстановление аудио, смена темпа, таймер, выбор, воспроизведение и отправка аккордов, восстановление темы при запуске. Инструменты и четыре базовых оформления бесплатны; десять тем покупаются отдельно, ресурсы уже в приложении. Аналитика использования отключена, звук не отправляется. iPhone, iPad и Apple Watch; большой вертикальный виджет на iOS 27+, если его предлагает система.",
-    "description": "GuitarTool 1.1.4: бесплатные офлайн-тюнер, метроном и аккорды, три новые темы, десять отдельных покупок. Без рекламы и аналитики использования.",
-    "screenshotCaption": "Изображение тем для App Store 1.1.4; полные темы покупаются отдельно."
+    "title": "Механический сад и Карманный джазовый театр",
+    "body": "Публичная версия в App Store — 1.1.5. Добавлены Механический сад и Карманный джазовый театр: их можно посмотреть заранее и купить отдельно один раз, без подписки. Улучшены покупка, восстановление и отмена, тексты на 13 языках и макеты. На iPad может быть очень большой горизонтальный виджет, если система предлагает этот размер. Инструменты и четыре базовых оформления бесплатны; в Apple двенадцать платных тем с ресурсами в приложении. Аналитика использования отключена, звук не отправляется. В Google Play по-прежнему Android и Wear OS 1.1.4, покупки отдельно. Большой вертикальный виджет доступен на iOS 27+, если его предлагает система.",
+    "description": "GuitarTool: App Store 1.1.5, бесплатные офлайн-тюнер, метроном и аккорды. Механический сад и Карманный джазовый театр покупаются один раз. В Google Play — Android и Wear OS 1.1.4. Без рекламы и аналитики.",
+    "screenshotCaption": "Изображение тем App Store 1.1.4. Механический сад и Карманный джазовый театр из версии 1.1.5 на нём не показаны."
   },
   "tr": {
-    "title": "Üç yeni tema, daha kararlı alıştırma",
-    "body": "1.1.4 yayımlandı. Plush Practice Room, Oddball Rehearsal ve Zero Gravity Circus ayrı tek seferlik satın alımlar olarak eklendi. Akort, ses kesintisinden dönüş, tempo değişimi, geri sayım, akor seçimi, çalma ve paylaşma ile açılışta tema geri yükleme iyileştirildi. Temel araçlar ve dört görünüm ücretsiz; on tema ayrı satılır ve görseller uygulamaya dahildir. Kullanım analizi veya ses yükleme yoktur. iPhone, iPad ve Apple Watch desteklenir; çok büyük dikey widget iOS 27+ üzerinde sistem sunduğunda kullanılabilir.",
-    "description": "GuitarTool 1.1.4: ücretsiz çevrimdışı akort, metronom ve akorlar, üç yeni tema ve ayrı satılan on tema. Reklam ve kullanım analizi yok.",
-    "screenshotCaption": "1.1.4 App Store tema ön izlemesi; tam temalar ayrı satın alınır."
+    "title": "Mekanik Bahçe ve Cep Caz Tiyatrosu",
+    "body": "App Store’daki herkese açık sürüm 1.1.5’tir. Mekanik Bahçe ve Cep Caz Tiyatrosu önizlenebilir ve ayrı tek seferlik satın alımlardır; abonelik yoktur. Satın alma, geri yükleme ve iptal işlemleri, 13 dildeki metinler ve düzenler iyileştirildi. iPad, sistem bu boyutu sunduğunda yatay çok büyük bir ana ekran widget’ı kullanabilir. Temel araçlar ve dört görünüm ücretsizdir; Apple tarafında on iki ücretli tema uygulamaya dahildir. Kullanım analizi veya ses yükleme yoktur. Google Play hâlâ Android ve Wear OS 1.1.4’ü gösterir; satın almalar ayrıdır. Çok büyük dikey widget, sistem sunduğunda iOS 27+ gerektirir.",
+    "description": "GuitarTool: App Store 1.1.5, ücretsiz çevrimdışı akort, metronom ve akorlar. Mekanik Bahçe ve Cep Caz Tiyatrosu tek seferlik satın alımdır. Google Play’de Android ve Wear OS 1.1.4 vardır. Reklam ve kullanım analizi yok.",
+    "screenshotCaption": "1.1.4 App Store tema görseli. 1.1.5’teki Mekanik Bahçe ve Cep Caz Tiyatrosu bu eski görselde yoktur."
   },
   "ar": {
-    "title": "ثلاثة مظاهر جديدة وتمرين أكثر ثباتًا",
-    "body": "الإصدار 1.1.4 متاح الآن. أُضيفت Plush Practice Room وOddball Rehearsal وZero Gravity Circus كمشتريات منفصلة لمرة واحدة. تحسّن الضبط واستعادة الصوت بعد الانقطاع وتغيير السرعة والعد التنازلي واختيار الأوتار وتشغيلها ومشاركتها واستعادة المظهر عند التشغيل. الأدوات وأربعة مظاهر أساسية مجانية؛ عشرة مظاهر كاملة تُشترى منفصلة ومواردها مضمّنة. لا تحليلات استخدام ولا رفع للصوت. يدعم iPhone وiPad وApple Watch؛ الأداة الرأسية الكبيرة متاحة في iOS 27+ عندما يتيحها النظام.",
-    "description": "GuitarTool 1.1.4: موالف وميترونوم وأوتار مجانية دون اتصال، ثلاثة مظاهر جديدة وعشرة مشتريات منفصلة. بلا إعلانات أو تحليلات استخدام.",
-    "screenshotCaption": "معاينة المظاهر لمتجر App Store للإصدار 1.1.4؛ المظاهر الكاملة تُشترى منفصلة."
+    "title": "الحديقة الميكانيكية ومسرح الجاز الصغير",
+    "body": "الإصدار العام على App Store هو 1.1.5. أُضيفت الحديقة الميكانيكية ومسرح الجاز الصغير، ويمكن معاينتهما ثم شراء كل منهما مرة واحدة دون اشتراك. تحسّنت معالجة الشراء والاستعادة والإلغاء، ونصوص 13 لغة، وتخطيطات الشاشات. يمكن لـ iPad عرض أداة أفقية كبيرة جدًا عندما يتيح النظام هذا الحجم. تبقى الأدوات وأربعة مظاهر أساسية مجانية؛ ويضم إصدار Apple اثني عشر مظهرًا مدفوعًا بموارد مضمّنة. لا تحليلات استخدام ولا رفع للصوت. ما زال Google Play يعرض Android وWear OS 1.1.4، والمشتريات منفصلة. الأداة الرأسية الكبيرة تتطلب iOS 27+ عندما يتيحها النظام.",
+    "description": "GuitarTool: الإصدار 1.1.5 على App Store، موالف وميترونوم وأوتار مجانية دون اتصال. الحديقة الميكانيكية ومسرح الجاز الصغير مشتريات لمرة واحدة. يعرض Google Play إصدار Android وWear OS 1.1.4. بلا إعلانات أو تحليلات.",
+    "screenshotCaption": "صورة مظاهر من App Store 1.1.4. الحديقة الميكانيكية ومسرح الجاز الصغير من الإصدار 1.1.5 غير ظاهرين في هذه الصورة الأقدم."
   }
 };
 

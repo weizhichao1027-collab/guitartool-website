@@ -1,18 +1,19 @@
-import { TRAINING_UPDATED } from "@/app/lib/release-training-pages";
 import type { MetadataRoute } from "next";
 import { landingPages } from "@/app/lib/landing-pages";
 import { localePages } from "@/app/lib/locales";
 import { popularChords, routeForChord } from "@/app/lib/chords";
-import { absoluteUrl, RELEASE_UPDATED, PRIVACY_NOTICE_UPDATED, PRIVACY_NOTICE_GUIDE_SLUGS } from "@/app/lib/site";
+import { absoluteUrl, RELEASE_UPDATED, PREVIOUS_RELEASE_UPDATED, PRIVACY_NOTICE_UPDATED, PRIVACY_NOTICE_GUIDE_SLUGS } from "@/app/lib/site";
 import { tunerLocales, tunerPath } from "@/app/lib/tuner-locales";
 import { TROUBLESHOOTING_UPDATED, zhTroubleshootingPages } from "@/app/lib/troubleshooting-pages";
 
 export const dynamic = "force-static";
 
 const lastModified = new Date("2026-08-28T00:00:00Z");
-const themeReleasePublished = new Date(TRAINING_UPDATED);
 const watchPublished = new Date("2026-09-27T23:40:00Z");
 const releasePublished = new Date(RELEASE_UPDATED);
+const previousReleasePublished = new Date(PREVIOUS_RELEASE_UPDATED);
+const currentReleaseSlugs = new Set(["guitartool-1-1-5", "themes-and-purchases"]);
+const previousReleaseSlugs = new Set(["guitartool-1-1-4", "voice-counting-metronome", "metronome-bpm-widget", "progressive-tempo-training", "online-metronome", "offline-guitar-tools", "apple-watch-metronome", "apple-watch-metronome-audio-design", "silent-bar-metronome", "staged-tempo-training", "visual-metronome"]);
 const homepageUpdated = releasePublished;
 const guidesUpdated = new Date(TROUBLESHOOTING_UPDATED);
 const newGuides = new Set(zhTroubleshootingPages.map(page => page.slug));
@@ -31,8 +32,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   for (const page of localePages) entries.push({ url: absoluteUrl(`/${page.slug}/`), lastModified: releasePublished, changeFrequency: "monthly", priority: 0.8 });
   for (const locale of tunerLocales) entries.push({ url: absoluteUrl(tunerPath(locale.slug)), lastModified, changeFrequency: "monthly", priority: 0.9 });
-  for (const page of landingPages.zh) entries.push({ url: absoluteUrl(`/guides/${page.slug}/`), lastModified: ["guitartool-1-1-4", "themes-and-purchases", "voice-counting-metronome", "metronome-bpm-widget", "progressive-tempo-training", "online-metronome", "offline-guitar-tools", "apple-watch-metronome", "apple-watch-metronome-audio-design", "silent-bar-metronome", "staged-tempo-training"].includes(page.slug) ? releasePublished : newGuides.has(page.slug) ? guidesUpdated : page.slug === "apple-watch-tuner" ? watchPublished : page.slug === "visual-metronome" ? themeReleasePublished : lastModified, changeFrequency: "monthly", priority: 0.85 });
-  for (const page of landingPages.en) entries.push({ url: absoluteUrl(`/en/guides/${page.slug}/`), lastModified: ["guitartool-1-1-4", "themes-and-purchases", "voice-counting-metronome", "metronome-bpm-widget", "progressive-tempo-training", "online-metronome", "offline-guitar-tools", "apple-watch-metronome", "apple-watch-metronome-audio-design", "silent-bar-metronome", "staged-tempo-training"].includes(page.slug) ? releasePublished : newGuides.has(page.slug) ? guidesUpdated : page.slug === "apple-watch-tuner" ? watchPublished : page.slug === "visual-metronome" ? themeReleasePublished : lastModified, changeFrequency: "monthly", priority: 0.85 });
+  for (const page of landingPages.zh) entries.push({ url: absoluteUrl(`/guides/${page.slug}/`), lastModified: currentReleaseSlugs.has(page.slug) ? releasePublished : previousReleaseSlugs.has(page.slug) ? previousReleasePublished : newGuides.has(page.slug) ? guidesUpdated : page.slug === "apple-watch-tuner" ? watchPublished : lastModified, changeFrequency: "monthly", priority: 0.85 });
+  for (const page of landingPages.en) entries.push({ url: absoluteUrl(`/en/guides/${page.slug}/`), lastModified: currentReleaseSlugs.has(page.slug) ? releasePublished : previousReleaseSlugs.has(page.slug) ? previousReleasePublished : newGuides.has(page.slug) ? guidesUpdated : page.slug === "apple-watch-tuner" ? watchPublished : lastModified, changeFrequency: "monthly", priority: 0.85 });
   for (const instrument of ["guitar", "ukulele"] as const) {
     for (const chord of popularChords[instrument]) entries.push({ url: absoluteUrl(routeForChord(instrument, chord.slug)), lastModified, changeFrequency: "monthly", priority: 0.75 });
   }
