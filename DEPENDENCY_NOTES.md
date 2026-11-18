@@ -1,4 +1,10 @@
-# Dependency audit — 2026-11-10
+# Dependency audit — 2026-11-19
+
+Publishing the App Store 1.1.5 pages failed `npm run audit:dependencies` on the unchanged lockfile. npm reported two active Next.js advisories, [GHSA-mfr8-8qww-v76h](https://github.com/advisories/GHSA-mfr8-8qww-v76h) and [GHSA-vc7v-qv4w-wrv8](https://github.com/advisories/GHSA-vc7v-qv4w-wrv8), affecting 16.4.3 through 16.4.4. Next and eslint-config-next are pinned to the patched **16.4.6** release. That is the same 16.4 line, not a new major. `next@16.4.6` has an empty npm advisory response.
+
+npm also still returned [GHSA-fc5q-39xc-vjpf](https://github.com/advisories/GHSA-fc5q-39xc-vjpf) for picomatch 4.0.7. GitHub withdrew that advisory at `2026-11-18T15:38:56Z`, before the failed Pages run, and records no patched release. The publication gate now asks GitHub whether each reported advisory is still published. A confirmed `withdrawn_at` is not an active advisory. A lookup that fails, or an advisory GitHub has not withdrawn, still fails the gate, including a high-severity finding. No package is allowlisted and the audit step remains mandatory. Registry errors are reported as registry errors and still fail closed.
+
+## Dependency audit — 2026-11-10
 
 The website publication gate found [minimatch GHSA-g3hv-75wg-m249](https://github.com/advisories/GHSA-g3hv-75wg-m249), published after the previous release. The vulnerable path is development-only `@typescript-eslint/typescript-estree` → minimatch 10.2.6. A scoped npm override selects the advisory's patched **11.0.1** for that parent only, with its required `@isaacs/nonrecursive-glob-match` dependency. Existing Next, React and typescript-eslint versions remain unchanged. No advisory exception or CI bypass was added.
 
